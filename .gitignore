@@ -17,3 +17,4 @@ data/gold/*
 !data/gold/.gitkeep
 
 *.egg-info/
+.DS_Store

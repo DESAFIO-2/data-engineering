@@ -1,9 +1,10 @@
 import json
+from pathlib import Path
 
-from src.sus_cidadao_data.storage.bronze import JsonBronzeStore
+from sus_cidadao_data.storage.bronze import JsonBronzeStore
 
 
-def test_bronze_writes_payload_and_collection_metadata(tmp_path) -> None:
+def test_bronze_writes_payload_and_collection_metadata(tmp_path: Path) -> None:
     store = JsonBronzeStore(tmp_path)
     digest = store.write(
         {"medicamentos": [{"nome": "Teste", "estoque": 3}]},

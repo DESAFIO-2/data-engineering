@@ -6,19 +6,20 @@ Repositório da frente de Engenharia de Dados do projeto acadêmico SUS Cidadão
 
 - catalogar e versionar fontes públicas do SUS;
 - extrair texto dos PDFs por página;
-- criar chunks com fonte, versão, página e identificador estável;
-- construir um índice local TF-IDF com unigramas e bigramas;
-- recuperar evidências para medicamentos com rastreabilidade;
-- preparar a avaliação com golden set antes da geração por LLM.
+- preservar payloads e documentos na Bronze com hash e proveniência;
+- extrair texto por página e normalizar registros na Silver;
+- publicar catálogo derivado na Gold;
+- preparar dados auditáveis para consumidores futuros, sem acoplar a um LLM.
 
 ## Estrutura
 
 ```text
-config/                         configuração das fontes e dos chunks
 data/raw/                       documentos oficiais originais
 data/manifests/                 hashes e metadados das coletas
 docs/                           especificação, fontes e planejamento
-src/sus_cidadao_data/ingestion/ e storage/ contratos de ingestão e persistência
+src/sus_cidadao_data/ingestion/ conectores e contratos de coleta
+src/sus_cidadao_data/storage/   Bronze, Silver e Repository Pattern
+src/sus_cidadao_data/pipeline.py pipeline documental raw -> Bronze -> Silver -> Gold
 tests/                          testes automatizados
 data/{bronze,silver,gold}       dados locais reconstruíveis, ignorados pelo Git
 ```
@@ -34,6 +35,14 @@ uv sync
 ## Arquitetura de ingestão
 
 A fundação atual coleta fontes dinâmicas e preserva os payloads na camada Bronze, normaliza entidades de estoque e farmácias na Silver e produz visões analíticas na Gold. Os contratos estão em `src/sus_cidadao_data/ingestion` e `src/sus_cidadao_data/storage`. O piloto é o painel InfoSaúde DF de Farmácias de Alto Custo.
+
+Para processar os PDFs já coletados:
+
+```bash
+uv run python -m sus_cidadao_data.pipeline
+```
+
+O job é idempotente por SHA-256. A especificação normativa está em `docs/engenharia-dados/especificacao-ingestao-dados-vivos.md`.
 
 ## Qualidade
 

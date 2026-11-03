@@ -2,7 +2,7 @@ from typing import Any
 
 import pytest
 
-from src.sus_cidadao_data.ingestion.base import BaseConnector
+from sus_cidadao_data.ingestion.base import BaseConnector
 
 
 class Connector(BaseConnector):
