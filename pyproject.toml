@@ -1,7 +1,7 @@
 [project]
 name = "sus-cidadao-engenharia-dados"
 version = "0.1.0"
-description = "Pipeline de dados e recuperação RAG do SUS Cidadão"
+description = "Pipeline de ingestão e armazenamento do SUS Cidadão"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
