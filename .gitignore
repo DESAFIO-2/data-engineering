@@ -8,4 +8,12 @@ __pycache__/
 .artifacts/
 .env
 
+# Dados locais reconstruiveis por camada
+data/bronze/*
+!data/bronze/.gitkeep
+data/silver/*
+!data/silver/.gitkeep
+data/gold/*
+!data/gold/.gitkeep
+
 *.egg-info/

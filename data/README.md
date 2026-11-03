@@ -2,7 +2,9 @@
 
 Esta pasta documenta os conjuntos de dados previstos para o MVP no Distrito Federal: medicamentos, canais de retirada, documentos exigidos e orientações de exames.
 
-**Estado atual:** cinco PDFs oficiais preservados em `raw/`, com origem, URL final, instante de coleta, tamanho, SHA-256 e número de páginas no [manifesto de coleta](manifests/coleta-inicial-pdfs-2026-11-03.json). A REME-DF de 29/10/2026 foi selecionada para o corpus do MVP e substituiu o arquivo de 2024. A assinatura PDF e a estrutura de páginas foram verificadas; a revisão do conteúdo e da aplicabilidade ainda está pendente. Ainda não há base normalizada, índice de recuperação ou golden set preenchido.
+**Estado atual:** cinco PDFs oficiais preservados em `raw/`, com origem, URL final, instante de coleta, tamanho, SHA-256 e número de páginas no [manifesto de coleta](manifests/coleta-inicial-pdfs-2026-11-03.json). O pipeline documental já foi executado: `bronze/` contém envelopes por documento/hash, `silver/` contém texto extraído por página e `gold/document_catalog.json` contém o catálogo. A revisão do conteúdo e da aplicabilidade ainda está pendente; o índice de recuperação permanece separado nos artefatos do RAG.
+
+Para reproduzir: `uv run python -m src.sus_cidadao_data.pipeline`. O job é idempotente por SHA-256 e não sobrescreve Bronze/Silver existentes.
 
 Os identificadores F01–F14 correspondem ao [levantamento detalhado de fontes](../docs/engenharia-dados/levantamento-fontes.md). O comportamento esperado está na [especificação funcional do MVP](../docs/engenharia-dados/especificacao-funcional-mvp.md).
 
