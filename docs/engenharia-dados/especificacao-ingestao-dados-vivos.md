@@ -4,6 +4,8 @@
 **Status:** EM ANÁLISE  
 **Versão:** 1.1 — alinhada à implementação local
 
+Esta é a especificação técnica normativa da camada de Engenharia de Dados. A visão resumida para o projeto está em [../sdd-arquitetura-engenharia-dados.md](../sdd-arquitetura-engenharia-dados.md).
+
 ## 1. Objetivo e escopo
 
 Esta especificação define a camada de Engenharia de Dados para fontes públicas voláteis, sem dependência de RAG, embeddings ou lógica de resposta. O pipeline preserva a resposta original, permite reprocessamento, controla mudanças de schema e mantém o histórico de estoque.
