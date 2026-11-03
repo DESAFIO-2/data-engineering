@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "chunk_size_words": 220,
+  "chunk_overlap_words": 40,
+  "sources": [
+    {
+      "source_id": "F01",
+      "document_id": "rename-2024-2ed",
+      "title": "RENAME 2024 - 2ª edição",
+      "version": "2024-2ed",
+      "document_date": "2025",
+      "territory": "Brasil",
+      "content_type": "medicamentos",
+      "path": "data/raw/F01-rename/rename-2024-2ed.pdf",
+      "enabled": true
+    },
+    {
+      "source_id": "F03",
+      "document_id": "reme-df-2026-10-29",
+      "title": "REME-DF",
+      "version": "2026-10-29",
+      "document_date": "2026-10-29",
+      "territory": "Distrito Federal",
+      "content_type": "medicamentos",
+      "path": "data/raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "enabled": true
+    },
+    {
+      "source_id": "F04",
+      "document_id": "farmacia-popular-2026-08-31",
+      "title": "Elenco de Medicamentos e Insumos do Farmácia Popular",
+      "version": "2026-08-31",
+      "document_date": "2026-08-31",
+      "territory": "Brasil",
+      "content_type": "medicamentos",
+      "path": "data/raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "enabled": true
+    },
+    {
+      "source_id": "F12",
+      "document_id": "hub-unb-carta-servicos",
+      "title": "Carta de Serviços aos Usuários do HUB-UnB",
+      "version": "pendente-revisao",
+      "document_date": null,
+      "territory": "Distrito Federal",
+      "content_type": "acesso-e-exames",
+      "path": "data/raw/F12-hub-unb/hub-unb-carta-servicos.pdf",
+      "enabled": false
+    }
+  ]
+}

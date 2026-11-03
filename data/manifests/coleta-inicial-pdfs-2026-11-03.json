@@ -1,0 +1,81 @@
+{
+  "scope": "Initial public PDF collection; not approved for publication",
+  "sources": [
+    {
+      "source_id": "F01",
+      "source_url": "https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024",
+      "collected_at_utc": "2026-11-03T14:00:41.760369+00:00",
+      "review_status": "pending",
+      "status": "downloaded",
+      "path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc",
+      "bytes": 1460543,
+      "pages": 267,
+      "final_url": "https://bvsms.saude.gov.br/bvs/publicacoes/relacao_nacional_medicamentos_2024_2ed.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "validation": "PDF signature and pypdf page tree readable"
+    },
+    {
+      "source_id": "F03",
+      "source_url": "https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf",
+      "collected_at_utc": "2026-11-03T14:47:08.000000+00:00",
+      "review_status": "selected_for_rag_corpus",
+      "status": "downloaded",
+      "path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6",
+      "bytes": 3710422,
+      "pages": 98,
+      "final_url": "https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "validation": "PDF signature and page tree readable (edição atualizada 29/10/2026)",
+      "notes": "Versão da REME-DF escolhida pela equipe para o corpus do MVP; substitui a edição de 2024"
+    },
+    {
+      "source_id": "F04",
+      "source_url": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos-pfpb.pdf",
+      "collected_at_utc": "2026-11-03T14:00:33.191475+00:00",
+      "review_status": "pending",
+      "status": "downloaded",
+      "path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3",
+      "bytes": 73620,
+      "pages": 1,
+      "final_url": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos-pfpb.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "validation": "PDF signature and pypdf page tree readable"
+    },
+    {
+      "source_id": "F11",
+      "source_url": "https://dados.anvisa.gov.br/dados/Documentacao_e_Dicionario_de_Dados_Registros_Validos_Medicamento_V1.pdf",
+      "collected_at_utc": "2026-11-03T14:00:40.291457+00:00",
+      "review_status": "pending",
+      "status": "downloaded",
+      "path": "raw/F11-anvisa/anvisa-dicionario-medicamentos-v1.pdf",
+      "sha256": "4d2066878415aa61c42feaf6ac6a4e7a409f200cfd9e94b1485a4da65ffd6e29",
+      "bytes": 1258610,
+      "pages": 7,
+      "final_url": "https://dados.anvisa.gov.br/dados/Documentacao_e_Dicionario_de_Dados_Registros_Validos_Medicamento_V1.pdf",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "validation": "PDF signature and pypdf page tree readable"
+    },
+    {
+      "source_id": "F12",
+      "source_url": "https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-centro-oeste/hub-unb/acesso-a-informacao/acoes-e-programas/Cartadeserviosaosusurios_HUBUnB1.pdf",
+      "collected_at_utc": "2026-11-03T14:00:37.728340+00:00",
+      "review_status": "pending",
+      "status": "downloaded",
+      "path": "raw/F12-hub-unb/hub-unb-carta-servicos.pdf",
+      "sha256": "ca01570a7b2cafee450f4e218dd1dbeecee091a38ba93d1b3ca125d620fb3520",
+      "bytes": 20625813,
+      "pages": 86,
+      "final_url": "https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-centro-oeste/hub-unb/acesso-a-informacao/acoes-e-programas/Cartadeserviosaosusurios_HUBUnB1.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "validation": "PDF signature and pypdf page tree readable"
+    }
+  ]
+}
