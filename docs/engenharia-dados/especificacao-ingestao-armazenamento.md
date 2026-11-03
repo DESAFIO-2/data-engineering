@@ -1,5 +1,7 @@
 # SDD — Ingestão de fontes dinâmicas e armazenamento
 
+> Documento histórico de contexto. A especificação normativa atualizada está em [especificacao-ingestao-dados-vivos.md](especificacao-ingestao-dados-vivos.md).
+
 **Status:** Em Avaliação  
 **Escopo:** fundação de engenharia de dados do SUS Cidadão; sem RAG, embeddings ou lógica de resposta.
 
