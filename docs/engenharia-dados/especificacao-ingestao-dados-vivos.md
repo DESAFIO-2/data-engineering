@@ -65,7 +65,7 @@ Decisão provisória: manter o adaptador local baseado em arquivos e comparar Du
 
 ## 7. Pipeline documental executado
 
-`src/sus_cidadao_data/pipeline.py` processa os PDFs do manifesto. Na execução inicial foram processados 5 documentos e 459 páginas. Bronze contém envelopes JSON, Silver contém registros JSONL por página e Gold contém `document_catalog.json`. O pipeline produz texto e proveniência para recuperação posterior, mas ainda não gera embeddings ou chama LLM.
+`scripts/pipeline.py` processa os PDFs do manifesto. Na execução inicial foram processados 5 documentos e 459 páginas. Bronze contém envelopes JSON, Silver contém registros JSONL por página e Gold contém `document_catalog.json`. O pipeline produz texto e proveniência para recuperação posterior, mas ainda não gera embeddings ou chama LLM.
 
 ## 8. Critérios de aceite
 

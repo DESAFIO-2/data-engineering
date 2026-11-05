@@ -1,0 +1,28 @@
+{
+  "decision": "approved",
+  "reviewer": "Jhiovana",
+  "review_date": "2026-11-05",
+  "recorded_from": "Declaração explícita da revisora nesta conversa: aprovo os seis medicamentos e os seis vínculos de canal do lote 1; ressalvas: nenhuma.",
+  "reservations": [],
+  "approved_medicines": [
+    "glibenclamida|5 mg|comprimido",
+    "hidroclorotiazida|25 mg|comprimido",
+    "furosemida|40 mg|comprimido",
+    "sinvastatina|20 mg|comprimido",
+    "sinvastatina|40 mg|comprimido",
+    "besilato de anlodipino|5 mg|comprimido"
+  ],
+  "approved_channels": [
+    "glibenclamida|5 mg|comprimido|UBS (farmácia ambulatorial)",
+    "hidroclorotiazida|25 mg|comprimido|UBS (farmácia ambulatorial)",
+    "furosemida|40 mg|comprimido|UBS (farmácia ambulatorial)",
+    "sinvastatina|20 mg|comprimido|UBS (farmácia ambulatorial)",
+    "sinvastatina|40 mg|comprimido|UBS (farmácia ambulatorial)",
+    "besilato de anlodipino|5 mg|comprimido|UBS (farmácia ambulatorial)"
+  ],
+  "source_hashes": {
+    "F01": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc",
+    "F03": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6",
+    "F04": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3"
+  }
+}

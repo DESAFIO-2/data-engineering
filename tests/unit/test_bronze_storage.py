@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from sus_cidadao_data.storage.bronze import JsonBronzeStore
+from storage.bronze import JsonBronzeStore
 
 
 def test_bronze_writes_payload_and_collection_metadata(tmp_path: Path) -> None:

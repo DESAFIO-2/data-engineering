@@ -91,5 +91,5 @@ def run_document_pipeline(root: Path) -> dict[str, int]:
 
 if __name__ == "__main__":
     print(
-        json.dumps(run_document_pipeline(Path(__file__).resolve().parents[2]), ensure_ascii=False)
+        json.dumps(run_document_pipeline(Path(__file__).resolve().parents[1]), ensure_ascii=False)
     )

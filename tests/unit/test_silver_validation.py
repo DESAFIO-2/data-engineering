@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 import pytest
 from pydantic import ValidationError
 
-from sus_cidadao_data.storage.silver_models import (
+from storage.silver_models import (
     EstoqueSnapshotSchema,
     StockStatus,
     validate_with_drift,

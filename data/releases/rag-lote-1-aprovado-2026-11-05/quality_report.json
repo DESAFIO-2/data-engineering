@@ -1,0 +1,31 @@
+{
+  "evidence_by_source": {
+    "F01": 6,
+    "F03": 6,
+    "F04": 6
+  },
+  "excluded_sources": [
+    "F11: dicionário, não cadastro de medicamentos",
+    "F12: sem preparo específico aprovado",
+    "SISREG: fonte não coletada neste repositório"
+  ],
+  "f04_lines_not_in_release": 33,
+  "f04_lines_with_dose_or_strength": 39,
+  "f04_non_medicine_supplies_not_in_release": 2,
+  "human_domain_review": "approved",
+  "pending_scope": [
+    "Demais linhas do Farmácia Popular",
+    "Regras documentais F05-F09",
+    "Nomes comerciais",
+    "Preparo de exames",
+    "Estoque e unidades específicas"
+  ],
+  "rejected_records": 0,
+  "release_version": "rag-lote-1-aprovado-2026-11-05",
+  "review_date": "2026-11-05",
+  "review_method": "Conferencia tecnica de trechos extraidos dos PDFs oficiais; revisao de dominio humano ainda pendente",
+  "review_record": "data/curation/rag_lote_1_review.json",
+  "review_record_sha256": "5f80540785ff4ad7b3acb6ef07a3d9ae834fbe9d577525ae00206cbd8be40c35",
+  "reviewer": "Jhiovana",
+  "technical_verified_medicines": 6
+}

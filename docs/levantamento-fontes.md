@@ -14,6 +14,14 @@ Estados: inspecionada = conteúdo parcialmente lido; localizada = existência id
 
 ## Catálogo
 
+### Página central — Assistência Farmacêutica da SES-DF — referência de descoberta
+
+- URL: https://www.saude.df.gov.br/assistencia-farmaceutica
+- Órgão: Secretaria de Estado de Saúde do Distrito Federal, Diretoria de Assistência Farmacêutica (DIASF).
+- Estado: página oficial inspecionada; indicava atualização em 22/09/2026 na consulta de 05/11/2026.
+- Uso: ponto de entrada para REME-DF, farmácias e guia de medicamentos; identifica a DIASF e as gerências dos componentes básico e especializado para esclarecimentos sobre as fontes.
+- Limite: a página agregadora não comprova, por si só, presença de uma apresentação, documentos exigidos, elegibilidade ou saldo em estoque. Cada afirmação deve apontar também para a fonte específica e sua versão aplicável.
+
 ### F01 — RENAME 2024, 2ª edição — P0, inspecionada
 
 - Órgão: Ministério da Saúde. Abrangência nacional.
@@ -138,11 +146,34 @@ Estados: inspecionada = conteúdo parcialmente lido; localizada = existência id
 
 ### F14 — Painel de estoque e dados abertos do DF — P2, referência para investigação
 
-- https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-de-alto-custo/estoque-de-medicamentos/
-- https://info.saude.df.gov.br/transparencia-e-prestacao-de-contas/dados-abertos/
-- Identificados em pesquisa anterior desta conversa; não houve validação operacional do painel nesta rodada.
-- Uso inicial: possível encaminhamento ao canal oficial, depois de verificar o link no navegador.
-- Limites: periodicidade real, unidades abrangidas, exportação/API e significado de estoque não confirmados. Nenhuma integração ou disponibilidade física é afirmada.
+- Órgão: SES-DF / InfoSaúde. Painéis públicos do Power BI; a fonte declarada no painel das UBS é o SIS-Materiais (Sistema de Gestão de Materiais da SES-DF).
+- Estoque de medicamentos das UBS: https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-das-ubs/ (`PUB_ESTOQUE_UBS`). Exibe quantidade por produto, filtros de estabelecimento, região e código do produto, e horário da última extração. A expansão da linha mostra locais de estoque. O próprio painel alerta que movimentações ao longo do dia podem alterar o saldo.
+- Estoque das Farmácias Especializadas (Alto Custo): https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-de-alto-custo/estoque-de-medicamentos/ (`PUB_ESTOQUE_ALTO_CUSTO`); acesso alternativo: https://info.saude.df.gov.br/sala-de-situacao/painel-infosaude-medicamentos-das-farmacias-especializadas/
+- Estoque geral da SES-DF: https://info.saude.df.gov.br/sala-de-situacao/painel-infosaude-estoque-sesdf/ (`PUB_ESTOQUE_GERAL`).
+- Outros painéis de estoque identificados na Sala de Situação: https://info.saude.df.gov.br/painel-infosaude-estoque-de-medicamentos-e-insumos/ (dengue); https://info.saude.df.gov.br/estoque-iges/ (quimioterápicos); https://info.saude.df.gov.br/estoque-iges-geral/ (medicamentos e insumos); https://info.saude.df.gov.br/estoque-iges-psicotropicos/ . São recortes específicos, ainda sem validação de cobertura e aplicabilidade ao MVP.
+- Portal de dados abertos do InfoSaúde: https://info.saude.df.gov.br/transparencia-e-prestacao-de-contas/dados-abertos/
+- Catálogo de Bens e Insumos Padronizados: https://info.saude.df.gov.br/sala-de-situacao/painel-infosaude-catalogo-de-bens-e-insumos-padronizados/ (`PUB_CATALOGO_PRODUTOS`). Candidato a relacionar códigos e descrições de produtos aos painéis de estoque; vínculo ainda não validado.
+- Documentos e caminho de acesso ao medicamento: https://info.saude.df.gov.br/como-garantir-seu-medicamento/ (`PUB_DOC_MEDICAMENTOS`). Regras individuais ainda exigem conferência da fonte e aplicabilidade.
+- Orientações por canal: https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-ambulatoriais/ e https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-de-alto-custo/. Incluem informações de atendimento, documentos e, para Alto Custo, distribuição territorial entre farmácias.
+- Localização de unidades: https://info.saude.df.gov.br/busca-saude-ubs/ e https://info.saude.df.gov.br/estabelecimentos-de-saude-sesdf/. Localizar uma unidade não comprova que ela dispensa determinado produto.
+- Fontes adjacentes, fora do recorte inicial: https://info.saude.df.gov.br/sala-de-situacao/painel-infosaude-atencao-secundaria-exames/ (produção/serviços de exames; não equivale a preparo) e https://info.saude.df.gov.br/painel-infosaude-lista-de-disponibilidade-dos-produtos-do-ptned/ (fórmulas nutricionais do PTNED).
+- Uso inicial: consulta e encaminhamento aos painéis oficiais; investigar extração oficial, dicionários de dados, cobertura por unidade, horários de referência e condições de reutilização antes de automatizar a integração.
+- Limites: os painéis publicam retratos de estoque, não garantia de disponibilidade no momento da retirada. Nenhuma API pública ou exportação estável dos três painéis foi confirmada; o acesso direto ao SIS-Materiais é restrito. O dataset nacional BNAFAR não substitui os saldos por unidade destes painéis.
+
+## Frequência de verificação para coleta automatizada
+
+Os intervalos abaixo são **propostas de consulta pelo projeto**, não a frequência com que os órgãos publicam dados. As datas de atualização observadas no catálogo identificam versões ou páginas consultadas; não estabelecem periodicidade futura. Para as fontes documentais, adotar verificação semanal e também antes de uma apresentação, conforme RN07 da especificação funcional. Após mais de sete dias sem verificação, sinalizar revisão pendente. Registrar separadamente data de publicação, vigência, coleta e última verificação.
+
+| Fontes | Consulta proposta para o script | Sinal de mudança e condição para automatizar |
+|---|---|---|
+| F01, F03, F04 — relações e elenco em PDF | Semanal e antes de uma apresentação | Conferir edição/data declarada, URL final e hash do PDF. Confirmar se as páginas de descoberta F01/F02/F05 apontam para uma versão nova; não inferir mudança apenas pela data de atualização da página. |
+| F02, F05–F07, F09, F13 — páginas, regras e índice de protocolos | Semanal e antes de uma apresentação | Comparar data/versão quando explícita, URL final e hash do conteúdo obtido; para F09, verificar alterações ou republicações da norma e, para F13, a vigência de cada protocolo. A captura completa e a revisão de aplicabilidade ainda são pendentes. |
+| F08 — componente especializado | Tentar novamente na verificação semanal | O acesso anterior teve timeout. Confirmar URL, conteúdo e versão antes de ativar coleta recorrente; falha de acesso não significa que a fonte foi removida. |
+| F10, F11 — DCB e cadastro de medicamentos da Anvisa | Verificar semanalmente as páginas de descoberta; ainda sem coleta automática do arquivo | F10 exige acesso permitido à consolidação vigente e identificação da versão. F11 exige localizar o CSV real e confirmar esquema, atualização e situação dos registros. Depois disso, comparar versão/data declarada e hash do arquivo. |
+| F12 — carta de serviços do HUB-UnB | Semanal e antes de uma apresentação | Comparar URL final e hash do PDF, além de edição/data de revisão quando identificadas. Confirmar a versão e as instruções específicas do serviço antes de usar dados de preparo. |
+| F14 — painéis de estoque e dados abertos do DF | **Intervalo de extração ainda indefinido** | Primeiro confirmar meio oficial estável de extração, periodicidade real, cobertura, horário de referência e condições de reutilização. A página do painel e o horário da última extração podem indicar atualização, mas não comprovam uma frequência fixa nem autorizam inferir saldo atual. |
+
+Uma mudança detectada deve gerar novo original, hash e manifesto de coleta, preservando a versão anterior. Falha de acesso deve ser registrada sem substituir o último original válido. O conteúdo novo só entra no corpus aprovado após validação e revisão; a execução do script, por si só, não o publica.
 
 ## Fontes que não entram como orientação geral
 
@@ -183,3 +214,26 @@ Não usar para suprir automaticamente lacunas do DF. Notícias podem ajudar a lo
 ## Verificações pendentes para todas as fontes
 
 Disponibilidade de download real; condições de reutilização e redistribuição; atualização e aplicabilidade; conteúdo completo e notas; captura original e hash; campos efetivamente presentes; responsável pela revisão; autorização de publicação do registro derivado. Acesso público não elimina essas verificações.
+
+## Momentos sugeridos para busca e verificação automatizada
+
+Agenda **proposta para o script**, no fuso `America/Sao_Paulo`; os horários não representam uma rotina de publicação dos órgãos. Em cada execução, consultar primeiro a URL oficial registrada no catálogo e comparar os sinais descritos na seção de frequência. Usar busca web restrita ao domínio do órgão para localizar versões novas quando a página de descoberta mudar, o link deixar de funcionar ou o arquivo vigente não estiver identificado. Executar uma verificação adicional das fontes usadas antes de cada apresentação ou atualização do corpus aprovado.
+
+| Fonte | Momento sugerido | Busca/verificação nesse momento |
+|---|---|---|
+| F01 — RENAME | Segunda-feira, 08h00 | Verificar página de publicações e PDF; buscar nova edição no domínio `gov.br/saude` se o link ou a versão mudar. |
+| F02 — página REME-DF | Segunda-feira, 08h15 | Verificar página e link da relação distrital; buscar versão vigente no domínio `saude.df.gov.br` se necessário. |
+| F03 — PDF REME-DF | Segunda-feira, 08h30 | Comparar URL final, data/edição declarada e hash do PDF apontado por F02. |
+| F04 — elenco Farmácia Popular | Segunda-feira, 08h45 | Verificar o link em F05 e comparar data declarada e hash do PDF. |
+| F05 — regras da Farmácia Popular | Terça-feira, 08h00 | Verificar a página oficial e os links das regras; buscar alterações no domínio `gov.br/saude` se houver mudança. |
+| F06 — índice de farmácias da SES-DF | Terça-feira, 08h15 | Verificar o índice e os links das páginas filhas, sem atribuir a elas a data do índice. |
+| F07 — atenção secundária | Terça-feira, 08h30 | Verificar página, anexos e regras específicas dos serviços. |
+| F08 — componente especializado | Terça-feira, 08h45 | Tentar acessar novamente a URL oficial; enquanto houver falha, buscar a página no domínio `saude.df.gov.br` e registrar o erro. |
+| F09 — Portaria SES-DF nº 117/2026 | Quarta-feira, 08h00 | Verificar texto compilado, alterações e republicações no SINJ. |
+| F10 — DCB/Anvisa | Quarta-feira, 08h15 | Verificar página de entrada; buscar consolidação vigente em domínio oficial enquanto o arquivo não estiver acessível. |
+| F11 — registros de medicamentos/Anvisa | Quarta-feira, 08h30 | Verificar diretório e página oficial; buscar o CSV e seus metadados em domínio oficial enquanto o recurso não estiver identificado. |
+| F12 — carta de serviços do HUB-UnB | Quinta-feira, 08h00 | Verificar URL final, edição/data declarada e hash do PDF; buscar edição nova no domínio `gov.br/hubrasil` se necessário. |
+| F13 — protocolos de acesso da SES-DF | Quinta-feira, 08h15 | Verificar índice, links e datas de vigência; conferir separadamente os protocolos selecionados. |
+| F14 — painéis e dados abertos do DF | Quinta-feira, 08h30, **somente para descoberta** | Verificar páginas oficiais, metadados e horário da última extração. Definir horário de coleta de estoque apenas após confirmar extração oficial estável, cobertura e periodicidade real. |
+
+Esses horários distribuem as consultas semanais; podem ser ajustados por limite de acesso ou operação do script sem alterar a evidência de versão de cada fonte. Uma busca sem resultado ou uma falha de acesso não comprova que o dado permanece atualizado.

@@ -2,7 +2,7 @@ import json
 from hashlib import sha256
 from pathlib import Path
 
-from sus_cidadao_data.ingestion.base import BaseConnector
+from ingestion.base import BaseConnector
 
 
 class Connector(BaseConnector):

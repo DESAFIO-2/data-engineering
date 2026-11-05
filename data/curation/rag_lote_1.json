@@ -1,0 +1,11 @@
+{
+  "review_method": "Conferencia tecnica de trechos extraidos dos PDFs oficiais; revisao de dominio humano ainda pendente",
+  "items": [
+    {"name": "glibenclamida", "strength": "5 mg", "form": "comprimido", "f04": "glibenclamida 5mg", "f01_page": 29, "f01": "glibenclamida 5 mg comprimido Básico", "f03_page": 33, "f03": "glibenclamida comprimido 5 mg", "f03_code": "90491", "channel": "UBS (farmácia ambulatorial)"},
+    {"name": "hidroclorotiazida", "strength": "25 mg", "form": "comprimido", "f04": "hidroclorotiazida 25mg", "f01_page": 47, "f01": "25 mg comprimido Básico C03AA03", "f01_context": "hidroclorotiazida", "f03_page": 34, "f03": "hidroclorotiazida comprimido 25 mg", "f03_code": "19847", "channel": "UBS (farmácia ambulatorial)"},
+    {"name": "furosemida", "strength": "40 mg", "form": "comprimido", "f04": "furosemida 40 mg", "f01_page": 47, "f01": "40 mg comprimido Básico C03CA01", "f01_context": "furosemida", "f03_page": 32, "f03": "furosemida comprimido 40 mg", "f03_code": "90380", "channel": "UBS (farmácia ambulatorial)"},
+    {"name": "sinvastatina", "strength": "20 mg", "form": "comprimido", "f04": "sinvastatina 20mg", "f01_page": 49, "f01": "20 mg comprimido Básico C10AA01", "f01_context": "sinvastatina", "f03_page": 53, "f03": "sinvastatina comprimido 20 mg", "f03_code": "694", "channel": "UBS (farmácia ambulatorial)"},
+    {"name": "sinvastatina", "strength": "40 mg", "form": "comprimido", "f04": "sinvastatina 40mg", "f01_page": 49, "f01": "40 mg comprimido Básico C10AA01", "f01_context": "sinvastatina", "f03_page": 53, "f03": "sinvastatina comprimido 40 mg", "f03_code": "695", "channel": "UBS (farmácia ambulatorial)"},
+    {"name": "besilato de anlodipino", "strength": "5 mg", "form": "comprimido", "f04": "besilato de anlodipino 5 mg", "f01_page": 43, "f01": "besilato de anlodipino\n5 mg comprimido Básico", "f03_page": 16, "f03": "anlodipino (besilato) comprimido 5 mg", "f03_code": "18458", "channel": "UBS (farmácia ambulatorial)", "alias_f03": "anlodipino (besilato)"}
+  ]
+}

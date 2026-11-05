@@ -1,13 +1,15 @@
 [project]
 name = "sus-cidadao-engenharia-dados"
 version = "0.1.0"
-description = "Pipeline de ingestão e armazenamento do SUS Cidadão"
+description = "Ingestão de dados e RAG híbrido do SUS Cidadão"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pypdf>=6.0,<7",
     "pydantic>=2.0,<3",
     "requests>=2.31",
+    "langchain-chroma>=0.2,<2",
+    "langchain-google-genai>=4,<5",
 ]
 
 [dependency-groups]
@@ -17,8 +19,16 @@ dev = [
     "ruff>=0.17.3",
 ]
 
-[tool.uv]
-package = true
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ingestion*", "storage*", "rag*"]
 
 [tool.ruff]
 line-length = 100

@@ -1,0 +1,51 @@
+{
+  "coverage": "Seis apresentações verificadas nas edições F01, F03 e F04; não cobre estoque, documentos, elegibilidade ou exames.",
+  "files": {
+    "evidencias.jsonl": {
+      "records": 18,
+      "sha256": "a46879aefacb0089a29ab2be803959fe4a92d01eab57e136a93d2480b105ae34"
+    },
+    "medicamentos.jsonl": {
+      "records": 6,
+      "sha256": "5abe63b9768022ed0473a928e01df023cf818b629303fa5771cc372ce788a1d9"
+    },
+    "regras_acesso.jsonl": {
+      "records": 6,
+      "sha256": "b4785a75a83d1368cd058b85527a704a74659164ce50b1af3e98b316a56a2605"
+    }
+  },
+  "generated_at_utc": "2026-11-05T20:22:33.150410+00:00",
+  "quality_report": "quality_report.json",
+  "release_version": "rag-lote-1-aprovado-2026-11-05",
+  "review": {
+    "record_path": "data/curation/rag_lote_1_review.json",
+    "record_sha256": "5f80540785ff4ad7b3acb6ef07a3d9ae834fbe9d577525ae00206cbd8be40c35",
+    "review_date": "2026-11-05",
+    "reviewer": "Jhiovana",
+    "scope": "Seis medicamentos e seis vínculos de canal"
+  },
+  "sources": [
+    {
+      "raw_path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc",
+      "source_id": "F01",
+      "url": "https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024",
+      "version": "RENAME 2024, 2ª edição"
+    },
+    {
+      "raw_path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6",
+      "source_id": "F03",
+      "url": "https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf",
+      "version": "REME-DF 29/10/2026"
+    },
+    {
+      "raw_path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3",
+      "source_id": "F04",
+      "url": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos-pfpb.pdf",
+      "version": "Farmácia Popular 31/08/2026"
+    }
+  ],
+  "status": "approved"
+}

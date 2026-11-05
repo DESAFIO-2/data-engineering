@@ -38,7 +38,7 @@ class EstoqueSnapshotSchema(BaseModel):
     quantidade: int = Field(ge=0)
     status: StockStatus
 
-    def model_post_init(self, __context: Any) -> None:
+    def model_post_init(self, __context: Any, /) -> None:
         if self.data_referencia.tzinfo is None:
             object.__setattr__(self, "data_referencia", self.data_referencia.replace(tzinfo=UTC))
 
