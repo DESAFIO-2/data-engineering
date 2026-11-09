@@ -189,7 +189,7 @@ def _location_reply(question: str, snapshot: dict[str, Any]) -> str:
 
 def live_reply(question: str, release: Release, snapshot: dict[str, Any] | None) -> str | None:
     query = normalize(question)
-    stock_intent = any(
+    stock_intent = query.startswith("tem ") or any(
         term in query
         for term in (
             "estoque",
@@ -198,6 +198,10 @@ def live_reply(question: str, release: Release, snapshot: dict[str, Any] | None)
             "tem hoje",
             "onde encontro",
             "onde tem",
+            "qual farmacia tem",
+            "quais farmacias tem",
+            "qual farmacia possui",
+            "quais farmacias possuem",
         )
     )
     location_intent = any(

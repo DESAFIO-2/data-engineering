@@ -1,18 +1,20 @@
 # Levantamento inicial de fontes — SUS Cidadão
 
+**Objetivo:** registrar fontes candidatas, seu estado de inspeção, aplicabilidade conhecida e verificações ainda necessárias antes de uso ou publicação.
+
 Data da pesquisa: 03/11/2026. Branch: `feat/engenharia-dados-mvp`.
 Estado: descoberta e inspeção inicial. Nenhuma fonte abaixo foi homologada para respostas ao cidadão.
 
 Este catálogo registra páginas e arquivos consultados pela ferramenta de pesquisa web, que pode utilizar conteúdo indexado. Não equivale a snapshots locais: downloads, hashes, cabeçalhos HTTP, licenças específicas e validação de vigência ainda precisam ser registrados na coleta. Não existem nesta entrega registros normalizados de medicamentos, golden set factual ou integração com estoque.
 
-## Decisão inicial recomendada
+## 1. Decisão inicial recomendada
 
 Começar com o elenco do Farmácia Popular, cruzá-lo com a RENAME e a REME-DF e adicionar regras administrativas de acesso. Não extrair preparos de exame de instituições diferentes como se fossem intercambiáveis. A relação de 30–50 apresentações ainda será escolhida e revisada; a quantidade de linhas em um elenco não equivale automaticamente à quantidade de apresentações identificadas.
 
 Prioridades: P0 = próximo lote de coleta; P1 = complemento necessário; P2 = somente referência/encaminhamento ou investigação futura.
 Estados: inspecionada = conteúdo parcialmente lido; localizada = existência identificada, leitura ou acesso incompleto; restrita = não adequada ao corpus geral do MVP. Todos os estados mantêm revisão pendente.
 
-## Catálogo
+## 2. Catálogo
 
 ### Página central — Assistência Farmacêutica da SES-DF — referência de descoberta
 
@@ -160,7 +162,7 @@ Estados: inspecionada = conteúdo parcialmente lido; localizada = existência id
 - Uso inicial: consulta e encaminhamento aos painéis oficiais; investigar extração oficial, dicionários de dados, cobertura por unidade, horários de referência e condições de reutilização antes de automatizar a integração.
 - Limites: os painéis publicam retratos de estoque, não garantia de disponibilidade no momento da retirada. Nenhuma API pública ou exportação estável dos três painéis foi confirmada; o acesso direto ao SIS-Materiais é restrito. O dataset nacional BNAFAR não substitui os saldos por unidade destes painéis.
 
-## Frequência de verificação para coleta automatizada
+## 3. Frequência de verificação para coleta automatizada
 
 Os intervalos abaixo são **propostas de consulta pelo projeto**, não a frequência com que os órgãos publicam dados. As datas de atualização observadas no catálogo identificam versões ou páginas consultadas; não estabelecem periodicidade futura. Para as fontes documentais, adotar verificação semanal e também antes de uma apresentação, conforme RN07 da especificação funcional. Após mais de sete dias sem verificação, sinalizar revisão pendente. Registrar separadamente data de publicação, vigência, coleta e última verificação.
 
@@ -175,7 +177,7 @@ Os intervalos abaixo são **propostas de consulta pelo projeto**, não a frequê
 
 Uma mudança detectada deve gerar novo original, hash e manifesto de coleta, preservando a versão anterior. Falha de acesso deve ser registrada sem substituir o último original válido. O conteúdo novo só entra no corpus aprovado após validação e revisão; a execução do script, por si só, não o publica.
 
-## Fontes que não entram como orientação geral
+## 4. Fontes que não entram como orientação geral
 
 ### X01 — POMED/CBMDF
 
@@ -193,7 +195,7 @@ Documento de seis páginas, datado de 09/08/2024, voltado ao teste LF-LAM em con
 
 Não usar para suprir automaticamente lacunas do DF. Notícias podem ajudar a localizar a fonte primária; não substituem o documento aplicável. Documentos em consulta pública não são tratados como aprovados.
 
-## Primeiro lote recomendado e lacunas
+## 5. Primeiro lote recomendado e lacunas
 
 1. Coletar F01, F03 e F04 como originais separados, mantendo F03 em revisão de atualidade. Registrar hash, tamanho, URL final, instante de coleta e versão, sem confundir consulta web com download.
 2. Usar F04 para selecionar um lote pequeno de apresentações. Conferir forma, liberação e composição em fontes complementares; não publicar linhas incompletas como apresentações certas.
@@ -202,7 +204,7 @@ Não usar para suprir automaticamente lacunas do DF. Notícias podem ajudar a lo
 5. Para fechar exames, escolher um serviço SUS-DF e obter suas instruções oficiais por exame. A revisora pode ajudar a identificar documentos públicos do serviço, sem compartilhar receitas ou dados de pacientes.
 6. Validar F10/F11 antes de prometer busca por marcas. Não existem vínculos comerciais aprovados nesta entrega.
 
-## Casos candidatos de avaliação (ainda não constituem golden set revisado)
+## 6. Casos candidatos de avaliação (ainda não constituem golden set revisado)
 
 - Pergunta sobre documentos de exame no HUB: referência inicial F12, p. 43; revisão e versão pendentes.
 - Pergunta sobre duração de jejum usando apenas F12: abster-se do número e pedir orientação específica do exame/serviço.
@@ -211,11 +213,11 @@ Não usar para suprir automaticamente lacunas do DF. Notícias podem ajudar a lo
 - Pergunta geral de coleta de urina com X02 recuperada: rejeitar extrapolação entre testes.
 - Pergunta de cidadão do SUS com X01 recuperada: não aplicar automaticamente regras de público restrito.
 
-## Verificações pendentes para todas as fontes
+## 7. Verificações pendentes para todas as fontes
 
 Disponibilidade de download real; condições de reutilização e redistribuição; atualização e aplicabilidade; conteúdo completo e notas; captura original e hash; campos efetivamente presentes; responsável pela revisão; autorização de publicação do registro derivado. Acesso público não elimina essas verificações.
 
-## Momentos sugeridos para busca e verificação automatizada
+## 8. Momentos sugeridos para busca e verificação automatizada
 
 Agenda **proposta para o script**, no fuso `America/Sao_Paulo`; os horários não representam uma rotina de publicação dos órgãos. Em cada execução, consultar primeiro a URL oficial registrada no catálogo e comparar os sinais descritos na seção de frequência. Usar busca web restrita ao domínio do órgão para localizar versões novas quando a página de descoberta mudar, o link deixar de funcionar ou o arquivo vigente não estiver identificado. Executar uma verificação adicional das fontes usadas antes de cada apresentação ou atualização do corpus aprovado.
 

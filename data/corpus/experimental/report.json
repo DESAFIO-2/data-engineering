@@ -1,0 +1,17 @@
+{
+  "catalog_presentations": 1651,
+  "chunks": 2728,
+  "corpus_fingerprint": "3b320bf22363827d2899035a7101484394c6edf943cb72522fbfb3ff7a67a57c",
+  "human_verified": false,
+  "limitations": [
+    "Reconstituted historical snapshot; not human-reviewed or approved",
+    "Historical identity proven against the hash-verified archived review export"
+  ],
+  "occurrences": 2115,
+  "primary_chunks": 2620,
+  "restored_from": "data/curation/revisao-corpus-v1.json",
+  "review_status": "pending",
+  "schema_version": "restored-v1",
+  "status": "experimental",
+  "supplemental_chunks": 108
+}

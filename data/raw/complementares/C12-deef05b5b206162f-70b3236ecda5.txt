@@ -1,0 +1,63 @@
+Regulamentação e financiamento
+Após a incorporação de um medicamento ao SUS, a definição de seu financiamento é discutida entre a União, os Estados e os Municípios no âmbito da Comissão Intergestores Tripartite (CIT). Nesse espaço de pactuação, é definida a responsabilidade pelo custeio e o enquadramento do medicamento em um dos grupos de financiamento do CEAF, conforme demonstrado a seguir.
+A alocação dos recursos e as atribuições de cada ente federativo estão regulamentadas, principalmente, pelas Portarias de Consolidação GM/MS nº 02 e nº 06, ambas de 2017, que estabelecem as diretrizes para o financiamento, execução, controle e monitoramento do CEAF.
+Os grupos de financiamento apresentam características próprias, com responsabilidades específicas atribuídas a cada ente federativo e formas distintas de organização, conforme detalhado a seguir.
+Grupos do CEAF e responsabilidades dos entes federados
+Grupo 1A |
+Financiamento: União
+Aquisição: União
+Programação: União/Estado
+Distribuição: União/Estado
+Dispensação: Estado*
+|
+Grupo 1B |
+Financiamento: União
+Aquisição: Estado
+Programação: Estado
+Distribuição: Estado
+Dispensação: Estado*
+|
+Grupo 2 |
+Financiamento: Estado
+Aquisição: Estado
+Programação: Estado
+Distribuição: Estado
+Dispensação: Estado*
+|
+Grupo 3 |
+Financiamento: União/Estado/Município
+Aquisição: Estado
+Programação: Município
+Distribuição: Município
+Dispensação: Município
+|
+*Há estados que repassam, via pactuação Comissão Intergestores Bipartite (CIB), a atribuição de dispensação aos municípios
+A execução do CEAF é descentralizada e ocorre predominantemente por meio das Secretarias de Saúde dos Estados e Distrito Federal, que são responsáveis pelas diferentes etapas conforme demonstrado abaixo. Cabe aos estados assegurar o cumprimento dos critérios clínicos estabelecidos nos PCDT, bem como a adequada avaliação e autorização das solicitações realizadas pelos usuários ou seus representantes legais.
+Grupos e organização do CEAF
+Grupo 1: Medicamentos sob responsabilidade
+de financiamento pelo MS
+|
+Sub-grupo: Grupo 1A
+Aquisição: Centralizada pelo Ministério da Saúde
+Logística e Dispensação: Responsabilidade pelo
+armazenamento, distribuição e dispensação é das
+Secretarias de Saúde dos Estados e do Distrito Federal.
+Sub-grupo: Grupo 1B
+Aquisição: Aquisição sob responsabilidade das Secretarias
+Estaduais de Saúde e do Distrito Federal, mediante
+ressarcimento pelo Ministério da Saúde.
+Logística e Dispensação: Responsabilidade pelo armazenamento,
+distribuição e dispensação é das Secretarias de Saúde dos Estados
+e do Distrito Federal.
+|
+Grupo 2: Medicamentos financiados pelas
+Secretarias Estaduais de Saúde e do Distrito Federal
+|
+Aquisição: Responsabilidade das Secretarias Estaduais da Saúde
+e do Distrito Federal.
+Logística e Dispensação: Programação, armazenamento, distribuição
+e dispensação é responsabilidade das Secretarias de Saúde dos
+Estados e do Distrito Federal.
+|
+Para o controle, o monitoramento e a rastreabilidade das ações, os estados devem manter registros detalhados das solicitações, das dispensações e dos estoques, além de alimentar os sistemas nacionais de informação conforme as exigências do Ministério da Saúde. A execução adequada do CEAF exige articulação constante entre os níveis de gestão do SUS, assegurando que os medicamentos cheguem com qualidade e regularidade à população que deles necessita.
+Esse arranjo federativo busca garantir maior equidade, transparência e eficiência na oferta de medicamentos do componente especializado, contribuindo para a integralidade do cuidado no SUS.

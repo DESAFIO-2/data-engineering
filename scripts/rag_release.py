@@ -27,6 +27,7 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text(
         "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in rows),
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -50,7 +51,7 @@ def build_release(root: Path = ROOT) -> dict[str, Any]:
     )
     curation = json.loads((root / "data/curation/rag_lote_1.json").read_text(encoding="utf-8"))
     review_path = root / "data/curation/rag_lote_1_review.json"
-    review_bytes = review_path.read_bytes()
+    review_bytes = review_path.read_bytes().replace(b"\r\n", b"\n")
     review = json.loads(review_bytes)
     sources = {s["source_id"]: s for s in manifest["sources"] if s["source_id"] in SOURCE_VERSIONS}
     identities = {f"{item['name']}|{item['strength']}|{item['form']}" for item in curation["items"]}
@@ -188,7 +189,10 @@ def build_release(root: Path = ROOT) -> dict[str, Any]:
     for filename, rows in files.items():
         _write_jsonl(output / filename, rows)
     file_info = {
-        name: {"sha256": sha256((output / name).read_bytes()).hexdigest(), "records": len(rows)}
+        name: {
+            "sha256": sha256((output / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
+            "records": len(rows),
+        }
         for name, rows in files.items()
     }
     quality = {
@@ -228,7 +232,9 @@ def build_release(root: Path = ROOT) -> dict[str, Any]:
         ],
     }
     (output / "quality_report.json").write_text(
-        json.dumps(quality, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8"
+        json.dumps(quality, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     release = {
         "release_version": VERSION,
@@ -259,7 +265,9 @@ def build_release(root: Path = ROOT) -> dict[str, Any]:
         ),
     }
     (output / "release.json").write_text(
-        json.dumps(release, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8"
+        json.dumps(release, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     return release
 

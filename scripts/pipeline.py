@@ -12,7 +12,9 @@ from pypdf import PdfReader
 
 
 def run_document_pipeline(root: Path) -> dict[str, int]:
-    manifest = json.loads((root / "data/manifests/coleta-inicial-pdfs-2026-11-03.json").read_text())
+    manifest = json.loads(
+        (root / "data/manifests/coleta-inicial-pdfs-2026-11-03.json").read_text(encoding="utf-8")
+    )
     now = datetime.now(UTC).isoformat()
     bronze_count = silver_count = 0
     catalog: list[dict[str, Any]] = []

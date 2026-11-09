@@ -106,6 +106,20 @@ def test_stock_without_snapshot_does_not_claim_availability() -> None:
     assert "não sincronizados" in answer
 
 
+def test_natural_question_which_pharmacy_has_stock_routes_to_live_stock() -> None:
+    release = Release.load(RELEASE)
+    answer = live_reply("Qual farmácia tem glibenclamida 5 mg?", release, {})
+    assert answer is not None
+    assert "Formas disponíveis neste recorte: comprimido" in answer
+
+
+def test_stock_question_starting_with_tem_does_not_fall_through_to_rag() -> None:
+    release = Release.load(RELEASE)
+    answer = live_reply("tem fluconazol cápsula em Planaltina?", release, {})
+    assert answer is not None
+    assert "Não localizado no recorte consultado" in answer
+
+
 def test_sync_preserves_previous_snapshot_if_panel_is_incomplete(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -125,8 +139,11 @@ def test_sync_preserves_previous_snapshot_if_panel_is_incomplete(
     assert path.read_text(encoding="utf-8") == "previous snapshot"
 
 
-def test_chat_syncs_before_accepting_questions(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+@pytest.mark.parametrize("documental", [False, True])
+def test_chat_syncs_before_accepting_questions_even_in_documental_mode(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    documental: bool,
 ) -> None:
     events: list[str] = []
 
@@ -141,8 +158,43 @@ def test_chat_syncs_before_accepting_questions(
 
     monkeypatch.setattr(cli, "sync_snapshot", fake_sync)
     monkeypatch.setattr("builtins.input", fake_input)
-    monkeypatch.setattr("sys.argv", ["app.py", "chat"])
+    argv = ["app.py", "chat"] + (["--documental"] if documental else [])
+    monkeypatch.setattr("sys.argv", argv)
 
     assert cli.main() == 0
     assert events == ["sync", "input"]
     assert "InfoSaúde sincronizado" in capsys.readouterr().out
+
+
+def test_legacy_chat_falls_back_to_catalog_if_vector_index_cannot_open(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    release = Release.load(RELEASE)
+    monkeypatch.setattr(cli, "google_embeddings", lambda *args: object())
+
+    def fail_open(*args: Any) -> Any:
+        raise RuntimeError("offline")
+
+    monkeypatch.setattr(cli, "open_index", fail_open)
+    settings = type(
+        "SettingsStub",
+        (),
+        {
+            "rag_embedding_model": "test",
+            "google_api_key": "unused",
+            "rag_vector_dir": Path("unused"),
+            "rag_top_k": 5,
+        },
+    )()
+    reply = cli._ask(
+        "Sinvastatina 20 mg comprimido consta na REME?",
+        release,
+        settings,
+        {},
+        generate=False,
+        documental=True,
+    )
+    output = capsys.readouterr().out
+    assert "Busca vetorial indisponível" in output
+    assert "sinvastatina 20 mg (comprimido) consta" in reply
+    assert "F03" in output

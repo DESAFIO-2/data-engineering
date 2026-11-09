@@ -1,0 +1,52 @@
+4- Nome da Mãe do Paciente*
+3- Nome completo do Paciente*
+22- Correio eletrônico do paciente
+12- Paciente realizou tratamento prévio ou está em tratamento da doença?*
+11- Anamnese*
+9- CID-10*
+6-Altura do paciente*
+21- Número do documento do paciente 23- Assinatura do responsável pelo preenchimento*
+20- Telefone(s) para contato do paciente
+5-Peso do paciente*
+2- Nome do estabelecimento de saúde solicitante1-Número do CNES*
+7- Medicamento(s)*
+1
+2
+3
+4
+5
+8- Quantidade solicitada*
+10- Diagnóstico
+CAMPOS DE PREENCHIMENTO EXCLUSIVO PELO MÉDICO SOLICITANTE
+* CAMPOS DE PREENCHIMENTO OBRIGATÓRIO
+Sistema Único de Saúde
+Ministério da Saúde
+Secretaria de Estado da Saúde
+SOLICITAÇÃO DE MEDICAMENTO(S)
+COMPONENTE ESPECIALIZADO DA ASSISTÊNCIA FARMACÊUTICA
+LAUDO DE SOLICITAÇÃO, AVALIAÇÃO E AUTORIZAÇÃO DE MEDICAMENTO(S)
+19- Raça/Cor/Etnia informado pelo paciente ou responsável*
+Preta
+Parda
+Amarela
+Indígena. Informar Etnia: _____________________________________
+Branca
+CAMPOS ABAIXO PREENCHIDOS POR*:
+17- Assinatura e carimbo do médico*
+Paciente Mãe do paciente Responsável (descrito no item 13) Médico solicitante18 -
+kg
+cm
+e CPFOutro, informar nome:___________________________________________________
+NÃO SIM. Relatar:
+CNS CPF ou
+14- Nome do médico solicitante*
+A solicitação do medicamento deverá ser realizada pelo paciente. Entretanto, fica dispensada a obrigatoriedade da presença física do
+paciente considerado incapaz de acordo com os artigos 3º e 4º do Código Civil. O paciente é considerado incapaz?
+NÃO
+13- Atestado de capacidade*
+Nome do responsável
+SIM. Indicar o nome do responsável pelo paciente, o qual
+poderá realizar a solicitação do medicamento
+6
+1º mês 6º mês º mês5 4º mês 3º mês 2º mês
+16- Data da solicitação*15- Número do Cartão Nacional de Saúde (CNS) do médico solicitante*

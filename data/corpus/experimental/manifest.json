@@ -1,0 +1,33 @@
+{
+  "files": {
+    "catalog.jsonl": {
+      "bytes": 418367,
+      "records": 1651,
+      "sha256": "c7faaeef711185cab8e6ad8a1c6e9a1c0b6b582ae161d8b2dc39fd8d627b4b47"
+    },
+    "chunks.jsonl": {
+      "bytes": 2181849,
+      "records": 2620,
+      "sha256": "35d1964f114e5c5bcaf9da8821476ac13d01a4bd441c810a4b150d52123d85f4"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2558619,
+      "records": 2115,
+      "sha256": "0e560e2835973c6a724d06799283909ab7ed88441d14ad4b69a2b989f577d14c"
+    },
+    "report.json": {
+      "bytes": 583,
+      "sha256": "2997e4895fbc3259c31e25800693fa782fd295483d9510d04fac4c1742b32bdd"
+    }
+  },
+  "parser_version": "historical-v1-reconstruction",
+  "restoration": {
+    "corpus_fingerprint": "3b320bf22363827d2899035a7101484394c6edf943cb72522fbfb3ff7a67a57c",
+    "method": "chunk/occurrence and provenance equality against archived export; index ID/content verification",
+    "source_path": "data/curation/revisao-corpus-v1.json",
+    "source_sha256": "cadbb6802b848b27bb9386339611e6e6aed1c9c3b9b254b2a05a8eb092a47881"
+  },
+  "review_status": "pending",
+  "schema_version": "restored-v1",
+  "status": "experimental"
+}

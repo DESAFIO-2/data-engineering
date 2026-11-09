@@ -6,7 +6,10 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .artifacts/
+output/
+.test-tmp-*/
 .env
+.docs
 data/vectorstore/
 
 # Dados locais reconstruiveis por camada

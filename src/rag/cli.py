@@ -13,11 +13,12 @@ from ingestion.infosaude_live import sync_snapshot
 
 from .answer import synthesize
 from .config import ROOT, Settings, get_settings
+from .conversation import greeting_reply, is_clarification, is_clarification_input
 from .evaluate import evaluate_retrieval
 from .live import PRODUCTS, live_reply, load_snapshot
 from .providers import google_chat, google_embeddings
 from .release import Release
-from .retrieval import retrieve
+from .retrieval import FORM_EXAMPLES, retrieve, retrieve_lexical
 from .vector import build_index, open_index
 
 
@@ -61,23 +62,54 @@ def _ask(
     cache: dict[str, Any],
     *,
     generate: bool,
-) -> None:
-    live = live_reply(
-        question, release, load_snapshot(ROOT / "data/gold/infosaude_live_snapshot.json")
+    documental: bool = False,
+    show_context: bool = False,
+    history: list[tuple[str, str]] | None = None,
+) -> str:
+    live = (
+        None
+        if documental
+        else live_reply(
+            question, release, load_snapshot(ROOT / "data/gold/infosaude_live_snapshot.json")
+        )
     )
     if live is not None:
         print(live)
-        return
-    if "store" not in cache:
-        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
-        cache["store"] = open_index(
-            release, _path(settings.rag_vector_dir), settings.rag_embedding_model, embeddings
+        return live
+    vector_error: Exception | None = None
+    try:
+        if "store" not in cache:
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            cache["store"] = open_index(
+                release, _path(settings.rag_vector_dir), settings.rag_embedding_model, embeddings
+            )
+        result = retrieve(question, release, cache["store"], settings.rag_top_k)
+    except Exception as exc:
+        vector_error = exc
+        result = retrieve_lexical(question, release, settings.rag_top_k)
+    if vector_error is None and result["status"] != "matched":
+        lexical = retrieve_lexical(question, release, settings.rag_top_k)
+        if lexical["status"] == "matched":
+            result = lexical
+            vector_error = RuntimeError("busca vetorial sem evidências")
+    if vector_error is not None:
+        print(
+            f"AVISO: Busca vetorial indisponível ({type(vector_error).__name__}); "
+            "resultado conferido pela busca lexical."
         )
-    result = retrieve(question, release, cache["store"], settings.rag_top_k)
-    if generate and "llm" not in cache:
+        if show_context:
+            for rank, evidence in enumerate(result["evidence"], 1):
+                print(f"[{rank}] {evidence['evidence_id']}: {evidence['text']}")
+        _show(result)
+        return result["message"]
+    if generate and result["status"] == "matched" and "llm" not in cache:
         cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
-    response = synthesize(question, result, cache["llm"]) if generate else None
+    response = synthesize(question, result, cache.get("llm"), history) if generate else None
+    if show_context:
+        for rank, evidence in enumerate(result["evidence"], 1):
+            print(f"[{rank}] {evidence['evidence_id']}: {evidence['text']}")
     _show(result, response)
+    return response or result["message"]
 
 
 def main() -> int:
@@ -85,9 +117,46 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("index", "search", "ask", "chat", "eval", "sync-live"))
     parser.add_argument("question", nargs="?")
+    corpus_mode = parser.add_mutually_exclusive_group()
+    corpus_mode.add_argument(
+        "--experimental", action="store_true", help="Usar corpus candidato isolado"
+    )
+    corpus_mode.add_argument(
+        "--curated", type=Path, help="Release ampliado com revisão humana validada"
+    )
+    parser.add_argument("--corpus", type=Path, default=ROOT / "data/corpus/experimental")
+    parser.add_argument("--supplement", type=Path, help="Chunks complementares opcionais")
+    parser.add_argument("--release", type=Path, help="Diretório de release aprovado")
+    parser.add_argument(
+        "--documental",
+        action="store_true",
+        help="Desativar consulta InfoSaúde nas respostas; chats ainda sincronizam ao iniciar",
+    )
+    parser.add_argument("--show-context", action="store_true", help="Exibir trechos e ranking")
+    parser.add_argument(
+        "--strategy",
+        choices=("hybrid", "lexical", "vector", "exact"),
+        default="hybrid",
+        help="Estratégia para ask/search/eval; no chat o modo híbrido é automático",
+    )
+    parser.add_argument("--dataset", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--split", choices=("dev", "test"), default="dev")
+    parser.add_argument("--allow-draft", action="store_true")
+    parser.add_argument("--repeat", type=int, default=1)
+    parser.add_argument("--frozen-dataset-sha256")
+    parser.add_argument(
+        "--stage", choices=("retrieval", "generation", "end-to-end"), default="end-to-end"
+    )
     args = parser.parse_args()
     try:
-        release = Release.load(_path(settings.rag_release_dir))
+        if args.experimental or args.curated:
+            from .experimental_cli import run
+
+            return run(args, settings)
+        if args.dataset or args.output:
+            parser.error("A avaliação ampliada exige --experimental; eval simples mantém o lote 1")
+        release = Release.load(_path(args.release or settings.rag_release_dir))
         if args.command == "sync-live":
             _sync_live()
             return 0
@@ -116,7 +185,15 @@ def main() -> int:
         if args.command in ("search", "ask"):
             if not args.question:
                 parser.error("Informe a pergunta entre aspas.")
-            _ask(args.question, release, settings, {}, generate=args.command == "ask")
+            _ask(
+                args.question,
+                release,
+                settings,
+                {},
+                generate=args.command == "ask",
+                documental=args.documental,
+                show_context=args.show_context,
+            )
             return 0
         print("Sincronizando estoque e localização do InfoSaúde...")
         try:
@@ -125,13 +202,30 @@ def main() -> int:
             snapshot = load_snapshot(ROOT / "data/gold/infosaude_live_snapshot.json")
             if snapshot is None:
                 print(
-                    f"Aviso: sincronização indisponível ({exc}). "
-                    "Sem dados locais de estoque/localização."
+                    f"Aviso: sincronização indisponível ({type(exc).__name__}); "
+                    "sem snapshot local."
                 )
             else:
-                print(f"Aviso: sincronização indisponível ({exc}). Usando o último snapshot salvo.")
-        print("SUS Cidadão — lote de 6 apresentações. Digite 'sair' para encerrar.")
+                print(
+                    f"Aviso: sincronização indisponível ({type(exc).__name__}); "
+                    "usando o snapshot local anterior."
+                )
+        print(
+            "SUS Cidadão — lote de 6 apresentações. Digite 'sair' para encerrar.\n"
+            "A recuperação documental combina correspondência lexical e busca vetorial; "
+            "se a vetorial falhar, o chat usa lexical e avisa.\n"
+            "Para estoque, informe medicamento + concentração + forma farmacêutica e, "
+            "se desejar, a região. Ex.: ‘Tem sinvastatina 40 mg comprimido em Planaltina?’\n"
+            f"Formas que pode informar: {', '.join(FORM_EXAMPLES)}. "
+            "Se a forma não existir no recorte, serão mostradas as opções disponíveis. "
+            "O estoque ao vivo está disponível apenas para apresentações mapeadas.\n"
+            "Para consultar informações documentais, pergunte pelo medicamento e dado "
+            "desejado, por exemplo: ‘O que consta na RENAME sobre metformina 500 mg comprimido?’ "
+            "O chat mantém apenas o contexto desta conversa, em memória."
+        )
         cache: dict[str, Any] = {}
+        history: list[tuple[str, str]] = []
+        pending: str | None = None
         while True:
             try:
                 question = input("\nVocê: ").strip()
@@ -142,10 +236,37 @@ def main() -> int:
                 print("Até logo.")
                 return 0
             if question:
+                greeting = greeting_reply(question)
+                if greeting:
+                    print(f"\nAgente: {greeting}")
+                    history.append((question, greeting))
+                    continue
+                if pending and is_clarification_input(question):
+                    question = f"{pending} {question}"
                 print("\nAgente: ", end="")
-                _ask(question, release, settings, cache, generate=True)
+                reply = _ask(
+                    question,
+                    release,
+                    settings,
+                    cache,
+                    generate=True,
+                    documental=args.documental,
+                    show_context=args.show_context,
+                    history=history,
+                )
+                pending = question if is_clarification(reply) else None
+                history.append((question, reply))
     except (FileNotFoundError, ValueError, ImportError, requests.RequestException) as exc:
         print(f"Erro: {exc}", file=sys.stderr)
+        return 1
+    except RuntimeError as exc:
+        print(f"Erro: {exc}", file=sys.stderr)
+        return 1
+    except Exception as exc:
+        print(
+            f"Dependência indisponível ({type(exc).__name__}); resposta não gerada.",
+            file=sys.stderr,
+        )
         return 1
     return 0
 

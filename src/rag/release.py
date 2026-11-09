@@ -13,6 +13,17 @@ def _rows(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
+def _text_hashes(path: Path) -> set[str]:
+    raw = path.read_bytes()
+    lf = raw.replace(b"\r\n", b"\n")
+    crlf = lf.replace(b"\n", b"\r\n")
+    return {
+        sha256(raw).hexdigest(),
+        sha256(lf).hexdigest(),
+        sha256(crlf).hexdigest(),
+    }
+
+
 @dataclass(frozen=True)
 class Release:
     folder: Path
@@ -36,7 +47,7 @@ class Release:
             not review.get("reviewer")
             or not review.get("review_date")
             or not review_path.is_file()
-            or sha256(review_path.read_bytes()).hexdigest() != review.get("record_sha256")
+            or review.get("record_sha256") not in _text_hashes(review_path)
         ):
             raise ValueError("Registro de aprovação ausente ou divergente")
         files = manifest.get("files", {})
@@ -46,7 +57,7 @@ class Release:
         contents: dict[str, list[dict[str, Any]]] = {}
         for name in names:
             path = folder / name
-            if sha256(path.read_bytes()).hexdigest() != files[name]["sha256"]:
+            if files[name]["sha256"] not in _text_hashes(path):
                 raise ValueError(f"Hash divergente: {name}")
             contents[name] = _rows(path)
             if len(contents[name]) != files[name]["records"]:

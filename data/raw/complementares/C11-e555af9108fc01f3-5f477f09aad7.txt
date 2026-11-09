@@ -1,0 +1,21 @@
+Inclusão de medicamentos no elenco do CEAF
+Da incorporação à disponibilização
+O processo para que um medicamento do Componente Especializado da Assistência Farmacêutica (CEAF) chegue ao usuário exige uma série de etapas, conforme sequência demonstrada abaixo e detalhada logo a seguir:
+Incorporação do medicamento no SUS
+A incorporação de medicamentos no âmbito do Componente Especializado da Assistência Farmacêutica ocorre mediante decisão do Ministério da Saúde, assessorado pela Comissão Nacional de Incorporação de Tecnologias no SUS (Conitec), bem como a constituição ou alteração de Protocolos Clínicos e Diretrizes Terapêuticas.
+As recomendações da Conitec se baseiam na análise das melhores evidências científicas disponíveis na literatura sobre eficácia, acurácia, efetividade e segurança de medicamentos, bem como a avaliação econômica comparativa dos benefícios e dos custos em relação aos medicamentos já incorporados.
+O medicamento deve estar registrado na Agência Nacional de Vigilância Sanitária – Anvisa e ter o preço regulado pela Câmara de Regulação do Mercado de Medicamentos – CMED.
+Para mais informações acesse: CONITEC e o Painel das Tecnologias Demandadas.
+Pactuação na Comissão Intergestores Tripartite (CIT)
+Após a incorporação do medicamento no SUS, a próxima etapa consiste na pactuação na Comissão Intergestores Tripartite (CIT) sobre a responsabilidade pelo financiamento do medicamento, assim como nos casos de ampliação de cobertura para medicamentos já incorporados e incorporações de novas concentrações e/ou apresentações farmacêuticas.
+Na CIT pactua-se se a responsabilidade pelo financiamento será federal, estadual ou municipal, respeitando-se a manutenção do equilíbrio financeiro entre as esferas de gestão do SUS e a garantia da linha de cuidado da doença.
+Publicação do Protocolo Clínico e Diretrizes Terapêuticas (PCDT)
+O CEAF é responsável pela garantia do tratamento medicamentoso, em nível ambulatorial, cujas linhas de cuidado estão definidas em PCDT.
+Nesse sentido, a terceira etapa do processo de inclusão de medicamentos consiste na publicação do PCDT ou atualização do PCDT com inclusão do novo medicamento pelo Ministério da Saúde, uma vez que é este documento que norteia os critérios necessários para o acesso do medicamento pelo usuário.
+Para mais informações acesse: PCDT vigentes e PCDT em elaboração.
+Inclusão de procedimento no SIGTAP
+O Sistema de Gerenciamento de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS (SIGTAP) é uma ferramenta de gerenciamento que permite acessar a tabela de procedimentos do SUS e acompanhar as alterações realizadas em cada recurso, detalhando as características, compatibilidade e relação dos procedimentos.
+A Tabela do SUS é organizada em Grupos, Subgrupos e Forma de Organização. O Grupo agrega os procedimentos por determinada área de atuação, conforme a finalidade. O Subgrupo agrega os procedimentos por tipo de área de atuação. A Forma de Organização agrega os procedimentos por diferentes critérios: área anatômica, especialidades, sistemas do corpo humano, tipos de aparelhos, tipos de cirurgias, tipos de exames, por tipo de órteses, próteses e materiais especiais.
+Os medicamentos pactuados nos grupos 1 e 2 do CEAF compõem o Grupo 06, Subgrupo 04, da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais (OPM) do SUS.
+Para mais informações acesse: SIGTAP.
+Após as etapas acima descritas terem sido realizadas, o Ministério da Saúde ou as Secretarias de Saúde dos Estados e do Distrito Federal, a depender do grupo de pactuação do medicamento, estão aptas a adquirir o produto farmacêutico para disponibilização aos usuários no âmbito do SUS.

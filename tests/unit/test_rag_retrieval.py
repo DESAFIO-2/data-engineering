@@ -3,7 +3,7 @@ from types import SimpleNamespace
 from typing import Any
 
 from rag.release import Release
-from rag.retrieval import match_medicine, retrieve
+from rag.retrieval import match_medicine, retrieve, retrieve_lexical
 
 RELEASE = Path(__file__).resolve().parents[2] / "data/releases/rag-lote-1-aprovado-2026-11-05"
 
@@ -40,6 +40,9 @@ def test_exact_match_requires_concentration_and_form() -> None:
     assert match.status == "matched"
     assert match.medicine is not None
     assert match.medicine["strength"] == "20 mg"
+    wrong_form = match_medicine("sinvastatina 20 mg cápsula", release)
+    assert wrong_form.status == "not_in_scope"
+    assert "comprimido" in wrong_form.message
 
 
 def test_retrieval_filters_same_medicine_and_cites_three_sources() -> None:
@@ -50,6 +53,15 @@ def test_retrieval_filters_same_medicine_and_cites_three_sources() -> None:
     assert {e["source"]["source_id"] for e in result["evidence"]} == {"F01", "F03", "F04"}
     assert store.filter_seen == {"medicine_id": result["medicine"]["medicine_id"]}
     assert all(e["medicine_id"] == result["medicine"]["medicine_id"] for e in result["evidence"])
+
+
+def test_lexical_fallback_returns_exact_catalog_evidence_without_vector_store() -> None:
+    release = Release.load(RELEASE)
+    result = retrieve_lexical("Sinvastatina 20 mg comprimido consta na REME?", release)
+    assert result["status"] == "matched"
+    assert result["retrieval_strategy"] == "lexical_exact_fallback"
+    assert result["medicine"]["strength"] == "20 mg"
+    assert result["evidence"]
 
 
 def test_unsupported_claims_do_not_call_vector_search() -> None:

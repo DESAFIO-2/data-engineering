@@ -1,0 +1,38 @@
+Telecuidado Farmacêutico
+O cuidado farmacêutico é um modelo de prática profissional concretizado por meio de ações e serviços desenvolvidos pelo profissional farmacêutico, em articulação com as equipes de saúde, voltados ao usuário, à família e à comunidade. Seu objetivo é promover o uso seguro e racional de medicamentos, assegurando melhores resultados em saúde.
+A publicação da Portaria que institui as Diretrizes Nacionais do Cuidado Farmacêutico no âmbito do Sistema Único de Saúde (SUS), aumenta o acesso aos medicamentos, a qualificação do cuidado, a segurança e a efetividade dos tratamentos, em consonância com o princípio da integralidade do SUS.
+As diretrizes estimulam a oferta do cuidado farmacêutico tanto presencial quanto remotamente, garantindo flexibilidade para atender às diferentes necessidades e realidades dos usuários, além de responder à complexidade e à abrangência territorial do SUS.
+A consolidação sustentável desse cuidado, integrado a uma rede centrada na pessoa, é fundamental para prevenir e minimizar problemas relacionados à farmacoterapia, como baixa adesão, dificuldades de acesso, questões de segurança e limitações na efetividade, além de possibilitar o monitoramento contínuo dos resultados em saúde alcançados pelos usuários de medicamentos no SUS.
+Nesse contexto, o Serviço de Telecuidado Farmacêutico é desenvolvido pelo Ministério da Saúde, em parceria com o Telessaúde da Universidade Federal de Goiás (UFG), com o objetivo de implantar o Centro Colaborador de Telecuidado Farmacêutico no Sistema Único de Saúde, para realizar o processo de titulação do selexipague, monitorando a segurança e efetividade do tratamento aos usuários deste medicamento, incorporado ao SUS em 2023 para o tratamento da Hipertensão Arterial Pulmonar (HAP).
+A dose eficaz do selexipague é diferente para cada paciente, portanto as primeiras semanas do tratamento têm o objetivo de alcançar a dose indicada e necessária para cada pessoa com HAP, de modo que esta tenha qualidade de vida através do controle da sua condição clínica de saúde de cada um. Esse processo é chamado de titulação. Quando uma dose adequada (eficaz e segura) for atingida, esta será a dose a ser seguida regularmente. É a chamada dose de manutenção do tratamento da pessoa com HAP.
+Como parte do acordo de incorporação, a empresa fabricante assumiu o compromisso de fornecer as doses de titulação, sem custo para os estados e para a União, com a devida inclusão dos procedimentos correspondentes no SIGTAP, conforme recomendação da CONITEC. Trata-se de uma medida estratégica que fortalece a assistência farmacêutica e contribui para a sustentabilidade do SUS, ao mitigar o impacto orçamentário associado ao tratamento inicial na fase de titulação.
+O serviço de Telecuidado Farmacêutico passou a realizar acompanhamento dos pacientes em uso de selexipague de forma remota e semanal, conduzido por farmacêuticos e pneumologistas, monitorando a progressão de doses, identificando precocemente eventos adversos relacionados ao uso do medicamento e promovendo intervenções seguras e oportunas. Esse modelo é viabilizado por uma plataforma digital que integra registros clínicos e permite comunicação contínua entre profissionais e pacientes, garantindo um cuidado coordenado, acessível e de qualidade.
+Conheça as Diretrizes Nacionais do Cuidado Farmacêutico
+Importância do telecuidado farmacêutico
+O Telecuidado Farmacêutico vai além de uma inovação tecnológica: ele é um marco na organização da Assistência Farmacêutica no SUS, com benefícios que se estendem a pacientes, profissionais e ao próprio sistema de saúde. Entre seus principais impactos, destacam-se:
+Aproximação do cuidado – Reduz distâncias físicas e amplia o acesso, permitindo que usuários recebam acompanhamento qualificado, independentemente de barreiras geográficas.
+Fortalecimento da integralidade da atenção – Integra o cuidado farmacêutico a outras áreas da saúde, garantindo acompanhamento contínuo e centrado na pessoa.
+Acompanhamento ativo e personalizado – Monitora de forma sistemática a evolução do tratamento, possibilitando ajustes precoces e intervenções oportunas.
+Otimização da efetividade terapêutica – Melhora os resultados clínicos ao garantir o uso racional dos medicamentos.
+Redução de complicações – Permite a detecção precoce de eventos adversos e a prevenção de desfechos negativos relacionados ao uso de medicamentos.
+Melhoria da qualidade de vida – Oferece suporte, acolhimento e segurança ao paciente durante todo o tratamento.
+Sustentabilidade do sistema de saúde – Contribui para o uso mais racional de recursos, reduzindo desperdícios e o impacto orçamentário no SUS.
+Fluxo do serviço
+O fluxo do serviço do Telecuidado Farmacêutico no acompanhamento do medicamento Selexipague pode ser conferido abaixo:
+1. Início | Solicitação do Selexipague conforme fluxo estabelecido pela Secretaria de Saúde do Estado (SES) ou Distrito Federal de residência do(a) paciente. |
+2. Dispensação | Após deferimento e disponibilidade do medicamento, a SES realiza cadastro do(a) paciente no sistema e faz o agendamento da 1ª consulta com o(a) farmacêutico(a) do Telessáude. |
+3. Atendimento
+On-line | Acompanhamento semanal para a avaliação do aumento da dose. Após cada teleconsulta, o(a) médico(a)
+do(a) paciente receberá uma mensagem com a dose de titulação do(a) paciente e a identificação do(a)
+profissional que realizou o atendimento. |
+4. Avaliação | A qualquer momento durante a titualação, o(a) farmacêutico(a) poderá encaminhar o(a) paciente para teleconsulta médica para avaliação. |
+5. Avaliação com Pneumologista | Teleconsulta médica com pneumologista para definição da dose de manutenção. A partir desta avaliação, o médico emite a receita médica e o Laudo de Solicitação, Avaliação e Autorização (LME). |
+6. Manutenção | Após a dose definida, o Telessaúde passará a acompanhar mensalmente o(a) paciente por seis meses através de teleconsultas com o(a) farmacêutico(a) que o acompanhou na titulação. |
+O projeto piloto foi realizado com a participação das secretarias estaduais de Saúde do Espírito Santo e Paraná. Outras secretarias de saúde já aderiram ao projeto e estão em fase de implantação. Os resultados obtidos, até o momento, foram altamente positivos, com relatos de usuários destacando maior segurança, acolhimento e adesão ao tratamento.
+As Secretarias de Saúde dos estados e do Distrito Federal podem aderir ao Serviço do Telecuidado Farmacêutico do SUS. Para tal, basta seguir o fluxo abaixo:
+1. Adesão
+A Secretaria de Saúde dos Estados e do Distrito Federal encaminha Ofício à Coordenação Geral do Componente Especializado da Assistência Farmacêutica sinalizando a adesão ao serviço;
+2. Capacitação
+A CGCEAF realiza o agendamento das capacitações junto a SES: 1ª Dispensação e Sistema de Informação;
+3. Implantação
+Solicitação das doses de titulação e início do Serviço de Telecuidado Farmacêutico.

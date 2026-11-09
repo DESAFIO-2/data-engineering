@@ -1,0 +1,56 @@
+Componente Especializado da Assistência Farmacêutica
+O Componente Especializado da Assistência Farmacêutica - CEAF é uma estratégia de acesso a medicamentos no âmbito do Sistema Único de Saúde (SUS), caracterizado pela busca da garantia da integralidade do tratamento medicamentoso dos usuários, em nível ambulatorial, cujas linhas de cuidado estão definidas em Protocolos Clínicos e Diretrizes Terapêuticas (PCDT) publicados pelo Ministério da Saúde.
+O CEAF atende atualmente 105 condições clínicas e conta com um elenco de 181 fármacos em 338 apresentações farmacêuticas, pactuado na Comissão Intergestores Tripartite (CIT) entre União, estados e municípios. Esses medicamentos são destinados ao tratamento de diversas condições clínicas contempladas nos PCDT do Ministério da Saúde e estão divididos nos seguintes grupos:
+Grupo 1A
+94 medicamentos em 162 apresentações farmacêuticas
+Grupo 1B
+36 medicamentos em 73 apresentações farmacêuticas
+Grupo 2
+54 medicamentos em 103 apresentações farmacêuticas
+Todos os medicamentos do CEAF, seus respectivos grupos e os PCDTs aos quais estão vinculados podem ser consultados na Relação Nacional de Medicamentos Essenciais - Rename.
+Condições clínicas contempladas
+Elenco de medicamentos disponibilizados
+Principais características
+Acesso a medicamentos indicados para o tratamento de condições clínicas de maior complexidade, tais como: doenças raras, doenças autoimunes, esclerose múltipla, artrite reumatoide, doenças inflamatórias intestinais, psoríase em formas graves, pacientes transplantados, entre outras.
+Tratamentos padronizados com base em evidências científicas e PCDT nacionais;
+Maior segurança terapêutica, com acompanhamento clínico contínuo;
+Abrangência nacional, garantindo equidade no acesso em todo o território brasileiro;
+Padronização de condutas clínicas e critérios de acesso aos medicamentos no SUS;
+Controle rigoroso e rastreabilidade da dispensação e do uso dos medicamentos.
+Você sabia?
+O termo "medicamento de alto custo" deixou de ser utilizado por não refletir os critérios técnicos e clínicos que definem a inclusão no CEAF. Essa classificação não se baseia no valor financeiro, mas na complexidade da doença, na necessidade de acompanhamento especializado e na existência de PCDT. Além de ser subjetiva, a expressão pode gerar interpretações equivocadas. Por isso, deve-se adotar a nomenclatura oficial, em conformidade com a estrutura dos três componentes da Assistência Farmacêutica no SUS.
+O termo "medicamentos excepcionais" deixou de ser utilizado com a publicação da Portaria 2.981, de 26 de novembro de 2009, a qual alterou a denominação para CEAF, passando, assim, a designar não mais o conceito de medicamentos atípicos, mas sim a dispensação de medicamentos com características incomuns.
+Como acessar os medicamentos
+1ª etapa - Prescrição Médica |
+Após o atendimento médico e a prescrição de um medicamento pertencente ao elenco do CEAF, o(a) usuário(a) deverá sair da consulta com os seguintes documentos devidamente preenchidos pelo profissional prescritor:
+Laudo para Solicitação, Avaliação e Autorização de Medicamentos do Componente Especializado da Assistência Farmacêutica (LME), adequadamente preenchido;
+Prescrição médica devidamente preenchida;
+Documentos exigidos nos PCDT publicados na versão final pelo Ministério da Saúde, conforme a doença e o medicamento solicitado;
+Provido dos documentos acima o(a) usuário(a), ou seu responsável legal, deverá providenciar os seguintes documentos pessoais:
+Cópia do Cartão Nacional de Saúde (CNS);
+Cópia do Documento de Identidade;
+Cópia do comprovante de residência.
+|
+2ª etapa - Solicitação | A solicitação corresponde ao requerimento de medicamentos realizado pelo(a) usuário(a) ou por seu responsável legal, de forma presencial, na farmácia de referência indicada pelas Secretarias de Saúde dos Estados e do Distrito Federal, ou por meio eletrônico, através de plataforma digital definida por essas Secretarias. |
+3ª etapa - Avaliação e autorização |
+A etapa de avaliação corresponde à análise técnica dos documentos da solicitação inicial ou de renovação da continuidade do tratamento, realizada por profissional de saúde, com base na conformidade aos critérios estabelecidos no PCDT. Com base nessa análise, a Secretaria de Saúde emitirá um parecer de caráter administrativo, autorizando ou não a dispensação do medicamento solicitado.
+|
+4ª etapa - Dispensação |
+A dispensação consiste no ato de fornecer o(s) medicamento(s) previamente autorizado(s), conforme os critérios estabelecidos. Com o deferimento (autorização), o(a) usuário(a) ou seu responsável legal poderá retirar o medicamento na farmácia de referência do CEAF.
+Atenção: Se a solicitação do medicamento foi feita de forma eletrônica e os documentos enviados forem cópias digitais simples ou nato-digitais sem assinatura eletrônica qualificada, será necessário apresentar o LME e a prescrição médica em papel na primeira dispensação.
+As secretarias da saúde do Estado e do Distrito Federal são as responsáveis por receber e avaliar as solicitações e por dispensar os medicamentos do CEAF. Consulte a Secretaria da Saúde do seu estado para mais informações.
+|
+Saiba mais sobre como obter medicamentos
+Destaques
+Inclusão de medicamentos
+Linha do tempo
+Regulamentação e financiamento
+Sistema Hórus Especializado
+Telecuidado Farmacêutico
+Mais Informações
+Glossário
+Acesse o Glossário do Componente Especializado da Assistência Farmacêutica (CEAF)
+Legislação
+Acesse a legislação do Componente Especializado da Assistência Farmacêutica (CBAF) do Ministério da Saúde
+Perguntas Frequentes (FAQ)
+Acesse as Perguntas Frequentes (FAQ) sobre o Componente Especializado da Assistência Farmacêutica

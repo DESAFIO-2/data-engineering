@@ -1,0 +1,5 @@
+# These artifacts are verified by byte-level SHA-256 hashes.
+# Preserve their bytes across clones, including Windows core.autocrlf setups.
+data/** -text
+evals/datasets/** -text
+evals/results/** -text

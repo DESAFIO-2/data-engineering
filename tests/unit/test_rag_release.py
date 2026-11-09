@@ -13,9 +13,16 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
 
-def test_release_has_traceable_exact_records() -> None:
-    release = build_release(ROOT)
-    folder = ROOT / "data/releases" / VERSION
+@pytest.fixture
+def release_root(tmp_path: Path) -> Path:
+    for name in ("manifests", "curation", "raw", "silver"):
+        shutil.copytree(ROOT / "data" / name, tmp_path / "data" / name)
+    return tmp_path
+
+
+def test_release_has_traceable_exact_records(release_root: Path) -> None:
+    release = build_release(release_root)
+    folder = release_root / "data/releases" / VERSION
     medicines = read_jsonl(folder / "medicamentos.jsonl")
     evidence = read_jsonl(folder / "evidencias.jsonl")
     rules = read_jsonl(folder / "regras_acesso.jsonl")
@@ -43,11 +50,11 @@ def test_release_has_traceable_exact_records() -> None:
         assert sha256((folder / name).read_bytes()).hexdigest() == info["sha256"]
 
 
-def test_release_is_stable_and_distinguishes_presentations() -> None:
-    first = build_release(ROOT)["files"]
-    second = build_release(ROOT)["files"]
+def test_release_is_stable_and_distinguishes_presentations(release_root: Path) -> None:
+    first = build_release(release_root)["files"]
+    second = build_release(release_root)["files"]
     assert first == second
-    medicines = read_jsonl(ROOT / "data/releases" / VERSION / "medicamentos.jsonl")
+    medicines = read_jsonl(release_root / "data/releases" / VERSION / "medicamentos.jsonl")
     matches = [m for m in medicines if m["active_ingredient"] == "sinvastatina"]
     assert {m["strength"] for m in matches} == {"20 mg", "40 mg"}
     assert not [

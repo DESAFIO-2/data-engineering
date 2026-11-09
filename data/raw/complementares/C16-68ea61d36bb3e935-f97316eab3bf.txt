@@ -1,0 +1,114 @@
+ADVERTÊNCIA
+Este texto n�o substitui o publicado no Diário Oficial da
+União
+Ministério da Saúde
+Gabinete do Ministro
+PORTARIA Nº 13, DE 6 DE JANEIRO DE 2020
+Altera o Título IV do Anexo XXVIII da Portaria de Consolidação nº 2/GM/MS, de 28 de setembro de 2017, que dispõe sobre as regras de financiamento e execução do Componente Especializado da Assistência Farmacêutica no âmbito do Sistema Único de Saúde (SUS).
+O MINISTRO DE ESTADO DA SAÚDE, SUBSTITUTO, no uso das atribuições que lhe conferem os incisos I e II do parágrafo único do art. 87 da Constituição, resolve:
+Art. 1º O Título IV do Anexo XXVIII da Portaria de Consolidação nº 2/GM/MS, de 28 de setembro de 2017, que trata "DAS REGRAS DE FINANCIAMENTO E EXECUÇÃO DO COMPONENTE ESPECIALIZADO DA ASSISTÊNCIA FARMACÊUTICA NO ÂMBITO DO SISTEMA ÚNICO DE SAÚDE (SUS)", passa a vigorar com as seguintes alterações:
+"Art. 85. A interrupção do fornecimento do medicamento por abandono do tratamento será realizada quando o paciente, responsável ou representante não retirá-lo por 6 (seis) meses consecutivos e não tiver ocorrido o fornecimento antecipado previsto no art. 83.
+Parágrafo Único. Para as condições clínicas nas quais a posologia do medicamento descrita nos Protocolos Clínicos e Diretrizes Terapêuticas publicados pelo Ministério da Saúde seja superior a 6 (seis) meses, deve-se considerar como abandono de tratamento o período de intervalo descrito na posologia acrescido de 3 (três) meses." (NR)
+"Art. 87...........................................................................................................
+I - LME adequadamente preenchido .........................................................." (NR)
+"Art. 88. ...........................................................................................................
+§ 1º O LME deverá seguir o modelo:
+I - proposto pelo Ministério da Saúde, constante no Anexo 2 do Anexo XXVIII desta Portaria; ou
+II - padronizado pelas Secretarias de Saúde dos Estados e do Distrito Federal, que observará os parâmetros do § 2º.
+§ 2º O modelo de LME padronizado pelas Secretarias de Saúde dos Estados e do Distrito Federal deverá:
+I - contemplar, minimamente, todas as informações constantes no LME proposto pelo Ministério da Saúde;
+II- ser estruturado para o preenchimento com informações sobre a solicitação, avaliação e autorização do procedimento;
+III - conter a logomarca do SUS e
+IV - conter as seguintes informações preenchidas exclusivamente pelo médico solicitante:
+a) Número do CNES; Versão da Consultoria Jurídica junto ao Ministério da Saúde;
+b) Nome do estabelecimento de saúde solicitante;
+c) Nome completo do paciente;
+d) Peso do paciente;
+e) Nome da mãe do paciente;
+f) Altura do paciente;
+g) Medicamentos;
+h) Quantidade solicitada;
+i) CID-10;
+j) Diagnóstico;
+k) Anamnese;
+l) Paciente realizou tratamento prévio ou está em tratamento da doença?;
+m) Atestado de incapacidade;
+n) Nome do médico solicitante;
+o) Número do Cartão Nacional de Saúde (CNS) do médico solicitante;
+p) Data da solicitação; e
+q) Assinatura e carimbo do médico." (NR)
+"Art. 89. As instruções para o adequado preenchimento do LME que seguir o modelo proposto pelo Ministério da Saúde estão descritas no Anexo 1 do Anexo XXVIII desta Portaria.
+...................................................................................................................." (NR)
+"Art. 90. ......................................................................................................
+§ 1º Cada LME poderá corresponder a até 2 (duas) APAC de 3 (três) competências ou até 6 (seis) APAC de 1 (uma) competência.
+§ 2º Nos casos em que cada LME corresponder até 6 (seis) APAC de 1 (uma) competência, essas devem ser subsequentes, ter numeração e vigência distintas, dentro do limite de até seis competências consecutivas.
+§ 3º Em caso de solicitação de mais de 6 (seis) medicamentos para a mesma doença, o mesmo médico preencherá mais de um LME, sendo que para cada conjunto de LME para o mesmo CID-10 poderá ser emitido até dois números de APAC de 3 (três) competências ou até seis números de APAC de 1 (uma) competência.
+§ 4º Nos casos em que o medicamento não tiver indicação para utilização contínua, será emitida APAC para 1 (uma) competência, que corresponderá apenas ao mês de atendimento." (NR)
+"Art. 91......................................................................................................
+...................................................................................................................
+§ 1º............................................................................................................
+...................................................................................................................
+I - LME adequadamente preenchido; e
+...................................................................................................................
+§ 2º Quando necessário, para adequação do tratamento, apresentar-se-ão também os documentos definidos nos Protocolos Clínicos e Diretrizes Terapêuticas publicados na versão final pelo Ministério da Saúde, conforme a doença e o medicamento solicitado.
+§ 3º Poderá ser emitida nova APAC nos casos de adequação do tratamento." (NR)
+"Art. 93. O LME terá 90 (noventa) dias de validade para solicitação do medicamento, a partir da data de seu preenchimento pelo médico solicitante." (NR)
+Art. 2º O Anexo XXVIII da Portaria de Consolidação nº 2/GM/MS, de 28 de setembro de 2017, passa a vigorar acrescido dos Anexos 1 e 2, na forma, respectivamente, dos Anexos I e II desta Portaria.
+Art. 3º As Secretarias de Saúde dos Estados e do Distrito Federal terão o prazo máximo de 120 (cento e vinte) dias para adequar seus procedimentos às alterações promovidas por esta Portaria.
+Art. 4º Esta Portaria entra em vigor na data de sua publicação.
+JOÃO GABBARDO DOS REIS
+ANEXO I
+(Anexo 1 do Anexo XXVIII da Portaria de Consolidação nº 2/GM/MS, de 28 de setembro de 2017)
+LAUDO PARA SOLICITAÇÃO, AVALIAÇÃO E AUTORIZAÇÃO DE MEDICAMENTOS DO COMPONENTE ESPECIALIZADO DA ASSISTÊNCIA FARMACÊUTICA
+INSTRUÇÕES DE PREENCHIMENTO
+SOLICITAÇÃO DO MEDICAMENTO
+Os campos de 1 a 17 são de preenchimento exclusivo do médico solicitante.
+Campo 1 - Número do Cadastro Nacional de Estabelecimentos de Saúde (CNES): preencher com o código identificador do estabelecimento de saúde ao qual o médico solicitante está vinculado e que originou a solicitação de medicamento(s).
+Campo 2 - Nome do estabelecimento de saúde solicitante: preencher com o nome fantasia do estabelecimento de saúde ao qual o médico solicitante está vinculado e que originou a solicitação de medicamento(s).
+Campo 3 - Nome completo do Paciente: preencher com o nome completo do paciente sem abreviaturas.
+Campo 4 - Nome da mãe do paciente: preencher com o nome completo da mãe do paciente.
+Campo 5 - Peso: preencher com o peso atual do paciente, em quilogramas.
+Campo 6 - Altura: preencher com a altura atual do paciente, em centímetros.
+Campo 7 - Medicamento: preencher com o(s) nome(s) do(s) medicamentos(s) solicitado(s), de acordo com o descrito na Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do Sistema Único de Saúde.
+Campo 8 - Quantidade solicitada: preencher com a quantidade do(s) medicamento(s) solicitado(s) para cada mês de tratamento.
+Campo 9 - CID-10: preencher com a Classificação Estatística Internacional de Doenças e Problemas Relacionados à Saúde (CID- 10) que corresponde à doença/lesão/agravo que motivou a solicitação do(s) medicamento(s).
+Campo 10 - Diagnóstico: diagnóstico da doença que motivou a solicitação do(s) medicamento(s), descrito com base na denominação da CID-10.
+Campo 11 - Anamnese: histórico do paciente que vai desde os sintomas e sinais iniciais até o momento da observação clínica.
+Campo 12 - Paciente realizou tratamento prévio ou está em tratamento da doença?: Assinalar se o paciente realiza ou já realizou tratamento para a doença descrita no campo nove. Caso esteve ou está em tratamento, deverá relatar o(s) esquema(s) terapêutico(s) utilizado(s).
+Campo 13 - Atestado de capacidade: a solicitação do medicamento deverá ser realizada pelo paciente. Entretanto, fica dispensada a obrigatoriedade da presença daquele considerado incapaz de acordo com os artigos 3º e 4º do Código Civil: os menores de dezoito anos; aqueles que, por enfermidade ou deficiência mental, não tiverem o necessário discernimento para a prática desses atos ou que não puderem exprimir sua vontade, mesmo que transitória; ébrios habituais, viciados em tóxicos, ou os que, por deficiência mental, tenham o discernimento reduzido; os excepcionais, sem desenvolvimento mental completo; os pródigos. De acordo com a avaliação clínica pelo médico, descrever se o paciente preenche os critérios, ou não, de incapacidade. Caso apresente, descrever o nome completo do responsável pelo paciente.
+Campo 14 - Nome do médico solicitante: preencher com o nome do profissional que solicita o procedimento, que deve estar cadastrado no CNES do estabelecimento solicitante.
+Campo 15 - Número do Cartão Nacional de Saúde (CNS) do médico solicitante: Preencher com o número do CNS do médico solicitante.
+Campo 16 - Data da solicitação: preencher com a data da solicitação, registrando o dia mês e ano no formato dd/mm/aaaa.
+Campo 17 - Assinatura e carimbo do médico: assinatura e carimbo com número de registro no Conselho de Classe do médico solicitante.
+Campo 18 - Assinalar o responsável pelo preenchimento dos campos 19, 20, 21, 22 e 23. No caso do responsável pelo preenchimento ser outra pessoa além do paciente, mãe do paciente, responsável descrito no item 13 ou o médico solicitante deverá ser informado o nome completo da pessoa sem abreviaturas e seu número de cadastro de pessoa física (CPF).
+Campo 19 - Preencher a raça/cor do paciente expressada pelo próprio usuário ou seu responsável, conforme descrição da Portaria SAS/MS nº 719, de 28 de dezembro de 2007. Caso seja assinalada a Raça/Cor Indígena, deverá ser preenchida também sua etnia, conforme a Tabela de Etnias Indígenas Brasileiras descrita na Portaria SAS/MS nº 508, de 28 de setembro de 2010.
+Campo 20 - Telefone(s) de contato do Paciente: preencher com número(s) de telefone do paciente para possíveis contatos.
+Campo 21 - Número do documento do Paciente: assinalar com um "x" no campo correspondente ao CPF ou CNS e preencher com o número do documento assinalado.
+Campo 22 - Correio eletrônico do Paciente: preencher com o correio eletrônico do paciente para possíveis contatos.
+Campo 23 - Assinatura do responsável pelo preenchimento: assinatura da pessoa responsável pelo preenchimento campos 18, 19, 20, 21, 22 e 23.
+AVALIAÇÃO TÉCNICA
+Campo 1 - Nome do paciente: preencher com o nome completo do paciente sem abreviaturas.
+Campo 2 - Cartão Nacional de Saúde (CNS): preencher com o número do CNS do paciente.
+Campo 3 - Código(s)/ Medicamento(s): preencher com os medicamentos solicitados e seus respectivos códigos da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do Sistema Único de Saúde, de preferência, na mesma ordem da solicitação.
+Campo 4 - CID-10: preencher com a CID-10 descrita pelo médico solicitante.
+Campo 5 - Deferimento: o deferimento deve ocorrer quando a solicitação de algum medicamento preenche os critérios descritos no Protocolo Clínico e Diretrizes Terapêuticas da referida doença, publicado pelo Ministério da Saúde, na versão final, e os demais parâmetros definidos do Componente Especializado da Assistência Farmacêutica. Assinalar o(s) números(s) correspondentes ao(s) medicamento(s) deferido(s).
+Campo 6 - Observação: descrever, se necessário, observações que o avaliador julgue pertinentes.
+Campo 7 - Devolução: a devolução caracteriza-se pela ausência de informação ou de documentos/exames ou preenchimento incorreto da solicitação do medicamento que impedem a plenitude da análise. Deve-se assinalar qual o motivo da devolução e o(s) número(s) correspondente(s) ao(s) medicamento(s) devolvido(s), considerando as seguintes definições: Preenchimento incompleto: assinalar quando há falta de preenchimento de algum campo considerado obrigatório no campo de solicitação de medicamento(s); Preenchimento incorreto: assinalar quando em algum campo da solicitação de medicamento(s) foi descrita informação incorreta da descrita nesta Instrução; Ausência de documentação: assinalar no caso de ausência de alguma documentação exigida pelo Protocolo Clínico e Diretrizes Terapêuticas da doença em questão ou pelo Componente Especializado da Assistência Farmacêutica; Ausência de exame: assinalar no caso de ausência de algum exame exigido pelo Protocolo Clínico e Diretrizes Terapêuticas da doença em questão; Outros: assinalar quando o motivo de devolução não se enquadrar nos demais parâmetros descritos acima .
+Campo 8 - Especificação: descrever, se necessário, informações complementares que auxiliem no esclarecimento do motivo da devolução.
+Campo 9 - Indeferimento: o indeferimento caracteriza-se pela negativa da solicitação do(s) medicamento(s), seja por não preencher os critérios estabelecidos pelo Protocolo Clínico e Diretrizes Terapêuticas da referida doença, publicado pelo Ministério da Saúde, na versão final, e/ou os demais parâmetros definidos no Componente Especializado da Assistência Farmacêutica. Deve-se assinalar qual o motivo da devolução e o(s) número(s) correspondente(s) ao(s) medicamento(s) devolvido(s), quando necessário, considerando as seguintes definições: Não preenche critérios do Protocolo Clínico e Diretrizes Terapêuticas: assinalar quando a solicitação de medicamento(s) não preenche os critérios estabelecidos no Protocolo Clínico e Diretrizes Terapêuticas, devido a condição clínica/laboratorial do paciente ou por não possuir indicação do(s) referido(s) medicamento(s), no momento da solicitação; Medicamento não padronizado: assinalar quando há solicitação de medicamento(s) não padronizado no Componente Especializado da Assistência Farmacêutica; CID-10 não padronizado: assinalar no caso que o CID-10 Primário, descrito pelo médico solicitante, não está padronizado no Componente Especializado da Assistência Farmacêutica; Outros: assinalar quando o motivo de indeferimento não se enquadrar nos demais parâmetros descritos acima.
+Campo 10 - Especificação: descrever, se necessário, informações complementares que auxiliem a esclarecer o motivo do indeferimento.
+Campo 11 - Nome do avaliador: preencher com o nome completo do avaliador.
+Campo 12 - Número do Cartão Nacional de Saúde (CNS) do avaliador: preencher com o número do CNS do avaliador.
+Campo 13 - Data da avaliação: preencher com a data da avaliação no formato dd/mm/aaaa.
+Campo 14 - Assinatura e Carimbo do avaliador: assinatura e carimbo do avaliador.
+AUTORIZAÇÃO
+Campo 1 - Autorização: assinalar se a solicitação de um ou mais medicamentos, previamente deferidos pelo avaliador, poderá ser autorizada. Assinalar o(s) números(s) correspondentes ao(s) medicamento(s) autorizado(s).
+Campo 2 - Especificação: descrever, se necessário, informações complementares que auxiliem a esclarecer o motivo da não autorização ou demais parâmetros que justificam alguma alteração.
+Campo 3 - Número da Autorização de Procedimento de Alto Custo (APAC): Descrever o número de APAC (Autorizações de Procedimento de Alta Complexidade/Custo no Sistema de Informações Ambulatoriais do SUS - SIA/SUS) gerado.
+Campo 4 - Vigência: Descrever o período de vigência da APAC.
+Campo 5 - Nome do autorizador: preencher com o nome do autorizador.
+Campo 6 - Número do Cartão Nacional de Saúde (CNS) do autorizador: Preencher com o CNS do autorizador.
+Campo 7 - Data da autorização: preencher com a data da autorização, registrando o dia, mês e ano no formato dd/mm/aaaa.
+Campo 8 - Assinatura e carimbo do autorizador: assinatura e carimbo do autorizador.
+ANEXO II
+(Anexo 2 do Anexo XXVIII da Portaria de Consolidação nº 2/GM/MS, de 28 de setembro de 2017)

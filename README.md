@@ -1,78 +1,123 @@
-# SUS Cidadão — Engenharia de Dados
+# SUS Cidadão — Engenharia de Dados e RAG documental
 
-Repositório da frente de Engenharia de Dados do projeto acadêmico SUS Cidadão. Ele reúne fontes oficiais, metadados, contratos de ingestão e armazenamento em camadas para produzir dados auditáveis.
+Projeto acadêmico de ingestão auditável e consulta documental no terminal,
+com Chroma, recuperação lexical/vetorial e síntese Gemini. Fontes e respostas
+representam versões congeladas; presença em lista não garante estoque,
+elegibilidade individual ou orientação clínica.
 
-## Escopo atual
+## Estado da semana 2
 
-- catalogar e versionar fontes públicas do SUS;
-- extrair texto dos PDFs por página;
-- preservar payloads e documentos na Bronze com hash e proveniência;
-- extrair texto por página e normalizar registros na Silver;
-- publicar catálogo derivado na Gold;
-- preparar dados auditáveis para consumidores futuros, sem acoplar a um LLM.
+O release aprovado de seis apresentações permanece separado. A expansão exige
+`--experimental` e mantém revisão humana pendente. O manifesto complementar
+inspecionado registra 17 documentos baixados com hashes distintos; somados às
+três listas principais, são 20 fontes coletadas, **não 20 fontes curadas**.
+Hash distinto não substitui revisão de pertinência e independência documental.
 
-## Estrutura
+O corpus schema 2 registra 2.115 ocorrências candidatas, 2.620 chunks limitados
+a 2.000 caracteres Unicode (sobreposição máxima 240), 1.651 apresentações
+literais completas candidatas e texto de 366 páginas preservado. Esses totais
+não representam medicamentos terapeuticamente equivalentes nem curadoria
+concluída. Avaliação final, indexação completa, gravação e envio ao Teams
+dependem das respectivas evidências; não são declarados concluídos aqui.
 
-```text
-data/raw/                       documentos oficiais originais
-data/manifests/                 hashes e metadados das coletas
-docs/                           especificação, fontes e planejamento
-src/ingestion/                 conectores e contratos de coleta
-src/storage/                   Bronze, Silver e Repository Pattern
-src/rag/                       recuperação, Chroma, síntese e CLI
-scripts/pipeline.py                pipeline documental raw -> Bronze -> Silver -> Gold
-scripts/rag_release.py             publicação do release aprovado
-tests/                          testes automatizados
-data/{bronze,silver,gold}       dados locais reconstruíveis, ignorados pelo Git
+## Preparação e primeira consulta
+
+Na raiz do repositório, com Python 3.12 e uv:
+
+```powershell
+uv sync --frozen --python 3.12
+uv run python app.py --help
+uv run python -m scripts.pipeline
+uv run python -m scripts.build_corpus
+uv run python app.py search "Sinvastatina 20 mg comprimido consta na REME?" --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl --strategy lexical --documental --show-context
 ```
 
-## Preparação
+A consulta lexical não exige chave ou índice. Esses comandos pressupõem os
+snapshots presentes; a reconstrução regrava o
+corpus experimental. Preservar artefatos de uma rodada antes de reconstruir.
 
-Requer Python 3.12 e [uv](https://docs.astral.sh/uv/). As dependências estão em `pyproject.toml`, com versões resolvidas em `uv.lock`:
+Para embeddings e geração, configurar `APP_GOOGLE_API_KEY` localmente, sem
+expor a chave no histórico, nas capturas ou no pacote. Os modelos vêm de
+`APP_RAG_CHAT_MODEL` e `APP_RAG_EMBEDDING_MODEL`; ambiente prevalece sobre
+`.env`. Registrar os modelos efetivos da rodada sem divulgar credenciais.
 
-```bash
-uv sync
+```powershell
+uv run python app.py index --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl
+uv run python app.py ask "Sinvastatina 20 mg comprimido consta na REME?" --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl --strategy hybrid --documental --show-context
+uv run python app.py chat --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl --strategy hybrid --documental --show-context
 ```
 
-## Arquitetura de ingestão
+Usar o mesmo corpus, suplemento e modelo ao indexar e consultar. Estratégias:
+`hybrid`, `lexical`, `vector`, `exact`; top-k padrão 5. As referências
+são verificáveis, mas sua validade não prova fidelidade factual da resposta.
 
-A fundação atual coleta fontes dinâmicas e preserva os payloads na camada Bronze, normaliza entidades de estoque e farmácias na Silver e produz visões analíticas na Gold. Os contratos estão em `src/ingestion` e `src/storage`. O piloto é o painel InfoSaúde DF de Farmácias de Alto Custo.
+## Avaliação e pacote local
 
-Para processar os PDFs já coletados:
+O golden set planejado contém 120 casos sintéticos, 80 dev/40 test. Rascunhos
+só podem ser avaliados em dev com `--allow-draft`; teste exige revisão e hash
+canônico previamente congelado. Nunca indexar o golden set nem persistir
+perguntas pessoais. O [guia de execução](docs/guia-entrega-semana2.md) contém
+comandos completos de geração, etapas `retrieval/generation/end-to-end`,
+três repetições de performance, critérios e tratamento de falhas.
 
-```bash
-uv run python scripts/pipeline.py
+```powershell
+uv run python -m scripts.package_delivery --dry-run
+uv run python -m scripts.package_delivery --name semana2-documental-v1.zip
 ```
 
-O job é idempotente por SHA-256. A especificação normativa está em `docs/engenharia-dados/especificacao-ingestao-dados-vivos.md`.
+O ZIP fica em `output/semana2`, com inventário e hashes internos. Só inclui
+árvores/extensões permitidas; exclui `.env`, caches, logs e histórico. Índice
+só entra com `--include-index`. Conferir o conteúdo antes de compartilhar.
+O script não envia arquivos ao Teams.
 
-## RAG híbrido local
+## Estrutura e documentação
 
-O protótipo em `src/rag/` consome somente o release aprovado em `data/releases/rag-lote-1-aprovado-2026-11-05/`. Ele confere aprovação e hashes, identifica exatamente princípio ativo, concentração e forma, e usa Chroma persistente para recuperar evidências da mesma apresentação. As respostas mostram fonte, versão, página e URL. O corpus documental cobre 6 apresentações e 18 evidências; não valida estoque, documentos, elegibilidade, exames ou orientação clínica.
+| Caminho | Papel |
+|---|---|
+| `data/raw`, `data/manifests` | Snapshots oficiais e proveniência |
+| `data/bronze`, `data/silver`, `data/gold` | Camadas derivadas reconstruíveis |
+| `data/corpus/experimental` | Corpus candidato, chunks e relatórios |
+| `data/releases` | Releases com escopo de aprovação próprio |
+| `data/vectorstore` | Índices Chroma reconstruíveis |
+| `src/ingestion`, `src/storage` | Conectores e contratos de armazenamento |
+| `src/rag` | Recuperação, geração, CLI e avaliação |
+| `scripts` | Coleta, construção e empacotamento |
+| `evals` | Datasets e resultados sintéticos |
+| `tests` | Verificações automatizadas |
 
-Para perguntas de **estoque UBS e localização**, o agente consulta um snapshot separado do InfoSaúde-DF. `uv run python app.py chat` sincroniza os painéis públicos ao iniciar e grava `data/gold/infosaude_live_snapshot.json` (arquivo local ignorado pelo Git). Se a sincronização falhar, avisa e usa o último snapshot salvo, quando existir. `sync-live` continua disponível para atualização isolada; `ask` usa o snapshot salvo. As respostas informam a data da extração e a fonte; saldo registrado não garante disponibilidade no momento da retirada. O estoque CEAF também é coletado, mas o RAG só relaciona estoque UBS às seis apresentações deste lote. Veja [integração InfoSaúde](docs/infosaude-live-rag.md).
+- [Plano e critérios de aceite](docs/plano-execucao-semana2.md)
+- [Arquitetura e diagrama](docs/arquitetura-rag-ampliado.md)
+- [Guia visual de métricas do RAG](src/rag/README.md)
+- [Guia reproduzível e entrega](docs/guia-entrega-semana2.md)
+- [Fontes complementares e curadoria](docs/fontes-complementares.md)
+- [Checkpoint de implementação](docs/CONTINUAR-IMPLEMENTACAO.md)
+- [Resultados reais e pendências da execução](docs/relatorio-execucao-semana2.md)
+- [Revisão humana e publicação do corpus](docs/revisao-publicacao.md)
 
-Copie `.env.example` para `.env`, preencha `APP_GOOGLE_API_KEY` e execute na raiz deste repositório:
+## Compatibilidade e qualidade
 
-```bash
-uv run python app.py index
-uv run python app.py eval
-uv run python app.py chat
-```
+Sem `--experimental` ou `--curated`, a CLI usa o release aprovado; `--release` permite
+selecionar outro release validado. O `eval` legado usa seu dataset próprio,
+não o golden set ampliado. `--documental` evita consultar/sincronizar estoque.
+O chat legado sem essa opção pode sincronizar InfoSaúde; snapshots não
+garantem disponibilidade atual. Ver [integração InfoSaúde](docs/infosaude-live-rag.md).
 
-Para inspecionar sem geração, use `uv run python app.py search "sinvastatina 20 mg comprimido consta na REME?"`; `ask` responde uma pergunta com o modelo configurado. O índice em `data/vectorstore/chroma/` é reconstruível e ignorado pelo Git. Veja [arquitetura e limites](docs/rag-hibrido-chromadb.md).
+Comandos de verificação, a executar em ambiente adequado:
 
-## Qualidade
-
-```bash
+```powershell
 uv run ruff format --check .
 uv run ruff check .
 uv run mypy src tests
 uv run pytest
 ```
 
-## Regra de versionamento
+Resultados devem ser registrados com commit, alterações locais, versões e
+escopo. Testes que escrevem releases precisam de isolamento; preservar
+alterações compartilhadas. Passar testes não concede aprovação humana aos dados.
 
-Os dados brutos e seus manifestos são as entradas auditáveis. As camadas Silver e Gold são derivadas e reconstruíveis; dados locais não são enviados ao Git.
-
-A integração com consumidores deve preservar a origem, o timestamp de coleta e a qualidade do dado.
+Estado em 07/11/2026: corpus ampliado e golden permanecem candidatos; índice
+vetorial parcial (984/2728) bloqueado pela cota diária da API. A recuperação
+lexical dev atingiu Hit@5 de 96,3%; o chat teve 32 falhas de API em 80 casos.
+Detalhes, BLEU/ROUGE e limitações estão no relatório de execução acima.
+Após revisão e publicação reais, `app.py chat --curated DIRETORIO --strategy lexical`
+carrega o subconjunto aprovado sem alterar o release legado.
