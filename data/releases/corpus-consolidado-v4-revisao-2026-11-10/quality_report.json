@@ -1,0 +1,23 @@
+{
+  "catalog_presentations": 1860,
+  "evidence": 2114,
+  "excluded_source_rows": 1,
+  "limitations": [
+    "Evidências derivadas de ocorrências estruturadas; revisão das evidências do release pendente.",
+    "Chunks antigos e 108 chunks complementares não incluídos.",
+    "A linha 987 da F03 foi preservada apenas no registro de exclusões.",
+    "Presença em lista não comprova estoque, elegibilidade ou dispensação em unidade específica."
+  ],
+  "occurrences": 2114,
+  "occurrences_by_source": {
+    "F01": 996,
+    "F03": 1077,
+    "F04": 41
+  },
+  "occurrences_by_type": {
+    "medicine": 2085,
+    "supply": 29
+  },
+  "supplies": 29,
+  "validation": "IDs, campos obrigatórios, vínculos, proveniência e hashes conferidos"
+}

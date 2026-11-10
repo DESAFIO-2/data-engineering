@@ -143,21 +143,21 @@
     "row_num": 145,
     "page": 18,
     "ing": "betainterferona 1A",
-    "form": "solução injetável",
+    "form": "injetável",
     "st": "12.000.000 UI (44 mcg) seringa preenchida"
   },
   "occ-291972901215205d4adbe432": {
     "row_num": 146,
     "page": 18,
     "ing": "betainterferona 1A",
-    "form": "pó liofilizado para solução injetável",
+    "form": "injetável",
     "st": "6.000.000 UI (30 mcg) frasco-ampola + seringa preenchida diluente"
   },
   "occ-811ad30f693d48862526202b": {
     "row_num": 147,
     "page": 18,
     "ing": "betainterferona 1A",
-    "form": "solução injetável",
+    "form": "injetável",
     "st": "6.000.000 UI (22 mcg) seringa preenchida"
   },
   "occ-33884243e26b5bf9f7d3c82b": {
@@ -178,7 +178,7 @@
     "row_num": 150,
     "page": 18,
     "ing": "betametasona (valerato)",
-    "form": "creme dermatológico",
+    "form": "creme",
     "st": "0,1% (bisnaga 30 g)"
   },
   "occ-57dad9b0f42dc1d24fa74fa5": {
@@ -234,7 +234,7 @@
     "row_num": 216,
     "page": 20,
     "ing": "cetoconazol",
-    "form": "creme dermatológico",
+    "form": "creme",
     "st": "2% (bisnaga 30 g)"
   },
   "occ-964239c38602f3ba42087e1c": {
@@ -276,7 +276,7 @@
     "row_num": 276,
     "page": 23,
     "ing": "clorexidina",
-    "form": "solução aquosa tópica",
+    "form": "solução aquosa",
     "st": "10 mg/mL (1% - frasco 1000 mL)"
   },
   "occ-99a3a7d33d2f60fa4162185c": {
@@ -304,7 +304,7 @@
     "row_num": 295,
     "page": 24,
     "ing": "complexo protrombínico total",
-    "form": "pó liofilizado para solução injetável",
+    "form": "injetável",
     "st": "500 UI a 600 UI (frasco-ampola)"
   },
   "occ-2389839526c98fce9c1cef3a": {
@@ -444,7 +444,7 @@
     "row_num": 473,
     "page": 32,
     "ing": "fosfato de sódio monobásico + fosfato de sódio dibásico",
-    "form": "solução retal (enema)",
+    "form": "solução enema",
     "st": "(16 g + 6 g)/100 mL (frasco ou bolsa 125 mL a 133 mL)"
   },
   "occ-4fd2ba59f5f886e2bf7c9297": {
@@ -457,23 +457,23 @@
   "occ-89b1798f87b6fef73e10d024": {
     "row_num": 481,
     "page": 32,
-    "ing": "fórmula dietoterápica para fenilcetonúria (acima de 8 anos)",
-    "form": "pó para suspensão oral",
-    "st": "lata 400 g a 500 g"
+    "ing": "fórmula dietoterápica para crianças acima de 8 anos de idade portadoras de fenilcetonúria",
+    "form": "-",
+    "st": "-"
   },
   "occ-cb99538aad360c68ec43b6cf": {
     "row_num": 482,
     "page": 32,
-    "ing": "fórmula dietoterápica para fenilcetonúria (1 a 8 anos)",
-    "form": "pó para suspensão oral",
-    "st": "lata 400 g a 500 g"
+    "ing": "fórmula dietoterápica para crianças de 1 a 8 anos de idade portadoras de fenilcetonúria",
+    "form": "-",
+    "st": "-"
   },
   "occ-b0b2adb7d79eb231b1207fad": {
     "row_num": 483,
     "page": 32,
-    "ing": "fórmula dietoterápica para fenilcetonúria (abaixo de 1 ano)",
-    "form": "pó para suspensão oral",
-    "st": "lata 400 g a 500 g"
+    "ing": "fórmula dietoterápica para lactentes de 0 a 1 ano de idade portadores de fenilcetonúria",
+    "form": "-",
+    "st": "-"
   },
   "occ-06af3eca6617e8d4af48aca7": {
     "row_num": 498,
@@ -486,7 +486,7 @@
     "row_num": 500,
     "page": 33,
     "ing": "glicerina (glicerol)",
-    "form": "solução retal (enema)",
+    "form": "solução retal/enema",
     "st": "120 mg/mL (12% - frasco ou bolsa 500 mL)"
   },
   "occ-e3b3ea674e18ca059d6549eb": {
@@ -535,8 +535,8 @@
     "row_num": 560,
     "page": 36,
     "ing": "insulina análoga de ação prolongada",
-    "form": "solução injetável (carpule)",
-    "st": "100 UI/mL (carpule 3 mL)"
+    "form": "carpule",
+    "st": "carpule 3 mL"
   },
   "occ-138e7fcb892102564091acf5": {
     "row_num": 569,
@@ -584,7 +584,7 @@
     "row_num": 607,
     "page": 38,
     "ing": "levodopa + benserazida (cloridrato)",
-    "form": "comprimido, cápsula ou drágea de liberação prolongada",
+    "form": "comprimido ou cápsula ou drágea liberação prolongada",
     "st": "100 mg + 25 mg"
   },
   "occ-7cbf1527034e630a3b103689": {
@@ -773,22 +773,22 @@
     "row_num": 823,
     "page": 47,
     "ing": "pó para solução básica para hemodiálise (sódio + bicarbonato + cloreto + glicose)",
-    "form": "pó para solução para hemodiálise",
+    "form": "pó para solução básica para hemodiálise",
     "st": "98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L (bolsa plástica 658 g)"
   },
   "occ-4bd5f5d42ec8ef95ec152915": {
     "row_num": 828,
     "page": 48,
     "ing": "poliquimioterapia única adulto (PQT-u adulto)",
-    "form": "blister (cápsulas e comprimidos)",
-    "st": "blister dose supervisionada e autoadministrada"
+    "form": "-",
+    "st": "-"
   },
   "occ-390b2fafe9c35c873c13e1db": {
     "row_num": 829,
     "page": 48,
     "ing": "poliquimioterapia única infantil (PQT-u infantil)",
-    "form": "blister (cápsulas e comprimidos)",
-    "st": "blister dose supervisionada e autoadministrada"
+    "form": "-",
+    "st": "-"
   },
   "occ-daa827193511b8e2acec493b": {
     "row_num": 830,
@@ -871,21 +871,21 @@
     "row_num": 922,
     "page": 52,
     "ing": "sais para reidratação oral (NaCl + KCl + citrato + glicose)",
-    "form": "pó para solução oral",
+    "form": "pó para preparo de 1 litro de solução",
     "st": "3,5 g + 1,5 g + 2,9 g + 20 g (para preparo de 1 L)"
   },
   "occ-b3c9c95e8c9426034db9ca30": {
     "row_num": 925,
     "page": 52,
     "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
-    "form": "solução aerossol para inalação oral",
+    "form": "aerossol para inalação",
     "st": "25 mcg/dose + 125 mcg/dose (120 doses + inalador)"
   },
   "occ-c91b4e24768177e887ed16b6": {
     "row_num": 926,
     "page": 52,
     "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
-    "form": "pó inalatório",
+    "form": "pó para inalação",
     "st": "50 mcg/dose + 500 mcg/dose (recipiente dosador strip 60 doses)"
   },
   "occ-3da1f44d1a507a358ceee024": {
@@ -899,14 +899,14 @@
     "row_num": 930,
     "page": 53,
     "ing": "selante de fibrina",
-    "form": "frasco-ampola",
+    "form": "frasco ampola",
     "st": "1 mL"
   },
   "occ-ea3c3a338bd1aa4a3ff232fd": {
     "row_num": 940,
     "page": 53,
     "ing": "sevoflurano",
-    "form": "solução para inalação",
+    "form": "solução inalatória",
     "st": "frasco 250 mL"
   },
   "occ-65d47184ac652afe4967c27b": {
@@ -934,7 +934,7 @@
     "row_num": 954,
     "page": 53,
     "ing": "solução ácida para hemodiálise",
-    "form": "solução para hemodiálise",
+    "form": "solução ácida p/ hemodiálise",
     "st": "K=2,0 mEq/L, Ca=2,5 mEq/L, sem glicose (galão 5 L)"
   },
   "occ-f0dd72a9216230ed91376a2c": {
@@ -1032,7 +1032,7 @@
     "row_num": 1010,
     "page": 56,
     "ing": "tenofovir desoproxila (fumarato) + lamivudina",
-    "form": "comprimido",
+    "form": "-",
     "st": "300 mg + 300 mg"
   },
   "occ-cf20695ffc6eab37d50c1cd6": {
@@ -1061,13 +1061,13 @@
     "page": 57,
     "ing": "triancinolona acetonida",
     "form": "pomada bucal ou pasta",
-    "st": "1 mg/g (bisnaga 10 g)"
+    "st": "1 mg/mL (bisnaga 10 g)"
   },
   "occ-b876bad65fcf7b57f2c2cf3e": {
     "row_num": 1048,
     "page": 58,
     "ing": "umeclidínio (brometo) + vilanterol (trifenatato)",
-    "form": "pó inalatório",
+    "form": "pó inalante",
     "st": "62,5 mcg/dose + 25 mcg/dose (recipiente dosador strip 30 doses)"
   },
   "occ-7a921bb07f18683e609d66d9": {

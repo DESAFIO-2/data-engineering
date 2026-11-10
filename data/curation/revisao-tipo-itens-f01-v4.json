@@ -1,0 +1,249 @@
+{
+  "source": "F01 RENAME 2024, 2ª edição",
+  "decision_scope": "Classificação de ocorrências por seção documental, sem inferir natureza clínica universal",
+  "items": [
+    {
+      "occurrence_id": "occ-4c533aa81746bad45685404b",
+      "source_page": 50,
+      "name": "álcool etílico (FN)",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-92550fad0287539628e30abb",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-ad098bcb7ca69b207d5d4b03",
+      "source_page": 50,
+      "name": "álcool etílico (FN)",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-27baac18483317aaafcca8fd",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-1762f1836a4202c6b142139b",
+      "source_page": 54,
+      "name": "dispositivo intrauterino plástico com cobre (DIU)",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-f9edfded843c693291f5207b",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-aa6907ec69683ce85d2b00fb",
+      "source_page": 123,
+      "name": "água para injetáveis",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-957ea473be3094c4916cdca7",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-7e3176959883b1bbdb999d2c",
+      "source_page": 123,
+      "name": "água para injetáveis",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-7497ac6fbbe4be4771e3355e",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-8009a1c201aa4c10d6069f1d",
+      "source_page": 123,
+      "name": "água para injetáveis",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-cf418b5e8237d6682e13cfc1",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-47176076f921fb64f104716a",
+      "source_page": 123,
+      "name": "água para injetáveis",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-f87ca5ede49aebff9f62a38c",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-8fa4c0e0d97deefc008a45a7",
+      "source_page": 123,
+      "name": "agulha para caneta aplicadora de insulina",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-a7bcaa7c2021b844f394a993",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-e5f25333ca12eaa409a8b986",
+      "source_page": 123,
+      "name": "caneta para aplicação de insulina",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-0e6d7c5ed1569ec3fc41e930",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-6b67f03a1c54082a8b5ae1e4",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-69c454fe5cd324df65d04567",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-9cf786770ce162f12e40d14b",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-3f2db3c800291c51f81ebf4e",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-bee7a78b4fe2891f299fe607",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-8cf122e06103ef15f2748817",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-95edb2680bc218e8b76c1b26",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-705dd768cd1f1b5e1c95f5bf",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-21f5b340faeb6be0a75795e3",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-41bb1cdfd1a87e43280e03b4",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-88457867ce31ce3fdd861180",
+      "source_page": 125,
+      "name": "diafragma",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-8370866921613eb158297c9f",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-569b7dfc612775c4f53a0577",
+      "source_page": 126,
+      "name": "gel lubrificante",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-2dee3e8885c6c539b4b52029",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-250f0346f5f6d51493c6a613",
+      "source_page": 126,
+      "name": "glutaral",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-931c7a6ea30589d80987b962",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-67fca3979693d3ac0c557299",
+      "source_page": 126,
+      "name": "hipoclorito de sódio",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-d19ea2e07b9eeb4c560500fb",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-3b1bbcdc06adda8f0b42d4cc",
+      "source_page": 126,
+      "name": "hipoclorito de sódio",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-c8097807c910f26921a44b59",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-4badacb7c0df9fa2adbe6190",
+      "source_page": 126,
+      "name": "lancetas para punção digital",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-2b99f554169f164748541cbd",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-1a4d7b77e887cb8d1fbb0c5d",
+      "source_page": 127,
+      "name": "preservativo interno",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-b4443c11cf9062cab2a9956b",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-51d5f44f4d2ac68a7937cd79",
+      "source_page": 127,
+      "name": "preservativo externo",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-de577ba8b8bd4b0c354ffe0c",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-63ca2f897c7d18c12805672d",
+      "source_page": 127,
+      "name": "preservativo externo",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-ed1340bf963a82401e3687e3",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-945731140ebd27d5421b8ef2",
+      "source_page": 128,
+      "name": "seringas com agulha acoplada para aplicação de insulina",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-f55f5f531efeb81d9d0a0f61",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-494d1deba0554e019a877d43",
+      "source_page": 128,
+      "name": "teste quantitativo da atividade da enzima glicose-6-fosfato desidrogenase (G6PD)",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-4f26854917108d5147f972fb",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-4c99f7f8ffd16f8f009ec57f",
+      "source_page": 128,
+      "name": "teste tuberculínico (Derivado Proteico Purificado – PPD)",
+      "component": "Insumos (Estratégico)",
+      "decision": "supply",
+      "supply_id": "supply-ff0c65e2ec55f96694014ade",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    },
+    {
+      "occurrence_id": "occ-cefa38cad5b4c2dd4093fee1",
+      "source_page": 128,
+      "name": "tiras reagentes de medida de glicemia capilar",
+      "component": "Insumos (Básico)",
+      "decision": "supply",
+      "supply_id": "supply-49e4fd88563cd15b553a993b",
+      "reason": "Classificado como insumo na coluna Componente da fonte F01; classificação restrita a esta ocorrência."
+    }
+  ]
+}

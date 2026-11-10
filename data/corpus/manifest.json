@@ -1,9 +1,9 @@
 {
   "files": {
     "catalog.jsonl": {
-      "bytes": 546093,
-      "records": 1885,
-      "sha256": "0387598d5865acde728e6bc27726c02bd841f1d3222dfd5a6f0195706bf140a5"
+      "bytes": 540915,
+      "records": 1860,
+      "sha256": "3b72209a7793ce768ccc58392cee626828ae7f134664e97704b440982b2b6530"
     },
     "chunks.jsonl": {
       "bytes": 2181849,
@@ -11,18 +11,18 @@
       "sha256": "35d1964f114e5c5bcaf9da8821476ac13d01a4bd441c810a4b150d52123d85f4"
     },
     "occurrences.jsonl": {
-      "bytes": 2513639,
+      "bytes": 2518735,
       "records": 2115,
-      "sha256": "b2c449f74b6e3e8d2052ad91257fd9ef2ad7286fc7f1ecca1a76c5724f74756e"
+      "sha256": "f6223b4aeb42248346d3e844ef95cb230fb981ff8256070fd3bb528e2a7daafb"
     },
     "report.json": {
-      "bytes": 1383,
-      "sha256": "cafb9a906304eb34aae0e908e9dfa2a9d1bbcbee93411be117eafb436aec7752"
+      "bytes": 1384,
+      "sha256": "ae17b4938226808d9941d0d72d24d3157d33797f5a39f21925c03dc359e176f5"
     },
     "review-log.jsonl": {
-      "bytes": 258717,
-      "records": 283,
-      "sha256": "246c9cd8d46c09dfa7f03de8e69a60c7f93227b466bcf83d4c8ed3037aafbbf5"
+      "bytes": 388183,
+      "records": 450,
+      "sha256": "8b62a25c0412c5775f31034343c15f0dcc4b372c7b94d573c17c8961d34c65ef"
     }
   },
   "parser_version": "consolidated-v2-human-verified",

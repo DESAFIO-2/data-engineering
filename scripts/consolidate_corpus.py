@@ -684,14 +684,233 @@ EXPLICIT_CLEANUPS: dict[str, dict[str, Any]] = {
         "active_ingredient": "absorvente higiênico",
         "supply_name": "absorvente higiênico",
         "strength": "-",
-        "form": "unidade",
+        "form": "-",
     },
     "occ-5ea8a977695dbad521b67f97": {
         "active_ingredient": "fralda geriátrica",
         "supply_name": "fralda geriátrica",
         "strength": "-",
-        "form": "unidade",
+        "form": "-",
     },
+}
+
+RELEASE_RE = re.compile(
+    r"(liberação\s+(?:prolongada|retardada|entérica|controlada|modificada|lenta)|"
+    r"desintegração\s+lenta|"
+    r"ação\s+(?:prolongada|intermediária|rápida)|"
+    r"liberação\s+de\s+[\d,]+\s*mg/24h)",
+    re.I,
+)
+
+# Corrections identified during the technical & domain review of corpus-consolidado-v2-revisao-2026-11-10
+V3_OVERRIDES: dict[str, dict[str, Any]] = {
+    # --- F01: 7 occurrences with footnote asterisk '*' attached to active_ingredient / strength ---
+    "occ-24bb5cc708bdf9ec14db3e4f": {"active_ingredient": "clofazimina", "strength": "50 mg"},
+    "occ-156a268279dc2ce94c2162da": {"active_ingredient": "clofazimina", "strength": "100 mg"},
+    "occ-bf2e571a98829db41258e934": {"active_ingredient": "dapsona", "strength": "50 mg"},
+    "occ-6a9aafbe040f817ee5e0a943": {"active_ingredient": "dapsona", "strength": "100 mg"},
+    "occ-0449e40e8c3c9732aa285dc5": {"active_ingredient": "rifampicina", "strength": "300 mg"},
+    "occ-5def59d51aa08a02896fb946": {"active_ingredient": "rifampicina", "strength": "150 mg"},
+    "occ-a4156cb9abb6e7f6845203ce": {"active_ingredient": "rifampicina", "strength": "20mg/mL"},
+
+    # --- F03: 26 occurrences where form words or truncations leaked into active_ingredient ---
+    "occ-69250d6a59a79d792a83d1a1": {"active_ingredient": "abatacepte", "form": "pó liofilizo injetável"},
+    "occ-54a81b579a4112c95dc2ef55": {"active_ingredient": "alfatirotropina", "form": "pó liófilo injetável"},
+    "occ-8f4dd1d5d2682a7cb36f4791": {"active_ingredient": "anidulafungina", "form": "pó liófilo para solução injetável"},
+    "occ-9cd002de6ab1f924f380279e": {"active_ingredient": "cetrorrelix (acetato)", "form": "pó liófilo injetável"},
+    "occ-ed2d26a2784e913f3cd92c2b": {"active_ingredient": "dantroleno (sódico)", "form": "pó liófilo injetável"},
+    "occ-ce1ef86a8619398013bbce5c": {"active_ingredient": "daptomicina", "form": "pó liófilo injetável"},
+    "occ-4772177d670ea6e058ce6e78": {"active_ingredient": "enfuvirtida (t-20)", "form": "pó liofilizado solução injetável"},
+    "occ-e3076d368193a5939d33130d": {"active_ingredient": "estreptomicina (sulfato)", "form": "pó liofilizado para solução injetável"},
+    "occ-164563deb661cfb7de918155": {"active_ingredient": "etanercepte", "form": "pó liofilizado para injetável"},
+    "occ-3c6a7ade7457828257915ba8": {"active_ingredient": "gencitabina (cloridrato)", "form": "pó liofilizado p/ solução injetável"},
+    "occ-cb2f221f54aa7bded5e3b5cf": {"active_ingredient": "ifosfamida", "form": "pó liofilizado para solução injetável"},
+    "occ-61a689c7573c5ca736785fc2": {"active_ingredient": "imiglucerase", "form": "pó liófilo injetável"},
+    "occ-6e29ffc731a99e0c51becd28": {"active_ingredient": "isavuconazol", "form": "pó liófilo para solução injetável"},
+    "occ-93e7ce149a62f0fe4691b61b": {"active_ingredient": "meropenem", "form": "pó injetável"},
+    "occ-a21424e47ce4e985dcadfaf9": {"active_ingredient": "omalizumabe", "form": "pó liofilizado para solução injetável ou solução injetável"},
+    "occ-21b793f26a82f2626d1f51ca": {"active_ingredient": "omeprazol", "form": "pó injetável"},
+    "occ-67f1d7bd5480cdd10e4558be": {"active_ingredient": "permetrina", "form": "loção tópica"},
+    "occ-ef10d7c80122f262da327f1c": {"active_ingredient": "produto de cannabis (canabidiol)", "form": "solução oral com seringa dosadora ou solução gotas"},
+    "occ-5e0ab245d96ae38a847ce9ad": {"active_ingredient": "produto de cannabis (canabidiol)", "form": "solução oral com seringa dosadora ou solução gotas"},
+    "occ-b5ab0a0b1dd43f7abf9c6aec": {"active_ingredient": "propofol", "form": "emulsão injetável"},
+    "occ-4b9787ecc83970c801624801": {"active_ingredient": "propofol", "form": "emulsão injetável"},
+    "occ-8b66b9ebbc8bd492ababb54d": {"active_ingredient": "propofol", "form": "emulsão injetável"},
+    "occ-e8d2a28fc0c6c040d3e15944": {"active_ingredient": "raltegravir", "form": "granulado para suspensão oral"},
+    "occ-472e3c315d6afe15afe9ff1c": {"active_ingredient": "remifentanila (cloridrato)", "form": "pó liofilizado para solução injetável"},
+    "occ-f36f0f2d106edff71e90f70d": {"active_ingredient": "sulfato ferroso", "strength": "equivalente a 40 mg de ferro elementar"},
+    "occ-318a11b774821a36ea305bf6": {"active_ingredient": "tigeciclina", "form": "pó liofilizado para solução injetável"},
+    "occ-6ac06648435ebbb8f92d2342": {"active_ingredient": "toxina botulínica tipo A", "form": "pó liofilizado para solução injetável"},
+    "occ-6a160f058098ac3a1c1a3f06": {"active_ingredient": "trastuzumabe", "form": "pó liófilo injetável"},
+    "occ-a0f115d3838fff52ec47022a": {"active_ingredient": "voriconazol", "form": "pó liofilizado para solução injetável"},
+
+    # --- F03: Unsubstantiated or mismatched strength / form ---
+    "occ-cc647daee9433f68e327fd93": {"strength": "1 mg/mL"},  # row 48 alfagalsidase (PDF typo '1 mg/mlL')
+    "occ-89b1798f87b6fef73e10d024": {  # row 481 phenylketonuria > 8y
+        "active_ingredient": "fórmula dietoterápica para crianças acima de 8 anos de idade portadoras de fenilcetonúria",
+        "strength": "-",
+        "form": "-",
+    },
+    "occ-cb99538aad360c68ec43b6cf": {  # row 482 phenylketonuria 1-8y
+        "active_ingredient": "fórmula dietoterápica para crianças de 1 a 8 anos de idade portadoras de fenilcetonúria",
+        "strength": "-",
+        "form": "-",
+    },
+    "occ-b0b2adb7d79eb231b1207fad": {  # row 483 phenylketonuria 0-1y
+        "active_ingredient": "fórmula dietoterápica para lactentes de 0 a 1 ano de idade portadores de fenilcetonúria",
+        "strength": "-",
+        "form": "-",
+    },
+    "occ-3e214ed6687162dd9b296e5e": {  # row 515 gosserrelina 3,6 mg
+        "form": "implante subcutâneo (seringa preenchida)",
+    },
+    "occ-9804085866c3d3a8183e020a": {  # row 560 insulina análoga de ação prolongada carpule 3mL
+        "strength": "carpule 3 mL",
+        "form": "carpule",
+        "release_characteristic": "ação prolongada",
+    },
+    "occ-e34170ebed3c19cdf4f5f5d7": {  # row 1042 triancinolona acetonida 1mg/mL bisnaga 10 g
+        "strength": "1 mg/mL (bisnaga 10 g)",
+    },
+    "occ-288516f4933ddc82d2e01afb": {"form": "injetável"},  # row 145 betainterferona 1A 12.000.000 UI
+    "occ-291972901215205d4adbe432": {"form": "injetável"},  # row 146 betainterferona 1A 6.000.000 UI (30 mcg)
+    "occ-811ad30f693d48862526202b": {"form": "injetável"},  # row 147 betainterferona 1A 6.000.000 UI (22 mcg)
+    "occ-34c211344aed1ca3c6baa605": {"form": "injetável"},  # row 295 complexo protrombínico total
+    "occ-e39f9b1b1851765877bfabd9": {"form": "frasco"},  # row 548 imunoglobulina humana 5,0g frasco
+    "occ-cb22669dfd85514c6b90e4c5": {"form": "-"},  # row 1010 tenofovir 300 mg + lamivudina 300 mg (no form in PDF)
+
+    # --- F03: Truncated/incomplete pharmaceutical forms (restoring literal form from PDF_DESC) ---
+    "occ-e0344624134cfc2a5c3860b4": {"form": "pó liofilizado ou solução injetável"},
+    "occ-3d16d024a2e7800503a23286": {"form": "solução para inalação"},
+    "occ-ca73917673f1c6b5c6864fa8": {"form": "solução injetável ou pó liofilizado"},
+    "occ-35d1cf765c297c040053de8c": {"form": "solução coloide injetável"},
+    "occ-6b4361fd678915e9be3e5376": {"form": "cápsula ou comprimido"},
+    "occ-866d69eb237d37288aa5d50a": {"form": "solução para diluição para infusão"},
+    "occ-8ba2c9995808a8d21ff382ba": {"form": "pó liófilo para injeção endovenosa"},
+    "occ-35f36e4f44b27158aaabe926": {"form": "solução aerossol oral"},
+    "occ-812dec0ab31c1798a5739af4": {"form": "solução aerossol oral"},
+    "occ-d73427eedf5703737538bd3d": {"form": "creme"},
+    "occ-b86e952ae687b2fffb4387c7": {"form": "comprimido de desintegração lenta", "release_characteristic": "desintegração lenta"},
+    "occ-7d110505887ca3282d5bf2b6": {"form": "comprimido revestido liberação retardada", "release_characteristic": "liberação retardada"},
+    "occ-f57cd6e5f1b296f1c7a46ef2": {"form": "suspensão oftálmica"},
+    "occ-8e000650f51764096323787a": {"form": "cápsula ou comprimido"},
+    "occ-f8158b9aa5275f734b30ccb4": {"form": "suspensão nasal"},
+    "occ-8cf6acbccb723054a29056f7": {"form": "solução injetável para infusão"},
+    "occ-d2c545d8fcba8b54b9c7e612": {"form": "comprimido ou drágea"},
+    "occ-be847818ca8465c1a99934d6": {"form": "comprimido ou drágea"},
+    "occ-4588d95017826e21d88fb8b1": {"form": "pó frasco ou envelope"},
+    "occ-b1611204646f0aafaed7ec7e": {"form": "cápsula ou drágea ou comprimido"},
+    "occ-35aa08b03801a03eca1cbd89": {"form": "creme"},
+    "occ-8d222dd0f1a881b1fb80d01c": {"form": "comprimido revestido de liberação retardada", "release_characteristic": "liberação retardada"},
+    "occ-f0e46ccdbede8cf45c97c8e0": {"form": "comprimido ou drágea"},
+    "occ-d150316dbef4acdc4baf18e4": {"form": "comprimido liberação lenta", "release_characteristic": "liberação lenta"},
+    "occ-70c5d2679f2f25b5be8e2056": {"form": "solução não injetável"},
+    "occ-75c60747180854a75232b0ec": {"form": "solução aquosa"},
+    "occ-419a5ac6ad616e4c5ee5573b": {"form": "solução oral gotas"},
+    "occ-ad3cdf673e78774f946ef9e9": {"form": "pó para solução inalatória e injetável"},
+    "occ-86851e5df5c8f037bf46e450": {"form": "comprimido dispersível"},
+    "occ-9c3b5384a5f4097ffc09491c": {"form": "comprimido dispersível"},
+    "occ-ba6f97e3db854aace22af03d": {"form": "comprimido dispersível"},
+    "occ-18e40c871223030ec0659ba2": {"form": "suspensão oftálmica"},
+    "occ-f6539210bd2b1171cfd0ad04": {"form": "solução oral edulcorada ou xarope"},
+    "occ-0bf91b62dc219e352b8f3d20": {"form": "comprimido dispersível"},
+    "occ-78f705bb22e68d8860cd59d8": {"form": "solução injetável ou pó liofilizado para solução injetável"},
+    "occ-4fae93f02b7e7aa68ac424d5": {"form": "solução para diluição para infusão"},
+    "occ-7ea91296e7c8289498633d08": {"form": "solução oral gotas"},
+    "occ-f273acace36f36966fe5a7f4": {"form": "comprimido ou cápsula"},
+    "occ-6dfb01fa30222e347ed6190d": {"form": "cápsula ou comprimido"},
+    "occ-cf60948de74eec6e14b837d7": {"form": "cápsula com pó para inalação ou cápsula inalatória"},
+    "occ-c500bcdbb85f9875820c5df8": {"form": "solução enema"},
+    "occ-379462c069429d4e03b9537c": {"form": "cápsula de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-4b9b47231ac43ec0c3d8f944": {"form": "cápsula liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-211cf20753e28ac47b11186d": {"form": "cápsula liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-b042234935f17939a393d2ab": {"form": "solução retal/enema"},
+    "occ-f71b7524d95eeeada127ac43": {"form": "comprimido de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-e0e26ff90982cc58abef5e93": {"form": "comprimido de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-1bd990c64b0195b2895e0d10": {"form": "injetável de liberação prolongada (seringa preenchida)", "release_characteristic": "liberação prolongada"},
+    "occ-924adb9ef742afde7d707675": {"form": "solução oral gotas"},
+    "occ-d93113bf5df851095302d72d": {"form": "comprimido ou drágea"},
+    "occ-b041f581397e915747485883": {"form": "pó para solução injetável"},
+    "occ-95d83bab1656f199b213eea7": {"form": "solução para inalação"},
+    "occ-ced93846474bb8c6ce88d487": {"form": "comprimido revestido ou cápsula"},
+    "occ-d4f04c33b93fb2ba2abf4e71": {"form": "comprimido revestido ou cápsula"},
+    "occ-5ff05a19a860eb46c4d2f406": {"form": "implante subdérmico"},
+    "occ-b5c35a3c742d2c9bf8f9efe5": {"form": "comprimido liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-72000e08ca435a27afc14d28": {"form": "solução ou suspensão injetável"},
+    "occ-afa5aff86409b4cde1cce01d": {"form": "solução para inalação"},
+    "occ-b9a4722f26ad0093039960e7": {"form": "cápsula dura"},
+    "occ-b7353558cc2eb76da72c2258": {"form": "comprimido sublingual"},
+    "occ-0d65a0214341f4ea9d89e1d0": {"form": "comprimido ou cápsula ou drágea liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-fb7a8e20e45fee249b7e040f": {"form": "solução tópica spray"},
+    "occ-8ebc921e055ebb6522f64124": {"form": "comprimido de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-fcb1728720eb7d181d90bcdd": {"form": "comprimido revestido ou comprimido revestido de liberação retardada", "release_characteristic": "liberação retardada"},
+    "occ-8e53264620866a644d7b485a": {"form": "comprimido revestido ou comprimido revestido de liberação retardada", "release_characteristic": "liberação retardada"},
+    "occ-8d4c9df6f2789ee0f39f16ec": {"form": "grânulo de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-45ad7022d0b91faec952f212": {"form": "cápsula com microgrânulos de liberação modificada", "release_characteristic": "liberação modificada"},
+    "occ-21e83d6389de3f5f5f500f4e": {"form": "comprimido de liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-1444b3fba1dcc89115c77d24": {"form": "comprimido revestido de liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-f82c45b13dec41f13d8cb790": {"form": "comprimido revestido ou comprimido orodispersível"},
+    "occ-d81da7c5c7b546187d94754f": {"form": "comprimido revestido ou comprimido orodispersível"},
+    "occ-2d805034f4e6e3d946c32e7c": {"form": "comprimido vaginal"},
+    "occ-b53f1771a09b6507cac663c4": {"form": "comprimido vaginal"},
+    "occ-2380509ac71a82f85db235b7": {"form": "comprimido vaginal"},
+    "occ-d14aa21adf3192764814dfae": {"form": "comprimido vaginal"},
+    "occ-c2822e9b57c1d86fc22ad93f": {"form": "pó liofilizado"},
+    "occ-d31a662beec907cd3e112036": {"form": "comprimido mastigável"},
+    "occ-0553fc12bfa44bdee94e0436": {"form": "comprimido mastigável"},
+    "occ-3906d814250182f3218fbd4c": {"form": "cápsula liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-b6e00fd5570f11bbf5da7a43": {"form": "cápsula ou comprimido de liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-2ea4c7708d14b13b7bab8ee5": {"form": "cápsula liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-0b842a68f77c8fe98f279ca2": {"form": "pó liofilizado"},
+    "occ-d6c2a093ea5ca740c22d6cc9": {"form": "cápsula ou comprimido"},
+    "occ-6f2dc3eb51dcb3002fe500ae": {"form": "comprimido ou cápsula"},
+    "occ-10ea7805363b328ab9fe715c": {"form": "cápsula gelatinosa dura"},
+    "occ-ef9c0c6b0d7d85c02a99194d": {"form": "comprimido ou cápsula"},
+    "occ-545286e595c988da6d6fa2ce": {"form": "cápsula mole"},
+    "occ-545f8bfb5ef8228756528729": {"form": "cápsula mole"},
+    "occ-250537e61387b7413515878d": {"form": "óleo"},
+    "occ-81e33e6df2756e23f52fbe54": {"form": "comprimido ou comprimido orodispersível"},
+    "occ-2c4cdd92eecda6cae84b133b": {"form": "injetável"},
+    "occ-9d77ceb4b7f4108bf1d5cebd": {"form": "comprimido revestido de liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-8b7776be92835d29edb61b76": {"form": "comprimido revestido de liberação controlada", "release_characteristic": "liberação controlada"},
+    "occ-f0f7223fd5ff5341463b0550": {"form": "pó liofilizado"},
+    "occ-23f49b4f579fd8993a9a0193": {"form": "comprimido revestido ou comprimido revestido de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-79e8c80d96747e291babac5e": {"form": "comprimido dispersível"},
+    "occ-c46256c1a904b7e76d88799f": {"form": "pó para solução básica para hemodiálise"},
+    "occ-4bd5f5d42ec8ef95ec152915": {"strength": "-", "form": "-"},
+    "occ-390b2fafe9c35c873c13e1db": {"strength": "-", "form": "-"},
+    "occ-59976a0284d33f156df57475": {"form": "cápsula gelatinosa mole"},
+    "occ-50a9569d873e8956d6b621c9": {"form": "comprimido revestido liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-5e613d5a17989804827e439e": {"form": "pó para preparo de 1 litro de solução"},
+    "occ-b0f807a52a2fdbfaeb4e13c8": {"form": "spray ou aerossol para inalação oral"},
+    "occ-b3c9c95e8c9426034db9ca30": {"form": "aerossol para inalação"},
+    "occ-c91b4e24768177e887ed16b6": {"form": "pó para inalação"},
+    "occ-648c45d256d209afe121f04d": {"form": "frasco ampola"},
+    "occ-ea3c3a338bd1aa4a3ff232fd": {"form": "solução inalatória"},
+    "occ-949c15370770ba5bc47c6b8f": {"form": "suspensão oral gotas"},
+    "occ-6c9cca4e2c8bdba3c94bc0bc": {"form": "solução ácida p/ hemodiálise"},
+    "occ-ca7f6da1914c760234591b70": {"form": "solução básica"},
+    "occ-d753bb7d688d15dcce4d3ebe": {"form": "solução ácida para hemodiálise"},
+    "occ-e8faaface906ddc31f6763e8": {"form": "solução ácida para hemodiálise"},
+    "occ-bfc5211a72cc92599c4d348e": {"form": "solução ácida para hemodiálise"},
+    "occ-17e61fe79d55fdc27bd22e6b": {"form": "solução injetável"},
+    "occ-bbb51e0359fbce48b9214eae": {"form": "comprimido revestido de liberação retardada", "release_characteristic": "liberação retardada"},
+    "occ-cd56b7aab2cff5176b586908": {"form": "frasco"},
+    "occ-36b8a9522cb455db12695ff2": {"form": "pó"},
+    "occ-e9d2d51d7ddc1d0a1aad71bb": {"form": "pomada dermatológica"},
+    "occ-4b4377f10b7de9c013f30a75": {"form": "pomada dermatológica"},
+    "occ-9995b8de9d655e0350ca8c9c": {"form": "cápsula mole"},
+    "occ-283931a2d704751b9514b970": {"form": "pó liofilizado"},
+    "occ-ca70d5224391598621048935": {"form": "pó liofilizado injetável ou solução injetável"},
+    "occ-8310fcb8a7032daee5d6784f": {"form": "comprimido liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-23af74a5e4a3d7d45c4575ec": {"form": "solução para inalação"},
+    "occ-19885f1caaa3a629474d735f": {"form": "pó liofilizado p/ solução injetável"},
+    "occ-119b8a45494057f6d402f1f8": {"form": "pó liofilizado para suspensão injetável de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-b876bad65fcf7b57f2c2cf3e": {"form": "pó inalante"},
+    "occ-ebcde0ce9f6a22859deb5f6f": {"form": "comprimido revestido de liberação prolongada", "release_characteristic": "liberação prolongada"},
+    "occ-e38e5e5d52281fc96d41d9da": {"form": "comprimido ou cápsula"},
+    "occ-1d7793fa89c2c7b25d439b83": {"form": "solução oral ou xarope"},
+    "occ-f6ea89da0be78741399fc8f3": {"form": "bisnaga ou tubo"},
 }
 
 
@@ -801,15 +1020,78 @@ def main() -> None:
 
     t2_rows, t3_rows = parse_md_tables(md_path)
 
-    # Preserve existing COR-001..COR-005 entries from f04/review-log.jsonl
+    # Restore COR-001..COR-005 entries for the 5 baseline F04 corrections
+    f04_base_by_oid = {o["occurrence_id"]: o for o in base_occurrences if o["source"]["source_id"] == "F04"}
+    cor_001_005_specs = [
+        (
+            "COR-001",
+            "occ-bd645fca4e10b51f38485f06",
+            {
+                "active_ingredient": {"old": "etinilestradiol", "new": "etinilestradiol + levonorgestrel"},
+                "strength": {"old": None, "new": "0,03mg + 0,15mg"},
+                "form": {"old": None, "new": "-"},
+            },
+        ),
+        (
+            "COR-002",
+            "occ-2e237469ad52f38dc54b786e",
+            {
+                "active_ingredient": {"old": "valerato de estradiol", "new": "valerato de estradiol + enantato de noretisterona"},
+                "strength": {"old": None, "new": "5mg + 50mg"},
+                "form": {"old": None, "new": "-"},
+            },
+        ),
+        (
+            "COR-003",
+            "occ-31f830e7fbb52c0353da2946",
+            {
+                "active_ingredient": {"old": "carbidopa", "new": "carbidopa + levodopa"},
+                "strength": {"old": None, "new": "25mg + 250mg"},
+                "form": {"old": None, "new": "-"},
+            },
+        ),
+        (
+            "COR-004",
+            "occ-e7d83368e51a7cb974fd6bd9",
+            {
+                "active_ingredient": {"old": "cloridrato de benserazida", "new": "cloridrato de benserazida + levodopa"},
+                "strength": {"old": None, "new": "25mg + 100mg"},
+                "form": {"old": None, "new": "-"},
+            },
+        ),
+        (
+            "COR-005",
+            "occ-48e616ae9f8df7c435126c21",
+            {
+                "release_characteristic": {"old": None, "new": "ação prolongada"},
+                "form": {"old": None, "new": "-"},
+            },
+        ),
+    ]
     existing_f04_log: list[dict[str, Any]] = []
-    if (f04_dir / "review-log.jsonl").is_file():
-        for line in (f04_dir / "review-log.jsonl").read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                entry = json.loads(line)
-                if str(entry.get("control_id", "")).startswith("COR-00"):
-                    entry["occurrence_review_status"] = "approved"
-                    existing_f04_log.append(entry)
+    for cid, f04_oid, fields_dict in cor_001_005_specs:
+        f04_row = f04_base_by_oid[f04_oid]
+        existing_f04_log.append(
+            {
+                "control_id": cid,
+                "date": "2026-11-10",
+                "source_id": "F04",
+                "source_version": f04_row["source"]["version"],
+                "source_sha256": f04_row["source"]["sha256"],
+                "page": f04_row["source"]["page"],
+                "source_row_number": f04_row.get("source_row_number"),
+                "occurrence_id": f04_oid,
+                "literal_evidence": f04_row.get("raw_text", ""),
+                "fields": fields_dict,
+                "validation_status": "verified",
+                "occurrence_review_status": "approved",
+                "decision_basis": (
+                    "Revisão integral de F04 contra farmacia-popular-elenco-2026-08-31.pdf: "
+                    "preservação de associações com '+', característica de liberação explícita "
+                    "e marcador '-' para forma farmacêutica não declarada na fonte."
+                ),
+            }
+        )
 
     logged_controls = {
         (e["occurrence_id"], tuple(sorted(e["fields"].keys()))) for e in existing_f04_log
@@ -849,9 +1131,39 @@ def main() -> None:
             for k, v in EXPLICIT_CLEANUPS[oid].items():
                 row[k] = v
 
-        # Ensure release_characteristic key exists
+        # 4. F04 never declares pharmaceutical form in the PDF; use canonical '-' instead of inferred forms
+        if sid == "F04":
+            row["form"] = "-"
+            number = row["source_row_number"]
+            indication_ranges = [
+                (2, 8, "ASMA"), (9, 14, "DIABETES"),
+                (15, 24, "HIPERTENSÃO"), (25, 28, "ANTICONCEPÇÃO"),
+                (29, 29, "OSTEOPOROSE"), (30, 32, "DISLIPIDEMIA"),
+                (33, 34, "DOENÇA DE PARKINSON"), (35, 36, "GLAUCOMA"),
+                (37, 39, "RINITE"),
+                (40, 40, "DIABETES MELLITUS + DOENÇA CARDIOVASCULAR"),
+                (41, 41, "DIGNIDADE MENSTRUAL"),
+                (42, 42, "INCONTINÊNCIA URINÁRIA"),
+            ]
+            matches = [label for start, end, label in indication_ranges if start <= number <= end]
+            if len(matches) != 1:
+                raise RuntimeError(f"Indicação F04 não mapeada: linha {number}")
+            row.setdefault("context", {})["indication"] = matches[0]
+
+        # 5. Apply V3 review corrections (F01 footnote asterisks, F03 active_ingredient/form/strength literal alignment)
+        if oid in V3_OVERRIDES:
+            for k, v in V3_OVERRIDES[oid].items():
+                row[k] = v
+
+        # Ensure release_characteristic key exists and populate consistently when literally declared
         if "release_characteristic" not in row:
             row["release_characteristic"] = None
+        if not row.get("release_characteristic"):
+            for field_name in ("form", "active_ingredient", "strength"):
+                m = RELEASE_RE.search(row.get(field_name) or "")
+                if m:
+                    row["release_characteristic"] = " ".join(m.group(1).lower().split())
+                    break
 
         # Record any field changes in review_log
         changed_fields: dict[str, dict[str, Any]] = {}
@@ -882,7 +1194,7 @@ def main() -> None:
                 review_log.append(
                     {
                         "control_id": f"COR-{cor_counter:03d}",
-                        "date": "2026-11-09",
+                        "date": "2026-11-10",
                         "source_id": sid,
                         "source_version": row["source"]["version"],
                         "source_sha256": row["source"]["sha256"],
@@ -894,9 +1206,8 @@ def main() -> None:
                         "validation_status": "verified",
                         "occurrence_review_status": "approved",
                         "decision_basis": (
-                            "Consolidação definitiva do corpus validada contra fontes primárias "
-                            "(F01 RENAME 2024, F03 REME-DF 2026-10-29, F04 Farmácia Popular 2026-08-31) "
-                            "e tabelas curadas em .docs/ocorrencias-para-edicao.md."
+                            "Consolidação e revisão técnica/domínio do corpus validada contra fontes primárias "
+                            "(F01 RENAME 2024, F03 REME-DF 2026-10-29, F04 Farmácia Popular 2026-08-31)."
                         ),
                     }
                 )
@@ -905,6 +1216,21 @@ def main() -> None:
         # 4. Update metadata: mark review_status approved and clear resolved uncertainties
         row["review_status"] = "approved"
         row["uncertainties"] = []
+
+        # Source section labels determine item type. A numbered empty PDF line is
+        # retained for source auditing, but is not a publishable item.
+        if sid == "F03" and row.get("source_row_number") == 987:
+            row["item_type"] = "source_blank"
+            row["medicine_id"] = None
+        elif sid == "F01" and row.get("component") in {
+            "Insumos (Básico)", "Insumos (Estratégico)"
+        }:
+            row["item_type"] = "supply"
+            row["supply_name"] = row["active_ingredient"]
+            row["supply_id"] = stable_id("supply-", oid)
+            row["medicine_id"] = None
+        elif row.get("item_type") == "supply":
+            row["supply_id"] = stable_id("supply-", oid)
 
         consolidated_occurrences.append(row)
 

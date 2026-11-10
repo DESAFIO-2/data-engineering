@@ -1,0 +1,65 @@
+{
+  "corpus_fingerprint": "3b320bf22363827d2899035a7101484394c6edf943cb72522fbfb3ff7a67a57c",
+  "f03_description_extract_sha256": "5c166ff9dfa10900bd8ff0dfa48f1cbc25cbafe75b52281b703eea6250d1dab7",
+  "files": {
+    "catalog.jsonl": {
+      "bytes": 540915,
+      "records": 1860,
+      "sha256": "3b72209a7793ce768ccc58392cee626828ae7f134664e97704b440982b2b6530"
+    },
+    "evidencias.jsonl": {
+      "bytes": 1892376,
+      "records": 2114,
+      "sha256": "1a120910dfa371299abc977fb75a38012a565ed885f663003652a0b5bf2c593e"
+    },
+    "exclusions.jsonl": {
+      "bytes": 427,
+      "records": 1,
+      "sha256": "fcd2fa50a461109fc4759fa2bbe4f7f51b4e652c166f6cdec4439b7efe225383"
+    },
+    "f03_descriptions.json": {
+      "bytes": 349521,
+      "sha256": "5c166ff9dfa10900bd8ff0dfa48f1cbc25cbafe75b52281b703eea6250d1dab7"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2517722,
+      "records": 2114,
+      "sha256": "b7d364d406b39ed83d645ff81c560333bc0ca8a7fae6a52e53e4a75be59148c8"
+    },
+    "quality_report.json": {
+      "bytes": 743,
+      "sha256": "227419d3b1c43a6893b8f2dd3d07a69b41c00df4e3d3fbd0668a2a0e54c272c8"
+    }
+  },
+  "generated_at_utc": "2026-11-10T17:41:19.727310+00:00",
+  "input_manifest_sha256": "b66c01c0be8bd745194492c3a0c368565a9c3b503e40b294b06d5fa5b99db9eb",
+  "release_version": "corpus-consolidado-v4-revisao-2026-11-10",
+  "review_reference": {
+    "path": "data/corpus/review-log.jsonl",
+    "scope": "revisão das ocorrências; evidências deste release aguardam revisão",
+    "sha256": "8b62a25c0412c5775f31034343c15f0dcc4b372c7b94d573c17c8961d34c65ef"
+  },
+  "schema_version": "consolidated-release-v2",
+  "sources": {
+    "F01": {
+      "pages": 267,
+      "path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc"
+    },
+    "F03": {
+      "pages": 98,
+      "path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6"
+    },
+    "F04": {
+      "pages": 1,
+      "path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3"
+    }
+  },
+  "status": "pending_review",
+  "supply_type_review": {
+    "path": "data/curation/revisao-tipo-itens-f01-v4.json",
+    "sha256": "7d740a9aac9dc6451cc4aa8e96dae8d6452d88fb3ec3046455c34f82788bcd6a"
+  }
+}

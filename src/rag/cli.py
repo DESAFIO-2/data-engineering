@@ -147,23 +147,33 @@ def main() -> int:
     parser.add_argument("--split", choices=("dev", "test"), default="dev")
     parser.add_argument("--allow-draft", action="store_true")
     parser.add_argument("--repeat", type=int, default=1)
+    parser.add_argument("--embedding-requests-per-minute", type=int, default=80)
     parser.add_argument("--frozen-dataset-sha256")
     parser.add_argument(
         "--stage", choices=("retrieval", "generation", "end-to-end"), default="end-to-end"
     )
     args = parser.parse_args()
     if args.corpus is None:
-        args.corpus = ROOT / (
-            "data/corpus" if args.validated else "data/corpus/experimental"
-        )
+        args.corpus = ROOT / ("data/corpus" if args.validated else "data/corpus/experimental")
     try:
         if args.experimental or args.validated or args.curated:
             from .experimental_cli import run
 
             return run(args, settings)
         if args.dataset or args.output:
-            parser.error("A avaliação ampliada exige --experimental; eval simples mantém o lote 1")
-        release = Release.load(_path(args.release or settings.rag_release_dir))
+            if not args.release:
+                parser.error("Informe --release para avaliação consolidada ou use --experimental")
+        selected_release = _path(args.release or settings.rag_release_dir)
+        if args.command in {"index", "search", "ask", "eval"} and args.release:
+            import json
+
+            manifest = json.loads((selected_release / "release.json").read_bytes())
+            if manifest.get("schema_version") == "consolidated-release-v2":
+                from .consolidated_cli import run as run_consolidated
+
+                args.release = selected_release
+                return run_consolidated(args, settings)
+        release = Release.load(selected_release)
         if args.command == "sync-live":
             _sync_live()
             return 0
@@ -209,8 +219,7 @@ def main() -> int:
             snapshot = load_snapshot(ROOT / "data/gold/infosaude_live_snapshot.json")
             if snapshot is None:
                 print(
-                    f"Aviso: sincronização indisponível ({type(exc).__name__}); "
-                    "sem snapshot local."
+                    f"Aviso: sincronização indisponível ({type(exc).__name__}); sem snapshot local."
                 )
             else:
                 print(
@@ -270,8 +279,10 @@ def main() -> int:
         print(f"Erro: {exc}", file=sys.stderr)
         return 1
     except Exception as exc:
+        from .providers import error_detail
+
         print(
-            f"Dependência indisponível ({type(exc).__name__}); resposta não gerada.",
+            f"Falha na operação: {error_detail(exc)}",
             file=sys.stderr,
         )
         return 1

@@ -53,7 +53,7 @@
     "srn": 109,
     "ing": "artesunato",
     "st": "60 mg/mL",
-    "form": "pó liofilizado para solução injetável"
+    "form": "pó liófilo para injeção endovenosa"
   },
   "8": {
     "oid": "occ-51932c9f765b4621c3f85553",
@@ -77,7 +77,7 @@
     "srn": 200,
     "ing": "carvão ativado",
     "st": "25g",
-    "form": "pó para suspensão oral (frasco ou envelope)"
+    "form": "pó frasco ou envelope"
   },
   "11": {
     "oid": "occ-78044f55273169f4df0a2e8f",
@@ -275,25 +275,25 @@
     "oid": "occ-89b1798f87b6fef73e10d024",
     "src": "F03",
     "srn": 481,
-    "ing": "fórmula dietoterápica para fenilcetonúria (acima de 8 anos)",
-    "st": "lata 400 g a 500 g",
-    "form": "pó para suspensão oral"
+    "ing": "fórmula dietoterápica para crianças acima de 8 anos de idade portadoras de fenilcetonúria",
+    "st": "-",
+    "form": "-"
   },
   "36": {
     "oid": "occ-cb99538aad360c68ec43b6cf",
     "src": "F03",
     "srn": 482,
-    "ing": "fórmula dietoterápica para fenilcetonúria (1 a 8 anos)",
-    "st": "lata 400 g a 500 g",
-    "form": "pó para suspensão oral"
+    "ing": "fórmula dietoterápica para crianças de 1 a 8 anos de idade portadoras de fenilcetonúria",
+    "st": "-",
+    "form": "-"
   },
   "37": {
     "oid": "occ-b0b2adb7d79eb231b1207fad",
     "src": "F03",
     "srn": 483,
-    "ing": "fórmula dietoterápica para fenilcetonúria (abaixo de 1 ano)",
-    "st": "lata 400 g a 500 g",
-    "form": "pó para suspensão oral"
+    "ing": "fórmula dietoterápica para lactentes de 0 a 1 ano de idade portadores de fenilcetonúria",
+    "st": "-",
+    "form": "-"
   },
   "38": {
     "oid": "occ-3e214ed6687162dd9b296e5e",
@@ -301,7 +301,7 @@
     "srn": 515,
     "ing": "gosserrelina (acetato)",
     "st": "3,6 mg",
-    "form": "solução injetável (seringa preenchida)"
+    "form": "implante subcutâneo (seringa preenchida)"
   },
   "39": {
     "oid": "occ-5ff05a19a860eb46c4d2f406",
@@ -309,7 +309,7 @@
     "srn": 546,
     "ing": "etonogestrel",
     "st": "68 mg",
-    "form": "implante subdérmico (com aplicador)"
+    "form": "implante subdérmico"
   },
   "40": {
     "oid": "occ-e39f9b1b1851765877bfabd9",
@@ -317,15 +317,15 @@
     "srn": 548,
     "ing": "imunoglobulina humana",
     "st": "5,0g",
-    "form": "solução injetável"
+    "form": "frasco"
   },
   "41": {
     "oid": "occ-9804085866c3d3a8183e020a",
     "src": "F03",
     "srn": 560,
     "ing": "insulina análoga de ação prolongada",
-    "st": "100 UI/mL (carpule 3 mL)",
-    "form": "solução injetável (carpule)"
+    "st": "carpule 3 mL",
+    "form": "carpule"
   },
   "42": {
     "oid": "occ-1c491584ae8ccd223a4f3f4a",
@@ -365,7 +365,7 @@
     "srn": 656,
     "ing": "mesalazina",
     "st": "2 g",
-    "form": "grânulo de liberação prolongada (envelope/sachê)"
+    "form": "grânulo de liberação prolongada"
   },
   "47": {
     "oid": "occ-e3cf27e7ac0f77720c672d2b",
@@ -381,7 +381,7 @@
     "srn": 708,
     "ing": "mitomicina",
     "st": "0,04% (2,5 mL)",
-    "form": "pó liofilizado (frasco-ampola)"
+    "form": "pó liofilizado"
   },
   "49": {
     "oid": "occ-caeca67ae3bd86fefc1b4d32",
@@ -397,7 +397,7 @@
     "srn": 725,
     "ing": "mycobacterium bovis (bcg)",
     "st": "40 mg",
-    "form": "ampola"
+    "form": "pó liofilizado"
   },
   "51": {
     "oid": "occ-fa6fbb61621b06475e0ea76f",
@@ -437,7 +437,7 @@
     "srn": 770,
     "ing": "óleo mineral",
     "st": "100% (frasco 100 mL)",
-    "form": "óleo para uso oral"
+    "form": "óleo"
   },
   "56": {
     "oid": "occ-2c4cdd92eecda6cae84b133b",
@@ -445,7 +445,7 @@
     "srn": 780,
     "ing": "oxaliplatina",
     "st": "100 mg",
-    "form": "pó liofilizado ou solução injetável (frasco-ampola)"
+    "form": "injetável"
   },
   "57": {
     "oid": "occ-f0f7223fd5ff5341463b0550",
@@ -453,7 +453,7 @@
     "srn": 796,
     "ing": "parecoxibe",
     "st": "40 mg",
-    "form": "ampola"
+    "form": "pó liofilizado"
   },
   "58": {
     "oid": "occ-188379f9a1a901911d6ec8e6",
@@ -467,9 +467,9 @@
     "oid": "occ-67f1d7bd5480cdd10e4558be",
     "src": "F03",
     "srn": 808,
-    "ing": "permetrina loçao topica",
+    "ing": "permetrina",
     "st": "10 mg/mL",
-    "form": "solução injetável"
+    "form": "loção tópica"
   },
   "60": {
     "oid": "occ-b3d92d4f93de913f3ec12ed5",
@@ -508,16 +508,16 @@
     "src": "F03",
     "srn": 828,
     "ing": "poliquimioterapia única adulto (PQT-u adulto)",
-    "st": "blister dose supervisionada e autoadministrada",
-    "form": "blister (cápsulas e comprimidos)"
+    "st": "-",
+    "form": "-"
   },
   "65": {
     "oid": "occ-390b2fafe9c35c873c13e1db",
     "src": "F03",
     "srn": 829,
     "ing": "poliquimioterapia única infantil (PQT-u infantil)",
-    "st": "blister dose supervisionada e autoadministrada",
-    "form": "blister (cápsulas e comprimidos)"
+    "st": "-",
+    "form": "-"
   },
   "66": {
     "oid": "occ-43d9f890ddf5baacb5949054",
@@ -549,7 +549,7 @@
     "srn": 924,
     "ing": "salbutamol (sulfato)",
     "st": "100 mcg/dose",
-    "form": "solução aerossol para inalação oral"
+    "form": "spray ou aerossol para inalação oral"
   },
   "70": {
     "oid": "occ-b3c9c95e8c9426034db9ca30",
@@ -557,7 +557,7 @@
     "srn": 925,
     "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
     "st": "25 mcg/dose + 125 mcg/dose (120 doses + inalador)",
-    "form": "solução aerossol para inalação oral"
+    "form": "aerossol para inalação"
   },
   "71": {
     "oid": "occ-c91b4e24768177e887ed16b6",
@@ -565,7 +565,7 @@
     "srn": 926,
     "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
     "st": "50 mcg/dose + 500 mcg/dose (recipiente dosador strip 60 doses)",
-    "form": "pó inalatório"
+    "form": "pó para inalação"
   },
   "72": {
     "oid": "occ-3da1f44d1a507a358ceee024",
@@ -581,7 +581,7 @@
     "srn": 930,
     "ing": "selante de fibrina",
     "st": "1 mL",
-    "form": "frasco-ampola"
+    "form": "frasco ampola"
   },
   "74": {
     "oid": "occ-d211fe7831486018fe2a05e1",
@@ -613,7 +613,7 @@
     "srn": 978,
     "ing": "sulfato de zinco heptahidratado",
     "st": "17,60 mg/mL",
-    "form": "solução oral"
+    "form": "frasco"
   },
   "78": {
     "oid": "occ-36b8a9522cb455db12695ff2",
@@ -621,7 +621,7 @@
     "srn": 981,
     "ing": "suplemento alimentar com múltiplos micronutrientes",
     "st": "1 g",
-    "form": "pó para suspensão oral (envelope)"
+    "form": "pó"
   },
   "79": {
     "oid": "occ-dd3666cce6867d6246aae72f",
@@ -637,7 +637,7 @@
     "srn": 1002,
     "ing": "tenecteplase",
     "st": "40mg",
-    "form": "pó liofilizado para solução injetável"
+    "form": "pó liofilizado"
   },
   "81": {
     "oid": "occ-cb22669dfd85514c6b90e4c5",
@@ -645,7 +645,7 @@
     "srn": 1010,
     "ing": "tenofovir desoproxila (fumarato) + lamivudina",
     "st": "300 mg + 300 mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "82": {
     "oid": "occ-f2112bc9172fa5847e2ce738",
@@ -669,7 +669,7 @@
     "srn": 1048,
     "ing": "umeclidínio (brometo) + vilanterol (trifenatato)",
     "st": "62,5 mcg/dose + 25 mcg/dose (recipiente dosador strip 30 doses)",
-    "form": "pó inalatório"
+    "form": "pó inalante"
   },
   "85": {
     "oid": "occ-f6ea89da0be78741399fc8f3",
@@ -677,7 +677,7 @@
     "srn": 1059,
     "ing": "vaselina sólida (petrolato)",
     "st": "100 %",
-    "form": "pomada (bisnaga ou tubo)"
+    "form": "bisnaga ou tubo"
   },
   "86": {
     "oid": "occ-3ce4fe73119367200f984907",
@@ -685,7 +685,7 @@
     "srn": 2,
     "ing": "brometo de ipratrópio",
     "st": "0,02mg",
-    "form": "solução para inalação oral (aerossol)"
+    "form": "-"
   },
   "87": {
     "oid": "occ-44ea3122ec626ffeefc2a019",
@@ -693,7 +693,7 @@
     "srn": 3,
     "ing": "brometo de ipratrópio",
     "st": "0,25mg",
-    "form": "solução para inalação (gotas)"
+    "form": "-"
   },
   "88": {
     "oid": "occ-66c51d341c410cacdbd244a4",
@@ -701,7 +701,7 @@
     "srn": 4,
     "ing": "dipropionato de beclometasona",
     "st": "200mcg",
-    "form": "solução aerossol para inalação oral"
+    "form": "-"
   },
   "89": {
     "oid": "occ-8616bec3a9ce97b885f68018",
@@ -709,7 +709,7 @@
     "srn": 5,
     "ing": "dipropionato de beclometasona",
     "st": "250mcg",
-    "form": "solução aerossol para inalação oral"
+    "form": "-"
   },
   "90": {
     "oid": "occ-882d2f438c02eeca23e676cb",
@@ -717,7 +717,7 @@
     "srn": 6,
     "ing": "dipropionato de beclometasona",
     "st": "50mcg",
-    "form": "solução aerossol para inalação oral"
+    "form": "-"
   },
   "91": {
     "oid": "occ-e139cbd09a39d7da5be06493",
@@ -725,7 +725,7 @@
     "srn": 7,
     "ing": "sulfato de salbutamol",
     "st": "100mcg",
-    "form": "solução aerossol para inalação oral"
+    "form": "-"
   },
   "92": {
     "oid": "occ-09b3c17ea49c6c8ae67c2e4d",
@@ -733,7 +733,7 @@
     "srn": 8,
     "ing": "sulfato de salbutamol",
     "st": "5mg",
-    "form": "solução para inalação (gotas)"
+    "form": "-"
   },
   "93": {
     "oid": "occ-edf8dd6f5a636935088dddea",
@@ -741,7 +741,7 @@
     "srn": 9,
     "ing": "cloridrato de metformina",
     "st": "500mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "94": {
     "oid": "occ-48e616ae9f8df7c435126c21",
@@ -749,7 +749,7 @@
     "srn": 10,
     "ing": "cloridrato de metformina",
     "st": "500mg",
-    "form": "comprimido de liberação prolongada"
+    "form": "-"
   },
   "95": {
     "oid": "occ-5cad8bf5fd4bf3b66565f60b",
@@ -757,7 +757,7 @@
     "srn": 11,
     "ing": "cloridrato de metformina",
     "st": "850mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "96": {
     "oid": "occ-1720c0bddc635262a2c3f640",
@@ -765,7 +765,7 @@
     "srn": 12,
     "ing": "glibenclamida",
     "st": "5mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "97": {
     "oid": "occ-8ddfd9df9529d696a2612e89",
@@ -773,7 +773,7 @@
     "srn": 13,
     "ing": "insulina humana regular",
     "st": "100ui/ml",
-    "form": "solução injetável"
+    "form": "-"
   },
   "98": {
     "oid": "occ-e0fa1e053b0a724181075489",
@@ -781,7 +781,7 @@
     "srn": 14,
     "ing": "insulina humana",
     "st": "100ui/ml",
-    "form": "suspensão injetável"
+    "form": "-"
   },
   "99": {
     "oid": "occ-4eb20de2a64dfed2e8279acc",
@@ -789,7 +789,7 @@
     "srn": 15,
     "ing": "atenolol",
     "st": "25mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "100": {
     "oid": "occ-72612f92a939518de17baaa1",
@@ -797,7 +797,7 @@
     "srn": 16,
     "ing": "besilato de anlodipino",
     "st": "5 mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "101": {
     "oid": "occ-7ed9e237bf18ba04361a3576",
@@ -805,7 +805,7 @@
     "srn": 17,
     "ing": "captopril",
     "st": "25mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "102": {
     "oid": "occ-8c6afb38cd237a6b4345229c",
@@ -813,7 +813,7 @@
     "srn": 18,
     "ing": "cloridrato de propranolol",
     "st": "40mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "103": {
     "oid": "occ-55ae1ce56b51b27f32022210",
@@ -821,7 +821,7 @@
     "srn": 19,
     "ing": "hidroclorotiazida",
     "st": "25mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "104": {
     "oid": "occ-81076ce93e4163086259ef8e",
@@ -829,7 +829,7 @@
     "srn": 20,
     "ing": "losartana potássica",
     "st": "50mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "105": {
     "oid": "occ-fbcf0015aa8813b069bae2ca",
@@ -837,7 +837,7 @@
     "srn": 21,
     "ing": "maleato de enalapril",
     "st": "10mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "106": {
     "oid": "occ-b768885458b54f9771fd68e1",
@@ -845,7 +845,7 @@
     "srn": 22,
     "ing": "espironolactona",
     "st": "25 mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "107": {
     "oid": "occ-c71ac9beefacd5021280b7f8",
@@ -853,7 +853,7 @@
     "srn": 23,
     "ing": "furosemida",
     "st": "40 mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "108": {
     "oid": "occ-e597b6780d28aa62255f6eec",
@@ -861,7 +861,7 @@
     "srn": 24,
     "ing": "succinato de metoprolol",
     "st": "25 mg",
-    "form": "comprimido de liberação prolongada"
+    "form": "-"
   },
   "109": {
     "oid": "occ-3e3fc3f2db17a9c68344f2c9",
@@ -869,7 +869,7 @@
     "srn": 25,
     "ing": "acetato de medroxiprogesterona",
     "st": "150mg",
-    "form": "suspensão injetável"
+    "form": "-"
   },
   "110": {
     "oid": "occ-bd645fca4e10b51f38485f06",
@@ -877,7 +877,7 @@
     "srn": 26,
     "ing": "etinilestradiol + levonorgestrel",
     "st": "0,03mg + 0,15mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "111": {
     "oid": "occ-1eaef6352086caff666c4e10",
@@ -885,7 +885,7 @@
     "srn": 27,
     "ing": "noretisterona",
     "st": "0,35mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "112": {
     "oid": "occ-2e237469ad52f38dc54b786e",
@@ -893,7 +893,7 @@
     "srn": 28,
     "ing": "valerato de estradiol + enantato de noretisterona",
     "st": "5mg + 50mg",
-    "form": "solução injetável"
+    "form": "-"
   },
   "113": {
     "oid": "occ-1d42c31c79d6a6fa09551952",
@@ -901,7 +901,7 @@
     "srn": 29,
     "ing": "alendronato de sódio",
     "st": "70mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "114": {
     "oid": "occ-11dd751548d5ceaf859d9a75",
@@ -909,7 +909,7 @@
     "srn": 30,
     "ing": "sinvastatina",
     "st": "10mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "115": {
     "oid": "occ-15d35da6f8e395b14d97041e",
@@ -917,7 +917,7 @@
     "srn": 31,
     "ing": "sinvastatina",
     "st": "20mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "116": {
     "oid": "occ-1e13d576f93f33e19c79b9e2",
@@ -925,7 +925,7 @@
     "srn": 32,
     "ing": "sinvastatina",
     "st": "40mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "117": {
     "oid": "occ-31f830e7fbb52c0353da2946",
@@ -933,7 +933,7 @@
     "srn": 33,
     "ing": "carbidopa + levodopa",
     "st": "25mg + 250mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "118": {
     "oid": "occ-e7d83368e51a7cb974fd6bd9",
@@ -941,7 +941,7 @@
     "srn": 34,
     "ing": "cloridrato de benserazida + levodopa",
     "st": "25mg + 100mg",
-    "form": "comprimido ou cápsula"
+    "form": "-"
   },
   "119": {
     "oid": "occ-57c2830deb65187a5743c1b3",
@@ -949,7 +949,7 @@
     "srn": 35,
     "ing": "maleato de timolol",
     "st": "2,5mg",
-    "form": "solução oftálmica"
+    "form": "-"
   },
   "120": {
     "oid": "occ-49b4ce4a23cd3e4e01bf68f5",
@@ -957,7 +957,7 @@
     "srn": 36,
     "ing": "maleato de timolol",
     "st": "5mg",
-    "form": "solução oftálmica"
+    "form": "-"
   },
   "121": {
     "oid": "occ-4dbafe42e6cc0c7058ecc60a",
@@ -965,7 +965,7 @@
     "srn": 37,
     "ing": "budesonida",
     "st": "32mcg",
-    "form": "suspensão para inalação nasal"
+    "form": "-"
   },
   "122": {
     "oid": "occ-03bb26a358e97b57f4fd899d",
@@ -973,7 +973,7 @@
     "srn": 38,
     "ing": "budesonida",
     "st": "50mcg",
-    "form": "suspensão para inalação nasal"
+    "form": "-"
   },
   "123": {
     "oid": "occ-dc03277c309dbb980fe781ca",
@@ -981,7 +981,7 @@
     "srn": 39,
     "ing": "dipropionato de beclometasona",
     "st": "50mcg/dose",
-    "form": "suspensão para inalação nasal"
+    "form": "-"
   },
   "124": {
     "oid": "occ-7f063f17f3885eb3cdc24d3f",
@@ -989,7 +989,7 @@
     "srn": 40,
     "ing": "dapagliflozina",
     "st": "10 mg",
-    "form": "comprimido"
+    "form": "-"
   },
   "125": {
     "oid": "occ-8b27e582e2c9bd191869b342",
@@ -997,7 +997,7 @@
     "srn": 41,
     "ing": "absorvente higiênico",
     "st": "-",
-    "form": "unidade"
+    "form": "-"
   },
   "126": {
     "oid": "occ-5ea8a977695dbad521b67f97",
@@ -1005,6 +1005,6 @@
     "srn": 42,
     "ing": "fralda geriátrica",
     "st": "-",
-    "form": "unidade"
+    "form": "-"
   }
 }

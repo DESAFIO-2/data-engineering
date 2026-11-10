@@ -5,7 +5,7 @@
       "source_id": "F01",
       "total_occurrences": 996,
       "total_pages_in_source": 267,
-      "raw_txt_chars": 250149,
+      "raw_txt_chars": 237768,
       "null_counts": {
         "active_ingredient": 0,
         "strength": 0,
@@ -16,9 +16,9 @@
       "clinical_indications_in_strength": [],
       "raw_text_in_page": 0,
       "raw_text_in_doc": 0,
-      "active_ingredient_in_page": 995,
-      "active_ingredient_in_doc": 995,
-      "strength_in_page": 996,
+      "active_ingredient_in_page": 825,
+      "active_ingredient_in_doc": 909,
+      "strength_in_page": 929,
       "form_literal_in_page": 996,
       "form_standardized_or_inferred_count": 0,
       "form_standardized_or_inferred_examples": []
@@ -27,7 +27,7 @@
       "source_id": "F03",
       "total_occurrences": 1078,
       "total_pages_in_source": 98,
-      "raw_txt_chars": 313966,
+      "raw_txt_chars": 298020,
       "null_counts": {
         "active_ingredient": 0,
         "strength": 0,
@@ -36,156 +36,20 @@
       "pending_reviews": 0,
       "unresolved_uncertainties": 0,
       "clinical_indications_in_strength": [],
-      "raw_text_in_page": 1,
-      "raw_text_in_doc": 1,
-      "active_ingredient_in_page": 1053,
-      "active_ingredient_in_doc": 1054,
-      "strength_in_page": 970,
-      "form_literal_in_page": 1040,
-      "form_standardized_or_inferred_count": 38,
-      "form_standardized_or_inferred_examples": [
-        {
-          "occurrence_id": "occ-8ba2c9995808a8d21ff382ba",
-          "source_row_number": 109,
-          "page": 16,
-          "active_ingredient": "artesunato",
-          "strength": "60 mg/mL",
-          "form": "pó liofilizado para solução injetável",
-          "raw_text": "artesunato 60 mg/mL pó liófilo para Medicamentos para o\n109. M SE33191 Programa de Malária – Equipe Volante\ninjeção endovenosa - malária tratamento da malária"
-        },
-        {
-          "occurrence_id": "occ-d73427eedf5703737538bd3d",
-          "source_row_number": 150,
-          "page": 18,
-          "active_ingredient": "betametasona (valerato)",
-          "strength": "0,1% (bisnaga 30 g)",
-          "form": "creme dermatológico",
-          "raw_text": "betametasona (valerato) creme 0,1 %\n150. 9 0640 Corticosteróides isolados Uso hospitalar\nbisnaga 30 g"
-        },
-        {
-          "occurrence_id": "occ-4588d95017826e21d88fb8b1",
-          "source_row_number": 200,
-          "page": 20,
-          "active_ingredient": "carvão ativado",
-          "strength": "25g",
-          "form": "pó para suspensão oral (frasco ou envelope)",
-          "raw_text": "carvão ativado pó frasco ou envelope Medicamentos\n200. 2 03437 Uso hospitalar\n25g (manipulado) manipulados"
-        },
-        {
-          "occurrence_id": "occ-35aa08b03801a03eca1cbd89",
-          "source_row_number": 216,
-          "page": 20,
-          "active_ingredient": "cetoconazol",
-          "strength": "2% (bisnaga 30 g)",
-          "form": "creme dermatológico",
-          "raw_text": "Antifúngicos para uso\n216. 9 0292 cetoconazol creme 2 % bisnaga 30 g Uso hospitalar\ntópico"
-        },
-        {
-          "occurrence_id": "occ-75c60747180854a75232b0ec",
-          "source_row_number": 276,
-          "page": 23,
-          "active_ingredient": "clorexidina",
-          "strength": "10 mg/mL (1% - frasco 1000 mL)",
-          "form": "solução aquosa tópica",
-          "raw_text": "clorexidina solução aquosa 10 mg/mL Antissépticos e\n276. 3 4535 UBS (farmácia interna) e uso hospitalar\n(1%) frasco 1000 mL - solução tópica desinfetantes"
-        },
-        {
-          "occurrence_id": "occ-c500bcdbb85f9875820c5df8",
-          "source_row_number": 473,
-          "page": 32,
-          "active_ingredient": "fosfato de sódio monobásico + fosfato de sódio dibásico",
-          "strength": "(16 g + 6 g)/100 mL (frasco ou bolsa 125 mL a 133 mL)",
-          "form": "solução retal (enema)",
-          "raw_text": "fosfato de sodio monobasico + fosfato\nde sodio dibasico solução enema (16 g UBS (farmácia ambulatorial) e uso\n473. 9 0502 Laxativos\n+6 g)/100 mL frasco ou bolsa 125 mL a hospitalar\n133 mL"
-        },
-        {
-          "occurrence_id": "occ-89b1798f87b6fef73e10d024",
-          "source_row_number": 481,
-          "page": 32,
-          "active_ingredient": "fórmula dietoterápica para fenilcetonúria (acima de 8 anos)",
-          "strength": "lata 400 g a 500 g",
-          "form": "pó para suspensão oral",
-          "raw_text": "fórmula dietoterápica para crianças\nDietas enterais especiais\n481. 1 7725 acima de 8 anos de idade portadoras de Farmácia do Componente Especializado\nregular\nfenilcetonúria"
-        },
-        {
-          "occurrence_id": "occ-cb99538aad360c68ec43b6cf",
-          "source_row_number": 482,
-          "page": 32,
-          "active_ingredient": "fórmula dietoterápica para fenilcetonúria (1 a 8 anos)",
-          "strength": "lata 400 g a 500 g",
-          "form": "pó para suspensão oral",
-          "raw_text": "fórmula dietoterápica para crianças de 1\nDietas enterais especiais\n482. 1 7728 a 8 anos de idade portadoras de Farmácia do Componente Especializado\nregular\nfenilcetonúria"
-        },
-        {
-          "occurrence_id": "occ-b0b2adb7d79eb231b1207fad",
-          "source_row_number": 483,
-          "page": 32,
-          "active_ingredient": "fórmula dietoterápica para fenilcetonúria (abaixo de 1 ano)",
-          "strength": "lata 400 g a 500 g",
-          "form": "pó para suspensão oral",
-          "raw_text": "fórmula dietoterápica para lactentes de\nDietas enterais especiais\n483. 1 7726 0 a 1 ano de idade portadores de Farmácia do Componente Especializado\nregular\nfenilcetonúria"
-        },
-        {
-          "occurrence_id": "occ-b042234935f17939a393d2ab",
-          "source_row_number": 500,
-          "page": 33,
-          "active_ingredient": "glicerina (glicerol)",
-          "strength": "120 mg/mL (12% - frasco ou bolsa 500 mL)",
-          "form": "solução retal (enema)",
-          "raw_text": "glicerina (glicerol) solução retal/enema\nUBS (farmácia ambulatorial) e uso\n500. 9 0504 120mg/mL (12 %) frasco ou bolsa 500 mL Laxativos\nhospitalar\ncom sonda ou aplicador"
-        },
-        {
-          "occurrence_id": "occ-3e214ed6687162dd9b296e5e",
-          "source_row_number": 515,
-          "page": 34,
-          "active_ingredient": "gosserrelina (acetato)",
-          "strength": "3,6 mg",
-          "form": "solução injetável (seringa preenchida)",
-          "raw_text": "gosserrelina (acetato) 3,6 mg implante Hormônios e agentes Farmácia Ambulatorial Oncológica do\n515. 9 364\nsubcutâneo (seringa preenchida) relacionados HRT e Farmácia Ambulatorial do HBDF"
-        },
-        {
-          "occurrence_id": "occ-5ff05a19a860eb46c4d2f406",
-          "source_row_number": 546,
-          "page": 35,
-          "active_ingredient": "etonogestrel",
-          "strength": "68 mg",
-          "form": "implante subdérmico (com aplicador)",
-          "raw_text": "implante subdérmico de etonogestrel 68 Medicamentos para a\n546. M SE34513 UBS (farmácia ambulatorial)\nmg com aplicador saúde da mulher"
-        },
-        {
-          "occurrence_id": "occ-9804085866c3d3a8183e020a",
-          "source_row_number": 560,
-          "page": 36,
-          "active_ingredient": "insulina análoga de ação prolongada",
-          "strength": "100 UI/mL (carpule 3 mL)",
-          "form": "solução injetável (carpule)",
-          "raw_text": "Para Diabetes Mellitus tipo 1: Farmácia\ndo Componente Especializado e UBS\n(farmácia ambulatorial)*\ninsulina análoga de ação prolongada Para Diabetes Mellitus tipo 2: UBS\n560. M S37756 Insulinas e análogos\ncarpule 3mL (farmácia ambulatorial)*\n*Medicamento dispensado conforme Nota Técnica nº\n5/2026 (documento SEI nº 206580685) que trata\ndo fluxo de fornecimento de Insulina Análoga de\nAção Prolongada na APS do DF."
-        },
-        {
-          "occurrence_id": "occ-0d65a0214341f4ea9d89e1d0",
-          "source_row_number": 607,
-          "page": 38,
-          "active_ingredient": "levodopa + benserazida (cloridrato)",
-          "strength": "100 mg + 25 mg",
-          "form": "comprimido, cápsula ou drágea de liberação prolongada",
-          "raw_text": "levodopa + benserazida (cloridrato)\n607. 6 172 comprimido ou cápsula ou drágea Agentes dopaminérgicos UBS (farmácia ambulatorial)\nliberação prolongada 100 mg +25 mg"
-        },
-        {
-          "occurrence_id": "occ-8d4c9df6f2789ee0f39f16ec",
-          "source_row_number": 656,
-          "page": 40,
-          "active_ingredient": "mesalazina",
-          "strength": "2 g",
-          "form": "grânulo de liberação prolongada (envelope/sachê)",
-          "raw_text": "mesalazina granulo de liberação Agentes antiinflamatórios\n656. 2 9850 Farmácia do Componente Especializado\nprolongada envelope 2g sachê intestinais"
-        }
-      ]
+      "raw_text_in_page": 1078,
+      "raw_text_in_doc": 1078,
+      "active_ingredient_in_page": 1030,
+      "active_ingredient_in_doc": 1042,
+      "strength_in_page": 878,
+      "form_literal_in_page": 1078,
+      "form_standardized_or_inferred_count": 0,
+      "form_standardized_or_inferred_examples": []
     },
     "F04": {
       "source_id": "F04",
       "total_occurrences": 41,
       "total_pages_in_source": 1,
-      "raw_txt_chars": 1483,
+      "raw_txt_chars": 1425,
       "null_counts": {
         "active_ingredient": 0,
         "strength": 0,
@@ -199,145 +63,9 @@
       "active_ingredient_in_page": 41,
       "active_ingredient_in_doc": 41,
       "strength_in_page": 41,
-      "form_literal_in_page": 0,
-      "form_standardized_or_inferred_count": 41,
-      "form_standardized_or_inferred_examples": [
-        {
-          "occurrence_id": "occ-3ce4fe73119367200f984907",
-          "source_row_number": 2,
-          "page": 1,
-          "active_ingredient": "brometo de ipratrópio",
-          "strength": "0,02mg",
-          "form": "solução para inalação oral (aerossol)",
-          "raw_text": "brometo de ipratrópio 0,02mg "
-        },
-        {
-          "occurrence_id": "occ-44ea3122ec626ffeefc2a019",
-          "source_row_number": 3,
-          "page": 1,
-          "active_ingredient": "brometo de ipratrópio",
-          "strength": "0,25mg",
-          "form": "solução para inalação (gotas)",
-          "raw_text": "brometo de ipratrópio 0,25mg "
-        },
-        {
-          "occurrence_id": "occ-66c51d341c410cacdbd244a4",
-          "source_row_number": 4,
-          "page": 1,
-          "active_ingredient": "dipropionato de beclometasona",
-          "strength": "200mcg",
-          "form": "solução aerossol para inalação oral",
-          "raw_text": "dipropionato de beclometasona 200mcg"
-        },
-        {
-          "occurrence_id": "occ-8616bec3a9ce97b885f68018",
-          "source_row_number": 5,
-          "page": 1,
-          "active_ingredient": "dipropionato de beclometasona",
-          "strength": "250mcg",
-          "form": "solução aerossol para inalação oral",
-          "raw_text": "dipropionato de beclometasona 250mcg"
-        },
-        {
-          "occurrence_id": "occ-882d2f438c02eeca23e676cb",
-          "source_row_number": 6,
-          "page": 1,
-          "active_ingredient": "dipropionato de beclometasona",
-          "strength": "50mcg",
-          "form": "solução aerossol para inalação oral",
-          "raw_text": "dipropionato de beclometasona 50mcg"
-        },
-        {
-          "occurrence_id": "occ-e139cbd09a39d7da5be06493",
-          "source_row_number": 7,
-          "page": 1,
-          "active_ingredient": "sulfato de salbutamol",
-          "strength": "100mcg",
-          "form": "solução aerossol para inalação oral",
-          "raw_text": "sulfato de salbutamol 100mcg "
-        },
-        {
-          "occurrence_id": "occ-09b3c17ea49c6c8ae67c2e4d",
-          "source_row_number": 8,
-          "page": 1,
-          "active_ingredient": "sulfato de salbutamol",
-          "strength": "5mg",
-          "form": "solução para inalação (gotas)",
-          "raw_text": "sulfato de salbutamol 5mg "
-        },
-        {
-          "occurrence_id": "occ-edf8dd6f5a636935088dddea",
-          "source_row_number": 9,
-          "page": 1,
-          "active_ingredient": "cloridrato de metformina",
-          "strength": "500mg",
-          "form": "comprimido",
-          "raw_text": "cloridrato de metformina 500mg "
-        },
-        {
-          "occurrence_id": "occ-48e616ae9f8df7c435126c21",
-          "source_row_number": 10,
-          "page": 1,
-          "active_ingredient": "cloridrato de metformina",
-          "strength": "500mg",
-          "form": "comprimido de liberação prolongada",
-          "raw_text": "cloridrato de metformina 500mg - ação prolongada "
-        },
-        {
-          "occurrence_id": "occ-5cad8bf5fd4bf3b66565f60b",
-          "source_row_number": 11,
-          "page": 1,
-          "active_ingredient": "cloridrato de metformina",
-          "strength": "850mg",
-          "form": "comprimido",
-          "raw_text": "cloridrato de metformina 850mg "
-        },
-        {
-          "occurrence_id": "occ-1720c0bddc635262a2c3f640",
-          "source_row_number": 12,
-          "page": 1,
-          "active_ingredient": "glibenclamida",
-          "strength": "5mg",
-          "form": "comprimido",
-          "raw_text": "glibenclamida 5mg "
-        },
-        {
-          "occurrence_id": "occ-8ddfd9df9529d696a2612e89",
-          "source_row_number": 13,
-          "page": 1,
-          "active_ingredient": "insulina humana regular",
-          "strength": "100ui/ml",
-          "form": "solução injetável",
-          "raw_text": "insulina humana regular 100ui/ml "
-        },
-        {
-          "occurrence_id": "occ-e0fa1e053b0a724181075489",
-          "source_row_number": 14,
-          "page": 1,
-          "active_ingredient": "insulina humana",
-          "strength": "100ui/ml",
-          "form": "suspensão injetável",
-          "raw_text": "insulina humana 100ui/ml "
-        },
-        {
-          "occurrence_id": "occ-4eb20de2a64dfed2e8279acc",
-          "source_row_number": 15,
-          "page": 1,
-          "active_ingredient": "atenolol",
-          "strength": "25mg",
-          "form": "comprimido",
-          "raw_text": "atenolol 25mg "
-        },
-        {
-          "occurrence_id": "occ-72612f92a939518de17baaa1",
-          "source_row_number": 16,
-          "page": 1,
-          "active_ingredient": "besilato de anlodipino",
-          "strength": "5 mg",
-          "form": "comprimido",
-          "raw_text": "besilato de anlodipino 5 mg"
-        }
-      ]
+      "form_literal_in_page": 41,
+      "form_standardized_or_inferred_count": 0,
+      "form_standardized_or_inferred_examples": []
     }
   },
   "specific_checks": {

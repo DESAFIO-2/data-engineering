@@ -1,13 +1,13 @@
 {
   "based_on": {
     "corpus_path": "data/corpus/experimental",
-    "occurrences_sha256": "b2c449f74b6e3e8d2052ad91257fd9ef2ad7286fc7f1ecca1a76c5724f74756e"
+    "occurrences_sha256": "f6223b4aeb42248346d3e844ef95cb230fb981ff8256070fd3bb528e2a7daafb"
   },
   "files": {
     "catalog.jsonl": {
-      "bytes": 11058,
+      "bytes": 10322,
       "records": 39,
-      "sha256": "61ef262878ca413ad973da13ca555f384731226c27a65901b79f42785e1aaf00"
+      "sha256": "0b9803e016a77e3c913af160d6508456c6abc378d3e111a7b5aa312d1a878f23"
     },
     "chunks.jsonl": {
       "bytes": 23941,
@@ -15,18 +15,18 @@
       "sha256": "da9b564081833371ef649f720a63c7d73203234ebbd014224b457c1d487deecb"
     },
     "occurrences.jsonl": {
-      "bytes": 39143,
+      "bytes": 39691,
       "records": 41,
-      "sha256": "c9e4d99090d47fb43878266dd3b8b59e6d9650e669f92cd2331f1a956fbd2aca"
+      "sha256": "43a2eb5f88259d3de7917a237099c35021a63144f5c66154c5b00f997808654d"
     },
     "report.json": {
       "bytes": 436,
       "sha256": "ccf5c930fce98c370898611b2a6c7d13c82fd8da1afbec68115d8ed2b415e4cc"
     },
     "review-log.jsonl": {
-      "bytes": 29781,
+      "bytes": 27868,
       "records": 41,
-      "sha256": "fe46473d35b02c83923dfeb186887da88047d127df1d3eab6877da3913b9eb5f"
+      "sha256": "2f21275bdf9d0dd1d5b6fcebd33273d123695f0e316ded396336ca7dfca94a97"
     }
   },
   "parser_version": "f04-curated-field-fixes-v2-consolidated",

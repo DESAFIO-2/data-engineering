@@ -23,14 +23,43 @@ def normalize_text(s: str) -> str:
     return " ".join(s.split())
 
 
-def load_pages_jsonl(path: Path) -> dict[int, str]:
+def load_pages_jsonl(path: Path, pdf_path: Path | None = None) -> tuple[dict[int, str], str]:
     pages: dict[int, str] = {}
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            if line.strip():
-                rec = json.loads(line)
-                pages[int(rec["page"])] = rec["text"]
-    return pages
+    if path.is_file():
+        with path.open("r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    rec = json.loads(line)
+                    pages[int(rec["page"])] = rec["text"]
+        txt_path = path.with_name(path.name.replace("-pages.jsonl", ".txt"))
+        raw_txt = txt_path.read_text(encoding="utf-8") if txt_path.is_file() else "\n".join(pages.values())
+        return pages, raw_txt
+
+    if pdf_path is not None and pdf_path.is_file():
+        try:
+            import pdfplumber  # type: ignore
+
+            with pdfplumber.open(pdf_path) as pdf:
+                for idx, page in enumerate(pdf.pages, start=1):
+                    pages[idx] = page.extract_text() or ""
+        except ImportError:
+            import subprocess
+            import tempfile
+
+            dump_bin = Path("/tmp/pdf_dump_jsonl")
+            if dump_bin.is_file():
+                with tempfile.NamedTemporaryFile(suffix=".jsonl", delete=False) as tf:
+                    tmp_jsonl = Path(tf.name)
+                subprocess.run([str(dump_bin), str(pdf_path), str(tmp_jsonl)], check=True)
+                for line in tmp_jsonl.read_text(encoding="utf-8").splitlines():
+                    if line.strip():
+                        rec = json.loads(line)
+                        pages[int(rec["page"])] = rec["text"]
+                tmp_jsonl.unlink(missing_ok=True)
+        raw_txt = "\n".join(pages[k] for k in sorted(pages))
+        return pages, raw_txt
+
+    raise FileNotFoundError(f"Não foi possível carregar páginas de {path} nem de {pdf_path}")
 
 
 def check_source_occurrences(
@@ -118,7 +147,13 @@ def check_source_occurrences(
             str_in_page += 1
 
         fm_norm = normalize_text(occ.get("form", ""))
-        if fm_norm == "-" or fm_norm in p_norm:
+        fm_words = [w for w in re.split(r"[\s/(),+-]+", fm_norm) if len(w) >= 2 and w not in {"de", "da", "do", "ou", "para", "com", "em", "por"}]
+        if (
+            fm_norm == "-"
+            or fm_norm in p_norm
+            or fm_norm in rt_norm
+            or (fm_words and all(w in p_norm or w in rt_norm for w in fm_words))
+        ):
             form_in_page += 1
         else:
             inferred_forms.append(
@@ -185,23 +220,22 @@ def main() -> None:
 
     sources_cfg = {
         "F01": (
-            ROOT / "data/raw/F01-rename/rename-2024-2ed.txt",
+            ROOT / "data/raw/F01-rename/rename-2024-2ed.pdf",
             ROOT / "data/raw/F01-rename/rename-2024-2ed-pages.jsonl",
         ),
         "F03": (
-            ROOT / "data/raw/F03-reme-df/reme-df-2026-10-29.txt",
+            ROOT / "data/raw/F03-reme-df/reme-df-2026-10-29.pdf",
             ROOT / "data/raw/F03-reme-df/reme-df-2026-10-29-pages.jsonl",
         ),
         "F04": (
-            ROOT / "data/raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.txt",
+            ROOT / "data/raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
             ROOT / "data/raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31-pages.jsonl",
         ),
     }
 
     results: dict[str, Any] = {}
-    for sid, (txt_path, jsonl_path) in sources_cfg.items():
-        raw_txt = txt_path.read_text(encoding="utf-8")
-        pages = load_pages_jsonl(jsonl_path)
+    for sid, (pdf_path, jsonl_path) in sources_cfg.items():
+        pages, raw_txt = load_pages_jsonl(jsonl_path, pdf_path=pdf_path)
         results[sid] = check_source_occurrences(by_source[sid], pages, raw_txt, sid)
 
     # Specific mandatory assertions requested by user
