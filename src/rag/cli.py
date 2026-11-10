@@ -122,9 +122,12 @@ def main() -> int:
         "--experimental", action="store_true", help="Usar corpus candidato isolado"
     )
     corpus_mode.add_argument(
+        "--validated", action="store_true", help="Usar corpus consolidado com revisão aprovada"
+    )
+    corpus_mode.add_argument(
         "--curated", type=Path, help="Release ampliado com revisão humana validada"
     )
-    parser.add_argument("--corpus", type=Path, default=ROOT / "data/corpus/experimental")
+    parser.add_argument("--corpus", type=Path)
     parser.add_argument("--supplement", type=Path, help="Chunks complementares opcionais")
     parser.add_argument("--release", type=Path, help="Diretório de release aprovado")
     parser.add_argument(
@@ -149,8 +152,12 @@ def main() -> int:
         "--stage", choices=("retrieval", "generation", "end-to-end"), default="end-to-end"
     )
     args = parser.parse_args()
+    if args.corpus is None:
+        args.corpus = ROOT / (
+            "data/corpus" if args.validated else "data/corpus/experimental"
+        )
     try:
-        if args.experimental or args.curated:
+        if args.experimental or args.validated or args.curated:
             from .experimental_cli import run
 
             return run(args, settings)

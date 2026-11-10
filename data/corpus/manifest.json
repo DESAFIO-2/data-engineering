@@ -1,0 +1,38 @@
+{
+  "files": {
+    "catalog.jsonl": {
+      "bytes": 546093,
+      "records": 1885,
+      "sha256": "0387598d5865acde728e6bc27726c02bd841f1d3222dfd5a6f0195706bf140a5"
+    },
+    "chunks.jsonl": {
+      "bytes": 2181849,
+      "records": 2620,
+      "sha256": "35d1964f114e5c5bcaf9da8821476ac13d01a4bd441c810a4b150d52123d85f4"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2513639,
+      "records": 2115,
+      "sha256": "b2c449f74b6e3e8d2052ad91257fd9ef2ad7286fc7f1ecca1a76c5724f74756e"
+    },
+    "report.json": {
+      "bytes": 1383,
+      "sha256": "cafb9a906304eb34aae0e908e9dfa2a9d1bbcbee93411be117eafb436aec7752"
+    },
+    "review-log.jsonl": {
+      "bytes": 258717,
+      "records": 283,
+      "sha256": "246c9cd8d46c09dfa7f03de8e69a60c7f93227b466bcf83d4c8ed3037aafbbf5"
+    }
+  },
+  "parser_version": "consolidated-v2-human-verified",
+  "restoration": {
+    "corpus_fingerprint": "3b320bf22363827d2899035a7101484394c6edf943cb72522fbfb3ff7a67a57c",
+    "method": "chunk/occurrence and provenance equality against archived export; index ID/content verification",
+    "source_path": "data/curation/revisao-corpus-v1.json",
+    "source_sha256": "cadbb6802b848b27bb9386339611e6e6aed1c9c3b9b254b2a05a8eb092a47881"
+  },
+  "review_status": "approved",
+  "schema_version": "consolidated-v2",
+  "status": "experimental"
+}

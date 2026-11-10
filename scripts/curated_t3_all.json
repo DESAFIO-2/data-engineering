@@ -1,0 +1,1010 @@
+{
+  "1": {
+    "oid": "occ-bb26062fbe91f7ef77a4a9c5",
+    "src": "F03",
+    "srn": 16,
+    "ing": "ácido paraminossalicilico",
+    "st": "4 g",
+    "form": "granulado revestido"
+  },
+  "2": {
+    "oid": "occ-32f9c026384ce1b61a6b03a2",
+    "src": "F03",
+    "srn": 28,
+    "ing": "água para injetáveis",
+    "st": "10 mL",
+    "form": "ampola"
+  },
+  "3": {
+    "oid": "occ-405fcd5d37f8cf3fbb357a41",
+    "src": "F03",
+    "srn": 29,
+    "ing": "água para injetáveis",
+    "st": "1000 mL",
+    "form": "frasco ou bolsa"
+  },
+  "4": {
+    "oid": "occ-adec0f7209079b9611b5cfc9",
+    "src": "F03",
+    "srn": 30,
+    "ing": "água para injetáveis",
+    "st": "500 mL",
+    "form": "frasco ou bolsa"
+  },
+  "5": {
+    "oid": "occ-f1d051e9eb0bb97100dabec1",
+    "src": "F03",
+    "srn": 38,
+    "ing": "alentuzumabe",
+    "st": "10mg/mL",
+    "form": "frasco-ampola"
+  },
+  "6": {
+    "oid": "occ-fedb4157f625b028ed9a47a1",
+    "src": "F03",
+    "srn": 83,
+    "ing": "amoxicilina + clavulanato de potássio",
+    "st": "50 mg/mL + 12,5 mg/mL (frasco 75 ou 100 mL)",
+    "form": "pó para suspensão oral"
+  },
+  "7": {
+    "oid": "occ-8ba2c9995808a8d21ff382ba",
+    "src": "F03",
+    "srn": 109,
+    "ing": "artesunato",
+    "st": "60 mg/mL",
+    "form": "pó liofilizado para solução injetável"
+  },
+  "8": {
+    "oid": "occ-51932c9f765b4621c3f85553",
+    "src": "F03",
+    "srn": 133,
+    "ing": "beclometasona (dipropionato)",
+    "st": "50 mcg/dose",
+    "form": "spray nasal"
+  },
+  "9": {
+    "oid": "occ-eaa8f8a6c76180bd2bc84f7b",
+    "src": "F03",
+    "srn": 185,
+    "ing": "calcitonina sintética de salmão",
+    "st": "200 UI/dose",
+    "form": "spray nasal"
+  },
+  "10": {
+    "oid": "occ-4588d95017826e21d88fb8b1",
+    "src": "F03",
+    "srn": 200,
+    "ing": "carvão ativado",
+    "st": "25g",
+    "form": "pó para suspensão oral (frasco ou envelope)"
+  },
+  "11": {
+    "oid": "occ-78044f55273169f4df0a2e8f",
+    "src": "F03",
+    "srn": 217,
+    "ing": "cetoconazol",
+    "st": "2%",
+    "form": "xampu"
+  },
+  "12": {
+    "oid": "occ-dd957ba40ca4e72ce3664526",
+    "src": "F03",
+    "srn": 291,
+    "ing": "complexo protrombínico humano",
+    "st": "500 UI a 600 UI",
+    "form": "frasco-ampola"
+  },
+  "13": {
+    "oid": "occ-2acbac5138b97b6025ef27eb",
+    "src": "F03",
+    "srn": 292,
+    "ing": "complexo protrombinico parcialmente ativado",
+    "st": "1.000 UI",
+    "form": "frasco-ampola"
+  },
+  "14": {
+    "oid": "occ-cec6720b0696cc3467763f60",
+    "src": "F03",
+    "srn": 293,
+    "ing": "complexo protrombinico parcialmente ativado",
+    "st": "2.500 UI",
+    "form": "frasco-ampola"
+  },
+  "15": {
+    "oid": "occ-a2328ad01cbdd7eaf6399199",
+    "src": "F03",
+    "srn": 294,
+    "ing": "complexo protrombinico parcialmente ativado",
+    "st": "500 UI",
+    "form": "frasco-ampola"
+  },
+  "16": {
+    "oid": "occ-aaec62b34383e26e09f8794e",
+    "src": "F03",
+    "srn": 296,
+    "ing": "concentrado de fator VII ativado recombinante",
+    "st": "1mg",
+    "form": "frasco-ampola"
+  },
+  "17": {
+    "oid": "occ-6dc34df67785ee2bef866fdf",
+    "src": "F03",
+    "srn": 297,
+    "ing": "concentrado de fator VII ativado recombinante",
+    "st": "2mg",
+    "form": "frasco-ampola"
+  },
+  "18": {
+    "oid": "occ-d5511594a7495ad4d86ef56e",
+    "src": "F03",
+    "srn": 298,
+    "ing": "concentrado de fator VII ativado recombinante",
+    "st": "5mg",
+    "form": "frasco-ampola"
+  },
+  "19": {
+    "oid": "occ-ce00e77552ff3ea43768d038",
+    "src": "F03",
+    "srn": 299,
+    "ing": "concentrado de fator VIII para doença de von willebrand",
+    "st": "450 UI a 500 UI",
+    "form": "frasco-ampola"
+  },
+  "20": {
+    "oid": "occ-c5954d43bacfc3b36ef60e9f",
+    "src": "F03",
+    "srn": 300,
+    "ing": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand",
+    "st": "250UI",
+    "form": "frasco-ampola"
+  },
+  "21": {
+    "oid": "occ-fbadecd101697a7c4a99e493",
+    "src": "F03",
+    "srn": 301,
+    "ing": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand",
+    "st": "500 UI",
+    "form": "frasco-ampola"
+  },
+  "22": {
+    "oid": "occ-5c4b29dfa1a9134aaf4401c3",
+    "src": "F03",
+    "srn": 302,
+    "ing": "concentrado de fator VIII recombinante",
+    "st": "1.000 UI",
+    "form": "frasco-ampola"
+  },
+  "23": {
+    "oid": "occ-514302c5ebfe39da32cc0793",
+    "src": "F03",
+    "srn": 303,
+    "ing": "concentrado de fator VIII recombinante",
+    "st": "250 UI",
+    "form": "frasco-ampola"
+  },
+  "24": {
+    "oid": "occ-74dc6ba00f49a278be13f1b0",
+    "src": "F03",
+    "srn": 304,
+    "ing": "concentrado de fator VIII recombinante",
+    "st": "500 UI",
+    "form": "frasco-ampola"
+  },
+  "25": {
+    "oid": "occ-0fe17d8a84b5c7dd712524b8",
+    "src": "F03",
+    "srn": 305,
+    "ing": "concentrado plasmático de fator IX",
+    "st": "200 UI a 250 UI",
+    "form": "frasco-ampola"
+  },
+  "26": {
+    "oid": "occ-00e14eea89c252dbdefdbe72",
+    "src": "F03",
+    "srn": 306,
+    "ing": "concentrado plasmático de fator IX",
+    "st": "500 UI a 600 UI",
+    "form": "frasco-ampola"
+  },
+  "27": {
+    "oid": "occ-7e23bb480d24a60747892567",
+    "src": "F03",
+    "srn": 307,
+    "ing": "concentrado plasmatico de fator VIII",
+    "st": "1.000 UI",
+    "form": "frasco-ampola"
+  },
+  "28": {
+    "oid": "occ-4b258d4e5ef990070d72b3c1",
+    "src": "F03",
+    "srn": 308,
+    "ing": "concentrado plasmatico de fator VIII",
+    "st": "250 UI",
+    "form": "frasco-ampola"
+  },
+  "29": {
+    "oid": "occ-566ad0f0dc15f991a8d22de7",
+    "src": "F03",
+    "srn": 309,
+    "ing": "concentrado plasmatico de fator VIII",
+    "st": "500 UI",
+    "form": "frasco-ampola"
+  },
+  "30": {
+    "oid": "occ-f716947e867b48a761e0fb67",
+    "src": "F03",
+    "srn": 310,
+    "ing": "concentrado plasmatico de fator XIII",
+    "st": "250 UI",
+    "form": "frasco-ampola"
+  },
+  "31": {
+    "oid": "occ-51ff8fa4d4c886e6e8c742b0",
+    "src": "F03",
+    "srn": 340,
+    "ing": "desmopressina",
+    "st": "0,1 mg/mL (frasco 2,5 mL)",
+    "form": "spray nasal"
+  },
+  "32": {
+    "oid": "occ-73c991d8ed35e115797070c8",
+    "src": "F03",
+    "srn": 341,
+    "ing": "desmopressina",
+    "st": "0,1 mg/mL (frasco 2,5 mL)",
+    "form": "spray nasal"
+  },
+  "33": {
+    "oid": "occ-c9bc36fa60e7502f10aa9a60",
+    "src": "F03",
+    "srn": 463,
+    "ing": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato)",
+    "st": "100 mcg + 62,5 mcg + 25 mcg/dose (dispositivo com 30 doses)",
+    "form": "pó para inalação oral"
+  },
+  "34": {
+    "oid": "occ-4718a35240be10d89e68524c",
+    "src": "F03",
+    "srn": 464,
+    "ing": "fluticasona (propionato)",
+    "st": "50 mcg/dose",
+    "form": "aerossol ou spray para inalação oral"
+  },
+  "35": {
+    "oid": "occ-89b1798f87b6fef73e10d024",
+    "src": "F03",
+    "srn": 481,
+    "ing": "fórmula dietoterápica para fenilcetonúria (acima de 8 anos)",
+    "st": "lata 400 g a 500 g",
+    "form": "pó para suspensão oral"
+  },
+  "36": {
+    "oid": "occ-cb99538aad360c68ec43b6cf",
+    "src": "F03",
+    "srn": 482,
+    "ing": "fórmula dietoterápica para fenilcetonúria (1 a 8 anos)",
+    "st": "lata 400 g a 500 g",
+    "form": "pó para suspensão oral"
+  },
+  "37": {
+    "oid": "occ-b0b2adb7d79eb231b1207fad",
+    "src": "F03",
+    "srn": 483,
+    "ing": "fórmula dietoterápica para fenilcetonúria (abaixo de 1 ano)",
+    "st": "lata 400 g a 500 g",
+    "form": "pó para suspensão oral"
+  },
+  "38": {
+    "oid": "occ-3e214ed6687162dd9b296e5e",
+    "src": "F03",
+    "srn": 515,
+    "ing": "gosserrelina (acetato)",
+    "st": "3,6 mg",
+    "form": "solução injetável (seringa preenchida)"
+  },
+  "39": {
+    "oid": "occ-5ff05a19a860eb46c4d2f406",
+    "src": "F03",
+    "srn": 546,
+    "ing": "etonogestrel",
+    "st": "68 mg",
+    "form": "implante subdérmico (com aplicador)"
+  },
+  "40": {
+    "oid": "occ-e39f9b1b1851765877bfabd9",
+    "src": "F03",
+    "srn": 548,
+    "ing": "imunoglobulina humana",
+    "st": "5,0g",
+    "form": "solução injetável"
+  },
+  "41": {
+    "oid": "occ-9804085866c3d3a8183e020a",
+    "src": "F03",
+    "srn": 560,
+    "ing": "insulina análoga de ação prolongada",
+    "st": "100 UI/mL (carpule 3 mL)",
+    "form": "solução injetável (carpule)"
+  },
+  "42": {
+    "oid": "occ-1c491584ae8ccd223a4f3f4a",
+    "src": "F03",
+    "srn": 572,
+    "ing": "ipratrópio (brometo)",
+    "st": "20 mcg/dose",
+    "form": "aerossol oral"
+  },
+  "43": {
+    "oid": "occ-39c91371f765b3377864d13c",
+    "src": "F03",
+    "srn": 588,
+    "ing": "lactulose",
+    "st": "667 mg/mL (frasco 120 mL ou 200 mL)",
+    "form": "líquido oral"
+  },
+  "44": {
+    "oid": "occ-266f79c4efb99c09076811a3",
+    "src": "F03",
+    "srn": 622,
+    "ing": "lidocaína (cloridrato)",
+    "st": "2% (bisnaga 30 g)",
+    "form": "geleia"
+  },
+  "45": {
+    "oid": "occ-468eb11c1379788ba952c10d",
+    "src": "F03",
+    "srn": 655,
+    "ing": "mesalazina",
+    "st": "10 mg/mL (frasco 100 mL)",
+    "form": "enema"
+  },
+  "46": {
+    "oid": "occ-8d4c9df6f2789ee0f39f16ec",
+    "src": "F03",
+    "srn": 656,
+    "ing": "mesalazina",
+    "st": "2 g",
+    "form": "grânulo de liberação prolongada (envelope/sachê)"
+  },
+  "47": {
+    "oid": "occ-e3cf27e7ac0f77720c672d2b",
+    "src": "F03",
+    "srn": 657,
+    "ing": "mesalazina",
+    "st": "250 mg",
+    "form": "supositório"
+  },
+  "48": {
+    "oid": "occ-c2822e9b57c1d86fc22ad93f",
+    "src": "F03",
+    "srn": 708,
+    "ing": "mitomicina",
+    "st": "0,04% (2,5 mL)",
+    "form": "pó liofilizado (frasco-ampola)"
+  },
+  "49": {
+    "oid": "occ-caeca67ae3bd86fefc1b4d32",
+    "src": "F03",
+    "srn": 712,
+    "ing": "montelucaste (sódico)",
+    "st": "4 mg",
+    "form": "grânulo"
+  },
+  "50": {
+    "oid": "occ-0b842a68f77c8fe98f279ca2",
+    "src": "F03",
+    "srn": 725,
+    "ing": "mycobacterium bovis (bcg)",
+    "st": "40 mg",
+    "form": "ampola"
+  },
+  "51": {
+    "oid": "occ-fa6fbb61621b06475e0ea76f",
+    "src": "F03",
+    "srn": 737,
+    "ing": "nicotina",
+    "st": "14 mg",
+    "form": "adesivo transdérmico"
+  },
+  "52": {
+    "oid": "occ-bc49f2eb9047b3b8bb1c383c",
+    "src": "F03",
+    "srn": 738,
+    "ing": "nicotina",
+    "st": "21 mg",
+    "form": "adesivo transdérmico"
+  },
+  "53": {
+    "oid": "occ-e3dd656406f5069b5ed0e8d6",
+    "src": "F03",
+    "srn": 739,
+    "ing": "nicotina",
+    "st": "7 mg",
+    "form": "adesivo transdérmico"
+  },
+  "54": {
+    "oid": "occ-a7a73b34d4ce3fbb334734e0",
+    "src": "F03",
+    "srn": 740,
+    "ing": "nicotina",
+    "st": "2 mg",
+    "form": "goma de mascar"
+  },
+  "55": {
+    "oid": "occ-250537e61387b7413515878d",
+    "src": "F03",
+    "srn": 770,
+    "ing": "óleo mineral",
+    "st": "100% (frasco 100 mL)",
+    "form": "óleo para uso oral"
+  },
+  "56": {
+    "oid": "occ-2c4cdd92eecda6cae84b133b",
+    "src": "F03",
+    "srn": 780,
+    "ing": "oxaliplatina",
+    "st": "100 mg",
+    "form": "pó liofilizado ou solução injetável (frasco-ampola)"
+  },
+  "57": {
+    "oid": "occ-f0f7223fd5ff5341463b0550",
+    "src": "F03",
+    "srn": 796,
+    "ing": "parecoxibe",
+    "st": "40 mg",
+    "form": "ampola"
+  },
+  "58": {
+    "oid": "occ-188379f9a1a901911d6ec8e6",
+    "src": "F03",
+    "srn": 798,
+    "ing": "nicotina",
+    "st": "2 mg",
+    "form": "pastilha"
+  },
+  "59": {
+    "oid": "occ-67f1d7bd5480cdd10e4558be",
+    "src": "F03",
+    "srn": 808,
+    "ing": "permetrina loçao topica",
+    "st": "10 mg/mL",
+    "form": "solução injetável"
+  },
+  "60": {
+    "oid": "occ-b3d92d4f93de913f3ec12ed5",
+    "src": "F03",
+    "srn": 809,
+    "ing": "permetrina",
+    "st": "50 mg/mL (frasco 60 mL)",
+    "form": "loção tópica"
+  },
+  "61": {
+    "oid": "occ-929746d0a7074a12d232e311",
+    "src": "F03",
+    "srn": 824,
+    "ing": "polidocanol",
+    "st": "0,5%",
+    "form": "ampola"
+  },
+  "62": {
+    "oid": "occ-d8fd307fc70421bb742de827",
+    "src": "F03",
+    "srn": 825,
+    "ing": "polidocanol",
+    "st": "1%",
+    "form": "ampola"
+  },
+  "63": {
+    "oid": "occ-866e5921c88497b031103d5d",
+    "src": "F03",
+    "srn": 826,
+    "ing": "polidocanol",
+    "st": "3%",
+    "form": "ampola"
+  },
+  "64": {
+    "oid": "occ-4bd5f5d42ec8ef95ec152915",
+    "src": "F03",
+    "srn": 828,
+    "ing": "poliquimioterapia única adulto (PQT-u adulto)",
+    "st": "blister dose supervisionada e autoadministrada",
+    "form": "blister (cápsulas e comprimidos)"
+  },
+  "65": {
+    "oid": "occ-390b2fafe9c35c873c13e1db",
+    "src": "F03",
+    "srn": 829,
+    "ing": "poliquimioterapia única infantil (PQT-u infantil)",
+    "st": "blister dose supervisionada e autoadministrada",
+    "form": "blister (cápsulas e comprimidos)"
+  },
+  "66": {
+    "oid": "occ-43d9f890ddf5baacb5949054",
+    "src": "F03",
+    "srn": 896,
+    "ing": "risdiplam",
+    "st": "0,75 mg/mL",
+    "form": "pó para solução oral"
+  },
+  "67": {
+    "oid": "occ-f208f9b0fbdfa9984f6ae66e",
+    "src": "F03",
+    "srn": 908,
+    "ing": "rivastigmina",
+    "st": "18 mg (liberação de 9,5 mg/24h)",
+    "form": "adesivo transdérmico"
+  },
+  "68": {
+    "oid": "occ-924b68401c03c4123a26164e",
+    "src": "F03",
+    "srn": 909,
+    "ing": "rivastigmina",
+    "st": "9 mg (liberação de 4,6 mg/24h)",
+    "form": "adesivo transdérmico"
+  },
+  "69": {
+    "oid": "occ-b0f807a52a2fdbfaeb4e13c8",
+    "src": "F03",
+    "srn": 924,
+    "ing": "salbutamol (sulfato)",
+    "st": "100 mcg/dose",
+    "form": "solução aerossol para inalação oral"
+  },
+  "70": {
+    "oid": "occ-b3c9c95e8c9426034db9ca30",
+    "src": "F03",
+    "srn": 925,
+    "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
+    "st": "25 mcg/dose + 125 mcg/dose (120 doses + inalador)",
+    "form": "solução aerossol para inalação oral"
+  },
+  "71": {
+    "oid": "occ-c91b4e24768177e887ed16b6",
+    "src": "F03",
+    "srn": 926,
+    "ing": "salmeterol (xinafoato) + fluticasona (propionato)",
+    "st": "50 mcg/dose + 500 mcg/dose (recipiente dosador strip 60 doses)",
+    "form": "pó inalatório"
+  },
+  "72": {
+    "oid": "occ-3da1f44d1a507a358ceee024",
+    "src": "F03",
+    "srn": 929,
+    "ing": "selante de fibrina",
+    "st": "0,5 mL",
+    "form": "frasco-ampola"
+  },
+  "73": {
+    "oid": "occ-648c45d256d209afe121f04d",
+    "src": "F03",
+    "srn": 930,
+    "ing": "selante de fibrina",
+    "st": "1 mL",
+    "form": "frasco-ampola"
+  },
+  "74": {
+    "oid": "occ-d211fe7831486018fe2a05e1",
+    "src": "F03",
+    "srn": 948,
+    "ing": "sirolimo",
+    "st": "1 mg",
+    "form": "drágea"
+  },
+  "75": {
+    "oid": "occ-73c502c1d468203b007b9db0",
+    "src": "F03",
+    "srn": 949,
+    "ing": "sirolimo",
+    "st": "2 mg",
+    "form": "drágea"
+  },
+  "76": {
+    "oid": "occ-0f5899f3abcdc0a806d35406",
+    "src": "F03",
+    "srn": 966,
+    "ing": "subgalato de bismuto",
+    "st": "50 g",
+    "form": "pó"
+  },
+  "77": {
+    "oid": "occ-cd56b7aab2cff5176b586908",
+    "src": "F03",
+    "srn": 978,
+    "ing": "sulfato de zinco heptahidratado",
+    "st": "17,60 mg/mL",
+    "form": "solução oral"
+  },
+  "78": {
+    "oid": "occ-36b8a9522cb455db12695ff2",
+    "src": "F03",
+    "srn": 981,
+    "ing": "suplemento alimentar com múltiplos micronutrientes",
+    "st": "1 g",
+    "form": "pó para suspensão oral (envelope)"
+  },
+  "79": {
+    "oid": "occ-dd3666cce6867d6246aae72f",
+    "src": "F03",
+    "srn": 987,
+    "ing": "[linha 987 em branco no PDF]",
+    "st": "-",
+    "form": "-"
+  },
+  "80": {
+    "oid": "occ-283931a2d704751b9514b970",
+    "src": "F03",
+    "srn": 1002,
+    "ing": "tenecteplase",
+    "st": "40mg",
+    "form": "pó liofilizado para solução injetável"
+  },
+  "81": {
+    "oid": "occ-cb22669dfd85514c6b90e4c5",
+    "src": "F03",
+    "srn": 1010,
+    "ing": "tenofovir desoproxila (fumarato) + lamivudina",
+    "st": "300 mg + 300 mg",
+    "form": "comprimido"
+  },
+  "82": {
+    "oid": "occ-f2112bc9172fa5847e2ce738",
+    "src": "F03",
+    "srn": 1012,
+    "ing": "teriflunomida",
+    "st": "14 mg",
+    "form": "comprimido"
+  },
+  "83": {
+    "oid": "occ-741b7ec1564fbbdc0a8e62c9",
+    "src": "F03",
+    "srn": 1045,
+    "ing": "triptorrelina",
+    "st": "3,75 mg",
+    "form": "frasco-ampola ou seringa preenchida"
+  },
+  "84": {
+    "oid": "occ-b876bad65fcf7b57f2c2cf3e",
+    "src": "F03",
+    "srn": 1048,
+    "ing": "umeclidínio (brometo) + vilanterol (trifenatato)",
+    "st": "62,5 mcg/dose + 25 mcg/dose (recipiente dosador strip 30 doses)",
+    "form": "pó inalatório"
+  },
+  "85": {
+    "oid": "occ-f6ea89da0be78741399fc8f3",
+    "src": "F03",
+    "srn": 1059,
+    "ing": "vaselina sólida (petrolato)",
+    "st": "100 %",
+    "form": "pomada (bisnaga ou tubo)"
+  },
+  "86": {
+    "oid": "occ-3ce4fe73119367200f984907",
+    "src": "F04",
+    "srn": 2,
+    "ing": "brometo de ipratrópio",
+    "st": "0,02mg",
+    "form": "solução para inalação oral (aerossol)"
+  },
+  "87": {
+    "oid": "occ-44ea3122ec626ffeefc2a019",
+    "src": "F04",
+    "srn": 3,
+    "ing": "brometo de ipratrópio",
+    "st": "0,25mg",
+    "form": "solução para inalação (gotas)"
+  },
+  "88": {
+    "oid": "occ-66c51d341c410cacdbd244a4",
+    "src": "F04",
+    "srn": 4,
+    "ing": "dipropionato de beclometasona",
+    "st": "200mcg",
+    "form": "solução aerossol para inalação oral"
+  },
+  "89": {
+    "oid": "occ-8616bec3a9ce97b885f68018",
+    "src": "F04",
+    "srn": 5,
+    "ing": "dipropionato de beclometasona",
+    "st": "250mcg",
+    "form": "solução aerossol para inalação oral"
+  },
+  "90": {
+    "oid": "occ-882d2f438c02eeca23e676cb",
+    "src": "F04",
+    "srn": 6,
+    "ing": "dipropionato de beclometasona",
+    "st": "50mcg",
+    "form": "solução aerossol para inalação oral"
+  },
+  "91": {
+    "oid": "occ-e139cbd09a39d7da5be06493",
+    "src": "F04",
+    "srn": 7,
+    "ing": "sulfato de salbutamol",
+    "st": "100mcg",
+    "form": "solução aerossol para inalação oral"
+  },
+  "92": {
+    "oid": "occ-09b3c17ea49c6c8ae67c2e4d",
+    "src": "F04",
+    "srn": 8,
+    "ing": "sulfato de salbutamol",
+    "st": "5mg",
+    "form": "solução para inalação (gotas)"
+  },
+  "93": {
+    "oid": "occ-edf8dd6f5a636935088dddea",
+    "src": "F04",
+    "srn": 9,
+    "ing": "cloridrato de metformina",
+    "st": "500mg",
+    "form": "comprimido"
+  },
+  "94": {
+    "oid": "occ-48e616ae9f8df7c435126c21",
+    "src": "F04",
+    "srn": 10,
+    "ing": "cloridrato de metformina",
+    "st": "500mg",
+    "form": "comprimido de liberação prolongada"
+  },
+  "95": {
+    "oid": "occ-5cad8bf5fd4bf3b66565f60b",
+    "src": "F04",
+    "srn": 11,
+    "ing": "cloridrato de metformina",
+    "st": "850mg",
+    "form": "comprimido"
+  },
+  "96": {
+    "oid": "occ-1720c0bddc635262a2c3f640",
+    "src": "F04",
+    "srn": 12,
+    "ing": "glibenclamida",
+    "st": "5mg",
+    "form": "comprimido"
+  },
+  "97": {
+    "oid": "occ-8ddfd9df9529d696a2612e89",
+    "src": "F04",
+    "srn": 13,
+    "ing": "insulina humana regular",
+    "st": "100ui/ml",
+    "form": "solução injetável"
+  },
+  "98": {
+    "oid": "occ-e0fa1e053b0a724181075489",
+    "src": "F04",
+    "srn": 14,
+    "ing": "insulina humana",
+    "st": "100ui/ml",
+    "form": "suspensão injetável"
+  },
+  "99": {
+    "oid": "occ-4eb20de2a64dfed2e8279acc",
+    "src": "F04",
+    "srn": 15,
+    "ing": "atenolol",
+    "st": "25mg",
+    "form": "comprimido"
+  },
+  "100": {
+    "oid": "occ-72612f92a939518de17baaa1",
+    "src": "F04",
+    "srn": 16,
+    "ing": "besilato de anlodipino",
+    "st": "5 mg",
+    "form": "comprimido"
+  },
+  "101": {
+    "oid": "occ-7ed9e237bf18ba04361a3576",
+    "src": "F04",
+    "srn": 17,
+    "ing": "captopril",
+    "st": "25mg",
+    "form": "comprimido"
+  },
+  "102": {
+    "oid": "occ-8c6afb38cd237a6b4345229c",
+    "src": "F04",
+    "srn": 18,
+    "ing": "cloridrato de propranolol",
+    "st": "40mg",
+    "form": "comprimido"
+  },
+  "103": {
+    "oid": "occ-55ae1ce56b51b27f32022210",
+    "src": "F04",
+    "srn": 19,
+    "ing": "hidroclorotiazida",
+    "st": "25mg",
+    "form": "comprimido"
+  },
+  "104": {
+    "oid": "occ-81076ce93e4163086259ef8e",
+    "src": "F04",
+    "srn": 20,
+    "ing": "losartana potássica",
+    "st": "50mg",
+    "form": "comprimido"
+  },
+  "105": {
+    "oid": "occ-fbcf0015aa8813b069bae2ca",
+    "src": "F04",
+    "srn": 21,
+    "ing": "maleato de enalapril",
+    "st": "10mg",
+    "form": "comprimido"
+  },
+  "106": {
+    "oid": "occ-b768885458b54f9771fd68e1",
+    "src": "F04",
+    "srn": 22,
+    "ing": "espironolactona",
+    "st": "25 mg",
+    "form": "comprimido"
+  },
+  "107": {
+    "oid": "occ-c71ac9beefacd5021280b7f8",
+    "src": "F04",
+    "srn": 23,
+    "ing": "furosemida",
+    "st": "40 mg",
+    "form": "comprimido"
+  },
+  "108": {
+    "oid": "occ-e597b6780d28aa62255f6eec",
+    "src": "F04",
+    "srn": 24,
+    "ing": "succinato de metoprolol",
+    "st": "25 mg",
+    "form": "comprimido de liberação prolongada"
+  },
+  "109": {
+    "oid": "occ-3e3fc3f2db17a9c68344f2c9",
+    "src": "F04",
+    "srn": 25,
+    "ing": "acetato de medroxiprogesterona",
+    "st": "150mg",
+    "form": "suspensão injetável"
+  },
+  "110": {
+    "oid": "occ-bd645fca4e10b51f38485f06",
+    "src": "F04",
+    "srn": 26,
+    "ing": "etinilestradiol + levonorgestrel",
+    "st": "0,03mg + 0,15mg",
+    "form": "comprimido"
+  },
+  "111": {
+    "oid": "occ-1eaef6352086caff666c4e10",
+    "src": "F04",
+    "srn": 27,
+    "ing": "noretisterona",
+    "st": "0,35mg",
+    "form": "comprimido"
+  },
+  "112": {
+    "oid": "occ-2e237469ad52f38dc54b786e",
+    "src": "F04",
+    "srn": 28,
+    "ing": "valerato de estradiol + enantato de noretisterona",
+    "st": "5mg + 50mg",
+    "form": "solução injetável"
+  },
+  "113": {
+    "oid": "occ-1d42c31c79d6a6fa09551952",
+    "src": "F04",
+    "srn": 29,
+    "ing": "alendronato de sódio",
+    "st": "70mg",
+    "form": "comprimido"
+  },
+  "114": {
+    "oid": "occ-11dd751548d5ceaf859d9a75",
+    "src": "F04",
+    "srn": 30,
+    "ing": "sinvastatina",
+    "st": "10mg",
+    "form": "comprimido"
+  },
+  "115": {
+    "oid": "occ-15d35da6f8e395b14d97041e",
+    "src": "F04",
+    "srn": 31,
+    "ing": "sinvastatina",
+    "st": "20mg",
+    "form": "comprimido"
+  },
+  "116": {
+    "oid": "occ-1e13d576f93f33e19c79b9e2",
+    "src": "F04",
+    "srn": 32,
+    "ing": "sinvastatina",
+    "st": "40mg",
+    "form": "comprimido"
+  },
+  "117": {
+    "oid": "occ-31f830e7fbb52c0353da2946",
+    "src": "F04",
+    "srn": 33,
+    "ing": "carbidopa + levodopa",
+    "st": "25mg + 250mg",
+    "form": "comprimido"
+  },
+  "118": {
+    "oid": "occ-e7d83368e51a7cb974fd6bd9",
+    "src": "F04",
+    "srn": 34,
+    "ing": "cloridrato de benserazida + levodopa",
+    "st": "25mg + 100mg",
+    "form": "comprimido ou cápsula"
+  },
+  "119": {
+    "oid": "occ-57c2830deb65187a5743c1b3",
+    "src": "F04",
+    "srn": 35,
+    "ing": "maleato de timolol",
+    "st": "2,5mg",
+    "form": "solução oftálmica"
+  },
+  "120": {
+    "oid": "occ-49b4ce4a23cd3e4e01bf68f5",
+    "src": "F04",
+    "srn": 36,
+    "ing": "maleato de timolol",
+    "st": "5mg",
+    "form": "solução oftálmica"
+  },
+  "121": {
+    "oid": "occ-4dbafe42e6cc0c7058ecc60a",
+    "src": "F04",
+    "srn": 37,
+    "ing": "budesonida",
+    "st": "32mcg",
+    "form": "suspensão para inalação nasal"
+  },
+  "122": {
+    "oid": "occ-03bb26a358e97b57f4fd899d",
+    "src": "F04",
+    "srn": 38,
+    "ing": "budesonida",
+    "st": "50mcg",
+    "form": "suspensão para inalação nasal"
+  },
+  "123": {
+    "oid": "occ-dc03277c309dbb980fe781ca",
+    "src": "F04",
+    "srn": 39,
+    "ing": "dipropionato de beclometasona",
+    "st": "50mcg/dose",
+    "form": "suspensão para inalação nasal"
+  },
+  "124": {
+    "oid": "occ-7f063f17f3885eb3cdc24d3f",
+    "src": "F04",
+    "srn": 40,
+    "ing": "dapagliflozina",
+    "st": "10 mg",
+    "form": "comprimido"
+  },
+  "125": {
+    "oid": "occ-8b27e582e2c9bd191869b342",
+    "src": "F04",
+    "srn": 41,
+    "ing": "absorvente higiênico",
+    "st": "-",
+    "form": "unidade"
+  },
+  "126": {
+    "oid": "occ-5ea8a977695dbad521b67f97",
+    "src": "F04",
+    "srn": 42,
+    "ing": "fralda geriátrica",
+    "st": "-",
+    "form": "unidade"
+  }
+}

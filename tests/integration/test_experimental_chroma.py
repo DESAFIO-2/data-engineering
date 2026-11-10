@@ -52,6 +52,19 @@ def test_resume_reopen_idempotence_and_identity(tmp_path: Path) -> None:
     assert embeddings.calls == 4
     store = open_index(corpus, tmp_path, "fake", embeddings)
     assert set(store.get()["ids"]) == {"ev-0", "ev-1", "ev-2"}
+    fake = DeterministicFakeEmbedding(size=16)
+    store._collection.update(
+        ids=["ev-0"],
+        documents=["texto alterado"],
+        embeddings=fake.embed_documents(["texto alterado"]),
+    )
+    with pytest.raises(ValueError, match="Texto do índice diverge"):
+        open_index(corpus, tmp_path, "fake", embeddings)
+    store._collection.update(
+        ids=["ev-0"],
+        documents=[chunks[0]["text"]],
+        embeddings=fake.embed_documents([chunks[0]["text"]]),
+    )
     for strategy in ("hybrid", "vector", "lexical", "exact"):
         result = Retriever(corpus, store).search(
             "enalapril 25mg comprimido REME", strategy=strategy

@@ -37,6 +37,49 @@ def test_default_restored_corpus_automatically_includes_archived_supplement() ->
     )
 
 
+def test_validated_mode_excludes_pending_supplement() -> None:
+    args = Namespace(corpus=experimental_cli.ROOT / "data/corpus", supplement=None, validated=True)
+    assert experimental_cli.corpus_supplement(args) is None
+    args.supplement = experimental_cli.ROOT / "data/raw/complementares/chunks.jsonl"
+    with pytest.raises(ValueError, match="pendente"):
+        experimental_cli.corpus_supplement(args)
+
+
+def test_validated_vector_reuse_checks_primary_texts(monkeypatch: pytest.MonkeyPatch) -> None:
+    current = SimpleNamespace(chunks=[{"evidence_id": "ev-primary", "text": "texto validado"}])
+    store = SimpleNamespace(
+        get=lambda include: {
+            "ids": ["ev-primary", "ev-pending"],
+            "documents": ["texto validado", "texto complementar pendente"],
+        }
+    )
+    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: object())
+    monkeypatch.setattr(experimental_cli, "open_index", lambda *args: store)
+    assert experimental_cli.open_validated_vectors(current, Path("."), "fake", object()) is store
+    current.chunks[0]["text"] = "texto alterado"
+    with pytest.raises(ValueError, match="divergem"):
+        experimental_cli.open_validated_vectors(current, Path("."), "fake", object())
+
+
+def test_validated_chat_loads_consolidated_corpus_and_syncs_at_startup(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    args = _args("chat")
+    args.validated = True
+    args.corpus = experimental_cli.ROOT / "data/corpus"
+    sync = Mock(return_value={"ceaf_stock": [], "ubs_stock": [{}], "locations": [{}]})
+    monkeypatch.setattr(experimental_cli, "sync_snapshot", sync)
+    monkeypatch.setattr("builtins.input", lambda prompt: "sair")
+
+    assert experimental_cli.run(args, _settings(tmp_path)) == 0
+    sync.assert_called_once()
+    assert len(sync.call_args.args[1]) == 6
+    output = capsys.readouterr().out
+    assert "CORPUS CONSOLIDADO APROVADO" in output
+    assert "2620 chunks do corpus ainda não têm aprovação individual" in output
+    assert "InfoSaúde sincronizado" in output
+
+
 def test_experimental_stock_intent_uses_live_reply_before_retrieval(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:

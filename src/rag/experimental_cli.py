@@ -27,16 +27,34 @@ def resolve(path: Path) -> Path:
 
 
 def corpus_supplement(args: argparse.Namespace) -> Path | None:
+    if getattr(args, "validated", False):
+        if args.supplement:
+            raise ValueError("--validated não aceita suplemento ainda pendente de revisão")
+        return None
     if args.supplement:
         return resolve(args.supplement)
     # The restored v1 vector index was built from the primary corpus plus this
     # archived 108-chunk supplement. Keep the default CLI fingerprint aligned.
-    default_corpus = (ROOT / "data/corpus/experimental").resolve()
+    default_corpora = {(ROOT / "data/corpus/experimental").resolve()}
     selected_corpus = resolve(args.corpus).resolve()
     default_supplement = ROOT / "data/raw/complementares/chunks.jsonl"
-    if selected_corpus == default_corpus and default_supplement.is_file():
+    if selected_corpus in default_corpora and default_supplement.is_file():
         return default_supplement
     return None
+
+
+def open_validated_vectors(corpus: Corpus, base: Path, model: str, embeddings: Any) -> Any:
+    """Reuse the historical vectors while excluding pending supplemental chunks."""
+    historical = Corpus.load(
+        ROOT / "data/corpus/experimental",
+        ROOT / "data/raw/complementares/chunks.jsonl",
+    )
+    store = open_index(historical, base, model, embeddings)
+    indexed = store.get(include=["documents"])
+    by_id = dict(zip(indexed["ids"], indexed["documents"], strict=True))
+    if any(by_id.get(chunk["evidence_id"]) != chunk["text"] for chunk in corpus.chunks):
+        raise ValueError("Vetores históricos divergem do corpus consolidado")
+    return store
 
 
 def show(result: dict[str, Any], context: bool) -> None:
@@ -89,8 +107,30 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         corpus = load_approved(resolve(args.curated))
         print("CURADO — subconjunto publicado com revisão humana registrada.")
     else:
-        print("EXPERIMENTAL — extração candidata; curadoria humana pendente.")
         corpus = Corpus.load(resolve(args.corpus), corpus_supplement(args))
+        if getattr(args, "validated", False) and (
+            corpus.manifest.get("review_status") != "approved"
+            or corpus.manifest.get("schema_version") != "consolidated-v2"
+            or not json.loads((corpus.folder / "report.json").read_text(encoding="utf-8")).get(
+                "human_verified"
+            )
+        ):
+            raise ValueError("--validated exige o manifesto consolidado aprovado")
+        if (
+            corpus.manifest.get("status") == "approved"
+            or corpus.manifest.get("review_status") == "approved"
+        ):
+            print("CORPUS CONSOLIDADO APROVADO — 2.115 ocorrências com curadoria humana validada.")
+            pending_chunks = sum(
+                chunk.get("review_status") != "approved" for chunk in corpus.chunks
+            )
+            if pending_chunks:
+                print(
+                    f"Aviso: {pending_chunks} chunks do corpus ainda não têm "
+                    "aprovação individual registrada."
+                )
+        else:
+            print("EXPERIMENTAL — extração candidata; curadoria humana pendente.")
     # Restored v1 uses its already-complete index; the corrected corpus remains
     # isolated under guia/ so an index command cannot mix the two snapshots.
     base = (
@@ -114,9 +154,9 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         try:
             snapshot = sync_snapshot(snapshot_path, tuple(code for code, _ in PRODUCTS.values()))
             print(
-                f"InfoSaúde sincronizado: {len(snapshot['ceaf_stock'])} linhas CEAF, "
-                f"{len(snapshot['ubs_stock'])} linhas UBS e "
-                f"{len(snapshot['locations'])} unidades."
+                f"InfoSaúde sincronizado: {len(snapshot.get('ceaf_stock', []))} linhas CEAF, "
+                f"{len(snapshot.get('ubs_stock', []))} linhas UBS e "
+                f"{len(snapshot.get('locations', []))} unidades."
             )
         except (ValueError, requests.RequestException) as exc:
             available = load_snapshot(snapshot_path) is not None
@@ -149,6 +189,10 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         return cache["embeddings"]
 
     if args.command == "index":
+        if getattr(args, "validated", False):
+            open_validated_vectors(corpus, base, settings.rag_embedding_model, embeddings())
+            print("Índice histórico verificado e reutilizado para os 2.620 chunks consolidados.")
+            return 0
         location = build_index(
             corpus,
             base,
@@ -165,7 +209,13 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
             store = None
             if args.strategy in {"hybrid", "vector"}:
                 try:
-                    store = open_index(corpus, base, settings.rag_embedding_model, embeddings())
+                    store = (
+                        open_validated_vectors(
+                            corpus, base, settings.rag_embedding_model, embeddings()
+                        )
+                        if getattr(args, "validated", False)
+                        else open_index(corpus, base, settings.rag_embedding_model, embeddings())
+                    )
                 except Exception as exc:
                     raise RuntimeError(
                         "Não foi possível abrir o índice vetorial local; "
@@ -286,8 +336,13 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         show(result, args.show_context)
         return 0
     sync_live_startup()
+    corpus_label = (
+        "do corpus consolidado"
+        if corpus.manifest.get("review_status") == "approved"
+        else "experimental"
+    )
     print(
-        "Chat experimental com fontes documentais e consulta InfoSaúde para "
+        f"Chat {corpus_label} com fontes documentais e consulta InfoSaúde para "
         "apresentações mapeadas. Digite sair para encerrar.\n"
         "Busca automática: combina RAG vetorial e lexical; se o índice falhar ou não "
         "trouxer evidência, tenta lexical e informa o fallback.\n"
@@ -299,7 +354,7 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         "ex.: ‘O que consta na RENAME sobre metformina 500 mg comprimido?’ "
         "O contexto desta conversa fica apenas em memória."
         if live_enabled
-        else "Chat documental experimental. Digite sair para encerrar.\n"
+        else f"Chat documental {corpus_label}. Digite sair para encerrar.\n"
         "Busca automática: combina RAG vetorial e lexical, com fallback lexical sinalizado.\n"
         "Informe medicamento, concentração e forma farmacêutica. O contexto desta "
         "conversa fica apenas em memória."

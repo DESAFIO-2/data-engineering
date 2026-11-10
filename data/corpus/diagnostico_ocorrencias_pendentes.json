@@ -1,0 +1,1733 @@
+{
+  "channel_59_ids": [
+    {
+      "id": "occ-f565a5c13b36409953958400",
+      "active_ingredient": "ácido folínico",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), Policlínica de Planaltina e Farmácia Escola (HUB) *Medicamento disponibilizado nas Unidades de Referência, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos- toxoplasmose."
+    },
+    {
+      "id": "occ-5f8117fc0bc83f53e3d1e193",
+      "active_ingredient": "ácido tranexâmico",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-e0d3812f8a1f46456f862a63",
+      "active_ingredient": "adenosina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-f9868399ac19979b2de27ff8",
+      "active_ingredient": "amiodarona",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-4e4f791d8ed75752758177b1",
+      "active_ingredient": "amitriptilina (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-b1a31686ab337424997b56b0",
+      "active_ingredient": "atropina (sulfato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-7a233c95fee458b15c44de74",
+      "active_ingredient": "bicarbonato de sódio",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-8571755e67435541f17fcb54",
+      "active_ingredient": "biperideno (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-3d05e0a2a422c71487565f08",
+      "active_ingredient": "carbonato de lítio",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-113137e3a20e20edab7c2f8e",
+      "active_ingredient": "celecoxibe",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-f0e46ccdbede8cf45c97c8e0",
+      "active_ingredient": "clomipramina (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-d150316dbef4acdc4baf18e4",
+      "active_ingredient": "clomipramina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-33faabcfb884e82bfce1c3b7",
+      "active_ingredient": "clonazepam",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-cf6616efd0be021c4d3ccae7",
+      "active_ingredient": "clonazepam",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-4a16f36c22211a812a4ebb32",
+      "active_ingredient": "clorpromazina (cloridrato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-1ef7cf9dc77abebb8e1d3293",
+      "active_ingredient": "dextrocetamina (escetamina)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-083776efd924a2c69c7d6b2d",
+      "active_ingredient": "diazepam",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-5a30483774766a47492bcf19",
+      "active_ingredient": "diazepam",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-c2450beaf1b4712db090bce4",
+      "active_ingredient": "dobutamina (cloridrato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-f8637d2f5ea69d6291415b10",
+      "active_ingredient": "dolutegravir",
+      "channel": "Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e UBS* (farmácia ambulatorial) *UBS com farmácias dispensadoras de TARV (Terapia Antiretroviral) e de PEP (Profilaxia Pós-Exposição), conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-dst-aids"
+    },
+    {
+      "id": "occ-f569176870bff45e99c507b5",
+      "active_ingredient": "dopamina (cloridrato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-4c4a7b11631d7999d65b3197",
+      "active_ingredient": "epinefrina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-6f33c8ddc52a9a43f6f408b4",
+      "active_ingredient": "espiramicina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), Policlínica de Planaltina e Farmácia Escola (HUB) *Medicamento disponibilizado nas Unidades de Referência, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos- toxoplasmose."
+    },
+    {
+      "id": "occ-34c58927dae89eee04709e1d",
+      "active_ingredient": "etomidato",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-dfafa515914dc7463e544438",
+      "active_ingredient": "fenitoina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-3b2497450202a295decbfffa",
+      "active_ingredient": "fenobarbital",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-98cf05240f7953f94191ad2e",
+      "active_ingredient": "fentanila",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-3e23e7b1b36520f104119fb8",
+      "active_ingredient": "fentanila",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-72f45612d845d63567ab60d6",
+      "active_ingredient": "flumazenil",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-8781580fe8eb8f4c9b3fbd02",
+      "active_ingredient": "fluoxetina (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial e farmácia interna) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-f273acace36f36966fe5a7f4",
+      "active_ingredient": "fluoxetina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar * UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-76985d6b329f5e1eaef210d5",
+      "active_ingredient": "gliconato de calcio",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-dbb9623b14d0965fdad04287",
+      "active_ingredient": "haloperidol (decanoato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos. *Medicamento dispensado conforme Nota Técnica nº 1/2021 (SEI nº 53874377) que trata da dispensação dos medicamentos haloperidol (decanoato) solução injetável 50 mg/mL ampola 1 mL e zuclopentixol solução injetável 200mg/mL ampola 1mL."
+    },
+    {
+      "id": "occ-2a4ae4bce3b13b7b56ce3db4",
+      "active_ingredient": "haloperidol",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-b3c92baee1837e59f782d5ca",
+      "active_ingredient": "haloperidol",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-07a770823915bc6ec440cc14",
+      "active_ingredient": "haloperidol",
+      "channel": "uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-924adb9ef742afde7d707675",
+      "active_ingredient": "haloperidol",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-ece0ceac5115d67844e48f17",
+      "active_ingredient": "levomepromazina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-32441c9569258eaa0c7c2903",
+      "active_ingredient": "levomepromazina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-371ee08e86e5f6a4c5320207",
+      "active_ingredient": "metoprolol",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-672920803cad414eda998d77",
+      "active_ingredient": "midazolam",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-0558afdeb7bb640844015d2d",
+      "active_ingredient": "midazolam",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-f90cff848c7a04d244c71d56",
+      "active_ingredient": "midazolam",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-3d950cc064561face4ee13a2",
+      "active_ingredient": "morfina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-21f82e8456341c1bb30b267a",
+      "active_ingredient": "naloxona (cloridrato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-50395062a76cb5d68d4144fe",
+      "active_ingredient": "nitrazepam",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos"
+    },
+    {
+      "id": "occ-850d032622bf9315735f58e4",
+      "active_ingredient": "nortriptilina (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos"
+    },
+    {
+      "id": "occ-ec8826f89e6917fa49e34311",
+      "active_ingredient": "olanzapina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-955a7a7cf1fe17e1d32f9997",
+      "active_ingredient": "pirimetamina",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) *Medicamento disponibilizado nas Unidades de Referência, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos- toxoplasmose."
+    },
+    {
+      "id": "occ-ab3ca864b51b0f226a4d0b44",
+      "active_ingredient": "quetiapina",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-bf16ec9604f7d2615bc11dc9",
+      "active_ingredient": "sulfato de magnésio",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-8310fcb8a7032daee5d6784f",
+      "active_ingredient": "tioridazina (cloridrato)",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-c579c9c24c4bfc66a97023aa",
+      "active_ingredient": "tioridazina (cloridrato) drágea ou",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-2a9de99a389edb73b86fde06",
+      "active_ingredient": "tioridazina (cloridrato) drágea ou",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-a83450c53779e354e9b18836",
+      "active_ingredient": "tramadol (cloridrato)",
+      "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+    },
+    {
+      "id": "occ-0da138980fb6157d2e06f5d5",
+      "active_ingredient": "valproato de sodio",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-e38e5e5d52281fc96d41d9da",
+      "active_ingredient": "valproato de sodio",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial), uso hospitalar e atendimento pré-hospitalar (SAMU) *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-1d7793fa89c2c7b25d439b83",
+      "active_ingredient": "valproato de sodio",
+      "channel": "UBS - Unidades de Referência* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos."
+    },
+    {
+      "id": "occ-bcbbd640313e85ea6bc4a4fc",
+      "active_ingredient": "zuclopentixol",
+      "channel": "UBS* (farmácia ambulatorial) e uso hospitalar *UBS Dispensadoras de Medicamentos Sujeitos à Controle Especial, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-saude- mental-psicotropicos. *Dispensado conforme Nota Técnica nº 1/2021 (SEI nº 53874377)."
+    }
+  ],
+  "null_strength_ids": [
+    {
+      "id": "occ-474c281dae2e99240c1eff36",
+      "active_ingredient": "acetato de medroxiprogesterona + estradiol cipionato",
+      "form": "suspensão injetável"
+    },
+    {
+      "id": "occ-e86fd5ebe1a99a846ba78102",
+      "active_ingredient": "aciclovir",
+      "form": "pomada oftálmica"
+    },
+    {
+      "id": "occ-32f9c026384ce1b61a6b03a2",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-405fcd5d37f8cf3fbb357a41",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-adec0f7209079b9611b5cfc9",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-7f055dcf8a7efb65a42e816c",
+      "active_ingredient": "álcool",
+      "form": "gel"
+    },
+    {
+      "id": "occ-a14677a2ed757c154b389b54",
+      "active_ingredient": "álcool",
+      "form": "gel"
+    },
+    {
+      "id": "occ-3b811d5a0b8a3fa0594e855a",
+      "active_ingredient": "algestona acetofenida + enantato de estradiol",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-08cb590a1fcaa0f864ac7bde",
+      "active_ingredient": "aloe vera",
+      "form": "gel"
+    },
+    {
+      "id": "occ-360208b17f7cf9ae94f3016c",
+      "active_ingredient": "aloe vera",
+      "form": "gel"
+    },
+    {
+      "id": "occ-fedb4157f625b028ed9a47a1",
+      "active_ingredient": "amoxicilina + clavulanato de potássio pó p/ susp oral",
+      "form": null
+    },
+    {
+      "id": "occ-7bafe6d171c044a877b78158",
+      "active_ingredient": "amoxicilina + clavulanato de potássio",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-9275201ad140418c6d36c8fa",
+      "active_ingredient": "ampicilina + sulbactam",
+      "form": "pó para solução injetável"
+    },
+    {
+      "id": "occ-e231f9b8de316bf9e0ee0151",
+      "active_ingredient": "artemeter + lumefantrina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-e8ffc3f2974ccbb2d133edec",
+      "active_ingredient": "artemeter + lumefantrina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-db9de3d69d4730d206d81759",
+      "active_ingredient": "artemeter + lumefantrina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-2769f85f5e5c65ab49f6fe9d",
+      "active_ingredient": "azitromicina",
+      "form": "pó para suspensão oral"
+    },
+    {
+      "id": "occ-89519a090065566148c04c0b",
+      "active_ingredient": "azitromicina",
+      "form": "pó para suspensão oral"
+    },
+    {
+      "id": "occ-74c6a272ec0d0e884d9571ab",
+      "active_ingredient": "beclometasona (dipropionato) + formoterol di-hidratado (fumarato) + glicopirrônio (brometo)",
+      "form": "solução"
+    },
+    {
+      "id": "occ-db7e3514d1b84de29366c5ec",
+      "active_ingredient": "benzocaína",
+      "form": "gel"
+    },
+    {
+      "id": "occ-288516f4933ddc82d2e01afb",
+      "active_ingredient": "betainterferona 1A",
+      "form": "injetável"
+    },
+    {
+      "id": "occ-291972901215205d4adbe432",
+      "active_ingredient": "betainterferona 1A",
+      "form": "injetável"
+    },
+    {
+      "id": "occ-811ad30f693d48862526202b",
+      "active_ingredient": "betainterferona 1A",
+      "form": "injetável"
+    },
+    {
+      "id": "occ-33884243e26b5bf9f7d3c82b",
+      "active_ingredient": "betainterferona 1B",
+      "form": "pó liofilizado para solução injetável"
+    },
+    {
+      "id": "occ-989cc52f340aad059a2decba",
+      "active_ingredient": "betametasona (acetato + fosfato)",
+      "form": "suspensão injetável"
+    },
+    {
+      "id": "occ-d73427eedf5703737538bd3d",
+      "active_ingredient": "betametasona (valerato)",
+      "form": "creme"
+    },
+    {
+      "id": "occ-57dad9b0f42dc1d24fa74fa5",
+      "active_ingredient": "bicarbonato de sódio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-7a233c95fee458b15c44de74",
+      "active_ingredient": "bicarbonato de sódio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-e5005491dd7809b13ffa7ee6",
+      "active_ingredient": "bupivacaína (cloridrato) + glicose",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-f38630232092332a6b26efa9",
+      "active_ingredient": "carbômer (ácido poliacrílico)",
+      "form": "gel"
+    },
+    {
+      "id": "occ-bc5acf38f4260802e843100c",
+      "active_ingredient": "carbonato de cálcio (equivalente a 500 ou",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-ae7e22e2de2b74a353802c18",
+      "active_ingredient": "ceftazidima (pentaidratada) + avibactam (sódico)",
+      "form": "pó para solução"
+    },
+    {
+      "id": "occ-e6b207d3f70d8e743374e074",
+      "active_ingredient": "ceftolozana (sulfato) + tazobactam (sódico)",
+      "form": "pó para solução"
+    },
+    {
+      "id": "occ-35aa08b03801a03eca1cbd89",
+      "active_ingredient": "cetoconazol",
+      "form": "creme"
+    },
+    {
+      "id": "occ-964239c38602f3ba42087e1c",
+      "active_ingredient": "ciprofloxacino (cloridrato)",
+      "form": "pomada oftálmica"
+    },
+    {
+      "id": "occ-f41adfc5a77fb3493a0a11f4",
+      "active_ingredient": "cloreto de potássio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-3e5e93387cde2bbf616f4852",
+      "active_ingredient": "cloreto de sódio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-6f5375d13042a40c50b22f38",
+      "active_ingredient": "cloreto de sódio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-e5d4a2d7bdbea89c6534e52a",
+      "active_ingredient": "cloreto de sódio + gliconato de sódio + acetato de sódio + cloreto de potássio + cloreto de magnésio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-75c60747180854a75232b0ec",
+      "active_ingredient": "clorexidina",
+      "form": "solução"
+    },
+    {
+      "id": "occ-99a3a7d33d2f60fa4162185c",
+      "active_ingredient": "colagenase",
+      "form": "pomada"
+    },
+    {
+      "id": "occ-8d187faecc9b65a1b029a795",
+      "active_ingredient": "complexo b drágea,",
+      "form": "cápsula"
+    },
+    {
+      "id": "occ-055c811462053147a7575585",
+      "active_ingredient": "complexo b",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-34c211344aed1ca3c6baa605",
+      "active_ingredient": "complexo protrombinico total",
+      "form": "injetável"
+    },
+    {
+      "id": "occ-2389839526c98fce9c1cef3a",
+      "active_ingredient": "contraste radiológico não iônico hiposmolar",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-afa996cfd47bae4c1669fa1a",
+      "active_ingredient": "cordia verbenacea",
+      "form": "gel"
+    },
+    {
+      "id": "occ-f70c3177ef1085ef231dfe45",
+      "active_ingredient": "cordia verbenacea",
+      "form": "gel"
+    },
+    {
+      "id": "occ-08d4e9a33d09f64b45a58cf2",
+      "active_ingredient": "dexametasona (acetato)",
+      "form": "creme"
+    },
+    {
+      "id": "occ-3db3f93f02c1d14cdda1861a",
+      "active_ingredient": "dexpantenol",
+      "form": "pomada"
+    },
+    {
+      "id": "occ-25856ffe401a078800d28669",
+      "active_ingredient": "dextrana + hipromelose",
+      "form": "solução oftálmica"
+    },
+    {
+      "id": "occ-ca1a3c773c466a802699f6fb",
+      "active_ingredient": "dimenidrinato + piridoxina (cloridrato) + glicose + frutose",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-9bd091af267ad5bcafdc9cd6",
+      "active_ingredient": "elexacaftor + tezacaftor + ivacaftor (",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-da92478589d9a0a56feb7c9b",
+      "active_ingredient": "elexacaftor + tezacaftor + ivacaftor (",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-6f33c8ddc52a9a43f6f408b4",
+      "active_ingredient": "espiramicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-d9b95b57b776e6948d5c47a9",
+      "active_ingredient": "estradiol (valerato) + noretisterona (enantato)",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-e7922c97b272a1017e5df1b6",
+      "active_ingredient": "estriol",
+      "form": "creme"
+    },
+    {
+      "id": "occ-f6a396bb611373bc873ca481",
+      "active_ingredient": "etinilestradiol + levonorgestrel",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-e6be717879d8a0270783ac6a",
+      "active_ingredient": "fluocinolona acetonida + sulfato de polimixina B + sulfato de neomicina + cloridrato de lidocaína (",
+      "form": "solução"
+    },
+    {
+      "id": "occ-78188898d78d349ea89a3850",
+      "active_ingredient": "fluoruracila",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-9973fd0efe133f7b1f0bc72f",
+      "active_ingredient": "fluoruracila",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-c9bc36fa60e7502f10aa9a60",
+      "active_ingredient": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral",
+      "form": null
+    },
+    {
+      "id": "occ-51dcb075404e0e56191ddb1a",
+      "active_ingredient": "formoterol (fumarato) + budesonida pó inalante ou",
+      "form": "cápsula"
+    },
+    {
+      "id": "occ-ec6f6f783a75ee7301337a25",
+      "active_ingredient": "formoterol (fumarato) + budesonida pó inalante ou",
+      "form": "cápsula"
+    },
+    {
+      "id": "occ-c500bcdbb85f9875820c5df8",
+      "active_ingredient": "fosfato de sodio monobasico + fosfato de sodio dibasico",
+      "form": "solução"
+    },
+    {
+      "id": "occ-4fd2ba59f5f886e2bf7c9297",
+      "active_ingredient": "fumarato de tenofovir desoproxila + lamivudina + efavirenz",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-89b1798f87b6fef73e10d024",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-cb99538aad360c68ec43b6cf",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-b0b2adb7d79eb231b1207fad",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-06af3eca6617e8d4af48aca7",
+      "active_ingredient": "glecaprevir + pibrentasvir",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-b042234935f17939a393d2ab",
+      "active_ingredient": "glicerina (glicerol)",
+      "form": "solução retal"
+    },
+    {
+      "id": "occ-e3b3ea674e18ca059d6549eb",
+      "active_ingredient": "glicose",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-af3932964ad48be9f18e6f16",
+      "active_ingredient": "hidrocortisona (acetato)",
+      "form": "creme"
+    },
+    {
+      "id": "occ-a702e7f8cea75101a864bb6d",
+      "active_ingredient": "hidroxido de aluminio + hidroxido de magnésio",
+      "form": "suspensão oral"
+    },
+    {
+      "id": "occ-b65925b0adb685d1e3973a71",
+      "active_ingredient": "imipenem + cilastatina sódica",
+      "form": "pó para solução injetável"
+    },
+    {
+      "id": "occ-0497862d67fea1adb6b83006",
+      "active_ingredient": "imiquimode",
+      "form": "creme"
+    },
+    {
+      "id": "occ-b7ff0aa673f64b75c16c3ddf",
+      "active_ingredient": "imunoglobulina anti-rho (anti-d)",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-9804085866c3d3a8183e020a",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-138e7fcb892102564091acf5",
+      "active_ingredient": "iodopovidona (iodopolividona)",
+      "form": "solução"
+    },
+    {
+      "id": "occ-2c6a5103a83f0deaada21735",
+      "active_ingredient": "iodopovidona (iodopolividona)",
+      "form": "solução"
+    },
+    {
+      "id": "occ-2eae1621c3e43ecefe3e241c",
+      "active_ingredient": "iodopovidona (iodopolividona)",
+      "form": "solução"
+    },
+    {
+      "id": "occ-ff5c01c91fa347483018f0a0",
+      "active_ingredient": "kit selante de fibrina",
+      "form": "solução"
+    },
+    {
+      "id": "occ-270ac66151997d9a70db0247",
+      "active_ingredient": "lamivudina + dolutegravir",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-940082c701c5f899ee60f8f6",
+      "active_ingredient": "laronidase",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-0d65a0214341f4ea9d89e1d0",
+      "active_ingredient": "levodopa + benserazida (cloridrato)",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-7cbf1527034e630a3b103689",
+      "active_ingredient": "levodopa + benserazida (cloridrato)",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-8633afd4a9f96428f0e81818",
+      "active_ingredient": "levodopa + carbidopa",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-ddf07e8856101b9a33b7f11c",
+      "active_ingredient": "lidocaína (cloridrato) + epinefrina",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-266f79c4efb99c09076811a3",
+      "active_ingredient": "lidocaína (cloridrato) geleia",
+      "form": null
+    },
+    {
+      "id": "occ-acab5ac22904900c77969213",
+      "active_ingredient": "lidocaína + epinefrina",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-81b56158be5bea770866bc32",
+      "active_ingredient": "lippia sidoides",
+      "form": "gel"
+    },
+    {
+      "id": "occ-e4cbc1733e4ee6808a8e5481",
+      "active_ingredient": "lippia sidoides",
+      "form": "gel"
+    },
+    {
+      "id": "occ-8d4d96cbceb2f870e79e3b16",
+      "active_ingredient": "liraglutida",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-d1afd37cabec657dfecf0ab9",
+      "active_ingredient": "lopinavir + ritonavir (lpv/r )",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-8806d48721f7f68dd6d71a8a",
+      "active_ingredient": "lopinavir + ritonavir (lpv/r)",
+      "form": "solução oral"
+    },
+    {
+      "id": "occ-b4ac68a659e4759dd930a5b1",
+      "active_ingredient": "mepivacaina (cloridrato) sem vasoconstritor",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-80adfafd32991aa51fcb7bf6",
+      "active_ingredient": "mepivacaína + epinefrina",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-de475952f39c171a29cb24d9",
+      "active_ingredient": "metotrexato",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-f0e28dbd049d6b0b301b77cf",
+      "active_ingredient": "metronidazol",
+      "form": "gel"
+    },
+    {
+      "id": "occ-c1c3e22c4cbb25745f676bd4",
+      "active_ingredient": "miconazol (nitrato)",
+      "form": "creme"
+    },
+    {
+      "id": "occ-39145d3256bd9b355a86f01b",
+      "active_ingredient": "miconazol",
+      "form": "creme"
+    },
+    {
+      "id": "occ-be1655419eff7210901c7689",
+      "active_ingredient": "mikania glomerata spreng",
+      "form": "xarope"
+    },
+    {
+      "id": "occ-34af9fd510e2641284194b08",
+      "active_ingredient": "mupirocina",
+      "form": "creme"
+    },
+    {
+      "id": "occ-98cbfa4d122c6e0d631964c1",
+      "active_ingredient": "neomicina (sulfato) + bacitracina (zincica)",
+      "form": "pomada"
+    },
+    {
+      "id": "occ-56be2f62588ca6292918b5ac",
+      "active_ingredient": "nirmatrelvir 2 comprimidos revestidos",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-102f806ea7b79e2cc685fb33",
+      "active_ingredient": "norepinefrina (hemitartarato)",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-9e36c2c5050e784a8afa8dbc",
+      "active_ingredient": "oxibuprocaína (cloridrato)",
+      "form": "solução oftálmica"
+    },
+    {
+      "id": "occ-e8d36ab4f9f02c6c8d0bf0a0",
+      "active_ingredient": "oxido de zinco + vitamina a + vitamina d",
+      "form": "pomada"
+    },
+    {
+      "id": "occ-386c6917918eb996e4015fda",
+      "active_ingredient": "pancreatina (lipase + amilase + protease)",
+      "form": "cápsula"
+    },
+    {
+      "id": "occ-a9315e6344483d7811612fda",
+      "active_ingredient": "pancreatina (lipase + amilase + protease)",
+      "form": "cápsula"
+    },
+    {
+      "id": "occ-15830276ac878c51c7eb7660",
+      "active_ingredient": "piperacilina + tazobactam",
+      "form": "pó liofilizado para solução injetável"
+    },
+    {
+      "id": "occ-c46256c1a904b7e76d88799f",
+      "active_ingredient": null,
+      "form": "pó para solução"
+    },
+    {
+      "id": "occ-4bd5f5d42ec8ef95ec152915",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-390b2fafe9c35c873c13e1db",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-daa827193511b8e2acec493b",
+      "active_ingredient": "polivitaminicos ou multivitaminicos sem minerais",
+      "form": "pó liofilizado para solução injetável"
+    },
+    {
+      "id": "occ-9b28fcd4073dcff322bc5f32",
+      "active_ingredient": "prilocaína (cloridrato) + felipressina",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-c731c1d37d51b270a7f9b041",
+      "active_ingredient": "retinol (acetato) + aminoacidos + dl- metionina + cloranfenicol",
+      "form": "pomada oftálmica"
+    },
+    {
+      "id": "occ-cfcfff8571d17806ea96b35c",
+      "active_ingredient": "rifampicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-e45b11383b3f72658e2434d5",
+      "active_ingredient": "rifampicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-0f69ce241b5e399f0e745b35",
+      "active_ingredient": "rifampicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-70ad4a9f925e23bfecd3a22a",
+      "active_ingredient": "rifampicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-380d15a3a6a8d5ea6e813b43",
+      "active_ingredient": "rifampicina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-d6fdd34e64d43b0d222ef69b",
+      "active_ingredient": "rifapentina + isoniazida",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-f208f9b0fbdfa9984f6ae66e",
+      "active_ingredient": "rivastigmina adesivo transdermico",
+      "form": null
+    },
+    {
+      "id": "occ-924b68401c03c4123a26164e",
+      "active_ingredient": "rivastigmina adesivo transdermico",
+      "form": null
+    },
+    {
+      "id": "occ-5e613d5a17989804827e439e",
+      "active_ingredient": "sais para reidratação oral (cloreto de sódio",
+      "form": "solução"
+    },
+    {
+      "id": "occ-b3c9c95e8c9426034db9ca30",
+      "active_ingredient": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação",
+      "form": null
+    },
+    {
+      "id": "occ-c91b4e24768177e887ed16b6",
+      "active_ingredient": "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação",
+      "form": null
+    },
+    {
+      "id": "occ-3da1f44d1a507a358ceee024",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-648c45d256d209afe121f04d",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-ea3c3a338bd1aa4a3ff232fd",
+      "active_ingredient": "sevoflurano",
+      "form": "solução"
+    },
+    {
+      "id": "occ-65d47184ac652afe4967c27b",
+      "active_ingredient": "sofosbuvir",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-2586228a9154a74d8fea851b",
+      "active_ingredient": "sofosbuvir + velpatasvir",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-8fd9c1d2bed04f28c96453ee",
+      "active_ingredient": "sofosbuvir + velpatasvir + voxilaprevir",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-6c9cca4e2c8bdba3c94bc0bc",
+      "active_ingredient": null,
+      "form": "solução"
+    },
+    {
+      "id": "occ-f0dd72a9216230ed91376a2c",
+      "active_ingredient": null,
+      "form": "solução"
+    },
+    {
+      "id": "occ-ba0acebc4bf4e0ac7bb5ad8b",
+      "active_ingredient": null,
+      "form": "solução"
+    },
+    {
+      "id": "occ-115ca5191ad4d1ee6993658d",
+      "active_ingredient": "sulfadiazina de prata",
+      "form": "creme"
+    },
+    {
+      "id": "occ-2d8c141a0678f1f9561c4747",
+      "active_ingredient": "sulfadiazina de prata",
+      "form": "creme"
+    },
+    {
+      "id": "occ-55d57003b757d2b31c7722d0",
+      "active_ingredient": "sulfametoxazol + trimetoprima",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-5dac3a6caf05fed48e9546cb",
+      "active_ingredient": "sulfametoxazol + trimetoprima",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-bf16ec9604f7d2615bc11dc9",
+      "active_ingredient": "sulfato de magnésio",
+      "form": "solução injetável"
+    },
+    {
+      "id": "occ-7314323fddaafb5a3dd80502",
+      "active_ingredient": "sulfato ferroso",
+      "form": "solução oral"
+    },
+    {
+      "id": "occ-d09c1d0d0c60a6637ab3c4eb",
+      "active_ingredient": "symphytum officinale",
+      "form": "gel"
+    },
+    {
+      "id": "occ-b969a7a54ebd79dbab6e83eb",
+      "active_ingredient": "symphytum officinale",
+      "form": "gel"
+    },
+    {
+      "id": "occ-dd3666cce6867d6246aae72f",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-908a2f2b4ad6fd7ca89a0a51",
+      "active_ingredient": "tenofovir + entricitabina",
+      "form": "comprimido revestido"
+    },
+    {
+      "id": "occ-d7a71db1b039fc321c39c989",
+      "active_ingredient": "tenofovir + lamivudina",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-cb22669dfd85514c6b90e4c5",
+      "active_ingredient": "tenofovir desoproxila (fumarato)",
+      "form": null
+    },
+    {
+      "id": "occ-cf20695ffc6eab37d50c1cd6",
+      "active_ingredient": "tiotrópio (brometo) + olodaterol (cloridrato)",
+      "form": "solução"
+    },
+    {
+      "id": "occ-c6a25becf833271f53205b74",
+      "active_ingredient": "tobramicina + dexametasona",
+      "form": "pomada oftálmica"
+    },
+    {
+      "id": "occ-e185f6e00af0113b419ca348",
+      "active_ingredient": "tobramicina",
+      "form": "pomada oftálmica"
+    },
+    {
+      "id": "occ-e34170ebed3c19cdf4f5f5d7",
+      "active_ingredient": "triancinolona acetonida",
+      "form": "pomada"
+    },
+    {
+      "id": "occ-b876bad65fcf7b57f2c2cf3e",
+      "active_ingredient": "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante",
+      "form": null
+    },
+    {
+      "id": "occ-7a921bb07f18683e609d66d9",
+      "active_ingredient": "zidovudina + lamivudina (azt/3tc)",
+      "form": "comprimido"
+    },
+    {
+      "id": "occ-bd645fca4e10b51f38485f06",
+      "active_ingredient": "etinilestradiol",
+      "form": null
+    },
+    {
+      "id": "occ-2e237469ad52f38dc54b786e",
+      "active_ingredient": "valerato de estradiol",
+      "form": null
+    },
+    {
+      "id": "occ-31f830e7fbb52c0353da2946",
+      "active_ingredient": "carbidopa",
+      "form": null
+    },
+    {
+      "id": "occ-e7d83368e51a7cb974fd6bd9",
+      "active_ingredient": "cloridrato de benserazida",
+      "form": null
+    },
+    {
+      "id": "occ-8b27e582e2c9bd191869b342",
+      "active_ingredient": null,
+      "form": null
+    },
+    {
+      "id": "occ-5ea8a977695dbad521b67f97",
+      "active_ingredient": null,
+      "form": null
+    }
+  ],
+  "null_form_ids": [
+    {
+      "id": "occ-bb26062fbe91f7ef77a4a9c5",
+      "active_ingredient": "ácido paraminossalicilico",
+      "strength": "4 g"
+    },
+    {
+      "id": "occ-32f9c026384ce1b61a6b03a2",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-405fcd5d37f8cf3fbb357a41",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-adec0f7209079b9611b5cfc9",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-f1d051e9eb0bb97100dabec1",
+      "active_ingredient": "alentuzumabe",
+      "strength": "10mg/mL"
+    },
+    {
+      "id": "occ-fedb4157f625b028ed9a47a1",
+      "active_ingredient": "amoxicilina + clavulanato de potássio pó p/ susp oral",
+      "strength": null
+    },
+    {
+      "id": "occ-8ba2c9995808a8d21ff382ba",
+      "active_ingredient": "artesunato",
+      "strength": "60 mg/mL"
+    },
+    {
+      "id": "occ-51932c9f765b4621c3f85553",
+      "active_ingredient": "beclometasona (dipropionato) spray nasal",
+      "strength": "50 mcg/dose"
+    },
+    {
+      "id": "occ-eaa8f8a6c76180bd2bc84f7b",
+      "active_ingredient": "calcitonina sintética de salmão",
+      "strength": "200 UI/dose"
+    },
+    {
+      "id": "occ-4588d95017826e21d88fb8b1",
+      "active_ingredient": "carvão ativado pó frasco ou envelope",
+      "strength": "25g"
+    },
+    {
+      "id": "occ-78044f55273169f4df0a2e8f",
+      "active_ingredient": "cetoconazol xampu",
+      "strength": "2%"
+    },
+    {
+      "id": "occ-dd957ba40ca4e72ce3664526",
+      "active_ingredient": "complexo protrombinico humano 500 a",
+      "strength": "600 UI"
+    },
+    {
+      "id": "occ-2acbac5138b97b6025ef27eb",
+      "active_ingredient": "complexo protrombinico parcialmente ativado",
+      "strength": "1.000 UI"
+    },
+    {
+      "id": "occ-cec6720b0696cc3467763f60",
+      "active_ingredient": "complexo protrombinico parcialmente ativado",
+      "strength": "2.500 UI"
+    },
+    {
+      "id": "occ-a2328ad01cbdd7eaf6399199",
+      "active_ingredient": "complexo protrombinico parcialmente ativado",
+      "strength": "500 UI"
+    },
+    {
+      "id": "occ-aaec62b34383e26e09f8794e",
+      "active_ingredient": "concentrado de fator VII ativado recombinante",
+      "strength": "1mg"
+    },
+    {
+      "id": "occ-6dc34df67785ee2bef866fdf",
+      "active_ingredient": "concentrado de fator VII ativado recombinante",
+      "strength": "2mg"
+    },
+    {
+      "id": "occ-d5511594a7495ad4d86ef56e",
+      "active_ingredient": "concentrado de fator VII ativado recombinante",
+      "strength": "5mg"
+    },
+    {
+      "id": "occ-ce00e77552ff3ea43768d038",
+      "active_ingredient": "concentrado de fator VIII para doença de von willebrand 450 a",
+      "strength": "500 UI"
+    },
+    {
+      "id": "occ-c5954d43bacfc3b36ef60e9f",
+      "active_ingredient": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand",
+      "strength": "250UI"
+    },
+    {
+      "id": "occ-fbadecd101697a7c4a99e493",
+      "active_ingredient": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand",
+      "strength": "500 UI"
+    },
+    {
+      "id": "occ-5c4b29dfa1a9134aaf4401c3",
+      "active_ingredient": "concentrado de fator VIII recombinante",
+      "strength": "1.000 UI"
+    },
+    {
+      "id": "occ-514302c5ebfe39da32cc0793",
+      "active_ingredient": "concentrado de fator VIII recombinante",
+      "strength": "250 UI"
+    },
+    {
+      "id": "occ-74dc6ba00f49a278be13f1b0",
+      "active_ingredient": "concentrado de fator VIII recombinante",
+      "strength": "500 UI"
+    },
+    {
+      "id": "occ-0fe17d8a84b5c7dd712524b8",
+      "active_ingredient": "concentrado plasmatico de fator IX 200 a",
+      "strength": "250 UI"
+    },
+    {
+      "id": "occ-00e14eea89c252dbdefdbe72",
+      "active_ingredient": "concentrado plasmatico de fator IX 500 a",
+      "strength": "600 UI"
+    },
+    {
+      "id": "occ-7e23bb480d24a60747892567",
+      "active_ingredient": "concentrado plasmatico de fator VIII",
+      "strength": "1.000 UI"
+    },
+    {
+      "id": "occ-4b258d4e5ef990070d72b3c1",
+      "active_ingredient": "concentrado plasmatico de fator VIII",
+      "strength": "250 UI"
+    },
+    {
+      "id": "occ-566ad0f0dc15f991a8d22de7",
+      "active_ingredient": "concentrado plasmatico de fator VIII",
+      "strength": "500 UI"
+    },
+    {
+      "id": "occ-f716947e867b48a761e0fb67",
+      "active_ingredient": "concentrado plasmatico de fator XIII",
+      "strength": "250 UI"
+    },
+    {
+      "id": "occ-51ff8fa4d4c886e6e8c742b0",
+      "active_ingredient": "desmopressina spray nasal",
+      "strength": "0,1mg/mL"
+    },
+    {
+      "id": "occ-73c991d8ed35e115797070c8",
+      "active_ingredient": "desmopressina spray nasal",
+      "strength": "0,1mg/mL"
+    },
+    {
+      "id": "occ-c9bc36fa60e7502f10aa9a60",
+      "active_ingredient": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral",
+      "strength": null
+    },
+    {
+      "id": "occ-4718a35240be10d89e68524c",
+      "active_ingredient": "fluticasona (propionato) aerossol ou spray para inalação oral",
+      "strength": "50mcg/dose"
+    },
+    {
+      "id": "occ-89b1798f87b6fef73e10d024",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-cb99538aad360c68ec43b6cf",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-b0b2adb7d79eb231b1207fad",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-3e214ed6687162dd9b296e5e",
+      "active_ingredient": "gosserrelina (acetato)",
+      "strength": "3,6 mg"
+    },
+    {
+      "id": "occ-5ff05a19a860eb46c4d2f406",
+      "active_ingredient": "implante subdérmico de etonogestrel",
+      "strength": "68 mg"
+    },
+    {
+      "id": "occ-e39f9b1b1851765877bfabd9",
+      "active_ingredient": "imunoglobulina humana",
+      "strength": "5,0g"
+    },
+    {
+      "id": "occ-9804085866c3d3a8183e020a",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-1c491584ae8ccd223a4f3f4a",
+      "active_ingredient": "ipratropio (brometo) aerossol oral",
+      "strength": "20 mcg/dose"
+    },
+    {
+      "id": "occ-39c91371f765b3377864d13c",
+      "active_ingredient": "lactulose líquido oral",
+      "strength": "667 mg/mL"
+    },
+    {
+      "id": "occ-266f79c4efb99c09076811a3",
+      "active_ingredient": "lidocaína (cloridrato) geleia",
+      "strength": null
+    },
+    {
+      "id": "occ-468eb11c1379788ba952c10d",
+      "active_ingredient": "mesalazina enema",
+      "strength": "10 mg/mL"
+    },
+    {
+      "id": "occ-8d4c9df6f2789ee0f39f16ec",
+      "active_ingredient": "mesalazina granulo de liberação prolongada envelope",
+      "strength": "2g"
+    },
+    {
+      "id": "occ-e3cf27e7ac0f77720c672d2b",
+      "active_ingredient": "mesalazina supositorio",
+      "strength": "250 mg"
+    },
+    {
+      "id": "occ-c2822e9b57c1d86fc22ad93f",
+      "active_ingredient": "mitomicina pó liofilizado",
+      "strength": "0,04%"
+    },
+    {
+      "id": "occ-caeca67ae3bd86fefc1b4d32",
+      "active_ingredient": "montelucaste (sodico) granulo",
+      "strength": "4 mg"
+    },
+    {
+      "id": "occ-0b842a68f77c8fe98f279ca2",
+      "active_ingredient": "mycobacterium bovis (bcg) po liofilizado",
+      "strength": "40 mg"
+    },
+    {
+      "id": "occ-fa6fbb61621b06475e0ea76f",
+      "active_ingredient": "nicotina adesivo transdermico",
+      "strength": "14 mg"
+    },
+    {
+      "id": "occ-bc49f2eb9047b3b8bb1c383c",
+      "active_ingredient": "nicotina adesivo transdermico",
+      "strength": "21 mg"
+    },
+    {
+      "id": "occ-e3dd656406f5069b5ed0e8d6",
+      "active_ingredient": "nicotina adesivo transdermico",
+      "strength": "7 mg"
+    },
+    {
+      "id": "occ-a7a73b34d4ce3fbb334734e0",
+      "active_ingredient": "nicotina goma de mascar",
+      "strength": "2mg"
+    },
+    {
+      "id": "occ-250537e61387b7413515878d",
+      "active_ingredient": "oleo mineral",
+      "strength": "100 %"
+    },
+    {
+      "id": "occ-2c4cdd92eecda6cae84b133b",
+      "active_ingredient": "oxaliplatina injetável",
+      "strength": "100 mg"
+    },
+    {
+      "id": "occ-f0f7223fd5ff5341463b0550",
+      "active_ingredient": "parecoxibe po liofilizado",
+      "strength": "40 mg"
+    },
+    {
+      "id": "occ-188379f9a1a901911d6ec8e6",
+      "active_ingredient": "pastilha de nicotina",
+      "strength": "2mg"
+    },
+    {
+      "id": "occ-67f1d7bd5480cdd10e4558be",
+      "active_ingredient": "permetrina loçao topica",
+      "strength": "10 mg/mL"
+    },
+    {
+      "id": "occ-b3d92d4f93de913f3ec12ed5",
+      "active_ingredient": "permetrina loção tópica",
+      "strength": "50 mg/mL"
+    },
+    {
+      "id": "occ-929746d0a7074a12d232e311",
+      "active_ingredient": "polidocanol",
+      "strength": "0,5%"
+    },
+    {
+      "id": "occ-d8fd307fc70421bb742de827",
+      "active_ingredient": "polidocanol",
+      "strength": "1%"
+    },
+    {
+      "id": "occ-866e5921c88497b031103d5d",
+      "active_ingredient": "polidocanol",
+      "strength": "3%"
+    },
+    {
+      "id": "occ-4bd5f5d42ec8ef95ec152915",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-390b2fafe9c35c873c13e1db",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-43d9f890ddf5baacb5949054",
+      "active_ingredient": "risdiplam pó para soluçâo oral",
+      "strength": "0,75 mg/mL"
+    },
+    {
+      "id": "occ-f208f9b0fbdfa9984f6ae66e",
+      "active_ingredient": "rivastigmina adesivo transdermico",
+      "strength": null
+    },
+    {
+      "id": "occ-924b68401c03c4123a26164e",
+      "active_ingredient": "rivastigmina adesivo transdermico",
+      "strength": null
+    },
+    {
+      "id": "occ-b0f807a52a2fdbfaeb4e13c8",
+      "active_ingredient": "salbutamol (sulfato) spray ou aerossol para inalação oral",
+      "strength": "100 mcg/dose"
+    },
+    {
+      "id": "occ-b3c9c95e8c9426034db9ca30",
+      "active_ingredient": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação",
+      "strength": null
+    },
+    {
+      "id": "occ-c91b4e24768177e887ed16b6",
+      "active_ingredient": "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação",
+      "strength": null
+    },
+    {
+      "id": "occ-3da1f44d1a507a358ceee024",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-648c45d256d209afe121f04d",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-d211fe7831486018fe2a05e1",
+      "active_ingredient": "sirolimo drágea",
+      "strength": "1mg"
+    },
+    {
+      "id": "occ-73c502c1d468203b007b9db0",
+      "active_ingredient": "sirolimo drágea",
+      "strength": "2mg"
+    },
+    {
+      "id": "occ-0f5899f3abcdc0a806d35406",
+      "active_ingredient": "subgalato de bismuto pó frasco ou pote",
+      "strength": "50 g"
+    },
+    {
+      "id": "occ-cd56b7aab2cff5176b586908",
+      "active_ingredient": "sulfato de zinco heptahidratado",
+      "strength": "17,60 mg/mL"
+    },
+    {
+      "id": "occ-36b8a9522cb455db12695ff2",
+      "active_ingredient": "suplemento alimentar com múltiplos micronutrientes po",
+      "strength": "1 g"
+    },
+    {
+      "id": "occ-dd3666cce6867d6246aae72f",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-283931a2d704751b9514b970",
+      "active_ingredient": "tenecteplase po liofilizado",
+      "strength": "40mg"
+    },
+    {
+      "id": "occ-cb22669dfd85514c6b90e4c5",
+      "active_ingredient": "tenofovir desoproxila (fumarato)",
+      "strength": null
+    },
+    {
+      "id": "occ-f2112bc9172fa5847e2ce738",
+      "active_ingredient": "teriflunomida",
+      "strength": "14 mg"
+    },
+    {
+      "id": "occ-741b7ec1564fbbdc0a8e62c9",
+      "active_ingredient": "triptorrelina",
+      "strength": "3,75 mg"
+    },
+    {
+      "id": "occ-b876bad65fcf7b57f2c2cf3e",
+      "active_ingredient": "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante",
+      "strength": null
+    },
+    {
+      "id": "occ-f6ea89da0be78741399fc8f3",
+      "active_ingredient": "vaselina sólida (petrolato)",
+      "strength": "100 %"
+    },
+    {
+      "id": "occ-3ce4fe73119367200f984907",
+      "active_ingredient": "brometo de ipratrópio",
+      "strength": "0,02mg"
+    },
+    {
+      "id": "occ-44ea3122ec626ffeefc2a019",
+      "active_ingredient": "brometo de ipratrópio",
+      "strength": "0,25mg"
+    },
+    {
+      "id": "occ-66c51d341c410cacdbd244a4",
+      "active_ingredient": "dipropionato de beclometasona",
+      "strength": "200mcg"
+    },
+    {
+      "id": "occ-8616bec3a9ce97b885f68018",
+      "active_ingredient": "dipropionato de beclometasona",
+      "strength": "250mcg"
+    },
+    {
+      "id": "occ-882d2f438c02eeca23e676cb",
+      "active_ingredient": "dipropionato de beclometasona",
+      "strength": "50mcg"
+    },
+    {
+      "id": "occ-e139cbd09a39d7da5be06493",
+      "active_ingredient": "sulfato de salbutamol",
+      "strength": "100mcg"
+    },
+    {
+      "id": "occ-09b3c17ea49c6c8ae67c2e4d",
+      "active_ingredient": "sulfato de salbutamol",
+      "strength": "5mg"
+    },
+    {
+      "id": "occ-edf8dd6f5a636935088dddea",
+      "active_ingredient": "cloridrato de metformina",
+      "strength": "500mg"
+    },
+    {
+      "id": "occ-48e616ae9f8df7c435126c21",
+      "active_ingredient": "cloridrato de metformina",
+      "strength": "500mg"
+    },
+    {
+      "id": "occ-5cad8bf5fd4bf3b66565f60b",
+      "active_ingredient": "cloridrato de metformina",
+      "strength": "850mg"
+    },
+    {
+      "id": "occ-1720c0bddc635262a2c3f640",
+      "active_ingredient": "glibenclamida",
+      "strength": "5mg"
+    },
+    {
+      "id": "occ-8ddfd9df9529d696a2612e89",
+      "active_ingredient": "insulina humana regular",
+      "strength": "100ui/ml"
+    },
+    {
+      "id": "occ-e0fa1e053b0a724181075489",
+      "active_ingredient": "insulina humana",
+      "strength": "100ui/ml"
+    },
+    {
+      "id": "occ-4eb20de2a64dfed2e8279acc",
+      "active_ingredient": "atenolol",
+      "strength": "25mg"
+    },
+    {
+      "id": "occ-72612f92a939518de17baaa1",
+      "active_ingredient": "besilato de anlodipino",
+      "strength": "5 mg"
+    },
+    {
+      "id": "occ-7ed9e237bf18ba04361a3576",
+      "active_ingredient": "captopril",
+      "strength": "25mg"
+    },
+    {
+      "id": "occ-8c6afb38cd237a6b4345229c",
+      "active_ingredient": "cloridrato de propranolol",
+      "strength": "40mg"
+    },
+    {
+      "id": "occ-55ae1ce56b51b27f32022210",
+      "active_ingredient": "hidroclorotiazida",
+      "strength": "25mg"
+    },
+    {
+      "id": "occ-81076ce93e4163086259ef8e",
+      "active_ingredient": "losartana potássica",
+      "strength": "50mg"
+    },
+    {
+      "id": "occ-fbcf0015aa8813b069bae2ca",
+      "active_ingredient": "maleato de enalapril",
+      "strength": "10mg"
+    },
+    {
+      "id": "occ-b768885458b54f9771fd68e1",
+      "active_ingredient": "espironolactona",
+      "strength": "25 mg"
+    },
+    {
+      "id": "occ-c71ac9beefacd5021280b7f8",
+      "active_ingredient": "furosemida",
+      "strength": "40 mg"
+    },
+    {
+      "id": "occ-e597b6780d28aa62255f6eec",
+      "active_ingredient": "succinato de metoprolol",
+      "strength": "25 mg"
+    },
+    {
+      "id": "occ-3e3fc3f2db17a9c68344f2c9",
+      "active_ingredient": "acetato de medroxiprogesterona",
+      "strength": "150mg"
+    },
+    {
+      "id": "occ-bd645fca4e10b51f38485f06",
+      "active_ingredient": "etinilestradiol",
+      "strength": null
+    },
+    {
+      "id": "occ-1eaef6352086caff666c4e10",
+      "active_ingredient": "noretisterona",
+      "strength": "0,35mg"
+    },
+    {
+      "id": "occ-2e237469ad52f38dc54b786e",
+      "active_ingredient": "valerato de estradiol",
+      "strength": null
+    },
+    {
+      "id": "occ-1d42c31c79d6a6fa09551952",
+      "active_ingredient": "alendronato de sódio",
+      "strength": "70mg"
+    },
+    {
+      "id": "occ-11dd751548d5ceaf859d9a75",
+      "active_ingredient": "sinvastatina",
+      "strength": "10mg"
+    },
+    {
+      "id": "occ-15d35da6f8e395b14d97041e",
+      "active_ingredient": "sinvastatina",
+      "strength": "20mg"
+    },
+    {
+      "id": "occ-1e13d576f93f33e19c79b9e2",
+      "active_ingredient": "sinvastatina",
+      "strength": "40mg"
+    },
+    {
+      "id": "occ-31f830e7fbb52c0353da2946",
+      "active_ingredient": "carbidopa",
+      "strength": null
+    },
+    {
+      "id": "occ-e7d83368e51a7cb974fd6bd9",
+      "active_ingredient": "cloridrato de benserazida",
+      "strength": null
+    },
+    {
+      "id": "occ-57c2830deb65187a5743c1b3",
+      "active_ingredient": "maleato de timolol",
+      "strength": "2,5mg"
+    },
+    {
+      "id": "occ-49b4ce4a23cd3e4e01bf68f5",
+      "active_ingredient": "maleato de timolol",
+      "strength": "5mg"
+    },
+    {
+      "id": "occ-4dbafe42e6cc0c7058ecc60a",
+      "active_ingredient": "budesonida",
+      "strength": "32mcg"
+    },
+    {
+      "id": "occ-03bb26a358e97b57f4fd899d",
+      "active_ingredient": "budesonida",
+      "strength": "50mcg"
+    },
+    {
+      "id": "occ-dc03277c309dbb980fe781ca",
+      "active_ingredient": "dipropionato de beclometasona",
+      "strength": "50mcg/dose"
+    },
+    {
+      "id": "occ-7f063f17f3885eb3cdc24d3f",
+      "active_ingredient": "dapagliflozina",
+      "strength": "10 mg"
+    },
+    {
+      "id": "occ-8b27e582e2c9bd191869b342",
+      "active_ingredient": null,
+      "strength": null
+    },
+    {
+      "id": "occ-5ea8a977695dbad521b67f97",
+      "active_ingredient": null,
+      "strength": null
+    }
+  ]
+}

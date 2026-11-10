@@ -47,6 +47,30 @@ uv run python app.py ask "Sinvastatina 20 mg comprimido consta na REME?" --exper
 uv run python app.py chat --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl --strategy hybrid --documental --show-context
 ```
 
+Para conversar com o **corpus consolidado aprovado** e sincronizar o InfoSaúde
+ao iniciar o chat, use:
+
+```powershell
+uv run python app.py chat --validated
+```
+
+`--validated` carrega as 2.115 ocorrências e os 2.620 chunks primários de
+`data/corpus/`, verifica manifesto/relatório e reaproveita os vetores do índice
+histórico somente após conferir modelo, IDs e textos. Os 108 chunks
+complementares ainda marcados `pending` ficam fora deste chat e não são
+enviados como evidência. Não é necessário recalcular embeddings para esses
+2.620 textos idênticos.
+As ocorrências e apresentações do corpus consolidado estão `approved`, mas
+os 2.620 chunks primários ainda têm `review_status: pending`; o chat avisa
+isso na abertura. O manifesto aprovado não substitui a validação individual
+dos chunks.
+Na abertura, sincroniza estoque UBS/CEAF e cadastro de unidades; se a coleta
+falhar, avisa e tenta usar o último snapshot local. Consultas de estoque ficam
+limitadas às seis apresentações com código UBS validado no release de estoque;
+respostas documentais usam o corpus consolidado. A lista documental não comprova
+saldo nem disponibilidade. `--experimental` continua selecionando o snapshot
+histórico para comparação.
+
 Usar o mesmo corpus, suplemento e modelo ao indexar e consultar. Estratégias:
 `hybrid`, `lexical`, `vector`, `exact`; top-k padrão 5. As referências
 são verificáveis, mas sua validade não prova fidelidade factual da resposta.

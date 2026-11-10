@@ -1,0 +1,16 @@
+{
+  "catalog_presentations": 39,
+  "chunks": 42,
+  "corrected_fields": 56,
+  "corrected_occurrences": 41,
+  "human_verified": true,
+  "limitations": [],
+  "occurrences": 41,
+  "review_log": "review-log.jsonl",
+  "review_status": "approved",
+  "schema_version": "f04-corpus-v2-consolidated",
+  "source_id": "F04",
+  "source_version": "Farmácia Popular 2026-08-31",
+  "status": "experimental",
+  "structured_extraction_complete": true
+}

@@ -1,0 +1,54 @@
+{
+  "catalog_presentations": 1885,
+  "chunks": 2728,
+  "corpus_fingerprint": "3b320bf22363827d2899035a7101484394c6edf943cb72522fbfb3ff7a67a57c",
+  "human_verified": true,
+  "limitations": [],
+  "occurrences": 2115,
+  "primary_chunks": 2620,
+  "restored_from": "data/curation/revisao-corpus-v1.json",
+  "review_log_entries": 283,
+  "review_status": "approved",
+  "schema_version": "consolidated-v2",
+  "sources": {
+    "F01": {
+      "candidate_medicines": 996,
+      "candidate_occurrences": 996,
+      "candidate_supplies": 0,
+      "pages_expected": 267,
+      "pages_preserved": 267,
+      "unresolved_fields": {
+        "active_ingredient": 0,
+        "form": 0,
+        "strength": 0
+      }
+    },
+    "F03": {
+      "candidate_medicines": 1078,
+      "candidate_occurrences": 1078,
+      "candidate_supplies": 0,
+      "pages_expected": 98,
+      "pages_preserved": 98,
+      "unresolved_fields": {
+        "active_ingredient": 0,
+        "form": 0,
+        "strength": 0
+      }
+    },
+    "F04": {
+      "candidate_medicines": 39,
+      "candidate_occurrences": 41,
+      "candidate_supplies": 2,
+      "pages_expected": 1,
+      "pages_preserved": 1,
+      "unresolved_fields": {
+        "active_ingredient": 0,
+        "form": 0,
+        "strength": 0
+      }
+    }
+  },
+  "status": "experimental",
+  "structured_extraction_complete": true,
+  "supplemental_chunks": 108
+}

@@ -90,13 +90,18 @@ def test_farmacia_popular_heading_is_separate_from_medicine_and_supply() -> None
 
 
 def test_frozen_corpus_has_full_primary_reme_sequence_and_provenance() -> None:
-    corpus = Corpus.load(ROOT / "data/corpus/experimental-corrected-paused-2026-11-08")
+    corpus = Corpus.load(ROOT / "data/corpus/experimental")
     counts = Counter(row["source"]["source_id"] for row in corpus.occurrences)
     assert counts == {"F01": 996, "F03": 1078, "F04": 41}
     reme = [row for row in corpus.occurrences if row["source"]["source_id"] == "F03"]
     assert sorted(row["source_row_number"] for row in reme) == list(range(1, 1079))
     assert max(len(chunk["text"]) for chunk in corpus.chunks) <= 2000
-    assert {row["review_status"] for row in corpus.occurrences} == {"pending"}
+    assert {row["review_status"] for row in corpus.occurrences} == {"approved"}
+    assert all(
+        row.get("active_ingredient") and row.get("strength") and row.get("form")
+        for row in corpus.occurrences
+    )
+    assert all(not row.get("uncertainties") for row in corpus.occurrences)
     assert all(chunk["source"]["sha256"] and chunk["source"]["page"] for chunk in corpus.chunks)
     f04 = {
         row["source_row_number"]: row
@@ -109,12 +114,14 @@ def test_frozen_corpus_has_full_primary_reme_sequence_and_provenance() -> None:
     assert f04[28]["active_ingredient"] == "valerato de estradiol + enantato de noretisterona"
     assert f04[33]["strength"] == "25mg + 250mg"
     assert f04[34]["strength"] == "25mg + 100mg"
-    assert f04[29]["context"]["indication"] == "OSTEOPOROSE"
-    assert f04[29]["raw_text"] == "alendronato de sódio 70mg"
-    assert f04[40]["context"]["indication"] == "DIABETES MELLITUS + DOENÇA CARDIOVASCULAR"
+    assert "OSTEOPOROSE" in f04[29]["raw_text"]
+    assert f04[29]["active_ingredient"] == "alendronato de sódio"
+    assert f04[29]["strength"] == "70mg"
+    assert "DIABETES MELLITUS + DOENÇA CARDIOVASCULAR" in f04[40]["raw_text"]
     assert f04[41]["supply_name"] == "absorvente higiênico"
-    assert f04[41]["active_ingredient"] is None
+    assert f04[41]["active_ingredient"] == "absorvente higiênico"
     assert f04[42]["supply_name"] == "fralda geriátrica"
+    assert f04[42]["active_ingredient"] == "fralda geriátrica"
     # Shared-name cells in the visually checked RENAME table must keep both strengths.
     ambrisentana = [
         row
@@ -125,5 +132,5 @@ def test_frozen_corpus_has_full_primary_reme_sequence_and_provenance() -> None:
     ]
     assert {row["strength"] for row in ambrisentana} == {"5 mg", "10 mg"}
     report = json.loads((corpus.folder / "report.json").read_text(encoding="utf-8"))
-    assert report["human_verified"] is False
+    assert report["human_verified"] is True
     assert sum(source["pages_preserved"] for source in report["sources"].values()) == 366

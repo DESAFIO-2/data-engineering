@@ -1,0 +1,618 @@
+{
+  "occ-474c281dae2e99240c1eff36": [
+    7,
+    "acetato de medroxiprogesterona + estradiol cipionato 25 mg + 5 mg suspensão injetável Medicamentos para a saúde da mulher"
+  ],
+  "occ-e86fd5ebe1a99a846ba78102": [
+    10,
+    "aciclovir pomada oftálmica 0,03 g/g bisnaga 4,5 g Anti-infecciosos"
+  ],
+  "occ-32f9c026384ce1b61a6b03a2": [
+    28,
+    "água para injetáveis ampola 10 mL Todos os outros produtos não terapêuticos UBS (farmácia interna), uso hospitalar  e atendimento pré-hospitalar (SAMU)"
+  ],
+  "occ-405fcd5d37f8cf3fbb357a41": [
+    29,
+    "água para injetáveis frasco ou bolsa 1000 mL Todos os outros produtos não terapêuticos"
+  ],
+  "occ-adec0f7209079b9611b5cfc9": [
+    30,
+    "água para injetáveis frasco ou bolsa 500 mL Todos os outros produtos não terapêuticos"
+  ],
+  "occ-7f055dcf8a7efb65a42e816c": [
+    35,
+    "álcool gel 70% frasco 400g a 500g válvula ´pump´ Outros preparados dermatológicos"
+  ],
+  "occ-a14677a2ed757c154b389b54": [
+    36,
+    "álcool gel a 70% frasco com tampa acoplada 85 a 100g Outros preparados dermatológicos"
+  ],
+  "occ-3b811d5a0b8a3fa0594e855a": [
+    60,
+    "algestona acetofenida + enantato de estradiol solução injetável 150 mg/mL + 10mg/mL Medicamentos para a saúde da mulher"
+  ],
+  "occ-08cb590a1fcaa0f864ac7bde": [
+    61,
+    "aloe vera gel 10% pote 200g (babosa) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-360208b17f7cf9ae94f3016c": [
+    62,
+    "aloe vera gel 10% pote 30g (babosa) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-fedb4157f625b028ed9a47a1": [
+    83,
+    "amoxicilina + clavulanato de potássio pó p/ susp oral 50 mg/mL + 12,5 mg/mL frasco 75 ou 100 mL Antibacterianos beta- lactâmicos, penicilinas"
+  ],
+  "occ-7bafe6d171c044a877b78158": [
+    84,
+    "amoxicilina + clavulanato de potássio comprimido revestido 500mg +125mg Antibacterianos beta- lactâmicos, penicilinas"
+  ],
+  "occ-9275201ad140418c6d36c8fa": [
+    88,
+    "ampicilina + sulbactam pó para solução injetável (2000 mg + 1000 mg)/frasco- ampola Antibacterianos beta- lactâmicos, penicilinas"
+  ],
+  "occ-e231f9b8de316bf9e0ee0151": [
+    102,
+    "artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/12 comprimidos) 15 - 24 kg - malária Medicamentos para o tratamento da malária"
+  ],
+  "occ-e8ffc3f2974ccbb2d133edec": [
+    103,
+    "artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/18 comprimidos) 25 - 34 kg - malária Medicamentos para o tratamento da malária"
+  ],
+  "occ-db9de3d69d4730d206d81759": [
+    104,
+    "artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/6 comprimidos) 5 - 14 kg - malária Medicamentos para o tratamento da malária"
+  ],
+  "occ-2769f85f5e5c65ab49f6fe9d": [
+    124,
+    "azitromicina pó para suspensão oral com 600 mg para preparo de suspensão de 40 mg/mL - tracoma Medicamentos para o tratamento de tracoma"
+  ],
+  "occ-89519a090065566148c04c0b": [
+    125,
+    "azitromicina pó para suspensão oral com 900 mg para preparo de suspensão de 40 mg/mL frasco 22,5 mL Lincosaminas e estreptograminas, macrolídeos"
+  ],
+  "occ-74c6a272ec0d0e884d9571ab": [
+    130,
+    "beclometasona (dipropionato) + formoterol di-hidratado (fumarato) + glicopirrônio (brometo) solução aerossol para inalação oral 100 μcg + 6 μcg + 12,5 μcg/dose dispositivo com 120 doses Inalantes adrenérgicos"
+  ],
+  "occ-db7e3514d1b84de29366c5ec": [
+    143,
+    "36309* benzocaína gel 200 mg/g (20%) pote 12g (uso exclusivo odontologia) *será substituído pelo código 39364 - benzocaína gel tópico 200 mg/g (20%) pote. Unidade de estoque: grama (uso exclusivo odontologia) Anestésicos locais"
+  ],
+  "occ-288516f4933ddc82d2e01afb": [
+    145,
+    "betainterferona 1A injetável 12.000.000 UI (44 mcg) seringa preenchida Imunomoestimulantes"
+  ],
+  "occ-291972901215205d4adbe432": [
+    146,
+    "betainterferona 1A injetável 6.000.000 UI (30 mcg) frasco ampola + seringa preenchida com diluente Imunomoestimulantes"
+  ],
+  "occ-811ad30f693d48862526202b": [
+    147,
+    "betainterferona 1A injetável 6.000.000 UI (22mcg) seringa preenchida pronta para uso Imunomoestimulantes"
+  ],
+  "occ-33884243e26b5bf9f7d3c82b": [
+    148,
+    "betainterferona 1B pó liofilizado para solução injetável 9.600.000 UI/frasco- ampola +diluente (após reconstituição cada mL de solução contém 0,25mg ou 8.000.000 UI) Imunomoestimulantes"
+  ],
+  "occ-989cc52f340aad059a2decba": [
+    149,
+    "betametasona (acetato + fosfato) suspensão injetável (3 mg + 3 mg)/mL ampola 1 mL Corticosteróides de uso sistêmico, isolado"
+  ],
+  "occ-d73427eedf5703737538bd3d": [
+    150,
+    "betametasona (valerato) creme 0,1 % bisnaga 30 g Corticosteróides isolados"
+  ],
+  "occ-57dad9b0f42dc1d24fa74fa5": [
+    154,
+    "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) ampola 10 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-7a233c95fee458b15c44de74": [
+    155,
+    "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) frasco 250 mL Sangue e produtos relacionados"
+  ],
+  "occ-e5005491dd7809b13ffa7ee6": [
+    171,
+    "bupivacaína (cloridrato) + glicose solução injetável (5 mg + 80 mg)/mL ampola 4 mL Anestésicos locais"
+  ],
+  "occ-f38630232092332a6b26efa9": [
+    193,
+    "carbômer (ácido poliacrílico) gel líquido oftálmico 2 mg/g bisnaga 10 g Outros oftalmológicos"
+  ],
+  "occ-bc5acf38f4260802e843100c": [
+    194,
+    "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido (frasco ou blister) Cálcio"
+  ],
+  "occ-ae7e22e2de2b74a353802c18": [
+    209,
+    "ceftazidima (pentaidratada) + avibactam (sódico) pó para solução para infusão 2000 mg + 500 mg Outros antibacterianos beta-lactâmicos"
+  ],
+  "occ-e6b207d3f70d8e743374e074": [
+    211,
+    "ceftolozana (sulfato) + tazobactam (sódico) pó para solução para infusão 1000 mg + 500 mg Outros antibacterianos beta-lactâmicos"
+  ],
+  "occ-35aa08b03801a03eca1cbd89": [
+    216,
+    "cetoconazol creme 2 % bisnaga 30 g Antifúngicos para uso tópico"
+  ],
+  "occ-964239c38602f3ba42087e1c": [
+    236,
+    "ciprofloxacino (cloridrato) pomada oftálmica 0,35 % bisnaga 3,5 g Antiinfecciosos UBS (farmácia ambulatorial)  e uso hospitalar"
+  ],
+  "occ-f41adfc5a77fb3493a0a11f4": [
+    264,
+    "cloreto de potássio solução injetável 10 % (1,34 meq/mL) ampola 10 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-3e5e93387cde2bbf616f4852": [
+    270,
+    "cloreto de sódio solução injetável 0,9% (9 mg/mL) ampola 10 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-6f5375d13042a40c50b22f38": [
+    271,
+    "cloreto de sódio solução injetável 20 % (3,4 meq/mL) ampola 10 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-e5d4a2d7bdbea89c6534e52a": [
+    274,
+    "cloreto de sódio + gliconato de sódio + acetato de sódio + cloreto de potássio + cloreto de magnésio solução injetável 5,26 mg/ml + 5,02 mg/ml + 3,68 mg/ml + 0,37 mg/ml + 0,3 mg/ml bolsa 500 ml Medicamento de compra exclusiva do IHBDF"
+  ],
+  "occ-75c60747180854a75232b0ec": [
+    276,
+    "clorexidina solução aquosa 10 mg/mL (1%) frasco 1000 mL - solução tópica Antissépticos e desinfetantes"
+  ],
+  "occ-99a3a7d33d2f60fa4162185c": [
+    287,
+    "colagenase pomada dermatológica 0,6 UI/g ou 1,2 UI/g bisnaga 30 g Enzimas"
+  ],
+  "occ-8d187faecc9b65a1b029a795": [
+    289,
+    "complexo b drágea, cápsula ou comprimido contendo, no mínimo, as seguintes vitaminas e suas doses mínimas: b1, 1,2mg; b2, 1,3mg; b3, 16mg; b6, 1,3mg. deverá conter exclusivamente vitaminas do complexo b Vitamina do complexo b, incluindo associações"
+  ],
+  "occ-055c811462053147a7575585": [
+    290,
+    "complexo b solução injetável ampola 2 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-34c211344aed1ca3c6baa605": [
+    295,
+    "complexo protrombinico total injetável 500 UI a 600 UI frasco-ampola Vitamina k e outros hemostáticos"
+  ],
+  "occ-2389839526c98fce9c1cef3a": [
+    313,
+    "contraste radiológico não iônico hiposmolar solução injetável teor em iodo de 300mg/mL a 350 mg/mL frasco ampola 50 mL Meios de contraste para raios-x, iodados"
+  ],
+  "occ-afa996cfd47bae4c1669fa1a": [
+    314,
+    "cordia verbenacea gel 10% pote 200g (erva baleeira) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-f70c3177ef1085ef231dfe45": [
+    315,
+    "cordia verbenacea gel 10% pote 30g (erva baleeira) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-08d4e9a33d09f64b45a58cf2": [
+    342,
+    "dexametasona (acetato) creme 0,1 % bisnaga 10 g Corticosteróides isolados UBS (farmácia ambulatorial e farmácia interna)  e uso hospitalar"
+  ],
+  "occ-3db3f93f02c1d14cdda1861a": [
+    349,
+    "dexpantenol pomada 50mg/g bisnaga 30g Cicatrizantes"
+  ],
+  "occ-25856ffe401a078800d28669": [
+    350,
+    "dextrana + hipromelose solução oftálmica (1mg +3mg)/mL frasco 15 mL Outros oftalmológicos"
+  ],
+  "occ-ca1a3c773c466a802699f6fb": [
+    359,
+    "dimenidrinato + piridoxina (cloridrato) + glicose + frutose solução injetável 30 mg +50 mg + 1000 mg + 1000 mg ampola 10 mL Antieméticos e antinauseantes"
+  ],
+  "occ-9bd091af267ad5bcafdc9cd6": [
+    393,
+    "elexacaftor + tezacaftor + ivacaftor (100 mg + 50 mg + 75 mg) comprimido revestido co-embalado com ivacaftor 150 mg comprimido revestido Outros produtos para o sistema respiratório"
+  ],
+  "occ-da92478589d9a0a56feb7c9b": [
+    394,
+    "elexacaftor + tezacaftor + ivacaftor (50 mg + 25 mg + 37,5 mg) comprimido revestido co-embalado com ivacaftor 75 mg comprimido revestido Outros produtos para o sistema respiratório"
+  ],
+  "occ-6f33c8ddc52a9a43f6f408b4": [
+    417,
+    "espiramicina comprimido 500 mg (1.500.000 UI) - toxoplasmose Medicamentos para o tratamento da toxoplasmose"
+  ],
+  "occ-d9b95b57b776e6948d5c47a9": [
+    420,
+    "estradiol (valerato) + noretisterona (enantato) solução injetável (5 mg +50 mg) / mL ampola ou seringa preenchida 1 mL Medicamentos para a saúde da mulher"
+  ],
+  "occ-e7922c97b272a1017e5df1b6": [
+    423,
+    "estriol creme vaginal 1 mg / g bisnaga 50g Estrogênios"
+  ],
+  "occ-f6a396bb611373bc873ca481": [
+    428,
+    "etinilestradiol + levonorgestrel comprimido 0,03 mg + 0,15 mg blister com 21 comprimidos Medicamentos para a saúde da mulher"
+  ],
+  "occ-e6be717879d8a0270783ac6a": [
+    458,
+    "fluocinolona acetonida + sulfato de polimixina B + sulfato de neomicina + cloridrato de lidocaína (0,250 mg/mL + 10.000 UI/mL + 3,5 mg/mL + 20 mg/mL) solução otológica frasco 5mL Agentes antiinflamatórios e antiinfecciosos em associação"
+  ],
+  "occ-78188898d78d349ea89a3850": [
+    459,
+    "34675* fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL *será substituído pelo código 39720 fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL ou 20 mL. unidade de estoque/licitação: mL. Antimetabólitos"
+  ],
+  "occ-9973fd0efe133f7b1f0bc72f": [
+    460,
+    "203455* fluoruracila solução injetável 50 mg/mL frasco-ampola 20 mL *será substituído pelo código 39720 fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL ou 20 mL. unidade de estoque/licitação: mL. Antimetabólitos"
+  ],
+  "occ-c9bc36fa60e7502f10aa9a60": [
+    463,
+    "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral 100mcg + 62,5 mcg + 25 mcg/dose dispositivo com 30 doses Inalantes adrenérgicos"
+  ],
+  "occ-51dcb075404e0e56191ddb1a": [
+    469,
+    "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (12mcg +400mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses Inalantes adrenérgicos"
+  ],
+  "occ-ec6f6f783a75ee7301337a25": [
+    470,
+    "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (6mcg + 200mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses Inalantes adrenérgicos"
+  ],
+  "occ-c500bcdbb85f9875820c5df8": [
+    473,
+    "fosfato de sodio monobasico + fosfato de sodio dibasico solução enema (16 g +6 g)/100 mL frasco ou bolsa 125 mL a 133 mL Laxativos"
+  ],
+  "occ-4fd2ba59f5f886e2bf7c9297": [
+    478,
+    "fumarato de tenofovir desoproxila + lamivudina + efavirenz 300mg + 300mg + 600 mg comprimido revestido - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-89b1798f87b6fef73e10d024": [
+    481,
+    "fórmula dietoterápica para crianças acima de 8 anos de idade portadoras de fenilcetonúria Dietas enterais especiais regular"
+  ],
+  "occ-cb99538aad360c68ec43b6cf": [
+    482,
+    "fórmula dietoterápica para crianças de 1 a 8 anos de idade portadoras de fenilcetonúria Dietas enterais especiais regular"
+  ],
+  "occ-b0b2adb7d79eb231b1207fad": [
+    483,
+    "fórmula dietoterápica para lactentes de 0 a 1 ano de idade portadores de fenilcetonúria Dietas enterais especiais regular"
+  ],
+  "occ-06af3eca6617e8d4af48aca7": [
+    498,
+    "glecaprevir + pibrentasvir comprimido 100mg + 40mg - hepatite C Medicamentos para hepatite C"
+  ],
+  "occ-b042234935f17939a393d2ab": [
+    500,
+    "glicerina (glicerol) solução retal/enema 120mg/mL (12 %) frasco ou bolsa 500 mL com sonda ou aplicador Laxativos"
+  ],
+  "occ-e3b3ea674e18ca059d6549eb": [
+    507,
+    "glicose 5 % + cloreto de sodio 0,9 % solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Outros nutrientes"
+  ],
+  "occ-af3932964ad48be9f18e6f16": [
+    526,
+    "hidrocortisona (acetato) creme 10mg/g (1%) bisnaga. Unidade de estoque/licitação: grama Corticosteróides isolados"
+  ],
+  "occ-a702e7f8cea75101a864bb6d": [
+    530,
+    "hidroxido de aluminio + hidroxido de magnésio suspensão oral (60 mg + 40 mg)/mL frasco com no minimo 100 mL Antiácidos"
+  ],
+  "occ-b65925b0adb685d1e3973a71": [
+    543,
+    "imipenem + cilastatina sódica pó para solução injetável 500 mg + 500 mg frasco-ampola Outros antibacterianos beta-lactâmicos"
+  ],
+  "occ-0497862d67fea1adb6b83006": [
+    545,
+    "imiquimode creme 50 mg/g sache 250mg Quimioterápicos de uso tópico"
+  ],
+  "occ-b7ff0aa673f64b75c16c3ddf": [
+    547,
+    "imunoglobulina anti-rho (anti-d) solução injetável de 250 mcg a 300 mcg frasco - ampola ou seringa preenchida Imunoglobulinas"
+  ],
+  "occ-9804085866c3d3a8183e020a": [
+    560,
+    "insulina análoga de ação prolongada carpule 3mL Insulinas e análogos"
+  ],
+  "occ-138e7fcb892102564091acf5": [
+    569,
+    "iodopovidona (iodopolividona) solução alcoolica 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes"
+  ],
+  "occ-2c6a5103a83f0deaada21735": [
+    570,
+    "iodopovidona (iodopolividona) solução aquosa 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes"
+  ],
+  "occ-2eae1621c3e43ecefe3e241c": [
+    571,
+    "iodopovidona (iodopolividona) solução degermante 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes"
+  ],
+  "occ-ff5c01c91fa347483018f0a0": [
+    586,
+    "kit selante de fibrina solução tópica frasco 1mL Vitamina k e outros hemostáticos"
+  ],
+  "occ-270ac66151997d9a70db0247": [
+    590,
+    "lamivudina + dolutegravir comprimido 300 mg + 50 mg - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-940082c701c5f899ee60f8f6": [
+    597,
+    "laronidase 0,58 mg/mL (2,9mg/5mL) solução injetável Outros medicamentos do aparelho digestivo e metabolismo"
+  ],
+  "occ-0d65a0214341f4ea9d89e1d0": [
+    607,
+    "levodopa + benserazida (cloridrato) comprimido ou cápsula ou drágea liberação prolongada 100 mg +25 mg Agentes dopaminérgicos"
+  ],
+  "occ-7cbf1527034e630a3b103689": [
+    608,
+    "levodopa + benserazida (cloridrato) comprimido simples (100 mg + 25 mg) Agentes dopaminérgicos"
+  ],
+  "occ-8633afd4a9f96428f0e81818": [
+    609,
+    "levodopa + carbidopa comprimido simples 250 mg + 25 mg Agentes dopaminérgicos"
+  ],
+  "occ-ddf07e8856101b9a33b7f11c": [
+    621,
+    "34667* lidocaína (cloridrato) + epinefrina solução injetável 20 mg/mL + 0,01 mg/mL (2% + 1:100.000) tubete 1,8 mL (uso exclusivo odontologia) *será substituído pelo código 39846 lidocaína (cloridrato) + epinefrina solução injetável 20 mg/ml + 0,01 mg/mL (2% + 1:100.000) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos gerais"
+  ],
+  "occ-266f79c4efb99c09076811a3": [
+    622,
+    "lidocaína (cloridrato) geleia 2 % bisnaga 30 g Antipruriginosos, incluindo anti-histamínicos, anestésicos, etc."
+  ],
+  "occ-acab5ac22904900c77969213": [
+    624,
+    "lidocaína + epinefrina solução injetável (20 mg + 0,005 mg)/mL frasco-ampola 20 mL Anestésicos locais"
+  ],
+  "occ-81b56158be5bea770866bc32": [
+    631,
+    "lippia sidoides gel 10% pote 200g (alecrim pimenta) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-e4cbc1733e4ee6808a8e5481": [
+    632,
+    "lippia sidoides gel 10% pote 30g (alecrim pimenta) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-8d4d96cbceb2f870e79e3b16": [
+    633,
+    "liraglutida solução injetável 6mg/mL sistema de aplicação 3mL multidoses de até 3,0 mg (indicação: controle de peso) Outros medicamentos do aparelho digestivo e metabolismo"
+  ],
+  "occ-d1afd37cabec657dfecf0ab9": [
+    634,
+    "lopinavir + ritonavir (lpv/r ) comprimido 100mg + 25 mg - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-8806d48721f7f68dd6d71a8a": [
+    635,
+    "lopinavir + ritonavir (lpv/r) solução oral 80mg/mL + 20mg/mL frasco 160 mL - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-b4ac68a659e4759dd930a5b1": [
+    647,
+    "mepivacaina (cloridrato) sem vasoconstritor solução injetável 30 mg/mL (3%) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais"
+  ],
+  "occ-80adfafd32991aa51fcb7bf6": [
+    648,
+    "mepivacaína + epinefrina solução injetável 20 mg/mL (2%) + 0,01 mg/mL (1:100.000) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais"
+  ],
+  "occ-de475952f39c171a29cb24d9": [
+    677,
+    "metotrexato solução injetável 50 mg frasco ampola 2 mL (25mg/mL) Antimetabólitos"
+  ],
+  "occ-f0e28dbd049d6b0b301b77cf": [
+    681,
+    "metronidazol gel vaginal 100mg/g bisnaga 50g + aplicadores (10 para cada bisnaga) Antiinfecciosos e antissépticos, excluindo associações com corticosteróides"
+  ],
+  "occ-c1c3e22c4cbb25745f676bd4": [
+    688,
+    "miconazol (nitrato) 20mg/g creme dermatológico bisnaga 28 g Antifúngicos para uso tópico"
+  ],
+  "occ-39145d3256bd9b355a86f01b": [
+    689,
+    "miconazol creme vaginal 20mg/g bisnaga 80 g + aplicadores Antifúngicos para uso tópico"
+  ],
+  "occ-be1655419eff7210901c7689": [
+    695,
+    "mikania glomerata spreng xarope frasco 100 mL Expectorantes, excluindo associações com supressores da tosse"
+  ],
+  "occ-34af9fd510e2641284194b08": [
+    724,
+    "mupirocina creme ou pomada 20 mg/g bisnaga 15 g Antibióticos de uso tópico"
+  ],
+  "occ-98cbfa4d122c6e0d631964c1": [
+    732,
+    "neomicina (sulfato) + bacitracina (zincica) pomada (5 mg +250 ui)/g bisnaga 15 g Antibióticos de uso tópico"
+  ],
+  "occ-56be2f62588ca6292918b5ac": [
+    747,
+    "nirmatrelvir 2 comprimidos revestidos 150mg + ritonavir comprimido revestido 100 mg – COVID-19 Medicamentos para o tratamento do COVID-19"
+  ],
+  "occ-102f806ea7b79e2cc685fb33": [
+    754,
+    "norepinefrina (hemitartarato) solução injetável 2 mg/mL (equivalente a 1mg/mL de norepinefrina base) ampola 4 mL Estimulantes cardíacos, excluindo glicosidos cardíacos"
+  ],
+  "occ-9e36c2c5050e784a8afa8dbc": [
+    783,
+    "oxibuprocaína (cloridrato) solução oftálmica estéril 4 mg/mL (0,4 %) frasco 10 mL Outros oftalmológicos"
+  ],
+  "occ-e8d36ab4f9f02c6c8d0bf0a0": [
+    788,
+    "oxido de zinco + vitamina a + vitamina d pomada dermatologica bisnaga 45 g. deve conter a seguinte concentração mínima de cada um dos princípios ativos: oxido de zinco: 100 mg/g; vitamina a: 1000 UI/g; vitamina d 400 UI/g. Emolientes e protetores"
+  ],
+  "occ-386c6917918eb996e4015fda": [
+    791,
+    "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 10.000 UI (equivale a 150mg) Digestivos incluindo enzimas"
+  ],
+  "occ-a9315e6344483d7811612fda": [
+    792,
+    "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 25.000 UI (equivale a 300mg) Digestivos incluindo enzimas"
+  ],
+  "occ-15830276ac878c51c7eb7660": [
+    813,
+    "piperacilina + tazobactam pó liofilizado para solução injetável 4,0 g + 500 mg frasco-ampola Antibacterianos beta- lactâmicos, penicilinas"
+  ],
+  "occ-c46256c1a904b7e76d88799f": [
+    823,
+    "pó para solução básica para hemodiálise composição: sódio, bicarbonato, cloreto e glicose concentração: 98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L bolsa plástica 658 g Medicamento de compra exclusiva do IHBDF"
+  ],
+  "occ-4bd5f5d42ec8ef95ec152915": [
+    828,
+    "poliquimioterapia única adulto - PQT-u adulto Medicamentos para o tratamento da hanseníase"
+  ],
+  "occ-390b2fafe9c35c873c13e1db": [
+    829,
+    "poliquimioterapia única infantil - PQT-u infantil Medicamentos para o tratamento da hanseníase"
+  ],
+  "occ-daa827193511b8e2acec493b": [
+    830,
+    "polivitaminicos ou multivitaminicos sem minerais pó liofilizado para solução injetável ou solução injetável frasco- ampola ou ampola (uso adulto) Multivitaminas, associações"
+  ],
+  "occ-9b28fcd4073dcff322bc5f32": [
+    841,
+    "prilocaína (cloridrato) + felipressina solução injetável 30 mg/mL (3%) + 0,03 ui/mL carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais"
+  ],
+  "occ-c731c1d37d51b270a7f9b041": [
+    873,
+    "retinol (acetato) + aminoacidos + dl- metionina + cloranfenicol pomada oftálmica (10000 UI + 25 mg + 5 mg + 5 mg)/g bisnaga 3,5 g Outros oftalmológicos"
+  ],
+  "occ-cfcfff8571d17806ea96b35c": [
+    877,
+    "rifampicina 150 mg + isoniazida 75 mg + pirazinamida 400 mg + etambutol 275 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-e45b11383b3f72658e2434d5": [
+    878,
+    "rifampicina 150 mg + isoniazida 75 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-0f69ce241b5e399f0e745b35": [
+    879,
+    "rifampicina 300 mg + isoniazida 150 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-70ad4a9f925e23bfecd3a22a": [
+    880,
+    "rifampicina 75 mg + isoniazida 50 mg + pirazinamida 150 mg comprimido dispersível - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-380d15a3a6a8d5ea6e813b43": [
+    881,
+    "rifampicina 75 mg + isoniazida 50 mg comprimido dispersível - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-d6fdd34e64d43b0d222ef69b": [
+    891,
+    "rifapentina + isoniazida comprimido 300 mg + 300 mg - tuberculose Medicamentos para o tratamento da tuberculose"
+  ],
+  "occ-f208f9b0fbdfa9984f6ae66e": [
+    908,
+    "rivastigmina adesivo transdermico 18mg com liberação de 9,5mg/24h Medicamentos anti- demência"
+  ],
+  "occ-924b68401c03c4123a26164e": [
+    909,
+    "rivastigmina adesivo transdermico 9mg com liberação de 4,6mg/24h Medicamentos anti- demência"
+  ],
+  "occ-5e613d5a17989804827e439e": [
+    922,
+    "sais para reidratação oral (cloreto de sódio 3,5g + cloreto de potássio 1,5g + citrato de sódio di-hidratado 2,9g + glicose 20g) pó para preparo de 1 litro de solução envelope Eletrólitos com carboidratos"
+  ],
+  "occ-b3c9c95e8c9426034db9ca30": [
+    925,
+    "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação 25 mcg/dose + 125mcg/dose tubo (120 doses) + inalador Inalantes adrenérgicos"
+  ],
+  "occ-c91b4e24768177e887ed16b6": [
+    926,
+    "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação 50mcg/dose + 500mcg/dose recipiente dosador contendo strip com 60 doses Inalantes adrenérgicos"
+  ],
+  "occ-3da1f44d1a507a358ceee024": [
+    929,
+    "selante de fibrina 0,5 mL frasco ampola - coagulopatias Vitamina k e outros hemostáticos"
+  ],
+  "occ-648c45d256d209afe121f04d": [
+    930,
+    "selante de fibrina 1 mL frasco ampola - coagulopatias Vitamina k e outros hemostáticos"
+  ],
+  "occ-ea3c3a338bd1aa4a3ff232fd": [
+    940,
+    "sevoflurano solução inalatoria frasco 250 mL Anestésicos gerais"
+  ],
+  "occ-65d47184ac652afe4967c27b": [
+    951,
+    "sofosbuvir 400mg + velpatasvir 100mg comprimido - hepatite C Medicamentos para hepatite C"
+  ],
+  "occ-2586228a9154a74d8fea851b": [
+    952,
+    "sofosbuvir + velpatasvir comprimido 200mg + 50mg - hepatite c Medicamentos para hepatite C"
+  ],
+  "occ-8fd9c1d2bed04f28c96453ee": [
+    953,
+    "sofosbuvir + velpatasvir + voxilaprevir comprimido 400mg + 100mg + 100mg - hepatite c Medicamentos para hepatite C"
+  ],
+  "occ-6c9cca4e2c8bdba3c94bc0bc": [
+    954,
+    "solução acida p/ hemodialise galao de 5l p/maq. mistura proporcional (1:34 até 1:45) com k=2,0meq/l; ca=2,5meq/l; sem glicose Hemodialíticos e hemofiltrados"
+  ],
+  "occ-f0dd72a9216230ed91376a2c": [
+    956,
+    "solução de ringer (cloretos de na, k, ca) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Soluções endovenosas"
+  ],
+  "occ-ba0acebc4bf4e0ac7bb5ad8b": [
+    957,
+    "solução de ringer (cloretos de na, k, ca) + lactato (sodico) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Soluções endovenosas"
+  ],
+  "occ-115ca5191ad4d1ee6993658d": [
+    971,
+    "sulfadiazina de prata creme dermatologico 1% bisnaga 50 g Quimioterápicos de uso tópico"
+  ],
+  "occ-2d8c141a0678f1f9561c4747": [
+    972,
+    "sulfadiazina de prata creme dermatológico 1% frasco ou pote 400 g Quimioterápicos de uso tópico"
+  ],
+  "occ-55d57003b757d2b31c7722d0": [
+    973,
+    "sulfametoxazol + trimetoprima comprimido 400 mg +80 mg Sulfonamidas e trimetroprima"
+  ],
+  "occ-5dac3a6caf05fed48e9546cb": [
+    974,
+    "sulfametoxazol + trimetoprima solução injetável (400 mg + 80 mg)/5 mL ampola 5 mL Sulfonamidas e trimetroprima"
+  ],
+  "occ-bf16ec9604f7d2615bc11dc9": [
+    977,
+    "sulfato de magnésio solução injetável 50 % (4 meq/mL) ampola 10 mL Aditivos de soluções endovenosas"
+  ],
+  "occ-7314323fddaafb5a3dd80502": [
+    980,
+    "sulfato ferroso solução oral 125 mg/mL correspondente a 25 mg/mL de ferro elementar frasco 30 mL Preparados de ferro"
+  ],
+  "occ-d09c1d0d0c60a6637ab3c4eb": [
+    984,
+    "symphytum officinale gel 10% pote 200g (confrei) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-b969a7a54ebd79dbab6e83eb": [
+    985,
+    "symphytum officinale gel 10% pote 30g (confrei) Medicamentos homeopáticos ou fitoterápicos"
+  ],
+  "occ-dd3666cce6867d6246aae72f": [
+    987,
+    ""
+  ],
+  "occ-908a2f2b4ad6fd7ca89a0a51": [
+    1004,
+    "tenofovir + entricitabina comprimido revestido 300mg + 200mg - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-d7a71db1b039fc321c39c989": [
+    1005,
+    "tenofovir + lamivudina comprimido 300mg + 300mg - hepatite B Medicamentos para hepatite B"
+  ],
+  "occ-cb22669dfd85514c6b90e4c5": [
+    1010,
+    "tenofovir desoproxila (fumarato) 300 mg + lamivudina 300 mg - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ],
+  "occ-cf20695ffc6eab37d50c1cd6": [
+    1024,
+    "tiotrópio (brometo) + olodaterol (cloridrato) solução para inalação 2,5 mcg/dose + 2,5 mcg/dose frasco com 60 doses com inalador Inalantes adrenérgicos"
+  ],
+  "occ-c6a25becf833271f53205b74": [
+    1025,
+    "tobramicina + dexametasona pomada oftálmica 0,3 % + 0,1 % bisnaga 3,5 g Agentes antiinflamatórios e antiinfecciosos em associação"
+  ],
+  "occ-e185f6e00af0113b419ca348": [
+    1026,
+    "tobramicina pomada oftálmica 0,3 % bisnaga 3,5 g Antiinfecciosos"
+  ],
+  "occ-e34170ebed3c19cdf4f5f5d7": [
+    1042,
+    "triancinolona acetonida pomada bucal ou pasta 1mg/mL bisnaga 10 g (uso exclusivo odontologia) Corticosteróides isolados"
+  ],
+  "occ-b876bad65fcf7b57f2c2cf3e": [
+    1048,
+    "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante 62,5 mcg/dose + 25 mcg/dose recipiente dosador contendo strip com 30 doses Inalantes adrenérgicos"
+  ],
+  "occ-7a921bb07f18683e609d66d9": [
+    1069,
+    "zidovudina + lamivudina (azt/3tc) comprimido 300 mg + 150 mg - HIV Medicamentos para o manejo da infecção pelo HIV"
+  ]
+}

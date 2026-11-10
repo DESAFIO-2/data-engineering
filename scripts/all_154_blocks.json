@@ -1,0 +1,1388 @@
+[
+  {
+    "t2_idx": 51,
+    "oid": "occ-474c281dae2e99240c1eff36",
+    "srn": 7,
+    "page": 12,
+    "curr_ing": "acetato de medroxiprogesterona + estradiol cipionato",
+    "curr_form": "suspensão injetável",
+    "raw_block": "MS38601 acetato de medroxiprogesterona + estradiol cipionato 25 mg + 5 mg suspensão injetável Medicamentos para a saúde da mulher UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 52,
+    "oid": "occ-e86fd5ebe1a99a846ba78102",
+    "srn": 10,
+    "page": 12,
+    "curr_ing": "aciclovir",
+    "curr_form": "pomada oftálmica",
+    "raw_block": "aciclovir pomada oftálmica 0,03 g/g bisnaga 4,5 g Anti-infecciosos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 53,
+    "oid": "occ-32f9c026384ce1b61a6b03a2",
+    "srn": 28,
+    "page": 13,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "água para injetáveis ampola 10 mL Todos os outros produtos não terapêuticos UBS (farmácia interna), uso hospitalar  e atendimento pré-hospitalar (SAMU)"
+  },
+  {
+    "t2_idx": 54,
+    "oid": "occ-405fcd5d37f8cf3fbb357a41",
+    "srn": 29,
+    "page": 13,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "água para injetáveis frasco ou bolsa 1000 mL Todos os outros produtos não terapêuticos UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 55,
+    "oid": "occ-adec0f7209079b9611b5cfc9",
+    "srn": 30,
+    "page": 13,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "água para injetáveis frasco ou bolsa 500 mL Todos os outros produtos não terapêuticos UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 56,
+    "oid": "occ-7f055dcf8a7efb65a42e816c",
+    "srn": 35,
+    "page": 13,
+    "curr_ing": "álcool",
+    "curr_form": "gel",
+    "raw_block": "álcool gel 70% frasco 400g a 500g válvula ´pump´ Outros preparados dermatológicos para uso interno nas unidades"
+  },
+  {
+    "t2_idx": 57,
+    "oid": "occ-a14677a2ed757c154b389b54",
+    "srn": 36,
+    "page": 13,
+    "curr_ing": "álcool",
+    "curr_form": "gel",
+    "raw_block": "álcool gel a 70% frasco com tampa acoplada 85 a 100g Outros preparados dermatológicos para uso interno nas unidades"
+  },
+  {
+    "t2_idx": 58,
+    "oid": "occ-3b811d5a0b8a3fa0594e855a",
+    "srn": 60,
+    "page": 14,
+    "curr_ing": "algestona acetofenida + enantato de estradiol",
+    "curr_form": "solução injetável",
+    "raw_block": "MS38712 algestona acetofenida + enantato de estradiol solução injetável 150 mg/mL + 10mg/mL Medicamentos para a saúde da mulher UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 59,
+    "oid": "occ-08cb590a1fcaa0f864ac7bde",
+    "srn": 61,
+    "page": 14,
+    "curr_ing": "aloe vera",
+    "curr_form": "gel",
+    "raw_block": "aloe vera gel 10% pote 200g (babosa) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 60,
+    "oid": "occ-360208b17f7cf9ae94f3016c",
+    "srn": 62,
+    "page": 14,
+    "curr_ing": "aloe vera",
+    "curr_form": "gel",
+    "raw_block": "aloe vera gel 10% pote 30g (babosa) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) * UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 61,
+    "oid": "occ-fedb4157f625b028ed9a47a1",
+    "srn": 83,
+    "page": 15,
+    "curr_ing": "amoxicilina + clavulanato de potássio pó p/ susp oral",
+    "curr_form": "*[NULL]*",
+    "raw_block": "amoxicilina + clavulanato de potássio pó p/ susp oral 50 mg/mL + 12,5 mg/mL frasco 75 ou 100 mL Antibacterianos beta- lactâmicos, penicilinas UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 62,
+    "oid": "occ-7bafe6d171c044a877b78158",
+    "srn": 84,
+    "page": 15,
+    "curr_ing": "amoxicilina + clavulanato de potássio",
+    "curr_form": "comprimido revestido",
+    "raw_block": "amoxicilina + clavulanato de potássio comprimido revestido 500mg +125mg Antibacterianos beta- lactâmicos, penicilinas UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 63,
+    "oid": "occ-9275201ad140418c6d36c8fa",
+    "srn": 88,
+    "page": 15,
+    "curr_ing": "ampicilina + sulbactam",
+    "curr_form": "pó para solução injetável",
+    "raw_block": "ampicilina + sulbactam pó para solução injetável (2000 mg + 1000 mg)/frasco- ampola Antibacterianos beta- lactâmicos, penicilinas Uso hospitalar"
+  },
+  {
+    "t2_idx": 64,
+    "oid": "occ-e231f9b8de316bf9e0ee0151",
+    "srn": 102,
+    "page": 16,
+    "curr_ing": "artemeter + lumefantrina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35948 artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/12 comprimidos) 15 - 24 kg - malária Medicamentos para o tratamento da malária Programa de Malária – Equipe Volante"
+  },
+  {
+    "t2_idx": 65,
+    "oid": "occ-e8ffc3f2974ccbb2d133edec",
+    "srn": 103,
+    "page": 16,
+    "curr_ing": "artemeter + lumefantrina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35949 artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/18 comprimidos) 25 - 34 kg - malária Medicamentos para o tratamento da malária Programa de Malária – Equipe Volante"
+  },
+  {
+    "t2_idx": 66,
+    "oid": "occ-db9de3d69d4730d206d81759",
+    "srn": 104,
+    "page": 16,
+    "curr_ing": "artemeter + lumefantrina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35947 artemeter + lumefantrina 20 mg + 120 mg comprimido (blister c/6 comprimidos) 5 - 14 kg - malária Medicamentos para o tratamento da malária Programa de Malária – Equipe Volante"
+  },
+  {
+    "t2_idx": 67,
+    "oid": "occ-2769f85f5e5c65ab49f6fe9d",
+    "srn": 124,
+    "page": 17,
+    "curr_ing": "azitromicina",
+    "curr_form": "pó para suspensão oral",
+    "raw_block": "MSE34538 azitromicina pó para suspensão oral com 600 mg para preparo de suspensão de 40 mg/mL - tracoma Medicamentos para o tratamento de tracoma Farmácia Escola (HUB)"
+  },
+  {
+    "t2_idx": 68,
+    "oid": "occ-89519a090065566148c04c0b",
+    "srn": 125,
+    "page": 17,
+    "curr_ing": "azitromicina",
+    "curr_form": "pó para suspensão oral",
+    "raw_block": "azitromicina pó para suspensão oral com 900 mg para preparo de suspensão de 40 mg/mL frasco 22,5 mL Lincosaminas e estreptograminas, macrolídeos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 69,
+    "oid": "occ-74c6a272ec0d0e884d9571ab",
+    "srn": 130,
+    "page": 17,
+    "curr_ing": "beclometasona (dipropionato) + formoterol di-hidratado (fumarato) + glicopirrônio (brometo)",
+    "curr_form": "solução",
+    "raw_block": "beclometasona (dipropionato) + formoterol di-hidratado (fumarato) + glicopirrônio (brometo) solução aerossol para inalação oral 100 μcg + 6 μcg + 12,5 μcg/dose dispositivo com 120 doses Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 70,
+    "oid": "occ-db7e3514d1b84de29366c5ec",
+    "srn": 143,
+    "page": 17,
+    "curr_ing": "benzocaína",
+    "curr_form": "gel",
+    "raw_block": "36309* benzocaína gel 200 mg/g (20%) pote 12g (uso exclusivo odontologia) *será substituído pelo código 39364 - benzocaína gel tópico 200 mg/g (20%) pote. Unidade de estoque: grama (uso exclusivo odontologia) Anestésicos locais UBS (farmácia interna - uso exclusivo da odontologia) e uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 71,
+    "oid": "occ-288516f4933ddc82d2e01afb",
+    "srn": 145,
+    "page": 18,
+    "curr_ing": "betainterferona 1A",
+    "curr_form": "injetável",
+    "raw_block": "MS2817 betainterferona 1A injetável 12.000.000 UI (44 mcg) seringa preenchida Imunomoestimulantes Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 72,
+    "oid": "occ-291972901215205d4adbe432",
+    "srn": 146,
+    "page": 18,
+    "curr_ing": "betainterferona 1A",
+    "curr_form": "injetável",
+    "raw_block": "MS3350 betainterferona 1A injetável 6.000.000 UI (30 mcg) frasco ampola + seringa preenchida com diluente Imunomoestimulantes Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 73,
+    "oid": "occ-811ad30f693d48862526202b",
+    "srn": 147,
+    "page": 18,
+    "curr_ing": "betainterferona 1A",
+    "curr_form": "injetável",
+    "raw_block": "MS4824 betainterferona 1A injetável 6.000.000 UI (22mcg) seringa preenchida pronta para uso Imunomoestimulantes Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 74,
+    "oid": "occ-33884243e26b5bf9f7d3c82b",
+    "srn": 148,
+    "page": 18,
+    "curr_ing": "betainterferona 1B",
+    "curr_form": "pó liofilizado para solução injetável",
+    "raw_block": "MS6593 betainterferona 1B pó liofilizado para solução injetável 9.600.000 UI/frasco- ampola +diluente (após reconstituição cada mL de solução contém 0,25mg ou 8.000.000 UI) Imunomoestimulantes Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 75,
+    "oid": "occ-989cc52f340aad059a2decba",
+    "srn": 149,
+    "page": 18,
+    "curr_ing": "betametasona (acetato + fosfato)",
+    "curr_form": "suspensão injetável",
+    "raw_block": "betametasona (acetato + fosfato) suspensão injetável (3 mg + 3 mg)/mL ampola 1 mL Corticosteróides de uso sistêmico, isolado Uso hospitalar"
+  },
+  {
+    "t2_idx": 76,
+    "oid": "occ-d73427eedf5703737538bd3d",
+    "srn": 150,
+    "page": 18,
+    "curr_ing": "betametasona (valerato)",
+    "curr_form": "creme",
+    "raw_block": "betametasona (valerato) creme 0,1 % bisnaga 30 g Corticosteróides isolados Uso hospitalar"
+  },
+  {
+    "t2_idx": 77,
+    "oid": "occ-57dad9b0f42dc1d24fa74fa5",
+    "srn": 154,
+    "page": 18,
+    "curr_ing": "bicarbonato de sódio",
+    "curr_form": "solução injetável",
+    "raw_block": "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) ampola 10 mL Aditivos de soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 78,
+    "oid": "occ-7a233c95fee458b15c44de74",
+    "srn": 155,
+    "page": 18,
+    "curr_ing": "bicarbonato de sódio",
+    "curr_form": "solução injetável",
+    "raw_block": "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) frasco 250 mL Sangue e produtos relacionados Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+  },
+  {
+    "t2_idx": 79,
+    "oid": "occ-e5005491dd7809b13ffa7ee6",
+    "srn": 171,
+    "page": 19,
+    "curr_ing": "bupivacaína (cloridrato) + glicose",
+    "curr_form": "solução injetável",
+    "raw_block": "bupivacaína (cloridrato) + glicose solução injetável (5 mg + 80 mg)/mL ampola 4 mL Anestésicos locais Uso hospitalar"
+  },
+  {
+    "t2_idx": 80,
+    "oid": "occ-f38630232092332a6b26efa9",
+    "srn": 193,
+    "page": 19,
+    "curr_ing": "carbômer (ácido poliacrílico)",
+    "curr_form": "gel",
+    "raw_block": "carbômer (ácido poliacrílico) gel líquido oftálmico 2 mg/g bisnaga 10 g Outros oftalmológicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 81,
+    "oid": "occ-bc5acf38f4260802e843100c",
+    "srn": 194,
+    "page": 19,
+    "curr_ing": "carbonato de cálcio (equivalente a 500 ou",
+    "curr_form": "comprimido",
+    "raw_block": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido (frasco ou blister) Cálcio UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 82,
+    "oid": "occ-ae7e22e2de2b74a353802c18",
+    "srn": 209,
+    "page": 20,
+    "curr_ing": "ceftazidima (pentaidratada) + avibactam (sódico)",
+    "curr_form": "pó para solução",
+    "raw_block": "ceftazidima (pentaidratada) + avibactam (sódico) pó para solução para infusão 2000 mg + 500 mg Outros antibacterianos beta-lactâmicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 83,
+    "oid": "occ-e6b207d3f70d8e743374e074",
+    "srn": 211,
+    "page": 20,
+    "curr_ing": "ceftolozana (sulfato) + tazobactam (sódico)",
+    "curr_form": "pó para solução",
+    "raw_block": "ceftolozana (sulfato) + tazobactam (sódico) pó para solução para infusão 1000 mg + 500 mg Outros antibacterianos beta-lactâmicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 84,
+    "oid": "occ-35aa08b03801a03eca1cbd89",
+    "srn": 216,
+    "page": 20,
+    "curr_ing": "cetoconazol",
+    "curr_form": "creme",
+    "raw_block": "cetoconazol creme 2 % bisnaga 30 g Antifúngicos para uso tópico Uso hospitalar"
+  },
+  {
+    "t2_idx": 85,
+    "oid": "occ-964239c38602f3ba42087e1c",
+    "srn": 236,
+    "page": 21,
+    "curr_ing": "ciprofloxacino (cloridrato)",
+    "curr_form": "pomada oftálmica",
+    "raw_block": "ciprofloxacino (cloridrato) pomada oftálmica 0,35 % bisnaga 3,5 g Antiinfecciosos UBS (farmácia ambulatorial)  e uso hospitalar"
+  },
+  {
+    "t2_idx": 86,
+    "oid": "occ-f41adfc5a77fb3493a0a11f4",
+    "srn": 264,
+    "page": 22,
+    "curr_ing": "cloreto de potássio",
+    "curr_form": "solução injetável",
+    "raw_block": "cloreto de potássio solução injetável 10 % (1,34 meq/mL) ampola 10 mL Aditivos de soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 87,
+    "oid": "occ-3e5e93387cde2bbf616f4852",
+    "srn": 270,
+    "page": 23,
+    "curr_ing": "cloreto de sódio",
+    "curr_form": "solução injetável",
+    "raw_block": "cloreto de sódio solução injetável 0,9% (9 mg/mL) ampola 10 mL Aditivos de soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 88,
+    "oid": "occ-6f5375d13042a40c50b22f38",
+    "srn": 271,
+    "page": 23,
+    "curr_ing": "cloreto de sódio",
+    "curr_form": "solução injetável",
+    "raw_block": "cloreto de sódio solução injetável 20 % (3,4 meq/mL) ampola 10 mL Aditivos de soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 89,
+    "oid": "occ-e5d4a2d7bdbea89c6534e52a",
+    "srn": 274,
+    "page": 23,
+    "curr_ing": "cloreto de sódio + gliconato de sódio + acetato de sódio + cloreto de potássio + cloreto de magnésio",
+    "curr_form": "solução injetável",
+    "raw_block": "cloreto de sódio + gliconato de sódio + acetato de sódio + cloreto de potássio + cloreto de magnésio solução injetável 5,26 mg/ml + 5,02 mg/ml + 3,68 mg/ml + 0,37 mg/ml + 0,3 mg/ml bolsa 500 ml Medicamento de compra exclusiva do IHBDF Farmácia Ambulatorial do HBDF"
+  },
+  {
+    "t2_idx": 90,
+    "oid": "occ-75c60747180854a75232b0ec",
+    "srn": 276,
+    "page": 23,
+    "curr_ing": "clorexidina",
+    "curr_form": "solução",
+    "raw_block": "clorexidina solução aquosa 10 mg/mL (1%) frasco 1000 mL - solução tópica Antissépticos e desinfetantes UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 91,
+    "oid": "occ-99a3a7d33d2f60fa4162185c",
+    "srn": 287,
+    "page": 23,
+    "curr_ing": "colagenase",
+    "curr_form": "pomada",
+    "raw_block": "colagenase pomada dermatológica 0,6 UI/g ou 1,2 UI/g bisnaga 30 g Enzimas UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 92,
+    "oid": "occ-8d187faecc9b65a1b029a795",
+    "srn": 289,
+    "page": 23,
+    "curr_ing": "complexo b drágea,",
+    "curr_form": "cápsula",
+    "raw_block": "complexo b drágea, cápsula ou comprimido contendo, no mínimo, as seguintes vitaminas e suas doses mínimas: b1, 1,2mg; b2, 1,3mg; b3, 16mg; b6, 1,3mg. deverá conter exclusivamente vitaminas do complexo b Vitamina do complexo b, incluindo associações Uso hospitalar"
+  },
+  {
+    "t2_idx": 93,
+    "oid": "occ-055c811462053147a7575585",
+    "srn": 290,
+    "page": 23,
+    "curr_ing": "complexo b",
+    "curr_form": "solução injetável",
+    "raw_block": "complexo b solução injetável ampola 2 mL Aditivos de soluções endovenosas UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 94,
+    "oid": "occ-34c211344aed1ca3c6baa605",
+    "srn": 295,
+    "page": 24,
+    "curr_ing": "complexo protrombinico total",
+    "curr_form": "injetável",
+    "raw_block": "complexo protrombinico total injetável 500 UI a 600 UI frasco-ampola Vitamina k e outros hemostáticos Uso hospitalar"
+  },
+  {
+    "t2_idx": 95,
+    "oid": "occ-2389839526c98fce9c1cef3a",
+    "srn": 313,
+    "page": 24,
+    "curr_ing": "contraste radiológico não iônico hiposmolar",
+    "curr_form": "solução injetável",
+    "raw_block": "contraste radiológico não iônico hiposmolar solução injetável teor em iodo de 300mg/mL a 350 mg/mL frasco ampola 50 mL Meios de contraste para raios-x, iodados Uso hospitalar"
+  },
+  {
+    "t2_idx": 96,
+    "oid": "occ-afa996cfd47bae4c1669fa1a",
+    "srn": 314,
+    "page": 25,
+    "curr_ing": "cordia verbenacea",
+    "curr_form": "gel",
+    "raw_block": "cordia verbenacea gel 10% pote 200g (erva baleeira) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) * UBS Dispensadoras de Fitoterápicos Oficinais: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 97,
+    "oid": "occ-f70c3177ef1085ef231dfe45",
+    "srn": 315,
+    "page": 25,
+    "curr_ing": "cordia verbenacea",
+    "curr_form": "gel",
+    "raw_block": "cordia verbenacea gel 10% pote 30g (erva baleeira) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) * UBS Dispensadoras de Fitoterápicos Oficinais: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 98,
+    "oid": "occ-08d4e9a33d09f64b45a58cf2",
+    "srn": 342,
+    "page": 26,
+    "curr_ing": "dexametasona (acetato)",
+    "curr_form": "creme",
+    "raw_block": "dexametasona (acetato) creme 0,1 % bisnaga 10 g Corticosteróides isolados UBS (farmácia ambulatorial e farmácia interna)  e uso hospitalar"
+  },
+  {
+    "t2_idx": 99,
+    "oid": "occ-3db3f93f02c1d14cdda1861a",
+    "srn": 349,
+    "page": 26,
+    "curr_ing": "dexpantenol",
+    "curr_form": "pomada",
+    "raw_block": "dexpantenol pomada 50mg/g bisnaga 30g Cicatrizantes Uso hospitalar"
+  },
+  {
+    "t2_idx": 100,
+    "oid": "occ-25856ffe401a078800d28669",
+    "srn": 350,
+    "page": 26,
+    "curr_ing": "dextrana + hipromelose",
+    "curr_form": "solução oftálmica",
+    "raw_block": "dextrana + hipromelose solução oftálmica (1mg +3mg)/mL frasco 15 mL Outros oftalmológicos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 101,
+    "oid": "occ-ca1a3c773c466a802699f6fb",
+    "srn": 359,
+    "page": 26,
+    "curr_ing": "dimenidrinato + piridoxina (cloridrato) + glicose + frutose",
+    "curr_form": "solução injetável",
+    "raw_block": "dimenidrinato + piridoxina (cloridrato) + glicose + frutose solução injetável 30 mg +50 mg + 1000 mg + 1000 mg ampola 10 mL Antieméticos e antinauseantes UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 102,
+    "oid": "occ-9bd091af267ad5bcafdc9cd6",
+    "srn": 393,
+    "page": 28,
+    "curr_ing": "elexacaftor + tezacaftor + ivacaftor (",
+    "curr_form": "comprimido revestido",
+    "raw_block": "MS38244 elexacaftor + tezacaftor + ivacaftor (100 mg + 50 mg + 75 mg) comprimido revestido co-embalado com ivacaftor 150 mg comprimido revestido Outros produtos para o sistema respiratório Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 103,
+    "oid": "occ-da92478589d9a0a56feb7c9b",
+    "srn": 394,
+    "page": 28,
+    "curr_ing": "elexacaftor + tezacaftor + ivacaftor (",
+    "curr_form": "comprimido revestido",
+    "raw_block": "MS38245 elexacaftor + tezacaftor + ivacaftor (50 mg + 25 mg + 37,5 mg) comprimido revestido co-embalado com ivacaftor 75 mg comprimido revestido Outros produtos para o sistema respiratório Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 104,
+    "oid": "occ-6f33c8ddc52a9a43f6f408b4",
+    "srn": 417,
+    "page": 29,
+    "curr_ing": "espiramicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE90323 espiramicina comprimido 500 mg (1.500.000 UI) - toxoplasmose Medicamentos para o tratamento da toxoplasmose UBS - Unidades de Referência* (farmácia ambulatorial), Policlínica de Planaltina e Farmácia Escola (HUB) *Medicamento disponibilizado nas Unidades de Referência, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos- toxoplasmose."
+  },
+  {
+    "t2_idx": 105,
+    "oid": "occ-d9b95b57b776e6948d5c47a9",
+    "srn": 420,
+    "page": 29,
+    "curr_ing": "estradiol (valerato) + noretisterona (enantato)",
+    "curr_form": "solução injetável",
+    "raw_block": "MSE20795 estradiol (valerato) + noretisterona (enantato) solução injetável (5 mg +50 mg) / mL ampola ou seringa preenchida 1 mL Medicamentos para a saúde da mulher UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 106,
+    "oid": "occ-e7922c97b272a1017e5df1b6",
+    "srn": 423,
+    "page": 29,
+    "curr_ing": "estriol",
+    "curr_form": "creme",
+    "raw_block": "estriol creme vaginal 1 mg / g bisnaga 50g Estrogênios UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 107,
+    "oid": "occ-f6a396bb611373bc873ca481",
+    "srn": 428,
+    "page": 30,
+    "curr_ing": "etinilestradiol + levonorgestrel",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35953 etinilestradiol + levonorgestrel comprimido 0,03 mg + 0,15 mg blister com 21 comprimidos Medicamentos para a saúde da mulher UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 108,
+    "oid": "occ-e6be717879d8a0270783ac6a",
+    "srn": 458,
+    "page": 31,
+    "curr_ing": "fluocinolona acetonida + sulfato de polimixina B + sulfato de neomicina + cloridrato de lidocaína (",
+    "curr_form": "solução",
+    "raw_block": "fluocinolona acetonida + sulfato de polimixina B + sulfato de neomicina + cloridrato de lidocaína (0,250 mg/mL + 10.000 UI/mL + 3,5 mg/mL + 20 mg/mL) solução otológica frasco 5mL Agentes antiinflamatórios e antiinfecciosos em associação UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 109,
+    "oid": "occ-78188898d78d349ea89a3850",
+    "srn": 459,
+    "page": 31,
+    "curr_ing": "fluoruracila",
+    "curr_form": "solução injetável",
+    "raw_block": "34675* fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL *será substituído pelo código 39720 fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL ou 20 mL. unidade de estoque/licitação: mL. Antimetabólitos Uso hospitalar"
+  },
+  {
+    "t2_idx": 110,
+    "oid": "occ-9973fd0efe133f7b1f0bc72f",
+    "srn": 460,
+    "page": 31,
+    "curr_ing": "fluoruracila",
+    "curr_form": "solução injetável",
+    "raw_block": "203455* fluoruracila solução injetável 50 mg/mL frasco-ampola 20 mL *será substituído pelo código 39720 fluoruracila solução injetável 50 mg/mL frasco-ampola 10 mL ou 20 mL. unidade de estoque/licitação: mL. Antimetabólitos Uso hospitalar"
+  },
+  {
+    "t2_idx": 111,
+    "oid": "occ-c9bc36fa60e7502f10aa9a60",
+    "srn": 463,
+    "page": 31,
+    "curr_ing": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral",
+    "curr_form": "*[NULL]*",
+    "raw_block": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral 100mcg + 62,5 mcg + 25 mcg/dose dispositivo com 30 doses Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 112,
+    "oid": "occ-51dcb075404e0e56191ddb1a",
+    "srn": 469,
+    "page": 32,
+    "curr_ing": "formoterol (fumarato) + budesonida pó inalante ou",
+    "curr_form": "cápsula",
+    "raw_block": "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (12mcg +400mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses Inalantes adrenérgicos Farmácia do Componente Especializado e uso hospitalar"
+  },
+  {
+    "t2_idx": 113,
+    "oid": "occ-ec6f6f783a75ee7301337a25",
+    "srn": 470,
+    "page": 32,
+    "curr_ing": "formoterol (fumarato) + budesonida pó inalante ou",
+    "curr_form": "cápsula",
+    "raw_block": "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (6mcg + 200mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 114,
+    "oid": "occ-c500bcdbb85f9875820c5df8",
+    "srn": 473,
+    "page": 32,
+    "curr_ing": "fosfato de sodio monobasico + fosfato de sodio dibasico",
+    "curr_form": "solução",
+    "raw_block": "fosfato de sodio monobasico + fosfato de sodio dibasico solução enema (16 g +6 g)/100 mL frasco ou bolsa 125 mL a 133 mL Laxativos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 115,
+    "oid": "occ-4fd2ba59f5f886e2bf7c9297",
+    "srn": 478,
+    "page": 32,
+    "curr_ing": "fumarato de tenofovir desoproxila + lamivudina + efavirenz",
+    "curr_form": "comprimido revestido",
+    "raw_block": "MSE35951 fumarato de tenofovir desoproxila + lamivudina + efavirenz 300mg + 300mg + 600 mg comprimido revestido - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  },
+  {
+    "t2_idx": 116,
+    "oid": "occ-89b1798f87b6fef73e10d024",
+    "srn": 481,
+    "page": 32,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "fórmula dietoterápica para crianças acima de 8 anos de idade portadoras de fenilcetonúria Dietas enterais especiais regular Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 117,
+    "oid": "occ-cb99538aad360c68ec43b6cf",
+    "srn": 482,
+    "page": 32,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "fórmula dietoterápica para crianças de 1 a 8 anos de idade portadoras de fenilcetonúria Dietas enterais especiais regular Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 118,
+    "oid": "occ-b0b2adb7d79eb231b1207fad",
+    "srn": 483,
+    "page": 32,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "fórmula dietoterápica para lactentes de 0 a 1 ano de idade portadores de fenilcetonúria Dietas enterais especiais regular Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 119,
+    "oid": "occ-06af3eca6617e8d4af48aca7",
+    "srn": 498,
+    "page": 33,
+    "curr_ing": "glecaprevir + pibrentasvir",
+    "curr_form": "comprimido",
+    "raw_block": "MSE37749 glecaprevir + pibrentasvir comprimido 100mg + 40mg - hepatite C Medicamentos para hepatite C Policlínica de Planaltina e Farmácia Escola (HUB)"
+  },
+  {
+    "t2_idx": 120,
+    "oid": "occ-b042234935f17939a393d2ab",
+    "srn": 500,
+    "page": 33,
+    "curr_ing": "glicerina (glicerol)",
+    "curr_form": "solução retal",
+    "raw_block": "glicerina (glicerol) solução retal/enema 120mg/mL (12 %) frasco ou bolsa 500 mL com sonda ou aplicador Laxativos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 121,
+    "oid": "occ-e3b3ea674e18ca059d6549eb",
+    "srn": 507,
+    "page": 33,
+    "curr_ing": "glicose",
+    "curr_form": "solução injetável",
+    "raw_block": "glicose 5 % + cloreto de sodio 0,9 % solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Outros nutrientes Uso hospitalar"
+  },
+  {
+    "t2_idx": 122,
+    "oid": "occ-af3932964ad48be9f18e6f16",
+    "srn": 526,
+    "page": 34,
+    "curr_ing": "hidrocortisona (acetato)",
+    "curr_form": "creme",
+    "raw_block": "hidrocortisona (acetato) creme 10mg/g (1%) bisnaga. Unidade de estoque/licitação: grama Corticosteróides isolados UBS (farmácia ambulatorial e farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 123,
+    "oid": "occ-a702e7f8cea75101a864bb6d",
+    "srn": 530,
+    "page": 34,
+    "curr_ing": "hidroxido de aluminio + hidroxido de magnésio",
+    "curr_form": "suspensão oral",
+    "raw_block": "hidroxido de aluminio + hidroxido de magnésio suspensão oral (60 mg + 40 mg)/mL frasco com no minimo 100 mL Antiácidos UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 124,
+    "oid": "occ-b65925b0adb685d1e3973a71",
+    "srn": 543,
+    "page": 35,
+    "curr_ing": "imipenem + cilastatina sódica",
+    "curr_form": "pó para solução injetável",
+    "raw_block": "imipenem + cilastatina sódica pó para solução injetável 500 mg + 500 mg frasco-ampola Outros antibacterianos beta-lactâmicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 125,
+    "oid": "occ-0497862d67fea1adb6b83006",
+    "srn": 545,
+    "page": 35,
+    "curr_ing": "imiquimode",
+    "curr_form": "creme",
+    "raw_block": "imiquimode creme 50 mg/g sache 250mg Quimioterápicos de uso tópico Farmácia Ambulatorial do HBDF e Centro Especializado em Saúde da Mulher - CESMU"
+  },
+  {
+    "t2_idx": 126,
+    "oid": "occ-b7ff0aa673f64b75c16c3ddf",
+    "srn": 547,
+    "page": 35,
+    "curr_ing": "imunoglobulina anti-rho (anti-d)",
+    "curr_form": "solução injetável",
+    "raw_block": "imunoglobulina anti-rho (anti-d) solução injetável de 250 mcg a 300 mcg frasco - ampola ou seringa preenchida Imunoglobulinas Uso hospitalar"
+  },
+  {
+    "t2_idx": 127,
+    "oid": "occ-9804085866c3d3a8183e020a",
+    "srn": 560,
+    "page": 36,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MS37756 insulina análoga de ação prolongada carpule 3mL Insulinas e análogos Para Diabetes Mellitus tipo 1: Farmácia do Componente Especializado e UBS (farmácia ambulatorial)* Para Diabetes Mellitus tipo 2: UBS (farmácia ambulatorial)* *Medicamento dispensado conforme Nota Técnica nº 5/2026 (documento SEI nº 206580685) que trata do fluxo de fornecimento de Insulina Análoga de Ação Prolongada na APS do DF."
+  },
+  {
+    "t2_idx": 128,
+    "oid": "occ-138e7fcb892102564091acf5",
+    "srn": 569,
+    "page": 36,
+    "curr_ing": "iodopovidona (iodopolividona)",
+    "curr_form": "solução",
+    "raw_block": "iodopovidona (iodopolividona) solução alcoolica 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes Uso hospitalar"
+  },
+  {
+    "t2_idx": 129,
+    "oid": "occ-2c6a5103a83f0deaada21735",
+    "srn": 570,
+    "page": 36,
+    "curr_ing": "iodopovidona (iodopolividona)",
+    "curr_form": "solução",
+    "raw_block": "iodopovidona (iodopolividona) solução aquosa 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 130,
+    "oid": "occ-2eae1621c3e43ecefe3e241c",
+    "srn": 571,
+    "page": 36,
+    "curr_ing": "iodopovidona (iodopolividona)",
+    "curr_form": "solução",
+    "raw_block": "iodopovidona (iodopolividona) solução degermante 10% (teor de iodo 1%) frasco 1000 mL Antissépticos e desinfetantes Uso hospitalar"
+  },
+  {
+    "t2_idx": 131,
+    "oid": "occ-ff5c01c91fa347483018f0a0",
+    "srn": 586,
+    "page": 37,
+    "curr_ing": "kit selante de fibrina",
+    "curr_form": "solução",
+    "raw_block": "kit selante de fibrina solução tópica frasco 1mL Vitamina k e outros hemostáticos Uso hospitalar"
+  },
+  {
+    "t2_idx": 132,
+    "oid": "occ-270ac66151997d9a70db0247",
+    "srn": 590,
+    "page": 37,
+    "curr_ing": "lamivudina + dolutegravir",
+    "curr_form": "comprimido",
+    "raw_block": "MSE34502 lamivudina + dolutegravir comprimido 300 mg + 50 mg - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  },
+  {
+    "t2_idx": 133,
+    "oid": "occ-940082c701c5f899ee60f8f6",
+    "srn": 597,
+    "page": 38,
+    "curr_ing": "laronidase",
+    "curr_form": "solução injetável",
+    "raw_block": "MS021078 laronidase 0,58 mg/mL (2,9mg/5mL) solução injetável Outros medicamentos do aparelho digestivo e metabolismo Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 134,
+    "oid": "occ-0d65a0214341f4ea9d89e1d0",
+    "srn": 607,
+    "page": 38,
+    "curr_ing": "levodopa + benserazida (cloridrato)",
+    "curr_form": "comprimido",
+    "raw_block": "levodopa + benserazida (cloridrato) comprimido ou cápsula ou drágea liberação prolongada 100 mg +25 mg Agentes dopaminérgicos UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 135,
+    "oid": "occ-7cbf1527034e630a3b103689",
+    "srn": 608,
+    "page": 38,
+    "curr_ing": "levodopa + benserazida (cloridrato)",
+    "curr_form": "comprimido",
+    "raw_block": "levodopa + benserazida (cloridrato) comprimido simples (100 mg + 25 mg) Agentes dopaminérgicos UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 136,
+    "oid": "occ-8633afd4a9f96428f0e81818",
+    "srn": 609,
+    "page": 38,
+    "curr_ing": "levodopa + carbidopa",
+    "curr_form": "comprimido",
+    "raw_block": "levodopa + carbidopa comprimido simples 250 mg + 25 mg Agentes dopaminérgicos UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 137,
+    "oid": "occ-ddf07e8856101b9a33b7f11c",
+    "srn": 621,
+    "page": 39,
+    "curr_ing": "lidocaína (cloridrato) + epinefrina",
+    "curr_form": "solução injetável",
+    "raw_block": "34667* lidocaína (cloridrato) + epinefrina solução injetável 20 mg/mL + 0,01 mg/mL (2% + 1:100.000) tubete 1,8 mL (uso exclusivo odontologia) *será substituído pelo código 39846 lidocaína (cloridrato) + epinefrina solução injetável 20 mg/ml + 0,01 mg/mL (2% + 1:100.000) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos gerais UBS (farmácia interna - uso exclusivo da odontologia) e uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 138,
+    "oid": "occ-266f79c4efb99c09076811a3",
+    "srn": 622,
+    "page": 39,
+    "curr_ing": "lidocaína (cloridrato) geleia",
+    "curr_form": "*[NULL]*",
+    "raw_block": "lidocaína (cloridrato) geleia 2 % bisnaga 30 g Antipruriginosos, incluindo anti-histamínicos, anestésicos, etc. UBS (farmácia interna), uso hospitalar e atendimento pré-hospitalar (SAMU)"
+  },
+  {
+    "t2_idx": 139,
+    "oid": "occ-acab5ac22904900c77969213",
+    "srn": 624,
+    "page": 39,
+    "curr_ing": "lidocaína + epinefrina",
+    "curr_form": "solução injetável",
+    "raw_block": "lidocaína + epinefrina solução injetável (20 mg + 0,005 mg)/mL frasco-ampola 20 mL Anestésicos locais Uso hospitalar"
+  },
+  {
+    "t2_idx": 140,
+    "oid": "occ-81b56158be5bea770866bc32",
+    "srn": 631,
+    "page": 39,
+    "curr_ing": "lippia sidoides",
+    "curr_form": "gel",
+    "raw_block": "lippia sidoides gel 10% pote 200g (alecrim pimenta) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 141,
+    "oid": "occ-e4cbc1733e4ee6808a8e5481",
+    "srn": 632,
+    "page": 39,
+    "curr_ing": "lippia sidoides",
+    "curr_form": "gel",
+    "raw_block": "lippia sidoides gel 10% pote 30g (alecrim pimenta) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 142,
+    "oid": "occ-8d4d96cbceb2f870e79e3b16",
+    "srn": 633,
+    "page": 39,
+    "curr_ing": "liraglutida",
+    "curr_form": "solução injetável",
+    "raw_block": "liraglutida solução injetável 6mg/mL sistema de aplicação 3mL multidoses de até 3,0 mg (indicação: controle de peso) Outros medicamentos do aparelho digestivo e metabolismo Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 143,
+    "oid": "occ-d1afd37cabec657dfecf0ab9",
+    "srn": 634,
+    "page": 39,
+    "curr_ing": "lopinavir + ritonavir (lpv/r )",
+    "curr_form": "comprimido",
+    "raw_block": "MSE32517 lopinavir + ritonavir (lpv/r ) comprimido 100mg + 25 mg - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  },
+  {
+    "t2_idx": 144,
+    "oid": "occ-8806d48721f7f68dd6d71a8a",
+    "srn": 635,
+    "page": 39,
+    "curr_ing": "lopinavir + ritonavir (lpv/r)",
+    "curr_form": "solução oral",
+    "raw_block": "MSE21350 lopinavir + ritonavir (lpv/r) solução oral 80mg/mL + 20mg/mL frasco 160 mL - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  },
+  {
+    "t2_idx": 145,
+    "oid": "occ-b4ac68a659e4759dd930a5b1",
+    "srn": 647,
+    "page": 40,
+    "curr_ing": "mepivacaina (cloridrato) sem vasoconstritor",
+    "curr_form": "solução injetável",
+    "raw_block": "mepivacaina (cloridrato) sem vasoconstritor solução injetável 30 mg/mL (3%) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais UBS (farmácia interna - uso exclusivo da odontologia) e uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 146,
+    "oid": "occ-80adfafd32991aa51fcb7bf6",
+    "srn": 648,
+    "page": 40,
+    "curr_ing": "mepivacaína + epinefrina",
+    "curr_form": "solução injetável",
+    "raw_block": "mepivacaína + epinefrina solução injetável 20 mg/mL (2%) + 0,01 mg/mL (1:100.000) carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 147,
+    "oid": "occ-de475952f39c171a29cb24d9",
+    "srn": 677,
+    "page": 41,
+    "curr_ing": "metotrexato",
+    "curr_form": "solução injetável",
+    "raw_block": "MS90777 metotrexato solução injetável 50 mg frasco ampola 2 mL (25mg/mL) Antimetabólitos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 148,
+    "oid": "occ-f0e28dbd049d6b0b301b77cf",
+    "srn": 681,
+    "page": 41,
+    "curr_ing": "metronidazol",
+    "curr_form": "gel",
+    "raw_block": "metronidazol gel vaginal 100mg/g bisnaga 50g + aplicadores (10 para cada bisnaga) Antiinfecciosos e antissépticos, excluindo associações com corticosteróides UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 149,
+    "oid": "occ-c1c3e22c4cbb25745f676bd4",
+    "srn": 688,
+    "page": 41,
+    "curr_ing": "miconazol (nitrato)",
+    "curr_form": "creme",
+    "raw_block": "miconazol (nitrato) 20mg/g creme dermatológico bisnaga 28 g Antifúngicos para uso tópico UBS (farmácia ambulatorial e farmácia interna)"
+  },
+  {
+    "t2_idx": 150,
+    "oid": "occ-39145d3256bd9b355a86f01b",
+    "srn": 689,
+    "page": 41,
+    "curr_ing": "miconazol",
+    "curr_form": "creme",
+    "raw_block": "miconazol creme vaginal 20mg/g bisnaga 80 g + aplicadores Antifúngicos para uso tópico UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 151,
+    "oid": "occ-be1655419eff7210901c7689",
+    "srn": 695,
+    "page": 42,
+    "curr_ing": "mikania glomerata spreng",
+    "curr_form": "xarope",
+    "raw_block": "mikania glomerata spreng xarope frasco 100 mL Expectorantes, excluindo associações com supressores da tosse UBS (farmácia ambulatorial)"
+  },
+  {
+    "t2_idx": 152,
+    "oid": "occ-34af9fd510e2641284194b08",
+    "srn": 724,
+    "page": 43,
+    "curr_ing": "mupirocina",
+    "curr_form": "creme",
+    "raw_block": "mupirocina creme ou pomada 20 mg/g bisnaga 15 g Antibióticos de uso tópico Uso hospitalar"
+  },
+  {
+    "t2_idx": 153,
+    "oid": "occ-98cbfa4d122c6e0d631964c1",
+    "srn": 732,
+    "page": 43,
+    "curr_ing": "neomicina (sulfato) + bacitracina (zincica)",
+    "curr_form": "pomada",
+    "raw_block": "neomicina (sulfato) + bacitracina (zincica) pomada (5 mg +250 ui)/g bisnaga 15 g Antibióticos de uso tópico UBS (farmácia ambulatorial e farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 154,
+    "oid": "occ-56be2f62588ca6292918b5ac",
+    "srn": 747,
+    "page": 44,
+    "curr_ing": "nirmatrelvir 2 comprimidos revestidos",
+    "curr_form": "comprimido revestido",
+    "raw_block": "MSE38354 nirmatrelvir 2 comprimidos revestidos 150mg + ritonavir comprimido revestido 100 mg – COVID-19 Medicamentos para o tratamento do COVID-19 Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia), Políclinica de Planaltina, Policlínica de Ceilândia, Policlínica de Taguatinga, Policlínica do Gama, Farmácia Escola (HUB), UBS – Unidades de Referência (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 155,
+    "oid": "occ-102f806ea7b79e2cc685fb33",
+    "srn": 754,
+    "page": 44,
+    "curr_ing": "norepinefrina (hemitartarato)",
+    "curr_form": "solução injetável",
+    "raw_block": "norepinefrina (hemitartarato) solução injetável 2 mg/mL (equivalente a 1mg/mL de norepinefrina base) ampola 4 mL Estimulantes cardíacos, excluindo glicosidos cardíacos Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+  },
+  {
+    "t2_idx": 156,
+    "oid": "occ-9e36c2c5050e784a8afa8dbc",
+    "srn": 783,
+    "page": 46,
+    "curr_ing": "oxibuprocaína (cloridrato)",
+    "curr_form": "solução oftálmica",
+    "raw_block": "oxibuprocaína (cloridrato) solução oftálmica estéril 4 mg/mL (0,4 %) frasco 10 mL Outros oftalmológicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 157,
+    "oid": "occ-e8d36ab4f9f02c6c8d0bf0a0",
+    "srn": 788,
+    "page": 46,
+    "curr_ing": "oxido de zinco + vitamina a + vitamina d",
+    "curr_form": "pomada",
+    "raw_block": "oxido de zinco + vitamina a + vitamina d pomada dermatologica bisnaga 45 g. deve conter a seguinte concentração mínima de cada um dos princípios ativos: oxido de zinco: 100 mg/g; vitamina a: 1000 UI/g; vitamina d 400 UI/g. Emolientes e protetores UBS (farmácia ambulatorial e farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 158,
+    "oid": "occ-386c6917918eb996e4015fda",
+    "srn": 791,
+    "page": 46,
+    "curr_ing": "pancreatina (lipase + amilase + protease)",
+    "curr_form": "cápsula",
+    "raw_block": "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 10.000 UI (equivale a 150mg) Digestivos incluindo enzimas Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 159,
+    "oid": "occ-a9315e6344483d7811612fda",
+    "srn": 792,
+    "page": 46,
+    "curr_ing": "pancreatina (lipase + amilase + protease)",
+    "curr_form": "cápsula",
+    "raw_block": "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 25.000 UI (equivale a 300mg) Digestivos incluindo enzimas Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 160,
+    "oid": "occ-15830276ac878c51c7eb7660",
+    "srn": 813,
+    "page": 47,
+    "curr_ing": "piperacilina + tazobactam",
+    "curr_form": "pó liofilizado para solução injetável",
+    "raw_block": "piperacilina + tazobactam pó liofilizado para solução injetável 4,0 g + 500 mg frasco-ampola Antibacterianos beta- lactâmicos, penicilinas Uso hospitalar"
+  },
+  {
+    "t2_idx": 161,
+    "oid": "occ-c46256c1a904b7e76d88799f",
+    "srn": 823,
+    "page": 47,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "pó para solução",
+    "raw_block": "pó para solução básica para hemodiálise composição: sódio, bicarbonato, cloreto e glicose concentração: 98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L bolsa plástica 658 g Medicamento de compra exclusiva do IHBDF Farmácia Ambulatorial do HBDF"
+  },
+  {
+    "t2_idx": 162,
+    "oid": "occ-4bd5f5d42ec8ef95ec152915",
+    "srn": 828,
+    "page": 48,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MSE90115 poliquimioterapia única adulto - PQT-u adulto Medicamentos para o tratamento da hanseníase UBS (farmácia ambulatorial), Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e HRAN"
+  },
+  {
+    "t2_idx": 163,
+    "oid": "occ-390b2fafe9c35c873c13e1db",
+    "srn": 829,
+    "page": 48,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MSE90116 poliquimioterapia única infantil - PQT-u infantil Medicamentos para o tratamento da hanseníase UBS (farmácia ambulatorial), Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e HRAN"
+  },
+  {
+    "t2_idx": 164,
+    "oid": "occ-daa827193511b8e2acec493b",
+    "srn": 830,
+    "page": 48,
+    "curr_ing": "polivitaminicos ou multivitaminicos sem minerais",
+    "curr_form": "pó liofilizado para solução injetável",
+    "raw_block": "polivitaminicos ou multivitaminicos sem minerais pó liofilizado para solução injetável ou solução injetável frasco- ampola ou ampola (uso adulto) Multivitaminas, associações Uso hospitalar"
+  },
+  {
+    "t2_idx": 165,
+    "oid": "occ-9b28fcd4073dcff322bc5f32",
+    "srn": 841,
+    "page": 48,
+    "curr_ing": "prilocaína (cloridrato) + felipressina",
+    "curr_form": "solução injetável",
+    "raw_block": "prilocaína (cloridrato) + felipressina solução injetável 30 mg/mL (3%) + 0,03 ui/mL carpule 1,8 mL (uso exclusivo odontologia) Anestésicos locais UBS (farmácia interna - uso exclusivo da odontologia) e uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 166,
+    "oid": "occ-c731c1d37d51b270a7f9b041",
+    "srn": 873,
+    "page": 50,
+    "curr_ing": "retinol (acetato) + aminoacidos + dl- metionina + cloranfenicol",
+    "curr_form": "pomada oftálmica",
+    "raw_block": "retinol (acetato) + aminoacidos + dl- metionina + cloranfenicol pomada oftálmica (10000 UI + 25 mg + 5 mg + 5 mg)/g bisnaga 3,5 g Outros oftalmológicos Uso hospitalar"
+  },
+  {
+    "t2_idx": 167,
+    "oid": "occ-cfcfff8571d17806ea96b35c",
+    "srn": 877,
+    "page": 50,
+    "curr_ing": "rifampicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE22470 rifampicina 150 mg + isoniazida 75 mg + pirazinamida 400 mg + etambutol 275 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 168,
+    "oid": "occ-e45b11383b3f72658e2434d5",
+    "srn": 878,
+    "page": 50,
+    "curr_ing": "rifampicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE90150 rifampicina 150 mg + isoniazida 75 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 169,
+    "oid": "occ-0f69ce241b5e399f0e745b35",
+    "srn": 879,
+    "page": 50,
+    "curr_ing": "rifampicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE37482 rifampicina 300 mg + isoniazida 150 mg comprimido - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 170,
+    "oid": "occ-70ad4a9f925e23bfecd3a22a",
+    "srn": 880,
+    "page": 50,
+    "curr_ing": "rifampicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35977 rifampicina 75 mg + isoniazida 50 mg + pirazinamida 150 mg comprimido dispersível - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 171,
+    "oid": "occ-380d15a3a6a8d5ea6e813b43",
+    "srn": 881,
+    "page": 50,
+    "curr_ing": "rifampicina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35976 rifampicina 75 mg + isoniazida 50 mg comprimido dispersível - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 172,
+    "oid": "occ-d6fdd34e64d43b0d222ef69b",
+    "srn": 891,
+    "page": 51,
+    "curr_ing": "rifapentina + isoniazida",
+    "curr_form": "comprimido",
+    "raw_block": "MSE34500 rifapentina + isoniazida comprimido 300 mg + 300 mg - tuberculose Medicamentos para o tratamento da tuberculose UBS (farmácia ambulatorial), Policlínica de Planaltina, Policlínica de Taguatinga, Policlínica do Gama, Policlínica de Ceilândia, Farmácia Escola (HUB), Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e uso hospitalar"
+  },
+  {
+    "t2_idx": 173,
+    "oid": "occ-f208f9b0fbdfa9984f6ae66e",
+    "srn": 908,
+    "page": 52,
+    "curr_ing": "rivastigmina adesivo transdermico",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MS16360 rivastigmina adesivo transdermico 18mg com liberação de 9,5mg/24h Medicamentos anti- demência Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 174,
+    "oid": "occ-924b68401c03c4123a26164e",
+    "srn": 909,
+    "page": 52,
+    "curr_ing": "rivastigmina adesivo transdermico",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MS17162 rivastigmina adesivo transdermico 9mg com liberação de 4,6mg/24h Medicamentos anti- demência Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 175,
+    "oid": "occ-5e613d5a17989804827e439e",
+    "srn": 922,
+    "page": 52,
+    "curr_ing": "sais para reidratação oral (cloreto de sódio",
+    "curr_form": "solução",
+    "raw_block": "sais para reidratação oral (cloreto de sódio 3,5g + cloreto de potássio 1,5g + citrato de sódio di-hidratado 2,9g + glicose 20g) pó para preparo de 1 litro de solução envelope Eletrólitos com carboidratos UBS (farmácia ambulatorial e farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 176,
+    "oid": "occ-b3c9c95e8c9426034db9ca30",
+    "srn": 925,
+    "page": 52,
+    "curr_ing": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação",
+    "curr_form": "*[NULL]*",
+    "raw_block": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação 25 mcg/dose + 125mcg/dose tubo (120 doses) + inalador Inalantes adrenérgicos Policlínica de Planaltina, Policlínica de Taguatinga e Centro Especializado em Saúde da Mulher – CESMU"
+  },
+  {
+    "t2_idx": 177,
+    "oid": "occ-c91b4e24768177e887ed16b6",
+    "srn": 926,
+    "page": 52,
+    "curr_ing": "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação",
+    "curr_form": "*[NULL]*",
+    "raw_block": "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação 50mcg/dose + 500mcg/dose recipiente dosador contendo strip com 60 doses Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 178,
+    "oid": "occ-3da1f44d1a507a358ceee024",
+    "srn": 929,
+    "page": 52,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MSE33470 selante de fibrina 0,5 mL frasco ampola - coagulopatias Vitamina k e outros hemostáticos Hemocentro"
+  },
+  {
+    "t2_idx": 179,
+    "oid": "occ-648c45d256d209afe121f04d",
+    "srn": 930,
+    "page": 53,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MSE23068 selante de fibrina 1 mL frasco ampola - coagulopatias Vitamina k e outros hemostáticos Hemocentro"
+  },
+  {
+    "t2_idx": 180,
+    "oid": "occ-ea3c3a338bd1aa4a3ff232fd",
+    "srn": 940,
+    "page": 53,
+    "curr_ing": "sevoflurano",
+    "curr_form": "solução",
+    "raw_block": "sevoflurano solução inalatoria frasco 250 mL Anestésicos gerais Uso hospitalar"
+  },
+  {
+    "t2_idx": 181,
+    "oid": "occ-65d47184ac652afe4967c27b",
+    "srn": 951,
+    "page": 53,
+    "curr_ing": "sofosbuvir",
+    "curr_form": "comprimido",
+    "raw_block": "MSE35284 sofosbuvir 400mg + velpatasvir 100mg comprimido - hepatite C Medicamentos para hepatite C Policlínica de Planaltina e Farmácia Escola (HUB)"
+  },
+  {
+    "t2_idx": 182,
+    "oid": "occ-2586228a9154a74d8fea851b",
+    "srn": 952,
+    "page": 53,
+    "curr_ing": "sofosbuvir + velpatasvir",
+    "curr_form": "comprimido",
+    "raw_block": "MSE34504 sofosbuvir + velpatasvir comprimido 200mg + 50mg - hepatite c Medicamentos para hepatite C Policlínica de Planaltina e Farmácia Escola (HUB)"
+  },
+  {
+    "t2_idx": 183,
+    "oid": "occ-8fd9c1d2bed04f28c96453ee",
+    "srn": 953,
+    "page": 53,
+    "curr_ing": "sofosbuvir + velpatasvir + voxilaprevir",
+    "curr_form": "comprimido",
+    "raw_block": "MSE34505 sofosbuvir + velpatasvir + voxilaprevir comprimido 400mg + 100mg + 100mg - hepatite c Medicamentos para hepatite C Policlínica de Planaltina e Farmácia Escola (HUB)"
+  },
+  {
+    "t2_idx": 184,
+    "oid": "occ-6c9cca4e2c8bdba3c94bc0bc",
+    "srn": 954,
+    "page": 53,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "solução",
+    "raw_block": "solução acida p/ hemodialise galao de 5l p/maq. mistura proporcional (1:34 até 1:45) com k=2,0meq/l; ca=2,5meq/l; sem glicose Hemodialíticos e hemofiltrados Uso hospitalar"
+  },
+  {
+    "t2_idx": 185,
+    "oid": "occ-f0dd72a9216230ed91376a2c",
+    "srn": 956,
+    "page": 53,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "solução",
+    "raw_block": "solução de ringer (cloretos de na, k, ca) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 186,
+    "oid": "occ-ba0acebc4bf4e0ac7bb5ad8b",
+    "srn": 957,
+    "page": 53,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "solução",
+    "raw_block": "solução de ringer (cloretos de na, k, ca) + lactato (sodico) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao Soluções endovenosas Uso hospitalar"
+  },
+  {
+    "t2_idx": 187,
+    "oid": "occ-115ca5191ad4d1ee6993658d",
+    "srn": 971,
+    "page": 54,
+    "curr_ing": "sulfadiazina de prata",
+    "curr_form": "creme",
+    "raw_block": "sulfadiazina de prata creme dermatologico 1% bisnaga 50 g Quimioterápicos de uso tópico UBS (farmácia interna) e uso hospitalar"
+  },
+  {
+    "t2_idx": 188,
+    "oid": "occ-2d8c141a0678f1f9561c4747",
+    "srn": 972,
+    "page": 54,
+    "curr_ing": "sulfadiazina de prata",
+    "curr_form": "creme",
+    "raw_block": "sulfadiazina de prata creme dermatológico 1% frasco ou pote 400 g Quimioterápicos de uso tópico Uso hospitalar"
+  },
+  {
+    "t2_idx": 189,
+    "oid": "occ-55d57003b757d2b31c7722d0",
+    "srn": 973,
+    "page": 54,
+    "curr_ing": "sulfametoxazol + trimetoprima",
+    "curr_form": "comprimido",
+    "raw_block": "sulfametoxazol + trimetoprima comprimido 400 mg +80 mg Sulfonamidas e trimetroprima UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 190,
+    "oid": "occ-5dac3a6caf05fed48e9546cb",
+    "srn": 974,
+    "page": 54,
+    "curr_ing": "sulfametoxazol + trimetoprima",
+    "curr_form": "solução injetável",
+    "raw_block": "sulfametoxazol + trimetoprima solução injetável (400 mg + 80 mg)/5 mL ampola 5 mL Sulfonamidas e trimetroprima Uso hospitalar"
+  },
+  {
+    "t2_idx": 191,
+    "oid": "occ-bf16ec9604f7d2615bc11dc9",
+    "srn": 977,
+    "page": 54,
+    "curr_ing": "sulfato de magnésio",
+    "curr_form": "solução injetável",
+    "raw_block": "sulfato de magnésio solução injetável 50 % (4 meq/mL) ampola 10 mL Aditivos de soluções endovenosas Uso hospitalar e atendimento pré- hospitalar (SAMU)"
+  },
+  {
+    "t2_idx": 192,
+    "oid": "occ-7314323fddaafb5a3dd80502",
+    "srn": 980,
+    "page": 55,
+    "curr_ing": "sulfato ferroso",
+    "curr_form": "solução oral",
+    "raw_block": "sulfato ferroso solução oral 125 mg/mL correspondente a 25 mg/mL de ferro elementar frasco 30 mL Preparados de ferro UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 193,
+    "oid": "occ-d09c1d0d0c60a6637ab3c4eb",
+    "srn": 984,
+    "page": 55,
+    "curr_ing": "symphytum officinale",
+    "curr_form": "gel",
+    "raw_block": "symphytum officinale gel 10% pote 200g (confrei) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 194,
+    "oid": "occ-b969a7a54ebd79dbab6e83eb",
+    "srn": 985,
+    "page": 55,
+    "curr_ing": "symphytum officinale",
+    "curr_form": "gel",
+    "raw_block": "symphytum officinale gel 10% pote 30g (confrei) Medicamentos homeopáticos ou fitoterápicos UBS - Unidades de Referência* (farmácia ambulatorial) *UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas- fitoterapicos."
+  },
+  {
+    "t2_idx": 195,
+    "oid": "occ-dd3666cce6867d6246aae72f",
+    "srn": 987,
+    "page": 55,
+    "curr_ing": "*[NULL]*",
+    "curr_form": "*[NULL]*",
+    "raw_block": ""
+  },
+  {
+    "t2_idx": 196,
+    "oid": "occ-908a2f2b4ad6fd7ca89a0a51",
+    "srn": 1004,
+    "page": 56,
+    "curr_ing": "tenofovir + entricitabina",
+    "curr_form": "comprimido revestido",
+    "raw_block": "MSE35629 tenofovir + entricitabina comprimido revestido 300mg + 200mg - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e UBS* (farmácia ambulatorial) *UBS com farmácias dispensadoras de PrEP (Profilaxia Pré-Exposição), conforme lista disponível em: https://www.saude.df.gov.br/medicamentos- dst-aids"
+  },
+  {
+    "t2_idx": 197,
+    "oid": "occ-d7a71db1b039fc321c39c989",
+    "srn": 1005,
+    "page": 56,
+    "curr_ing": "tenofovir + lamivudina",
+    "curr_form": "comprimido",
+    "raw_block": "MSE21352 tenofovir + lamivudina comprimido 300mg + 300mg - hepatite B Medicamentos para hepatite B Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  },
+  {
+    "t2_idx": 198,
+    "oid": "occ-cb22669dfd85514c6b90e4c5",
+    "srn": 1010,
+    "page": 56,
+    "curr_ing": "tenofovir desoproxila (fumarato)",
+    "curr_form": "*[NULL]*",
+    "raw_block": "MSE33485 tenofovir desoproxila (fumarato) 300 mg + lamivudina 300 mg - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, , Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia) e UBS* (farmácia ambulatorial) *UBS com farmácias dispensadoras de TARV (Terapia Antiretroviral) e de PEP (Profilaxia Pós-Exposição), conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-dst-aids"
+  },
+  {
+    "t2_idx": 199,
+    "oid": "occ-cf20695ffc6eab37d50c1cd6",
+    "srn": 1024,
+    "page": 57,
+    "curr_ing": "tiotrópio (brometo) + olodaterol (cloridrato)",
+    "curr_form": "solução",
+    "raw_block": "tiotrópio (brometo) + olodaterol (cloridrato) solução para inalação 2,5 mcg/dose + 2,5 mcg/dose frasco com 60 doses com inalador Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 200,
+    "oid": "occ-c6a25becf833271f53205b74",
+    "srn": 1025,
+    "page": 57,
+    "curr_ing": "tobramicina + dexametasona",
+    "curr_form": "pomada oftálmica",
+    "raw_block": "tobramicina + dexametasona pomada oftálmica 0,3 % + 0,1 % bisnaga 3,5 g Agentes antiinflamatórios e antiinfecciosos em associação UBS (farmácia ambulatorial) e uso hospitalar"
+  },
+  {
+    "t2_idx": 201,
+    "oid": "occ-e185f6e00af0113b419ca348",
+    "srn": 1026,
+    "page": 57,
+    "curr_ing": "tobramicina",
+    "curr_form": "pomada oftálmica",
+    "raw_block": "tobramicina pomada oftálmica 0,3 % bisnaga 3,5 g Antiinfecciosos Uso hospitalar"
+  },
+  {
+    "t2_idx": 202,
+    "oid": "occ-e34170ebed3c19cdf4f5f5d7",
+    "srn": 1042,
+    "page": 57,
+    "curr_ing": "triancinolona acetonida",
+    "curr_form": "pomada",
+    "raw_block": "triancinolona acetonida pomada bucal ou pasta 1mg/mL bisnaga 10 g (uso exclusivo odontologia) Corticosteróides isolados Uso hospitalar (uso exclusivo da odontologia)"
+  },
+  {
+    "t2_idx": 203,
+    "oid": "occ-b876bad65fcf7b57f2c2cf3e",
+    "srn": 1048,
+    "page": 58,
+    "curr_ing": "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante",
+    "curr_form": "*[NULL]*",
+    "raw_block": "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante 62,5 mcg/dose + 25 mcg/dose recipiente dosador contendo strip com 30 doses Inalantes adrenérgicos Farmácia do Componente Especializado"
+  },
+  {
+    "t2_idx": 204,
+    "oid": "occ-7a921bb07f18683e609d66d9",
+    "srn": 1069,
+    "page": 59,
+    "curr_ing": "zidovudina + lamivudina (azt/3tc)",
+    "curr_form": "comprimido",
+    "raw_block": "MSE90069 zidovudina + lamivudina (azt/3tc) comprimido 300 mg + 150 mg - HIV Medicamentos para o manejo da infecção pelo HIV Policlínica de Ceilândia, Policlínica do Gama, Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB) e Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)"
+  }
+]

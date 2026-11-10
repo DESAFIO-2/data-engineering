@@ -82,6 +82,35 @@ def test_identity(query: str, status: str, ids: list[str]) -> None:
     assert result["ranked_ids"] == ids
 
 
+@pytest.mark.parametrize(
+    ("question", "expected_occurrence"),
+    [
+        ("etinilestradiol levonorgestrel", "occ-bd645fca4e10b51f38485f06"),
+        ("valerato de estradiol enantato de noretisterona", "occ-2e237469ad52f38dc54b786e"),
+        ("carbidopa levodopa", "occ-31f830e7fbb52c0353da2946"),
+        ("cloridrato de benserazida levodopa", "occ-e7d83368e51a7cb974fd6bd9"),
+        ("etinilestradiol 0,03mg levonorgestrel 0,15mg", "occ-bd645fca4e10b51f38485f06"),
+    ],
+)
+def test_f04_combination_without_plus(question: str, expected_occurrence: str) -> None:
+    corpus = Corpus.load(Path(__file__).resolve().parents[2] / "data/corpus/f04")
+    result = Retriever(corpus).search(question, strategy="exact")
+    assert result["status"] == "matched"
+    assert {chunk.get("occurrence_id") for chunk in result["evidence"]} == {expected_occurrence}
+
+
+def test_f04_component_alone_does_not_claim_combination() -> None:
+    corpus = Corpus.load(Path(__file__).resolve().parents[2] / "data/corpus/f04")
+    retriever = Retriever(corpus)
+    for question in ("etinilestradiol", "levonorgestrel", "carbidopa"):
+        result = retriever.search(question, strategy="exact")
+        assert result["status"] != "matched"
+    wrong_strength = retriever.search(
+        "etinilestradiol 0,03mg levonorgestrel 1,5mg", strategy="exact"
+    )
+    assert wrong_strength["status"] != "matched"
+
+
 class FakeStore:
     def __init__(self) -> None:
         self.filters: Any = None
