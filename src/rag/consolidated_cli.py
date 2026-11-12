@@ -92,7 +92,12 @@ def run(args: Any, settings: Settings) -> int:
                 strategy=args.strategy,
                 split=args.split,
                 top_k=settings.rag_top_k,
-                review_path=ROOT / "docs/reports/v9-independent-test-review-v2.md"
+                review_path=ROOT
+                / (
+                    "docs/reports/v9-next-independent-test-review.md"
+                    if Path(args.dataset).name == "consolidated_v9_next_reviewed.jsonl"
+                    else "docs/reports/v9-independent-test-review-v2.md"
+                )
                 if v9
                 else ROOT
                 / (

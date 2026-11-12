@@ -367,16 +367,63 @@ def strength_core(value: str) -> str:
     )
 
 
-def strength_matches(query: str, strength: str) -> bool:
+def _textual_presentation(value: str) -> str:
+    """Ignore an optional article in the documented homeopathic descriptor."""
+    return normalize(value).replace("conforme a farmacopeia", "conforme farmacopeia")
+
+
+def _form_matches(query: str, form: str) -> bool:
+    documented = _textual_presentation(form)
+    requested = _textual_presentation(query)
+    if documented in requested:
+        return True
+    if documented == "solucao injetavel":
+        return bool(re.search(r"\binjetavel\b", requested))
+    if documented.startswith("comprimido de liberacao "):
+        return bool(re.search(r"\bcomprimido\b", requested))
+    return False
+
+
+def _interleaved_association_matches(query: str, strength: str, name: str | None) -> bool:
+    if not name or " + " not in normalize(name) or " + " not in normalize(strength):
+        return False
+    components = normalize(name).split(" + ")
+    doses = normalize(strength).split(" + ")
+    if len(components) != len(doses):
+        return False
+    pattern = r"(?<!\w)" + r"\s*\+\s*".join(
+        re.escape(component) + r"\s+" + re.escape(dose)
+        for component, dose in zip(components, doses, strict=True)
+    ) + r"(?![\w/,])"
+    return bool(re.search(pattern, query))
+
+
+def strength_matches(query: str, strength: str, name: str | None = None) -> bool:
     stored = normalize(strength)
     core = strength_core(stored)
-    literal = re.search(r"(?<![\w.,/])" + re.escape(core) + r"(?![\w.,/])", query)
+    if stored.startswith("de ") and " frasco" in stored:
+        core = stored.split(" frasco", 1)[0]
+    elif stored.startswith("bolsa ou frasco "):
+        volume = re.search(r"\b\d+(?:[.,]\d+)?\s*ml\b", stored)
+        core = volume.group() if volume else core
+    comparison_query = _textual_presentation(query)
+    comparison_core = _textual_presentation(core)
+    literal = re.search(
+        r"(?<![\w.,/])" + re.escape(comparison_core) + r"(?![\w.,/])",
+        comparison_query,
+    )
     # Parentheses in a natural question may group a documented strength without
     # changing its units, alternatives or ingredient order.
-    flat_query = normalize(re.sub(r"[()]", " ", query))
-    flat_core = normalize(re.sub(r"[()]", " ", core))
+    flat_query = _textual_presentation(re.sub(r"[()]", " ", query))
+    flat_core = _textual_presentation(re.sub(r"[()]", " ", core))
     grouped = re.search(r"(?<![\w.,/])" + re.escape(flat_core) + r"(?![\w.,/])", flat_query)
-    if not (literal or grouped):
+    if not (literal or grouped or _interleaved_association_matches(query, strength, name)):
+        return False
+    requested_packages = set(re.findall(r"\b(?:bolsa|frasco|ampola|seringa)\b", query))
+    stored_packages = set(re.findall(r"\b(?:bolsa|frasco|ampola|seringa)\b", stored))
+    if stored_packages and requested_packages - stored_packages:
+        return False
+    if "sistema fechado" in query and "sistema fechado" not in stored:
         return False
     requested_device = re.search(r"sistema de aplicacao\s+(\d+(?:[.,]\d+)?)\s*ml", query)
     if requested_device:
@@ -528,7 +575,10 @@ def search(
         names = [m for m in names if len(normalize(m["active_ingredient"])) == longest_name]
     if names:
         strengths = [
-            m for m in names if m["strength"] == "-" or strength_matches(query, m["strength"])
+            m
+            for m in names
+            if m["strength"] == "-"
+            or strength_matches(query, m["strength"], m["active_ingredient"])
         ]
         if not strengths:
             if not re.search(r"\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ui|ml)\b", query):
@@ -565,7 +615,11 @@ def search(
                     "Concentração não localizada para este princípio ativo nas listas consultadas."
                 ),
             }
-        matches = [m for m in strengths if m["form"] == "-" or normalize(m["form"]) in query]
+        matches = [
+            m
+            for m in strengths
+            if m["form"] == "-" or _form_matches(query, m["form"])
+        ]
         if not matches and not any(
             normalize(m["form"]) in query for m in release.catalog if m["form"] != "-"
         ):
@@ -577,7 +631,10 @@ def search(
                 + ".",
             }
         prolonged = "prolongada" in query
-        if prolonged and not any(m.get("release_characteristic") for m in matches):
+        delayed = "retardada" in query
+        if prolonged and not any(
+            "prolongada" in normalize(m.get("release_characteristic") or "") for m in matches
+        ):
             return {
                 "status": "not_in_scope",
                 "evidence": [],
@@ -587,8 +644,19 @@ def search(
             }
         if any(m.get("release_characteristic") for m in matches):
             explicit_regular = "convencional" in query or "imediata" in query
-            if prolonged or explicit_regular:
-                matches = [m for m in matches if bool(m.get("release_characteristic")) == prolonged]
+            if prolonged or delayed or explicit_regular:
+                requested_characteristic = (
+                    "prolongada" if prolonged else "retardada" if delayed else None
+                )
+                matches = [
+                    m
+                    for m in matches
+                    if (
+                        requested_characteristic in normalize(m.get("release_characteristic") or "")
+                        if requested_characteristic
+                        else not m.get("release_characteristic")
+                    )
+                ]
             elif len({m.get("release_characteristic") for m in matches}) > 1:
                 return {
                     "status": "ambiguous",
@@ -754,7 +822,13 @@ def name_matches(query: str, name: str) -> bool:
         pattern = r"(?<!\w)" + re.escape(components[0])
         for component in components[1:]:
             pattern += r"\s*(?:\([^)]*\)\s*)?\+\s*" + re.escape(component)
-        return bool(re.search(pattern + r"(?!\w)", query))
+        if re.search(pattern + r"(?!\w)", query):
+            return True
+        dose = r"\s+\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ui)(?:/(?:ml|g))?"
+        interleaved = r"(?<!\w)" + r"\s*\+\s*".join(
+            re.escape(component) + dose for component in components
+        )
+        return bool(re.search(interleaved + r"(?!\w)", query))
     return False
 
 

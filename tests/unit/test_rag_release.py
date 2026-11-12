@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from pypdf import PdfReader
 
 from scripts.rag_release import ROOT, VERSION, build_release
 
@@ -15,8 +16,33 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 @pytest.fixture
 def release_root(tmp_path: Path) -> Path:
-    for name in ("manifests", "curation", "raw", "silver"):
+    for name in ("manifests", "curation", "raw"):
         shutil.copytree(ROOT / "data" / name, tmp_path / "data" / name)
+    manifest = json.loads(
+        (tmp_path / "data/manifests/coleta-inicial-pdfs-2026-11-03.json").read_text()
+    )
+    for source in manifest["sources"]:
+        if source["source_id"] not in {"F01", "F03", "F04"}:
+            continue
+        path = tmp_path / "data/silver" / source["source_id"] / f"{source['sha256']}.jsonl"
+        path.parent.mkdir(parents=True)
+        with path.open("w", encoding="utf-8") as stream:
+            for page_number, page in enumerate(
+                PdfReader(tmp_path / "data" / source["path"]).pages, 1
+            ):
+                text = (page.extract_text() or "").strip()
+                stream.write(
+                    json.dumps(
+                        {
+                            "source_id": source["source_id"],
+                            "content_sha256": source["sha256"],
+                            "page": page_number,
+                            "text": text,
+                        },
+                        ensure_ascii=False,
+                    )
+                    + "\n"
+                )
     return tmp_path
 
 

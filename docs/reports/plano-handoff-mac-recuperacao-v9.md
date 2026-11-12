@@ -46,3 +46,5 @@
 ## Depois do gate
 
 Somente se a recuperação exata/lexical for aprovada: vetorização dos chunks com configuração e retomada registradas; benchmark vetorial e híbrido contra o mesmo contrato de identidade; avaliação de respostas com RAGAS; depois contrato de estoque com o agente. CEP → UBS continua uma frente separada, condicionada à validação do serviço territorial e dos controles de privacidade. O corpus documental não comprova estoque, elegibilidade, indicação individual nem equivalência terapêutica.
+
+**Nova rodada após a reprovação:** o filtro foi corrigido em desenvolvimento e um [candidato independente novo](v9-next-round-preparation.md) foi preparado. A revisão humana e o novo `test` continuam pendentes. Os resultados oficiais v8/v9 permanecem históricos e não serão reexecutados.
