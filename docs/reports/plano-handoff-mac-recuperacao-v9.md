@@ -1,6 +1,6 @@
 # Plano de continuidade — recuperação exata e lexical da v9
 
-**Estado verificado em 12/11/2026:** o release documental v9 está aprovado, seus 2.114 chunks estão no DVC, e a restauração no Mac foi conferida por hashes, seis testes e confirmação da operadora de `dvc status -c` sincronizado. Jhiovana registrou 28 aprovações na folha v2; o dataset foi congelado com 92 `dev` e 28 `test`. **O gate de recuperação continua fechado** até a avaliação oficial. Nenhum caso do novo `test` v9 foi executado. Não iniciar embeddings ainda.
+**Estado verificado em 12/11/2026:** o release documental v9 está aprovado, seus 2.114 chunks estão no DVC, e a restauração no Mac foi conferida por hashes, seis testes e confirmação da operadora de `dvc status -c` sincronizado. Jhiovana registrou 28 aprovações na folha v2; o dataset foi congelado com 92 `dev` e 28 `test`. As duas avaliações oficiais foram executadas uma vez e **o gate de recuperação foi reprovado**: Hit@5 e MRR@5 ficaram abaixo dos limiares. Ver [parecer](validacao-recuperacao-v9-test.md). Não iniciar embeddings.
 
 > **Estado do Git:** o código, os gabaritos, relatórios e ponteiros `.dvc` foram publicados na branch `main` do GitHub no commit `16ec4829b1bef0debfd6150fb0ac8e436c68f892` (autor `jhsribeiro`). O release e os chunks seguem no remoto DVC. O repositório separado `Data-Science/` e os arquivos locais de autenticação não entraram no commit. Para reproduzir no Mac, obter `main` atualizado **e** executar `dvc pull`; Git e DVC transportam partes complementares do estado. Não incluir `.env`, `.dvc/config.local`, tokens OAuth nem cache DVC no handoff.
 
@@ -34,14 +34,14 @@
 4. [x] **Revisar o novo gabarito com os PDFs oficiais.** Jhiovana registrou `Aprovado` e `Jhiovana 2026-11-12` para os 28 casos na [folha v2](v9-independent-test-review-v2.md). O promotor conferiu correspondência com o candidato e o release.
 5. [x] **Tratar rejeições antes de abrir o teste.** A dupla revisão está em [parecer técnico](dupla-revisao-teste-v9-2026-11-12.md). O gerador foi corrigido e criou o [candidato v2](../../evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl) e a [folha v2](v9-independent-test-review-v2.md), preservando o v1. A [auditoria v2](v9-test-candidate-v2-audit.md) registra a verificação de ausência dos quatro novos negativos nos PDFs e no catálogo. O gerador recusa sobrescrever o v2.
 6. [x] **Congelar o teste após 28 aprovações humanas no v2.** O promotor conferiu a folha v2 e escreveu `evals/datasets/consolidated_v9_reviewed.jsonl`, com 92 casos `dev` e 28 casos `test`. SHA-256 do dataset: `d66412357e72c7df3fb6975c34773613b8356ff11da67ee114995bd382873b28`; folha de revisão: `96d523fd3d16832fc539351a530daee0e7b4fb5915207372701002b190459275`; candidato v2: `0ca276409cd9e46da4665d74513de065cdf7bfb1fc0374070334f591d1970c28`. Release e chunks conservam os hashes dos itens anteriores. Registrar o commit Git que incluir este estado antes de executar o teste oficial.
-7. [ ] **Executar o `test` oficial uma vez por estratégia**, com o código e o gabarito congelados. Salvar os dois JSONs sem reexecutar nem ajustar depois de ver o resultado:
+7. [x] **Executar o `test` oficial uma vez por estratégia**, com o código e o gabarito congelados. Os dois JSONs foram salvos sem reexecução nem ajuste depois de ver o resultado:
 
    ```bash
    uv run python app.py eval --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/consolidated_v9_reviewed.jsonl --split test --strategy exact --output evals/results/consolidated_v9_exact_test.json
    uv run python app.py eval --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/consolidated_v9_reviewed.jsonl --split test --strategy lexical --output evals/results/consolidated_v9_lexical_test.json
    ```
 
-8. [ ] **Publicar o parecer do gate**, com resultados agregados e por F01/F03/F04, denominadores, erros por caso, latência p50/p95 e rastreabilidade de hashes/commit. Aprovar avanço somente se **Hit@5 ≥ 0,90, MRR@5 ≥ 0,80, zero confusões críticas e 100% das citações verificáveis** no `test` revisado. Se falhar, preservar esse resultado e preparar uma nova rodada independente; não retunar com o mesmo `test`.
+8. [x] **Publicar o parecer do gate**, com resultados agregados e por F01/F03/F04, denominadores, erros por caso, latência p50/p95 e rastreabilidade de hashes/commit. [Resultado: reprovado](validacao-recuperacao-v9-test.md), com Hit@5 = 0,7917 e MRR@5 = 0,7917 em ambas as estratégias; zero confusões críticas e 24/24 citações emitidas verificáveis. Preservar o resultado e preparar nova rodada independente; não retunar com o mesmo `test`.
 
 ## Depois do gate
 
