@@ -1,0 +1,102 @@
+{
+  "schema_version": "week3-complementary-metrics-v1",
+  "dataset_sha256": "66d764b11942d2f9065701ef3db1a88eb6875a8d7b38119d7faf09b4730f6285",
+  "release_fingerprint": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+  "method": "positive matched cases only; precision_at_3 uses fixed 3 slots; micro precision uses returned IDs; recall macro averages per-case recall",
+  "retrieval": {
+    "exact": {
+      "positive_cases": 7,
+      "relevant_returned": 7,
+      "returned_ids": 7,
+      "precision_micro": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_3_numerator": 7,
+      "precision_at_3_denominator": 21,
+      "recall_macro": 1.0,
+      "recall_cases": 7
+    },
+    "hybrid": {
+      "positive_cases": 7,
+      "relevant_returned": 7,
+      "returned_ids": 7,
+      "precision_micro": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_3_numerator": 7,
+      "precision_at_3_denominator": 21,
+      "recall_macro": 1.0,
+      "recall_cases": 7
+    },
+    "lexical": {
+      "positive_cases": 7,
+      "relevant_returned": 7,
+      "returned_ids": 7,
+      "precision_micro": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_3_numerator": 7,
+      "precision_at_3_denominator": 21,
+      "recall_macro": 1.0,
+      "recall_cases": 7
+    },
+    "vector": {
+      "positive_cases": 7,
+      "relevant_returned": 7,
+      "returned_ids": 7,
+      "precision_micro": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_3_numerator": 7,
+      "precision_at_3_denominator": 21,
+      "recall_macro": 1.0,
+      "recall_cases": 7
+    }
+  },
+  "response": {
+    "best_llm": {
+      "cases": 11,
+      "generated_without_error": 6,
+      "errors": 5,
+      "citation_metadata_valid": 7,
+      "citation_metadata_checked": 7,
+      "latency_p50_ms": 1988.07,
+      "latency_p95_ms": 6145.3255,
+      "input_tokens_known": 617,
+      "output_tokens_known": 1569,
+      "usage_coverage": 2
+    },
+    "lexical_documental": {
+      "cases": 11,
+      "generated_without_error": 11,
+      "errors": 0,
+      "citation_metadata_valid": 7,
+      "citation_metadata_checked": 7,
+      "latency_p50_ms": 36.164,
+      "latency_p95_ms": 69.35650000000001,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "usage_coverage": 0
+    },
+    "lexical_llm": {
+      "cases": 11,
+      "generated_without_error": 8,
+      "errors": 3,
+      "citation_metadata_valid": 7,
+      "citation_metadata_checked": 7,
+      "latency_p50_ms": 2135.383,
+      "latency_p95_ms": 26899.299,
+      "input_tokens_known": 1263,
+      "output_tokens_known": 3125,
+      "usage_coverage": 4
+    },
+    "llm_only": {
+      "cases": 11,
+      "generated_without_error": 10,
+      "errors": 1,
+      "citation_metadata_valid": 0,
+      "citation_metadata_checked": 0,
+      "latency_p50_ms": 3862.695,
+      "latency_p95_ms": 6596.268,
+      "input_tokens_known": 1870,
+      "output_tokens_known": 5814,
+      "usage_coverage": 10
+    }
+  }
+}
