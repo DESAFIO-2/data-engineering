@@ -2,7 +2,7 @@
 
 **Estado verificado em 12/11/2026:** o release documental v9 está aprovado, seus 2.114 chunks estão no DVC e Jhiovana confirmou `dvc push`/`dvc status -c` sincronizados no Windows. O diagnóstico de desenvolvimento terminou; **o gate de recuperação continua fechado**. Nenhum caso do novo `test` v9 foi executado. Não iniciar embeddings ainda.
 
-> **Antes de trocar de máquina:** o repositório Windows está na branch `main`, Git HEAD `420d344193c535f80c3150e7c5058c48df8dad22`, mas tem muitas alterações e arquivos novos **sem commit e sem push Git**. O Drive/DVC transporta o release e os chunks, não transporta código, gabaritos, relatórios nem ponteiros `.dvc` ausentes do Git. Portanto, `git pull` no Mac, sozinho, **não reproduzirá este estado**. Registrar em Git e enviar as mudanças necessárias ao remoto, ou transferir a árvore de trabalho por um meio controlado, antes de executar a etapa no Mac. Não incluir `.env`, `.dvc/config.local`, tokens OAuth nem cache DVC no Git ou no handoff.
+> **Estado do Git:** o código, os gabaritos, relatórios e ponteiros `.dvc` foram publicados na branch `main` do GitHub no commit `16ec4829b1bef0debfd6150fb0ac8e436c68f892` (autor `jhsribeiro`). O release e os chunks seguem no remoto DVC. O repositório separado `Data-Science/` e os arquivos locais de autenticação não entraram no commit. Para reproduzir no Mac, obter `main` atualizado **e** executar `dvc pull`; Git e DVC transportam partes complementares do estado. Não incluir `.env`, `.dvc/config.local`, tokens OAuth nem cache DVC no handoff.
 
 ## Checklist do que está feito
 
@@ -18,7 +18,7 @@
 
 ## Checklist pendente, na ordem
 
-1. [ ] **Transportar o estado para o Mac.** No Windows, revisar `git status`, incluir em Git o código, scripts, relatórios, gabaritos, `.dvc/config` e os dois ponteiros v9 (`data/releases/...v9...dvc` e `data/derived/chunks/...v9...dvc`), além das dependências pertinentes (`pyproject.toml` e `uv.lock`). Há muitas outras alterações preexistentes: revisar o diff antes de qualquer commit e separar o que não pertence ao trabalho. Publicar a revisão Git ou transferir a árvore completa por meio controlado. Não fazer commit de segredos ou dos diretórios de dados geridos pelo DVC.
+1. [x] **Publicar o estado em Git.** O commit `16ec4829b1bef0debfd6150fb0ac8e436c68f892` inclui código, scripts, relatórios, gabaritos, `.dvc/config`, ponteiros v7/v8/v9, `pyproject.toml` e `uv.lock`. O remoto `origin/main` foi confirmado no mesmo hash. Segredos e `Data-Science/` ficaram fora.
 2. [ ] **Restaurar no Mac.** Obter a revisão Git correspondente, instalar o ambiente com `uv sync --group dev`, configurar o OAuth do DVC **localmente** no Mac e executar `uv run dvc pull` seguido de `uv run dvc status -c`. O cliente OAuth próprio e seu segredo ficam em `.dvc/config.local` do Mac; o arquivo Windows contém também caminhos específicos daquele sistema e não deve ser copiado. Consulte [guia DVC](../guia-dvc-drive.md).
 3. [ ] **Conferir hashes no Mac** antes de qualquer avaliação:
 
