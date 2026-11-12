@@ -1,12 +1,10 @@
-"""The next holdout stays unopened until a separate human review is complete."""
+"""The next holdout is traceable to the approved human review."""
 
 from __future__ import annotations
 
 import json
 import sys
 from collections import Counter
-
-import pytest
 
 from rag.config import ROOT
 from rag.consolidated import normalize
@@ -48,6 +46,12 @@ def test_candidate_has_traceable_evidence_and_declared_f04_reuse() -> None:
     )
 
 
-def test_candidate_cannot_be_promoted_while_review_is_pending() -> None:
-    with pytest.raises(ValueError, match="Teste fechado"):
-        promote()
+def test_candidate_promotion_matches_approved_review() -> None:
+    cases = promote()
+    assert len(cases) == 120
+    assert sum(case["split"] == "test" for case in cases) == 28
+    assert all(
+        case["review_status"] == "reviewed" and case["reviewer"] == "Jhiovana"
+        for case in cases
+        if case["split"] == "test"
+    )

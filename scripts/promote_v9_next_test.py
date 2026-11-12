@@ -32,7 +32,7 @@ def promote() -> list[dict]:
     rows = [
         [cell.strip() for cell in line.strip().strip("|").split("|")]
         for line in REVIEW.read_text(encoding="utf-8").splitlines()
-        if re.match(r"^\| V9-R2-\d{3} \|", line)
+        if re.match(r"^\| V9-R2-\d{3} \|", line) and line.count("|") == 10
     ]
     if len(rows) != 28 or len({row[0] for row in rows}) != 28:
         raise ValueError("Teste fechado: revisão exige 28 linhas únicas")
