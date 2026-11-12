@@ -34,7 +34,7 @@ def _git_revision(root: Path) -> dict[str, Any]:
         ).stdout.strip()
         dirty = bool(
             subprocess.run(
-                ["git", "status", "--porcelain"],
+            ["git", "status", "--porcelain", "--untracked-files=no"],
                 cwd=root,
                 text=True,
                 capture_output=True,

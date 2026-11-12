@@ -44,11 +44,20 @@ def test_new_test_candidate_excludes_all_historical_families() -> None:
     assert {item["family_id"] for item in candidate}.isdisjoint(historical)
     assert sum(item["expected_status"] == "matched" for item in candidate) == 24
     assert all(item["review_status"] == "agent_reviewed" for item in candidate)
+    negatives = [item for item in candidate if item["expected_status"] == "not_in_scope"]
+    assert {item["source_id"] for item in negatives} == {"F01", "F03", "F04"}
+    assert all("99999" not in item["question"] for item in candidate)
+    assert all("nesta apresentação" not in item["question"] for item in candidate)
 
 
-def test_new_test_remains_closed_until_jhiovana_reviews_every_case() -> None:
-    with pytest.raises(ValueError, match="Teste fechado"):
-        promote()
+def test_new_test_promotion_matches_human_review() -> None:
+    cases = promote()
+    assert len(cases) == 120
+    assert sum(item["split"] == "dev" for item in cases) == 92
+    test_cases = [item for item in cases if item["split"] == "test"]
+    assert len(test_cases) == 28
+    assert all(item["review_status"] == "reviewed" for item in test_cases)
+    assert all(item["reviewer"] == "Jhiovana" for item in test_cases)
 
 
 @pytest.mark.parametrize("strategy", ["exact", "lexical"])

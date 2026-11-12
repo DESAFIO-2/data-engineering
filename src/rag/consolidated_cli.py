@@ -68,6 +68,13 @@ def run(args: Any, settings: Settings) -> int:
     if args.command == "eval":
         if args.dataset is None or args.output is None:
             raise ValueError("Informe --dataset e --output para avaliação consolidada")
+        path = Path(args.output)
+        if (
+            release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            and args.split == "test"
+            and path.exists()
+        ):
+            raise ValueError(f"Resultado v9 test já existe; não sobrescrever: {path}")
         if release.manifest["release_version"] in {
             "corpus-consolidado-v7-aprovado-2026-11-11",
             "corpus-consolidado-v8-aprovado-2026-11-11",
@@ -85,7 +92,7 @@ def run(args: Any, settings: Settings) -> int:
                 strategy=args.strategy,
                 split=args.split,
                 top_k=settings.rag_top_k,
-                review_path=ROOT / "docs/reports/v9-independent-test-review.md"
+                review_path=ROOT / "docs/reports/v9-independent-test-review-v2.md"
                 if v9
                 else ROOT
                 / (
@@ -95,7 +102,6 @@ def run(args: Any, settings: Settings) -> int:
                 ),
                 prior_review_path=ROOT / "docs/reports/v7-retrieval-review.xlsx" if v8 else None,
             )
-            path = Path(args.output)
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(
                 json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

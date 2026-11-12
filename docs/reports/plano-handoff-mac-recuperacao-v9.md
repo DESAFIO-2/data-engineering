@@ -1,6 +1,6 @@
 # Plano de continuidade — recuperação exata e lexical da v9
 
-**Estado verificado em 12/11/2026:** o release documental v9 está aprovado, seus 2.114 chunks estão no DVC e Jhiovana confirmou `dvc push`/`dvc status -c` sincronizados no Windows. O diagnóstico de desenvolvimento terminou; **o gate de recuperação continua fechado**. Nenhum caso do novo `test` v9 foi executado. Não iniciar embeddings ainda.
+**Estado verificado em 12/11/2026:** o release documental v9 está aprovado, seus 2.114 chunks estão no DVC, e a restauração no Mac foi conferida por hashes, seis testes e confirmação da operadora de `dvc status -c` sincronizado. Jhiovana registrou 28 aprovações na folha v2; o dataset foi congelado com 92 `dev` e 28 `test`. **O gate de recuperação continua fechado** até a avaliação oficial. Nenhum caso do novo `test` v9 foi executado. Não iniciar embeddings ainda.
 
 > **Estado do Git:** o código, os gabaritos, relatórios e ponteiros `.dvc` foram publicados na branch `main` do GitHub no commit `16ec4829b1bef0debfd6150fb0ac8e436c68f892` (autor `jhsribeiro`). O release e os chunks seguem no remoto DVC. O repositório separado `Data-Science/` e os arquivos locais de autenticação não entraram no commit. Para reproduzir no Mac, obter `main` atualizado **e** executar `dvc pull`; Git e DVC transportam partes complementares do estado. Não incluir `.env`, `.dvc/config.local`, tokens OAuth nem cache DVC no handoff.
 
@@ -19,8 +19,8 @@
 ## Checklist pendente, na ordem
 
 1. [x] **Publicar o estado em Git.** O commit `16ec4829b1bef0debfd6150fb0ac8e436c68f892` inclui código, scripts, relatórios, gabaritos, `.dvc/config`, ponteiros v7/v8/v9, `pyproject.toml` e `uv.lock`. O remoto `origin/main` foi confirmado no mesmo hash. Segredos e `Data-Science/` ficaram fora.
-2. [ ] **Restaurar no Mac.** Obter a revisão Git correspondente, instalar o ambiente com `uv sync --group dev`, configurar o OAuth do DVC **localmente** no Mac e executar `uv run dvc pull` seguido de `uv run dvc status -c`. O cliente OAuth próprio e seu segredo ficam em `.dvc/config.local` do Mac; o arquivo Windows contém também caminhos específicos daquele sistema e não deve ser copiado. Consulte [guia DVC](../guia-dvc-drive.md).
-3. [ ] **Conferir hashes no Mac** antes de qualquer avaliação:
+2. [x] **Restaurar no Mac.** A revisão Git, o ambiente, o OAuth local e o `dvc pull` foram concluídos. A operadora confirmou `dvc status -c` sincronizado. O cliente OAuth próprio e seu segredo ficam em `.dvc/config.local` do Mac; o arquivo Windows contém também caminhos específicos daquele sistema e não deve ser copiado. Consulte [guia DVC](../guia-dvc-drive.md).
+3. [x] **Conferir hashes no Mac** antes de qualquer avaliação:
 
    ```bash
    shasum -a 256 data/releases/corpus-consolidado-v9-aprovado-2026-11-12/release.json
@@ -30,10 +30,10 @@
    uv run python -m pytest tests/unit/test_v9_retrieval_dev.py -q
    ```
 
-   Os três hashes esperados estão no checklist concluído acima. Se algum divergir, parar e reconciliar a revisão Git/DVC.
-4. [ ] **Revisar o novo gabarito com os PDFs oficiais.** Na [folha de revisão](v9-independent-test-review.md), conferir os 28 casos: pergunta, status, princípio ativo, concentração, forma/liberação, evidências, linha, fonte e página. Registrar `Aprovado` ou `Rejeitado`, `Jhiovana AAAA-MM-DD` e justificativa para cada rejeição. As perguntas foram geradas do catálogo e podem ser fáceis ou artificiais; revisar também se o conjunto testa bem a recuperação. Não aceitar o candidato só porque a v9 documental foi aprovada.
-5. [ ] **Tratar rejeições antes de abrir o teste.** Corrigir a especificação do candidato e a fonte da geração com justificativa rastreável; regenerar o candidato e fazer nova revisão completa. `scripts/prepare_v9_test_candidate.py` **sobrescreve** a folha de revisão: não o executar após começar a preencher decisões sem antes preservar a revisão e decidir uma nova versão do candidato. Não usar resultados do recuperador para ajustar esse conjunto.
-6. [ ] **Congelar o teste após 28 aprovações humanas.** Executar `uv run python scripts/promote_v9_test.py`. O script compara a folha com o candidato, registra o hash da revisão e escreve `evals/datasets/consolidated_v9_reviewed.jsonl`, com 92 casos `dev` e 28 casos `test`. Não sobrescreve um teste já congelado. Registrar o SHA-256 do dataset, o commit Git, os parâmetros e os hashes do release/chunks.
+   Os três hashes do v1 conferiram, e os seis testes passaram. Para o candidato v2, consultar o hash em [sua auditoria](v9-test-candidate-v2-audit.md). Se algum hash divergir, parar e reconciliar a revisão Git/DVC.
+4. [x] **Revisar o novo gabarito com os PDFs oficiais.** Jhiovana registrou `Aprovado` e `Jhiovana 2026-11-12` para os 28 casos na [folha v2](v9-independent-test-review-v2.md). O promotor conferiu correspondência com o candidato e o release.
+5. [x] **Tratar rejeições antes de abrir o teste.** A dupla revisão está em [parecer técnico](dupla-revisao-teste-v9-2026-11-12.md). O gerador foi corrigido e criou o [candidato v2](../../evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl) e a [folha v2](v9-independent-test-review-v2.md), preservando o v1. A [auditoria v2](v9-test-candidate-v2-audit.md) registra a verificação de ausência dos quatro novos negativos nos PDFs e no catálogo. O gerador recusa sobrescrever o v2.
+6. [x] **Congelar o teste após 28 aprovações humanas no v2.** O promotor conferiu a folha v2 e escreveu `evals/datasets/consolidated_v9_reviewed.jsonl`, com 92 casos `dev` e 28 casos `test`. SHA-256 do dataset: `d66412357e72c7df3fb6975c34773613b8356ff11da67ee114995bd382873b28`; folha de revisão: `96d523fd3d16832fc539351a530daee0e7b4fb5915207372701002b190459275`; candidato v2: `0ca276409cd9e46da4665d74513de065cdf7bfb1fc0374070334f591d1970c28`. Release e chunks conservam os hashes dos itens anteriores. Registrar o commit Git que incluir este estado antes de executar o teste oficial.
 7. [ ] **Executar o `test` oficial uma vez por estratégia**, com o código e o gabarito congelados. Salvar os dois JSONs sem reexecutar nem ajustar depois de ver o resultado:
 
    ```bash

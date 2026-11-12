@@ -14,9 +14,34 @@ from rag.consolidated import ConsolidatedRelease, jsonl_bytes, normalize  # noqa
 
 RELEASE = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
 DEV = ROOT / "evals/datasets/consolidated_v9_dev_exploratory.jsonl"
-TARGET = ROOT / "evals/datasets/consolidated_v9_test_candidate_unreviewed.jsonl"
-REVIEW = ROOT / "docs/reports/v9-independent-test-review.md"
+TARGET = ROOT / "evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl"
+REVIEW = ROOT / "docs/reports/v9-independent-test-review-v2.md"
 SOURCE_NAMES = {"F01": "RENAME", "F03": "REME-DF", "F04": "Farmácia Popular"}
+NEGATIVES = (
+    ("F01", "cloridrato de amitriptilina", "50 mg", "comprimido"),
+    ("F03", "abacavir", "30 mg/mL", "solução oral"),
+    ("F03", "carbamazepina", "200 mg/5 mL", "suspensão oral"),
+    ("F04", "losartana potássica", "100mg", None),
+)
+
+
+def presentation_for_review(ref: dict) -> str:
+    """Render a readable presentation without changing approved release fields."""
+    ingredient = ref["active_ingredient"]
+    if ingredient == "medicamentos homeopáticos":
+        return "medicamentos homeopáticos conforme Farmacopeia Homeopática Brasileira vigente"
+    if ingredient.startswith("imunoglobulina anti-rho"):
+        return (
+            "imunoglobulina anti-rho (anti-d) solução injetável de 250 mcg a 300 mcg "
+            "em frasco-ampola ou seringa preenchida"
+        )
+    if ingredient == "solução de ringer com lactato":
+        return "solução de ringer com lactato injetável em bolsa ou frasco 500 mL"
+    if ingredient == "etinilestradiol + levonorgestrel":
+        return "etinilestradiol 0,03mg + levonorgestrel 0,15mg"
+    return f"{ingredient} {ref['strength']}" + (
+        f" {ref['form']}" if ref["form"] != "-" else ""
+    )
 
 
 def _reference(ev: dict, exact_supported: bool) -> dict:
@@ -81,6 +106,26 @@ def prepare() -> list[dict]:
             f"Na {SOURCE_NAMES[source]}, há registro de {item['active_ingredient']} "
             f"{item['strength']}{form}?"
         )
+        if item["active_ingredient"] == "medicamentos homeopáticos":
+            question = (
+                "Na RENAME, há registro de medicamentos homeopáticos conforme a "
+                "Farmacopeia Homeopática Brasileira vigente?"
+            )
+        elif source == "F03" and item["active_ingredient"].startswith("imunoglobulina anti-rho"):
+            question = (
+                "Na REME-DF, há registro de imunoglobulina anti-rho (anti-d) "
+                "solução injetável de 250 mcg a 300 mcg em frasco-ampola ou seringa preenchida?"
+            )
+        elif source == "F03" and item["active_ingredient"] == "solução de ringer com lactato":
+            question = (
+                "Na REME-DF, há registro de solução de ringer com lactato injetável "
+                "em bolsa ou frasco de 500 mL, sistema fechado de infusão?"
+            )
+        elif source == "F04" and item["active_ingredient"] == "etinilestradiol + levonorgestrel":
+            question = (
+                "Na Farmácia Popular, há registro de etinilestradiol 0,03mg + "
+                "levonorgestrel 0,15mg?"
+            )
         evs = evidence_by_med_source[(item["medicine_id"], source)]
         cases.append(
             {
@@ -100,16 +145,25 @@ def prepare() -> list[dict]:
                 "synthetic": True,
             }
         )
-    for index, (source, item) in enumerate(selected[:4], 25):
+    for index, (source, ingredient, strength, form) in enumerate(NEGATIVES, 25):
+        family = normalize(ingredient)
+        if family not in used:
+            raise ValueError(f"Negativo sem família positiva correspondente: {ingredient}")
+        if any(
+            source in item["source_ids"]
+            and normalize(item["active_ingredient"]) == family
+            and normalize(item["strength"]) == normalize(strength)
+            and (form is None or normalize(item["form"]) == normalize(form))
+            for item in release.catalog
+        ):
+            raise ValueError(f"Negativo presente no catálogo: {ingredient} {strength}")
+        presentation = f"{ingredient} {strength}" + (f" {form}" if form else "")
         cases.append(
             {
                 "id": f"V9-NEW-{index:03d}",
-                "family_id": normalize(item["active_ingredient"]),
+                "family_id": family,
                 "split": "test",
-                "question": (
-                    f"A {SOURCE_NAMES[source]} registra {item['active_ingredient']} "
-                    "99999 mg nesta apresentação?"
-                ),
+                "question": f"Na {SOURCE_NAMES[source]}, há registro de {presentation}?",
                 "source_id": source,
                 "expected_status": "not_in_scope",
                 "expected_references": [],
@@ -126,12 +180,14 @@ def prepare() -> list[dict]:
 
 
 def main() -> None:
+    if TARGET.exists() or REVIEW.exists():
+        raise ValueError("Candidato v2 já existe; preservar a versão para auditoria")
     cases = prepare()
-    TARGET.write_bytes(jsonl_bytes(cases))
+    target_bytes = jsonl_bytes(cases)
     lines = [
-        "# Revisão humana do novo teste independente v9",
+        "# Revisão humana do novo teste independente v9 — candidato v2",
         "",
-        "**Estado:** candidato fechado; nenhuma consulta deste conjunto foi executada. "
+        "**Estado:** candidato v2 não avaliado; nenhuma consulta deste conjunto foi executada. "
         "A aprovação documental da v9 não aprova estas expectativas.",
         "",
         "Para cada caso, conferir pergunta, status, apresentação, evidência, fonte e "
@@ -160,7 +216,7 @@ def main() -> None:
         presentation = "; ".join(
             sorted(
                 {
-                    f"{ref['active_ingredient']} {ref['strength']} {ref['form']}"
+                    presentation_for_review(ref)
                     for ref in case["expected_references"]
                 }
             )
@@ -169,6 +225,7 @@ def main() -> None:
             f"| {case['id']} | {case['source_id']} | {case['question']} | "
             f"{case['expected_status']} | {presentation} | {refs} | Pendente | — | — |"
         )
+    TARGET.write_bytes(target_bytes)
     REVIEW.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"{len(cases)} casos candidatos; nenhuma execução de test")
 

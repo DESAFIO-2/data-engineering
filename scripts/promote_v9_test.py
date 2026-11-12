@@ -11,12 +11,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from prepare_v9_test_candidate import presentation_for_review  # noqa: E402
+
 from rag.consolidated import ConsolidatedRelease, jsonl_bytes  # noqa: E402
 from rag.consolidated_evaluation import _preflight  # noqa: E402
 
 DEV = ROOT / "evals/datasets/consolidated_v9_dev_exploratory.jsonl"
-CANDIDATE = ROOT / "evals/datasets/consolidated_v9_test_candidate_unreviewed.jsonl"
-REVIEW = ROOT / "docs/reports/v9-independent-test-review.md"
+CANDIDATE = ROOT / "evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl"
+REVIEW = ROOT / "docs/reports/v9-independent-test-review-v2.md"
 TARGET = ROOT / "evals/datasets/consolidated_v9_reviewed.jsonl"
 RELEASE = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
 
@@ -44,7 +46,7 @@ def promote() -> list[dict]:
         presentation = "; ".join(
             sorted(
                 {
-                    f"{ref['active_ingredient']} {ref['strength']} {ref['form']}"
+                    presentation_for_review(ref)
                     for ref in case["expected_references"]
                 }
             )
