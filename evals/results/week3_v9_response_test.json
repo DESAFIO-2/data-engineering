@@ -1,0 +1,1489 @@
+{
+  "schema_version": "week3-comparison-v1",
+  "executed_at_utc": "2026-11-12T18:49:05.418848+00:00",
+  "matrix": "response",
+  "dataset_sha256": "66d764b11942d2f9065701ef3db1a88eb6875a8d7b38119d7faf09b4730f6285",
+  "split": "test",
+  "review_sha256": "512f4a2b107c235d743513babb833a0a5418e28f3ff3ce86e0d1f2b5bc9abe6f",
+  "release_fingerprint": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+  "chunks_sha256": "f6049cedf006aefd7bbc3d06f2b2fda0de4a906e3d95a1fb6272c08b9ec9da8e",
+  "chat_model": "gemini-3.5-flash",
+  "embedding_model": null,
+  "best_strategy": "exact",
+  "top_k": 5,
+  "python_version": "3.12.16",
+  "git_commit": "d6f263df95e012be7cfe2f1d26b70a14ef619e31",
+  "git_dirty": true,
+  "code_sha256": {
+    "src/rag/consolidated.py": "6f06fdc5964859303c18c0c242922ddd35aa09791746c9506eb1b143b55534b0",
+    "src/rag/answer.py": "3c4546f6feb2459e5463798ec738fb427a571fab72fda90bcba7a2fb7149cf33",
+    "src/rag/providers.py": "8a88a012fa1ba1bd2b616f7cd77cc1e57c55e2823326c32a6afe8933bfe90b3a",
+    "scripts/week3_compare.py": "b16eb347c0c74ff042d1578df25a335f55a51940a7dd934d4fc68193054f897a"
+  },
+  "summaries": {
+    "llm_only": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": null,
+      "hit_at_3": null,
+      "hit_at_5": null,
+      "mrr_at_5": null,
+      "status_accuracy": null,
+      "critical_confusions": 0,
+      "citation_precision": null,
+      "errors": 1,
+      "usage_coverage": 10,
+      "input_tokens_known": 1870,
+      "output_tokens_known": 5814,
+      "latency_p50_ms": 3862.695,
+      "latency_p95_ms": 6596.268,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 6,
+          "positive_cases": 3,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_documental": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 0.9090909090909091,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 36.164,
+      "latency_p95_ms": 69.35650000000001,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 6,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_llm": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 0.9090909090909091,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 3,
+      "usage_coverage": 4,
+      "input_tokens_known": 1263,
+      "output_tokens_known": 3125,
+      "latency_p50_ms": 2135.383,
+      "latency_p95_ms": 26899.299,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 6,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "best_llm": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 0.9090909090909091,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 5,
+      "usage_coverage": 2,
+      "input_tokens_known": 617,
+      "output_tokens_known": 1569,
+      "latency_p50_ms": 1988.07,
+      "latency_p95_ms": 6145.3255,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 6,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-01",
+      "question": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença de cloridrato de tiamina 300 mg em comprimido na RENAME não está disponível neste recorte. Vale destacar que constar em uma lista não garante o estoque do medicamento.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 3293.923,
+      "total_ms": 3293.936,
+      "usage": {
+        "input_tokens": 188,
+        "output_tokens": 498,
+        "total_tokens": 686,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 454
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-02",
+      "question": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença do dicloridrato de trientina 250 mg em cápsula na RENAME não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 3862.594,
+      "total_ms": 3862.695,
+      "usage": {
+        "input_tokens": 190,
+        "output_tokens": 577,
+        "total_tokens": 767,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 546
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-03",
+      "question": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença de digliconato de clorexidina 0,12% solução bucal na RENAME não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 3535.006,
+      "total_ms": 3535.042,
+      "usage": {
+        "input_tokens": 191,
+        "output_tokens": 564,
+        "total_tokens": 755,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 532
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-04",
+      "question": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a inclusão do abciximabe 2 mg/mL solução injetável na REME-DF não está disponível neste recorte. Cabe ressaltar que a inclusão de um medicamento em lista oficial não garante a disponibilidade de estoque no momento da consulta.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 3216.849,
+      "total_ms": 3216.923,
+      "usage": {
+        "input_tokens": 189,
+        "output_tokens": 505,
+        "total_tokens": 694,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 449
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-05",
+      "question": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença de ácido fólico 5 mg comprimido na REME-DF não está disponível neste recorte. Por isso, não é possível verificar se o item consta na lista com os dados fornecidos. Vale ressaltar que constar em uma lista oficial não garante o estoque do medicamento no local.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 5064.336,
+      "total_ms": 5064.382,
+      "usage": {
+        "input_tokens": 185,
+        "output_tokens": 692,
+        "total_tokens": 877,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 628
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-06",
+      "question": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença da varfarina sódica 5 mg comprimido na REME-DF não está disponível neste recorte. Não é possível verificar este dado sem o fornecimento da lista ou documento correspondente.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 4162.252,
+      "total_ms": 4162.344,
+      "usage": {
+        "input_tokens": 187,
+        "output_tokens": 644,
+        "total_tokens": 831,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 599
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-07",
+      "question": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação não está disponível neste recorte. Não foram fornecidos dados para verificar se o alendronato de sódio 70mg consta no elenco da Farmácia Popular.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 5175.976,
+      "total_ms": 5176.072,
+      "usage": {
+        "input_tokens": 188,
+        "output_tokens": 666,
+        "total_tokens": 854,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 630
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-08",
+      "question": "A RENAME inclui cloridrato de tiamina 150 mg comprimido?",
+      "source_id": "F01",
+      "expected_status": "not_in_scope",
+      "status": null,
+      "answer": "A informação sobre a inclusão do cloridrato de tiamina 150 mg comprimido na RENAME não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 4178.351,
+      "total_ms": 4178.422,
+      "usage": {
+        "input_tokens": 187,
+        "output_tokens": 486,
+        "total_tokens": 673,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 457
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-09",
+      "question": "A REME-DF lista varfarina sódica 2 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": null,
+      "answer": "A informação sobre a presença da varfarina sódica 2 mg comprimido na REME-DF não está disponível neste recorte. Vale ressaltar que constar em uma lista pública não garante a presença do medicamento em estoque.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 2700.501,
+      "total_ms": 2700.524,
+      "usage": {
+        "input_tokens": 187,
+        "output_tokens": 471,
+        "total_tokens": 658,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 423
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-10",
+      "question": "Quais apresentações de ácido fólico constam na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "ambiguous",
+      "status": null,
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": null,
+      "total_ms": 1576.622,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-11",
+      "question": "Qual dose de varfarina devo tomar?",
+      "source_id": "F03",
+      "expected_status": "unsupported",
+      "status": null,
+      "answer": "A informação sobre a dose da varfarina não está disponível neste recorte. Não são fornecidas indicações de dosagem de medicamentos.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 8016.428,
+      "total_ms": 8016.464,
+      "usage": {
+        "input_tokens": 178,
+        "output_tokens": 711,
+        "total_tokens": 889,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 684
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-01",
+      "question": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "cloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01",
+      "evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-3fc852a63b7cdc4f9a744669"
+      ],
+      "expected_evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 63.183,
+      "generation_ms": null,
+      "total_ms": 63.215,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-02",
+      "question": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "dicloridrato de trientina 250 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12",
+      "evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2efeeb95d423d7264ee4f85c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 38.135,
+      "generation_ms": null,
+      "total_ms": 38.15,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-03",
+      "question": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "digliconato de clorexidina 0,12% (solução bucal) consta nas fontes: F01. Presença em lista não confirma estoque.\n- digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03",
+      "evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-79aa17b5885f5f32ee83bba8"
+      ],
+      "expected_evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 38.549,
+      "generation_ms": null,
+      "total_ms": 38.56,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-04",
+      "question": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "abciximabe 2 mg/mL (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF",
+      "evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-645aaebfdcb50073ba56fd0f"
+      ],
+      "expected_evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 37.811,
+      "generation_ms": null,
+      "total_ms": 37.834,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-05",
+      "question": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "ácido fólico 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar",
+      "evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-6938360d5f17c511f8f12c49"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.868,
+      "generation_ms": null,
+      "total_ms": 35.89,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-06",
+      "question": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "varfarina sódica 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar",
+      "evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-f72cef54dc936863e11311ac"
+      ],
+      "expected_evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.205,
+      "generation_ms": null,
+      "total_ms": 35.227,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-07",
+      "question": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "alendronato de sódio 70mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- OSTEOPOROSE  alendronato de sódio 70mg ",
+      "evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-1d42c31c79d6a6fa09551952"
+      ],
+      "expected_evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.817,
+      "generation_ms": null,
+      "total_ms": 35.834,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-08",
+      "question": "A RENAME inclui cloridrato de tiamina 150 mg comprimido?",
+      "source_id": "F01",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 35.563,
+      "generation_ms": null,
+      "total_ms": 35.576,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-09",
+      "question": "A REME-DF lista varfarina sódica 2 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 35.435,
+      "generation_ms": null,
+      "total_ms": 35.443,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-10",
+      "question": "Quais apresentações de ácido fólico constam na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 36.158,
+      "generation_ms": null,
+      "total_ms": 36.164,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-11",
+      "question": "Qual dose de varfarina devo tomar?",
+      "source_id": "F03",
+      "expected_status": "unsupported",
+      "status": "not_in_scope",
+      "answer": "Informe apresentação exata: princípio ativo, concentração e forma quando documentadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 75.491,
+      "generation_ms": null,
+      "total_ms": 75.498,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-01",
+      "question": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o cloridrato de tiamina 300 mg em comprimido consta na RENAME 2024 (2ª edição), fazendo parte do Componente Básico da Assistência Farmacêutica. Contudo, vale lembrar que constar na lista não garante a presença do medicamento no estoque.",
+      "evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-3fc852a63b7cdc4f9a744669"
+      ],
+      "expected_evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.967,
+      "generation_ms": 6007.987,
+      "total_ms": 6044.002,
+      "usage": {
+        "input_tokens": 306,
+        "output_tokens": 774,
+        "total_tokens": 1080,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 709
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-02",
+      "question": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024 (2ª edição). O medicamento está listado no Componente Especializado da Assistência Farmacêutica (página 29). Vale ressaltar que a presença do medicamento nesta lista não garante que ele esteja disponível em estoque no momento.",
+      "evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2efeeb95d423d7264ee4f85c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 66.701,
+      "generation_ms": 11331.667,
+      "total_ms": 11398.421,
+      "usage": {
+        "input_tokens": 311,
+        "output_tokens": 765,
+        "total_tokens": 1076,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 686
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-03",
+      "question": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-79aa17b5885f5f32ee83bba8"
+      ],
+      "expected_evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 67.371,
+      "generation_ms": null,
+      "total_ms": 2135.383,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-04",
+      "question": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-645aaebfdcb50073ba56fd0f"
+      ],
+      "expected_evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 55.89,
+      "generation_ms": null,
+      "total_ms": 2051.129,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-05",
+      "question": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o ácido fólico 5 mg comprimido consta na REME-DF (versão F03) para uso em farmácia ambulatorial de UBS e uso hospitalar. No entanto, constar na lista não garante a disponibilidade do medicamento no estoque.",
+      "evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-6938360d5f17c511f8f12c49"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 66.27,
+      "generation_ms": 4327.141,
+      "total_ms": 4393.457,
+      "usage": {
+        "input_tokens": 322,
+        "output_tokens": 704,
+        "total_tokens": 1026,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 649
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-06",
+      "question": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a varfarina sódica 5 mg comprimido consta na REME-DF (fonte F03 de 29/10/2026, página 58) indicando indicação para UBS (farmácia ambulatorial) e uso hospitalar. Cabe ressaltar que constar na lista não garante estoque do medicamento no local.",
+      "evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-f72cef54dc936863e11311ac"
+      ],
+      "expected_evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 65.532,
+      "generation_ms": 42334.601,
+      "total_ms": 42400.177,
+      "usage": {
+        "input_tokens": 324,
+        "output_tokens": 882,
+        "total_tokens": 1206,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 804
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-07",
+      "question": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-1d42c31c79d6a6fa09551952"
+      ],
+      "expected_evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 64.838,
+      "generation_ms": null,
+      "total_ms": 2249.325,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-08",
+      "question": "A RENAME inclui cloridrato de tiamina 150 mg comprimido?",
+      "source_id": "F01",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 63.881,
+      "generation_ms": null,
+      "total_ms": 63.894,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-09",
+      "question": "A REME-DF lista varfarina sódica 2 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 37.838,
+      "generation_ms": null,
+      "total_ms": 37.844,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-10",
+      "question": "Quais apresentações de ácido fólico constam na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 34.876,
+      "generation_ms": null,
+      "total_ms": 34.882,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-11",
+      "question": "Qual dose de varfarina devo tomar?",
+      "source_id": "F03",
+      "expected_status": "unsupported",
+      "status": "not_in_scope",
+      "answer": "Informe apresentação exata: princípio ativo, concentração e forma quando documentadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 73.005,
+      "generation_ms": null,
+      "total_ms": 73.012,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-01",
+      "question": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o cloridrato de tiamina na apresentação de 300 mg em comprimido consta na RENAME 2024 (2ª edição), integrando o Componente Básico da assistência farmacêutica. No entanto, constar nesta lista oficial não garante que o medicamento esteja disponível em estoque no momento da consulta no posto de saúde.",
+      "evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-3fc852a63b7cdc4f9a744669"
+      ],
+      "expected_evidence_ids": [
+        "evidence-3fc852a63b7cdc4f9a744669"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.153,
+      "generation_ms": 6696.722,
+      "total_ms": 6731.919,
+      "usage": {
+        "input_tokens": 306,
+        "output_tokens": 863,
+        "total_tokens": 1169,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 790
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-02",
+      "question": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024 (2ª edição), no Componente Especializado da Assistência Farmacêutica. No entanto, constar na lista não garante a disponibilidade do medicamento em estoque no momento da procura.",
+      "evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2efeeb95d423d7264ee4f85c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2efeeb95d423d7264ee4f85c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 66.898,
+      "generation_ms": 5491.781,
+      "total_ms": 5558.732,
+      "usage": {
+        "input_tokens": 311,
+        "output_tokens": 706,
+        "total_tokens": 1017,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 640
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-03",
+      "question": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-79aa17b5885f5f32ee83bba8"
+      ],
+      "expected_evidence_ids": [
+        "evidence-79aa17b5885f5f32ee83bba8"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 66.153,
+      "generation_ms": null,
+      "total_ms": 2413.212,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-04",
+      "question": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-645aaebfdcb50073ba56fd0f"
+      ],
+      "expected_evidence_ids": [
+        "evidence-645aaebfdcb50073ba56fd0f"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 56.243,
+      "generation_ms": null,
+      "total_ms": 1988.07,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-05",
+      "question": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-6938360d5f17c511f8f12c49"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6938360d5f17c511f8f12c49"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 42.191,
+      "generation_ms": null,
+      "total_ms": 2165.745,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-06",
+      "question": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-f72cef54dc936863e11311ac"
+      ],
+      "expected_evidence_ids": [
+        "evidence-f72cef54dc936863e11311ac"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 64.72,
+      "generation_ms": null,
+      "total_ms": 2447.155,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-07",
+      "question": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-1d42c31c79d6a6fa09551952"
+      ],
+      "expected_evidence_ids": [
+        "evidence-1d42c31c79d6a6fa09551952"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 67.488,
+      "generation_ms": null,
+      "total_ms": 1834.64,
+      "usage": null,
+      "error": "GoogleRateLimitError",
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-08",
+      "question": "A RENAME inclui cloridrato de tiamina 150 mg comprimido?",
+      "source_id": "F01",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 65.94,
+      "generation_ms": null,
+      "total_ms": 65.953,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-09",
+      "question": "A REME-DF lista varfarina sódica 2 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 37.513,
+      "generation_ms": null,
+      "total_ms": 37.521,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-10",
+      "question": "Quais apresentações de ácido fólico constam na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 35.371,
+      "generation_ms": null,
+      "total_ms": 35.376,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-11",
+      "question": "Qual dose de varfarina devo tomar?",
+      "source_id": "F03",
+      "expected_status": "unsupported",
+      "status": "not_in_scope",
+      "answer": "Informe apresentação exata: princípio ativo, concentração e forma quando documentadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 73.32,
+      "generation_ms": null,
+      "total_ms": 73.328,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    }
+  ]
+}

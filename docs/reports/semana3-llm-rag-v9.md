@@ -1,6 +1,6 @@
 # Semana 3 — LLM × RAG no SUS Cidadão
 
-**Data limite:** 13/11/2026. **Estado:** quatro buscas concluídas em desenvolvimento; decisão final condicionada à revisão humana e a um conjunto independente congelado.
+**Data limite:** 13/11/2026. **Estado:** oito cenários executados em desenvolvimento e no teste independente congelado; revisão factual das respostas pendente.
 
 ## Produto e hipótese
 
@@ -59,6 +59,12 @@ PYTHONPATH=src uv run python -m scripts.week3_review --runs evals/results/week3_
 
 Na planilha, preencher as seis notas com `true` ou `false`; deixar vazio somente quando o critério não se aplicar ou não tiver sido avaliado. `critical_error=true` significa falha grave. O comando exige revisor, data, justificativa e vínculo de hash para cada uma das 48 respostas; um campo de nota vazio não vira aprovação automática.
 
+Para revisar as 44 respostas do teste, preencher [`week3_v9_response_test_review.csv`](../../evals/reviews/week3_v9_response_test_review.csv) e executar:
+
+```bash
+PYTHONPATH=src uv run python -m scripts.week3_review --runs evals/results/week3_v9_response_test.json --reviews evals/reviews/week3_v9_response_test_review.csv --output evals/results/week3_v9_response_test_human_review.json
+```
+
 ## Resultados de desenvolvimento: respostas
 
 Artefatos por caso: [três cenários iniciais](../../evals/results/week3_v9_response_dev.json) e [busca exata + Gemini](../../evals/results/week3_v9_response_dev_exact_llm.json). Folha para revisão factual das quatro configurações, com a resposta da entacapona atualizada após a correção e hash de cada texto: [`week3_v9_response_dev_after_fix_review.csv`](../../evals/reviews/week3_v9_response_dev_after_fix_review.csv). As demais respostas vieram da primeira execução; a planilha identifica o texto exato que deve ser revisado. O primeiro ensaio repetiu lexical + Gemini em `best_llm`; essa repetição permanece no artefato bruto para auditoria, mas foi **excluída** da comparação de quatro configurações distintas.
@@ -102,6 +108,32 @@ Um [ensaio direcionado da entacapona](../../evals/results/week3_v9_entacapona_re
 
 A indexação do modelo configurado localmente, `gemini-embedding-2`, parou em 992/2.114 e depois em 1.984/2.114 chunks com `429 RESOURCE_EXHAUSTED`: a API informou limite de **1.000 solicitações diárias de embedding no plano gratuito** para cada chave usada. Uma terceira chave fornecida pela responsável concluiu os 130 restantes. O marcador `index.json` foi criado após conferir IDs, textos, contagem e dimensão de todos os 2.114 vetores. A execução mostrou que o índice é retomável, mas também que a cota gratuita de uma chave não comportou a construção integral no mesmo dia.
 
-## Decisão atual
+## Teste independente congelado
 
-**Padrão provisório: busca lexical com resposta documental.** Após a correção, as quatro buscas empataram nas métricas de qualidade desta amostra, e lexical manteve p95 muito menor que vetor/híbrido. A resposta documental foi o cenário completo sem falha de API na matriz de respostas anterior à correção. A decisão final depende da revisão humana e do teste independente congelado. Não declarar superioridade estatística com 12 casos de desenvolvimento.
+A responsável aprovou os 11 casos em 12/11/2026 na [folha de revisão](semana3-v9-test-review-template.md). O [dataset revisado](../../evals/datasets/week3_v9_test_reviewed.jsonl) foi congelado com SHA-256 `66d764b11942d2f9065701ef3db1a88eb6875a8d7b38119d7faf09b4730f6285`; o registro de revisão tem SHA-256 `512f4a2b107c235d743513babb833a0a5418e28f3ff3ce86e0d1f2b5bc9abe6f`. O commit anterior à execução foi `d6f263df95e012be7cfe2f1d26b70a14ef619e31`. O [manifesto de congelamento](../../evals/datasets/week3_v9_test_freeze.json) guarda esses vínculos. Cada matriz foi executada uma vez, sem alterar perguntas ou parâmetros ao observar os resultados.
+
+**Busca** — [resultados por caso](../../evals/results/week3_v9_retrieval_test.json): 7 positivos, 2 negativos, 1 ambíguo e 1 pergunta clínica fora de escopo.
+
+| Estratégia | Hit@1/3/5 | MRR@5 | Status correto | Confusão crítica | Citações verificáveis | p95 total |
+|---|---:|---:|---:|---:|---:|---:|
+| Exata | 7/7 | 1,00 | 10/11 | 0 | 7/7 | 57 ms |
+| Lexical | 7/7 | 1,00 | 10/11 | 0 | 7/7 | 57 ms |
+| Vetorial | 7/7 | 1,00 | 10/11 | 0 | 7/7 | 670 ms |
+| Híbrida | 7/7 | 1,00 | 10/11 | 0 | 7/7 | 564 ms |
+
+**Resposta** — [resultados por caso](../../evals/results/week3_v9_response_test.json):
+
+| Cenário | Evidência recuperada | Status correto | Erros de API | p95 total | Revisão factual |
+|---|---:|---:|---:|---:|---|
+| Gemini sem contexto | N/A | N/A | 1/11 | 6.596 ms | Pendente |
+| Lexical documental | 7/7 | 10/11 | 0/11 | 69 ms | Pendente |
+| Lexical + Gemini | 7/7 | 10/11 | 3/11 | 26.899 ms | Pendente |
+| Exata + Gemini | 7/7 | 10/11 | 5/11 | 6.146 ms | Pendente |
+
+Todas as falhas de API foram `GoogleRateLimitError`; as latências dos cenários com falhas incluem essas tentativas e não demonstram melhor tempo de geração. A pergunta `W3-TEST-CAND-11` (“Qual dose de varfarina devo tomar?”) recebeu `not_in_scope` em vez de `unsupported` nas quatro buscas. A resposta não deu uma dose, mas o status e a mensagem de apresentação incompleta não cumprem o comportamento esperado para pergunta clínica. Esse erro foi descoberto no teste e permanece no resultado congelado.
+
+Após a execução única, o código de triagem passou a reconhecer explicitamente “qual dose”, “que dose”, “devo tomar” e “dosagem” como pedidos fora do escopo documental; um teste unitário cobre o caso. **Essa correção posterior não foi pontuada no teste independente**. Ela exige nova validação cega antes de alegar que o erro foi resolvido no produto.
+
+## Escolha para o produto
+
+**Escolha provisória: busca lexical com resposta documental.** Exata, lexical, vetor e híbrido empataram nas métricas de qualidade deste teste pequeno; lexical foi muito mais rápida que vetor/híbrido. A resposta documental foi o único cenário com evidência e sem falhas de API. Não há ganho demonstrado dos embeddings ou da geração Gemini neste recorte. A aprovação final para o produto depende de revisão humana das afirmações e citações nas [44 respostas do teste](../../evals/reviews/week3_v9_response_test_review.csv), além de um novo teste independente da correção clínica. Presença em lista continua sem implicar estoque ou elegibilidade.

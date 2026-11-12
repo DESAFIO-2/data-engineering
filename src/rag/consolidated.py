@@ -522,6 +522,11 @@ def search(
             "jejum",
             "posso tomar",
             "quanto tomar",
+            "qual dose",
+            "qual a dose",
+            "que dose",
+            "devo tomar",
+            "dosagem",
             "substituir",
             "diagnostico",
         )

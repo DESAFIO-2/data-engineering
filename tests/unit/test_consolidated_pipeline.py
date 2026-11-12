@@ -44,8 +44,10 @@ def test_wrong_strength_and_unsupported_requests_do_not_retrieve() -> None:
     chunks, _ = load_chunks(release, CHUNKS)
     wrong = search("sinvastatina 99999 mg comprimido consta na REME DF?", release, chunks)
     stock = search("A farmácia tem sinvastatina hoje?", release, chunks)
+    dosage = search("Qual dose de varfarina devo tomar?", release, chunks)
     assert wrong["status"] == "not_in_scope" and wrong["evidence"] == []
     assert stock["status"] == "unsupported" and stock["evidence"] == []
+    assert dosage["status"] == "unsupported" and dosage["evidence"] == []
 
 
 def test_cross_medicine_vector_results_cannot_be_returned() -> None:

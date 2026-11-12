@@ -39,11 +39,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if args.output.exists():
         raise FileExistsError(args.output)
     answers = load_answers(args.runs)
-    regression = load_answers([args.regression])
-    for key, record in regression.items():
-        if key[1] != "W3-DEV-02":
-            raise ValueError("Regressão inesperada")
-        answers[key] = record
+    if args.regression is not None:
+        regression = load_answers([args.regression])
+        for key, record in regression.items():
+            if key[1] != "W3-DEV-02":
+                raise ValueError("Regressão inesperada")
+            answers[key] = record
     with args.reviews.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
     if len(rows) != len(answers):
@@ -113,7 +114,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, nargs="+", required=True)
-    parser.add_argument("--regression", type=Path, required=True)
+    parser.add_argument("--regression", type=Path)
     parser.add_argument("--reviews", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     print(json.dumps(run(parser.parse_args())["summaries"], ensure_ascii=False, indent=2))
