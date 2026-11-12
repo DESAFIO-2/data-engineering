@@ -50,7 +50,8 @@ def is_clarification_input(message: str) -> bool:
         return True
     return bool(
         re.fullmatch(
-            r"[\d.,\s/%]+(?:mg|mcg|g|ui|ml)(?:\s+\w+){0,4}|"
+            r"[\d.,\s/%]+(?:mg|mcg|g|ui|ml)"
+            r"(?:\s*/\s*(?:\d+(?:[.,]\d+)?\s*)?(?:ml|g|l))?(?:\s+\w+){0,4}|"
             r"(?:comprimido|capsula|solucao|suspensao|creme|pomada|gel|gotas|"
             r"liquido|topico|adesivo|dispositivo|espuma|inalador|injecao|locao|"
             r"po|spray|supositorio)(?:\s+\w+){0,3}",

@@ -18,7 +18,9 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "dvc[gdrive]>=3.67.1",
     "mypy>=2.4.1",
+    "pyopenssl==24.2.1",
     "pytest>=9.2.0",
     "ruff>=0.17.3",
 ]

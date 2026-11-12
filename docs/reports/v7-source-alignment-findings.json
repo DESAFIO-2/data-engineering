@@ -1,0 +1,1866 @@
+{
+  "release": "corpus-consolidado-v7-codigos-corrigidos-2026-11-11",
+  "occurrences_checked": 2114,
+  "source_rows": {
+    "F01": 996,
+    "F03": 1078
+  },
+  "cache_matches_fresh_extraction": {
+    "F01": true,
+    "F03": true
+  },
+  "method": "fresh PDF geometric extraction F01/F03 and page-1 literal lines F04",
+  "findings_by_field": {
+    "strength": 145,
+    "active_ingredient": 37,
+    "form": 21,
+    "release_characteristic": 2
+  },
+  "findings": [
+    {
+      "occurrence_id": "occ-24bb5cc708bdf9ec14db3e4f",
+      "source": "F01",
+      "page": 64,
+      "row": 8,
+      "field": "strength",
+      "published": "50 mg",
+      "extracted": "50 mg*"
+    },
+    {
+      "occurrence_id": "occ-156a268279dc2ce94c2162da",
+      "source": "F01",
+      "page": 64,
+      "row": 9,
+      "field": "strength",
+      "published": "100 mg",
+      "extracted": "100 mg*"
+    },
+    {
+      "occurrence_id": "occ-bf2e571a98829db41258e934",
+      "source": "F01",
+      "page": 66,
+      "row": 4,
+      "field": "active_ingredient",
+      "published": "dapsona",
+      "extracted": "dapsona*"
+    },
+    {
+      "occurrence_id": "occ-bf2e571a98829db41258e934",
+      "source": "F01",
+      "page": 66,
+      "row": 4,
+      "field": "strength",
+      "published": "50 mg",
+      "extracted": "50 mg*"
+    },
+    {
+      "occurrence_id": "occ-6a9aafbe040f817ee5e0a943",
+      "source": "F01",
+      "page": 66,
+      "row": 5,
+      "field": "active_ingredient",
+      "published": "dapsona",
+      "extracted": "dapsona*"
+    },
+    {
+      "occurrence_id": "occ-6a9aafbe040f817ee5e0a943",
+      "source": "F01",
+      "page": 66,
+      "row": 5,
+      "field": "strength",
+      "published": "100 mg",
+      "extracted": "100 mg*"
+    },
+    {
+      "occurrence_id": "occ-0449e40e8c3c9732aa285dc5",
+      "source": "F01",
+      "page": 75,
+      "row": 6,
+      "field": "active_ingredient",
+      "published": "rifampicina",
+      "extracted": "rifampicina*"
+    },
+    {
+      "occurrence_id": "occ-0449e40e8c3c9732aa285dc5",
+      "source": "F01",
+      "page": 75,
+      "row": 6,
+      "field": "strength",
+      "published": "300 mg",
+      "extracted": "300 mg*"
+    },
+    {
+      "occurrence_id": "occ-5def59d51aa08a02896fb946",
+      "source": "F01",
+      "page": 75,
+      "row": 7,
+      "field": "active_ingredient",
+      "published": "rifampicina",
+      "extracted": "rifampicina*"
+    },
+    {
+      "occurrence_id": "occ-5def59d51aa08a02896fb946",
+      "source": "F01",
+      "page": 75,
+      "row": 7,
+      "field": "strength",
+      "published": "150 mg",
+      "extracted": "150 mg*"
+    },
+    {
+      "occurrence_id": "occ-a4156cb9abb6e7f6845203ce",
+      "source": "F01",
+      "page": 75,
+      "row": 8,
+      "field": "active_ingredient",
+      "published": "rifampicina",
+      "extracted": "rifampicina*"
+    },
+    {
+      "occurrence_id": "occ-e86fd5ebe1a99a846ba78102",
+      "source": "F03",
+      "page": 12,
+      "row": 10,
+      "field": "strength",
+      "published": "0,03 g/g (bisnaga 4,5 g)",
+      "extracted": "aciclovir pomada oftálmica 0,03 g/g bisnaga 4,5 g"
+    },
+    {
+      "occurrence_id": "occ-7f055dcf8a7efb65a42e816c",
+      "source": "F03",
+      "page": 13,
+      "row": 35,
+      "field": "strength",
+      "published": "70% (frasco 400 g a 500 g com válvula pump)",
+      "extracted": "álcool gel 70% frasco 400g a 500g válvula ´pump´"
+    },
+    {
+      "occurrence_id": "occ-a14677a2ed757c154b389b54",
+      "source": "F03",
+      "page": 13,
+      "row": 36,
+      "field": "strength",
+      "published": "70% (frasco com tampa acoplada 85 g a 100 g)",
+      "extracted": "álcool gel a 70% frasco com tampa acoplada 85 a 100g"
+    },
+    {
+      "occurrence_id": "occ-d4be94ec049eb9b3c722bf71",
+      "source": "F03",
+      "page": 14,
+      "row": 57,
+      "field": "strength",
+      "published": "400 U",
+      "extracted": "alfavelaglicerase pó liofilizado ou solução injetável 400u frasco-ampola"
+    },
+    {
+      "occurrence_id": "occ-3b811d5a0b8a3fa0594e855a",
+      "source": "F03",
+      "page": 14,
+      "row": 60,
+      "field": "strength",
+      "published": "150 mg/mL + 10 mg/mL",
+      "extracted": "algestona acetofenida + enantato de estradiol solução injetável 150 mg/mL + 10mg/mL"
+    },
+    {
+      "occurrence_id": "occ-08cb590a1fcaa0f864ac7bde",
+      "source": "F03",
+      "page": 14,
+      "row": 61,
+      "field": "active_ingredient",
+      "published": "aloe vera (babosa)",
+      "extracted": "aloe vera gel 10% pote 200g (babosa)"
+    },
+    {
+      "occurrence_id": "occ-08cb590a1fcaa0f864ac7bde",
+      "source": "F03",
+      "page": 14,
+      "row": 61,
+      "field": "strength",
+      "published": "10% (pote 200 g)",
+      "extracted": "aloe vera gel 10% pote 200g (babosa)"
+    },
+    {
+      "occurrence_id": "occ-360208b17f7cf9ae94f3016c",
+      "source": "F03",
+      "page": 14,
+      "row": 62,
+      "field": "active_ingredient",
+      "published": "aloe vera (babosa)",
+      "extracted": "aloe vera gel 10% pote 30g (babosa)"
+    },
+    {
+      "occurrence_id": "occ-360208b17f7cf9ae94f3016c",
+      "source": "F03",
+      "page": 14,
+      "row": 62,
+      "field": "strength",
+      "published": "10% (pote 30 g)",
+      "extracted": "aloe vera gel 10% pote 30g (babosa)"
+    },
+    {
+      "occurrence_id": "occ-c4d125396a8619fc70539807",
+      "source": "F03",
+      "page": 14,
+      "row": 65,
+      "field": "strength",
+      "published": "20 mcg",
+      "extracted": "alprostadil alfaciclodextrina pó liofilizado ou solução injetável 20mcg frasco- ampola ou ampola"
+    },
+    {
+      "occurrence_id": "occ-fedb4157f625b028ed9a47a1",
+      "source": "F03",
+      "page": 15,
+      "row": 83,
+      "field": "strength",
+      "published": "50 mg/mL + 12,5 mg/mL (frasco 75 ou 100 mL)",
+      "extracted": "amoxicilina + clavulanato de potássio pó p/ susp oral 50 mg/mL + 12,5 mg/mL frasco 75 ou 100 mL"
+    },
+    {
+      "occurrence_id": "occ-fedb4157f625b028ed9a47a1",
+      "source": "F03",
+      "page": 15,
+      "row": 83,
+      "field": "form",
+      "published": "pó para suspensão oral",
+      "extracted": "amoxicilina + clavulanato de potássio pó p/ susp oral 50 mg/mL + 12,5 mg/mL frasco 75 ou 100 mL"
+    },
+    {
+      "occurrence_id": "occ-7bafe6d171c044a877b78158",
+      "source": "F03",
+      "page": 15,
+      "row": 84,
+      "field": "strength",
+      "published": "500 mg + 125 mg",
+      "extracted": "amoxicilina + clavulanato de potássio comprimido revestido 500mg +125mg"
+    },
+    {
+      "occurrence_id": "occ-9275201ad140418c6d36c8fa",
+      "source": "F03",
+      "page": 15,
+      "row": 88,
+      "field": "strength",
+      "published": "2000 mg + 1000 mg (frasco-ampola)",
+      "extracted": "ampicilina + sulbactam pó para solução injetável (2000 mg + 1000 mg)/frasco- ampola"
+    },
+    {
+      "occurrence_id": "occ-71d350be0b754264c8f0187e",
+      "source": "F03",
+      "page": 16,
+      "row": 101,
+      "field": "strength",
+      "published": "20 mg + 120 mg",
+      "extracted": "artemeter + lumefantrina 20 + 120 mg comprimido (blister c/24 comprimidos) 35 kg - malária"
+    },
+    {
+      "occurrence_id": "occ-b7b50a1946ab2c60d6233953",
+      "source": "F03",
+      "page": 16,
+      "row": 105,
+      "field": "strength",
+      "published": "100 mg + 220 mg",
+      "extracted": "artesunato + mefloquina 100 + 220 mg comprimido (blister c/ 3 comp) – malária"
+    },
+    {
+      "occurrence_id": "occ-280bf43242a7ff435a167d8e",
+      "source": "F03",
+      "page": 16,
+      "row": 106,
+      "field": "strength",
+      "published": "100 mg + 220 mg",
+      "extracted": "artesunato + mefloquina 100 + 220 mg comprimido (blister c/ 6 comp) - malária"
+    },
+    {
+      "occurrence_id": "occ-5f797b2b5a1212625b4ebd74",
+      "source": "F03",
+      "page": 16,
+      "row": 107,
+      "field": "strength",
+      "published": "25 mg + 50 mg",
+      "extracted": "artesunato + mefloquina 25 + 50 mg comprimido (blister c/ 3 comp) - malária"
+    },
+    {
+      "occurrence_id": "occ-e5f9e3b1abb5ee648cb6c03f",
+      "source": "F03",
+      "page": 16,
+      "row": 108,
+      "field": "strength",
+      "published": "25 mg + 50 mg",
+      "extracted": "artesunato + mefloquina 25 + 50 mg comprimido (blister c/ 6 comp) - malária"
+    },
+    {
+      "occurrence_id": "occ-2769f85f5e5c65ab49f6fe9d",
+      "source": "F03",
+      "page": 17,
+      "row": 124,
+      "field": "strength",
+      "published": "600 mg (40 mg/mL)",
+      "extracted": "azitromicina pó para suspensão oral com 600 mg para preparo de suspensão de 40 mg/mL - tracoma"
+    },
+    {
+      "occurrence_id": "occ-89519a090065566148c04c0b",
+      "source": "F03",
+      "page": 17,
+      "row": 125,
+      "field": "strength",
+      "published": "900 mg (40 mg/mL - frasco 22,5 mL)",
+      "extracted": "azitromicina pó para suspensão oral com 900 mg para preparo de suspensão de 40 mg/mL frasco 22,5 mL"
+    },
+    {
+      "occurrence_id": "occ-74c6a272ec0d0e884d9571ab",
+      "source": "F03",
+      "page": 17,
+      "row": 130,
+      "field": "strength",
+      "published": "100 mcg + 6 mcg + 12,5 mcg/dose (dispositivo com 120 doses)",
+      "extracted": "beclometasona (dipropionato) + formoterol di-hidratado (fumarato) + glicopirrônio (brometo) solução aerossol para inalação oral 100 μcg + 6 μcg + 12,5 μcg/dose dispositivo com 120 doses"
+    },
+    {
+      "occurrence_id": "occ-db7e3514d1b84de29366c5ec",
+      "source": "F03",
+      "page": 17,
+      "row": 143,
+      "field": "strength",
+      "published": "200 mg/g (20% - pote 12 g)",
+      "extracted": "benzocaína gel 200 mg/g (20%) pote 12g (uso exclusivo odontologia) *será substituído pelo código 39364 - benzocaína gel tópico 200 mg/g (20%) pote. Unidade de estoque: grama (uso exclusivo odontologia)"
+    },
+    {
+      "occurrence_id": "occ-291972901215205d4adbe432",
+      "source": "F03",
+      "page": 18,
+      "row": 146,
+      "field": "strength",
+      "published": "6.000.000 UI (30 mcg) frasco-ampola + seringa preenchida diluente",
+      "extracted": "betainterferona 1A injetável 6.000.000 UI (30 mcg) frasco ampola + seringa preenchida com diluente"
+    },
+    {
+      "occurrence_id": "occ-811ad30f693d48862526202b",
+      "source": "F03",
+      "page": 18,
+      "row": 147,
+      "field": "strength",
+      "published": "6.000.000 UI (22 mcg) seringa preenchida",
+      "extracted": "betainterferona 1A injetável 6.000.000 UI (22mcg) seringa preenchida pronta para uso"
+    },
+    {
+      "occurrence_id": "occ-33884243e26b5bf9f7d3c82b",
+      "source": "F03",
+      "page": 18,
+      "row": 148,
+      "field": "strength",
+      "published": "9.600.000 UI/frasco-ampola + diluente",
+      "extracted": "betainterferona 1B pó liofilizado para solução injetável 9.600.000 UI/frasco- ampola +diluente (após reconstituição cada mL de solução contém 0,25mg ou 8.000.000 UI)"
+    },
+    {
+      "occurrence_id": "occ-989cc52f340aad059a2decba",
+      "source": "F03",
+      "page": 18,
+      "row": 149,
+      "field": "strength",
+      "published": "(3 mg + 3 mg)/mL (ampola 1 mL)",
+      "extracted": "betametasona (acetato + fosfato) suspensão injetável (3 mg + 3 mg)/mL ampola 1 mL"
+    },
+    {
+      "occurrence_id": "occ-d73427eedf5703737538bd3d",
+      "source": "F03",
+      "page": 18,
+      "row": 150,
+      "field": "strength",
+      "published": "0,1% (bisnaga 30 g)",
+      "extracted": "betametasona (valerato) creme 0,1 % bisnaga 30 g"
+    },
+    {
+      "occurrence_id": "occ-2bee5e9796fe54043ee08b43",
+      "source": "F03",
+      "page": 18,
+      "row": 152,
+      "field": "strength",
+      "published": "200 mg",
+      "extracted": "bezafibrato drágea ou comprimido revestido 200mg"
+    },
+    {
+      "occurrence_id": "occ-57dad9b0f42dc1d24fa74fa5",
+      "source": "F03",
+      "page": 18,
+      "row": 154,
+      "field": "strength",
+      "published": "8,4% (1 mEq/mL - ampola 10 mL)",
+      "extracted": "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-7a233c95fee458b15c44de74",
+      "source": "F03",
+      "page": 18,
+      "row": 155,
+      "field": "strength",
+      "published": "8,4% (1 mEq/mL - frasco 250 mL)",
+      "extracted": "bicarbonato de sódio solução injetável 8,4 % (1 meq/mL) frasco 250 mL"
+    },
+    {
+      "occurrence_id": "occ-e5005491dd7809b13ffa7ee6",
+      "source": "F03",
+      "page": 19,
+      "row": 171,
+      "field": "strength",
+      "published": "(5 mg + 80 mg)/mL (ampola 4 mL)",
+      "extracted": "bupivacaína (cloridrato) + glicose solução injetável (5 mg + 80 mg)/mL ampola 4 mL"
+    },
+    {
+      "occurrence_id": "occ-f38630232092332a6b26efa9",
+      "source": "F03",
+      "page": 19,
+      "row": 193,
+      "field": "strength",
+      "published": "2 mg/g (bisnaga 10 g)",
+      "extracted": "carbômer (ácido poliacrílico) gel líquido oftálmico 2 mg/g bisnaga 10 g"
+    },
+    {
+      "occurrence_id": "occ-bc5acf38f4260802e843100c",
+      "source": "F03",
+      "page": 19,
+      "row": 194,
+      "field": "active_ingredient",
+      "published": "carbonato de cálcio + colecalciferol",
+      "extracted": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido (frasco ou blister)"
+    },
+    {
+      "occurrence_id": "occ-bc5acf38f4260802e843100c",
+      "source": "F03",
+      "page": 19,
+      "row": 194,
+      "field": "strength",
+      "published": "500 mg a 600 mg cálcio elementar + 400 UI vit. D",
+      "extracted": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido (frasco ou blister)"
+    },
+    {
+      "occurrence_id": "occ-35aa08b03801a03eca1cbd89",
+      "source": "F03",
+      "page": 20,
+      "row": 216,
+      "field": "strength",
+      "published": "2% (bisnaga 30 g)",
+      "extracted": "cetoconazol creme 2 % bisnaga 30 g"
+    },
+    {
+      "occurrence_id": "occ-964239c38602f3ba42087e1c",
+      "source": "F03",
+      "page": 21,
+      "row": 236,
+      "field": "strength",
+      "published": "0,35% (bisnaga 3,5 g)",
+      "extracted": "ciprofloxacino (cloridrato) pomada oftálmica 0,35 % bisnaga 3,5 g"
+    },
+    {
+      "occurrence_id": "occ-eec17ef4b152d7498116775b",
+      "source": "F03",
+      "page": 21,
+      "row": 243,
+      "field": "strength",
+      "published": "100 mg/mL",
+      "extracted": "citarabina pó liofilizado ou solução injetá- vel 100mg/mL frasco-ampola 10mL"
+    },
+    {
+      "occurrence_id": "occ-f41adfc5a77fb3493a0a11f4",
+      "source": "F03",
+      "page": 22,
+      "row": 264,
+      "field": "strength",
+      "published": "10% (1,34 mEq/mL - ampola 10 mL)",
+      "extracted": "cloreto de potássio solução injetável 10 % (1,34 meq/mL) ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-3e5e93387cde2bbf616f4852",
+      "source": "F03",
+      "page": 23,
+      "row": 270,
+      "field": "strength",
+      "published": "0,9% (9 mg/mL - ampola 10 mL)",
+      "extracted": "cloreto de sódio solução injetável 0,9% (9 mg/mL) ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-6f5375d13042a40c50b22f38",
+      "source": "F03",
+      "page": 23,
+      "row": 271,
+      "field": "strength",
+      "published": "20% (3,4 mEq/mL - ampola 10 mL)",
+      "extracted": "cloreto de sódio solução injetável 20 % (3,4 meq/mL) ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-75c60747180854a75232b0ec",
+      "source": "F03",
+      "page": 23,
+      "row": 276,
+      "field": "strength",
+      "published": "10 mg/mL (1% - frasco 1000 mL)",
+      "extracted": "clorexidina solução aquosa 10 mg/mL (1%) frasco 1000 mL - solução tópica"
+    },
+    {
+      "occurrence_id": "occ-99a3a7d33d2f60fa4162185c",
+      "source": "F03",
+      "page": 23,
+      "row": 287,
+      "field": "strength",
+      "published": "0,6 UI/g ou 1,2 UI/g (bisnaga 30 g)",
+      "extracted": "colagenase pomada dermatológica 0,6 UI/g ou 1,2 UI/g bisnaga 30 g"
+    },
+    {
+      "occurrence_id": "occ-8d187faecc9b65a1b029a795",
+      "source": "F03",
+      "page": 23,
+      "row": 289,
+      "field": "strength",
+      "published": "B1 1,2 mg + B2 1,3 mg + B3 16 mg + B6 1,3 mg",
+      "extracted": "complexo b drágea, cápsula ou comprimido contendo, no mínimo, as seguintes vitaminas e suas doses mínimas: b1, 1,2mg; b2, 1,3mg; b3, 16mg; b6, 1,3mg. deverá conter exclusivamente vitaminas do complexo b"
+    },
+    {
+      "occurrence_id": "occ-dd957ba40ca4e72ce3664526",
+      "source": "F03",
+      "page": 23,
+      "row": 291,
+      "field": "strength",
+      "published": "500 UI a 600 UI",
+      "extracted": "complexo protrombinico humano 500 a 600 UI frasco-ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-2acbac5138b97b6025ef27eb",
+      "source": "F03",
+      "page": 24,
+      "row": 292,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "complexo protrombinico parcialmente ativado 1.000 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-cec6720b0696cc3467763f60",
+      "source": "F03",
+      "page": 24,
+      "row": 293,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "complexo protrombinico parcialmente ativado 2.500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-a2328ad01cbdd7eaf6399199",
+      "source": "F03",
+      "page": 24,
+      "row": 294,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "complexo protrombinico parcialmente ativado 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-34c211344aed1ca3c6baa605",
+      "source": "F03",
+      "page": 24,
+      "row": 295,
+      "field": "strength",
+      "published": "500 UI a 600 UI (frasco-ampola)",
+      "extracted": "complexo protrombinico total injetável 500 UI a 600 UI frasco-ampola"
+    },
+    {
+      "occurrence_id": "occ-aaec62b34383e26e09f8794e",
+      "source": "F03",
+      "page": 24,
+      "row": 296,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VII ativado recombinante 1mg (50kui) frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-6dc34df67785ee2bef866fdf",
+      "source": "F03",
+      "page": 24,
+      "row": 297,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VII ativado recombinante 2mg (100kui) frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-d5511594a7495ad4d86ef56e",
+      "source": "F03",
+      "page": 24,
+      "row": 298,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VII ativado recombinante 5mg (250kui) frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-ce00e77552ff3ea43768d038",
+      "source": "F03",
+      "page": 24,
+      "row": 299,
+      "field": "strength",
+      "published": "450 UI a 500 UI",
+      "extracted": "concentrado de fator VIII para doença de von willebrand 450 a 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-ce00e77552ff3ea43768d038",
+      "source": "F03",
+      "page": 24,
+      "row": 299,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII para doença de von willebrand 450 a 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-c5954d43bacfc3b36ef60e9f",
+      "source": "F03",
+      "page": 24,
+      "row": 300,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand 250UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-fbadecd101697a7c4a99e493",
+      "source": "F03",
+      "page": 24,
+      "row": 301,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII para imunotolerancia contendo fator de von willebrand 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-5c4b29dfa1a9134aaf4401c3",
+      "source": "F03",
+      "page": 24,
+      "row": 302,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII recombinante 1.000 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-514302c5ebfe39da32cc0793",
+      "source": "F03",
+      "page": 24,
+      "row": 303,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII recombinante 250 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-74dc6ba00f49a278be13f1b0",
+      "source": "F03",
+      "page": 24,
+      "row": 304,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado de fator VIII recombinante 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-0fe17d8a84b5c7dd712524b8",
+      "source": "F03",
+      "page": 24,
+      "row": 305,
+      "field": "strength",
+      "published": "200 UI a 250 UI",
+      "extracted": "concentrado plasmatico de fator IX 200 a 250 UI frasco ampola -coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-0fe17d8a84b5c7dd712524b8",
+      "source": "F03",
+      "page": 24,
+      "row": 305,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator IX 200 a 250 UI frasco ampola -coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-00e14eea89c252dbdefdbe72",
+      "source": "F03",
+      "page": 24,
+      "row": 306,
+      "field": "strength",
+      "published": "500 UI a 600 UI",
+      "extracted": "concentrado plasmatico de fator IX 500 a 600 UI frasco ampola -coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-00e14eea89c252dbdefdbe72",
+      "source": "F03",
+      "page": 24,
+      "row": 306,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator IX 500 a 600 UI frasco ampola -coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-7e23bb480d24a60747892567",
+      "source": "F03",
+      "page": 24,
+      "row": 307,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator VIII 1.000 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-4b258d4e5ef990070d72b3c1",
+      "source": "F03",
+      "page": 24,
+      "row": 308,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator VIII 250 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-566ad0f0dc15f991a8d22de7",
+      "source": "F03",
+      "page": 24,
+      "row": 309,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator VIII 500 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-f716947e867b48a761e0fb67",
+      "source": "F03",
+      "page": 24,
+      "row": 310,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "concentrado plasmatico de fator XIII 250 UI frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-afa996cfd47bae4c1669fa1a",
+      "source": "F03",
+      "page": 25,
+      "row": 314,
+      "field": "active_ingredient",
+      "published": "cordia verbenacea (erva-baleeira)",
+      "extracted": "cordia verbenacea gel 10% pote 200g (erva baleeira)"
+    },
+    {
+      "occurrence_id": "occ-afa996cfd47bae4c1669fa1a",
+      "source": "F03",
+      "page": 25,
+      "row": 314,
+      "field": "strength",
+      "published": "10% (pote 200 g)",
+      "extracted": "cordia verbenacea gel 10% pote 200g (erva baleeira)"
+    },
+    {
+      "occurrence_id": "occ-f70c3177ef1085ef231dfe45",
+      "source": "F03",
+      "page": 25,
+      "row": 315,
+      "field": "active_ingredient",
+      "published": "cordia verbenacea (erva-baleeira)",
+      "extracted": "cordia verbenacea gel 10% pote 30g (erva baleeira)"
+    },
+    {
+      "occurrence_id": "occ-f70c3177ef1085ef231dfe45",
+      "source": "F03",
+      "page": 25,
+      "row": 315,
+      "field": "strength",
+      "published": "10% (pote 30 g)",
+      "extracted": "cordia verbenacea gel 10% pote 30g (erva baleeira)"
+    },
+    {
+      "occurrence_id": "occ-51ff8fa4d4c886e6e8c742b0",
+      "source": "F03",
+      "page": 26,
+      "row": 340,
+      "field": "strength",
+      "published": "0,1 mg/mL (frasco 2,5 mL)",
+      "extracted": "desmopressina spray nasal 0,1mg/mL frasco 2,5mL"
+    },
+    {
+      "occurrence_id": "occ-73c991d8ed35e115797070c8",
+      "source": "F03",
+      "page": 26,
+      "row": 341,
+      "field": "strength",
+      "published": "0,1 mg/mL (frasco 2,5 mL)",
+      "extracted": "desmopressina spray nasal 0,1mg/mL frasco 2,5mL"
+    },
+    {
+      "occurrence_id": "occ-08d4e9a33d09f64b45a58cf2",
+      "source": "F03",
+      "page": 26,
+      "row": 342,
+      "field": "strength",
+      "published": "0,1% (bisnaga 10 g)",
+      "extracted": "dexametasona (acetato) creme 0,1 % bisnaga 10 g"
+    },
+    {
+      "occurrence_id": "occ-3db3f93f02c1d14cdda1861a",
+      "source": "F03",
+      "page": 26,
+      "row": 349,
+      "field": "strength",
+      "published": "50 mg/g (bisnaga 30 g)",
+      "extracted": "dexpantenol pomada 50mg/g bisnaga 30g"
+    },
+    {
+      "occurrence_id": "occ-25856ffe401a078800d28669",
+      "source": "F03",
+      "page": 26,
+      "row": 350,
+      "field": "strength",
+      "published": "(1 mg + 3 mg)/mL (frasco 15 mL)",
+      "extracted": "dextrana + hipromelose solução oftálmica (1mg +3mg)/mL frasco 15 mL"
+    },
+    {
+      "occurrence_id": "occ-ca1a3c773c466a802699f6fb",
+      "source": "F03",
+      "page": 26,
+      "row": 359,
+      "field": "strength",
+      "published": "30 mg + 50 mg + 1000 mg + 1000 mg (ampola 10 mL)",
+      "extracted": "dimenidrinato + piridoxina (cloridrato) + glicose + frutose solução injetável 30 mg +50 mg + 1000 mg + 1000 mg ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-9bd091af267ad5bcafdc9cd6",
+      "source": "F03",
+      "page": 28,
+      "row": 393,
+      "field": "strength",
+      "published": "(100 mg + 50 mg + 75 mg) + 150 mg (ivacaftor)",
+      "extracted": "elexacaftor + tezacaftor + ivacaftor (100 mg + 50 mg + 75 mg) comprimido revestido co-embalado com ivacaftor 150 mg comprimido revestido"
+    },
+    {
+      "occurrence_id": "occ-da92478589d9a0a56feb7c9b",
+      "source": "F03",
+      "page": 28,
+      "row": 394,
+      "field": "strength",
+      "published": "(50 mg + 25 mg + 37,5 mg) + 75 mg (ivacaftor)",
+      "extracted": "elexacaftor + tezacaftor + ivacaftor (50 mg + 25 mg + 37,5 mg) comprimido revestido co-embalado com ivacaftor 75 mg comprimido revestido"
+    },
+    {
+      "occurrence_id": "occ-d9b95b57b776e6948d5c47a9",
+      "source": "F03",
+      "page": 29,
+      "row": 420,
+      "field": "strength",
+      "published": "(5 mg + 50 mg)/mL (ampola ou seringa preenchida 1 mL)",
+      "extracted": "estradiol (valerato) + noretisterona (enantato) solução injetável (5 mg +50 mg) / mL ampola ou seringa preenchida 1 mL"
+    },
+    {
+      "occurrence_id": "occ-e7922c97b272a1017e5df1b6",
+      "source": "F03",
+      "page": 29,
+      "row": 423,
+      "field": "strength",
+      "published": "1 mg/g (bisnaga 50 g)",
+      "extracted": "estriol creme vaginal 1 mg / g bisnaga 50g"
+    },
+    {
+      "occurrence_id": "occ-e6be717879d8a0270783ac6a",
+      "source": "F03",
+      "page": 31,
+      "row": 458,
+      "field": "strength",
+      "published": "0,250 mg/mL + 10.000 UI/mL + 3,5 mg/mL + 20 mg/mL (frasco 5 mL)",
+      "extracted": "fluocinolona acetonida + sulfato de polimixina B + sulfato de neomicina + cloridrato de lidocaína (0,250 mg/mL + 10.000 UI/mL + 3,5 mg/mL + 20 mg/mL) solução otológica frasco 5mL"
+    },
+    {
+      "occurrence_id": "occ-c9bc36fa60e7502f10aa9a60",
+      "source": "F03",
+      "page": 31,
+      "row": 463,
+      "field": "strength",
+      "published": "100 mcg + 62,5 mcg + 25 mcg/dose (dispositivo com 30 doses)",
+      "extracted": "fluticasona (furoato) + umeclidínio (brometo) + vilanterol (trifenatato) pó para inalação oral 100mcg + 62,5 mcg + 25 mcg/dose dispositivo com 30 doses"
+    },
+    {
+      "occurrence_id": "occ-4718a35240be10d89e68524c",
+      "source": "F03",
+      "page": 31,
+      "row": 464,
+      "field": "strength",
+      "published": "50 mcg/dose",
+      "extracted": "fluticasona (propionato) aerossol ou spray para inalação oral 50mcg/dose frasco 120 doses"
+    },
+    {
+      "occurrence_id": "occ-51dcb075404e0e56191ddb1a",
+      "source": "F03",
+      "page": 32,
+      "row": 469,
+      "field": "strength",
+      "published": "(12 mcg + 400 mcg)/dose (frasco ou tubo com 60 doses)",
+      "extracted": "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (12mcg +400mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses"
+    },
+    {
+      "occurrence_id": "occ-ec6f6f783a75ee7301337a25",
+      "source": "F03",
+      "page": 32,
+      "row": 470,
+      "field": "strength",
+      "published": "(6 mcg + 200 mcg)/dose (frasco ou tubo com 60 doses)",
+      "extracted": "formoterol (fumarato) + budesonida pó inalante ou cápsula com pó para inalação (6mcg + 200mcg)/dose frasco com inalador com 60 doses ou tubo com 60 doses"
+    },
+    {
+      "occurrence_id": "occ-c500bcdbb85f9875820c5df8",
+      "source": "F03",
+      "page": 32,
+      "row": 473,
+      "field": "strength",
+      "published": "(16 g + 6 g)/100 mL (frasco ou bolsa 125 mL a 133 mL)",
+      "extracted": "fosfato de sodio monobasico + fosfato de sodio dibasico solução enema (16 g +6 g)/100 mL frasco ou bolsa 125 mL a 133 mL"
+    },
+    {
+      "occurrence_id": "occ-b042234935f17939a393d2ab",
+      "source": "F03",
+      "page": 33,
+      "row": 500,
+      "field": "strength",
+      "published": "120 mg/mL (12% - frasco ou bolsa 500 mL)",
+      "extracted": "glicerina (glicerol) solução retal/enema 120mg/mL (12 %) frasco ou bolsa 500 mL com sonda ou aplicador"
+    },
+    {
+      "occurrence_id": "occ-e3b3ea674e18ca059d6549eb",
+      "source": "F03",
+      "page": 33,
+      "row": 507,
+      "field": "active_ingredient",
+      "published": "glicose + cloreto de sódio",
+      "extracted": "glicose 5 % + cloreto de sodio 0,9 % solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-e3b3ea674e18ca059d6549eb",
+      "source": "F03",
+      "page": 33,
+      "row": 507,
+      "field": "strength",
+      "published": "5% + 0,9% (bolsa ou frasco 500 mL)",
+      "extracted": "glicose 5 % + cloreto de sodio 0,9 % solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-af3932964ad48be9f18e6f16",
+      "source": "F03",
+      "page": 34,
+      "row": 526,
+      "field": "strength",
+      "published": "10 mg/g (1% - bisnaga)",
+      "extracted": "hidrocortisona (acetato) creme 10mg/g (1%) bisnaga. Unidade de estoque/licitação: grama"
+    },
+    {
+      "occurrence_id": "occ-a702e7f8cea75101a864bb6d",
+      "source": "F03",
+      "page": 34,
+      "row": 530,
+      "field": "strength",
+      "published": "(60 mg + 40 mg)/mL (frasco mín. 100 mL)",
+      "extracted": "hidroxido de aluminio + hidroxido de magnésio suspensão oral (60 mg + 40 mg)/mL frasco com no minimo 100 mL"
+    },
+    {
+      "occurrence_id": "occ-9804085866c3d3a8183e020a",
+      "source": "F03",
+      "page": 36,
+      "row": 560,
+      "field": "strength",
+      "published": "carpule 3 mL",
+      "extracted": "insulina análoga de ação prolongada carpule 3mL"
+    },
+    {
+      "occurrence_id": "occ-138e7fcb892102564091acf5",
+      "source": "F03",
+      "page": 36,
+      "row": 569,
+      "field": "strength",
+      "published": "10% (teor de iodo 1% - frasco 1000 mL)",
+      "extracted": "iodopovidona (iodopolividona) solução alcoolica 10% (teor de iodo 1%) frasco 1000 mL"
+    },
+    {
+      "occurrence_id": "occ-2c6a5103a83f0deaada21735",
+      "source": "F03",
+      "page": 36,
+      "row": 570,
+      "field": "strength",
+      "published": "10% (teor de iodo 1% - frasco 1000 mL)",
+      "extracted": "iodopovidona (iodopolividona) solução aquosa 10% (teor de iodo 1%) frasco 1000 mL"
+    },
+    {
+      "occurrence_id": "occ-2eae1621c3e43ecefe3e241c",
+      "source": "F03",
+      "page": 36,
+      "row": 571,
+      "field": "strength",
+      "published": "10% (teor de iodo 1% - frasco 1000 mL)",
+      "extracted": "iodopovidona (iodopolividona) solução degermante 10% (teor de iodo 1%) frasco 1000 mL"
+    },
+    {
+      "occurrence_id": "occ-ff5c01c91fa347483018f0a0",
+      "source": "F03",
+      "page": 37,
+      "row": 586,
+      "field": "strength",
+      "published": "frasco 1 mL",
+      "extracted": "kit selante de fibrina solução tópica frasco 1mL"
+    },
+    {
+      "occurrence_id": "occ-39c91371f765b3377864d13c",
+      "source": "F03",
+      "page": 37,
+      "row": 588,
+      "field": "strength",
+      "published": "667 mg/mL (frasco 120 mL ou 200 mL)",
+      "extracted": "lactulose líquido oral 667 mg/mL frasco 120 mL ou 200 mL. Unidade de estoque/licitação: mL."
+    },
+    {
+      "occurrence_id": "occ-0d65a0214341f4ea9d89e1d0",
+      "source": "F03",
+      "page": 38,
+      "row": 607,
+      "field": "strength",
+      "published": "100 mg + 25 mg",
+      "extracted": "levodopa + benserazida (cloridrato) comprimido ou cápsula ou drágea liberação prolongada 100 mg +25 mg"
+    },
+    {
+      "occurrence_id": "occ-266f79c4efb99c09076811a3",
+      "source": "F03",
+      "page": 39,
+      "row": 622,
+      "field": "strength",
+      "published": "2% (bisnaga 30 g)",
+      "extracted": "lidocaína (cloridrato) geleia 2 % bisnaga 30 g"
+    },
+    {
+      "occurrence_id": "occ-81b56158be5bea770866bc32",
+      "source": "F03",
+      "page": 39,
+      "row": 631,
+      "field": "active_ingredient",
+      "published": "lippia sidoides (alecrim-pimenta)",
+      "extracted": "lippia sidoides gel 10% pote 200g (alecrim pimenta)"
+    },
+    {
+      "occurrence_id": "occ-81b56158be5bea770866bc32",
+      "source": "F03",
+      "page": 39,
+      "row": 631,
+      "field": "strength",
+      "published": "10% (pote 200 g)",
+      "extracted": "lippia sidoides gel 10% pote 200g (alecrim pimenta)"
+    },
+    {
+      "occurrence_id": "occ-e4cbc1733e4ee6808a8e5481",
+      "source": "F03",
+      "page": 39,
+      "row": 632,
+      "field": "active_ingredient",
+      "published": "lippia sidoides (alecrim-pimenta)",
+      "extracted": "lippia sidoides gel 10% pote 30g (alecrim pimenta)"
+    },
+    {
+      "occurrence_id": "occ-e4cbc1733e4ee6808a8e5481",
+      "source": "F03",
+      "page": 39,
+      "row": 632,
+      "field": "strength",
+      "published": "10% (pote 30 g)",
+      "extracted": "lippia sidoides gel 10% pote 30g (alecrim pimenta)"
+    },
+    {
+      "occurrence_id": "occ-8d4d96cbceb2f870e79e3b16",
+      "source": "F03",
+      "page": 39,
+      "row": 633,
+      "field": "strength",
+      "published": "6 mg/mL (sistema de aplicação 3 mL)",
+      "extracted": "liraglutida solução injetável 6mg/mL sistema de aplicação 3mL multidoses de até 3,0 mg (indicação: controle de peso)"
+    },
+    {
+      "occurrence_id": "occ-d1afd37cabec657dfecf0ab9",
+      "source": "F03",
+      "page": 39,
+      "row": 634,
+      "field": "strength",
+      "published": "100 mg + 25 mg",
+      "extracted": "lopinavir + ritonavir (lpv/r ) comprimido 100mg + 25 mg - HIV"
+    },
+    {
+      "occurrence_id": "occ-8806d48721f7f68dd6d71a8a",
+      "source": "F03",
+      "page": 39,
+      "row": 635,
+      "field": "strength",
+      "published": "80 mg/mL + 20 mg/mL (frasco 160 mL)",
+      "extracted": "lopinavir + ritonavir (lpv/r) solução oral 80mg/mL + 20mg/mL frasco 160 mL - HIV"
+    },
+    {
+      "occurrence_id": "occ-468eb11c1379788ba952c10d",
+      "source": "F03",
+      "page": 40,
+      "row": 655,
+      "field": "strength",
+      "published": "10 mg/mL (frasco 100 mL)",
+      "extracted": "mesalazina enema 10 mg/mL frasco 100 mL"
+    },
+    {
+      "occurrence_id": "occ-8d4c9df6f2789ee0f39f16ec",
+      "source": "F03",
+      "page": 40,
+      "row": 656,
+      "field": "strength",
+      "published": "2 g",
+      "extracted": "mesalazina granulo de liberação prolongada envelope 2g sachê"
+    },
+    {
+      "occurrence_id": "occ-f0e28dbd049d6b0b301b77cf",
+      "source": "F03",
+      "page": 41,
+      "row": 681,
+      "field": "strength",
+      "published": "100 mg/g (bisnaga 50 g + 10 aplicadores)",
+      "extracted": "metronidazol gel vaginal 100mg/g bisnaga 50g + aplicadores (10 para cada bisnaga)"
+    },
+    {
+      "occurrence_id": "occ-c1c3e22c4cbb25745f676bd4",
+      "source": "F03",
+      "page": 41,
+      "row": 688,
+      "field": "strength",
+      "published": "20 mg/g (bisnaga 28 g)",
+      "extracted": "miconazol (nitrato) 20mg/g creme dermatológico bisnaga 28 g"
+    },
+    {
+      "occurrence_id": "occ-39145d3256bd9b355a86f01b",
+      "source": "F03",
+      "page": 41,
+      "row": 689,
+      "field": "strength",
+      "published": "20 mg/g (bisnaga 80 g + aplicadores)",
+      "extracted": "miconazol creme vaginal 20mg/g bisnaga 80 g + aplicadores"
+    },
+    {
+      "occurrence_id": "occ-c2822e9b57c1d86fc22ad93f",
+      "source": "F03",
+      "page": 42,
+      "row": 708,
+      "field": "strength",
+      "published": "0,04% (2,5 mL)",
+      "extracted": "mitomicina pó liofilizado 0,04% 2,5 mL frasco ampola (manipulado)"
+    },
+    {
+      "occurrence_id": "occ-34af9fd510e2641284194b08",
+      "source": "F03",
+      "page": 43,
+      "row": 724,
+      "field": "strength",
+      "published": "20 mg/g (bisnaga 15 g)",
+      "extracted": "mupirocina creme ou pomada 20 mg/g bisnaga 15 g"
+    },
+    {
+      "occurrence_id": "occ-98cbfa4d122c6e0d631964c1",
+      "source": "F03",
+      "page": 43,
+      "row": 732,
+      "field": "strength",
+      "published": "(5 mg + 250 UI)/g (bisnaga 15 g)",
+      "extracted": "neomicina (sulfato) + bacitracina (zincica) pomada (5 mg +250 ui)/g bisnaga 15 g"
+    },
+    {
+      "occurrence_id": "occ-a7a73b34d4ce3fbb334734e0",
+      "source": "F03",
+      "page": 44,
+      "row": 740,
+      "field": "strength",
+      "published": "2 mg",
+      "extracted": "nicotina goma de mascar 2mg - tabagismo"
+    },
+    {
+      "occurrence_id": "occ-56be2f62588ca6292918b5ac",
+      "source": "F03",
+      "page": 44,
+      "row": 747,
+      "field": "active_ingredient",
+      "published": "nirmatrelvir + ritonavir",
+      "extracted": "nirmatrelvir 2 comprimidos revestidos 150mg + ritonavir comprimido revestido 100 mg – COVID-19"
+    },
+    {
+      "occurrence_id": "occ-56be2f62588ca6292918b5ac",
+      "source": "F03",
+      "page": 44,
+      "row": 747,
+      "field": "strength",
+      "published": "(150 mg x 2) + 100 mg",
+      "extracted": "nirmatrelvir 2 comprimidos revestidos 150mg + ritonavir comprimido revestido 100 mg – COVID-19"
+    },
+    {
+      "occurrence_id": "occ-250537e61387b7413515878d",
+      "source": "F03",
+      "page": 45,
+      "row": 770,
+      "field": "strength",
+      "published": "100% (frasco 100 mL)",
+      "extracted": "oleo mineral 100 % puro frasco 100 mL"
+    },
+    {
+      "occurrence_id": "occ-9e36c2c5050e784a8afa8dbc",
+      "source": "F03",
+      "page": 46,
+      "row": 783,
+      "field": "strength",
+      "published": "4 mg/mL (0,4% - frasco 10 mL)",
+      "extracted": "oxibuprocaína (cloridrato) solução oftálmica estéril 4 mg/mL (0,4 %) frasco 10 mL"
+    },
+    {
+      "occurrence_id": "occ-e8d36ab4f9f02c6c8d0bf0a0",
+      "source": "F03",
+      "page": 46,
+      "row": 788,
+      "field": "strength",
+      "published": "100 mg/g + 1.000 UI/g + 400 UI/g (bisnaga 45 g)",
+      "extracted": "oxido de zinco + vitamina a + vitamina d pomada dermatologica bisnaga 45 g. deve conter a seguinte concentração mínima de cada um dos princípios ativos: oxido de zinco: 100 mg/g; vitamina a: 1000 UI/g; vitamina d 400 UI/g."
+    },
+    {
+      "occurrence_id": "occ-386c6917918eb996e4015fda",
+      "source": "F03",
+      "page": 46,
+      "row": 791,
+      "field": "strength",
+      "published": "10.000 UI (150 mg)",
+      "extracted": "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 10.000 UI (equivale a 150mg)"
+    },
+    {
+      "occurrence_id": "occ-a9315e6344483d7811612fda",
+      "source": "F03",
+      "page": 46,
+      "row": 792,
+      "field": "strength",
+      "published": "25.000 UI (300 mg)",
+      "extracted": "pancreatina (lipase + amilase + protease) cápsula com microgranulos de liberação entérica 25.000 UI (equivale a 300mg)"
+    },
+    {
+      "occurrence_id": "occ-188379f9a1a901911d6ec8e6",
+      "source": "F03",
+      "page": 46,
+      "row": 798,
+      "field": "strength",
+      "published": "2 mg",
+      "extracted": "pastilha de nicotina 2mg -tabagismo"
+    },
+    {
+      "occurrence_id": "occ-b3d92d4f93de913f3ec12ed5",
+      "source": "F03",
+      "page": 47,
+      "row": 809,
+      "field": "strength",
+      "published": "50 mg/mL (frasco 60 mL)",
+      "extracted": "permetrina loção tópica 50 mg/mL frasco 60 mL"
+    },
+    {
+      "occurrence_id": "occ-c46256c1a904b7e76d88799f",
+      "source": "F03",
+      "page": 47,
+      "row": 823,
+      "field": "active_ingredient",
+      "published": "pó para solução básica para hemodiálise (sódio + bicarbonato + cloreto + glicose)",
+      "extracted": "pó para solução básica para hemodiálise composição: sódio, bicarbonato, cloreto e glicose concentração: 98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L bolsa plástica 658 g"
+    },
+    {
+      "occurrence_id": "occ-c46256c1a904b7e76d88799f",
+      "source": "F03",
+      "page": 47,
+      "row": 823,
+      "field": "strength",
+      "published": "98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L (bolsa plástica 658 g)",
+      "extracted": "pó para solução básica para hemodiálise composição: sódio, bicarbonato, cloreto e glicose concentração: 98 mEq/L + 35 mEq/L + 63 mEq/L + 1 g/L bolsa plástica 658 g"
+    },
+    {
+      "occurrence_id": "occ-4bd5f5d42ec8ef95ec152915",
+      "source": "F03",
+      "page": 48,
+      "row": 828,
+      "field": "active_ingredient",
+      "published": "poliquimioterapia única adulto (PQT-u adulto)",
+      "extracted": "poliquimioterapia única adulto - PQT-u adulto"
+    },
+    {
+      "occurrence_id": "occ-390b2fafe9c35c873c13e1db",
+      "source": "F03",
+      "page": 48,
+      "row": 829,
+      "field": "active_ingredient",
+      "published": "poliquimioterapia única infantil (PQT-u infantil)",
+      "extracted": "poliquimioterapia única infantil - PQT-u infantil"
+    },
+    {
+      "occurrence_id": "occ-daa827193511b8e2acec493b",
+      "source": "F03",
+      "page": 48,
+      "row": 830,
+      "field": "strength",
+      "published": "frasco-ampola ou ampola (uso adulto)",
+      "extracted": "polivitaminicos ou multivitaminicos sem minerais pó liofilizado para solução injetável ou solução injetável frasco- ampola ou ampola (uso adulto)"
+    },
+    {
+      "occurrence_id": "occ-ef10d7c80122f262da327f1c",
+      "source": "F03",
+      "page": 48,
+      "row": 845,
+      "field": "active_ingredient",
+      "published": "produto de cannabis (canabidiol)",
+      "extracted": "produto de cannabis (canabidiol 200mg/mL) solução oral com seringa dosadora ou solução gotas frasco. Unidade de estoque/licitação: mL."
+    },
+    {
+      "occurrence_id": "occ-5e0ab245d96ae38a847ce9ad",
+      "source": "F03",
+      "page": 48,
+      "row": 846,
+      "field": "active_ingredient",
+      "published": "produto de cannabis (canabidiol)",
+      "extracted": "produto de cannabis (canabidiol 50mg/mL) solução oral com seringa dosadora ou solução gotas frasco. Unidade de estoque/licitação: mL."
+    },
+    {
+      "occurrence_id": "occ-c731c1d37d51b270a7f9b041",
+      "source": "F03",
+      "page": 50,
+      "row": 873,
+      "field": "active_ingredient",
+      "published": "retinol (acetato) + aminoacidos + dl-metionina + cloranfenicol",
+      "extracted": "retinol (acetato) + aminoacidos + dl- metionina + cloranfenicol pomada oftálmica (10000 UI + 25 mg + 5 mg + 5 mg)/g bisnaga 3,5 g"
+    },
+    {
+      "occurrence_id": "occ-cfcfff8571d17806ea96b35c",
+      "source": "F03",
+      "page": 50,
+      "row": 877,
+      "field": "active_ingredient",
+      "published": "rifampicina + isoniazida + pirazinamida + etambutol",
+      "extracted": "rifampicina 150 mg + isoniazida 75 mg + pirazinamida 400 mg + etambutol 275 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-cfcfff8571d17806ea96b35c",
+      "source": "F03",
+      "page": 50,
+      "row": 877,
+      "field": "strength",
+      "published": "150 mg + 75 mg + 400 mg + 275 mg",
+      "extracted": "rifampicina 150 mg + isoniazida 75 mg + pirazinamida 400 mg + etambutol 275 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-e45b11383b3f72658e2434d5",
+      "source": "F03",
+      "page": 50,
+      "row": 878,
+      "field": "active_ingredient",
+      "published": "rifampicina + isoniazida",
+      "extracted": "rifampicina 150 mg + isoniazida 75 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-e45b11383b3f72658e2434d5",
+      "source": "F03",
+      "page": 50,
+      "row": 878,
+      "field": "strength",
+      "published": "150 mg + 75 mg",
+      "extracted": "rifampicina 150 mg + isoniazida 75 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-0f69ce241b5e399f0e745b35",
+      "source": "F03",
+      "page": 50,
+      "row": 879,
+      "field": "active_ingredient",
+      "published": "rifampicina + isoniazida",
+      "extracted": "rifampicina 300 mg + isoniazida 150 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-0f69ce241b5e399f0e745b35",
+      "source": "F03",
+      "page": 50,
+      "row": 879,
+      "field": "strength",
+      "published": "300 mg + 150 mg",
+      "extracted": "rifampicina 300 mg + isoniazida 150 mg comprimido - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-70ad4a9f925e23bfecd3a22a",
+      "source": "F03",
+      "page": 50,
+      "row": 880,
+      "field": "active_ingredient",
+      "published": "rifampicina + isoniazida + pirazinamida",
+      "extracted": "rifampicina 75 mg + isoniazida 50 mg + pirazinamida 150 mg comprimido dispersível - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-70ad4a9f925e23bfecd3a22a",
+      "source": "F03",
+      "page": 50,
+      "row": 880,
+      "field": "strength",
+      "published": "75 mg + 50 mg + 150 mg",
+      "extracted": "rifampicina 75 mg + isoniazida 50 mg + pirazinamida 150 mg comprimido dispersível - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-380d15a3a6a8d5ea6e813b43",
+      "source": "F03",
+      "page": 50,
+      "row": 881,
+      "field": "active_ingredient",
+      "published": "rifampicina + isoniazida",
+      "extracted": "rifampicina 75 mg + isoniazida 50 mg comprimido dispersível - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-380d15a3a6a8d5ea6e813b43",
+      "source": "F03",
+      "page": 50,
+      "row": 881,
+      "field": "strength",
+      "published": "75 mg + 50 mg",
+      "extracted": "rifampicina 75 mg + isoniazida 50 mg comprimido dispersível - tuberculose"
+    },
+    {
+      "occurrence_id": "occ-f208f9b0fbdfa9984f6ae66e",
+      "source": "F03",
+      "page": 52,
+      "row": 908,
+      "field": "strength",
+      "published": "18 mg (liberação de 9,5 mg/24h)",
+      "extracted": "rivastigmina adesivo transdermico 18mg com liberação de 9,5mg/24h"
+    },
+    {
+      "occurrence_id": "occ-f208f9b0fbdfa9984f6ae66e",
+      "source": "F03",
+      "page": 52,
+      "row": 908,
+      "field": "release_characteristic",
+      "published": "liberação de 9,5 mg/24h",
+      "extracted": "rivastigmina adesivo transdermico 18mg com liberação de 9,5mg/24h"
+    },
+    {
+      "occurrence_id": "occ-924b68401c03c4123a26164e",
+      "source": "F03",
+      "page": 52,
+      "row": 909,
+      "field": "strength",
+      "published": "9 mg (liberação de 4,6 mg/24h)",
+      "extracted": "rivastigmina adesivo transdermico 9mg com liberação de 4,6mg/24h"
+    },
+    {
+      "occurrence_id": "occ-924b68401c03c4123a26164e",
+      "source": "F03",
+      "page": 52,
+      "row": 909,
+      "field": "release_characteristic",
+      "published": "liberação de 4,6 mg/24h",
+      "extracted": "rivastigmina adesivo transdermico 9mg com liberação de 4,6mg/24h"
+    },
+    {
+      "occurrence_id": "occ-5e613d5a17989804827e439e",
+      "source": "F03",
+      "page": 52,
+      "row": 922,
+      "field": "active_ingredient",
+      "published": "sais para reidratação oral (NaCl + KCl + citrato + glicose)",
+      "extracted": "sais para reidratação oral (cloreto de sódio 3,5g + cloreto de potássio 1,5g + citrato de sódio di-hidratado 2,9g + glicose 20g) pó para preparo de 1 litro de solução envelope"
+    },
+    {
+      "occurrence_id": "occ-5e613d5a17989804827e439e",
+      "source": "F03",
+      "page": 52,
+      "row": 922,
+      "field": "strength",
+      "published": "3,5 g + 1,5 g + 2,9 g + 20 g (para preparo de 1 L)",
+      "extracted": "sais para reidratação oral (cloreto de sódio 3,5g + cloreto de potássio 1,5g + citrato de sódio di-hidratado 2,9g + glicose 20g) pó para preparo de 1 litro de solução envelope"
+    },
+    {
+      "occurrence_id": "occ-b3c9c95e8c9426034db9ca30",
+      "source": "F03",
+      "page": 52,
+      "row": 925,
+      "field": "strength",
+      "published": "25 mcg/dose + 125 mcg/dose (120 doses + inalador)",
+      "extracted": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação 25 mcg/dose + 125mcg/dose tubo (120 doses) + inalador"
+    },
+    {
+      "occurrence_id": "occ-b3c9c95e8c9426034db9ca30",
+      "source": "F03",
+      "page": 52,
+      "row": 925,
+      "field": "form",
+      "published": "aerossol para inalação",
+      "extracted": "salmeterol (xinafoato) + fluticasona (propionato) aerosol para inalação 25 mcg/dose + 125mcg/dose tubo (120 doses) + inalador"
+    },
+    {
+      "occurrence_id": "occ-c91b4e24768177e887ed16b6",
+      "source": "F03",
+      "page": 52,
+      "row": 926,
+      "field": "strength",
+      "published": "50 mcg/dose + 500 mcg/dose (recipiente dosador strip 60 doses)",
+      "extracted": "salmeterol (xinafoato) + fluticasona (propionato) pó para inalação 50mcg/dose + 500mcg/dose recipiente dosador contendo strip com 60 doses"
+    },
+    {
+      "occurrence_id": "occ-3da1f44d1a507a358ceee024",
+      "source": "F03",
+      "page": 52,
+      "row": 929,
+      "field": "form",
+      "published": "frasco-ampola",
+      "extracted": "selante de fibrina 0,5 mL frasco ampola - coagulopatias"
+    },
+    {
+      "occurrence_id": "occ-d211fe7831486018fe2a05e1",
+      "source": "F03",
+      "page": 53,
+      "row": 948,
+      "field": "strength",
+      "published": "1 mg",
+      "extracted": "sirolimo drágea 1mg"
+    },
+    {
+      "occurrence_id": "occ-73c502c1d468203b007b9db0",
+      "source": "F03",
+      "page": 53,
+      "row": 949,
+      "field": "strength",
+      "published": "2 mg",
+      "extracted": "sirolimo drágea 2mg"
+    },
+    {
+      "occurrence_id": "occ-65d47184ac652afe4967c27b",
+      "source": "F03",
+      "page": 53,
+      "row": 951,
+      "field": "active_ingredient",
+      "published": "sofosbuvir + velpatasvir",
+      "extracted": "sofosbuvir 400mg + velpatasvir 100mg comprimido - hepatite C"
+    },
+    {
+      "occurrence_id": "occ-65d47184ac652afe4967c27b",
+      "source": "F03",
+      "page": 53,
+      "row": 951,
+      "field": "strength",
+      "published": "400 mg + 100 mg",
+      "extracted": "sofosbuvir 400mg + velpatasvir 100mg comprimido - hepatite C"
+    },
+    {
+      "occurrence_id": "occ-2586228a9154a74d8fea851b",
+      "source": "F03",
+      "page": 53,
+      "row": 952,
+      "field": "strength",
+      "published": "200 mg + 50 mg",
+      "extracted": "sofosbuvir + velpatasvir comprimido 200mg + 50mg - hepatite c"
+    },
+    {
+      "occurrence_id": "occ-8fd9c1d2bed04f28c96453ee",
+      "source": "F03",
+      "page": 53,
+      "row": 953,
+      "field": "strength",
+      "published": "400 mg + 100 mg + 100 mg",
+      "extracted": "sofosbuvir + velpatasvir + voxilaprevir comprimido 400mg + 100mg + 100mg - hepatite c"
+    },
+    {
+      "occurrence_id": "occ-6c9cca4e2c8bdba3c94bc0bc",
+      "source": "F03",
+      "page": 53,
+      "row": 954,
+      "field": "active_ingredient",
+      "published": "solução ácida para hemodiálise",
+      "extracted": "solução acida p/ hemodialise galao de 5l p/maq. mistura proporcional (1:34 até 1:45) com k=2,0meq/l; ca=2,5meq/l; sem glicose"
+    },
+    {
+      "occurrence_id": "occ-6c9cca4e2c8bdba3c94bc0bc",
+      "source": "F03",
+      "page": 53,
+      "row": 954,
+      "field": "strength",
+      "published": "K=2,0 mEq/L, Ca=2,5 mEq/L, sem glicose (galão 5 L)",
+      "extracted": "solução acida p/ hemodialise galao de 5l p/maq. mistura proporcional (1:34 até 1:45) com k=2,0meq/l; ca=2,5meq/l; sem glicose"
+    },
+    {
+      "occurrence_id": "occ-ca7f6da1914c760234591b70",
+      "source": "F03",
+      "page": 53,
+      "row": 955,
+      "field": "active_ingredient",
+      "published": "solução básica para hemodiálise (bicarbonato de sódio)",
+      "extracted": "solução basica (com bicarbonato de sodio a 8,4 %) p/hemodialise galao de 5l maq. mistura proporcional"
+    },
+    {
+      "occurrence_id": "occ-ca7f6da1914c760234591b70",
+      "source": "F03",
+      "page": 53,
+      "row": 955,
+      "field": "strength",
+      "published": "8,4% (galão 5 L)",
+      "extracted": "solução basica (com bicarbonato de sodio a 8,4 %) p/hemodialise galao de 5l maq. mistura proporcional"
+    },
+    {
+      "occurrence_id": "occ-f0dd72a9216230ed91376a2c",
+      "source": "F03",
+      "page": 53,
+      "row": 956,
+      "field": "active_ingredient",
+      "published": "solução de ringer (cloretos de sódio, potássio e cálcio)",
+      "extracted": "solução de ringer (cloretos de na, k, ca) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-f0dd72a9216230ed91376a2c",
+      "source": "F03",
+      "page": 53,
+      "row": 956,
+      "field": "strength",
+      "published": "bolsa ou frasco 500 mL (sistema fechado de infusão)",
+      "extracted": "solução de ringer (cloretos de na, k, ca) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-ba0acebc4bf4e0ac7bb5ad8b",
+      "source": "F03",
+      "page": 53,
+      "row": 957,
+      "field": "active_ingredient",
+      "published": "solução de ringer com lactato",
+      "extracted": "solução de ringer (cloretos de na, k, ca) + lactato (sodico) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-ba0acebc4bf4e0ac7bb5ad8b",
+      "source": "F03",
+      "page": 53,
+      "row": 957,
+      "field": "strength",
+      "published": "bolsa ou frasco 500 mL (sistema fechado de infusão)",
+      "extracted": "solução de ringer (cloretos de na, k, ca) + lactato (sodico) solução injetável bolsa ou frasco 500 mL sistema fechado de infusao"
+    },
+    {
+      "occurrence_id": "occ-d753bb7d688d15dcce4d3ebe",
+      "source": "F03",
+      "page": 54,
+      "row": 958,
+      "field": "active_ingredient",
+      "published": "solução ácida para hemodiálise (sódio + potássio + cálcio + magnésio + cloreto + citrato)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 2 + 2,5 + 1 + 47,5 + 0,25 mEq/L frasco 960 mL"
+    },
+    {
+      "occurrence_id": "occ-d753bb7d688d15dcce4d3ebe",
+      "source": "F03",
+      "page": 54,
+      "row": 958,
+      "field": "strength",
+      "published": "40 + 2 + 2,5 + 1 + 47,5 + 0,25 mEq/L (frasco 960 mL)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 2 + 2,5 + 1 + 47,5 + 0,25 mEq/L frasco 960 mL"
+    },
+    {
+      "occurrence_id": "occ-e8faaface906ddc31f6763e8",
+      "source": "F03",
+      "page": 54,
+      "row": 959,
+      "field": "active_ingredient",
+      "published": "solução ácida para hemodiálise (sódio + potássio + cálcio + magnésio + cloreto + citrato)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 2 + 3,5 + 1 + 48,5 + 0,35 mEq/L frasco 960mL"
+    },
+    {
+      "occurrence_id": "occ-e8faaface906ddc31f6763e8",
+      "source": "F03",
+      "page": 54,
+      "row": 959,
+      "field": "strength",
+      "published": "40 + 2 + 3,5 + 1 + 48,5 + 0,35 mEq/L (frasco 960 mL)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 2 + 3,5 + 1 + 48,5 + 0,35 mEq/L frasco 960mL"
+    },
+    {
+      "occurrence_id": "occ-bfc5211a72cc92599c4d348e",
+      "source": "F03",
+      "page": 54,
+      "row": 960,
+      "field": "active_ingredient",
+      "published": "solução ácida para hemodiálise (sódio + potássio + cálcio + magnésio + cloreto + citrato)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 3 + 2,5 + 1 + 48,5 + 0,25 mEq/L frasco 960mL"
+    },
+    {
+      "occurrence_id": "occ-bfc5211a72cc92599c4d348e",
+      "source": "F03",
+      "page": 54,
+      "row": 960,
+      "field": "strength",
+      "published": "40 + 3 + 2,5 + 1 + 48,5 + 0,25 mEq/L (frasco 960 mL)",
+      "extracted": "solução ácida para hemodiálise composi- ção: sódio, potássio, cálcio, magnésio, cloreto, citrato concentração: 40 + 3 + 2,5 + 1 + 48,5 + 0,25 mEq/L frasco 960mL"
+    },
+    {
+      "occurrence_id": "occ-115ca5191ad4d1ee6993658d",
+      "source": "F03",
+      "page": 54,
+      "row": 971,
+      "field": "strength",
+      "published": "1% (bisnaga 50 g)",
+      "extracted": "sulfadiazina de prata creme dermatologico 1% bisnaga 50 g"
+    },
+    {
+      "occurrence_id": "occ-2d8c141a0678f1f9561c4747",
+      "source": "F03",
+      "page": 54,
+      "row": 972,
+      "field": "strength",
+      "published": "1% (frasco ou pote 400 g)",
+      "extracted": "sulfadiazina de prata creme dermatológico 1% frasco ou pote 400 g"
+    },
+    {
+      "occurrence_id": "occ-55d57003b757d2b31c7722d0",
+      "source": "F03",
+      "page": 54,
+      "row": 973,
+      "field": "strength",
+      "published": "400 mg + 80 mg",
+      "extracted": "sulfametoxazol + trimetoprima comprimido 400 mg +80 mg"
+    },
+    {
+      "occurrence_id": "occ-5dac3a6caf05fed48e9546cb",
+      "source": "F03",
+      "page": 54,
+      "row": 974,
+      "field": "strength",
+      "published": "(400 mg + 80 mg)/5 mL (ampola 5 mL)",
+      "extracted": "sulfametoxazol + trimetoprima solução injetável (400 mg + 80 mg)/5 mL ampola 5 mL"
+    },
+    {
+      "occurrence_id": "occ-bf16ec9604f7d2615bc11dc9",
+      "source": "F03",
+      "page": 54,
+      "row": 977,
+      "field": "strength",
+      "published": "50% (4 mEq/mL - ampola 10 mL)",
+      "extracted": "sulfato de magnésio solução injetável 50 % (4 meq/mL) ampola 10 mL"
+    },
+    {
+      "occurrence_id": "occ-7314323fddaafb5a3dd80502",
+      "source": "F03",
+      "page": 55,
+      "row": 980,
+      "field": "strength",
+      "published": "125 mg/mL (equivalente a 25 mg/mL de ferro elementar - frasco 30 mL)",
+      "extracted": "sulfato ferroso solução oral 125 mg/mL correspondente a 25 mg/mL de ferro elementar frasco 30 mL"
+    },
+    {
+      "occurrence_id": "occ-d09c1d0d0c60a6637ab3c4eb",
+      "source": "F03",
+      "page": 55,
+      "row": 984,
+      "field": "active_ingredient",
+      "published": "symphytum officinale (confrei)",
+      "extracted": "symphytum officinale gel 10% pote 200g (confrei)"
+    },
+    {
+      "occurrence_id": "occ-d09c1d0d0c60a6637ab3c4eb",
+      "source": "F03",
+      "page": 55,
+      "row": 984,
+      "field": "strength",
+      "published": "10% (pote 200 g)",
+      "extracted": "symphytum officinale gel 10% pote 200g (confrei)"
+    },
+    {
+      "occurrence_id": "occ-b969a7a54ebd79dbab6e83eb",
+      "source": "F03",
+      "page": 55,
+      "row": 985,
+      "field": "active_ingredient",
+      "published": "symphytum officinale (confrei)",
+      "extracted": "symphytum officinale gel 10% pote 30g (confrei)"
+    },
+    {
+      "occurrence_id": "occ-b969a7a54ebd79dbab6e83eb",
+      "source": "F03",
+      "page": 55,
+      "row": 985,
+      "field": "strength",
+      "published": "10% (pote 30 g)",
+      "extracted": "symphytum officinale gel 10% pote 30g (confrei)"
+    },
+    {
+      "occurrence_id": "occ-443b7b73fb6fd3bb2de76357",
+      "source": "F03",
+      "page": 55,
+      "row": 1003,
+      "field": "strength",
+      "published": "50 mg",
+      "extracted": "tenecteplase pó liofilizado injetável 50mg frasco ampola + seringa preenchida com 10 mL diluente + adaptador + agulha"
+    },
+    {
+      "occurrence_id": "occ-908a2f2b4ad6fd7ca89a0a51",
+      "source": "F03",
+      "page": 56,
+      "row": 1004,
+      "field": "strength",
+      "published": "300 mg + 200 mg",
+      "extracted": "tenofovir + entricitabina comprimido revestido 300mg + 200mg - HIV"
+    },
+    {
+      "occurrence_id": "occ-d7a71db1b039fc321c39c989",
+      "source": "F03",
+      "page": 56,
+      "row": 1005,
+      "field": "strength",
+      "published": "300 mg + 300 mg",
+      "extracted": "tenofovir + lamivudina comprimido 300mg + 300mg - hepatite B"
+    },
+    {
+      "occurrence_id": "occ-cb22669dfd85514c6b90e4c5",
+      "source": "F03",
+      "page": 56,
+      "row": 1010,
+      "field": "active_ingredient",
+      "published": "tenofovir desoproxila (fumarato) + lamivudina",
+      "extracted": "tenofovir desoproxila (fumarato) 300 mg + lamivudina 300 mg - HIV"
+    },
+    {
+      "occurrence_id": "occ-cb22669dfd85514c6b90e4c5",
+      "source": "F03",
+      "page": 56,
+      "row": 1010,
+      "field": "strength",
+      "published": "300 mg + 300 mg",
+      "extracted": "tenofovir desoproxila (fumarato) 300 mg + lamivudina 300 mg - HIV"
+    },
+    {
+      "occurrence_id": "occ-ca70d5224391598621048935",
+      "source": "F03",
+      "page": 56,
+      "row": 1015,
+      "field": "strength",
+      "published": "1 mg",
+      "extracted": "terlipressina (acetato) pó liofilizado injetável ou solução injetável 1mg frasco-ampola ou ampola"
+    },
+    {
+      "occurrence_id": "occ-cf20695ffc6eab37d50c1cd6",
+      "source": "F03",
+      "page": 57,
+      "row": 1024,
+      "field": "strength",
+      "published": "2,5 mcg/dose + 2,5 mcg/dose (frasco 60 doses com inalador)",
+      "extracted": "tiotrópio (brometo) + olodaterol (cloridrato) solução para inalação 2,5 mcg/dose + 2,5 mcg/dose frasco com 60 doses com inalador"
+    },
+    {
+      "occurrence_id": "occ-c6a25becf833271f53205b74",
+      "source": "F03",
+      "page": 57,
+      "row": 1025,
+      "field": "strength",
+      "published": "0,3% + 0,1% (bisnaga 3,5 g)",
+      "extracted": "tobramicina + dexametasona pomada oftálmica 0,3 % + 0,1 % bisnaga 3,5 g"
+    },
+    {
+      "occurrence_id": "occ-e185f6e00af0113b419ca348",
+      "source": "F03",
+      "page": 57,
+      "row": 1026,
+      "field": "strength",
+      "published": "0,3% (bisnaga 3,5 g)",
+      "extracted": "tobramicina pomada oftálmica 0,3 % bisnaga 3,5 g"
+    },
+    {
+      "occurrence_id": "occ-e34170ebed3c19cdf4f5f5d7",
+      "source": "F03",
+      "page": 57,
+      "row": 1042,
+      "field": "strength",
+      "published": "1 mg/mL (bisnaga 10 g)",
+      "extracted": "triancinolona acetonida pomada bucal ou pasta 1mg/mL bisnaga 10 g (uso exclusivo odontologia)"
+    },
+    {
+      "occurrence_id": "occ-b876bad65fcf7b57f2c2cf3e",
+      "source": "F03",
+      "page": 58,
+      "row": 1048,
+      "field": "strength",
+      "published": "62,5 mcg/dose + 25 mcg/dose (recipiente dosador strip 30 doses)",
+      "extracted": "umeclidínio (brometo) + vilanterol (trifenatato) pó inalante 62,5 mcg/dose + 25 mcg/dose recipiente dosador contendo strip com 30 doses"
+    }
+  ]
+}

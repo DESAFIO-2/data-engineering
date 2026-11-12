@@ -134,7 +134,7 @@ def test_sync_preserves_previous_snapshot_if_panel_is_incomplete(
     path = tmp_path / "snapshot.json"
     path.write_text("previous snapshot", encoding="utf-8")
     monkeypatch.setattr(live_source, "InfoSaudeLiveClient", IncompleteClient)
-    with pytest.raises(ValueError, match="seis códigos"):
+    with pytest.raises(ValueError, match="códigos solicitados"):
         live_source.sync_snapshot(path, tuple(code for code, _ in PRODUCTS.values()))
     assert path.read_text(encoding="utf-8") == "previous snapshot"
 

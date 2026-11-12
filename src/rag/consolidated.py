@@ -60,7 +60,8 @@ class ConsolidatedRelease:
             "quality_report.json",
             "domain_review.json",
         }
-        if set(manifest["files"]) != expected:
+        files = set(manifest["files"])
+        if not (files == expected or files == (expected | {"audit_log.jsonl"})):
             raise ValueError("Arquivos do release incompletos")
         for name, info in manifest["files"].items():
             if Path(name).name != name:
@@ -353,7 +354,68 @@ def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(c for c in value if not unicodedata.combining(c))
     value = re.sub(r"(?<=\d)\s*(?=(?:mcg|mg|ml|ui)\b)", " ", value)
+    value = re.sub(r"\s*/\s*", "/", value)
     return " ".join(value.split())
+
+
+def strength_core(value: str) -> str:
+    """Separate a documented device/package suffix, never chemical equivalence."""
+    return re.sub(
+        r"\s*\((?:sistema de aplicacao|apresentacoes? de|frasco|ampola|caneta)\b[^)]*\)$",
+        "",
+        normalize(value),
+    )
+
+
+def strength_matches(query: str, strength: str) -> bool:
+    stored = normalize(strength)
+    core = strength_core(stored)
+    literal = re.search(r"(?<![\w.,/])" + re.escape(core) + r"(?![\w.,/])", query)
+    # Parentheses in a natural question may group a documented strength without
+    # changing its units, alternatives or ingredient order.
+    flat_query = normalize(re.sub(r"[()]", " ", query))
+    flat_core = normalize(re.sub(r"[()]", " ", core))
+    grouped = re.search(r"(?<![\w.,/])" + re.escape(flat_core) + r"(?![\w.,/])", flat_query)
+    if not (literal or grouped):
+        return False
+    requested_device = re.search(r"sistema de aplicacao\s+(\d+(?:[.,]\d+)?)\s*ml", query)
+    if requested_device:
+        stored_device = re.search(r"sistema de aplicacao\s+(\d+(?:[.,]\d+)?)\s*ml", stored)
+        if not stored_device or requested_device.group(1) != stored_device.group(1):
+            return False
+    return True
+
+
+def name_suggestion(question: str, catalog: list[dict[str, Any]]) -> tuple[str, str] | None:
+    """Suggest a unique one-character typo; never silently select a medicine."""
+    query = normalize(question)
+    if any(name_matches(query, m["active_ingredient"]) for m in catalog):
+        return None
+    names = {
+        normalize(m["active_ingredient"]): m["active_ingredient"]
+        for m in catalog
+        if re.fullmatch(r"[a-z]{6,}", normalize(m["active_ingredient"]))
+    }
+    suggestions = set()
+    for token in re.findall(r"\b[a-z]{6,}\b", query):
+        for name in names:
+            if abs(len(token) - len(name)) > 1:
+                continue
+            if len(token) == len(name):
+                different = [i for i, (a, b) in enumerate(zip(token, name, strict=True)) if a != b]
+                close = len(different) == 1 or (
+                    len(different) == 2
+                    and different[1] == different[0] + 1
+                    and token[different[0]] == name[different[1]]
+                    and token[different[1]] == name[different[0]]
+                )
+            else:
+                shorter, longer = sorted((token, name), key=len)
+                close = any(longer[:i] + longer[i + 1 :] == shorter for i in range(len(longer)))
+            if close:
+                corrected = re.sub(r"\b" + re.escape(token) + r"\b", name, query)
+                suggestions.add((names[name], corrected))
+    return next(iter(suggestions)) if len(suggestions) == 1 else None
 
 
 def bm25_rank(question: str, chunks: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -415,11 +477,11 @@ def search(
             ),
         }
     source_filter = None
-    if "reme" in query or "f03" in query:
+    if re.search(r"\b(?:reme|reme-df)\b", query) or re.search(r"\bf03\b", query):
         source_filter = "F03"
-    elif "farmacia popular" in query or "f04" in query:
+    elif "farmacia popular" in query or re.search(r"\bf04\b", query):
         source_filter = "F04"
-    elif "rename" in query or "f01" in query:
+    elif re.search(r"\brename\b", query) or re.search(r"\bf01\b", query):
         source_filter = "F01"
     if "insumo" in query:
         supplies = [
@@ -448,16 +510,54 @@ def search(
             ),
         }
     names = [
-        m for m in release.catalog
-        if normalize(m["active_ingredient"]) in query
+        m
+        for m in release.catalog
+        if name_matches(query, m["active_ingredient"])
         and (not source_filter or source_filter in m["source_ids"])
     ]
     if names:
+        identities = {ingredient_key(m["active_ingredient"]) for m in names}
+        longest_identity = max(identities, key=len)
+        if any(identity not in longest_identity for identity in identities):
+            return {
+                "status": "ambiguous",
+                "evidence": [],
+                "message": "Informe um princípio ativo ou uma associação documentada por pergunta.",
+            }
         longest_name = max(len(normalize(m["active_ingredient"])) for m in names)
         names = [m for m in names if len(normalize(m["active_ingredient"])) == longest_name]
     if names:
-        strengths = [m for m in names if m["strength"] == "-" or normalize(m["strength"]) in query]
+        strengths = [
+            m for m in names if m["strength"] == "-" or strength_matches(query, m["strength"])
+        ]
         if not strengths:
+            if not re.search(r"\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ui|ml)\b", query):
+                options = sorted(
+                    names,
+                    key=lambda m: (
+                        normalize(m["strength"]),
+                        normalize(m["form"]),
+                        normalize(m.get("release_characteristic") or ""),
+                        m["medicine_id"],
+                    ),
+                )
+                return {
+                    "status": "ambiguous",
+                    "evidence": [],
+                    "candidate_presentations": options,
+                    "message": "Apresentações documentadas: "
+                    + "; ".join(
+                        f"{m['strength']} — {m['form']}"
+                        + (
+                            f" — {m['release_characteristic']}"
+                            if m.get("release_characteristic")
+                            else ""
+                        )
+                        + f" ({', '.join(m['source_ids'])})"
+                        for m in options
+                    )
+                    + ". Qual concentração ou forma você procura?",
+                }
             return {
                 "status": "not_in_scope",
                 "evidence": [],
@@ -466,7 +566,50 @@ def search(
                 ),
             }
         matches = [m for m in strengths if m["form"] == "-" or normalize(m["form"]) in query]
+        if not matches and not any(
+            normalize(m["form"]) in query for m in release.catalog if m["form"] != "-"
+        ):
+            return {
+                "status": "ambiguous",
+                "evidence": [],
+                "message": "Informe a forma farmacêutica. Formas disponíveis: "
+                + ", ".join(sorted({m["form"] for m in strengths}))
+                + ".",
+            }
+        prolonged = "prolongada" in query
+        if prolonged and not any(m.get("release_characteristic") for m in matches):
+            return {
+                "status": "not_in_scope",
+                "evidence": [],
+                "message": (
+                    "Ação prolongada não documentada para esta apresentação na fonte solicitada."
+                ),
+            }
+        if any(m.get("release_characteristic") for m in matches):
+            explicit_regular = "convencional" in query or "imediata" in query
+            if prolonged or explicit_regular:
+                matches = [m for m in matches if bool(m.get("release_characteristic")) == prolonged]
+            elif len({m.get("release_characteristic") for m in matches}) > 1:
+                return {
+                    "status": "ambiguous",
+                    "evidence": [],
+                    "message": (
+                        "Informe a característica de liberação: convencional ou ação prolongada. "
+                        "Não são consideradas equivalentes."
+                    ),
+                }
         if matches:
+            if (
+                len({normalize(m["strength"]) for m in matches}) > 1
+                and len({strength_core(m["strength"]) for m in matches}) == 1
+            ):
+                return {
+                    "status": "ambiguous",
+                    "evidence": [],
+                    "message": "Há mais de um dispositivo documentado. Informe qual: "
+                    + "; ".join(sorted({m["strength"] for m in matches}))
+                    + ".",
+                }
             longest_strength = max(len(normalize(m["strength"])) for m in matches)
             matches = [m for m in matches if len(normalize(m["strength"])) == longest_strength]
             longest_form = max(
@@ -501,12 +644,20 @@ def search(
                     "Presença em lista não confirma disponibilidade."
                 ),
             }
+    if not names and not matches:
+        if suggestion := name_suggestion(question, release.catalog):
+            return {
+                "status": "ambiguous",
+                "evidence": [],
+                "message": f"Você quis dizer {suggestion[0]}? Confirme o nome antes da consulta.",
+                "suggested_question": suggestion[1],
+            }
     if len(matches) != 1 and (
         not matches
         or len(
             {
                 (
-                    normalize(m["active_ingredient"]),
+                    ingredient_key(m["active_ingredient"]),
                     normalize(m["strength"]),
                     normalize(m["form"]),
                     normalize(m.get("release_characteristic") or ""),
@@ -559,17 +710,54 @@ def search(
                 ),
                 reverse=True,
             )
+    elif strategy == "exact":
+        selected = sorted(
+            selected,
+            key=lambda c: (
+                c["source"]["source_id"],
+                c["source"]["page"],
+                c["evidence_id"],
+            ),
+        )
     else:
         selected = lexical
     evidence_by_id = {e["evidence_id"]: e for e in release.evidence}
-    sources = sorted({c["source"]["source_id"] for c in selected})
+    sources = sorted({c["source"]["source_id"] for c in selected[:top_k]})
     return {
         "status": "matched",
         "medicine": med,
         "equivalent_medicine_ids": sorted(match_ids),
+        "candidate_presentation_ids": sorted(match_ids),
+        "candidate_chunk_count": len(selected),
+        "ranked_chunk_ids": [c["chunk_id"] for c in selected[:top_k]],
         "evidence": [evidence_by_id[c["evidence_id"]] for c in selected[:top_k]],
         "message": (
-            f"{med['active_ingredient']} {med['strength']} ({med['form']}) consta nas fontes: "
+            f"{med['active_ingredient']} {med['strength']} "
+            f"({med['form'] if med['form'] != '-' else 'forma não informada'}"
+            f"{'; ' + med['release_characteristic'] if med.get('release_characteristic') else ''}) "
+            "consta nas fontes: "
             f"{', '.join(sources)}. Presença em lista não confirma estoque."
         ),
     }
+
+
+def name_matches(query: str, name: str) -> bool:
+    """Explicit ingredient alias; never infers therapeutic equivalence."""
+    normalized = normalize(name)
+    aliases = [normalized]
+    if normalized in {"cloridrato de metformina", "metformina (cloridrato)"}:
+        aliases.append("metformina")
+    if any(re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", query) for alias in aliases):
+        return True
+    if " + " in normalized:
+        components = normalized.split(" + ")
+        pattern = r"(?<!\w)" + re.escape(components[0])
+        for component in components[1:]:
+            pattern += r"\s*(?:\([^)]*\)\s*)?\+\s*" + re.escape(component)
+        return bool(re.search(pattern + r"(?!\w)", query))
+    return False
+
+
+def ingredient_key(name: str) -> str:
+    normalized = normalize(name)
+    return "cloridrato de metformina" if normalized == "metformina (cloridrato)" else normalized

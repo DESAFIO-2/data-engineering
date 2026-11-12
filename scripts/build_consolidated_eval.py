@@ -24,9 +24,10 @@ def main() -> None:
         for med in sorted(release.catalog, key=lambda m: m["medicine_id"]):
             if sid not in med["source_ids"]:
                 continue
-            detail = " ".join(
-                x for x in (med["active_ingredient"], med["strength"], med["form"]) if x != "-"
-            )
+            parts = [med["active_ingredient"], med["strength"], med["form"]]
+            if med.get("release_characteristic"):
+                parts.append(med["release_characteristic"])
+            detail = " ".join(x for x in parts if x and x != "-")
             question = f"{detail} consta na {label}?"
             relevant = [
                 e["evidence_id"]

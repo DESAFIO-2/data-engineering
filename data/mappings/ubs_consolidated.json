@@ -1,0 +1,110 @@
+{
+  "schema_version": "ubs-consolidated-links-v1",
+  "release_fingerprint": "70ae21fe0dd88685aadda826acaf379096a0970e035c11645bb8ec2c9e9c8144",
+  "source_url": "https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-das-ubs/",
+  "validated_at": "2026-11-11T13:13:06.187667+00:00",
+  "catalog": [
+    {
+      "i_cod_produto": "12944",
+      "i_desc_produto": "METFORMINA + GLIBENCLAMIDA COMPRIMIDO 500MG + 2,5MG"
+    },
+    {
+      "i_cod_produto": "13142",
+      "i_desc_produto": "METFORMINA COMPRIMIDO DE AÇAO PROLONGADA 500MG"
+    },
+    {
+      "i_cod_produto": "16362",
+      "i_desc_produto": "METFORMINA + GLIBENCLAMIDA COMPRIMIDO 500MG + 5MG"
+    },
+    {
+      "i_cod_produto": "23982",
+      "i_desc_produto": "VILDAGLIPTINA + METFORMINA (CLORIDRATO) COMPRIMIDO REVESTIDO 50 MG + 1000 MG"
+    },
+    {
+      "i_cod_produto": "24686",
+      "i_desc_produto": "VILDAGLIPTINA + CLORIDRATO DE METFORMINA 50/850 MG"
+    },
+    {
+      "i_cod_produto": "26108",
+      "i_desc_produto": "SITAGLIPTINA/METFORMINA 50/850MG COMPRIMIDO REVESTIDO"
+    },
+    {
+      "i_cod_produto": "35718",
+      "i_desc_produto": "LINAGLIPTINA + CLORIDRATO DE METFORMINA COMPRIMIDO REVESTIDO (2,5MG +500MG)"
+    },
+    {
+      "i_cod_produto": "35989",
+      "i_desc_produto": "ALOGLIPTINA + METFORMINA (12,5MG + 1000MG) COMPRIMIDO REVESTIDO"
+    },
+    {
+      "i_cod_produto": "36365",
+      "i_desc_produto": "DAPAGLIFLOZINA + METFORMINA (5MG + 1000MG) COMPRIMIDO REVESTIDO DE LIBERAÇÃO PROLONGADA"
+    },
+    {
+      "i_cod_produto": "36502",
+      "i_desc_produto": "DAPAGLIFLOZINA + METFORMINA (10MG + 1000MG) COMPRIMIDO REVESTIDO."
+    },
+    {
+      "i_cod_produto": "38355",
+      "i_desc_produto": "SITAGLIPTINA (FOSFATO) + METFORMINA (CLORIDRATO) COMPRIMIDO REVESTIDO 50 MG + 1000 MG"
+    },
+    {
+      "i_cod_produto": "90224",
+      "i_desc_produto": "METFORMINA (CLORIDRATO) COMPRIMIDO 500MG"
+    },
+    {
+      "i_cod_produto": "90226",
+      "i_desc_produto": "METFORMINA (CLORIDRATO) COMPRIMIDO 850 MG"
+    }
+  ],
+  "links": [
+    {
+      "medicine_id": "med-2f801a7fd8182b5f4c0256dc",
+      "active_ingredient": "cloridrato de metformina",
+      "strength": "500 mg",
+      "form": "comprimido",
+      "release_characteristic": null,
+      "product_code": "90224",
+      "product_description": "METFORMINA (CLORIDRATO) COMPRIMIDO 500MG",
+      "status": "validated",
+      "source_url": "https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-das-ubs/",
+      "validated_at": "2026-11-11T13:13:06.187667+00:00",
+      "validation": "Código e descrição públicos; mesmo sal, concentração e forma explícitos; sem liberação modificada documentada."
+    },
+    {
+      "medicine_id": "med-1b798f53028c21c756ee7163",
+      "active_ingredient": "cloridrato de metformina",
+      "strength": "850 mg",
+      "form": "comprimido",
+      "release_characteristic": null,
+      "product_code": "90226",
+      "product_description": "METFORMINA (CLORIDRATO) COMPRIMIDO 850 MG",
+      "status": "validated",
+      "source_url": "https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-das-ubs/",
+      "validated_at": "2026-11-11T13:13:06.187667+00:00",
+      "validation": "Código e descrição públicos; mesmo sal, concentração e forma explícitos; sem liberação modificada documentada."
+    },
+    {
+      "medicine_id": "med-bdd705733bfb24fb04aa974e",
+      "active_ingredient": "metformina (cloridrato)",
+      "strength": "850 mg",
+      "form": "comprimido",
+      "release_characteristic": null,
+      "product_code": "90226",
+      "product_description": "METFORMINA (CLORIDRATO) COMPRIMIDO 850 MG",
+      "status": "validated",
+      "source_url": "https://info.saude.df.gov.br/saude-do-cidadao/painel-infosaude-farmacias-das-ubs/",
+      "validated_at": "2026-11-11T13:13:06.187667+00:00",
+      "validation": "Código e descrição públicos; mesmo sal, concentração e forma explícitos; sem liberação modificada documentada."
+    }
+  ],
+  "excluded": [
+    {
+      "code": "13142",
+      "reason": "Ação prolongada: F04 não documenta forma farmacêutica; vínculo não habilitado."
+    },
+    {
+      "reason": "Associações com outros princípios ativos não correspondem à metformina isolada."
+    }
+  ]
+}

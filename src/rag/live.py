@@ -96,6 +96,16 @@ def _stock_reply(question: str, release: Release, snapshot: dict[str, Any]) -> s
     product = PRODUCTS.get(medicine["medicine_id"])
     if product is None:
         return "Esta apresentação ainda não tem código UBS validado para consulta de estoque."
+    return stock_reply_for_product(question, snapshot, product)
+
+
+def stock_reply_for_product(
+    question: str,
+    snapshot: dict[str, Any],
+    product: tuple[str, str],
+    requested_region: str | None = None,
+) -> str:
+    """Render dated stock only for an explicitly validated product and region."""
     code, description = product
     rows = [
         row
@@ -110,9 +120,17 @@ def _stock_reply(question: str, release: Release, snapshot: dict[str, Any]) -> s
     selected = sorted(
         (region for region in regions if len(region) > 3 and region in query), key=len
     )
+    if requested_region:
+        selected = [normalize(requested_region)]
     if selected:
         region = selected[-1]
         rows = [row for row in rows if normalize(str(row.get("i_desc_radf", ""))) == region]
+        if not rows:
+            return (
+                f"Não há registro desse produto em {requested_region or region.title()} "
+                "no snapshot UBS consultado; isso não comprova saldo zero.\n"
+                f"Fonte: {snapshot['sources']['ubs']}"
+            )
     dated = [row for row in rows if _timestamp(row.get("data_extracao")) is not None]
     dates = [stamp for row in dated if (stamp := _timestamp(row["data_extracao"]))]
     latest = max(dates) if dates else None
@@ -148,6 +166,7 @@ def _stock_reply(question: str, release: Release, snapshot: dict[str, Any]) -> s
         lines.append("O saldo pode mudar após a extração; confirme na unidade antes de ir.")
     for row in positive[:5]:
         lines.append(_unit_line(row, units.get(_cnes(row.get("cnes")))))
+        lines.append(f"  Saldo registrado: {row['i_qtd_rede']}.")
     if len(positive) > 5:
         lines.append(f"Exibindo 5 de {len(positive)} farmácias com saldo positivo.")
     lines.append(f"Fonte: {snapshot['sources']['ubs']}")

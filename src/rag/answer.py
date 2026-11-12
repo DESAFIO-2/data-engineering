@@ -13,6 +13,7 @@ documentos obrigatórios, validade de receita, preparo de exame, diagnóstico, d
 ou substituição terapêutica. Diga que constar em lista não garante estoque.
 Se faltar sustentação, diga que a informação não está disponível neste recorte.
 Não invente fontes ou números de página. Responda em até quatro frases.
+Não acrescente avisos sobre documentos ou elegibilidade se não foram perguntados.
 """
 
 
@@ -24,20 +25,30 @@ def synthesize(
 ) -> str:
     if result["status"] != "matched":
         return str(result["message"])
-    medicine = result["medicine"]
-    labels = ", ".join(sorted(medicine["lists"]))
+    medicine = result.get("medicine")
+    labels = ", ".join(
+        sorted(
+            {f"{e['source']['source_id']} ({e['source']['version']})" for e in result["evidence"]}
+        )
+    )
     context = "\n".join(
-        f"[{e['evidence_id']}] {e['text']} (fonte {e['source']['source_id']}, "
+        f"[{e['evidence_id']}] {e['text']} (fonte {e['source']['source_id']} "
+        f"{e['source']['version']}, "
         f"página {e['source']['page']})"
         for e in result["evidence"]
     )
+    presentation = (
+        f"{medicine['active_ingredient']} {medicine['strength']} "
+        f"{medicine['form'] if medicine['form'] != '-' else 'forma não informada na fonte'} "
+        f"{medicine.get('release_characteristic') or ''}"
+        if medicine
+        else "Insumo descrito nas evidências"
+    )
     prompt = (
         (f"Conversa recente:\n{format_history(history)}\n\n" if history else "")
-        +
-        f"Pergunta do cidadão: {question}\n"
-        f"Apresentação: {medicine['active_ingredient']} {medicine['strength']} "
-        f"{medicine['form']}. Consta nas versões consultadas: {labels}. "
-        "Estoque não consultado. Documentos e elegibilidade não verificados.\n"
+        + f"Pergunta do cidadão: {question}\n"
+        f"Apresentação: {presentation}. Consta nas versões consultadas: {labels}. "
+        "Esta consulta é documental; não use relatos anteriores de estoque como evidência.\n"
         f"Evidências:\n{context}"
     )
     response = llm.invoke([("system", SYSTEM), ("human", prompt)])

@@ -1,0 +1,69 @@
+{
+  "corpus_fingerprint": "4c14727eb3447108a9499923822783901e73efd76e802d35b5a704953f419c91",
+  "f03_description_extract_sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4",
+  "files": {
+    "audit_log.jsonl": {
+      "bytes": 2038784,
+      "records": 2115,
+      "sha256": "395788f9710ee53fb2afb487ec0dc995b59d259da654674dba94ea456d0c1faa"
+    },
+    "catalog.jsonl": {
+      "bytes": 611676,
+      "records": 1860,
+      "sha256": "0ad5f0c0e304b0e62e1461deffdfa78779ac587d6cd7aaca8df04f8aba7d4109"
+    },
+    "evidencias.jsonl": {
+      "bytes": 1892376,
+      "records": 2114,
+      "sha256": "4c0c9fa35991d910d4abd41cd80eb0d349e7df9e8c99b41c00de2ee29b79cc1c"
+    },
+    "exclusions.jsonl": {
+      "bytes": 427,
+      "records": 1,
+      "sha256": "fcd2fa50a461109fc4759fa2bbe4f7f51b4e652c166f6cdec4439b7efe225383"
+    },
+    "f03_descriptions.json": {
+      "bytes": 340525,
+      "sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2269518,
+      "records": 2114,
+      "sha256": "ebff4a6beee0d851cf46f6707d173b569e5046115d8b4a589556dcefcaff96d6"
+    },
+    "quality_report.json": {
+      "bytes": 3103,
+      "sha256": "b9ff70dd68bbad610cd4810581d491323d989916d6ad2ec0514aac7d66ef8956"
+    }
+  },
+  "generated_at_utc": "2026-11-12T00:39:20.482224+00:00",
+  "release_version": "corpus-consolidado-v8-calcio-corrigido-2026-11-11",
+  "review_reference": {
+    "path": "docs/reports/v7-retrieval-review.xlsx",
+    "scope": "Rejeição humana de C-F03-003; não equivale à aprovação do candidato v8.",
+    "sha256": "704e1e5072c14720b8f1ce64123692cd19ed37dfd5847d556559eca8aa38d103"
+  },
+  "schema_version": "consolidated-release-v2",
+  "source_release": {
+    "manifest_sha256": "8399f37f6664f474c18622d912ad9795f04ec199102724cfafbe6e295eeab20b",
+    "version": "corpus-consolidado-v7-aprovado-2026-11-11"
+  },
+  "sources": {
+    "F01": {
+      "pages": 267,
+      "path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc"
+    },
+    "F03": {
+      "pages": 98,
+      "path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6"
+    },
+    "F04": {
+      "pages": 1,
+      "path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3"
+    }
+  },
+  "status": "pending_review"
+}

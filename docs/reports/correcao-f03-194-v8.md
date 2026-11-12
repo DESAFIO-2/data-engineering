@@ -1,0 +1,15 @@
+# Correção da linha F03 194 — candidato v8
+
+**Estado em 11/11/2026:** a correção foi aprovada explicitamente por Jhiovana e publicada no release imutável `corpus-consolidado-v8-aprovado-2026-11-11`. A aprovação documental não abre o gate de embeddings: o [teste oficial de recuperação](validacao-recuperacao-v8-test.md) sinalizou uma confusão crítica.
+
+A revisão humana da avaliação v7 rejeitou `C-F03-003`. A REME-DF de 29/10/2026, página 19, linha 194, descreve carbonato de cálcio “equivalente a **500 ou 600 mg de cálcio**” associado a colecalciferol 400 UI, comprimido. O campo estruturado da v7 dizia “500 mg **a** 600 mg cálcio elementar + 400 UI vit. D”, alterando uma alternativa discreta para uma faixa. O texto de origem e a página estavam corretos; a divergência estava na normalização da concentração e na pergunta sintética derivada dela.
+
+O script `scripts/publish_v8_calcium_correction.py` gera `corpus-consolidado-v8-calcio-corrigido-2026-11-11` a partir da v7 congelada. Ele exige o SHA-256 `8399f37f6664f474c18622d912ad9795f04ec199102724cfafbe6e295eeab20b` do manifesto v7 e a rejeição assinada por Jhiovana. Corrige apenas o campo `strength` da ocorrência `occ-bc5acf38f4260802e843100c`, da evidência correspondente e da entrada `med-00aabf5466ef008e27b6fbab`, além do log e do relatório de qualidade. Os IDs, a fonte F03, a página 19, a linha 194, o código 21019, a forma e o texto literal permanecem iguais. As 2.114 evidências do candidato têm `review_status=pending_review`; o pacote não herda a aprovação de domínio da v7.
+
+O candidato passou na verificação de arquivos, hashes e reconstrução 1:1 das evidências. Fingerprint do conteúdo: `4c14727eb3447108a9499923822783901e73efd76e802d35b5a704953f419c91`; SHA-256 do manifesto: `8cd04703e8e6f7d9048004a40f66075465a9ecd23efeae3d481371aa362049f4`. A v7 preserva seu SHA-256 original. O dataset técnico v8 mantém os 119 IDs e splits, corrige a pergunta de `C-F03-003` e sua apresentação esperada; SHA-256 `606bea858f04a8edc8065f026395396d773419e3fac197eb073b9630ed27a78f`. Ele permanece `agent_reviewed`.
+
+Verificação do candidato: 3 testes específicos e a suíte completa (**275 testes aprovados**) passaram; Ruff passou nos scripts e testes novos. Após a aprovação e a atualização do avaliador, a suíte completa passou com **276 testes**. A planilha v8 agora registra `aprovar`, `Jhiovana` e `2026-11-11`, e o validador não encontra pendências.
+
+Na [planilha de revisão da correção](v8-calcium-correction-review.xlsx), a decisão humana está registrada. As 118 aprovações da v7 foram herdadas somente após o validador conferir a identidade dos casos restantes. O pacote aprovado contém `domain_review.json` com a autorização explícita da usuária, escopo e hashes das duas revisões. Seu manifesto tem SHA-256 `d634a75817ff3d16031c45fa664b9075ec426c1b3482581c0ca93f490906cba7`.
+
+Os 2.114 chunks foram reconstruídos para o novo fingerprint, e o `test` foi executado uma vez por estratégia. A aprovação do corpus v7, o resultado exploratório de `dev` e a sincronização dos chunks v7 no Drive não se transferem automaticamente para a v8; o resultado da v8 está registrado no relatório de gate acima.

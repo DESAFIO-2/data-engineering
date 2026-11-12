@@ -1,5 +1,7 @@
 # SUS Cidadão — Engenharia de Dados e RAG documental
 
+> **Release documental aprovado:** `corpus-consolidado-v7-aprovado-2026-11-11`, com escopo e restrições registrados na [decisão de Jhiovana](docs/reports/revisao-v6-jhiovana.md). A [SPEC do RAG híbrido](docs/specs/SPEC-09-rag-hibrido-v7.md) usa a v7; os resultados exploratórios da v6 não aprovam a recuperação na v7 nem o uso de embeddings. A [SPEC de CEP → UBS](docs/specs/SPEC-10-cep-ubs-privacidade.md) permanece uma frente separada.
+
 Projeto acadêmico de ingestão auditável e consulta documental no terminal,
 com Chroma, recuperação lexical/vetorial e síntese Gemini. Fontes e respostas
 representam versões congeladas; presença em lista não garante estoque,
@@ -47,29 +49,117 @@ uv run python app.py ask "Sinvastatina 20 mg comprimido consta na REME?" --exper
 uv run python app.py chat --experimental --corpus data/corpus/experimental --supplement data/raw/complementares/chunks.jsonl --strategy hybrid --documental --show-context
 ```
 
-Para conversar com o **corpus consolidado aprovado** e sincronizar o InfoSaúde
-ao iniciar o chat, use:
+Para conversar com o **release consolidado v5 aprovado**, use exatamente:
 
 ```powershell
-uv run python app.py chat --validated
+uv run python app.py chat --release data/releases/corpus-consolidado-v5-aprovado-2026-11-10
 ```
 
-`--validated` carrega as 2.115 ocorrências e os 2.620 chunks primários de
-`data/corpus/`, verifica manifesto/relatório e reaproveita os vetores do índice
-histórico somente após conferir modelo, IDs e textos. Os 108 chunks
-complementares ainda marcados `pending` ficam fora deste chat e não são
-enviados como evidência. Não é necessário recalcular embeddings para esses
-2.620 textos idênticos.
-As ocorrências e apresentações do corpus consolidado estão `approved`, mas
-os 2.620 chunks primários ainda têm `review_status: pending`; o chat avisa
-isso na abertura. O manifesto aprovado não substitui a validação individual
-dos chunks.
-Na abertura, sincroniza estoque UBS/CEAF e cadastro de unidades; se a coleta
-falhar, avisa e tenta usar o último snapshot local. Consultas de estoque ficam
-limitadas às seis apresentações com código UBS validado no release de estoque;
-respostas documentais usam o corpus consolidado. A lista documental não comprova
-saldo nem disponibilidade. `--experimental` continua selecionando o snapshot
-histórico para comparação.
+O manifesto `consolidated-release-v2` seleciona o fluxo consolidado para `chat`,
+`ask`, `search`, `index`, `eval` e `sync-live`. A seleção também respeita
+`APP_RAG_RELEASE_DIR`; sem configuração, o padrão continua sendo o lote legado.
+`--validated` seleciona o corpus de `data/corpus/` no fluxo ampliado anterior;
+**não seleciona o release v5**.
+
+O chat v5 mantém contexto somente em memória e envia os últimos seis turnos
+à geração. Aceita esclarecimentos como `850 mg`, `comprimido`, `E em Planaltina?`
+e `E na Farmácia Popular?`. Uma nova pergunta com medicamento inicia outro contexto.
+Não é necessário saber concentração ou forma para começar: `metformina` lista
+as apresentações documentadas, incluindo concentrações, formas e características
+de liberação. O chat permite escolher por número ou pelos detalhes conhecidos;
+uma única apresentação é identificada sem exigir que o usuário repita seus campos.
+Depois de `liraglutida`, pode responder só `Planaltina` ou
+`e tem estoque desse remédio em Planaltina?`. A apresentação e a região ficam
+no contexto da sessão. Documentação não é uma etapa obrigatória da conversa.
+As respostas documentais mostram fonte, versão, página e identificador da evidência.
+Concentração e detalhe do dispositivo são tratados separadamente: por exemplo,
+`liraglutida 6mg/ml solução injetável` recupera a apresentação com sistema de
+aplicação de 3 mL na REME-DF, página 39. Erros próximos de nome, como `liraglutid`,
+geram uma sugestão que exige confirmação. Veja a [regressão validada](docs/regressao-liraglutida.md).
+
+Para conversar sem consultar nem sincronizar InfoSaúde:
+
+```powershell
+uv run python app.py chat --release data/releases/corpus-consolidado-v5-aprovado-2026-11-10 --documental --strategy lexical
+```
+
+Sem `APP_GOOGLE_API_KEY`, o chat responde com resumo e trechos documentais.
+Com a chave da **v2**, tenta gerar linguagem natural mesmo quando a busca vetorial
+falha. Índice ausente/incompatível ou serviço indisponível gera aviso e fallback
+lexical; falha de geração mantém a resposta documental e suas fontes.
+Ambiente prevalece sobre `.env`; nunca copie credenciais da v1.
+Para construir o índice do mesmo release e modelo:
+
+```powershell
+uv run python app.py index --release data/releases/corpus-consolidado-v5-aprovado-2026-11-10
+```
+
+Sem `--documental`, o chat sincroniza uma referência inicial do InfoSaúde na
+abertura. Os oito códigos dessa etapa **não representam toda a cobertura**.
+Cada pedido de estoque com apresentação identificada e região faz uma **nova
+consulta** aos painéis públicos UBS e CEAF, descobrindo o produto no catálogo e
+validando código, descrição, concentração, forma e dispositivo. Quando houver
+código na ocorrência REME-DF, ele também precisa coincidir. Produtos ambíguos,
+associações e liberação modificada não são intercambiados automaticamente.
+
+Uma falha de um painel não bloqueia o outro. O cache por apresentação preserva
+a data da consulta anterior e é marcado como antigo quando usado após falha;
+perguntas e CEP não são persistidos. Para sincronizar a referência inicial separadamente:
+
+```powershell
+uv run python app.py sync-live --release data/releases/corpus-consolidado-v5-aprovado-2026-11-10
+```
+
+Os códigos UBS `90224` (metformina 500 mg comprimido) e `90226` (850 mg comprimido)
+foram consultados no catálogo público e vinculados às apresentações explícitas da
+v5 em `data/mappings/ubs_consolidated.json`, com data, descrição e origem. Eles são
+sincronizados junto aos seis códigos legados. Para repetir a validação do catálogo:
+
+```powershell
+uv run python -m scripts.validate_ubs_metformin
+```
+
+O código `13142` de ação prolongada foi encontrado, mas permanece **sem vínculo**:
+a ocorrência F04 não informa forma farmacêutica. Associações com outros princípios
+ativos não são metformina isolada. Outros itens v5 são descobertos e conferidos
+sob demanda; não é preciso incluí-los manualmente nesses oito códigos iniciais.
+Liraglutida foi conferida no código `27795`. O código `37352` e a associação com
+insulina não são tratados como a mesma apresentação.
+
+O chat pode informar **presença nas versões documentais consultadas** e
+**saldo UBS ou situação CEAF retornados pela API**, para apresentações vinculadas. Estoque UBS
+é filtrado pela região pedida; ausência de registro não significa saldo zero.
+Exibe a hora da consulta e a data da posição do painel separadamente. Consulta
+feita agora não significa estoque atualizado em tempo real: se o painel omitir a
+data, o chat informa essa limitação, mesmo que retorne zero ou “COM ESTOQUE”.
+CEAF e UBS são canais distintos; unidades CEAF de outras regiões são identificadas
+explicitamente, sem afirmar qual delas atende o endereço do usuário.
+Exibe data de extração, saldo registrado e unidade, com aviso para confirmar antes
+de ir. Uma extração com mais de 48 horas é sinalizada como antiga.
+**Presença na Farmácia Popular não comprova estoque UBS, nem o contrário.**
+A API de CEP/UBS de referência é uma evolução futura: o chat **não pede CEP**,
+não resolve endereço e não afirma em qual UBS o usuário será atendido.
+Veja a [demonstração real com busca progressiva e estoque](docs/demo-busca-progressiva-estoque.md).
+
+O RAG recupera evidências do corpus para geração com citações. Sem índice,
+a recuperação é lexical; com índice compatível, o modo híbrido combina ranking
+lexical e vetorial dentro das apresentações já identificadas. Embeddings não
+substituem a identificação segura do produto nem consultam estoque. Ainda não há
+avaliação comparativa que prove superioridade de uma estratégia neste corpus.
+
+O chat não comprova disponibilidade atual, elegibilidade individual, documentos
+obrigatórios, indicação individual, dose ou equivalência/substituição terapêutica.
+
+A [demonstração histórica antes/depois](docs/demo-chat-v5.md) usa as mesmas perguntas,
+sem chave e com snapshot público real. A [demonstração com Gemini](docs/demo-chat-v5-modelo.md)
+registra geração real com a configuração local da v2, mesmo sem índice vetorial.
+Para reproduzir contra o commit anterior
+à mudança, substitua `COMMIT_ANTERIOR` pelo hash registrado na demonstração:
+
+```powershell
+uv run python -m scripts.demo_consolidated_chat --baseline-ref COMMIT_ANTERIOR
+uv run python -m scripts.demo_consolidated_chat --baseline-ref COMMIT_ANTERIOR --live-model --output docs/demo-chat-v5-modelo.md
+```
 
 Usar o mesmo corpus, suplemento e modelo ao indexar e consultar. Estratégias:
 `hybrid`, `lexical`, `vector`, `exact`; top-k padrão 5. As referências
@@ -122,9 +212,10 @@ O script não envia arquivos ao Teams.
 
 Sem `--experimental` ou `--curated`, a CLI usa o release aprovado; `--release` permite
 selecionar outro release validado. O `eval` legado usa seu dataset próprio,
-não o golden set ampliado. `--documental` evita consultar/sincronizar estoque.
-O chat legado sem essa opção pode sincronizar InfoSaúde; snapshots não
-garantem disponibilidade atual. Ver [integração InfoSaúde](docs/infosaude-live-rag.md).
+não o golden set ampliado. No chat consolidado, `--documental` evita consultar
+e sincronizar estoque. O chat legado mantém a sincronização de abertura mesmo
+com essa opção. Snapshots não garantem disponibilidade atual. Ver
+[integração InfoSaúde](docs/specs/SPEC-05-infosaude-live-api.md).
 
 Comandos de verificação, a executar em ambiente adequado:
 

@@ -1,0 +1,4 @@
+[core]
+    remote = compartilhado
+['remote "compartilhado"']
+    url = gdrive://1tPvsMggxEE0UmyrdkqkP9VMoJ9Ow6mZn

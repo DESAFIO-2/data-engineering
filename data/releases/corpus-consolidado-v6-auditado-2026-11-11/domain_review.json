@@ -1,0 +1,23 @@
+{
+  "agent_audit_date": "2026-11-11",
+  "agent_auditor_role": "auditoria técnica por agente",
+  "audit_log_sha256": "264ea5aa0897c7088b784813c7d8f23abec2b4a15702dc00f1b65168073afafa",
+  "authorization": "Instrução explícita do usuário: 'ent pode aceitar do dominio .'",
+  "clinical_credentials_verified": false,
+  "date": "2026-11-10",
+  "decision": "approved",
+  "evidence_sha256": "21ad6c19cd0080c636d187f76d5560ac1c27c61ce0d4918401cf662d0058c5b9",
+  "limitations": [
+    "Aprovação do responsável pelo projeto restrita à recuperação de presença nas listas F01/F03/F04.",
+    "Não comprova estoque, elegibilidade, dispensação por unidade, indicação clínica individual ou equivalência terapêutica.",
+    "As 79 apresentações de medicamentos com forma '-' ou concentração '-' refletem a ausência de declaração na fonte (ex: Farmácia Popular não declara formas). Elas não devem ser usadas para confirmar apresentações exatas.",
+    "A linha 987 da F03 está documentada exclusivamente no registro de exclusões por estar vazia no documento original.",
+    "Chunks antigos e complementares não incluídos no release consolidado."
+  ],
+  "release_version": "corpus-consolidado-v6-auditado-2026-11-11",
+  "reviewer": "usuário responsável pelo projeto (autorização histórica) + auditoria técnica integral por agente",
+  "reviewer_role": "responsável pelo projeto",
+  "scope": "Consulta de presença de apresentações e insumos nas edições F01, F03 e F04, com proveniência e evidência literal auditada.",
+  "source_release_manifest_sha256": "70ae21fe0dd88685aadda826acaf379096a0970e035c11645bb8ec2c9e9c8144",
+  "source_release_version": "corpus-consolidado-v5-aprovado-2026-11-10"
+}

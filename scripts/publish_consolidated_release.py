@@ -221,6 +221,8 @@ def verify(folder: Path) -> dict:
     expected = set(FILES if schema == "consolidated-release-v2" else ("catalog.jsonl", "occurrences.jsonl", "evidencias.jsonl", "quality_report.json"))
     if manifest.get("status") == "approved":
         expected.add("domain_review.json")
+    if "audit_log.jsonl" in manifest.get("files", {}):
+        expected.add("audit_log.jsonl")
     if schema not in {"consolidated-release-v1", "consolidated-release-v2"} or set(manifest["files"]) != expected:
         raise ValueError("Manifesto inválido")
     if manifest.get("status") not in {"pending_review", "approved"}:

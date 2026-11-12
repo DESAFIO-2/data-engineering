@@ -1,0 +1,74 @@
+{
+  "approval_scope": "Consulta de presença de apresentações e insumos nas edições F01, F03 e F04, com proveniência e evidência literal auditada.",
+  "domain_review_reference": "domain_review.json",
+  "f03_description_extract_sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4",
+  "files": {
+    "audit_log.jsonl": {
+      "bytes": 2038131,
+      "records": 2115,
+      "sha256": "264ea5aa0897c7088b784813c7d8f23abec2b4a15702dc00f1b65168073afafa"
+    },
+    "catalog.jsonl": {
+      "bytes": 611663,
+      "records": 1860,
+      "sha256": "8b59cb509239800ffcae9b9698fbe4682bc11ab6fd966b1dffd1df6897932f82"
+    },
+    "domain_review.json": {
+      "bytes": 1722,
+      "sha256": "678fa916f0775ff6cf6513e049482ba6de7cf42cc53b41efaccbbb15681759d1"
+    },
+    "evidencias.jsonl": {
+      "bytes": 1879679,
+      "records": 2114,
+      "sha256": "21ad6c19cd0080c636d187f76d5560ac1c27c61ce0d4918401cf662d0058c5b9"
+    },
+    "exclusions.jsonl": {
+      "bytes": 427,
+      "records": 1,
+      "sha256": "fcd2fa50a461109fc4759fa2bbe4f7f51b4e652c166f6cdec4439b7efe225383"
+    },
+    "f03_descriptions.json": {
+      "bytes": 340525,
+      "sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2269491,
+      "records": 2114,
+      "sha256": "e0ae300982b78257098e47574d618633b51de98446f78b7df2c185ad6f936882"
+    },
+    "quality_report.json": {
+      "bytes": 2268,
+      "sha256": "fce85e528c01dbf028d3cb2e13fc35c7b58f4f6f25e93364ee6c9e2d8f88ea54"
+    }
+  },
+  "generated_at_utc": "2026-11-11T16:30:57.967828+00:00",
+  "release_version": "corpus-consolidado-v6-auditado-2026-11-11",
+  "review_reference": {
+    "path": "audit_log.jsonl",
+    "scope": "Auditoria integral de 100% das 2.115 entradas contra fontes primárias congeladas.",
+    "sha256": "264ea5aa0897c7088b784813c7d8f23abec2b4a15702dc00f1b65168073afafa"
+  },
+  "schema_version": "consolidated-release-v2",
+  "source_release": {
+    "manifest_sha256": "70ae21fe0dd88685aadda826acaf379096a0970e035c11645bb8ec2c9e9c8144",
+    "version": "corpus-consolidado-v5-aprovado-2026-11-10"
+  },
+  "sources": {
+    "F01": {
+      "pages": 267,
+      "path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc"
+    },
+    "F03": {
+      "pages": 98,
+      "path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6"
+    },
+    "F04": {
+      "pages": 1,
+      "path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3"
+    }
+  },
+  "status": "approved"
+}

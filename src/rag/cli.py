@@ -39,7 +39,7 @@ def _sync_live() -> dict[str, Any]:
     return snapshot
 
 
-def _show(result: dict[str, Any], response: str | None = None) -> None:
+def _show(result: dict[str, Any], response: str | None = None, *, show_limits: bool = True) -> None:
     print(response or result["message"])
     if result["status"] == "matched":
         print("\nFontes consultadas:")
@@ -49,10 +49,11 @@ def _show(result: dict[str, Any], response: str | None = None) -> None:
                 f"- {source['source_id']} ({source['version']}), página {source['page']}: "
                 f"{source['url']} [evidência {evidence['evidence_id']}]"
             )
-        print(
-            "\nLimite desta resposta documental: presença em lista não garante estoque; "
-            "documentos e elegibilidade não verificados."
-        )
+        if show_limits:
+            print(
+                "\nLimite desta resposta documental: presença em lista não garante estoque; "
+                "documentos e elegibilidade não verificados."
+            )
 
 
 def _ask(
@@ -133,14 +134,14 @@ def main() -> int:
     parser.add_argument(
         "--documental",
         action="store_true",
-        help="Desativar consulta InfoSaúde nas respostas; chats ainda sincronizam ao iniciar",
+        help="Desativar consulta InfoSaúde; chat consolidado também desativa sincronização",
     )
     parser.add_argument("--show-context", action="store_true", help="Exibir trechos e ranking")
     parser.add_argument(
         "--strategy",
         choices=("hybrid", "lexical", "vector", "exact"),
         default="hybrid",
-        help="Estratégia para ask/search/eval; no chat o modo híbrido é automático",
+        help="Estratégia para ask/search/eval e chat consolidado; padrão híbrido",
     )
     parser.add_argument("--dataset", type=Path)
     parser.add_argument("--output", type=Path)
@@ -164,7 +165,7 @@ def main() -> int:
             if not args.release:
                 parser.error("Informe --release para avaliação consolidada ou use --experimental")
         selected_release = _path(args.release or settings.rag_release_dir)
-        if args.command in {"index", "search", "ask", "eval"} and args.release:
+        if args.command in {"index", "search", "ask", "chat", "sync-live", "eval"}:
             import json
 
             manifest = json.loads((selected_release / "release.json").read_bytes())

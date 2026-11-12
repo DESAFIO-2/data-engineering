@@ -1,0 +1,69 @@
+{
+  "corpus_fingerprint": "d65ad02bc66ae9d5c98ffa8475f39e4b5a674254ff9e55abae00c0ef80406faa",
+  "f03_description_extract_sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4",
+  "files": {
+    "audit_log.jsonl": {
+      "bytes": 2038992,
+      "records": 2115,
+      "sha256": "c7ecba2511d8aa23ac4fcac72237820f05d3aede985bde94be7425b690251302"
+    },
+    "catalog.jsonl": {
+      "bytes": 611404,
+      "records": 1859,
+      "sha256": "c40cea12df845208193f5654bc0c3c514dcbe2da5ad72d25eed89de4096879d1"
+    },
+    "evidencias.jsonl": {
+      "bytes": 1892377,
+      "records": 2114,
+      "sha256": "ec743bb1f4dcc3d315f1d124104f729dcc3c3f7d022c46839b8c141f9874c03e"
+    },
+    "exclusions.jsonl": {
+      "bytes": 427,
+      "records": 1,
+      "sha256": "fcd2fa50a461109fc4759fa2bbe4f7f51b4e652c166f6cdec4439b7efe225383"
+    },
+    "f03_descriptions.json": {
+      "bytes": 340525,
+      "sha256": "6959c908e0fc21a96b31f965eb156f7b1503c8b5a3bfbdbe118285ce7932cec4"
+    },
+    "occurrences.jsonl": {
+      "bytes": 2269519,
+      "records": 2114,
+      "sha256": "d6fb343e6fbeea8cf33fdc91473ddd85231d20c1ad57c801f39a25c2722a3e7f"
+    },
+    "quality_report.json": {
+      "bytes": 3436,
+      "sha256": "929abba721eb1414805ac9f55232d17eb0119382172bc83982124d1230690b20"
+    }
+  },
+  "generated_at_utc": "2026-11-12T03:37:37.205968+00:00",
+  "release_version": "corpus-consolidado-v9-claritromicina-normalizada-2026-11-12",
+  "review_reference": {
+    "path": "docs/reports/validacao-recuperacao-v8-test.md",
+    "scope": "Diagnóstico pós-teste; não equivale à revisão humana nem a novo gate.",
+    "sha256": "663bc74e241b87c55c8f8a83eb234f6534f0ed13e3acbe991573385f3ef9be4a"
+  },
+  "schema_version": "consolidated-release-v2",
+  "source_release": {
+    "manifest_sha256": "d634a75817ff3d16031c45fa664b9075ec426c1b3482581c0ca93f490906cba7",
+    "version": "corpus-consolidado-v8-aprovado-2026-11-11"
+  },
+  "sources": {
+    "F01": {
+      "pages": 267,
+      "path": "raw/F01-rename/rename-2024-2ed.pdf",
+      "sha256": "a991dd0934774854dbe087a259a484c21fdf70ad2d27f4af5ba5a5c51a2a15bc"
+    },
+    "F03": {
+      "pages": 98,
+      "path": "raw/F03-reme-df/reme-df-2026-10-29.pdf",
+      "sha256": "299ff632a4e55d1dabbc953dc9c9e09f1cf6bbe2cabef8bf45fec5fbd5139fb6"
+    },
+    "F04": {
+      "pages": 1,
+      "path": "raw/F04-farmacia-popular/farmacia-popular-elenco-2026-08-31.pdf",
+      "sha256": "beb2cf59b835e94e2e016b009bd2b17f5d0375ab593db00f983211c2cfbc32b3"
+    }
+  },
+  "status": "pending_review"
+}

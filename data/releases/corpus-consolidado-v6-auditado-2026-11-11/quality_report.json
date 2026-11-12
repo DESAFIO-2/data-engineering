@@ -1,0 +1,48 @@
+{
+  "audit_coverage_pct": 100.0,
+  "catalog_presentations": 1860,
+  "corrections_applied": [
+    {
+      "fix": "Correção de quebra de linha com hífen: 'fenoximetilpenicili- na potássica' -> 'fenoximetilpenicilina potássica'",
+      "occurrence_id": "occ-ef6f34aca6aebf7145e278f7",
+      "source_id": "F01"
+    },
+    {
+      "fix": "Remoção de acréscimo farmacológico '(guaco)' ausente no texto literal da linha 695 da REME-DF",
+      "occurrence_id": "occ-be1655419eff7210901c7689",
+      "source_id": "F03"
+    },
+    {
+      "fix": "Normalização de espaçamento químico: 'dl- metionina' -> 'dl-metionina'",
+      "occurrence_id": "occ-c731c1d37d51b270a7f9b041",
+      "source_id": "F03"
+    }
+  ],
+  "evidence": 2114,
+  "exact_presentations_supported": 1781,
+  "excluded_source_rows": 1,
+  "f03_description_cells_corrected": 5,
+  "legacy_chunk_references_remaining": 0,
+  "limitations": [
+    "Aprovação do responsável pelo projeto restrita à recuperação de presença nas listas F01/F03/F04.",
+    "Não comprova estoque, elegibilidade, dispensação por unidade, indicação clínica individual ou equivalência terapêutica.",
+    "As 79 apresentações de medicamentos com forma '-' ou concentração '-' refletem a ausência de declaração na fonte (ex: Farmácia Popular não declara formas). Elas não devem ser usadas para confirmar apresentações exatas.",
+    "A linha 987 da F03 está documentada exclusivamente no registro de exclusões por estar vazia no documento original.",
+    "Chunks antigos e complementares não incluídos no release consolidado."
+  ],
+  "occurrences": 2114,
+  "occurrences_by_source": {
+    "F01": 996,
+    "F03": 1077,
+    "F04": 41
+  },
+  "occurrences_by_type": {
+    "medicine": 2085,
+    "supply": 29
+  },
+  "partial_presentations_supported": 79,
+  "release_version": "corpus-consolidado-v6-auditado-2026-11-11",
+  "supplies": 29,
+  "total_audited_records": 2115,
+  "validation": "Auditoria integral 100% dos 2.115 registros contra fontes primárias PDF congeladas. Hashes, esquemas, IDs, duplicidades, vínculos, proveniência e coordenadas conferidos. Ausências legítimas explicitadas (79 apresentações de medicamentos sem forma ou concentração). Zero referências herdadas a chunks antigos."
+}

@@ -81,8 +81,16 @@ UBS = Panel(
 )
 
 
-def query_body(panel: Panel, limit: int, product_codes: tuple[str, ...] = ()) -> dict[str, Any]:
+def query_body(
+    panel: Panel,
+    limit: int,
+    product_codes: tuple[str, ...] = (),
+    product_name: str = "",
+) -> dict[str, Any]:
     source = {"SourceRef": {"Source": "e"}}
+    specialized = panel.entity == CEAF.entity
+    code_column = "cod_produto2" if specialized else "i_cod_produto"
+    description_column = "desc_produto" if specialized else "i_desc_produto"
     query: dict[str, Any] = {
         "Version": 2,
         "From": [{"Name": "e", "Entity": panel.entity, "Type": 0}],
@@ -97,13 +105,26 @@ def query_body(panel: Panel, limit: int, product_codes: tuple[str, ...] = ()) ->
                 "Condition": {
                     "In": {
                         "Expressions": [
-                            {"Column": {"Expression": source, "Property": "i_cod_produto"}}
+                            {"Column": {"Expression": source, "Property": code_column}}
                         ],
                         "Values": [[{"Literal": {"Value": f"'{code}'"}}] for code in product_codes],
                     }
                 }
             }
         ]
+    if product_name:
+        query.setdefault("Where", []).append(
+            {
+                "Condition": {
+                    "Contains": {
+                        "Left": {"Column": {"Expression": source, "Property": description_column}},
+                        "Right": {
+                            "Literal": {"Value": "'" + product_name.replace("'", "''") + "'"}
+                        },
+                    }
+                }
+            }
+        )
     shape = {
         "Query": query,
         "Binding": {
@@ -175,11 +196,16 @@ class InfoSaudeLiveClient:
         self.session = session or requests.Session()
 
     def fetch(
-        self, panel: Panel, *, limit: int, product_codes: tuple[str, ...] = ()
+        self,
+        panel: Panel,
+        *,
+        limit: int,
+        product_codes: tuple[str, ...] = (),
+        product_name: str = "",
     ) -> list[dict[str, Any]]:
         response = self.session.post(
             API,
-            json=query_body(panel, limit, product_codes),
+            json=query_body(panel, limit, product_codes, product_name),
             headers={"X-PowerBI-ResourceKey": panel.key, "Accept": "application/json"},
             timeout=30,
         )
@@ -188,6 +214,20 @@ class InfoSaudeLiveClient:
         if len(rows) >= limit:
             raise ValueError(f"Consulta {panel.entity} atingiu o limite de {limit} linhas")
         return rows
+
+    def discover_ubs_products(self, name: str) -> list[dict[str, Any]]:
+        """Distinct product pairs, filtered server-side; refuse truncated catalogs."""
+        if not name.strip():
+            raise ValueError("Informe o nome do produto UBS")
+        catalog = Panel(
+            UBS.key,
+            UBS.model_id,
+            UBS.dataset_id,
+            UBS.entity,
+            ("i_cod_produto", "i_desc_produto"),
+            UBS.source_url,
+        )
+        return self.fetch(catalog, limit=5000, product_name=name.upper())
 
 
 def sync_snapshot(path: Path, product_codes: tuple[str, ...]) -> dict[str, Any]:
@@ -199,7 +239,8 @@ def sync_snapshot(path: Path, product_codes: tuple[str, ...]) -> dict[str, Any]:
         raise ValueError("Painel público retornou conjunto vazio; snapshot anterior preservado")
     if {str(row.get("i_cod_produto")) for row in ubs} != set(product_codes):
         raise ValueError(
-            "Painel UBS não retornou todos os seis códigos; snapshot anterior preservado"
+            "Painel UBS não retornou todos os códigos solicitados "
+            f"({len(product_codes)}); snapshot anterior preservado"
         )
     snapshot = {
         "fetched_at_utc": datetime.now(UTC).isoformat(),
