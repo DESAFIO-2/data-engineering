@@ -285,6 +285,13 @@ def build_index(
                 store.add_documents(docs, ids=[c["chunk_id"] for c in batch])
                 break
             except Exception as exc:
+                if re.search(
+                    r"(?:per day limit exceeded|daily quota|requests per day)", str(exc), re.I
+                ):
+                    raise RuntimeError(
+                        "Cota diária de embeddings esgotada; "
+                        "índice parcial preservado para retomada"
+                    ) from exc
                 if attempt == 5 or not re.search(
                     r"429|RESOURCE_EXHAUSTED|503|UNAVAILABLE|500|INTERNAL", str(exc), re.I
                 ):
@@ -391,10 +398,14 @@ def _interleaved_association_matches(query: str, strength: str, name: str | None
     doses = normalize(strength).split(" + ")
     if len(components) != len(doses):
         return False
-    pattern = r"(?<!\w)" + r"\s*\+\s*".join(
-        re.escape(component) + r"\s+" + re.escape(dose)
-        for component, dose in zip(components, doses, strict=True)
-    ) + r"(?![\w/,])"
+    pattern = (
+        r"(?<!\w)"
+        + r"\s*\+\s*".join(
+            re.escape(component) + r"\s+" + re.escape(dose)
+            for component, dose in zip(components, doses, strict=True)
+        )
+        + r"(?![\w/,])"
+    )
     return bool(re.search(pattern, query))
 
 
@@ -409,14 +420,14 @@ def strength_matches(query: str, strength: str, name: str | None = None) -> bool
     comparison_query = _textual_presentation(query)
     comparison_core = _textual_presentation(core)
     literal = re.search(
-        r"(?<![\w.,/])" + re.escape(comparison_core) + r"(?![\w.,/])",
+        r"(?<![\w.,/])" + re.escape(comparison_core) + r"(?![\w./]|,\d)",
         comparison_query,
     )
     # Parentheses in a natural question may group a documented strength without
     # changing its units, alternatives or ingredient order.
     flat_query = _textual_presentation(re.sub(r"[()]", " ", query))
     flat_core = _textual_presentation(re.sub(r"[()]", " ", core))
-    grouped = re.search(r"(?<![\w.,/])" + re.escape(flat_core) + r"(?![\w.,/])", flat_query)
+    grouped = re.search(r"(?<![\w.,/])" + re.escape(flat_core) + r"(?![\w./]|,\d)", flat_query)
     if not (literal or grouped or _interleaved_association_matches(query, strength, name)):
         return False
     requested_packages = set(re.findall(r"\b(?:bolsa|frasco|ampola|seringa)\b", query))
@@ -615,11 +626,7 @@ def search(
                     "Concentração não localizada para este princípio ativo nas listas consultadas."
                 ),
             }
-        matches = [
-            m
-            for m in strengths
-            if m["form"] == "-" or _form_matches(query, m["form"])
-        ]
+        matches = [m for m in strengths if m["form"] == "-" or _form_matches(query, m["form"])]
         if not matches and not any(
             normalize(m["form"]) in query for m in release.catalog if m["form"] != "-"
         ):

@@ -1,0 +1,268 @@
+{
+  "schema_version": "week3-comparison-v1",
+  "executed_at_utc": "2026-11-12T18:34:34.489481+00:00",
+  "matrix": "response",
+  "dataset_sha256": "8247bdf0e5022f7294adfc541ca7e439ea47cedf827c0cfc63c33299ba8fde2e",
+  "split": "dev",
+  "review_sha256": null,
+  "release_fingerprint": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+  "chunks_sha256": "f6049cedf006aefd7bbc3d06f2b2fda0de4a906e3d95a1fb6272c08b9ec9da8e",
+  "chat_model": "gemini-3.5-flash",
+  "embedding_model": null,
+  "best_strategy": "exact",
+  "top_k": 5,
+  "python_version": "3.12.16",
+  "git_commit": "6b915f15a709e61f65eb5727f10157432b29dce7",
+  "summaries": {
+    "llm_only": {
+      "cases": 1,
+      "positive_cases": 1,
+      "hit_at_1": null,
+      "hit_at_3": null,
+      "hit_at_5": null,
+      "mrr_at_5": null,
+      "status_accuracy": null,
+      "critical_confusions": 0,
+      "citation_precision": null,
+      "errors": 0,
+      "usage_coverage": 1,
+      "input_tokens_known": 187,
+      "output_tokens_known": 531,
+      "latency_p50_ms": 5027.201,
+      "latency_p95_ms": 5027.201,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 0.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_documental": {
+      "cases": 1,
+      "positive_cases": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 62.981,
+      "latency_p95_ms": 62.981,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_llm": {
+      "cases": 1,
+      "positive_cases": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 1,
+      "input_tokens_known": 303,
+      "output_tokens_known": 841,
+      "latency_p50_ms": 5952.972,
+      "latency_p95_ms": 5952.972,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "best_llm": {
+      "cases": 1,
+      "positive_cases": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 1,
+      "input_tokens_known": 303,
+      "output_tokens_known": 711,
+      "latency_p50_ms": 31774.108,
+      "latency_p95_ms": 31774.108,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 1,
+          "positive_cases": 1,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "variant": "llm_only",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A informação sobre a presença da entacapona 200 mg, comprimido, na RENAME não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 5027.173,
+      "total_ms": 5027.201,
+      "usage": {
+        "input_tokens": 187,
+        "output_tokens": 531,
+        "total_tokens": 718,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 503
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "entacapona 200 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- entacapona | 200 mg | comprimido | Especializado | N04BX02",
+      "evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9ea94bf918b210c9878455f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 62.961,
+      "generation_ms": null,
+      "total_ms": 62.981,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a entacapona 200 mg em comprimido consta na RENAME 2024 (2ª edição), onde está vinculada ao Componente Especializado. No entanto, constar na lista não garante a disponibilidade do medicamento em estoque.",
+      "evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9ea94bf918b210c9878455f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 37.734,
+      "generation_ms": 5915.191,
+      "total_ms": 5952.972,
+      "usage": {
+        "input_tokens": 303,
+        "output_tokens": 841,
+        "total_tokens": 1144,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 786
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a entacapona 200 mg em comprimido consta na RENAME 2024 (2ª edição), no Componente Especializado. No entanto, constar na lista não garante a presença do medicamento em estoque.",
+      "evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9ea94bf918b210c9878455f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 65.278,
+      "generation_ms": 31708.768,
+      "total_ms": 31774.108,
+      "usage": {
+        "input_tokens": 303,
+        "output_tokens": 711,
+        "total_tokens": 1014,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 660
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    }
+  ]
+}

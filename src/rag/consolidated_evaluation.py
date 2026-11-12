@@ -34,7 +34,7 @@ def _git_revision(root: Path) -> dict[str, Any]:
         ).stdout.strip()
         dirty = bool(
             subprocess.run(
-            ["git", "status", "--porcelain", "--untracked-files=no"],
+                ["git", "status", "--porcelain", "--untracked-files=no"],
                 cwd=root,
                 text=True,
                 capture_output=True,
@@ -100,9 +100,7 @@ def _preflight(
                 case.get("source_id") and ev["source"]["source_id"] != case["source_id"]
             ):
                 raise ValueError(f"Evidência/fonte inválida: {case['id']} {eid}")
-        if {ref["evidence_id"] for ref in case["expected_references"]} != set(
-            case["relevant_ids"]
-        ):
+        if {ref["evidence_id"] for ref in case["expected_references"]} != set(case["relevant_ids"]):
             raise ValueError(f"Referências/evidências divergentes: {case['id']}")
         for ref in case["expected_references"]:
             ev = evidence[ref["evidence_id"]]
@@ -160,9 +158,17 @@ def evaluate(
     top_k: int = 5,
     review_path: Path | None = None,
     prior_review_path: Path | None = None,
+    store: Any = None,
+    embedding_model: str | None = None,
 ) -> dict[str, Any]:
-    if strategy not in {"exact", "lexical"} or split not in {"dev", "test"} or top_k != 5:
-        raise ValueError("Este gate usa exact/lexical e top_k=5")
+    if (
+        strategy not in {"exact", "lexical", "vector", "hybrid"}
+        or split not in {"dev", "test"}
+        or top_k != 5
+    ):
+        raise ValueError("Este gate usa exact/lexical/vector/hybrid e top_k=5")
+    if strategy in {"vector", "hybrid"} and (store is None or not embedding_model):
+        raise ValueError("Busca vetorial exige índice compatível e modelo registrado")
     cases = [json.loads(x) for x in dataset.read_text(encoding="utf-8").splitlines() if x]
     _preflight(cases, release, split, review_path, prior_review_path)
     evidence = {item["evidence_id"]: item for item in release.evidence}
@@ -172,7 +178,9 @@ def evaluate(
         if case["split"] != split:
             continue
         started = time.perf_counter()
-        result = search(case["question"], release, chunks, strategy=strategy, top_k=top_k)
+        result = search(
+            case["question"], release, chunks, store=store, strategy=strategy, top_k=top_k
+        )
         elapsed_ms = (time.perf_counter() - started) * 1000
         found = result.get("evidence", [])
         retrieved = [item["evidence_id"] for item in found]
@@ -287,6 +295,7 @@ def evaluate(
         "git": _git_revision(release.folder.parents[2]),
         "python_version": platform.python_version(),
         "strategy": strategy,
+        "embedding_model": embedding_model if store is not None else None,
         "split": split,
         "top_k": top_k,
         "reviewed_cases": sum(

@@ -84,6 +84,21 @@ def run(args: Any, settings: Settings) -> int:
 
             v8 = release.manifest["release_version"].startswith("corpus-consolidado-v8-")
             v9 = release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            store = None
+            if args.strategy in {"vector", "hybrid"}:
+                from .providers import google_embeddings
+
+                embeddings = google_embeddings(
+                    settings.rag_embedding_model, settings.google_api_key
+                )
+                store = open_index(
+                    release,
+                    chunks,
+                    manifest,
+                    ROOT / settings.rag_vector_dir,
+                    settings.rag_embedding_model,
+                    embeddings,
+                )
             result = evaluate(
                 dataset=Path(args.dataset),
                 release=release,
@@ -92,6 +107,8 @@ def run(args: Any, settings: Settings) -> int:
                 strategy=args.strategy,
                 split=args.split,
                 top_k=settings.rag_top_k,
+                store=store,
+                embedding_model=settings.rag_embedding_model if store is not None else None,
                 review_path=ROOT
                 / (
                     "docs/reports/v9-next-independent-test-review.md"

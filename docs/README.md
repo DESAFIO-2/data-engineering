@@ -20,6 +20,7 @@
 ## 3. Avaliação e publicação
 
 - [Avaliação documental de RAG](specs/SPEC-03-golden-dataset-and-evaluation.md)
+- [Semana 3: comparação LLM × RAG na v9](reports/semana3-llm-rag-v9.md) — protocolo, resultados de desenvolvimento e pendências de validação.
 - [Revisão e publicação do corpus](specs/SPEC-08-publication.md)
 
 ## 4. Padrão editorial

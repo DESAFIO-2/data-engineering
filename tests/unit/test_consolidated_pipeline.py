@@ -9,7 +9,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from rag.consolidated import ConsolidatedRelease, chunk_for, load_chunks, search
+from rag.consolidated import ConsolidatedRelease, chunk_for, load_chunks, search, strength_matches
 
 ROOT = Path(__file__).resolve().parents[2]
 RELEASE = ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
@@ -67,3 +67,9 @@ def test_cross_medicine_vector_results_cannot_be_returned() -> None:
     result = search(case["question"], release, chunks, store=WrongStore(), strategy="hybrid")
     assert result["status"] == "matched"
     assert all(e["medicine_id"] in result["equivalent_medicine_ids"] for e in result["evidence"])
+
+
+def test_strength_followed_by_sentence_comma_keeps_exact_dose() -> None:
+    assert strength_matches("Existe entacapona 200 mg, comprimido?", "200 mg", "entacapona")
+    assert not strength_matches("Existe entacapona 20 mg, comprimido?", "200 mg", "entacapona")
+    assert not strength_matches("Existe entacapona 200 mg,5?", "200 mg", "entacapona")

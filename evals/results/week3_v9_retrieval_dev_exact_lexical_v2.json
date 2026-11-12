@@ -1,0 +1,784 @@
+{
+  "schema_version": "week3-comparison-v1",
+  "executed_at_utc": "2026-11-12T18:33:17.912893+00:00",
+  "matrix": "retrieval",
+  "dataset_sha256": "252b40dedbb44355367c3eb64379db7f3642cbe264934b12de205bf445c8c69e",
+  "split": "dev",
+  "review_sha256": null,
+  "release_fingerprint": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+  "chunks_sha256": "f6049cedf006aefd7bbc3d06f2b2fda0de4a906e3d95a1fb6272c08b9ec9da8e",
+  "chat_model": null,
+  "embedding_model": null,
+  "best_strategy": null,
+  "top_k": 5,
+  "python_version": "3.12.16",
+  "git_commit": "6b915f15a709e61f65eb5727f10157432b29dce7",
+  "summaries": {
+    "exact": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 35.391,
+      "latency_p95_ms": 36.1783,
+      "human_review": "not_applicable",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 36.1165,
+      "latency_p95_ms": 36.96155,
+      "human_review": "not_applicable",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "variant": "exact",
+      "id": "W3-DEV-01",
+      "question": "A RENAME lista clofazimina em cápsula de 100 mg?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-156a268279dc2ce94c2162da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.626,
+      "generation_ms": null,
+      "total_ms": 36.637,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9ea94bf918b210c9878455f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.193,
+      "generation_ms": null,
+      "total_ms": 35.203,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-03",
+      "question": "Segundo a RENAME, há ceftriaxona 1 g em pó para solução injetável?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-2b5c471ec04a948252c472ea"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2b5c471ec04a948252c472ea"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2b5c471ec04a948252c472ea"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.592,
+      "generation_ms": null,
+      "total_ms": 35.598,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-04",
+      "question": "A REME-DF inclui claritromicina 500mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-25d6511151adc3be1b20ddf5",
+        "evidence-440a7b86140f721129cdd834",
+        "evidence-83202f34ce2ffbeed05ea49d"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-25d6511151adc3be1b20ddf5",
+        "chunk-440a7b86140f721129cdd834",
+        "chunk-83202f34ce2ffbeed05ea49d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-25d6511151adc3be1b20ddf5",
+        "evidence-440a7b86140f721129cdd834",
+        "evidence-83202f34ce2ffbeed05ea49d"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true
+      ],
+      "retrieval_ms": 35.241,
+      "generation_ms": null,
+      "total_ms": 35.249,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-05",
+      "question": "Na REME-DF consta ciclofosfamida 50 mg comprimido revestido de liberação retardada?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-8d222dd0f1a881b1fb80d01c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-8d222dd0f1a881b1fb80d01c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-8d222dd0f1a881b1fb80d01c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.795,
+      "generation_ms": null,
+      "total_ms": 35.803,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-06",
+      "question": "Vocês localizaram tacrolimo 1mg cápsula na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-dd42a1c5f9f1864cbcf86812"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-dd42a1c5f9f1864cbcf86812"
+      ],
+      "expected_evidence_ids": [
+        "evidence-dd42a1c5f9f1864cbcf86812"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.374,
+      "generation_ms": null,
+      "total_ms": 35.379,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-07",
+      "question": "Succinato de metoprolol 25 mg aparece na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-e597b6780d28aa62255f6eec"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-e597b6780d28aa62255f6eec"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e597b6780d28aa62255f6eec"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.396,
+      "generation_ms": null,
+      "total_ms": 35.403,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-08",
+      "question": "No elenco da Farmácia Popular há atenolol 25mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-4eb20de2a64dfed2e8279acc"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-4eb20de2a64dfed2e8279acc"
+      ],
+      "expected_evidence_ids": [
+        "evidence-4eb20de2a64dfed2e8279acc"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.109,
+      "generation_ms": null,
+      "total_ms": 35.114,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-09",
+      "question": "A Farmácia Popular tem cloridrato de metformina 500mg de ação prolongada na lista?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-48e616ae9f8df7c435126c21"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-48e616ae9f8df7c435126c21"
+      ],
+      "expected_evidence_ids": [
+        "evidence-48e616ae9f8df7c435126c21"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.733,
+      "generation_ms": null,
+      "total_ms": 35.738,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-10",
+      "question": "A RENAME registra álcool etílico (FN) 70% como insumo?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.424,
+      "generation_ms": null,
+      "total_ms": 0.427,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-11",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": "unsupported",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.011,
+      "generation_ms": null,
+      "total_ms": 0.012,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "exact",
+      "id": "W3-DEV-12",
+      "question": "A REME-DF lista claritromicina 750 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 35.512,
+      "generation_ms": null,
+      "total_ms": 35.515,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-01",
+      "question": "A RENAME lista clofazimina em cápsula de 100 mg?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-156a268279dc2ce94c2162da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.722,
+      "generation_ms": null,
+      "total_ms": 35.729,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-02",
+      "question": "Existe entacapona 200 mg, comprimido, na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9ea94bf918b210c9878455f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9ea94bf918b210c9878455f0"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 35.606,
+      "generation_ms": null,
+      "total_ms": 35.612,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-03",
+      "question": "Segundo a RENAME, há ceftriaxona 1 g em pó para solução injetável?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-2b5c471ec04a948252c472ea"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2b5c471ec04a948252c472ea"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2b5c471ec04a948252c472ea"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.198,
+      "generation_ms": null,
+      "total_ms": 36.203,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-04",
+      "question": "A REME-DF inclui claritromicina 500mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-25d6511151adc3be1b20ddf5",
+        "evidence-440a7b86140f721129cdd834",
+        "evidence-83202f34ce2ffbeed05ea49d"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-25d6511151adc3be1b20ddf5",
+        "chunk-440a7b86140f721129cdd834",
+        "chunk-83202f34ce2ffbeed05ea49d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-25d6511151adc3be1b20ddf5",
+        "evidence-440a7b86140f721129cdd834",
+        "evidence-83202f34ce2ffbeed05ea49d"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true
+      ],
+      "retrieval_ms": 35.892,
+      "generation_ms": null,
+      "total_ms": 35.901,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-05",
+      "question": "Na REME-DF consta ciclofosfamida 50 mg comprimido revestido de liberação retardada?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-8d222dd0f1a881b1fb80d01c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-8d222dd0f1a881b1fb80d01c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-8d222dd0f1a881b1fb80d01c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.801,
+      "generation_ms": null,
+      "total_ms": 36.809,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-06",
+      "question": "Vocês localizaram tacrolimo 1mg cápsula na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-dd42a1c5f9f1864cbcf86812"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-dd42a1c5f9f1864cbcf86812"
+      ],
+      "expected_evidence_ids": [
+        "evidence-dd42a1c5f9f1864cbcf86812"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.637,
+      "generation_ms": null,
+      "total_ms": 36.644,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-07",
+      "question": "Succinato de metoprolol 25 mg aparece na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-e597b6780d28aa62255f6eec"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-e597b6780d28aa62255f6eec"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e597b6780d28aa62255f6eec"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.681,
+      "generation_ms": null,
+      "total_ms": 36.69,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-08",
+      "question": "No elenco da Farmácia Popular há atenolol 25mg?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-4eb20de2a64dfed2e8279acc"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-4eb20de2a64dfed2e8279acc"
+      ],
+      "expected_evidence_ids": [
+        "evidence-4eb20de2a64dfed2e8279acc"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 36.021,
+      "generation_ms": null,
+      "total_ms": 36.03,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-09",
+      "question": "A Farmácia Popular tem cloridrato de metformina 500mg de ação prolongada na lista?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": null,
+      "evidence_ids": [
+        "evidence-48e616ae9f8df7c435126c21"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-48e616ae9f8df7c435126c21"
+      ],
+      "expected_evidence_ids": [
+        "evidence-48e616ae9f8df7c435126c21"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 37.137,
+      "generation_ms": null,
+      "total_ms": 37.148,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-10",
+      "question": "A RENAME registra álcool etílico (FN) 70% como insumo?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.514,
+      "generation_ms": null,
+      "total_ms": 0.519,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-11",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": "unsupported",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.015,
+      "generation_ms": null,
+      "total_ms": 0.017,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical",
+      "id": "W3-DEV-12",
+      "question": "A REME-DF lista claritromicina 750 mg comprimido?",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": null,
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 36.481,
+      "generation_ms": null,
+      "total_ms": 36.485,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    }
+  ]
+}
