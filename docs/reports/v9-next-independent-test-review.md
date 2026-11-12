@@ -36,3 +36,40 @@ Fontes: [F01 RENAME 2024](https://www.gov.br/saude/pt-br/composicao/sectics/rena
 | V9-R2-026 | F03 | Segundo a REME-DF, consta digoxina 0,125 mg comprimido? | not_in_scope | — | — | Pendente | — | — |
 | V9-R2-027 | F03 | Segundo a REME-DF, consta misoprostol 100 mcg comprimido vaginal? | not_in_scope | — | — | Pendente | — | — |
 | V9-R2-028 | F04 | Segundo a Farmácia Popular, consta captopril 50mg? | not_in_scope | — | — | Pendente | — | — |
+
+## Revisão técnica independente — Codex, 2026-11-12
+
+Esta revisão confere o candidato com os PDFs primários e as referências do release. É um parecer técnico; as colunas de decisão e revisor/data acima permanecem reservadas à revisão humana. **Resultado: 28 casos tecnicamente conformes.** Nenhum caso foi enviado ao recuperador.
+
+| Caso | Parecer técnico | Conferência no PDF primário |
+|---|---|---|
+| V9-R2-001 | Conforme | F01 p. 27: calcitriol 0,25 mcg cápsula. |
+| V9-R2-002 | Conforme | F01 p. 28: “cloridrato de” e “metoclopramida” aparecem em linhas consecutivas da mesma apresentação, seguida de 10 mg comprimido. A grafia contínua também consta na p. 141. |
+| V9-R2-003 | Conforme | F01 p. 28: cloridrato de ondansetrona 4 mg comprimido orodispersível; distinto do comprimido comum. |
+| V9-R2-004 | Conforme | F01 p. 29: dicloridrato de sapropterina 100 mg comprimido solúvel. |
+| V9-R2-005 | Conforme | F01 p. 29: galsulfase 5 mg solução injetável. |
+| V9-R2-006 | Conforme | F01 p. 30: glicerol 120 mg/mL solução retal. |
+| V9-R2-007 | Conforme | F01 p. 30: gliclazida 30 mg comprimido de liberação prolongada; há outras doses e forma comum. |
+| V9-R2-008 | Conforme | F01 p. 30: hidróxido de alumínio 230 mg comprimido. |
+| V9-R2-009 | Conforme | F01 p. 30: imiglucerase 400 U pó para solução injetável. |
+| V9-R2-010 | Conforme | F01 p. 31: lactulose 667 mg/mL xarope. |
+| V9-R2-011 | Conforme | F01 p. 32: nistatina 100.000 UI/mL suspensão oral. |
+| V9-R2-012 | Conforme | F03 p. 20, item 202: carvedilol comprimido 3,125 mg. |
+| V9-R2-013 | Conforme | F03 p. 26, item 357: digoxina comprimido 0,25 mg. |
+| V9-R2-014 | Conforme | F03 p. 29, item 412: epinefrina solução injetável 1 mg/mL; a linha também especifica ampola 1 mL. |
+| V9-R2-015 | Conforme | F03 p. 42, itens 706–707: misoprostol comprimido vaginal 25 mcg em dois canais/códigos distintos. |
+| V9-R2-016 | Conforme | F03 p. 38, item 619: levotiroxina sódica comprimido 25 mcg. |
+| V9-R2-017 | Conforme | F03 p. 48, itens 838–839: prednisona comprimido 5 mg em dois canais/códigos distintos. |
+| V9-R2-018 | Conforme | F03 p. 12, item 9: aciclovir comprimido 200 mg. |
+| V9-R2-019 | Conforme | F03 p. 31, item 454: fluconazol cápsula 150 mg. |
+| V9-R2-020 | Conforme | F03 p. 39, item 634: lopinavir + ritonavir comprimido 100 mg + 25 mg; a linha inclui a sigla “lpv/r”. |
+| V9-R2-021 | Conforme | F03 p. 41, item 680: metronidazol comprimido 400 mg. |
+| V9-R2-022 | Conforme | F04 p. 1, linha 17: captopril 25mg; o elenco não informa forma. Família reutilizada da v8. |
+| V9-R2-023 | Conforme | F04 p. 1, linha 23: furosemida 40 mg; o elenco não informa forma. Família reutilizada da v8. |
+| V9-R2-024 | Conforme | F04 p. 1, linha 25: acetato de medroxiprogesterona 150mg; o elenco não informa forma. Família reutilizada da v8. |
+| V9-R2-025 | Conforme | F01: “calcitriol” ocorre nas pp. 27 e 187 somente em 0,25 mcg cápsula; ausência de 0,5 mcg conferida nas 267 páginas. |
+| V9-R2-026 | Conforme | F03: “digoxina” ocorre no item 357 somente em 0,25 mg comprimido; ausência de 0,125 mg conferida nas 98 páginas. |
+| V9-R2-027 | Conforme | F03: “misoprostol” consta nos itens 704–707 em 25 e 200 mcg comprimido vaginal; ausência de 100 mcg conferida nas 98 páginas. |
+| V9-R2-028 | Conforme | F04: “captopril” consta somente em 25mg; ausência de 50mg conferida no PDF inteiro. |
+
+As 26 referências positivas foram cruzadas com o release quanto a ID, fonte, página, linha, princípio ativo, dose e forma. A leitura da apresentação em V9-R2-002 levou em conta a quebra de linha do PDF. Solicitar as 28 decisões humanas antes de promover o candidato.
