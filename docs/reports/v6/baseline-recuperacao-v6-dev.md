@@ -1,6 +1,6 @@
 # Baseline exploratório de recuperação v6 — 11/11/2026
 
-> **Errata posterior:** o avaliador consolidado lia o JSONL UTF-8 sem especificar `encoding` no Windows. Isso corrompia acentos das perguntas e reduzia artificialmente as métricas abaixo. Elas documentam a execução histórica, mas não medem de forma confiável a qualidade da recuperação. A causa e o novo diagnóstico exploratório v7 estão em [validação da v7](validacao-recuperacao-v7-dev.md).
+> **Errata posterior:** o avaliador consolidado lia o JSONL UTF-8 sem especificar `encoding` no Windows. Isso corrompia acentos das perguntas e reduzia artificialmente as métricas abaixo. Elas documentam a execução histórica, mas não medem de forma confiável a qualidade da recuperação. A causa e o novo diagnóstico exploratório v7 estão em [validação da v7](../v7/validacao-recuperacao-v7-dev.md).
 
 O conjunto `evals/datasets/consolidated_v6_agent_reviewed.jsonl` tem 119 perguntas sintéticas (91 `dev`, 28 `test`) marcadas `agent_reviewed`, não `reviewed` por Jhiovana. Estes números **não são benchmark oficial** nem autorização para vetorizar; servem para localizar defeitos na busca e na referência esperada.
 

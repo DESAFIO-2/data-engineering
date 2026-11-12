@@ -105,4 +105,4 @@ def test_test_split_remains_closed(corpus: tuple) -> None:
     release, _, _ = corpus
     cases = [json.loads(x) for x in DATASET.read_text(encoding="utf-8").splitlines() if x]
     with pytest.raises(ValueError, match="Teste fechado"):
-        _preflight(cases, release, "test", ROOT / "docs/reports/v7-retrieval-review.xlsx")
+        _preflight(cases, release, "test", ROOT / "docs/reports/v7/v7-retrieval-review.xlsx")

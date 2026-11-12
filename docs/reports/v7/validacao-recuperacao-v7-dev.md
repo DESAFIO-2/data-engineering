@@ -20,7 +20,7 @@ O avaliador consolidado usava `Path.read_text()` sem `encoding="utf-8"`. No Wind
 | Exata | 91 | 76 | 1,0000 | 1,0000 | 1,0000 | 1,0000 | 0 | 78/78 | 218 ms |
 | Lexical | 91 | 76 | 1,0000 | 1,0000 | 1,0000 | 1,0000 | 0 | 78/78 | 244 ms |
 
-F01: 29/29 positivos com Hit@5; F03: 20/20; F04: 27/27. Dos 15 casos não positivos em `dev`, todos tiveram o status esperado. Os arquivos [exata](../../evals/results/consolidated_v7_exact_dev_exploratory.json) e [lexical](../../evals/results/consolidated_v7_lexical_dev_exploratory.json) contêm o resultado por pergunta, candidatos documentais, IDs ranqueados, motivo de abstenção, citações e tempo. O commit Git registrado estava com alterações locais; por isso o hash do código precisa ser congelado quando o gate for fechado.
+F01: 29/29 positivos com Hit@5; F03: 20/20; F04: 27/27. Dos 15 casos não positivos em `dev`, todos tiveram o status esperado. Os arquivos [exata](../../../evals/results/consolidated_v7_exact_dev_exploratory.json) e [lexical](../../../evals/results/consolidated_v7_lexical_dev_exploratory.json) contêm o resultado por pergunta, candidatos documentais, IDs ranqueados, motivo de abstenção, citações e tempo. O commit Git registrado estava com alterações locais; por isso o hash do código precisa ser congelado quando o gate for fechado.
 
 Exata e lexical têm a mesma pontuação porque 70 casos retornaram apenas um chunk candidato e 20 não chegaram ao ranking. Um caso teve três chunks candidatos (`C-F03-001`): a ordem da segunda e terceira evidências diferiu, mas a referência correta ficou em primeiro nas duas estratégias. O modo `exact` agora ordena deterministicamente por fonte, página e ID; o lexical usa BM25 dentro das apresentações permitidas.
 

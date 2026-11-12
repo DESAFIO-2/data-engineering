@@ -13,7 +13,7 @@ from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "evals/datasets/consolidated_v7_agent_reviewed.jsonl"
-WORKBOOK = ROOT / "docs/reports/v7-retrieval-review.xlsx"
+WORKBOOK = ROOT / "docs/reports/v7/v7-retrieval-review.xlsx"
 NS = {"x": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 COLUMNS = [
     "case_id",

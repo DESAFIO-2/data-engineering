@@ -80,7 +80,7 @@ def approve() -> dict:
             "manifest_sha256": digest(raw_manifest),
         },
         "review_reference": {
-            "path": "docs/reports/v8-calcium-correction-review.xlsx",
+            "path": "docs/reports/v8/v8-calcium-correction-review.xlsx",
             "sha256": review["correction_review_sha256"],
             "scope": (
                 "118 decisões v7 herdadas por identidade; aprovação humana da correção C-F03-003."

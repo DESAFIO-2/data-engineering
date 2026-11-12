@@ -17,7 +17,7 @@ PRIOR_DATASETS = (
     ROOT / "evals/datasets/consolidated_v9_reviewed.jsonl",
 )
 TARGET = ROOT / "evals/datasets/consolidated_v9_next_test_candidate_unreviewed.jsonl"
-REVIEW = ROOT / "docs/reports/v9-next-independent-test-review.md"
+REVIEW = ROOT / "docs/reports/v9/v9-next-independent-test-review.md"
 SOURCE_NAMES = {"F01": "RENAME", "F03": "REME-DF", "F04": "Farmácia Popular"}
 
 # F01/F03 families are absent from both prior datasets. F04 has no unused

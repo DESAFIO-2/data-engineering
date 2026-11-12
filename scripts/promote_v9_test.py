@@ -18,7 +18,7 @@ from rag.consolidated_evaluation import _preflight  # noqa: E402
 
 DEV = ROOT / "evals/datasets/consolidated_v9_dev_exploratory.jsonl"
 CANDIDATE = ROOT / "evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl"
-REVIEW = ROOT / "docs/reports/v9-independent-test-review-v2.md"
+REVIEW = ROOT / "docs/reports/v9/v9-independent-test-review-v2.md"
 TARGET = ROOT / "evals/datasets/consolidated_v9_reviewed.jsonl"
 RELEASE = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
 

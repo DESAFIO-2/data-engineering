@@ -114,8 +114,8 @@ def build() -> tuple[dict[str, bytes], dict]:
         "manifest_sha256": digest(original),
     }
     manifest["review_reference"] = {
-        "path": "docs/reports/validacao-recuperacao-v8-test.md",
-        "sha256": digest((ROOT / "docs/reports/validacao-recuperacao-v8-test.md").read_bytes()),
+        "path": "docs/reports/v8/validacao-recuperacao-v8-test.md",
+        "sha256": digest((ROOT / "docs/reports/v8/validacao-recuperacao-v8-test.md").read_bytes()),
         "scope": "Diagnóstico pós-teste; não equivale à revisão humana nem a novo gate.",
     }
     manifest["corpus_fingerprint"] = sha256(

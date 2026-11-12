@@ -15,7 +15,7 @@ from rag.consolidated import ConsolidatedRelease, jsonl_bytes, normalize  # noqa
 RELEASE = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
 DEV = ROOT / "evals/datasets/consolidated_v9_dev_exploratory.jsonl"
 TARGET = ROOT / "evals/datasets/consolidated_v9_test_candidate_v2_unreviewed.jsonl"
-REVIEW = ROOT / "docs/reports/v9-independent-test-review-v2.md"
+REVIEW = ROOT / "docs/reports/v9/v9-independent-test-review-v2.md"
 SOURCE_NAMES = {"F01": "RENAME", "F03": "REME-DF", "F04": "Farmácia Popular"}
 NEGATIVES = (
     ("F01", "cloridrato de amitriptilina", "50 mg", "comprimido"),

@@ -132,4 +132,4 @@ Demonstrar integridade, resiliência e comportamento de armazenamento definidos.
 
 - **Dependências explícitas:** disponibilidade da fonte pública, estabilidade do contrato de resposta, endpoint e token efêmero quando Power BI for usado, infraestrutura de armazenamento para opções candidatas e carga real do piloto para comparação.
 - **Decisão pendente:** motor final de armazenamento (ADR-001); a decisão é provisoriamente manter arquivos e comparar DuckDB/PostgreSQL.
-- **Compatibilidade:** esta especificação técnica trata ingestão e armazenamento temporal. Regras de produto, aplicabilidade de conteúdo e segurança das respostas estão na [especificação funcional do MVP](SPEC-02-functional-mvp.md); catálogo e situação de fontes estão no [levantamento de fontes](../levantamento-fontes.md).
+- **Compatibilidade:** esta especificação técnica trata ingestão e armazenamento temporal. Regras de produto, aplicabilidade de conteúdo e segurança das respostas estão na [especificação funcional do MVP](SPEC-02-functional-mvp.md); catálogo e situação de fontes estão no [levantamento de fontes](../fontes/levantamento-fontes.md).

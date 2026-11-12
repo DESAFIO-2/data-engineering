@@ -33,7 +33,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--baseline-ref", default="HEAD")
     parser.add_argument("--live-model", action="store_true")
-    parser.add_argument("--output", default="docs/demo-chat-v5.md")
+    parser.add_argument("--output", default="docs/demos/demo-chat-v5.md")
     args = parser.parse_args()
     commit = subprocess.check_output(
         ["git", "rev-parse", args.baseline_ref], cwd=ROOT, text=True

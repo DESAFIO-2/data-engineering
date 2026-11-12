@@ -17,7 +17,7 @@ from validate_v7_retrieval_review import WORKBOOK as V7_REVIEW
 ROOT = Path(__file__).resolve().parents[1]
 V7_DATASET = ROOT / "evals/datasets/consolidated_v7_agent_reviewed.jsonl"
 V8_DATASET = ROOT / "evals/datasets/consolidated_v8_agent_reviewed.jsonl"
-V8_REVIEW = ROOT / "docs/reports/v8-calcium-correction-review.xlsx"
+V8_REVIEW = ROOT / "docs/reports/v8/v8-calcium-correction-review.xlsx"
 CHANGED = "C-F03-003"
 HEADERS = [
     "case_id",

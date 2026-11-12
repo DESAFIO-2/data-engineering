@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/releases/corpus-consolidado-v9-claritromicina-normalizada-2026-11-12"
 VERSION = "corpus-consolidado-v9-aprovado-2026-11-12"
 DESTINATION = ROOT / "data/releases" / VERSION
-REVIEW = ROOT / "docs/reports/revisao-claritromicina-v9-jhiovana.md"
+REVIEW = ROOT / "docs/reports/v9/revisao-claritromicina-v9-jhiovana.md"
 EXPECTED_CANDIDATE_SHA256 = "60e8218b7968103940894ed513b062f988b085b0e7b01bcdd65a464442f34614"
 SCOPE = (
     "Indexação e recuperação de presença documental de medicamentos, apresentações e insumos "
@@ -84,7 +84,7 @@ def approve() -> dict:
             "manifest_sha256": digest(candidate_bytes),
         },
         "review_reference": {
-            "path": "docs/reports/revisao-claritromicina-v9-jhiovana.md",
+            "path": "docs/reports/v9/revisao-claritromicina-v9-jhiovana.md",
             "sha256": review_hash,
             "scope": "Aprovação humana da normalização da linha F03 249; gate RAG separado.",
         },

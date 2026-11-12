@@ -1,6 +1,6 @@
 # Auditoria da identidade de claritromicina 500 mg — candidato v9
 
-**Estado em 12/11/2026:** Jhiovana aprovou explicitamente a revisão, registrada em [revisao-claritromicina-v9-jhiovana.md](revisao-claritromicina-v9-jhiovana.md). O candidato foi preservado e a [v9 aprovada](../../data/releases/corpus-consolidado-v9-aprovado-2026-11-12/release.json) foi publicada separadamente. A v8 aprovada e os resultados do `test` v8 permanecem intactos. Esta aprovação documental não abre um novo gate de recuperação nem autoriza embeddings.
+**Estado em 12/11/2026:** Jhiovana aprovou explicitamente a revisão, registrada em [revisao-claritromicina-v9-jhiovana.md](revisao-claritromicina-v9-jhiovana.md). O candidato foi preservado e a [v9 aprovada](../../../data/releases/corpus-consolidado-v9-aprovado-2026-11-12/release.json) foi publicada separadamente. A v8 aprovada e os resultados do `test` v8 permanecem intactos. Esta aprovação documental não abre um novo gate de recuperação nem autoriza embeddings.
 
 ## Fonte e diagnóstico
 
@@ -16,7 +16,7 @@ O PDF local `data/raw/F03-reme-df/reme-df-2026-10-29.pdf` corresponde ao SHA-256
 
 ## Correção isolada
 
-O script `scripts/publish_v9_clarithromycin.py` exige o SHA-256 `d634a75817ff3d16031c45fa664b9075ec426c1b3482581c0ca93f490906cba7` do manifesto v8 antes de publicar o candidato [v9](../../data/releases/corpus-consolidado-v9-claritromicina-normalizada-2026-11-12/release.json). Apenas a ocorrência `occ-83202f34ce2ffbeed05ea49d` muda `strength` de `500mg` para `500 mg` e `medicine_id` de `med-018ed18f2ec7fd073407f4e4` para `med-3801ddc7d957468e0916fed0`. A evidência correspondente e o log acompanham a correção. O texto literal `500mg`, código `MSE8831`, página 22, linha 249 e canal SITE-TB ficam preservados. A entrada duplicada sai do catálogo; a entrada canônica passa a referenciar as quatro ocorrências já associadas à apresentação (uma F01 e três F03).
+O script `scripts/publish_v9_clarithromycin.py` exige o SHA-256 `d634a75817ff3d16031c45fa664b9075ec426c1b3482581c0ca93f490906cba7` do manifesto v8 antes de publicar o candidato [v9](../../../data/releases/corpus-consolidado-v9-claritromicina-normalizada-2026-11-12/release.json). Apenas a ocorrência `occ-83202f34ce2ffbeed05ea49d` muda `strength` de `500mg` para `500 mg` e `medicine_id` de `med-018ed18f2ec7fd073407f4e4` para `med-3801ddc7d957468e0916fed0`. A evidência correspondente e o log acompanham a correção. O texto literal `500mg`, código `MSE8831`, página 22, linha 249 e canal SITE-TB ficam preservados. A entrada duplicada sai do catálogo; a entrada canônica passa a referenciar as quatro ocorrências já associadas à apresentação (uma F01 e três F03).
 
 O catálogo passa de **1.860 para 1.859 entradas**; há **2.114 ocorrências e 2.114 evidências**, sem exclusão documental. O pacote pendente tem fingerprint de conteúdo `d65ad02bc66ae9d5c98ffa8475f39e4b5a674254ff9e55abae00c0ef80406faa` e SHA-256 do manifesto `60e8218b7968103940894ed513b062f988b085b0e7b01bcdd65a464442f34614`. O verificador reconstruiu as evidências a partir das ocorrências. A v8 mantém seu manifesto e aprovação originais; a v9 não contém `domain_review.json` e não pode ser carregada como release aprovado.
 

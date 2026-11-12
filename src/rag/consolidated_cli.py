@@ -111,18 +111,18 @@ def run(args: Any, settings: Settings) -> int:
                 embedding_model=settings.rag_embedding_model if store is not None else None,
                 review_path=ROOT
                 / (
-                    "docs/reports/v9-next-independent-test-review.md"
+                    "docs/reports/v9/v9-next-independent-test-review.md"
                     if Path(args.dataset).name == "consolidated_v9_next_reviewed.jsonl"
-                    else "docs/reports/v9-independent-test-review-v2.md"
+                    else "docs/reports/v9/v9-independent-test-review-v2.md"
                 )
                 if v9
                 else ROOT
                 / (
-                    "docs/reports/v8-calcium-correction-review.xlsx"
+                    "docs/reports/v8/v8-calcium-correction-review.xlsx"
                     if v8
-                    else "docs/reports/v7-retrieval-review.xlsx"
+                    else "docs/reports/v7/v7-retrieval-review.xlsx"
                 ),
-                prior_review_path=ROOT / "docs/reports/v7-retrieval-review.xlsx" if v8 else None,
+                prior_review_path=ROOT / "docs/reports/v7/v7-retrieval-review.xlsx" if v8 else None,
             )
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(

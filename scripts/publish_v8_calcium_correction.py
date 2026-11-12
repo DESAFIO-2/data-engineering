@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/releases/corpus-consolidado-v7-aprovado-2026-11-11"
 VERSION = "corpus-consolidado-v8-calcio-corrigido-2026-11-11"
 DESTINATION = ROOT / "data/releases" / VERSION
-REVIEW = ROOT / "docs/reports/v7-retrieval-review.xlsx"
+REVIEW = ROOT / "docs/reports/v7/v7-retrieval-review.xlsx"
 SOURCE_MANIFEST_SHA256 = "8399f37f6664f474c18622d912ad9795f04ec199102724cfafbe6e295eeab20b"
 OCCURRENCE_ID = "occ-bc5acf38f4260802e843100c"
 MEDICINE_ID = "med-00aabf5466ef008e27b6fbab"
@@ -97,7 +97,7 @@ def build() -> tuple[dict[str, bytes], dict]:
         "manifest_sha256": digest(original),
     }
     manifest["review_reference"] = {
-        "path": "docs/reports/v7-retrieval-review.xlsx",
+        "path": "docs/reports/v7/v7-retrieval-review.xlsx",
         "sha256": digest(REVIEW.read_bytes()),
         "scope": "Rejeição humana de C-F03-003; não equivale à aprovação do candidato v8.",
     }

@@ -71,8 +71,8 @@ def test_v8_human_review_and_approved_release() -> None:
         cases,
         release,
         "test",
-        ROOT / "docs/reports/v8-calcium-correction-review.xlsx",
-        ROOT / "docs/reports/v7-retrieval-review.xlsx",
+        ROOT / "docs/reports/v8/v8-calcium-correction-review.xlsx",
+        ROOT / "docs/reports/v7/v7-retrieval-review.xlsx",
     )
 
 

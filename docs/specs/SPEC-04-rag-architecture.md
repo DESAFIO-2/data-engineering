@@ -124,7 +124,7 @@ Contrato informado para a integração principal: comandos `index`, `search`,
 `ask`, `chat`, `eval` e legado; opções `--experimental`, `--corpus`,
 `--strategy hybrid|lexical|vector|exact`, `--documental` e `--show-context`.
 Interface conferida em `rag.cli.main` e `rag.experimental_cli.run`; os comandos
-reproduzíveis estão no [guia](../guia-entrega-semana2.md). A avaliação inclui
+reproduzíveis estão no [guia](../entregaveis/semana-02/README.md). A avaliação inclui
 `--stage retrieval|generation|end-to-end` e `--frozen-dataset-sha256`.
 
 O módulo `rag.experimental` inspecionado combina BM25Plus e busca vetorial por

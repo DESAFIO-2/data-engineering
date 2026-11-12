@@ -132,7 +132,7 @@ Os PDFs foram preservados sem alteração. As pastas usam o identificador e o no
 - **Fonte:** [protocolos de acesso vigentes](https://www.saude.df.gov.br/acesso-vigentes), índice HTML com links e intervalos de vigência.
 - **Dados de interesse:** procedimento, fluxo de encaminhamento, requisitos e aplicabilidade nos documentos selecionados.
 - **Uso:** orientar o caminho administrativo de acesso a exames e serviços.
-- **Limite:** protocolo de acesso não equivale a instrução de preparo. O índice não fornece acesso operacional ao SISREG.
+- **Limite:** protocolo de acefsso não equivale a instrução de preparo. O índice não fornece acesso operacional ao SISREG.
 - **Estado:** índice inspecionado; PDFs individuais ainda não revisados.
 
 **Lacuna atual:** não há 5–10 exames com preparo homologado. Precisamos escolher os serviços e obter suas instruções oficiais. A base não deve preencher essa lacuna com regras genéricas ou conteúdo de outra instituição.

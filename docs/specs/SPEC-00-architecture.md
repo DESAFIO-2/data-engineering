@@ -60,7 +60,7 @@ Usar as especificações detalhadas corretas para cada tipo de requisito.
 ### Requisitos ou regras
 
 - [Especificação de ingestão de dados vivos](SPEC-01-eda-and-sync.md): SDD técnico e ADR de storage.
-- [Levantamento de fontes](../levantamento-fontes.md): catálogo e situação das fontes oficiais.
+- [Levantamento de fontes](../fontes/levantamento-fontes.md): catálogo e situação das fontes oficiais.
 - [Especificação funcional do MVP](SPEC-02-functional-mvp.md): requisitos e comportamento do produto.
 - Documentos anteriores foram preservados em `engenharia-dados/historico` apenas para referência; não são normativos.
 

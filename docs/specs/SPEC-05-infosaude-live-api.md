@@ -36,7 +36,7 @@ F03 e com as descrições dos painéis. UBS retornou 20 registros de Planaltina 
 saldo zero e data nula; CEAF informou “COM ESTOQUE” em Asa Sul, Ceilândia e Gama,
 também sem data da posição. Esses locais são apresentados como CEAF, sem atribuir
 ao usuário uma unidade de atendimento. Código `37352` e associação com insulina
-foram excluídos dessa correspondência. Ver [execução real](../demo-busca-progressiva-estoque.md).
+foram excluídos dessa correspondência. Ver [execução real](../demos/demo-busca-progressiva-estoque.md).
 
 ### Release consolidado v5 (11/11/2026)
 

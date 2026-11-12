@@ -4,7 +4,7 @@
 
 - Dataset SHA-256: `181ee21cc2f3b7b615d66d7391a4c4c57ee0a53ba60745a97b626b0b67664a82`; folha SHA-256: `904d7adf76d13b251a80ceece84525099e0d1c8d740671cacb94f4f2d42f1295`.
 - Release: `ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84`; chunks SHA-256: `f6049cedf006aefd7bbc3d06f2b2fda0de4a906e3d95a1fb6272c08b9ec9da8e`.
-- Resultados integrais: [exact](../../evals/results/consolidated_v9_next_exact_test.json) e [lexical](../../evals/results/consolidated_v9_next_lexical_test.json).
+- Resultados integrais: [exact](../../../evals/results/consolidated_v9_next_exact_test.json) e [lexical](../../../evals/results/consolidated_v9_next_lexical_test.json).
 
 ## Métricas do gate
 

@@ -17,7 +17,7 @@
 | Exata | 28 | 23 | 0,9565 | 1,0000 | 0,9710 | 1,0000 | 0,9565 | **1** | 25/25 | 269,6 ms |
 | Lexical | 28 | 23 | 0,9565 | 1,0000 | 0,9710 | 1,0000 | 0,9565 | **1** | 25/25 | 284,9 ms |
 
-F01: 10/10 positivos com Hit@5; F03: 10/10; F04: 3/3. As cinco abstenções esperadas foram corretas. Os [resultados exatos](../../evals/results/consolidated_v8_exact_test.json) e [lexicais](../../evals/results/consolidated_v8_lexical_test.json) incluem IDs e tempos por caso. Cada estratégia foi executada uma vez no split `test`.
+F01: 10/10 positivos com Hit@5; F03: 10/10; F04: 3/3. As cinco abstenções esperadas foram corretas. Os [resultados exatos](../../../evals/results/consolidated_v8_exact_test.json) e [lexicais](../../../evals/results/consolidated_v8_lexical_test.json) incluem IDs e tempos por caso. Cada estratégia foi executada uma vez no split `test`.
 
 ## Caso que bloqueia o gate
 

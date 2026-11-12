@@ -19,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/releases/corpus-consolidado-v6-auditado-2026-11-11"
 VERSION = "corpus-consolidado-v7-codigos-corrigidos-2026-11-11"
 OUTPUT = ROOT / "data/releases" / VERSION
-FINDINGS = ROOT / "docs/reports/v6-source-alignment-findings.json"
-REVIEW = ROOT / "docs/reports/v6-source-alignment-review.csv"
+FINDINGS = ROOT / "docs/reports/v6/v6-source-alignment-findings.json"
+REVIEW = ROOT / "docs/reports/v6/v6-source-alignment-review.csv"
 
 
 def reviewed_corrections() -> dict[str, tuple[str, str]]:
@@ -116,7 +116,7 @@ def build() -> tuple[dict[str, bytes], dict]:
         "manifest_sha256": digest(original_manifest_bytes),
     }
     manifest["review_reference"] = {
-        "path": "docs/reports/v6-source-alignment-review.csv",
+        "path": "docs/reports/v6/v6-source-alignment-review.csv",
         "sha256": digest(REVIEW.read_bytes()),
         "scope": "209 decisões por campo; aprovação final da v7 pendente.",
     }
