@@ -14,8 +14,9 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
 
-@pytest.fixture
-def release_root(tmp_path: Path) -> Path:
+@pytest.fixture(scope="module")
+def release_root(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    tmp_path = tmp_path_factory.mktemp("rag_release")
     for name in ("manifests", "curation", "raw"):
         shutil.copytree(ROOT / "data" / name, tmp_path / "data" / name)
     manifest = json.loads(

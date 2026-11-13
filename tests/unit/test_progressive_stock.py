@@ -7,9 +7,9 @@ from typing import Any
 
 import pytest
 
+import rag.consolidated_chat as chat
+import rag.consolidated_live as live
 from ingestion.infosaude_live import CEAF, query_body
-from rag import consolidated_chat as chat
-from rag import consolidated_live as live
 from rag.catalog_chat import candidates, stock_candidates
 from rag.config import ROOT, Settings
 from rag.consolidated import ConsolidatedRelease, load_chunks

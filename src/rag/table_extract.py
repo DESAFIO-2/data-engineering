@@ -92,21 +92,25 @@ def reme_rows(path: Path) -> list[dict[str, Any]]:
     result = []
     with pdfplumber.open(path) as pdf:
         for number, page in enumerate(pdf.pages, 1):
+            if not 12 <= number <= 59:
+                continue
             words = page.extract_words()
             anchors = [
                 w for w in words if re.fullmatch(r"\d{1,4}\.", w["text"]) and 35 <= w["x0"] <= 65
             ]
+            if not anchors:
+                continue
+            boundaries = sorted(
+                {
+                    e["top"]
+                    for e in page.edges
+                    if e["orientation"] == "h" and 34 <= e["x0"] <= 38 and e["x1"] >= 70
+                }
+            )
             for word in anchors:
-                boundaries = sorted(
-                    {
-                        e["top"]
-                        for e in page.edges
-                        if e["orientation"] == "h" and 34 <= e["x0"] <= 38 and e["x1"] >= 70
-                    }
-                )
                 above = [y for y in boundaries if y <= word["top"]]
                 below = [y for y in boundaries if y >= word["bottom"]]
-                if not above or not below or not 12 <= number <= 59:
+                if not above or not below:
                     continue
                 top, bottom = max(above), min(below)
                 # Main layout: item, code, description, class, access channel.

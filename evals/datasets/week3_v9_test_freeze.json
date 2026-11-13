@@ -5,7 +5,7 @@
   "dataset_sha256": "66d764b11942d2f9065701ef3db1a88eb6875a8d7b38119d7faf09b4730f6285",
   "pretest_commit": "6b915f15a709e61f65eb5727f10157432b29dce7",
   "release_fingerprint": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
-  "review_record": "docs/reports/semana3-v9-test-review-template.md",
+  "review_record": "docs/reports/v9/semana3-v9-test-review-template.md",
   "review_record_id": "week3-test-approval-2026-11-12",
   "review_record_sha256": "512f4a2b107c235d743513babb833a0a5418e28f3ff3ce86e0d1f2b5bc9abe6f",
   "schema_version": "week3-test-freeze-v1"

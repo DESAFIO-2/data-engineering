@@ -8,9 +8,10 @@ from typing import Any
 
 import pytest
 
+import rag.cli as cli
+import rag.consolidated_chat as chat
+import rag.consolidated_cli as consolidated_cli
 from ingestion.infosaude_live import UBS, InfoSaudeLiveClient, query_body
-from rag import cli, consolidated_cli
-from rag import consolidated_chat as chat
 from rag.config import ROOT, Settings
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.live import stock_reply_for_product

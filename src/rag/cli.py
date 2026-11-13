@@ -102,7 +102,7 @@ def _ask(
             for rank, evidence in enumerate(result["evidence"], 1):
                 print(f"[{rank}] {evidence['evidence_id']}: {evidence['text']}")
         _show(result)
-        return result["message"]
+        return str(result["message"])
     if generate and result["status"] == "matched" and "llm" not in cache:
         cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
     response = synthesize(question, result, cache.get("llm"), history) if generate else None

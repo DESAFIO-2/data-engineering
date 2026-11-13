@@ -5,9 +5,13 @@ from __future__ import annotations
 import json
 import sys
 
+import pytest
+
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.consolidated_evaluation import _preflight
+
+pytestmark = pytest.mark.dvc
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from prepare_v8_retrieval_eval import prepare  # noqa: E402

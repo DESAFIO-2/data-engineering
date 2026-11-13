@@ -30,20 +30,21 @@ Organizar a transformação desde o payload original até visões consumíveis.
 ### Requisitos ou regras
 
 ```text
-Fontes oficiais
+Fontes oficiais (PDFs F01/F03/F04 + API InfoSaúde)
       ↓
-data/raw + manifestos
-      ↓
-Bronze: payload original, hash e proveniência
-      ↓
-Silver: dados tipados e snapshots temporais
-      ↓
-Gold: catálogos e visões analíticas
-      ↓
-Consumidores do produto
+data/raw + manifestos (SHA-256, timestamp, versão)
+      ├── Trilha alvo de pipeline: Bronze (payload) → Silver (tipado/snapshots) → Gold (catálogos)
+      └── Fluxo ativo de consolidação documental:
+          scripts/consolidate_corpus.py → data/releases/corpus-consolidado-v*
+          (catalog.jsonl, occurrences.jsonl, evidencias.jsonl, exclusions.jsonl, release.json)
+                ↓
+          data/derived/chunks/<release> (one-evidence-v1 congelado em v5–v9; one-evidence-v2 em diante)
+                ↓
+          Consumidores do produto (src/rag/consolidated.py, consolidated_chat.py + estoque vivo InfoSaúde)
 ```
 
-- Bronze preserva payload e metadados; Silver contém registros tipados e snapshots; Gold contém dados derivados para consumo.
+- **Nota de estado atual (atualizada em 2026-11-13):** o repositório opera hoje com fontes brutas versionadas em `data/raw` e releases documentais imutáveis em `data/releases/corpus-consolidado-v*`, além da integração de estoque vivo em `src/ingestion/infosaude_live.py`. A separação física em `data/bronze`, `data/silver` e `data/gold` permanece como arquitetura-alvo para o backlog de evolução estrutural.
+- Bronze preserva payload e metadados; Silver contém registros tipados e snapshots; Gold contém dados derivados (incluindo releases consolidados imutáveis) para consumo.
 - Desacoplar conectores do motor de persistência.
 - Não inferir disponibilidade, elegibilidade ou orientação clínica.
 

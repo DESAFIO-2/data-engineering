@@ -1,31 +1,107 @@
-# Preparação do DVC com Google Drive compartilhado
+# Guia Rápido e Prático — DVC com Google Drive
 
-**Estado:** DVC 3.67.1 com suporte a Google Drive instalado e inicializado na raiz. Remoto `compartilhado` configurado para a pasta informada por Jhiovana (`gdrive://1tPvsMggxEE0UmyrdkqkP9VMoJ9Ow6mZn`). O release `corpus-consolidado-v7-aprovado-2026-11-11` foi adicionado com ponteiro `data/releases/corpus-consolidado-v7-aprovado-2026-11-11.dvc` (9 arquivos, 7.148.111 bytes, hash de diretório `26e95ea7c64da7b40704f9ce8a2ce8fc.dir`). Os 2.114 chunks v7 foram gerados e adicionados com ponteiro `data/derived/chunks/corpus-consolidado-v7-aprovado-2026-11-11.dvc` (2 arquivos, 2.033.273 bytes, hash de diretório `befa0a8039609a92cc39688fc97e5d99.dir`). **Jhiovana confirmou `dvc push` e `dvc status -c` sincronizados para o release e os chunks.** O Google bloqueou o aplicativo OAuth padrão do DVC; o projeto próprio `SUS-Cidadao-DVC` tem Drive API habilitada, cliente OAuth para computador e Jhiovana como usuária de teste. As credenciais ficam somente na configuração local ignorada pelo Git.
+Este guia mostra como **baixar**, **verificar** e **publicar** releases e chunks do `data-engineering/` usando DVC + Google Drive compartilhado (`gdrive://1tPvsMggxEE0UmyrdkqkP9VMoJ9Ow6mZn`).
 
-O projeto DVC ficará somente na raiz `engenharia-dados`; `Data-Science/` permanece repositório de referência. A pasta do Drive deve ser privada, compartilhada nominalmente com as contas que usarão Mac e Windows. Copie o ID da URL `https://drive.google.com/drive/folders/ID` após criá-la. Segundo a [documentação do DVC](https://s.dvc.org/user-guide/data-management/remote-storage/google-drive), pastas compartilhadas devem ser referenciadas pelo ID e o aplicativo OAuth padrão pode estar bloqueado; nesse caso, configurar cliente OAuth próprio antes do primeiro `push`.
+> [!NOTE]
+> **Você precisa de DVC agora?**
+> - **Só quer rodar o chat ou testes unitários sem Drive?** Não precisa de `dvc pull`. Use `uv run pytest -m "not dvc"` e o release local `data/releases/corpus-consolidado-v5-aprovado-2026-11-10` (veja o [Guia de desenvolvimento e testes](guia-desenvolvimento-e-testes.md)).
+> - **Quer usar `v7`, `v8` ou `v9` aprovados ou rodar a suíte completa?** Siga o fluxo abaixo.
 
-Configuração já executada no Windows:
+---
 
-```powershell
-uv add --group dev 'dvc[gdrive]'
-uv add --group dev 'pyOpenSSL==24.2.1'
-uv run dvc init
-uv run dvc remote add -d compartilhado 'gdrive://1tPvsMggxEE0UmyrdkqkP9VMoJ9Ow6mZn'
-uv run dvc add data/releases/corpus-consolidado-v7-aprovado-2026-11-11
-uv run dvc status
-uv run dvc push
+## 1. Fluxo Rápido (Escolha seu Cenário)
+
+### Cenário A — Acabei de clonar o repo e quero baixar os dados (`dvc pull`)
+
+1. Garanta que sua conta Google tem acesso à pasta privada do Drive compartilhado.
+2. Instale o ambiente e puxe os ponteiros `.dvc`:
+   ```bash
+   uv sync --frozen --python 3.12
+   uv run dvc pull
+   ```
+3. Confirme que os artefatos locais estão sincronizados:
+   ```bash
+   uv run dvc status -c
+   ```
+4. Rode a suíte completa (incluindo testes `v7`/`v8`/`v9`):
+   ```bash
+   uv run pytest
+   ```
+
+> [!TIP]
+> **No Windows ou Mac pela primeira vez?** O aplicativo OAuth padrão do DVC costuma ser bloqueado pelo Google. Se aparecer erro de autorização OAuth, configure o cliente próprio do projeto `SUS-Cidadao-DVC` na seção **2** abaixo.
+
+---
+
+### Cenário B — Quero publicar um novo release ou chunks (`dvc add` + `dvc push`)
+
+1. Adicione a pasta do release ou de chunks derivada:
+   ```bash
+   uv run dvc add data/releases/<novo-release-aprovado>
+   uv run dvc add data/derived/chunks/<novo-release-aprovado>
+   ```
+2. Envie os dados para o remoto e confirme sincronização:
+   ```bash
+   uv run dvc push
+   uv run dvc status -c
+   ```
+3. No **Git**, versione **apenas** os arquivos `.dvc` e `.gitignore` gerados (nunca `.dvc/config.local`, tokens OAuth ou cache):
+   ```bash
+   git add data/releases/<novo-release-aprovado>.dvc data/derived/chunks/<novo-release-aprovado>.dvc
+   ```
+
+---
+
+## 2. Configuração OAuth Própria (Quando o Padrão do DVC Bloqueia)
+
+O Google bloqueia o app OAuth padrão do PyDrive2/DVC. O projeto já possui o projeto Google Cloud **`SUS-Cidadao-DVC`** com:
+- **Google Drive API** habilitada;
+- App externo em **modo de teste** com as contas da equipe cadastradas como usuárias de teste;
+- Cliente OAuth do tipo **Desktop app**.
+
+Configure as credenciais **somente localmente** (nunca no Git):
+
+```bash
+uv run dvc remote modify --local compartilhado gdrive_client_id "SEU_CLIENT_ID"
+uv run dvc remote modify --local compartilhado gdrive_client_secret "SEU_CLIENT_SECRET"
 ```
 
-`pyOpenSSL==24.2.1` resolve a incompatibilidade observada entre a versão 22.0.0 e `cryptography` 50 na autenticação do PyDrive2 (`GEN_EMAIL` ausente). O resolvedor escolheu `cryptography` 43.0.3. No sandbox Windows desta execução, o cache de site padrão do DVC em `C:\ProgramData\iterative` não era gravável; `core.site_cache_dir` foi definido **somente** em `.dvc/config.local` para uma pasta local ignorada pelo Git. Essa configuração é específica do Windows e não deve ser copiada para o Mac. A telemetria foi desativada nesta execução com `DVC_NO_ANALYTICS=1`.
+Na primeira execução de `uv run dvc pull` ou `dvc push`:
+1. Copie a URL exibida pelo DVC e abra no navegador local da própria máquina (Chrome/Edge).
+2. Autorize a conta com acesso à pasta do Drive.
+3. O callback `http://localhost:8080/` precisa alcançar o processo DVC na mesma máquina.
 
-O bloqueio do cliente padrão é [documentado pelo DVC](https://doc.dvc.org/user-guide/data-management/remote-storage/google-drive), que recomenda configurar um projeto Google Cloud e cliente OAuth próprio. Não contornar o aviso de segurança. No projeto exclusivo `SUS-Cidadao-DVC` foram habilitados a Google Drive API, o app externo em modo de teste, a conta de Jhiovana como usuária de teste e um cliente **Desktop app**. `gdrive_client_id` e `gdrive_client_secret` foram guardados em `.dvc/config.local` com `dvc remote modify --local`; esses valores e o token de usuário não entram no Git. A autorização OAuth será realizada pela própria titular da conta.
+> [!WARNING]
+> **Segurança:** nunca compartilhe nem cole em chat/capturas o código OAuth retornado, nem versione `.dvc/config.local` ou arquivos de cache de credencial.
 
-No **PowerShell local do Windows**, Jhiovana executou `uv run dvc push` e confirmou que `uv run dvc status -c` informou cache e remoto sincronizados após adicionar os chunks v7. Para futuras autorizações, abra a URL exibida pelo DVC em um navegador local (Chrome ou Edge do próprio Windows). O retorno `http://localhost:8080/` precisa alcançar o processo DVC no mesmo Windows; não compartilhe nem transcreva o código OAuth retornado.
+---
 
-O release `corpus-consolidado-v8-aprovado-2026-11-11` e seus 2.114 chunks têm ponteiros DVC separados. Após a aprovação da correção, Jhiovana confirmou `uv run dvc push` e `uv run dvc status -c` com cache e remoto sincronizados para a v8. O gate da recuperação v8 permanece fechado pelo [resultado do teste](../reports/v8/validacao-recuperacao-v8-test.md), independentemente da sincronização.
+## 3. Ponteiros DVC Versionados Atualmente
 
-O release `corpus-consolidado-v9-aprovado-2026-11-12` e seus 2.114 chunks também têm ponteiros DVC separados. Em 12/11/2026, Jhiovana confirmou a execução de `uv run dvc push` e `uv run dvc status -c` no PowerShell autenticado, com cache e remoto sincronizados. O [relatório da correção](../reports/v9/auditoria-claritromicina-v9.md) registra a aprovação documental; a sincronização não altera o gate de desempenho da recuperação.
+| Versão | Release (`data/releases/*.dvc`) | Chunks (`data/derived/chunks/*.dvc`) | Estado |
+|---|---|---|---|
+| **v7** | `corpus-consolidado-v7-aprovado-2026-11-11.dvc` (9 arq., 7,15 MB) | `corpus-consolidado-v7-aprovado-2026-11-11.dvc` (2 arq., 2,03 MB) | Sincronizado |
+| **v8** | `corpus-consolidado-v8-aprovado-2026-11-11.dvc` | `corpus-consolidado-v8-aprovado-2026-11-11.dvc` | Sincronizado |
+| **v9** | `corpus-consolidado-v9-aprovado-2026-11-12.dvc` (9 arq., 7,15 MB) | `corpus-consolidado-v9-aprovado-2026-11-12.dvc` (2 arq., 2,03 MB) | Sincronizado |
 
-O índice Chroma será acrescentado por fingerprint/modelo após a vetorização e verificação de IDs. `dvc add` criará ponteiros `.dvc`; confirmar que Git inclui esses ponteiros e `.dvc/config`, nunca `.dvc/config.local`, tokens OAuth ou o cache. No Mac, clonar a **mesma revisão Git**, autenticar a conta com acesso à pasta, executar `dvc pull` e verificar hashes do manifesto, chunks e índice. Se o OAuth padrão falhar, registrar o bloqueio e configurar o cliente próprio sem publicar segredo no repositório. Não usar uma pasta `gdrive://root`, pois ela resolveria para Drives pessoais diferentes.
+- **Remoto configurado em `.dvc/config`:** `compartilhado` → `gdrive://1tPvsMggxEE0UmyrdkqkP9VMoJ9Ow6mZn` (ID fixo da pasta compartilhada; **não** usar `gdrive://root`, pois resolve para Drives diferentes por usuário).
+- **Índices Chroma:** quando adicionados, devem ser isolados por fingerprint/modelo após verificação de IDs, contagem e dimensão.
 
-Não rastrear perguntas de usuários, CEP, endereço, coordenadas, histórico de conversa ou snapshots de estoque contendo dados não aprovados. O sucesso do fluxo Windows → Drive → Mac é um gate verificável, não uma consequência presumida da configuração.
+---
+
+## 4. Troubleshooting Rápido
+
+| Sintoma | Causa provável | Solução |
+|---|---|---|
+| Erro `GEN_EMAIL` no PyDrive2 / OpenSSL | Incompatibilidade entre `pyOpenSSL` 22 e `cryptography` 50 | O `pyproject.toml` já fixa `pyopenssl==24.2.1` (com `cryptography` 43.0.3 no lockfile). Rode `uv sync --frozen`. |
+| Erro de permissão em `C:\ProgramData\iterative` (Windows) | Cache de site padrão não gravável | Defina `core.site_cache_dir` **apenas** em `.dvc/config.local` apontando para uma pasta ignorada pelo Git (não copie para o Mac). |
+| `dvc pull` funciona no Windows, mas falha no Mac | Revisão Git diferente ou conta sem acesso à pasta | Confira `git rev-parse HEAD` idêntico, confirme compartilhamento nominal da pasta no Drive e refaça a autorização OAuth local. |
+| Desativar telemetria do DVC | — | Exporte `DVC_NO_ANALYTICS=1` no shell antes dos comandos `dvc`. |
+
+---
+
+## 5. O Que NUNCA Entra no DVC
+
+- Perguntas de usuários, CEP, endereço, coordenadas ou histórico de conversa.
+- Snapshots de estoque contendo dados não aprovados.
+- `.env`, `.dvc/config.local` e tokens OAuth.

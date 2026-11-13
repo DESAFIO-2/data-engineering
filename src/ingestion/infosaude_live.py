@@ -10,6 +10,8 @@ from typing import Any
 
 import requests
 
+from ingestion.base import build_retry_session
+
 API = "https://wabi-brazil-south-api.analysis.windows.net/public/reports/querydata?synchronous=true"
 CEAF_URL = (
     "https://info.saude.df.gov.br/saude-do-cidadao/"
@@ -193,7 +195,7 @@ def decode_dsr(payload: dict[str, Any], columns: tuple[str, ...]) -> list[dict[s
 
 class InfoSaudeLiveClient:
     def __init__(self, session: requests.Session | None = None) -> None:
-        self.session = session or requests.Session()
+        self.session = session or build_retry_session()
 
     def fetch(
         self,

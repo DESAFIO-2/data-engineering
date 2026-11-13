@@ -3,3 +3,10 @@
 data/** -text
 evals/datasets/** -text
 evals/results/** -text
+
+# Keep source and docs LF-normalized so code_sha256 and diffs match across OSes.
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

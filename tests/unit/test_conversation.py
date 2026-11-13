@@ -1,7 +1,10 @@
+from argparse import Namespace
 from pathlib import Path
 from types import SimpleNamespace
 
-from rag import experimental_cli
+import pytest
+
+import rag.experimental_cli as experimental_cli
 from rag.config import Settings
 from rag.conversation import (
     format_history,
@@ -9,6 +12,8 @@ from rag.conversation import (
     is_clarification,
     is_clarification_input,
 )
+from rag.experimental import Corpus
+from rag.release import Release
 
 
 def test_greeting_is_friendly_and_does_not_need_a_model() -> None:
@@ -35,14 +40,14 @@ def test_clarification_followup_is_recognized_and_history_is_bounded() -> None:
 
 
 def test_experimental_chat_merges_form_followup_into_live_stock_query(
-    tmp_path: Path, monkeypatch, capsys
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
     monkeypatch.setattr(
-        experimental_cli.Corpus,
+        Corpus,
         "load",
         lambda *args: SimpleNamespace(manifest={}, chunks=[], fingerprint="test"),
     )
-    monkeypatch.setattr(experimental_cli.Release, "load", lambda path: object())
+    monkeypatch.setattr(Release, "load", lambda path: object())
     monkeypatch.setattr(
         experimental_cli,
         "sync_snapshot",
@@ -51,16 +56,14 @@ def test_experimental_chat_merges_form_followup_into_live_stock_query(
     monkeypatch.setattr(experimental_cli, "load_snapshot", lambda path: {"snapshot": True})
     seen: list[str] = []
 
-    def live_reply(question, release, snapshot):
+    def live_reply(question: str, release: object, snapshot: object) -> str:
         seen.append(question)
         if "comprimido" in question:
             return "Saldo consultado para a apresentação completa."
         return "Informe a forma farmacêutica, por exemplo, comprimido."
 
     monkeypatch.setattr(experimental_cli, "live_reply", live_reply)
-    messages = iter(
-        ["Tem sinvastatina 40 mg disponível hoje em Planaltina?", "comprimido", "sair"]
-    )
+    messages = iter(["Tem sinvastatina 40 mg disponível hoje em Planaltina?", "comprimido", "sair"])
     monkeypatch.setattr("builtins.input", lambda prompt: next(messages))
     monkeypatch.setattr(
         experimental_cli,
@@ -68,7 +71,7 @@ def test_experimental_chat_merges_form_followup_into_live_stock_query(
         lambda path: path,
     )
     settings = Settings("", "unused", "unused", tmp_path / "release", tmp_path / "index", 5)
-    args = SimpleNamespace(
+    args = Namespace(
         command="chat",
         curated=None,
         supplement=None,

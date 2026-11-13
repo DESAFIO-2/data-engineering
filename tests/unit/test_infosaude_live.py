@@ -3,10 +3,12 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from requests.adapters import HTTPAdapter
 
 import ingestion.infosaude_live as live_source
 import rag.cli as cli
 from ingestion.infosaude_live import UBS, decode_dsr, query_body
+from rag.config import Settings
 from rag.live import PRODUCTS, live_reply
 from rag.release import Release
 
@@ -158,6 +160,18 @@ def test_chat_syncs_before_accepting_questions_even_in_documental_mode(
 
     monkeypatch.setattr(cli, "sync_snapshot", fake_sync)
     monkeypatch.setattr("builtins.input", fake_input)
+    monkeypatch.setattr(
+        cli,
+        "get_settings",
+        lambda: Settings(
+            google_api_key="",
+            rag_chat_model="test-model",
+            rag_embedding_model="test-embedding",
+            rag_release_dir=RELEASE,
+            rag_vector_dir=Path("vectorstore"),
+            rag_top_k=5,
+        ),
+    )
     argv = ["app.py", "chat"] + (["--documental"] if documental else [])
     monkeypatch.setattr("sys.argv", argv)
 
@@ -198,3 +212,14 @@ def test_legacy_chat_falls_back_to_catalog_if_vector_index_cannot_open(
     assert "Busca vetorial indisponível" in output
     assert "sinvastatina 20 mg (comprimido) consta" in reply
     assert "F03" in output
+
+
+def test_infosaude_live_client_configures_retry_backoff_session() -> None:
+    client = live_source.InfoSaudeLiveClient()
+    adapter = client.session.get_adapter("https://wabi-brazil-south-api.analysis.windows.net")
+    assert isinstance(adapter, HTTPAdapter)
+    retry = adapter.max_retries
+    assert retry.total == 4
+    assert retry.backoff_factor == 0.5
+    assert set(retry.status_forcelist) >= {429, 500, 502, 503, 504}
+    assert "POST" in (retry.allowed_methods or set())

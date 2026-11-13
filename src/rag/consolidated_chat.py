@@ -18,7 +18,10 @@ from .catalog_chat import (
 )
 from .config import ROOT, Settings
 from .consolidated import (
+    CLINICAL_BLOCKED_TERMS,
     ConsolidatedRelease,
+    matches_clinical_guardrail,
+    matches_prompt_injection,
     name_suggestion,
     normalize,
     open_index,
@@ -27,30 +30,9 @@ from .consolidated import (
 from .consolidated_live import lookup_stock
 from .conversation import greeting_reply, is_clarification_input
 from .live import PRODUCTS, _location_reply, load_snapshot
-from .providers import google_chat, google_embeddings
+from .providers import google_chat, google_embeddings, is_transient_provider_error
 
-BLOCKED = (
-    "posso tomar",
-    "quanto tomar",
-    "qual dose",
-    "dosagem",
-    "posso trocar",
-    "substituir",
-    "equivalencia",
-    "equivalente",
-    "diagnostico",
-    "indicado para mim",
-    "tenho direito",
-    "sou elegivel",
-    "posso usar",
-    "trocar pela",
-    "devo tomar",
-    "para mim",
-    "minha dose",
-    "qual a dose",
-    "qual e a dose",
-    "posso receber",
-)
+BLOCKED = CLINICAL_BLOCKED_TERMS
 SOURCE_NAMES = {"F01": "RENAME", "F03": "REME DF", "F04": "Farmácia Popular"}
 # Administrative regions are recognized independently of rows returned for a product.
 REGIONS = (
@@ -332,7 +314,14 @@ def ask(
         )
         print(reply)
         return reply
-    if any(term in query for term in BLOCKED):
+    if matches_prompt_injection(question):
+        reply = (
+            "Não posso ignorar instruções de segurança, assumir papel clínico "
+            "ou afirmar dados fora das fontes oficiais consultadas."
+        )
+        print(reply)
+        return reply
+    if matches_clinical_guardrail(question):
         reply = (
             "Não posso orientar dose, indicação individual, elegibilidade ou troca de "
             "medicamento, nem afirmar equivalência terapêutica. Consulte um profissional de saúde."
@@ -515,7 +504,8 @@ def ask(
                     f"Aviso: geração indisponível ({type(exc).__name__}); "
                     "resposta documental utilizada."
                 )
-                cache["generation_disabled"] = True
+                if not is_transient_provider_error(exc):
+                    cache["generation_disabled"] = True
     if show_context:
         for i, ev in enumerate(result["evidence"], 1):
             print(f"[{i}] {ev['evidence_id']}: {ev['text']}")
@@ -569,7 +559,7 @@ def chat(
             )
             print(greeting)
             reply = greeting
-        elif any(term in normalize(question) for term in BLOCKED):
+        elif matches_clinical_guardrail(question):
             reply = ask(
                 question, release, chunks, manifest, settings, cache, documental=args.documental
             )

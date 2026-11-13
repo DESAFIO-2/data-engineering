@@ -8,7 +8,9 @@ from unittest.mock import Mock
 
 import pytest
 
-from rag import cli, curation, experimental_cli
+import rag.cli as cli
+import rag.curation as curation
+import rag.experimental_cli as experimental_cli
 from rag.config import Settings
 from rag.release import Release
 
@@ -56,7 +58,7 @@ def approved(tmp_path: Path) -> Path:
         reason="Fabricated public text; test only",
     )
     review.write_text(json.dumps(document), encoding="utf-8")
-    return curation.publish(review, tmp_path / "approved")
+    return Path(curation.publish(review, tmp_path / "approved"))
 
 
 @pytest.mark.parametrize("command", ["index", "search", "ask", "chat", "eval"])

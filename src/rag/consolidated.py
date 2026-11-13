@@ -111,15 +111,34 @@ class ConsolidatedRelease:
                 occ.get("medicine_id") is not None or ev.get("supply_id") != occ.get("supply_id")
             ):
                 raise ValueError("Insumo inválido")
-        if any(e["occurrence_id"] == "occ-dd3666cce6867d6246aae72f" for e in evidence):
-            raise ValueError("Linha em branco publicada")
+        exclusions = rows(folder / "exclusions.jsonl")
+        excluded_ids = {item["occurrence_id"] for item in exclusions if item.get("occurrence_id")}
+        for ev in evidence:
+            text_stripped = str(ev.get("text") or "").strip()
+            if (
+                ev["occurrence_id"] in excluded_ids
+                or not text_stripped
+                or re.fullmatch(r"\d+\.?", text_stripped)
+            ):
+                raise ValueError("Linha em branco ou excluída publicada")
         return cls(folder, manifest, catalog, occurrences, evidence, digest(manifest_raw))
 
 
 CHUNK_RECIPE = "one-evidence-v1:structured-fields;F03-description-cell;F04-indication;no-old-chunks"
+CHUNK_RECIPE_V1 = CHUNK_RECIPE
+CHUNK_RECIPE_V2 = (
+    "one-evidence-v2:structured-fields;F03-description-cell;F04-indication;"
+    "source-provenance;no-old-chunks"
+)
+_SUPPORTED_CHUNK_RECIPES = {
+    CHUNK_RECIPE_V1: digest(CHUNK_RECIPE_V1.encode()),
+    CHUNK_RECIPE_V2: digest(CHUNK_RECIPE_V2.encode()),
+}
 
 
-def chunk_for(ev: dict[str, Any], release_version: str) -> dict[str, Any]:
+def chunk_for(
+    ev: dict[str, Any], release_version: str, recipe: str = CHUNK_RECIPE_V1
+) -> dict[str, Any]:
     form = ev["form"] if ev["form"] != "-" else "não informada"
     strength = ev["strength"] if ev["strength"] != "-" else "não informada"
     parts = [
@@ -135,6 +154,20 @@ def chunk_for(ev: dict[str, Any], release_version: str) -> dict[str, Any]:
     if ev["source"]["source_id"] == "F04":
         parts.append(f"Indicação no elenco: {ev['indication']}")
     parts.append(f"Consta na lista {ev['source']['source_id']} ({ev['source']['version']}).")
+    if recipe == CHUNK_RECIPE_V2:
+        src = ev["source"]
+        loc_parts = [f"p. {src['page']}"]
+        if ev.get("source_row_number") is not None:
+            loc_parts.append(f"item {ev['source_row_number']}")
+        elif ev.get("line_start") is not None:
+            ls = ev["line_start"]
+            le = ev.get("line_end")
+            loc_parts.append(f"linhas {ls}-{le}" if le and le != ls else f"linha {ls}")
+        else:
+            loc_parts.append(ev["occurrence_id"])
+        parts.append(f"Proveniência: {src['source_id']} ({', '.join(loc_parts)}).")
+    elif recipe != CHUNK_RECIPE_V1:
+        raise ValueError(f"Receita de chunk desconhecida: {recipe}")
     text = "\n".join(parts)
     return {
         "chunk_id": "chunk-" + ev["evidence_id"].removeprefix("evidence-"),
@@ -150,19 +183,28 @@ def chunk_for(ev: dict[str, Any], release_version: str) -> dict[str, Any]:
     }
 
 
-def build_chunks(release: ConsolidatedRelease, output: Path) -> dict[str, Any]:
-    chunks = [chunk_for(e, release.manifest["release_version"]) for e in release.evidence]
-    if len({c["chunk_id"] for c in chunks}) != len(chunks) or any(
-        not c["text"].strip() for c in chunks
+def build_chunks(
+    release: ConsolidatedRelease, output: Path, recipe: str = CHUNK_RECIPE_V2
+) -> dict[str, Any]:
+    if recipe not in _SUPPORTED_CHUNK_RECIPES:
+        raise ValueError(f"Receita de chunk desconhecida: {recipe}")
+    chunks = [
+        chunk_for(e, release.manifest["release_version"], recipe=recipe) for e in release.evidence
+    ]
+    has_dup_texts = recipe == CHUNK_RECIPE_V2 and len({c["text"] for c in chunks}) != len(chunks)
+    if (
+        len({c["chunk_id"] for c in chunks}) != len(chunks)
+        or has_dup_texts
+        or any(not c["text"].strip() for c in chunks)
     ):
         raise ValueError("Chunks duplicados ou vazios")
     payload = jsonl_bytes(chunks)
-    recipe_hash = digest(CHUNK_RECIPE.encode())
+    recipe_hash = _SUPPORTED_CHUNK_RECIPES[recipe]
     manifest = {
         "schema_version": "consolidated-chunks-v1",
         "release_version": release.manifest["release_version"],
         "release_fingerprint": release.fingerprint,
-        "recipe": CHUNK_RECIPE,
+        "recipe": recipe,
         "recipe_sha256": recipe_hash,
         "files": {
             "chunks.jsonl": {
@@ -186,16 +228,22 @@ def load_chunks(
     info = manifest.get("files", {}).get("chunks.jsonl", {})
     raw = (folder / "chunks.jsonl").read_bytes()
     chunks = rows(folder / "chunks.jsonl")
+    recipe = manifest.get("recipe")
+    expected_recipe_hash = _SUPPORTED_CHUNK_RECIPES.get(recipe) if isinstance(recipe, str) else None
     if (
         manifest.get("schema_version") != "consolidated-chunks-v1"
         or manifest.get("release_fingerprint") != release.fingerprint
-        or manifest.get("recipe_sha256") != digest(CHUNK_RECIPE.encode())
+        or expected_recipe_hash is None
+        or manifest.get("recipe_sha256") != expected_recipe_hash
         or info.get("sha256") != digest(raw)
         or info.get("bytes") != len(raw)
         or info.get("records") != len(chunks)
     ):
         raise ValueError("Manifesto de chunks divergente")
-    expected = [chunk_for(e, release.manifest["release_version"]) for e in release.evidence]
+    assert isinstance(recipe, str)
+    expected = [
+        chunk_for(e, release.manifest["release_version"], recipe=recipe) for e in release.evidence
+    ]
     if chunks != expected:
         raise ValueError("Chunks não correspondem ao release aprovado")
     return chunks, manifest
@@ -498,39 +546,186 @@ def bm25_rank(question: str, chunks: list[dict[str, Any]]) -> list[dict[str, Any
     return [chunk for _, chunk in sorted(scores, key=lambda x: (-x[0], x[1]["chunk_id"]))]
 
 
+CLINICAL_BLOCKED_TERMS: tuple[str, ...] = (
+    "posso tomar",
+    "quanto tomar",
+    "como tomar",
+    "como devo tomar",
+    "como usar",
+    "como devo usar",
+    "qual dose",
+    "qual a dose",
+    "qual e a dose",
+    "que dose",
+    "minha dose",
+    "devo tomar",
+    "dosagem",
+    "posologia",
+    "superdosagem",
+    "dose diaria",
+    "dose maxima",
+    "dose minima",
+    "dose recomendada",
+    "substituir",
+    "substituicao terapeutica",
+    "posso trocar",
+    "trocar pela",
+    "trocar por",
+    "trocar esse medicamento",
+    "trocar meu medicamento",
+    "alterar a dose",
+    "aumentar a dose",
+    "diminuir a dose",
+    "dobrar a dose",
+    "reduzir a dose",
+    "indicar dose",
+    "recomendar dose",
+    "dose infantil",
+    "dose pediatrica",
+    "dose para crianca",
+    "quantos comprimidos",
+    "quantas gotas",
+    "quantas vezes ao dia",
+    "de quantas em quantas horas",
+    "partir o comprimido",
+    "cortar o comprimido",
+    "suspender o medicamento",
+    "parar de tomar",
+    "esqueci de tomar",
+    "overdose",
+    "prescreva",
+    "prescrever",
+    "receitar",
+    "me receite",
+    "equivalencia",
+    "equivalencias",
+    "equivalente terapeutico",
+    "equivalentes terapeuticos",
+    "medicamento equivalente",
+    "medicamentos equivalentes",
+    "tem equivalente",
+    "qual o equivalente",
+    "qual e o equivalente",
+    "e equivalente",
+    "sao equivalentes",
+    "mesmo efeito",
+    "mesma eficacia",
+    "diagnostico",
+    "indicado para mim",
+    "indicada para mim",
+    "serve para o meu caso",
+    "tenho direito",
+    "sou elegivel",
+    "posso usar",
+    "posso receber",
+    "posso misturar",
+    "tomar com alcool",
+    "misturar com alcool",
+    "beber alcool",
+    "ingerir alcool",
+    "efeito colateral",
+    "efeitos colaterais",
+    "reacao adversa",
+    "reacoes adversas",
+    "contraindicacao",
+    "contraindicacoes",
+    "gravidez",
+    "gravida",
+    "gravidas",
+    "gestacao",
+    "gestante",
+    "gestantes",
+    "amamentacao",
+    "amamentando",
+    "lactante",
+    "interacao medicamentosa",
+    "interacoes medicamentosas",
+    "interage com",
+    "interacao com",
+)
+
+CLINICAL_BLOCKED_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\b(?:trocar|substituir)\b.{1,40}\bpor\b"),
+    re.compile(r"\b(?:qual|que|recomende|indique|calcule|ajuste)\b.{0,25}\bdose\b"),
+    re.compile(r"\b(?:devo|posso|preciso)\s+(?:tomar|usar|aplicar|suspender|interromper)\b"),
+)
+
+PROMPT_INJECTION_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(
+        r"\b(?:ignore|desconsidere|esqueca|anule)\b.{0,30}"
+        r"\b(?:instrucoes|regras|restricoes|limites|diretrizes|sistema)\b"
+    ),
+    re.compile(
+        r"\b(?:system prompt|prompt do sistema|instrucoes internas|"
+        r"instrucoes do sistema|regras internas|jailbreak|dan mode|modo desenvolvedor)\b"
+    ),
+    re.compile(
+        r"\b(?:atue|finja|aja|comporte-se|responda)\s+como\s+(?:um|uma)?\s*"
+        r"(?:medico|medica|farmaceutico|farmaceutica|prescritor|especialista clinico)\b"
+    ),
+    re.compile(
+        r"\b(?:diga|responda|afirme|garanta|invente)\s+que\s+"
+        r"(?:tem|ha|existe|esta)\s+(?:disponivel\s+)?(?:em\s+)?estoque\b"
+    ),
+    re.compile(r"(?:^|\n)\s*(?:system|developer|assistant)\s*:", re.IGNORECASE),
+)
+
+DOCUMENTAL_ONLY_BLOCKED_TERMS: tuple[str, ...] = (
+    "estoque",
+    "disponibilidade",
+    "hoje",
+    "documentos",
+    "receita",
+    "lme",
+    "exame",
+    "jejum",
+)
+
+
+def matches_clinical_guardrail(question: str) -> bool:
+    """Detect out-of-scope clinical, dosing, pregnancy, or eligibility queries via lexical rules."""
+    query = normalize(question)
+    return any(
+        re.search(r"\b" + re.escape(term) + r"\b", query) for term in CLINICAL_BLOCKED_TERMS
+    ) or any(pattern.search(query) for pattern in CLINICAL_BLOCKED_PATTERNS)
+
+
+def matches_prompt_injection(question: str) -> bool:
+    """Detect prompt-override, role-impersonation, or fabricated-stock injection attempts."""
+    query = normalize(question)
+    return any(
+        pattern.search(question if ":\\s*" in pattern.pattern else query)
+        for pattern in PROMPT_INJECTION_PATTERNS
+    )
+
+
+def matches_documental_scope_block(question: str) -> bool:
+    """Detect queries outside the frozen list-presence scope (clinical, stock, or documents)."""
+    query = normalize(question)
+    if matches_clinical_guardrail(query):
+        return True
+    return any(
+        re.search(r"\b" + re.escape(term) + r"\b", query) for term in DOCUMENTAL_ONLY_BLOCKED_TERMS
+    )
+
+
 def search(
     question: str,
     release: ConsolidatedRelease,
     chunks: list[dict[str, Any]],
     store: Any = None,
-    strategy: str = "hybrid",
+    strategy: str = "lexical",
     top_k: int = 5,
 ) -> dict[str, Any]:
     if strategy not in {"exact", "lexical", "vector", "hybrid"} or not 1 <= top_k <= 20:
         raise ValueError("Estratégia ou top_k inválido")
-    query = normalize(question)
-    if any(
-        re.search(r"\b" + re.escape(x) + r"\b", query)
-        for x in (
-            "estoque",
-            "disponibilidade",
-            "hoje",
-            "documentos",
-            "receita",
-            "lme",
-            "exame",
-            "jejum",
-            "posso tomar",
-            "quanto tomar",
-            "qual dose",
-            "qual a dose",
-            "que dose",
-            "devo tomar",
-            "dosagem",
-            "substituir",
-            "diagnostico",
+    if strategy in {"vector", "hybrid"} and store is None:
+        raise ValueError(
+            f"Estratégia '{strategy}' exige índice vetorial carregado (store); "
+            "execute 'index' ou use 'lexical'/'exact'."
         )
-    ):
+    query = normalize(question)
+    if matches_documental_scope_block(query) or matches_prompt_injection(question):
         return {
             "status": "unsupported",
             "evidence": [],
@@ -767,7 +962,12 @@ def search(
             "message": "Esta apresentação não consta na fonte solicitada.",
         }
     lexical = bm25_rank(question, selected)
-    if strategy in {"vector", "hybrid"} and store is not None:
+    if strategy in {"vector", "hybrid"}:
+        if store is None:
+            raise ValueError(
+                f"Estratégia '{strategy}' exige índice vetorial carregado (store); "
+                "execute 'index' ou use 'lexical'/'exact'."
+            )
         docs = []
         for mid in sorted(match_ids):
             docs.extend(

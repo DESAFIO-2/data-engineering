@@ -6,8 +6,12 @@ import json
 import sys
 from collections import Counter
 
+import pytest
+
 from rag.config import ROOT
 from rag.consolidated import normalize
+
+pytestmark = pytest.mark.dvc
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from prepare_v9_next_test_candidate import prepare  # noqa: E402
@@ -34,9 +38,7 @@ def test_candidate_has_traceable_evidence_and_declared_f04_reuse() -> None:
         "not_in_scope": 4,
     }
     assert all(
-        case["family_id"] not in old_families
-        for case in cases
-        if case["source_id"] != "F04"
+        case["family_id"] not in old_families for case in cases if case["source_id"] != "F04"
     )
     assert all(case["family_id"] not in current_families for case in cases)
     assert all(case["family_reused_from_v8"] == (case["source_id"] == "F04") for case in cases)

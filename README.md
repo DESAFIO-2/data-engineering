@@ -1,6 +1,6 @@
 # SUS Cidadão — Engenharia de Dados e RAG documental
 
-> **Release documental mais recente:** `corpus-consolidado-v9-aprovado-2026-11-12` (2.114 chunks). O histórico de aprovações anteriores (`v5`, `v6`, `v7`, `v8`) e suas restrições estão registrados em [docs/reports/](docs/reports). A [SPEC do RAG híbrido](docs/specs/SPEC-09-rag-hibrido-v7.md) refere-se à frente v7; a [SPEC de CEP → UBS](docs/specs/SPEC-10-cep-ubs-privacidade.md) permanece uma frente separada.
+> **Release documental mais recente:** `corpus-consolidado-v9-aprovado-2026-11-12` (2.114 chunks, armazenado via **DVC** em `data/releases/corpus-consolidado-v9-aprovado-2026-11-12.dvc` — exige `uv run dvc pull`). Sem DVC, os releases aprovados disponíveis diretamente no Git são `data/releases/corpus-consolidado-v5-aprovado-2026-11-10` (2.114 evidências) e `data/releases/rag-lote-1-aprovado-2026-11-05` (padrão de `.env.example`). O diretório `corpus-consolidado-v9-claritromicina-normalizada-2026-11-12` está em `pending_review` e **não** é um release aprovado. O histórico de aprovações anteriores (`v5`, `v6`, `v7`, `v8`) e suas restrições estão registrados em [docs/reports/](docs/reports). A [SPEC do RAG híbrido](docs/specs/SPEC-09-rag-hibrido-v7.md) refere-se à frente v7; a [SPEC de CEP → UBS](docs/specs/SPEC-10-cep-ubs-privacidade.md) permanece uma frente separada.
 
 Projeto acadêmico (**Challenge 2 — Big Idea: Qualidade de Vida**) de engenharia de dados auditável e consulta documental no terminal, com ChromaDB, recuperação lexical/vetorial e síntese Gemini. Fontes e respostas representam versões congeladas; presença em lista não garante estoque, elegibilidade individual ou orientação clínica.
 
@@ -20,23 +20,25 @@ A documentação do projeto está organizada pelo roadmap oficial do Challenge 2
 
 ## Estado atual (12/11/2026 — Semana 3)
 
-- **Corpus consolidado:** `data/releases/corpus-consolidado-v9-aprovado-2026-11-12` (2.114 evidências), cobrindo F01 RENAME, F03 REME-DF e F04 Farmácia Popular.
-- **Comparação LLM × RAG (Semana 3):** oito cenários (`exact`, `lexical`, `vector`, `hybrid` na busca; `llm_only`, `lexical_documental`, `lexical_llm`, `best_llm` na resposta) executados em desenvolvimento e no conjunto de teste congelado, além das métricas RAGAS e métricas complementares de recuperação. A revisão factual humana das 44 respostas do conjunto de teste permanece pendente. Detalhes em [Semana 3 — LLM × RAG na v9](docs/reports/v9/semana3-llm-rag-v9.md).
+- **Corpus consolidado:** `data/releases/corpus-consolidado-v9-aprovado-2026-11-12` (2.114 evidências, via DVC), cobrindo F01 RENAME, F03 REME-DF e F04 Farmácia Popular.
+- **Comparação LLM × RAG (Semana 3):** oito cenários (`exact`, `lexical`, `vector`, `hybrid` na busca; `llm_only`, `lexical_documental`, `lexical_llm`, `best_llm` na resposta) executados em desenvolvimento e no conjunto de teste congelado (11 casos), além das métricas RAGAS e métricas complementares de recuperação. **Os resultados da Semana 3 ainda não sustentam alegação de superioridade de LLM ou vetor** porque a revisão factual humana das 44 respostas do conjunto de teste permanece pendente (0/44), ocorreram falhas `429` da API Gemini (`best_llm`: 5/11; `lexical_llm`: 3/11) e a amostra de teste é pequena. Detalhes em [Semana 3 — LLM × RAG na v9](docs/reports/v9/semana3-llm-rag-v9.md).
 
 ## Preparação e execução
 
-Na raiz do repositório, com Python 3.12 e `uv`:
+Na raiz do repositório (`data-engineering/`), com Python 3.12 e `uv` (veja também o [Guia de desenvolvimento e testes](docs/guias/guia-desenvolvimento-e-testes.md)):
 
 ```bash
 uv sync --frozen --python 3.12
 uv run python app.py --help
+# Para baixar os releases v7/v8/v9 aprovados (requer acesso OAuth ao Google Drive do DVC):
+uv run dvc pull
 ```
 
 Para indexação vetorial e geração com Gemini, configure localmente `APP_GOOGLE_API_KEY`, `APP_RAG_CHAT_MODEL` e `APP_RAG_EMBEDDING_MODEL` (variáveis de ambiente prevalecem sobre `.env`; nunca exponha credenciais no histórico ou em capturas).
 
 ### Consulta e chat no release consolidado
 
-Para conversar com o release aprovado `v9` (ou outro release via `--release`):
+Para conversar com o release aprovado `v9` após `uv run dvc pull` (ou usando `data/releases/corpus-consolidado-v5-aprovado-2026-11-10` sem DVC):
 
 ```bash
 uv run python app.py chat --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12
@@ -54,7 +56,7 @@ Para construir o índice vetorial ChromaDB de um release:
 uv run python app.py index --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12
 ```
 
-O manifesto `consolidated-release-v2` seleciona o fluxo consolidado para `chat`, `ask`, `search`, `index`, `eval` e `sync-live` (também configurável por `APP_RAG_RELEASE_DIR`). Estratégias disponíveis: `exact`, `lexical`, `vector`, `hybrid` (`top_k=5` por padrão).
+O manifesto `consolidated-release-v2` seleciona o fluxo consolidado para `chat`, `ask`, `search`, `index`, `eval` e `sync-live` (também configurável por `APP_RAG_RELEASE_DIR`). Estratégias disponíveis: `exact`, `lexical`, `vector`, `hybrid` (`top_k=5` por padrão). As estratégias `vector` e `hybrid` exigem índice vetorial construído (`app.py index`); na API de busca (`search()`), a ausência de `store` gera erro explícito (sem fallback silencioso para `lexical`).
 
 ### Dados vivos (InfoSaúde-DF) e privacidade
 
@@ -112,7 +114,10 @@ PYTHONPATH=src uv run python -m scripts.week3_review --runs evals/results/week3_
 uv run ruff format --check .
 uv run ruff check .
 uv run mypy src tests
+# Suíte unitária independente de DVC (funciona em clone novo sem Google Drive):
+uv run pytest -m "not dvc"
+# Suíte completa (requer `uv run dvc pull` prévio):
 uv run pytest
 ```
 
-Passar nos testes automatizados verifica contratos de código e regressões técnicas; não concede aprovação humana aos dados nem valida afirmações clínicas.
+Consulte o [Guia de desenvolvimento e testes](docs/guias/guia-desenvolvimento-e-testes.md) para detalhes de setup, DVC, guardrails e reprodução de avaliações. Passar nos testes automatizados verifica contratos de código e regressões técnicas; não concede aprovação humana aos dados nem valida afirmações clínicas.

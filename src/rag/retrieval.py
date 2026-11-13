@@ -21,16 +21,28 @@ def _has_term(question: str, term: str) -> bool:
 
 
 FORM_EXAMPLES = (
-    "comprimido", "cápsula", "líquido", "tópico", "adesivo", "creme", "dispositivo",
-    "espuma", "gel", "gotas", "inalador", "injeção", "loção", "pomada", "pó",
-    "spray", "supositório",
+    "comprimido",
+    "cápsula",
+    "líquido",
+    "tópico",
+    "adesivo",
+    "creme",
+    "dispositivo",
+    "espuma",
+    "gel",
+    "gotas",
+    "inalador",
+    "injeção",
+    "loção",
+    "pomada",
+    "pó",
+    "spray",
+    "supositório",
 )
 LIQUID_FORMS = ("liquido", "solucao", "suspensao", "xarope", "gotas")
 TOPICAL_FORMS = ("topico", "creme", "espuma", "gel", "locao", "pomada")
 FORM_TERMS = tuple(
-    dict.fromkeys(
-        (*FORM_EXAMPLES, "solução", "suspensão", "xarope", "injetável", "óvulo")
-    )
+    dict.fromkeys((*FORM_EXAMPLES, "solução", "suspensão", "xarope", "injetável", "óvulo"))
 )
 
 

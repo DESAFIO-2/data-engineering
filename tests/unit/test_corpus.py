@@ -1,6 +1,7 @@
 import json
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -61,7 +62,7 @@ def test_explicit_composite_strength_is_preserved_literally() -> None:
         ),
     ],
 )
-def test_reme_fields_preserve_rejected_patterns(text: str, expected: tuple) -> None:
+def test_reme_fields_preserve_rejected_patterns(text: str, expected: tuple[Any, ...]) -> None:
     assert fields(text) == expected
 
 

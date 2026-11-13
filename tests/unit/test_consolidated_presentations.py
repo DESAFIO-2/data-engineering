@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from rag import consolidated_chat as chat
+import rag.consolidated_chat as chat
 from rag.config import ROOT, Settings
 from rag.consolidated import ConsolidatedRelease, load_chunks, normalize, search, strength_matches
 

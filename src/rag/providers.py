@@ -3,9 +3,91 @@
 from __future__ import annotations
 
 import re
+import time
+from collections.abc import Callable
 from typing import Any
 
 from pydantic import SecretStr
+
+_PERMANENT_QUOTA_RE = re.compile(
+    r"per day limit exceeded|daily quota|requests per day",
+    re.IGNORECASE,
+)
+_TRANSIENT_STATUS_CODES = frozenset({429, 500, 502, 503, 504})
+_TRANSIENT_NAME_RE = re.compile(
+    r"RateLimit|ResourceExhausted|ServiceUnavailable|TooManyRequests|"
+    r"InternalServerError|APIConnection|Timeout",
+    re.IGNORECASE,
+)
+_TRANSIENT_MSG_RE = re.compile(
+    r"\b(?:429|500|502|503|504)\b|resource_exhausted|rate[ _-]?limit|"
+    r"too many requests|temporarily unavailable|service unavailable|timed out",
+    re.IGNORECASE,
+)
+
+
+def _exception_chain(exc: Exception) -> list[BaseException]:
+    chain: list[BaseException] = []
+    seen: set[int] = set()
+    cur: BaseException | None = exc
+    while cur is not None and id(cur) not in seen and len(chain) < 6:
+        seen.add(id(cur))
+        chain.append(cur)
+        cur = cur.__cause__ or cur.__context__
+    return chain
+
+
+def is_transient_provider_error(exc: Exception) -> bool:
+    """Return True for transient LLM/HTTP failures worth retrying with backoff."""
+    chain = _exception_chain(exc)
+    full_msg = " ".join(str(item) for item in chain)
+    if _PERMANENT_QUOTA_RE.search(full_msg):
+        return False
+    for item in chain:
+        status = getattr(item, "status_code", None)
+        if status is None:
+            status = getattr(item, "code", None)
+        if isinstance(status, int) and status in _TRANSIENT_STATUS_CODES:
+            return True
+        if _TRANSIENT_NAME_RE.search(type(item).__name__):
+            return True
+    return bool(_TRANSIENT_MSG_RE.search(full_msg))
+
+
+def _retry_delay_seconds(
+    exc: Exception, attempt: int, *, base_delay: float, max_delay: float
+) -> float:
+    retry = re.search(r"retry(?: in| after)?[:=\s]+([\d.]+)\s*s?", str(exc), re.I)
+    if retry:
+        return min(max_delay, max(0.0, float(retry.group(1))))
+    return float(min(max_delay, base_delay * (2**attempt)))
+
+
+def invoke_with_retry(
+    llm: Any,
+    messages: Any,
+    *,
+    max_attempts: int = 4,
+    base_delay: float = 1.0,
+    max_delay: float = 30.0,
+    sleep: Callable[[float], None] | None = None,
+) -> Any:
+    """Invoke an LLM adapter with exponential backoff on transient 429/5xx errors."""
+    if max_attempts < 1:
+        raise ValueError("max_attempts must be >= 1")
+    if getattr(llm, "_handles_retries", False):
+        return llm.invoke(messages)
+    sleep_fn = sleep or time.sleep
+    for attempt in range(max_attempts):
+        try:
+            return llm.invoke(messages)
+        except Exception as exc:
+            if attempt + 1 >= max_attempts or not is_transient_provider_error(exc):
+                raise
+            delay = _retry_delay_seconds(exc, attempt, base_delay=base_delay, max_delay=max_delay)
+            if delay > 0:
+                sleep_fn(delay)
+    raise RuntimeError("Unreachable retry state")
 
 
 def error_detail(exc: Exception) -> str:

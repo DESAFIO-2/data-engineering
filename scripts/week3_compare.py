@@ -8,6 +8,7 @@ import platform
 import subprocess
 import time
 from datetime import UTC, datetime
+from collections.abc import Callable
 from hashlib import sha256
 from pathlib import Path
 from typing import Any
@@ -15,19 +16,22 @@ from typing import Any
 from rag.answer import SYSTEM, synthesize
 from rag.config import ROOT, get_settings
 from rag.consolidated import ConsolidatedRelease, load_chunks, open_index, search
-from rag.providers import google_chat, google_embeddings
+from rag.providers import google_chat, google_embeddings, invoke_with_retry
 
 STRATEGIES = ("exact", "lexical", "vector", "hybrid")
 MODES = ("llm_only", "lexical_documental", "lexical_llm", "best_llm")
 
 
 class MeasuredModel:
-    def __init__(self, model: Any) -> None:
+    _handles_retries = True
+
+    def __init__(self, model: Any, *, sleep: Callable[[float], None] | None = None) -> None:
         self.model = model
         self.last_usage: Any = None
+        self.sleep = sleep
 
     def invoke(self, messages: Any) -> Any:
-        response = self.model.invoke(messages)
+        response = invoke_with_retry(self.model, messages, sleep=self.sleep)
         self.last_usage = getattr(response, "usage_metadata", None)
         return response
 

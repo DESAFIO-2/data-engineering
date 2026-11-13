@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -11,19 +12,24 @@ from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.consolidated_evaluation import _preflight
 
+pytestmark = pytest.mark.dvc
+
 RELEASE = ROOT / "data/releases/corpus-consolidado-v7-aprovado-2026-11-11"
 CHUNKS = ROOT / "data/derived/chunks/corpus-consolidado-v7-aprovado-2026-11-11"
 DATASET = ROOT / "evals/datasets/consolidated_v7_agent_reviewed.jsonl"
 
 
+CorpusBundle = tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]]
+
+
 @pytest.fixture(scope="module")
-def corpus() -> tuple[ConsolidatedRelease, list[dict], dict]:
+def corpus() -> CorpusBundle:
     release = ConsolidatedRelease.load(RELEASE)
     chunks, manifest = load_chunks(release, CHUNKS)
     return release, chunks, manifest
 
 
-def test_v7_chunk_links_and_hashes(corpus: tuple) -> None:
+def test_v7_chunk_links_and_hashes(corpus: CorpusBundle) -> None:
     release, chunks, manifest = corpus
     assert release.fingerprint == "8399f37f6664f474c18622d912ad9795f04ec199102724cfafbe6e295eeab20b"
     assert len(chunks) == len(release.evidence) == 2114
@@ -39,7 +45,7 @@ def test_v7_chunk_links_and_hashes(corpus: tuple) -> None:
 
 
 @pytest.mark.parametrize("mutation", ["hash", "duplicate", "page"])
-def test_load_rejects_tampered_chunks(corpus: tuple, tmp_path: Path, mutation: str) -> None:
+def test_load_rejects_tampered_chunks(corpus: CorpusBundle, tmp_path: Path, mutation: str) -> None:
     release, chunks, manifest = corpus
     copied = [dict(c) for c in chunks]
     meta = json.loads(json.dumps(manifest))
@@ -58,7 +64,7 @@ def test_load_rejects_tampered_chunks(corpus: tuple, tmp_path: Path, mutation: s
         load_chunks(release, tmp_path)
 
 
-def test_name_only_lists_presentations_without_selecting(corpus: tuple) -> None:
+def test_name_only_lists_presentations_without_selecting(corpus: CorpusBundle) -> None:
     release, chunks, _ = corpus
     result = search("metformina na RENAME", release, chunks, strategy="lexical")
     assert result["status"] == "ambiguous"
@@ -68,7 +74,7 @@ def test_name_only_lists_presentations_without_selecting(corpus: tuple) -> None:
 
 
 @pytest.mark.parametrize("strategy", ["exact", "lexical"])
-def test_presentation_filters_and_source(corpus: tuple, strategy: str) -> None:
+def test_presentation_filters_and_source(corpus: CorpusBundle, strategy: str) -> None:
     release, chunks, _ = corpus
     result = search(
         "liraglutida 6 mg/mL solução injetável REME-DF", release, chunks, strategy=strategy
@@ -84,7 +90,7 @@ def test_presentation_filters_and_source(corpus: tuple, strategy: str) -> None:
     assert wrong["status"] == "not_in_scope" and wrong["evidence"] == []
 
 
-def test_f04_partial_and_release_characteristic(corpus: tuple) -> None:
+def test_f04_partial_and_release_characteristic(corpus: CorpusBundle) -> None:
     release, chunks, _ = corpus
     partial = search(
         "cloridrato de metformina 500mg Farmácia Popular", release, chunks, strategy="exact"
@@ -101,7 +107,7 @@ def test_f04_partial_and_release_characteristic(corpus: tuple) -> None:
     assert prolonged["medicine"]["exact_presentation_supported"] is False
 
 
-def test_test_split_remains_closed(corpus: tuple) -> None:
+def test_test_split_remains_closed(corpus: CorpusBundle) -> None:
     release, _, _ = corpus
     cases = [json.loads(x) for x in DATASET.read_text(encoding="utf-8").splitlines() if x]
     with pytest.raises(ValueError, match="Teste fechado"):

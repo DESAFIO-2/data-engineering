@@ -18,7 +18,18 @@ from .consolidated import (
 
 
 def run(args: Any, settings: Settings) -> int:
-    release = ConsolidatedRelease.load(Path(args.release))
+    release_path = Path(args.release)
+    if not (release_path / "release.json").is_file():
+        dvc_pointer = release_path.with_name(release_path.name + ".dvc")
+        if dvc_pointer.is_file():
+            raise FileNotFoundError(
+                f"Release '{release_path}' não encontrado localmente, mas possui ponteiro DVC "
+                f"({dvc_pointer.name}). Execute 'uv run dvc pull' para baixar os artefatos "
+                "aprovados ou use um release aprovado local (ex.: "
+                "data/releases/corpus-consolidado-v5-aprovado-2026-11-10)."
+            )
+        raise FileNotFoundError(f"Manifesto release.json não encontrado em '{release_path}'.")
+    release = ConsolidatedRelease.load(release_path)
     if args.command == "sync-live":
         from .consolidated_chat import sync_live
 

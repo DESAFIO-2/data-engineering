@@ -1,12 +1,15 @@
 from argparse import Namespace
 from pathlib import Path
 from types import SimpleNamespace
+from typing import cast
 from unittest.mock import Mock
 
 import pytest
 
-from rag import experimental_cli
-from rag.config import Settings
+import rag.experimental_cli as experimental_cli
+from rag.config import ROOT, Settings
+from rag.experimental import Corpus, Retriever
+from rag.release import Release
 
 
 def _args(command: str, question: str | None = None, *, documental: bool = False) -> Namespace:
@@ -31,29 +34,31 @@ def _corpus() -> SimpleNamespace:
 
 
 def test_default_restored_corpus_automatically_includes_archived_supplement() -> None:
-    args = Namespace(corpus=experimental_cli.ROOT / "data/corpus/experimental", supplement=None)
+    args = Namespace(corpus=ROOT / "data/corpus/experimental", supplement=None)
     assert experimental_cli.corpus_supplement(args) == (
-        experimental_cli.ROOT / "data/raw/complementares/chunks.jsonl"
+        ROOT / "data/raw/complementares/chunks.jsonl"
     )
 
 
 def test_validated_mode_excludes_pending_supplement() -> None:
-    args = Namespace(corpus=experimental_cli.ROOT / "data/corpus", supplement=None, validated=True)
+    args = Namespace(corpus=ROOT / "data/corpus", supplement=None, validated=True)
     assert experimental_cli.corpus_supplement(args) is None
-    args.supplement = experimental_cli.ROOT / "data/raw/complementares/chunks.jsonl"
+    args.supplement = ROOT / "data/raw/complementares/chunks.jsonl"
     with pytest.raises(ValueError, match="pendente"):
         experimental_cli.corpus_supplement(args)
 
 
 def test_validated_vector_reuse_checks_primary_texts(monkeypatch: pytest.MonkeyPatch) -> None:
-    current = SimpleNamespace(chunks=[{"evidence_id": "ev-primary", "text": "texto validado"}])
+    current = cast(
+        Corpus, SimpleNamespace(chunks=[{"evidence_id": "ev-primary", "text": "texto validado"}])
+    )
     store = SimpleNamespace(
         get=lambda include: {
             "ids": ["ev-primary", "ev-pending"],
             "documents": ["texto validado", "texto complementar pendente"],
         }
     )
-    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: object())
+    monkeypatch.setattr(Corpus, "load", lambda *args: object())
     monkeypatch.setattr(experimental_cli, "open_index", lambda *args: store)
     assert experimental_cli.open_validated_vectors(current, Path("."), "fake", object()) is store
     current.chunks[0]["text"] = "texto alterado"
@@ -66,7 +71,7 @@ def test_validated_chat_loads_consolidated_corpus_and_syncs_at_startup(
 ) -> None:
     args = _args("chat")
     args.validated = True
-    args.corpus = experimental_cli.ROOT / "data/corpus"
+    args.corpus = ROOT / "data/corpus"
     sync = Mock(return_value={"ceaf_stock": [], "ubs_stock": [{}], "locations": [{}]})
     monkeypatch.setattr(experimental_cli, "sync_snapshot", sync)
     monkeypatch.setattr("builtins.input", lambda prompt: "sair")
@@ -83,8 +88,8 @@ def test_validated_chat_loads_consolidated_corpus_and_syncs_at_startup(
 def test_experimental_stock_intent_uses_live_reply_before_retrieval(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: _corpus())
-    monkeypatch.setattr(experimental_cli.Release, "load", lambda path: object())
+    monkeypatch.setattr(Corpus, "load", lambda *args: _corpus())
+    monkeypatch.setattr(Release, "load", lambda path: object())
     monkeypatch.setattr(experimental_cli, "load_snapshot", lambda path: {"snapshot": True})
     monkeypatch.setattr(
         experimental_cli,
@@ -92,14 +97,17 @@ def test_experimental_stock_intent_uses_live_reply_before_retrieval(
         lambda question, release, snapshot: "Saldo ao vivo: UBS teste.",
     )
     monkeypatch.setattr(
-        experimental_cli.Retriever,
+        Retriever,
         "search",
         Mock(side_effect=AssertionError("RAG não deve rodar para intenção de estoque")),
     )
 
-    assert experimental_cli.run(
-        _args("ask", "Onde tem estoque de sinvastatina 20 mg?"), _settings(tmp_path)
-    ) == 0
+    assert (
+        experimental_cli.run(
+            _args("ask", "Onde tem estoque de sinvastatina 20 mg?"), _settings(tmp_path)
+        )
+        == 0
+    )
     output = capsys.readouterr().out
     assert "Saldo ao vivo: UBS teste." in output
 
@@ -107,7 +115,7 @@ def test_experimental_stock_intent_uses_live_reply_before_retrieval(
 def test_documental_mode_skips_live_lookup(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: _corpus())
+    monkeypatch.setattr(Corpus, "load", lambda *args: _corpus())
     live = Mock(side_effect=AssertionError("modo documental não consulta InfoSaúde"))
     monkeypatch.setattr(experimental_cli, "live_reply", live)
     monkeypatch.setattr(
@@ -122,10 +130,13 @@ def test_documental_mode_skips_live_lookup(
         ),
     )
 
-    assert experimental_cli.run(
-        _args("search", "Onde tem estoque de losartana 50 mg?", documental=True),
-        _settings(tmp_path),
-    ) == 0
+    assert (
+        experimental_cli.run(
+            _args("search", "Onde tem estoque de losartana 50 mg?", documental=True),
+            _settings(tmp_path),
+        )
+        == 0
+    )
     live.assert_not_called()
     assert "Sem evidência" in capsys.readouterr().out
 
@@ -145,14 +156,12 @@ def test_sync_live_experimental_requests_only_validated_product_codes(
 def test_experimental_documental_chat_still_syncs_stock_at_startup(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: _corpus())
+    monkeypatch.setattr(Corpus, "load", lambda *args: _corpus())
     sync = Mock(return_value={"ceaf_stock": [], "ubs_stock": [{}], "locations": [{}]})
     monkeypatch.setattr(experimental_cli, "sync_snapshot", sync)
     monkeypatch.setattr("builtins.input", lambda prompt: "sair")
 
-    assert experimental_cli.run(
-        _args("chat", documental=True), _settings(tmp_path)
-    ) == 0
+    assert experimental_cli.run(_args("chat", documental=True), _settings(tmp_path)) == 0
     sync.assert_called_once()
     assert "InfoSaúde sincronizado" in capsys.readouterr().out
 
@@ -160,8 +169,8 @@ def test_experimental_documental_chat_still_syncs_stock_at_startup(
 def test_unmapped_stock_question_gets_clear_message_without_rag(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    monkeypatch.setattr(experimental_cli.Corpus, "load", lambda *args: _corpus())
-    monkeypatch.setattr(experimental_cli.Release, "load", lambda path: object())
+    monkeypatch.setattr(Corpus, "load", lambda *args: _corpus())
+    monkeypatch.setattr(Release, "load", lambda path: object())
     monkeypatch.setattr(experimental_cli, "load_snapshot", lambda path: {"snapshot": True})
     monkeypatch.setattr(
         experimental_cli,
@@ -169,12 +178,13 @@ def test_unmapped_stock_question_gets_clear_message_without_rag(
         lambda *args: "Não localizado no recorte consultado: seis apresentações.",
     )
     monkeypatch.setattr(
-        experimental_cli.Retriever,
+        Retriever,
         "search",
         Mock(side_effect=AssertionError("não deve buscar no RAG")),
     )
 
-    assert experimental_cli.run(
-        _args("ask", "Tem estoque de losartana 50 mg?"), _settings(tmp_path)
-    ) == 0
+    assert (
+        experimental_cli.run(_args("ask", "Tem estoque de losartana 50 mg?"), _settings(tmp_path))
+        == 0
+    )
     assert "ainda não está mapeada" in capsys.readouterr().out

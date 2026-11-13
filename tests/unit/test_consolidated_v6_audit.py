@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from typing import Any
 
 import pytest
 
@@ -14,14 +15,14 @@ V6_CHUNK_DIR = ROOT / "data/derived/chunks/corpus-consolidado-v6-auditado-2026-1
 
 
 @pytest.fixture(scope="module")
-def v6_corpus() -> tuple[ConsolidatedRelease, list[dict], dict]:
+def v6_corpus() -> tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]]:
     rel = ConsolidatedRelease.load(V6_DIR)
     chunks, manifest = load_chunks(rel, V6_CHUNK_DIR)
     return rel, chunks, manifest
 
 
 def test_v6_release_integrity_and_counts(
-    v6_corpus: tuple[ConsolidatedRelease, list[dict], dict],
+    v6_corpus: tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]],
 ) -> None:
     rel, chunks, manifest = v6_corpus
     assert rel.manifest["release_version"] == "corpus-consolidado-v6-auditado-2026-11-11"
@@ -74,7 +75,9 @@ def test_v6_audit_log_complete_coverage() -> None:
         )
 
 
-def test_no_legacy_chunks_in_v6(v6_corpus: tuple[ConsolidatedRelease, list[dict], dict]) -> None:
+def test_no_legacy_chunks_in_v6(
+    v6_corpus: tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]],
+) -> None:
     rel, _, _ = v6_corpus
     for occ in rel.occurrences:
         assert "chunk_ids" in occ
@@ -90,7 +93,7 @@ def test_no_legacy_chunks_in_v6(v6_corpus: tuple[ConsolidatedRelease, list[dict]
 
 
 def test_defect_fix_fenoximetilpenicilina(
-    v6_corpus: tuple[ConsolidatedRelease, list[dict], dict],
+    v6_corpus: tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]],
 ) -> None:
     rel, chunks, _ = v6_corpus
     occ = next(o for o in rel.occurrences if o["occurrence_id"] == "occ-ef6f34aca6aebf7145e278f7")
@@ -110,7 +113,7 @@ def test_defect_fix_fenoximetilpenicilina(
 
 
 def test_defect_fix_mikania_no_guaco_in_row_695(
-    v6_corpus: tuple[ConsolidatedRelease, list[dict], dict],
+    v6_corpus: tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]],
 ) -> None:
     rel, chunks, _ = v6_corpus
     occ = next(o for o in rel.occurrences if o["occurrence_id"] == "occ-be1655419eff7210901c7689")
@@ -153,7 +156,7 @@ def test_defect_fix_f03_descriptions_unscrambled() -> None:
 
 
 def test_creme_routing_does_not_hijack_to_f03(
-    v6_corpus: tuple[ConsolidatedRelease, list[dict], dict],
+    v6_corpus: tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]],
 ) -> None:
     rel, chunks, _ = v6_corpus
     # 'creme' contains 'reme' as a substring; word boundary ensures it routes to F01 (RENAME)

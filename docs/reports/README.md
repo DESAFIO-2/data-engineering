@@ -24,6 +24,7 @@
 | [validacao-recuperacao-v9-test.md](v9/validacao-recuperacao-v9-test.md) | Resultado da validação de recuperação no teste v9 |
 | [dupla-revisao-teste-v9-2026-11-12.md](v9/dupla-revisao-teste-v9-2026-11-12.md) | Registro da dupla revisão do conjunto de teste v9 |
 | [v9-next-round-preparation.md](v9/v9-next-round-preparation.md) | Preparação da rodada adicional (`next`) de teste independente v9 |
+| [diagnostico-colisoes-v9-para-v10.md](v9/diagnostico-colisoes-v9-para-v10.md) | Inventário determinístico dos 20 pares de chunks duplicados (`v1`) e 80 colisões de catálogo na `v9` para a `v10` |
 | [v9-next-independent-test-review.md](v9/v9-next-independent-test-review.md) | Revisão técnica dos 28 casos da rodada `next` na v9 |
 | [validacao-recuperacao-v9-next-test.md](v9/validacao-recuperacao-v9-next-test.md) | Resultado da validação de recuperação no holdout `next` da v9 |
 | [plano-pos-gate-v9-lexical.md](v9/plano-pos-gate-v9-lexical.md) | Plano de avaliação pós-gate lexical na v9 |

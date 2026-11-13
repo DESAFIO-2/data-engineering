@@ -109,8 +109,8 @@ def inspect_content(relative: Path, content: bytes) -> None:
     if SECRET.search(content):
         raise ValueError(f"Credential signature detected: {relative.as_posix()}")
     for match in ASSIGNMENT.finditer(content):
-        value = match.group(1).lower()
-        if not any(word in value for word in PLACEHOLDERS):
+        match_value = match.group(1).lower()
+        if not any(word in match_value for word in PLACEHOLDERS):
             raise ValueError(f"Possible credential assignment: {relative.as_posix()}")
     if relative.parts[:2] in (("evals", "datasets"), ("evals", "results")):
         if relative.suffix == ".jsonl":

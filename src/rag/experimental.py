@@ -46,8 +46,10 @@ def name_in_query(query: str, name: str) -> bool:
         return has_term(query, name)
     without_plus = name.replace(" + ", " ")
     without_doses = " ".join(STRENGTH.sub("", query).split())
-    return has_term(query, name) or has_term(query, without_plus) or has_term(
-        without_doses, without_plus
+    return (
+        has_term(query, name)
+        or has_term(query, without_plus)
+        or has_term(without_doses, without_plus)
     )
 
 
@@ -84,8 +86,7 @@ def has_strength(query: str, strength: str) -> bool:
     if base and base != normalize(strength):
         base_literal = r"\s*".join(re.escape(char) for char in strength_key(base))
         return (
-            re.search(rf"(?<![\w.,]){base_literal}(?![\w/])", query.replace(",", "."))
-            is not None
+            re.search(rf"(?<![\w.,]){base_literal}(?![\w/])", query.replace(",", ".")) is not None
         )
     return False
 
@@ -526,7 +527,8 @@ class Retriever:
             strengths = sorted(strength_values.values())
             supplied_strengths = strength_components(query)
             present = [
-                s for s in strengths
+                s
+                for s in strengths
                 if has_strength(query, s) or compound_strength_in_query(query, s)
             ]
             # A shorter strength may occur inside a complete compound expression.

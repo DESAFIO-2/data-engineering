@@ -6,19 +6,20 @@ Synthetic families intentionally differ from the frozen v9 test families.
 from __future__ import annotations
 
 from types import SimpleNamespace
+from typing import Any
 
 import pytest
 
 from rag.consolidated import search
 
 
-def corpus(*presentations: tuple[str, str, str, str | None, str]):
+def corpus(
+    *presentations: tuple[str, str, str, str | None, str],
+) -> tuple[Any, list[dict[str, Any]]]:
     catalog = []
     evidence = []
     chunks = []
-    for index, (name, strength, form, characteristic, source_id) in enumerate(
-        presentations, 1
-    ):
+    for index, (name, strength, form, characteristic, source_id) in enumerate(presentations, 1):
         medicine_id = f"synthetic-med-{index}"
         evidence_id = f"synthetic-evidence-{index}"
         source = {"source_id": source_id, "page": index, "url": "https://example.org/pdf"}
@@ -128,19 +129,25 @@ def test_volume_and_container_preserve_volume(strategy: str) -> None:
             "F03",
         )
     )
-    assert search(
-        "REME-DF solução eletrolítica alfa injetável em bolsa de 750 mL "
-        "sistema fechado de infusão",
-        release,
-        chunks,
-        strategy=strategy,
-    )["status"] == "matched"
-    assert search(
-        "REME-DF solução eletrolítica alfa injetável em bolsa de 500 mL",
-        release,
-        chunks,
-        strategy=strategy,
-    )["evidence"] == []
+    assert (
+        search(
+            "REME-DF solução eletrolítica alfa injetável em bolsa de 750 mL "
+            "sistema fechado de infusão",
+            release,
+            chunks,
+            strategy=strategy,
+        )["status"]
+        == "matched"
+    )
+    assert (
+        search(
+            "REME-DF solução eletrolítica alfa injetável em bolsa de 500 mL",
+            release,
+            chunks,
+            strategy=strategy,
+        )["evidence"]
+        == []
+    )
 
 
 @pytest.mark.parametrize("strategy", ["exact", "lexical"])
@@ -148,12 +155,15 @@ def test_interleaved_association_keeps_component_doses(strategy: str) -> None:
     release, chunks = corpus(
         ("composto alfa + composto beta", "0,03 mg + 0,15 mg", "-", None, "F04")
     )
-    assert search(
-        "Na Farmácia Popular há composto alfa 0,03mg + composto beta 0,15mg?",
-        release,
-        chunks,
-        strategy=strategy,
-    )["status"] == "matched"
+    assert (
+        search(
+            "Na Farmácia Popular há composto alfa 0,03mg + composto beta 0,15mg?",
+            release,
+            chunks,
+            strategy=strategy,
+        )["status"]
+        == "matched"
+    )
     for question in (
         "Farmácia Popular composto alfa 0,15mg + composto beta 0,03mg",
         "Farmácia Popular composto alfa 0,03mg + composto beta 0,20mg",

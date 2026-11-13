@@ -10,6 +10,8 @@ from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.consolidated_evaluation import _preflight
 
+pytestmark = pytest.mark.dvc
+
 sys.path.insert(0, str(ROOT / "scripts"))
 from prepare_v9_retrieval_dev import CLARITHROMYCIN_EVIDENCE, prepare  # noqa: E402
 from prepare_v9_test_candidate import prepare as prepare_independent_test  # noqa: E402

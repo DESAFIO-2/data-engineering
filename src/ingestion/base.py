@@ -26,6 +26,26 @@ class IngestionMetadata:
         return asdict(self)
 
 
+def build_retry_session(
+    total: int = 4,
+    backoff_factor: float = 0.5,
+    status_forcelist: tuple[int, ...] = (429, 500, 502, 503, 504),
+) -> requests.Session:
+    """Create a requests.Session configured with exponential backoff retries."""
+    retry = Retry(
+        total=total,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+        allowed_methods=frozenset({"GET", "POST"}),
+        raise_on_status=False,
+    )
+    session = requests.Session()
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
 class BaseConnector(ABC):
     """Interface mínima para coletar, validar e persistir uma fonte."""
 
@@ -52,18 +72,7 @@ class BaseConnector(ABC):
         )
 
     def request_session(self) -> requests.Session:
-        retry = Retry(
-            total=4,
-            backoff_factor=0.5,
-            status_forcelist=(429, 500, 502, 503, 504),
-            allowed_methods=frozenset({"GET", "POST"}),
-            raise_on_status=False,
-        )
-        session = requests.Session()
-        adapter = HTTPAdapter(max_retries=retry)
-        session.mount("http://", adapter)
-        session.mount("https://", adapter)
-        return session
+        return build_retry_session()
 
     def checkpoint_path(self, directory: Path) -> Path:
         return directory / f"{type(self).__name__}.json"

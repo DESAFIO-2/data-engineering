@@ -7,8 +7,12 @@ import sys
 from hashlib import sha256
 from pathlib import Path
 
+import pytest
+
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks
+
+pytestmark = pytest.mark.dvc
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from approve_v9_release import DESTINATION as APPROVED_DESTINATION  # noqa: E402
