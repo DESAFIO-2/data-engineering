@@ -1240,9 +1240,9 @@ def main() -> None:
             if not r.get(k):
                 raise RuntimeError(f"Null/empty {k} in {r['occurrence_id']}: {r}")
 
-    # Update scripts/curated_f03_final.json and scripts/curated_t3_all.json
+    # Update data/curation/archive/curated_f03_final.json and data/curation/archive/curated_t3_all.json
     by_oid = {r["occurrence_id"]: r for r in consolidated_occurrences}
-    curated_f03_path = ROOT / "scripts/curated_f03_final.json"
+    curated_f03_path = ROOT / "data/curation/archive/curated_f03_final.json"
     if curated_f03_path.is_file():
         curated_f03 = json.loads(curated_f03_path.read_text(encoding="utf-8"))
         for oid, item in curated_f03.items():
@@ -1255,7 +1255,7 @@ def main() -> None:
             json.dumps(curated_f03, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
 
-    curated_t3_path = ROOT / "scripts/curated_t3_all.json"
+    curated_t3_path = ROOT / "data/curation/archive/curated_t3_all.json"
     if curated_t3_path.is_file():
         curated_t3 = json.loads(curated_t3_path.read_text(encoding="utf-8"))
         for num, item in curated_t3.items():

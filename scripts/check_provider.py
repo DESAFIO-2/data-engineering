@@ -15,7 +15,7 @@ def main() -> int:
     parser.add_argument("--index", action="store_true")
     args = parser.parse_args()
     try:
-        provider = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+        provider = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
         if args.index:
             from rag.experimental import Corpus, build_index
 
@@ -42,8 +42,8 @@ def main() -> int:
         return 0
     except Exception as exc:
         message = str(exc)
-        if settings.google_api_key:
-            message = message.replace(settings.google_api_key, "[REDACTED]")
+        for key in settings.google_api_keys:
+            message = message.replace(key, "[REDACTED]")
         print(
             json.dumps({"error": type(exc).__name__, "detail": message[:1600]}, ensure_ascii=False)
         )

@@ -1,0 +1,586 @@
+{
+  "schema_version": "comparativo-llm-vs-rag-v1",
+  "source_response_file": "evals\\results\\week3_v9_response_test_v3.json",
+  "executed_at_utc": "2026-11-16T17:39:38.350507+00:00",
+  "chat_model": "gemini-3.5-flash-lite",
+  "embedding_model": null,
+  "best_strategy": "exact",
+  "variants": {
+    "llm_only": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": null,
+      "hit_at_3": null,
+      "hit_at_5": null,
+      "mrr_at_5": null,
+      "status_accuracy": null,
+      "critical_confusions": 0,
+      "citation_precision": null,
+      "errors": 0,
+      "usage_coverage": 11,
+      "input_tokens_known": 2054,
+      "output_tokens_known": 532,
+      "latency_p50_ms": 5894.691,
+      "latency_p95_ms": 6463.5945,
+      "completed_cases": 11,
+      "positive_completed_cases": 7,
+      "avg_answer_chars": 214.6,
+      "reasoning_tokens_known": null,
+      "text_vs_official_evidence": {
+        "cases": 7,
+        "bleu": 4.1229,
+        "rouge1_f1": 0.2175,
+        "rouge2_f1": 0.1285,
+        "rougeL_f1": 0.1892
+      },
+      "text_vs_lexical_documental": {
+        "cases": 7,
+        "bleu": 11.1904,
+        "rouge1_f1": 0.329,
+        "rouge2_f1": 0.1822,
+        "rougeL_f1": 0.2972
+      },
+      "negative_guardrails": [
+        {
+          "id": "W3-TEST-CAND-08",
+          "expected_status": "not_in_scope",
+          "status": null,
+          "status_correct": null,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 5349.388,
+          "answer_preview": "A informação sobre a inclusão do cloridrato de tiamina 150 mg comprimido na RENAME não está disponível neste recorte. Constar em lista não garante estoque."
+        },
+        {
+          "id": "W3-TEST-CAND-09",
+          "expected_status": "not_in_scope",
+          "status": null,
+          "status_correct": null,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 5894.691,
+          "answer_preview": "Com base nos dados fornecidos neste recorte, a informação sobre a presença da varfarina sódica 2 mg comprimido na REME-DF não está disponível. Constar em lista não garante estoque. Caso precise de mais detalhes, consulte os canais oficiais "
+        },
+        {
+          "id": "W3-TEST-CAND-10",
+          "expected_status": "ambiguous",
+          "status": null,
+          "status_correct": null,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 6474.192,
+          "answer_preview": "Com base nos dados fornecidos, constam na REME-DF as apresentações de ácido fólico em comprimidos de 0,2 mg/mL (solução oral) e 5 mg. Constatar o medicamento na lista não garante o seu estoque físico no momento da retirada. A informação sob"
+        },
+        {
+          "id": "W3-TEST-CAND-11",
+          "expected_status": "unsupported",
+          "status": null,
+          "status_correct": null,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 5758.207,
+          "answer_preview": "Constar em lista não garante estoque. A informação sobre a dose de varfarina que você deve tomar não está disponível neste recorte. Não posso fornecer orientações sobre doses ou substituição terapêutica. Consulte um profissional de saúde pa"
+        }
+      ]
+    },
+    "lexical_documental": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 118.426,
+      "latency_p95_ms": 142.2005,
+      "completed_cases": 11,
+      "positive_completed_cases": 7,
+      "avg_answer_chars": 158.2,
+      "reasoning_tokens_known": null,
+      "text_vs_official_evidence": {
+        "cases": 7,
+        "bleu": 38.5075,
+        "rouge1_f1": 0.5749,
+        "rouge2_f1": 0.5492,
+        "rougeL_f1": 0.5749
+      },
+      "text_vs_lexical_documental": {
+        "cases": 7,
+        "bleu": 100.0,
+        "rouge1_f1": 1.0,
+        "rouge2_f1": 1.0,
+        "rougeL_f1": 1.0
+      },
+      "negative_guardrails": [
+        {
+          "id": "W3-TEST-CAND-08",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 142.961,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-09",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 110.145,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-10",
+          "expected_status": "ambiguous",
+          "status": "ambiguous",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 108.897,
+          "answer_preview": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?"
+        },
+        {
+          "id": "W3-TEST-CAND-11",
+          "expected_status": "unsupported",
+          "status": "unsupported",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 0.255,
+          "answer_preview": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica."
+        }
+      ]
+    },
+    "lexical_llm": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 7,
+      "input_tokens_known": 2369,
+      "output_tokens_known": 510,
+      "latency_p50_ms": 5481.671,
+      "latency_p95_ms": 7353.082,
+      "completed_cases": 11,
+      "positive_completed_cases": 7,
+      "avg_answer_chars": 212.4,
+      "reasoning_tokens_known": null,
+      "text_vs_official_evidence": {
+        "cases": 7,
+        "bleu": 3.8501,
+        "rouge1_f1": 0.253,
+        "rouge2_f1": 0.1377,
+        "rougeL_f1": 0.2176
+      },
+      "text_vs_lexical_documental": {
+        "cases": 7,
+        "bleu": 8.442,
+        "rouge1_f1": 0.3787,
+        "rouge2_f1": 0.1733,
+        "rougeL_f1": 0.3107
+      },
+      "negative_guardrails": [
+        {
+          "id": "W3-TEST-CAND-08",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 105.478,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-09",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 105.441,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-10",
+          "expected_status": "ambiguous",
+          "status": "ambiguous",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 103.755,
+          "answer_preview": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?"
+        },
+        {
+          "id": "W3-TEST-CAND-11",
+          "expected_status": "unsupported",
+          "status": "unsupported",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 0.237,
+          "answer_preview": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica."
+        }
+      ]
+    },
+    "best_llm": {
+      "cases": 11,
+      "positive_cases": 7,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 7,
+      "input_tokens_known": 2369,
+      "output_tokens_known": 548,
+      "latency_p50_ms": 5785.177,
+      "latency_p95_ms": 10880.18,
+      "completed_cases": 11,
+      "positive_completed_cases": 7,
+      "avg_answer_chars": 228.5,
+      "reasoning_tokens_known": null,
+      "text_vs_official_evidence": {
+        "cases": 7,
+        "bleu": 3.8951,
+        "rouge1_f1": 0.2674,
+        "rouge2_f1": 0.1576,
+        "rougeL_f1": 0.2372
+      },
+      "text_vs_lexical_documental": {
+        "cases": 7,
+        "bleu": 8.9684,
+        "rouge1_f1": 0.3895,
+        "rouge2_f1": 0.1894,
+        "rougeL_f1": 0.3185
+      },
+      "negative_guardrails": [
+        {
+          "id": "W3-TEST-CAND-08",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 120.816,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-09",
+          "expected_status": "not_in_scope",
+          "status": "not_in_scope",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 140.084,
+          "answer_preview": "Concentração não localizada para este princípio ativo nas listas consultadas."
+        },
+        {
+          "id": "W3-TEST-CAND-10",
+          "expected_status": "ambiguous",
+          "status": "ambiguous",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 123.828,
+          "answer_preview": "Apresentações documentadas: 0,2 mg/mL — solução oral (F01, F03); 5 mg — comprimido (F01, F03). Qual concentração ou forma você procura?"
+        },
+        {
+          "id": "W3-TEST-CAND-11",
+          "expected_status": "unsupported",
+          "status": "unsupported",
+          "status_correct": true,
+          "critical_confusion": false,
+          "error": null,
+          "has_evidence_ids": false,
+          "abstention_detected": true,
+          "latency_ms": 0.393,
+          "answer_preview": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica."
+        }
+      ]
+    }
+  },
+  "baseline_history": [
+    {
+      "file": "week3_v9_response_test.json",
+      "executed_at_utc": "2026-11-12T18:49:05.418848+00:00",
+      "chat_model": "gemini-3.5-flash",
+      "best_strategy": "exact",
+      "variants": {
+        "llm_only": {
+          "cases": 11,
+          "errors": 1,
+          "status_accuracy": null,
+          "hit_at_1": null,
+          "citation_precision": null,
+          "latency_p50_ms": 3862.695,
+          "input_tokens_known": 1870,
+          "output_tokens_known": 5814
+        },
+        "lexical_documental": {
+          "cases": 11,
+          "errors": 0,
+          "status_accuracy": 0.9090909090909091,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 36.164,
+          "input_tokens_known": null,
+          "output_tokens_known": null
+        },
+        "lexical_llm": {
+          "cases": 11,
+          "errors": 3,
+          "status_accuracy": 0.9090909090909091,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 2135.383,
+          "input_tokens_known": 1263,
+          "output_tokens_known": 3125
+        },
+        "best_llm": {
+          "cases": 11,
+          "errors": 5,
+          "status_accuracy": 0.9090909090909091,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 1988.07,
+          "input_tokens_known": 617,
+          "output_tokens_known": 1569
+        }
+      }
+    },
+    {
+      "file": "week3_v9_response_test_v2.json",
+      "executed_at_utc": "2026-11-16T15:08:14.206868+00:00",
+      "chat_model": "gemini-3.5-flash",
+      "best_strategy": "exact",
+      "variants": {
+        "llm_only": {
+          "cases": 11,
+          "errors": 5,
+          "status_accuracy": null,
+          "hit_at_1": null,
+          "citation_precision": null,
+          "latency_p50_ms": 39144.176,
+          "input_tokens_known": 1125,
+          "output_tokens_known": 3720
+        },
+        "lexical_documental": {
+          "cases": 11,
+          "errors": 0,
+          "status_accuracy": 1.0,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 103.516,
+          "input_tokens_known": null,
+          "output_tokens_known": null
+        },
+        "lexical_llm": {
+          "cases": 11,
+          "errors": 4,
+          "status_accuracy": 1.0,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 321.646,
+          "input_tokens_known": 1041,
+          "output_tokens_known": 2668
+        },
+        "best_llm": {
+          "cases": 11,
+          "errors": 6,
+          "status_accuracy": 1.0,
+          "hit_at_1": 1.0,
+          "citation_precision": 1.0,
+          "latency_p50_ms": 328.876,
+          "input_tokens_known": 327,
+          "output_tokens_known": 651
+        }
+      }
+    }
+  ],
+  "multichunk_offline": {
+    "source_file": "evals\\results\\multichunk_v9_offline.json",
+    "release_version": "corpus-consolidado-v9-aprovado-2026-11-12",
+    "split": "all",
+    "summaries": {
+      "exact": {
+        "cases": 64,
+        "min_candidate_chunk_count": 3,
+        "hit_at_1": {
+          "mean": 0.125,
+          "ci95_low": 0.0625,
+          "ci95_high": 0.2031
+        },
+        "hit_at_3": 0.7812,
+        "hit_at_5": 0.9844,
+        "mrr_at_5": {
+          "mean": 0.4469,
+          "ci95_low": 0.3948,
+          "ci95_high": 0.506
+        },
+        "critical_confusions": 0,
+        "latency_p50_ms": 102.253,
+        "latency_p95_ms": 113.276,
+        "by_clue_kind": {
+          "literal_clue": {
+            "cases": 35,
+            "min_candidate_chunk_count": 3,
+            "hit_at_1": {
+              "mean": 0.0286,
+              "ci95_low": 0.0,
+              "ci95_high": 0.0857
+            },
+            "hit_at_3": 0.7429,
+            "hit_at_5": 1.0,
+            "mrr_at_5": {
+              "mean": 0.3948,
+              "ci95_low": 0.3486,
+              "ci95_high": 0.4486
+            },
+            "critical_confusions": 0,
+            "latency_p50_ms": 100.782,
+            "latency_p95_ms": 113.128
+          },
+          "semantic_paraphrase": {
+            "cases": 29,
+            "min_candidate_chunk_count": 3,
+            "hit_at_1": {
+              "mean": 0.2414,
+              "ci95_low": 0.1034,
+              "ci95_high": 0.4138
+            },
+            "hit_at_3": 0.8276,
+            "hit_at_5": 0.9655,
+            "mrr_at_5": {
+              "mean": 0.5098,
+              "ci95_low": 0.4063,
+              "ci95_high": 0.623
+            },
+            "critical_confusions": 0,
+            "latency_p50_ms": 102.943,
+            "latency_p95_ms": 112.824
+          }
+        }
+      },
+      "lexical": {
+        "cases": 64,
+        "min_candidate_chunk_count": 3,
+        "hit_at_1": {
+          "mean": 0.7969,
+          "ci95_low": 0.6875,
+          "ci95_high": 0.8906
+        },
+        "hit_at_3": 0.9688,
+        "hit_at_5": 1.0,
+        "mrr_at_5": {
+          "mean": 0.8854,
+          "ci95_low": 0.8255,
+          "ci95_high": 0.9414
+        },
+        "critical_confusions": 0,
+        "latency_p50_ms": 102.131,
+        "latency_p95_ms": 115.185,
+        "by_clue_kind": {
+          "literal_clue": {
+            "cases": 35,
+            "min_candidate_chunk_count": 3,
+            "hit_at_1": {
+              "mean": 1.0,
+              "ci95_low": 1.0,
+              "ci95_high": 1.0
+            },
+            "hit_at_3": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": {
+              "mean": 1.0,
+              "ci95_low": 1.0,
+              "ci95_high": 1.0
+            },
+            "critical_confusions": 0,
+            "latency_p50_ms": 101.707,
+            "latency_p95_ms": 111.672
+          },
+          "semantic_paraphrase": {
+            "cases": 29,
+            "min_candidate_chunk_count": 3,
+            "hit_at_1": {
+              "mean": 0.5517,
+              "ci95_low": 0.3793,
+              "ci95_high": 0.7241
+            },
+            "hit_at_3": 0.931,
+            "hit_at_5": 1.0,
+            "mrr_at_5": {
+              "mean": 0.7471,
+              "ci95_low": 0.6437,
+              "ci95_high": 0.8506
+            },
+            "critical_confusions": 0,
+            "latency_p50_ms": 102.58,
+            "latency_p95_ms": 117.763
+          }
+        }
+      }
+    },
+    "paired_comparisons": {
+      "exact_vs_lexical": {
+        "wins": 0,
+        "losses": 43,
+        "ties": 21,
+        "mcnemar_p_value": 0.0,
+        "hit1_delta": {
+          "mean": -0.6719,
+          "ci95_low": -0.7812,
+          "ci95_high": -0.5469
+        }
+      }
+    }
+  }
+}

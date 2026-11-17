@@ -111,10 +111,13 @@ async def run(args):
                 await asyncio.sleep(max(0.0, self.next_call - time.monotonic()))
                 self.next_call = time.monotonic() + 7.0
 
+    ragas_api_key = (
+        settings.google_api_keys[0] if settings.google_api_keys else settings.google_api_key
+    )
     llm = LangchainLLMWrapper(
         ChatGoogleGenerativeAI(
             model=args.judge,
-            google_api_key=settings.google_api_key,
+            google_api_key=ragas_api_key,
             max_retries=0,
             timeout=60,
             callbacks=[PaceJudge()],
@@ -125,7 +128,7 @@ async def run(args):
     )
     embeddings = LangchainEmbeddingsWrapper(
         GoogleGenerativeAIEmbeddings(
-            model=settings.rag_embedding_model, google_api_key=settings.google_api_key
+            model=settings.rag_embedding_model, google_api_key=ragas_api_key
         ),
         run_config=config,
     )

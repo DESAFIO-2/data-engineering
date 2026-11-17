@@ -408,7 +408,7 @@ def open_index(
 def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(c for c in value if not unicodedata.combining(c))
-    value = re.sub(r"(?<=\d)\s*(?=(?:mcg|mg|ml|ui)\b)", " ", value)
+    value = re.sub(r"(?<=\d)\s*(?=(?:mcg|mg|g|ml|ui)\b|%)", " ", value)
     value = re.sub(r"\s*/\s*", "/", value)
     return " ".join(value.split())
 
@@ -562,9 +562,18 @@ CLINICAL_BLOCKED_TERMS: tuple[str, ...] = (
     "dosagem",
     "posologia",
     "superdosagem",
-    "dose diaria",
+    "minha dose diaria",
+    "sua dose diaria",
+    "dose diaria maxima",
+    "dose diaria minima",
+    "dose diaria recomendada",
+    "dose diaria indicada",
+    "dose diaria segura",
+    "dose diaria ideal",
     "dose maxima",
-    "dose minima",
+    "dose minima recomendada",
+    "dose minima eficaz",
+    "dose minima efetiva",
     "dose recomendada",
     "substituir",
     "substituicao terapeutica",
@@ -647,6 +656,12 @@ CLINICAL_BLOCKED_TERMS: tuple[str, ...] = (
 CLINICAL_BLOCKED_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\b(?:trocar|substituir)\b.{1,40}\bpor\b"),
     re.compile(r"\b(?:qual|que|recomende|indique|calcule|ajuste)\b.{0,25}\bdose\b"),
+    re.compile(
+        r"\b(?:tomar|usar|prescrever|indicar|recomendar|aumentar|diminuir|"
+        r"dobrar|reduzir|alterar|exceder)\b.{0,25}\bdose (?:diaria|minima)\b"
+    ),
+    re.compile(r"(?<!\()\bdose diaria\s+(?:de|para)\b"),
+    re.compile(r"\bdose minima\b(?!\s+(?:mortal|necrosante)\b)"),
     re.compile(r"\b(?:devo|posso|preciso)\s+(?:tomar|usar|aplicar|suspender|interromper)\b"),
 )
 
@@ -707,6 +722,41 @@ def matches_documental_scope_block(question: str) -> bool:
     return any(
         re.search(r"\b" + re.escape(term) + r"\b", query) for term in DOCUMENTAL_ONLY_BLOCKED_TERMS
     )
+
+
+def _vector_ranks(
+    question: str,
+    store: Any,
+    match_ids: set[str],
+    allowed: set[str],
+    vec_k: int,
+) -> dict[str, int]:
+    """Rank allowed chunk IDs by vector distance, sorting globally across colliding IDs."""
+    if hasattr(store, "similarity_search_with_score"):
+        scored_docs: list[tuple[Any, float]] = []
+        for mid in sorted(match_ids):
+            scored_docs.extend(
+                store.similarity_search_with_score(question, k=vec_k, filter={"medicine_id": mid})
+            )
+        filtered = [
+            (doc, float(score))
+            for doc, score in scored_docs
+            if doc.metadata.get("chunk_id") in allowed
+        ]
+        # Chroma scores represent distance (lower is closer).
+        filtered.sort(key=lambda item: item[1])
+        docs = [doc for doc, _score in filtered]
+    else:
+        docs = []
+        for mid in sorted(match_ids):
+            docs.extend(store.similarity_search(question, k=vec_k, filter={"medicine_id": mid}))
+        docs = [doc for doc in docs if doc.metadata.get("chunk_id") in allowed]
+    ranks: dict[str, int] = {}
+    for doc in docs:
+        chunk_id = doc.metadata["chunk_id"]
+        if chunk_id not in ranks:
+            ranks[chunk_id] = len(ranks)
+    return ranks
 
 
 def search(
@@ -968,16 +1018,9 @@ def search(
                 f"Estratégia '{strategy}' exige índice vetorial carregado (store); "
                 "execute 'index' ou use 'lexical'/'exact'."
             )
-        docs = []
-        for mid in sorted(match_ids):
-            docs.extend(
-                store.similarity_search(
-                    question, k=min(max(top_k * 3, 10), len(selected)), filter={"medicine_id": mid}
-                )
-            )
         allowed = {c["chunk_id"] for c in selected}
-        docs = [d for d in docs if d.metadata.get("chunk_id") in allowed]
-        ranks = {d.metadata["chunk_id"]: i for i, d in enumerate(docs)}
+        vec_k = min(max(top_k * 3, 10), len(selected))
+        ranks = _vector_ranks(question, store, match_ids, allowed, vec_k)
         if strategy == "vector":
             selected = sorted(selected, key=lambda c: ranks.get(c["chunk_id"], 10**6))
         else:

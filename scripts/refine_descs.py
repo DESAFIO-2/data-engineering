@@ -82,6 +82,6 @@ for r in t2_rows:
             
     cleaned_descs[oid] = (row_num, full_text)
 
-with open('scripts/cleaned_descs.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/cleaned_descs.json', 'w', encoding='utf-8') as f:
     json.dump(cleaned_descs, f, indent=2, ensure_ascii=False)
-print("Saved scripts/cleaned_descs.json")
+print("Saved data/curation/archive/cleaned_descs.json")

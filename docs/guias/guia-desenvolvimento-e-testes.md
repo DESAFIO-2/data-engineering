@@ -25,8 +25,8 @@ Nem todos os releases estão presentes no clone inicial do Git:
 | Release | Onde está | Status | Uso recomendado |
 |---|---|---|---|
 | `data/releases/corpus-consolidado-v9-aprovado-2026-11-12` | **DVC** (`.dvc`) | `approved` | Release consolidado mais recente (2.114 evidências). Requer `uv run dvc pull` com acesso OAuth ao Google Drive compartilhado (ver [guia-dvc-drive.md](guia-dvc-drive.md)). |
-| `data/releases/corpus-consolidado-v5-aprovado-2026-11-10` | **Git** | `approved` | Alternativa local completa (2.114 evidências) para testes e chat sem acesso ao DVC. |
-| `data/releases/rag-lote-1-aprovado-2026-11-05` | **Git** | `approved` | Lote mínimo (6 medicamentos / 18 evidências), padrão de `.env.example` e `src/rag/config.py`. |
+| `data/releases/corpus-consolidado-v5-aprovado-2026-11-10` | **Git** | `approved` | Padrão local completo de `.env.example` e `src/rag/config.py` (2.114 evidências), utilizável sem acesso ao DVC. |
+| `data/releases/rag-lote-1-aprovado-2026-11-05` | **Git** | `approved` | Lote legado mínimo (6 medicamentos / 18 evidências, mantido apenas para testes históricos). |
 | `data/releases/corpus-consolidado-v9-claritromicina-normalizada-2026-11-12` | **Git** | `pending_review` | Candidato pré-aprovação. **Não** use como release aprovado; `ConsolidatedRelease.load()` recusa releases não aprovados. |
 
 Se você tentar executar um comando apontando para `v9-aprovado` sem ter rodado `dvc pull`, a CLI exibirá um erro explícito indicando o ponteiro `.dvc` ausente e os comandos necessários.

@@ -3,7 +3,7 @@ import re
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-with open('scripts/review_154_items.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/review_154_items.json', 'r', encoding='utf-8') as f:
     items = json.load(f)
 
 # Comprehensive list of pharmacological groups and extraneous headers to strip from end of strings
@@ -279,5 +279,5 @@ for it in items:
     }
 
 print(f"Curated {len(curated_results)} F03 items.")
-with open('scripts/curated_f03_final.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/curated_f03_final.json', 'w', encoding='utf-8') as f:
     json.dump(curated_results, f, indent=2, ensure_ascii=False)

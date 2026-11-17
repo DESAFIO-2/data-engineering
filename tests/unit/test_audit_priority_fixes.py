@@ -533,6 +533,230 @@ def test_chunk_recipe_v2_disambiguates_duplicate_f03_and_keeps_v1_compat(tmp_pat
         build_chunks(rel_dup, tmp_path / "chunks_dup", recipe=CHUNK_RECIPE_V2)
 
 
+@pytest.mark.parametrize("strategy", ["vector", "hybrid"])
+def test_colliding_medicine_ids_rank_globally_by_vector_distance(strategy: str) -> None:
+    src_f01 = {
+        "source_id": "F01",
+        "version": "RENAME 2024",
+        "page": 10,
+        "url": "https://example.org/rename.pdf",
+    }
+    src_f03 = {
+        "source_id": "F03",
+        "version": "REME-DF 2026",
+        "page": 20,
+        "url": "https://example.org/reme.pdf",
+    }
+    catalog = [
+        {
+            "medicine_id": "med-a",
+            "active_ingredient": "calcitriol",
+            "strength": "0,25 mcg",
+            "form": "cápsula",
+            "release_characteristic": None,
+            "source_ids": ["F01"],
+        },
+        {
+            "medicine_id": "med-b",
+            "active_ingredient": "calcitriol",
+            "strength": "0,25mcg",
+            "form": "cápsula",
+            "release_characteristic": None,
+            "source_ids": ["F03"],
+        },
+    ]
+    evidence = [
+        {
+            "evidence_id": "ev-a",
+            "occurrence_id": "occ-a",
+            "medicine_id": "med-a",
+            "source": src_f01,
+            "text": "calcitriol 0,25 mcg cápsula genérico",
+            "review_status": "approved",
+        },
+        {
+            "evidence_id": "ev-b",
+            "occurrence_id": "occ-b",
+            "medicine_id": "med-b",
+            "source": src_f03,
+            "text": "calcitriol 0,25mcg cápsula protocolo único",
+            "review_status": "approved",
+        },
+    ]
+    chunks: list[dict[str, Any]] = [
+        {
+            "chunk_id": "chunk-a",
+            "evidence_id": "ev-a",
+            "occurrence_id": "occ-a",
+            "medicine_id": "med-a",
+            "source": src_f01,
+            "text": "calcitriol 0,25 mcg cápsula",
+        },
+        {
+            "chunk_id": "chunk-b",
+            "evidence_id": "ev-b",
+            "occurrence_id": "occ-b",
+            "medicine_id": "med-b",
+            "source": src_f03,
+            "text": "calcitriol 0,25mcg cápsula protocolo único",
+        },
+    ]
+    release = ConsolidatedRelease(Path("."), {}, catalog, [], evidence, "synthetic-collision")
+
+    class ScoredStore:
+        def similarity_search_with_score(
+            self, _question: str, *, k: int, filter: dict[str, str]
+        ) -> list[tuple[SimpleNamespace, float]]:
+            assert k >= 2
+            if filter["medicine_id"] == "med-a":
+                return [(SimpleNamespace(metadata={"chunk_id": "chunk-a"}), 0.90)]
+            return [(SimpleNamespace(metadata={"chunk_id": "chunk-b"}), 0.05)]
+
+    result = search(
+        "calcitriol 0,25 mcg cápsula protocolo único",
+        release,
+        chunks,
+        store=ScoredStore(),
+        strategy=strategy,
+    )
+    assert result["status"] == "matched"
+    assert result["candidate_presentation_ids"] == ["med-a", "med-b"]
+    assert [ev["evidence_id"] for ev in result["evidence"]][0] == "ev-b"
+
+
+def test_config_defaults_env_example_and_week3_evals_stay_coherent(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import rag.config as config_mod
+
+    monkeypatch.setattr(config_mod, "_env", lambda: {})
+    defaults = config_mod.get_settings()
+
+    env_lines = (ROOT / ".env.example").read_text(encoding="utf-8").splitlines()
+    env_map = dict(
+        line.split("=", 1)
+        for line in env_lines
+        if "=" in line and not line.lstrip().startswith("#")
+    )
+    assert defaults.rag_chat_model == env_map["APP_RAG_CHAT_MODEL"] == "gemini-3.5-flash"
+    assert (
+        defaults.rag_embedding_model
+        == env_map["APP_RAG_EMBEDDING_MODEL"]
+        == "models/gemini-embedding-2"
+    )
+    assert (
+        defaults.rag_release_dir.as_posix()
+        == env_map["APP_RAG_RELEASE_DIR"]
+        == "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
+    )
+    manifest = json.loads(
+        (ROOT / defaults.rag_release_dir / "release.json").read_text(encoding="utf-8")
+    )
+    assert manifest["schema_version"] == "consolidated-release-v2"
+    assert manifest["status"] == "approved"
+
+    resp_eval = json.loads(
+        (ROOT / "evals/results/week3_v9_response_test.json").read_text(encoding="utf-8")
+    )
+    retr_eval = json.loads(
+        (ROOT / "evals/results/week3_v9_retrieval_test.json").read_text(encoding="utf-8")
+    )
+    assert resp_eval["chat_model"] == defaults.rag_chat_model
+    assert retr_eval["embedding_model"] == defaults.rag_embedding_model
+
+
+def test_cli_warns_on_legacy_release_and_routes_unpulled_dvc_cleanly(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    import rag.cli as cli_mod
+
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "app.py",
+            "search",
+            "--release",
+            str(ROOT / "data/releases/rag-lote-1-aprovado-2026-11-05"),
+            "--strategy",
+            "lexical",
+            "sinvastatina 20 mg comprimido consta na RENAME?",
+        ],
+    )
+    monkeypatch.setattr(
+        cli_mod,
+        "google_embeddings",
+        lambda *_args: (_ for _ in ()).throw(RuntimeError("offline")),
+    )
+    assert cli_mod.main() == 0
+    captured = capsys.readouterr()
+    assert "lote legado" in captured.err
+
+    dvc_dir = tmp_path / "data/releases/fake-dvc-release"
+    dvc_dir.parent.mkdir(parents=True)
+    dvc_dir.with_name(dvc_dir.name + ".dvc").write_text("outs: []\n", encoding="utf-8")
+    monkeypatch.setattr(
+        "sys.argv",
+        ["app.py", "search", "--release", str(dvc_dir), "metformina"],
+    )
+    assert cli_mod.main() == 1
+    assert "dvc pull" in capsys.readouterr().err
+
+
+def test_week3_compare_accepts_crlf_files_against_lf_hashes(tmp_path: Path) -> None:
+    spec = importlib.util.spec_from_file_location(
+        "week3_compare_crlf", ROOT / "scripts/week3_compare.py"
+    )
+    assert spec is not None and spec.loader is not None
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+
+    release = ConsolidatedRelease.load(
+        ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
+    )
+    first_ev = release.evidence[0]
+    review_lf = b"# Aprovacao\nRevisado.\n"
+    review_sha = hashlib.sha256(review_lf).hexdigest()
+    review_file = tmp_path / "review.md"
+    review_file.write_bytes(review_lf.replace(b"\n", b"\r\n"))
+
+    case = {
+        "id": "CRLF-TEST-01",
+        "split": "test",
+        "source_id": first_ev["source"]["source_id"],
+        "question": (f"{first_ev['active_ingredient']} {first_ev['strength']} {first_ev['form']}?"),
+        "expected_status": "matched",
+        "relevant_ids": [first_ev["evidence_id"]],
+        "release_fingerprint": release.fingerprint,
+        "synthetic": True,
+        "review_status": "reviewed",
+        "reviewer": "Jhiovana",
+        "reviewed_at": "2026-11-16",
+        "review_record_sha256": review_sha,
+    }
+    dataset_lf = (json.dumps(case, ensure_ascii=False) + "\n").encode("utf-8")
+    dataset_sha = hashlib.sha256(dataset_lf).hexdigest()
+    dataset_file = tmp_path / "dataset.jsonl"
+    dataset_file.write_bytes(dataset_lf.replace(b"\n", b"\r\n"))
+
+    out_file = tmp_path / "out.json"
+    report = mod.run(
+        Namespace(
+            matrix="retrieval",
+            release=ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10",
+            dataset=dataset_file,
+            output=out_file,
+            best_strategy="lexical",
+            variants="lexical",
+            split="test",
+            frozen_dataset_sha256=dataset_sha,
+            review_record=review_file,
+            request_delay=0.0,
+        )
+    )
+    assert report["dataset_sha256"] == dataset_sha
+    assert report["review_sha256"] == review_sha
+
+
 @pytest.mark.dvc
 def test_v9_chunk_recipe_v2_has_zero_duplicate_texts() -> None:
     rel_dir = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"

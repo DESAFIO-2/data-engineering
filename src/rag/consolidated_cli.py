@@ -46,7 +46,7 @@ def run(args: Any, settings: Settings) -> int:
     if args.command == "index":
         from .providers import google_embeddings
 
-        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
         path = build_index(
             release,
             chunks,
@@ -100,7 +100,7 @@ def run(args: Any, settings: Settings) -> int:
                 from .providers import google_embeddings
 
                 embeddings = google_embeddings(
-                    settings.rag_embedding_model, settings.google_api_key
+                    settings.rag_embedding_model, settings.google_api_keys
                 )
                 store = open_index(
                     release,
@@ -156,7 +156,7 @@ def run(args: Any, settings: Settings) -> int:
         if args.strategy in {"vector", "hybrid"}:
             from .providers import google_embeddings
 
-            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
             store = open_index(
                 release,
                 chunks,

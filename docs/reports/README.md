@@ -4,7 +4,13 @@
 
 > **Nota de organização:** os arquivos desta pasta são mantidos em seus caminhos planos originais porque são referenciados diretamente por código (`src/rag/consolidated_cli.py`), testes (`tests/unit/`), scripts de publicação/promoção (`scripts/`) e manifestos de releases congelados.
 
-## 1. Semana 3 — Comparação LLM × RAG (v9)
+## 1. Release v10 (Candidato) — Reconciliação de catálogo e chunks v2
+
+| Arquivo | Papel |
+|---|---|
+| [revisao-reconciliacao-v10-template.md](v10/revisao-reconciliacao-v10-template.md) | Folha de revisão técnica da reconciliação dos 80 pares de colisão no candidato `v10` |
+
+## 2. Semana 3 — Comparação LLM × RAG (v9)
 
 | Arquivo | Papel |
 |---|---|

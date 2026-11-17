@@ -49,5 +49,5 @@ for num, block in parsed_items.items():
             groups_found.add(lines[ch_idx - 2] + " " + candidate)
 
 print(f"Total candidate group strings found: {len(groups_found)}")
-with open('scripts/all_groups.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/all_groups.json', 'w', encoding='utf-8') as f:
     json.dump(sorted(list(groups_found), key=len, reverse=True), f, indent=2, ensure_ascii=False)

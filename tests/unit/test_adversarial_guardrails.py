@@ -88,6 +88,11 @@ ADVERSARIAL_CLINICAL_CASES = [
     "Qual diagnóstico explica minha falta de ar?",
     # Eligibility & personalized clinical indication (1)
     "Metformina é indicada para mim ou tenho direito?",
+    # Prescriptive daily/minimum dose queries (while allowing literal herbal/serum specs) (4)
+    "Qual a dose diária recomendada de metformina?",
+    "Posso aumentar minha dose diária de losartana?",
+    "Informe a dose diária de metformina para diabetes.",
+    "Qual a dose mínima de varfarina para adulto?",
 ]
 
 
@@ -145,6 +150,20 @@ NON_BLOCKING_CONTROL_CASES = [
     "álcool etílico 70% consta na REME-DF?",
     "cloridrato de metformina 500 mg comprimido ação prolongada consta na Farmácia Popular?",
     "cloridrato de tiamina 300 mg comprimido consta na RENAME?",
+    (
+        "Na RENAME, há registro de garra-do-diabo (Harpagophytum procumbens DC. ex Meissn.) "
+        "30 a 100 mg de harpagosídeo ou 45 a 150 mg de iridoides totais expressos em "
+        "harpagosídeos (dose diária) comprimido de liberação retardada?"
+    ),
+    (
+        "Na RENAME, consta plantago (Plantago ovata Forssk.) 3 a 30 g "
+        "(dose diária) pó para dispersão oral?"
+    ),
+    (
+        "soro antiescorpiônico cada mL contém imunoglobulinas que neutralizam, no mínimo "
+        "1,5 DMM (Dose Mínima Mortal) de veneno de Tityus serrulatus (1,5 DMM/mL) "
+        "solução injetável consta na RENAME?"
+    ),
 ]
 
 
@@ -152,6 +171,50 @@ NON_BLOCKING_CONTROL_CASES = [
 def test_legitimate_pharmaceutical_queries_are_not_blocked(question: str) -> None:
     assert not matches_clinical_guardrail(question)
     assert not matches_prompt_injection(question)
+
+
+def test_v5_catalog_presentations_have_zero_guardrail_false_positives() -> None:
+    release = ConsolidatedRelease.load(
+        ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
+    )
+    blocked = [
+        item["medicine_id"]
+        for item in release.catalog
+        if matches_clinical_guardrail(
+            f"{item['active_ingredient']} {item['strength']} {item['form']}"
+        )
+    ]
+    assert blocked == []
+
+
+@pytest.mark.dvc
+def test_v9_catalog_and_reviewed_dataset_have_zero_guardrail_false_positives() -> None:
+    from rag.consolidated import load_chunks
+
+    rel_dir = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
+    release = ConsolidatedRelease.load(rel_dir)
+    chunks, _ = load_chunks(release, ROOT / "data/derived/chunks" / rel_dir.name)
+    blocked = [
+        item["medicine_id"]
+        for item in release.catalog
+        if matches_clinical_guardrail(
+            f"{item['active_ingredient']} {item['strength']} {item['form']}"
+        )
+    ]
+    assert blocked == []
+
+    dataset = ROOT / "evals/datasets/consolidated_v9_reviewed.jsonl"
+    cases = [
+        json.loads(line)
+        for line in dataset.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    test_cases = [case for case in cases if case.get("split") == "test"]
+    results = [search(case["question"], release, chunks, strategy="lexical") for case in test_cases]
+    assert all(
+        result["status"] == case["expected_status"]
+        for result, case in zip(results, test_cases, strict=True)
+    )
 
 
 def test_synthesize_wraps_untrusted_evidence_and_neutralizes_role_prefixes() -> None:

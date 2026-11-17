@@ -410,6 +410,8 @@ def ask(
                 )
             print(reply)
             return reply
+    # Run the cheap deterministic/lexical pass first (~36-105 ms) to catch out-of-scope,
+    # ambiguous, or guardrail-blocked queries without triggering embeddings or LLM calls.
     result = search(lookup, release, chunks, strategy="lexical", top_k=settings.rag_top_k)
     if options and (
         result["status"] != "matched" or not re.search(r"\d+\s*(mg|mcg|g|ui|ml)\b", query)
@@ -432,7 +434,7 @@ def ask(
         print(reply)
         return reply
     if result["status"] == "matched" and strategy in {"hybrid", "vector"}:
-        if not settings.google_api_key.strip():
+        if not settings.has_google_api_key:
             if not cache.get("no_key_warned"):
                 print(
                     "Aviso: APP_GOOGLE_API_KEY ausente; "
@@ -443,7 +445,7 @@ def ask(
             try:
                 if "store" not in cache:
                     embeddings = google_embeddings(
-                        settings.rag_embedding_model, settings.google_api_key
+                        settings.rag_embedding_model, settings.google_api_keys
                     )
                     cache["store"] = open_index(
                         release,
@@ -472,16 +474,16 @@ def ask(
     if (
         generate
         and result["status"] == "matched"
-        and not settings.google_api_key.strip()
+        and not settings.has_google_api_key
         and not cache.get("no_key_warned")
     ):
         print("Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.")
         cache["no_key_warned"] = True
-    if generate and result["status"] == "matched" and settings.google_api_key.strip():
+    if generate and result["status"] == "matched" and settings.has_google_api_key:
         if not cache.get("generation_disabled"):
             try:
                 if "llm" not in cache:
-                    cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
+                    cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_keys)
                 model_history = [
                     (
                         user,

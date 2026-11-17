@@ -44,7 +44,12 @@ def main() -> None:
     baseline = ModuleType("rag.baseline_cli")
     exec(compile(source, "baseline_cli.py", "exec"), baseline.__dict__)
     settings = get_settings()
-    offline = replace(settings, google_api_key="")
+    offline = replace(
+        settings,
+        google_api_key="",
+        google_api_key_fallback_1="",
+        google_api_key_fallback_2="",
+    )
     snapshot = load_snapshot(ROOT / "data/gold/infosaude_live_snapshot.json")
     reports = []
     for title, module, release in [
