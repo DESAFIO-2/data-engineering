@@ -6,9 +6,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from langchain_chroma import Chroma
+
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, index_location, load_chunks, open_index
-from langchain_chroma import Chroma
 
 
 def main() -> None:

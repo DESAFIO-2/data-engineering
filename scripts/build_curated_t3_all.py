@@ -3,7 +3,7 @@ import re
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-with open('scripts/t3_inspected.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/t3_inspected.json', 'r', encoding='utf-8') as f:
     items = json.load(f)
 
 print(f"Total items in Table 3: {len(items)}")
@@ -255,5 +255,5 @@ for it in items:
     }
 
 print("Curated all 126 items.")
-with open('scripts/curated_t3_all.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/curated_t3_all.json', 'w', encoding='utf-8') as f:
     json.dump(curated_t3, f, indent=2, ensure_ascii=False)

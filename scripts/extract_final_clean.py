@@ -1,7 +1,7 @@
 import re
 import json
 
-with open('scripts/cleaned_descs.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/cleaned_descs.json', 'r', encoding='utf-8') as f:
     descs = json.load(f)
 
 with open('data/corpus/experimental/occurrences.jsonl', 'r', encoding='utf-8') as f:
@@ -181,6 +181,6 @@ for oid, (row_num, text) in descs.items():
         'cleaned_desc': cleaned
     }
 
-with open('scripts/final_extracted.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/final_extracted.json', 'w', encoding='utf-8') as f:
     json.dump(final_extracted, f, indent=2, ensure_ascii=False)
-print("Saved scripts/final_extracted.json")
+print("Saved data/curation/archive/final_extracted.json")

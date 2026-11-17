@@ -42,7 +42,7 @@ for r in rows:
         'srn': occ.get('source_row_number')
     })
 
-with open('scripts/t3_inspected.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/t3_inspected.json', 'w', encoding='utf-8') as f:
     json.dump(t3_items, f, indent=2, ensure_ascii=False)
 
-print("Saved scripts/t3_inspected.json")
+print("Saved data/curation/archive/t3_inspected.json")

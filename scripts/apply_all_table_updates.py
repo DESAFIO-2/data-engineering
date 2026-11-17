@@ -5,7 +5,7 @@ import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
 # 1. Update build_curated_t3_all logic with the 4 factor items
-with open('scripts/curated_t3_all.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/curated_t3_all.json', 'r', encoding='utf-8') as f:
     curated_t3 = json.load(f)
 
 # Fix the 4 factor items
@@ -21,7 +21,7 @@ curated_t3['25']['st'] = '200 UI a 250 UI'
 curated_t3['26']['ing'] = 'concentrado plasmático de fator IX'
 curated_t3['26']['st'] = '500 UI a 600 UI'
 
-with open('scripts/curated_t3_all.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/curated_t3_all.json', 'w', encoding='utf-8') as f:
     json.dump(curated_t3, f, indent=2, ensure_ascii=False)
 
 # 2. Function to clean Table 2 strength

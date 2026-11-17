@@ -4,10 +4,10 @@ from pathlib import Path
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-with open('scripts/final_extracted.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/final_extracted.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-with open('scripts/all_groups.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/all_groups.json', 'r', encoding='utf-8') as f:
     groups = json.load(f)
 
 # Sort groups by length descending
@@ -49,7 +49,7 @@ for oid, info in data.items():
         'strength': st
     }
 
-with open('scripts/cleaned_strengths_final.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/cleaned_strengths_final.json', 'w', encoding='utf-8') as f:
     json.dump(cleaned_strengths, f, indent=2, ensure_ascii=False)
 
 print(f"Total cleaned: {len(cleaned_strengths)}")

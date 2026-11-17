@@ -5,7 +5,7 @@ import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
 # 1. Load curated F03 data
-with open('scripts/curated_f03_final.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/curated_f03_final.json', 'r', encoding='utf-8') as f:
     curated_f03 = json.load(f)
 
 # 2. Curated F04 data

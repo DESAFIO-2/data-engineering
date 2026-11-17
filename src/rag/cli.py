@@ -80,7 +80,7 @@ def _ask(
     vector_error: Exception | None = None
     try:
         if "store" not in cache:
-            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
             cache["store"] = open_index(
                 release, _path(settings.rag_vector_dir), settings.rag_embedding_model, embeddings
             )
@@ -104,7 +104,7 @@ def _ask(
         _show(result)
         return str(result["message"])
     if generate and result["status"] == "matched" and "llm" not in cache:
-        cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
+        cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_keys)
     response = synthesize(question, result, cache.get("llm"), history) if generate else None
     if show_context:
         for rank, evidence in enumerate(result["evidence"], 1):
@@ -168,25 +168,36 @@ def main() -> int:
         if args.command in {"index", "search", "ask", "chat", "sync-live", "eval"}:
             import json
 
-            manifest = json.loads((selected_release / "release.json").read_bytes())
+            manifest_path = selected_release / "release.json"
+            if not manifest_path.is_file():
+                from .consolidated_cli import run as run_consolidated
+
+                args.release = selected_release
+                return run_consolidated(args, settings)
+            manifest = json.loads(manifest_path.read_bytes())
             if manifest.get("schema_version") == "consolidated-release-v2":
                 from .consolidated_cli import run as run_consolidated
 
                 args.release = selected_release
                 return run_consolidated(args, settings)
+            print(
+                "Aviso: executando no lote legado (18 evidências); "
+                "prefira um release consolidado (v5 local ou v9 via DVC).",
+                file=sys.stderr,
+            )
         release = Release.load(selected_release)
         if args.command == "sync-live":
             _sync_live()
             return 0
         if args.command == "index":
-            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
             location = build_index(
                 release, _path(settings.rag_vector_dir), settings.rag_embedding_model, embeddings
             )
             print(f"Chroma pronto: {location} ({len(release.evidence)} evidências)")
             return 0
         if args.command == "eval":
-            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
             store = open_index(
                 release, _path(settings.rag_vector_dir), settings.rag_embedding_model, embeddings
             )

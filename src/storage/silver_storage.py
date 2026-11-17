@@ -20,6 +20,24 @@ class FileSilverStorage:
                     "referencia TEXT, payload TEXT NOT NULL, "
                     "PRIMARY KEY (med, farmacia, referencia))"
                 )
+                legacy = root / "snapshots.jsonl"
+                if legacy.is_file() and not db.execute("PRAGMA user_version").fetchone()[0]:
+                    with legacy.open(encoding="utf-8") as stream:
+                        for line in stream:
+                            if line.strip():
+                                snapshot = EstoqueSnapshotSchema.model_validate_json(line)
+                                db.execute(
+                                    "INSERT OR IGNORE INTO estoque VALUES (?, ?, ?, ?)",
+                                    (
+                                        snapshot.id_medicamento,
+                                        snapshot.id_farmacia,
+                                        snapshot.data_referencia.astimezone(UTC).isoformat(
+                                            timespec="microseconds"
+                                        ),
+                                        snapshot.model_dump_json(),
+                                    ),
+                                )
+                    db.execute("PRAGMA user_version=1")
         self.snapshots: list[EstoqueSnapshotSchema] = []
 
     def save(self, data: dict[str, Any]) -> EstoqueSnapshotSchema:
