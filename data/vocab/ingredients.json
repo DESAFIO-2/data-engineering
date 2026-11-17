@@ -1,0 +1,869 @@
+{
+  "schema_version": "vocab-ingredients-v1",
+  "description": "Grafia canônica de princípio ativo (preferência: grafia da RENAME/DCB em F01, depois acentuação). Gerado por scripts/build_v10_vocab.py a partir do release aprovado; revisão humana na F8 (ingredient_variants.csv).",
+  "source_release": "corpus-consolidado-v9-aprovado-2026-11-12",
+  "mappings": [
+    {
+      "variant": "gosserrelina (acetato)",
+      "canonical": "acetato de gosserrelina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "hidrocortisona (acetato)",
+      "canonical": "acetato de hidrocortisona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "medroxiprogesterona (acetato)",
+      "canonical": "acetato de medroxiprogesterona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "ácido paraminossalicilico",
+      "canonical": "ácido paraminossalicílico",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "alfainterferona 2B",
+      "canonical": "alfainterferona 2b",
+      "reason": "case",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 4
+    },
+    {
+      "variant": "alfapeginterferona 2A",
+      "canonical": "alfapeginterferona 2a",
+      "reason": "case",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "meglumina (antimoniato)",
+      "canonical": "antimoniato de meglumina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "artemeter + lumefantrina",
+      "canonical": "arteméter + lumefantrina",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 4
+    },
+    {
+      "variant": "anlodipino (besilato)",
+      "canonical": "besilato de anlodipino",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "betainterferona 1A",
+      "canonical": "betainterferona 1a",
+      "reason": "case",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "betainterferona 1B",
+      "canonical": "betainterferona 1b",
+      "reason": "case",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "ipratropio (brometo)",
+      "canonical": "brometo de ipratrópio",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "ipratrópio (brometo)",
+      "canonical": "brometo de ipratrópio",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "piridostigmina (brometo)",
+      "canonical": "brometo de piridostigmina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "cefotaxima (sódica)",
+      "canonical": "cefotaxima sódica",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "sildenafila (citrato)",
+      "canonical": "citrato de sildenafila",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "amiodarona (cloridrato)",
+      "canonical": "cloridrato de amiodarona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "amitriptilina (cloridrato)",
+      "canonical": "cloridrato de amitriptilina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "biperideno (cloridrato)",
+      "canonical": "cloridrato de biperideno",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "bupivacaina (cloridrato)",
+      "canonical": "cloridrato de bupivacaína",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "bupivacaína (cloridrato)",
+      "canonical": "cloridrato de bupivacaína",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "cinacalcete (cloridrato)",
+      "canonical": "cloridrato de cinacalcete",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "clindamicina (cloridrato)",
+      "canonical": "cloridrato de clindamicina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "clomipramina (cloridrato)",
+      "canonical": "cloridrato de clomipramina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "clorpromazina (cloridrato)",
+      "canonical": "cloridrato de clorpromazina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "dobutamina (cloridrato)",
+      "canonical": "cloridrato de dobutamina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "dopamina (cloridrato)",
+      "canonical": "cloridrato de dopamina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "dorzolamida (cloridrato)",
+      "canonical": "cloridrato de dorzolamida",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "etambutol (cloridrato)",
+      "canonical": "cloridrato de etambutol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "fingolimode (cloridrato)",
+      "canonical": "cloridrato de fingolimode",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "fluoxetina (cloridrato)",
+      "canonical": "cloridrato de fluoxetina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "lidocaína (cloridrato)",
+      "canonical": "cloridrato de lidocaína",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "memantina (cloridrato)",
+      "canonical": "cloridrato de memantina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "metadona (cloridrato)",
+      "canonical": "cloridrato de metadona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "metformina (cloridrato)",
+      "canonical": "cloridrato de metformina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "naloxona (cloridrato)",
+      "canonical": "cloridrato de naloxona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "nortriptilina (cloridrato)",
+      "canonical": "cloridrato de nortriptilina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "prometazina (cloridrato)",
+      "canonical": "cloridrato de prometazina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "propranolol (cloridrato)",
+      "canonical": "cloridrato de propranolol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "protamina (cloridrato)",
+      "canonical": "cloridrato de protamina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "verapamil (cloridrato)",
+      "canonical": "cloridrato de verapamil",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "complexo protrombinico parcialmente ativado",
+      "canonical": "complexo protrombínico parcialmente ativado",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "isossorbida (dinitrato)",
+      "canonical": "dinitrato de isossorbida",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "beclometasona (dipropionato)",
+      "canonical": "dipropionato de beclometasona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "triptorrelina (embonato)",
+      "canonical": "embonato de triptorrelina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "eritromicina (estolato)",
+      "canonical": "estolato de eritromicina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "fenitoina",
+      "canonical": "fenitoína",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "codeína (fosfato)",
+      "canonical": "fosfato de codeína",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "oseltamivir (fosfato)",
+      "canonical": "fosfato de oseltamivir",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "formoterol (fumarato)",
+      "canonical": "fumarato de formoterol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "norepinefrina (hemitartarato)",
+      "canonical": "hemitartarato de norepinefrina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "isotretinoina",
+      "canonical": "isotretinoína",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "losartana potassica",
+      "canonical": "losartana potássica",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "dexclorfeniramina (maleato)",
+      "canonical": "maleato de dexclorfeniramina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "desferroxamina (mesilato)",
+      "canonical": "mesilato de desferroxamina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "doxazosina (mesilato)",
+      "canonical": "mesilato de doxazosina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "isossorbida (mononitrato)",
+      "canonical": "mononitrato de isossorbida",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "montelucaste (sodico)",
+      "canonical": "montelucaste (sódico)",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F03"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "miconazol (nitrato)",
+      "canonical": "nitrato de miconazol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "nitrofurantoina",
+      "canonical": "nitrofurantoína",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "metoprolol (succinato)",
+      "canonical": "succinato de metoprolol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "tafenoquina (succinato)",
+      "canonical": "succinato de tafenoquina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "hidrocortisona (succinato sodico)",
+      "canonical": "succinato sódico de hidrocortisona",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "amicacina (sulfato)",
+      "canonical": "sulfato de amicacina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    },
+    {
+      "variant": "atropina (sulfato)",
+      "canonical": "sulfato de atropina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "estreptomicina (sulfato)",
+      "canonical": "sulfato de estreptomicina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "gentamicina (sulfato)",
+      "canonical": "sulfato de gentamicina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "morfina (sulfato)",
+      "canonical": "sulfato de morfina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 4
+    },
+    {
+      "variant": "salbutamol (sulfato)",
+      "canonical": "sulfato de salbutamol",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01",
+        "F04"
+      ],
+      "occurrences": 2
+    },
+    {
+      "variant": "brimonidina (tartarato)",
+      "canonical": "tartarato de brimonidina",
+      "reason": "salt_order",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 1
+    },
+    {
+      "variant": "valproato de sodio",
+      "canonical": "valproato de sódio",
+      "reason": "accent",
+      "variant_sources": [
+        "F03"
+      ],
+      "canonical_sources": [
+        "F01"
+      ],
+      "occurrences": 3
+    }
+  ]
+}

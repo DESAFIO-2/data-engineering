@@ -1,0 +1,25 @@
+{
+  "schema_version": "vocab-units-v1",
+  "description": "Grafia canônica de unidades em concentrações. A chave é a forma em minúsculas; o valor é a grafia exibida. Só altera caixa e espaçamento, nunca a grandeza.",
+  "units": {
+    "mg": "mg",
+    "mcg": "mcg",
+    "g": "g",
+    "ml": "mL",
+    "l": "L",
+    "ui": "UI",
+    "u": "U",
+    "meq": "mEq",
+    "mm": "mm",
+    "cm": "cm",
+    "dmm": "DMM",
+    "dmn": "DMN",
+    "h": "h"
+  },
+  "percent_spacing": "none",
+  "notes": [
+    "Percentual sem espaço ('70%'), grafia majoritária no v9 (115 de 140).",
+    "Vírgula decimal preservada; ponto seguido de exatamente três dígitos é separador de milhar e é preservado.",
+    "Ponto decimal ambíguo não é convertido: a regra apenas sinaliza."
+  ]
+}

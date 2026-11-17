@@ -8,6 +8,9 @@ from typing import Any
 from .consolidated import (
     ConsolidatedRelease,
     ingredient_key,
+    is_form_absent,
+    item_form_display,
+    item_form_label,
     name_matches,
     normalize,
     strength_core,
@@ -52,6 +55,12 @@ def catalog_name_matches(query: str, name: str) -> bool:
     )
 
 
+def catalog_item_name_matches(query: str, item: dict[str, Any]) -> bool:
+    if catalog_name_matches(query, item["active_ingredient"]):
+        return True
+    return any(catalog_name_matches(query, alias) for alias in item.get("aliases") or ())
+
+
 def presentation_query(medicine: dict[str, Any]) -> str:
     return " ".join(
         str(medicine.get(field) or "")
@@ -59,6 +68,8 @@ def presentation_query(medicine: dict[str, Any]) -> str:
             "active_ingredient",
             "strength",
             "form",
+            "package",
+            "specification",
             "release_characteristic",
         )
         if medicine.get(field) not in {"-", None, ""}
@@ -85,8 +96,7 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
     names = [
         m
         for m in release.catalog
-        if catalog_name_matches(query, m["active_ingredient"])
-        and (source is None or source in m["source_ids"])
+        if catalog_item_name_matches(query, m) and (source is None or source in m["source_ids"])
     ]
     if not names:
         return []
@@ -98,9 +108,12 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
     exact = {
         ingredient_key(m["active_ingredient"])
         for m in names
-        if re.search(
-            r"(?<!\w)" + re.escape(normalize(m["active_ingredient"])) + r"(?!\w)",
-            query,
+        if any(
+            re.search(
+                r"(?<!\w)" + re.escape(normalize(cand)) + r"(?!\w)",
+                query,
+            )
+            for cand in (m["active_ingredient"], *(m.get("aliases") or ()))
         )
     }
     if exact:
@@ -116,7 +129,7 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
         names = [
             m
             for m in names
-            if m["form"] == "-" or any(_form_matches(m["form"], form) for form in forms)
+            if is_form_absent(m) or any(_form_matches(item_form_label(m), form) for form in forms)
         ]
     if "prolongada" in query:
         names = [m for m in names if m.get("release_characteristic")]
@@ -127,7 +140,8 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
         key = (
             ingredient_key(medicine["active_ingredient"]),
             normalize(medicine["strength"]),
-            normalize(medicine["form"]),
+            normalize(item_form_label(medicine)),
+            normalize(medicine.get("package") or ""),
             normalize(medicine.get("release_characteristic") or ""),
         )
         if key not in grouped:
@@ -141,8 +155,8 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
         grouped.values(),
         key=lambda m: (
             _strength_order(m["strength"]),
-            m["form"] == "-",
-            m["form"],
+            is_form_absent(m),
+            item_form_label(m),
             m.get("release_characteristic") or "",
             m["medicine_id"],
         ),
@@ -154,7 +168,7 @@ def options_reply(
 ) -> str:
     lines = [f"Encontrei {len(items)} apresentação(ões) com as informações que você passou:"]
     for index, item in enumerate(items, 1):
-        form = item["form"] if item["form"] != "-" else "forma não informada na fonte"
+        form = "forma não informada na fonte" if is_form_absent(item) else item_form_display(item)
         characteristic = (
             f"; {item['release_characteristic']}" if item.get("release_characteristic") else ""
         )
@@ -201,11 +215,11 @@ def _strength_order(strength: str) -> float:
 
 def stock_candidates(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Collapse undocumented duplicates, never a distinct release characteristic."""
-    known = [m for m in items if m["form"] != "-"]
+    known = [m for m in items if not is_form_absent(m)]
     return [
         m
         for m in items
-        if m["form"] != "-"
+        if not is_form_absent(m)
         or not any(
             strength_core(k["strength"]) == strength_core(m["strength"])
             and k.get("release_characteristic") == m.get("release_characteristic")

@@ -11,7 +11,7 @@ from ingestion.infosaude_live import UBS_URL, sync_snapshot
 from .answer import synthesize
 from .catalog_chat import (
     candidates,
-    catalog_name_matches,
+    catalog_item_name_matches,
     options_reply,
     presentation_query,
     stock_candidates,
@@ -140,9 +140,7 @@ class ConversationState:
         else:
             chosen = False
             self.selected_option = None
-        new_medicine = any(
-            catalog_name_matches(query, m["active_ingredient"]) for m in release.catalog
-        )
+        new_medicine = any(catalog_item_name_matches(query, m) for m in release.catalog)
         followup = is_clarification_input(question) or query.startswith(("e ", "na ", "no "))
         stock_followup = bool(
             re.fullmatch(

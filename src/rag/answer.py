@@ -6,6 +6,7 @@ import re
 from collections.abc import Callable
 from typing import Any
 
+from .consolidated import is_form_absent, item_form_display
 from .conversation import format_history
 from .providers import invoke_with_retry
 
@@ -50,9 +51,14 @@ def synthesize(
         f"página {e['source']['page']})"
         for e in result["evidence"]
     )
+    form_text = (
+        item_form_display(medicine)
+        if medicine and not is_form_absent(medicine)
+        else "forma não informada na fonte"
+    )
     presentation = (
         f"{medicine['active_ingredient']} {medicine['strength']} "
-        f"{medicine['form'] if medicine['form'] != '-' else 'forma não informada na fonte'} "
+        f"{form_text} "
         f"{medicine.get('release_characteristic') or ''}"
         if medicine
         else "Insumo descrito nas evidências"
