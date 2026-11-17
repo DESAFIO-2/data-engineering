@@ -682,9 +682,18 @@ DOCUMENTAL_ONLY_BLOCKED_TERMS: tuple[str, ...] = (
 )
 
 
-def matches_clinical_guardrail(question: str) -> bool:
+def matches_clinical_guardrail(question: str, release: ConsolidatedRelease | None = None) -> bool:
     """Detect out-of-scope clinical, dosing, pregnancy, or eligibility queries via lexical rules."""
     query = normalize(question)
+    if release and "(dose diaria)" in query:
+        listing = re.fullmatch(r"na (rename|reme-df), ha registro de (.+)\?", query)
+        if listing:
+            source_id = {"rename": "F01", "reme-df": "F03"}[listing[1]]
+            for item in release.catalog:
+                if source_id in item["source_ids"] and listing[2] == normalize(
+                    f"{item['active_ingredient']} {item['strength']} {item['form']}"
+                ):
+                    return False
     return any(
         re.search(r"\b" + re.escape(term) + r"\b", query) for term in CLINICAL_BLOCKED_TERMS
     ) or any(pattern.search(query) for pattern in CLINICAL_BLOCKED_PATTERNS)
@@ -699,10 +708,12 @@ def matches_prompt_injection(question: str) -> bool:
     )
 
 
-def matches_documental_scope_block(question: str) -> bool:
+def matches_documental_scope_block(
+    question: str, release: ConsolidatedRelease | None = None
+) -> bool:
     """Detect queries outside the frozen list-presence scope (clinical, stock, or documents)."""
     query = normalize(question)
-    if matches_clinical_guardrail(query):
+    if matches_clinical_guardrail(query, release):
         return True
     return any(
         re.search(r"\b" + re.escape(term) + r"\b", query) for term in DOCUMENTAL_ONLY_BLOCKED_TERMS
@@ -725,7 +736,7 @@ def search(
             "execute 'index' ou use 'lexical'/'exact'."
         )
     query = normalize(question)
-    if matches_documental_scope_block(query) or matches_prompt_injection(question):
+    if matches_documental_scope_block(query, release) or matches_prompt_injection(question):
         return {
             "status": "unsupported",
             "evidence": [],
@@ -802,9 +813,20 @@ def search(
                         m["medicine_id"],
                     ),
                 )
+                refs: dict[str, list[str]] = {m["medicine_id"]: [] for m in options}
+                cited = []
+                for ev in release.evidence:
+                    source = ev["source"]
+                    mid = ev["medicine_id"]
+                    if mid in refs and (not source_filter or source["source_id"] == source_filter):
+                        refs[mid].append(
+                            f"{source['source_id']} ({source['version']}), "
+                            f"página {source['page']} [{ev['evidence_id']}]"
+                        )
+                        cited.append(ev)
                 return {
                     "status": "ambiguous",
-                    "evidence": [],
+                    "evidence": cited,
                     "candidate_presentations": options,
                     "message": "Apresentações documentadas: "
                     + "; ".join(
@@ -814,7 +836,7 @@ def search(
                             if m.get("release_characteristic")
                             else ""
                         )
-                        + f" ({', '.join(m['source_ids'])})"
+                        + f" ({'; '.join(refs[m['medicine_id']])})"
                         for m in options
                     )
                     + ". Qual concentração ou forma você procura?",

@@ -23,3 +23,12 @@ def test_checkpoint_round_trip(tmp_path: Path) -> None:
     connector = Connector()
     connector.save_checkpoint(tmp_path, page=3, cursor="abc")
     assert connector.load_checkpoint(tmp_path) == {"cursor": "abc", "page": 3}
+
+
+def test_checkpoint_rejects_invalid_state_and_resumes(tmp_path: Path) -> None:
+    import pytest
+
+    Connector().save_checkpoint(tmp_path, cursor="last-completed")
+    with pytest.raises(TypeError):
+        Connector().save_checkpoint(tmp_path, cursor=object())
+    assert Connector().load_checkpoint(tmp_path) == {"cursor": "last-completed"}

@@ -1,0 +1,413 @@
+{
+  "release": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+  "model": "models/gemini-embedding-2",
+  "restored_chunks": 2114,
+  "embedding_calls": 0,
+  "by_source": {
+    "F01": 996,
+    "F03": 1077,
+    "F04": 41
+  },
+  "duplicate_groups": [
+    [
+      {
+        "evidence": "evidence-0bebc51066d210b975075854",
+        "medicine": "med-a4a7bae633f1e5de16cef4c0",
+        "source": "F03",
+        "page": 13,
+        "code": "90621",
+        "channel": "Uso hospitalar",
+        "row": 33
+      },
+      {
+        "evidence": "evidence-4298b9e84008e4ddde16417b",
+        "medicine": "med-a4a7bae633f1e5de16cef4c0",
+        "source": "F03",
+        "page": 13,
+        "code": "MS90621",
+        "channel": "Uso hospitalar",
+        "row": 34
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-44698413338e0779fa2bebcc",
+        "medicine": "med-4bd7bce1722e6e13ef57ab78",
+        "source": "F03",
+        "page": 14,
+        "code": "6417",
+        "channel": "Farmácia Ambulatorial do HBDF",
+        "row": 51
+      },
+      {
+        "evidence": "evidence-75d1dfdaeeba4e72f6b970a1",
+        "medicine": "med-4bd7bce1722e6e13ef57ab78",
+        "source": "F03",
+        "page": 14,
+        "code": "MS6417",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 52
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-5ddae96dc6f046073c3ace41",
+        "medicine": "med-3c60fbef6f105cc2ffae9d99",
+        "source": "F03",
+        "page": 19,
+        "code": "607",
+        "channel": "Uso hospitalar",
+        "row": 181
+      },
+      {
+        "evidence": "evidence-c42c31ad4073a025f4cee0ce",
+        "medicine": "med-3c60fbef6f105cc2ffae9d99",
+        "source": "F03",
+        "page": 19,
+        "code": "MS607",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 182
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-4c46b8e75774a598600a043c",
+        "medicine": "med-58d027ea2db072ae214b3616",
+        "source": "F03",
+        "page": 23,
+        "code": "4630",
+        "channel": "Uso hospitalar",
+        "row": 282
+      },
+      {
+        "evidence": "evidence-886c9b8b28c63fdb80ddb107",
+        "medicine": "med-58d027ea2db072ae214b3616",
+        "source": "F03",
+        "page": 23,
+        "code": "MS4630",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 283
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-51ff8fa4d4c886e6e8c742b0",
+        "medicine": "med-4a4895f467c9eb19d15a962c",
+        "source": "F03",
+        "page": 26,
+        "code": "2198",
+        "channel": "Uso hospitalar",
+        "row": 340
+      },
+      {
+        "evidence": "evidence-73c991d8ed35e115797070c8",
+        "medicine": "med-4a4895f467c9eb19d15a962c",
+        "source": "F03",
+        "page": 26,
+        "code": "MS2198",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 341
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-e97e73e297210b959724c77e",
+        "medicine": "med-497d51935f494f9156daf2bc",
+        "source": "F03",
+        "page": 27,
+        "code": "37995",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 384
+      },
+      {
+        "evidence": "evidence-4451710e99473ccd9dabe1cd",
+        "medicine": "med-497d51935f494f9156daf2bc",
+        "source": "F03",
+        "page": 28,
+        "code": "MS37995",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 386
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-8207632f43cae3534ba837b6",
+        "medicine": "med-76fc8fbfb7796cd8fa7d3394",
+        "source": "F03",
+        "page": 28,
+        "code": "36478",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 385
+      },
+      {
+        "evidence": "evidence-6278f29494bdc026f9e44a39",
+        "medicine": "med-76fc8fbfb7796cd8fa7d3394",
+        "source": "F03",
+        "page": 28,
+        "code": "MS36478",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 387
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-b8aa797501d9a0a02e0e2da6",
+        "medicine": "med-cfa7c2d2286ad4f5a83d3c64",
+        "source": "F03",
+        "page": 28,
+        "code": "90427",
+        "channel": "Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Ambulatorial do HBDF, Centro Especializado em Saúde da Mulher - CESMU e uso hospitalar",
+        "row": 403
+      },
+      {
+        "evidence": "evidence-3cdd6a52cc4d508ed52a4c65",
+        "medicine": "med-cfa7c2d2286ad4f5a83d3c64",
+        "source": "F03",
+        "page": 29,
+        "code": "MS90427",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 409
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-0741375b2310786d862d43f0",
+        "medicine": "med-00288fc1f74d0633cf0ecb30",
+        "source": "F03",
+        "page": 28,
+        "code": "90426",
+        "channel": "Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Ambulatorial do HBDF, Centro Especializado em Saúde da Mulher - CESMU e uso hospitalar",
+        "row": 404
+      },
+      {
+        "evidence": "evidence-9428ff389ab37c0973e946f8",
+        "medicine": "med-00288fc1f74d0633cf0ecb30",
+        "source": "F03",
+        "page": 29,
+        "code": "MS90426",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 405
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-030ab58db7b48a7fb4d22148",
+        "medicine": "med-61296d8ec75f3592cb0d2f19",
+        "source": "F03",
+        "page": 30,
+        "code": "90969",
+        "channel": "Farmácia Ambulatorial Oncológica do HRT, Farmácia Ambulatorial do HBDF e uso hospitalar",
+        "row": 447
+      },
+      {
+        "evidence": "evidence-252f7b623c671cd6fdce853b",
+        "medicine": "med-61296d8ec75f3592cb0d2f19",
+        "source": "F03",
+        "page": 30,
+        "code": "MS90969",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 448
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-af73006fcd56eaad0fb348d6",
+        "medicine": "med-accb972a1124318358545291",
+        "source": "F03",
+        "page": 35,
+        "code": "90714",
+        "channel": "Para Diabetes Mellitus tipo 2: Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Escola (HUB), e Centro Especializado em Saúde da Mulher (CESMU)",
+        "row": 553
+      },
+      {
+        "evidence": "evidence-db88ea210ce57c6a736dbfb3",
+        "medicine": "med-accb972a1124318358545291",
+        "source": "F03",
+        "page": 35,
+        "code": "MS90714",
+        "channel": "Para Diabetes Mellitus tipo 1: Farmácia do Componente Especializado",
+        "row": 554
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-888195db1421193991ffdab1",
+        "medicine": "med-d33fcc648cb59c9af5cd1945",
+        "source": "F03",
+        "page": 36,
+        "code": "90496",
+        "channel": "Uso hospitalar",
+        "row": 561
+      },
+      {
+        "evidence": "evidence-297a8ec2ec060ef8d2d38cbf",
+        "medicine": "med-d33fcc648cb59c9af5cd1945",
+        "source": "F03",
+        "page": 36,
+        "code": "MS90496",
+        "channel": "UBS (farmácia ambulatorial e farmácia interna)",
+        "row": 562
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-70f2442b0cde8ed0ca86f675",
+        "medicine": "med-302c2940cbfdf7f28c6f76f0",
+        "source": "F03",
+        "page": 41,
+        "code": "90776",
+        "channel": "Farmácia Ambulatorial do HBDF e uso hospitalar",
+        "row": 673
+      },
+      {
+        "evidence": "evidence-f10b6deee70be4400aeeeeb0",
+        "medicine": "med-302c2940cbfdf7f28c6f76f0",
+        "source": "F03",
+        "page": 41,
+        "code": "MS90776",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 674
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-2d805034f4e6e3d946c32e7c",
+        "medicine": "med-165e26671e97336ff44c5c6b",
+        "source": "F03",
+        "page": 42,
+        "code": "90189",
+        "channel": "Uso hospitalar",
+        "row": 704
+      },
+      {
+        "evidence": "evidence-b53f1771a09b6507cac663c4",
+        "medicine": "med-165e26671e97336ff44c5c6b",
+        "source": "F03",
+        "page": 42,
+        "code": "MS90189",
+        "channel": "Uso hospitalar",
+        "row": 705
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-2380509ac71a82f85db235b7",
+        "medicine": "med-ba653fd06224cf2d4007f1a2",
+        "source": "F03",
+        "page": 42,
+        "code": "90244",
+        "channel": "Uso hospitalar",
+        "row": 706
+      },
+      {
+        "evidence": "evidence-d14aa21adf3192764814dfae",
+        "medicine": "med-ba653fd06224cf2d4007f1a2",
+        "source": "F03",
+        "page": 42,
+        "code": "MS90244",
+        "channel": "Uso hospitalar",
+        "row": 707
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-ab3ca864b51b0f226a4d0b44",
+        "medicine": "med-eaf1a827afba4c30a7c540fb",
+        "source": "F03",
+        "page": 49,
+        "code": "1038",
+        "channel": "Uso hospitalar e atendimento pré- hospitalar (SAMU)",
+        "row": 858
+      },
+      {
+        "evidence": "evidence-d8d853e4f0bfd52ef812c051",
+        "medicine": "med-eaf1a827afba4c30a7c540fb",
+        "source": "F03",
+        "page": 49,
+        "code": "MS1038",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 859
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-03c0e58bd3f33a1c9b4cd0d5",
+        "medicine": "med-a5b02110c68c1ec1e90c9d0c",
+        "source": "F03",
+        "page": 49,
+        "code": "MS5889",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 860
+      },
+      {
+        "evidence": "evidence-374ae279682361790afa89c2",
+        "medicine": "med-a5b02110c68c1ec1e90c9d0c",
+        "source": "F03",
+        "page": 49,
+        "code": "5889",
+        "channel": "Uso hospitalar",
+        "row": 861
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-0c2f075d3f830e3eb57848d6",
+        "medicine": "med-342539e9da93c370239e1218",
+        "source": "F03",
+        "page": 49,
+        "code": "21068",
+        "channel": "Uso hospitalar",
+        "row": 862
+      },
+      {
+        "evidence": "evidence-f257d80a8d8dee0df3fffe15",
+        "medicine": "med-342539e9da93c370239e1218",
+        "source": "F03",
+        "page": 49,
+        "code": "MS21068",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 863
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-21efd1c21fb1548480f4ba64",
+        "medicine": "med-b107300473ba6d08e40828d3",
+        "source": "F03",
+        "page": 53,
+        "code": "21673",
+        "channel": "Uso hospitalar",
+        "row": 941
+      },
+      {
+        "evidence": "evidence-f8292d7e350246467c003c14",
+        "medicine": "med-b107300473ba6d08e40828d3",
+        "source": "F03",
+        "page": 53,
+        "code": "MS21673",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 942
+      }
+    ],
+    [
+      {
+        "evidence": "evidence-e3baa79210dbcace4ba7acd8",
+        "medicine": "med-78e653c1bf47419b92ca8cc1",
+        "source": "F03",
+        "page": 59,
+        "code": "708",
+        "channel": "Uso hospitalar",
+        "row": 1075
+      },
+      {
+        "evidence": "evidence-9e6e8ee3e792d8cefbec735e",
+        "medicine": "med-78e653c1bf47419b92ca8cc1",
+        "source": "F03",
+        "page": 59,
+        "code": "MS708",
+        "channel": "Farmácia do Componente Especializado",
+        "row": 1076
+      }
+    ]
+  ]
+}

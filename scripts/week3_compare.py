@@ -59,6 +59,20 @@ def text_content(response: Any) -> str:
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True
+    ).stdout.strip()
+    dirty = bool(
+        subprocess.run(
+            ["git", "status", "--porcelain", "--untracked-files=normal"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout.strip()
+    )
+    if args.split == "test" and dirty:
+        raise ValueError("Teste fechado exige árvore Git limpa")
     settings = get_settings()
     release = ConsolidatedRelease.load(args.release)
     chunks, manifest = load_chunks(
@@ -299,18 +313,6 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         if summaries[variant]["usage_coverage"] == 0:
             summaries[variant]["input_tokens_known"] = None
             summaries[variant]["output_tokens_known"] = None
-    commit = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=False
-    ).stdout.strip()
-    dirty = bool(
-        subprocess.run(
-            ["git", "status", "--porcelain", "--untracked-files=no"],
-            cwd=ROOT,
-            text=True,
-            capture_output=True,
-            check=False,
-        ).stdout.strip()
-    )
     code_hashes = {
         str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()
         for path in (
@@ -336,6 +338,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "python_version": platform.python_version(),
         "git_commit": commit,
         "git_dirty": dirty,
+        "lockfile_sha256": sha256((ROOT / "uv.lock").read_bytes()).hexdigest(),
+        "platform": platform.platform(),
+        "system_prompt_sha256": sha256(SYSTEM.encode()).hexdigest(),
+        "model_parameters": (llm.model.model_dump(include={"temperature", "max_retries", "timeout"}, mode="json") if llm else None),
+        "variants": variants,
         "code_sha256": code_hashes,
         "summaries": summaries,
         "records": records,

@@ -136,12 +136,12 @@ def test_vector_failure_still_generates_from_lexical(
     class Model:
         def invoke(self, messages: Any) -> Any:
             prompts.append(messages)
-            return SimpleNamespace(content="Consta na RENAME consultada.")
+            return SimpleNamespace(content="Há estoque garantido hoje.")
 
     monkeypatch.setattr(chat, "google_chat", lambda *args: Model())
     history = [(str(i), "answer") for i in range(8)]
     reply = chat.ask("metformina 850 mg comprimido RENAME", *corpus, settings, {}, history=history)
-    assert reply == "Consta na RENAME consultada."
+    assert "estoque garantido" not in reply and "850 mg" in reply
     assert "Usuário: 0" not in str(prompts) and "Usuário: 7" in str(prompts)
     assert "evidence-f16957cc6029096a75e2c5af" in str(prompts)
     output = capsys.readouterr().out

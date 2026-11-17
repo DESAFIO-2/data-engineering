@@ -452,7 +452,8 @@ def test_consolidated_chat_transient_429_does_not_disable_session(
         cache,
         strategy="lexical",
     )
-    assert second == "Metformina 500 mg consta na RENAME consultada."
+    assert second == first
+    assert "síntese não verificada" in capsys.readouterr().out
 
     # Non-transient failure still disables generation for the rest of the session.
     class AuthBrokenModel:

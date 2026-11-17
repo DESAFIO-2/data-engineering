@@ -1,0 +1,194 @@
+[
+  {
+    "release": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+    "version": "v9",
+    "records": [
+      {
+        "id": "W3-TEST-CAND-01",
+        "evidence_ids": [
+          "evidence-3fc852a63b7cdc4f9a744669"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\ncloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01\n\nFontes consultadas:\n- F01 (RENAME 2024, 2ª edição), página 29: https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024 [evidência evidence-3fc852a63b7cdc4f9a744669]",
+        "elapsed_ms": 246.7
+      },
+      {
+        "id": "W3-TEST-CAND-02",
+        "evidence_ids": [
+          "evidence-2efeeb95d423d7264ee4f85c"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\ndicloridrato de trientina 250 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12\n\nFontes consultadas:\n- F01 (RENAME 2024, 2ª edição), página 29: https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024 [evidência evidence-2efeeb95d423d7264ee4f85c]",
+        "elapsed_ms": 242.1
+      },
+      {
+        "id": "W3-TEST-CAND-03",
+        "evidence_ids": [
+          "evidence-79aa17b5885f5f32ee83bba8"
+        ],
+        "output": "Encontrei 2 apresentação(ões) com as informações que você passou:\n1. digliconato de clorexidina — 0,12%; solução bucal (F01 (RENAME 2024, 2ª edição), página 29 [evidence-79aa17b5885f5f32ee83bba8]).\n2. digliconato de clorexidina — 2% a 4%; solução para uso tópico (F01 (RENAME 2024, 2ª edição), página 51 [evidence-de0d3f6c47a5db2bb7f44732]).\nQual dessas apresentações você procura? Pode responder com o número, a concentração ou a forma que souber, olhando a embalagem ou receita.\nEm qual região você quer procurar nas farmácias/UBS?\nEssas são apresentações documentadas, não alternativas terapêuticas nem confirmação de estoque.",
+        "elapsed_ms": 245.8
+      },
+      {
+        "id": "W3-TEST-CAND-04",
+        "evidence_ids": [
+          "evidence-645aaebfdcb50073ba56fd0f"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nabciximabe 2 mg/mL (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 12: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-645aaebfdcb50073ba56fd0f]",
+        "elapsed_ms": 248.5
+      },
+      {
+        "id": "W3-TEST-CAND-05",
+        "evidence_ids": [
+          "evidence-6938360d5f17c511f8f12c49"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nácido fólico 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 12: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-6938360d5f17c511f8f12c49]",
+        "elapsed_ms": 252.5
+      },
+      {
+        "id": "W3-TEST-CAND-06",
+        "evidence_ids": [
+          "evidence-f72cef54dc936863e11311ac"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nvarfarina sódica 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 58: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-f72cef54dc936863e11311ac]",
+        "elapsed_ms": 250.1
+      },
+      {
+        "id": "W3-TEST-CAND-07",
+        "evidence_ids": [
+          "evidence-1d42c31c79d6a6fa09551952"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nalendronato de sódio 70mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- OSTEOPOROSE  alendronato de sódio 70mg \n\nFontes consultadas:\n- F04 (Farmácia Popular 2026-08-31), página 1: https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos-pfpb.pdf [evidência evidence-1d42c31c79d6a6fa09551952]",
+        "elapsed_ms": 259.0
+      },
+      {
+        "id": "W3-TEST-CAND-08",
+        "evidence_ids": [],
+        "output": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+        "elapsed_ms": 246.6
+      },
+      {
+        "id": "W3-TEST-CAND-09",
+        "evidence_ids": [],
+        "output": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+        "elapsed_ms": 247.1
+      },
+      {
+        "id": "W3-TEST-CAND-10",
+        "evidence_ids": [
+          "evidence-6938360d5f17c511f8f12c49",
+          "evidence-cf8ad5a25cd07d2c1a9a60de"
+        ],
+        "output": "Encontrei 2 apresentação(ões) com as informações que você passou:\n1. ácido fólico — 0,2 mg/mL; solução oral (F01 (RENAME 2024, 2ª edição), página 34 [evidence-7edf34c9ff0b27019f7b3948]; F03 (REME-DF 2026-10-29), página 12 [evidence-cf8ad5a25cd07d2c1a9a60de]).\n2. ácido fólico — 5 mg; comprimido (F01 (RENAME 2024, 2ª edição), página 34 [evidence-cd3f1bf5a159f265af31f8af]; F03 (REME-DF 2026-10-29), página 12 [evidence-6938360d5f17c511f8f12c49]).\nQual dessas apresentações você procura? Pode responder com o número, a concentração ou a forma que souber, olhando a embalagem ou receita.\nEm qual região você quer procurar nas farmácias/UBS?\nEssas são apresentações documentadas, não alternativas terapêuticas nem confirmação de estoque.",
+        "elapsed_ms": 246.7
+      },
+      {
+        "id": "W3-TEST-CAND-11",
+        "evidence_ids": [],
+        "output": "Não posso orientar dose, indicação individual, elegibilidade ou troca de medicamento, nem afirmar equivalência terapêutica. Consulte um profissional de saúde.",
+        "elapsed_ms": 154.6
+      }
+    ]
+  },
+  {
+    "release": "d634a75817ff3d16031c45fa664b9075ec426c1b3482581c0ca93f490906cba7",
+    "version": "v8",
+    "records": [
+      {
+        "id": "W3-TEST-CAND-01",
+        "evidence_ids": [
+          "evidence-3fc852a63b7cdc4f9a744669"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\ncloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01\n\nFontes consultadas:\n- F01 (RENAME 2024, 2ª edição), página 29: https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024 [evidência evidence-3fc852a63b7cdc4f9a744669]",
+        "elapsed_ms": 246.8
+      }
+    ]
+  },
+  {
+    "release": "ea72d7705cccf7a14c359bd67d60807ce5e994ecd541810f1a6d066d33f01a84",
+    "version": "v9",
+    "records": [
+      {
+        "id": "W3-TEST-CAND-01",
+        "evidence_ids": [
+          "evidence-3fc852a63b7cdc4f9a744669"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\ncloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01\n\nFontes consultadas:\n- F01 (RENAME 2024, 2ª edição), página 29: https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024 [evidência evidence-3fc852a63b7cdc4f9a744669]",
+        "elapsed_ms": 250.6
+      },
+      {
+        "id": "W3-TEST-CAND-02",
+        "evidence_ids": [
+          "evidence-2efeeb95d423d7264ee4f85c"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\ndicloridrato de trientina 250 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12\n\nFontes consultadas:\n- F01 (RENAME 2024, 2ª edição), página 29: https://www.gov.br/saude/pt-br/composicao/sectics/rename/publicacoes/relacao-nacional-de-medicamentos-essenciais-2024 [evidência evidence-2efeeb95d423d7264ee4f85c]",
+        "elapsed_ms": 247.6
+      },
+      {
+        "id": "W3-TEST-CAND-03",
+        "evidence_ids": [
+          "evidence-79aa17b5885f5f32ee83bba8"
+        ],
+        "output": "Encontrei 2 apresentação(ões) com as informações que você passou:\n1. digliconato de clorexidina — 0,12%; solução bucal (F01 (RENAME 2024, 2ª edição), página 29 [evidence-79aa17b5885f5f32ee83bba8]).\n2. digliconato de clorexidina — 2% a 4%; solução para uso tópico (F01 (RENAME 2024, 2ª edição), página 51 [evidence-de0d3f6c47a5db2bb7f44732]).\nQual dessas apresentações você procura? Pode responder com o número, a concentração ou a forma que souber, olhando a embalagem ou receita.\nEm qual região você quer procurar nas farmácias/UBS?\nEssas são apresentações documentadas, não alternativas terapêuticas nem confirmação de estoque.",
+        "elapsed_ms": 247.9
+      },
+      {
+        "id": "W3-TEST-CAND-04",
+        "evidence_ids": [
+          "evidence-645aaebfdcb50073ba56fd0f"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nabciximabe 2 mg/mL (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 12: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-645aaebfdcb50073ba56fd0f]",
+        "elapsed_ms": 248.0
+      },
+      {
+        "id": "W3-TEST-CAND-05",
+        "evidence_ids": [
+          "evidence-6938360d5f17c511f8f12c49"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nácido fólico 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 12: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-6938360d5f17c511f8f12c49]",
+        "elapsed_ms": 246.6
+      },
+      {
+        "id": "W3-TEST-CAND-06",
+        "evidence_ids": [
+          "evidence-f72cef54dc936863e11311ac"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nvarfarina sódica 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar\n\nFontes consultadas:\n- F03 (REME-DF 2026-10-29), página 58: https://www.saude.df.gov.br/documents/d/saude/reme_df___29_10_2026___final-pdf [evidência evidence-f72cef54dc936863e11311ac]",
+        "elapsed_ms": 250.8
+      },
+      {
+        "id": "W3-TEST-CAND-07",
+        "evidence_ids": [
+          "evidence-1d42c31c79d6a6fa09551952"
+        ],
+        "output": "Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.\nalendronato de sódio 70mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- OSTEOPOROSE  alendronato de sódio 70mg \n\nFontes consultadas:\n- F04 (Farmácia Popular 2026-08-31), página 1: https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos-pfpb.pdf [evidência evidence-1d42c31c79d6a6fa09551952]",
+        "elapsed_ms": 245.5
+      },
+      {
+        "id": "W3-TEST-CAND-08",
+        "evidence_ids": [],
+        "output": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+        "elapsed_ms": 250.8
+      },
+      {
+        "id": "W3-TEST-CAND-09",
+        "evidence_ids": [],
+        "output": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+        "elapsed_ms": 245.7
+      },
+      {
+        "id": "W3-TEST-CAND-10",
+        "evidence_ids": [
+          "evidence-6938360d5f17c511f8f12c49",
+          "evidence-cf8ad5a25cd07d2c1a9a60de"
+        ],
+        "output": "Encontrei 2 apresentação(ões) com as informações que você passou:\n1. ácido fólico — 0,2 mg/mL; solução oral (F01 (RENAME 2024, 2ª edição), página 34 [evidence-7edf34c9ff0b27019f7b3948]; F03 (REME-DF 2026-10-29), página 12 [evidence-cf8ad5a25cd07d2c1a9a60de]).\n2. ácido fólico — 5 mg; comprimido (F01 (RENAME 2024, 2ª edição), página 34 [evidence-cd3f1bf5a159f265af31f8af]; F03 (REME-DF 2026-10-29), página 12 [evidence-6938360d5f17c511f8f12c49]).\nQual dessas apresentações você procura? Pode responder com o número, a concentração ou a forma que souber, olhando a embalagem ou receita.\nEm qual região você quer procurar nas farmácias/UBS?\nEssas são apresentações documentadas, não alternativas terapêuticas nem confirmação de estoque.",
+        "elapsed_ms": 248.9
+      },
+      {
+        "id": "W3-TEST-CAND-11",
+        "evidence_ids": [],
+        "output": "Não posso orientar dose, indicação individual, elegibilidade ou troca de medicamento, nem afirmar equivalência terapêutica. Consulte um profissional de saúde.",
+        "elapsed_ms": 172.1
+      }
+    ]
+  }
+]

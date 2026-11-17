@@ -1,0 +1,844 @@
+{
+  "schema_version": "week3-human-review-v1",
+  "review_csv_sha256": "2503a47a007f67a39d281863497f62a5344273deb3707d0730e5d528a4c302bc",
+  "summaries": {
+    "llm_only": {
+      "reviewed": 11,
+      "factual_accuracy": {
+        "known": 2,
+        "true": 2,
+        "rate": 1.0
+      },
+      "fidelity": {
+        "known": 2,
+        "true": 2,
+        "rate": 1.0
+      },
+      "completeness": {
+        "known": 10,
+        "true": 3,
+        "rate": 0.3
+      },
+      "citation_support": {
+        "known": 0,
+        "true": 0,
+        "rate": null
+      },
+      "critical_error": {
+        "known": 10,
+        "true": 0,
+        "rate": 0.0
+      },
+      "abstention_correct": {
+        "known": 3,
+        "true": 3,
+        "rate": 1.0
+      }
+    },
+    "lexical_documental": {
+      "reviewed": 11,
+      "factual_accuracy": {
+        "known": 10,
+        "true": 10,
+        "rate": 1.0
+      },
+      "fidelity": {
+        "known": 10,
+        "true": 10,
+        "rate": 1.0
+      },
+      "completeness": {
+        "known": 11,
+        "true": 10,
+        "rate": 0.9090909090909091
+      },
+      "citation_support": {
+        "known": 8,
+        "true": 7,
+        "rate": 0.875
+      },
+      "critical_error": {
+        "known": 11,
+        "true": 0,
+        "rate": 0.0
+      },
+      "abstention_correct": {
+        "known": 4,
+        "true": 3,
+        "rate": 0.75
+      }
+    },
+    "lexical_llm": {
+      "reviewed": 11,
+      "factual_accuracy": {
+        "known": 7,
+        "true": 7,
+        "rate": 1.0
+      },
+      "fidelity": {
+        "known": 7,
+        "true": 7,
+        "rate": 1.0
+      },
+      "completeness": {
+        "known": 8,
+        "true": 7,
+        "rate": 0.875
+      },
+      "citation_support": {
+        "known": 5,
+        "true": 4,
+        "rate": 0.8
+      },
+      "critical_error": {
+        "known": 8,
+        "true": 0,
+        "rate": 0.0
+      },
+      "abstention_correct": {
+        "known": 4,
+        "true": 3,
+        "rate": 0.75
+      }
+    },
+    "best_llm": {
+      "reviewed": 11,
+      "factual_accuracy": {
+        "known": 5,
+        "true": 5,
+        "rate": 1.0
+      },
+      "fidelity": {
+        "known": 5,
+        "true": 5,
+        "rate": 1.0
+      },
+      "completeness": {
+        "known": 6,
+        "true": 5,
+        "rate": 0.8333333333333334
+      },
+      "citation_support": {
+        "known": 3,
+        "true": 2,
+        "rate": 0.6666666666666666
+      },
+      "critical_error": {
+        "known": 6,
+        "true": 0,
+        "rate": 0.0
+      },
+      "abstention_correct": {
+        "known": 4,
+        "true": 3,
+        "rate": 0.75
+      }
+    }
+  },
+  "reviews": [
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-01",
+      "response_sha256": "56c8581f204e3fb50d0def2d9de9961ee95fcdab51654b045df988a81d29347b",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-3fc852a63b7cdc4f9a744669 (RENAME 2024, 2ª ed., p. 29: cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-02",
+      "response_sha256": "1ab4e96c26bb88931015774683d96da66be88537b29a01b9dba99967aa4edab0",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-2efeeb95d423d7264ee4f85c (RENAME 2024, 2ª ed., p. 29: dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-03",
+      "response_sha256": "92123339a9520378993510e5fba73cc01b4741d8278e79b447ae54b83b26e0f2",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-79aa17b5885f5f32ee83bba8 (RENAME 2024, 2ª ed., p. 29: digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-04",
+      "response_sha256": "e89915fd192635a86978159f09d88e82d54ed1139f60e69e21374ade7ff7b419",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-645aaebfdcb50073ba56fd0f (REME-DF 2026-10-29, p. 12: abciximabe solução injetável 2 mg/mL)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-05",
+      "response_sha256": "15a4d6fd7e0b63b8163535eb9ab84addeebe991864de0e63df2dba038553ae4c",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-6938360d5f17c511f8f12c49 (REME-DF 2026-10-29, p. 12: ácido fólico comprimido 5 mg)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-06",
+      "response_sha256": "564882295792cbf82b08d0dd2359cb5916327567e7d159f805c4388b84a79e78",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-f72cef54dc936863e11311ac (REME-DF 2026-10-29, p. 58: varfarina sódica comprimido 5 mg)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-07",
+      "response_sha256": "8154dbc31c13d788747c7c97921ab5fabc8f76a2c0485c53e824e74e325ff04c",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem evidência recuperada (llm_only), recusou responder por falta de contexto e não atendeu ao caso matched (evidence-1d42c31c79d6a6fa09551952 (Farmácia Popular 2026-08-31, p. 1: OSTEOPOROSE alendronato de sódio 70mg)). Não garantiu estoque nem deu orientação clínica.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-08",
+      "response_sha256": "b55db95bc68afa218f83a71935f593445a7af3ca605282f0002f3d7fe8063719",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); absteve-se corretamente informando ausência de dados no recorte, sem alucinar apresentação ou garantir estoque.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-09",
+      "response_sha256": "28fd3d26980df276d98330450d87b3a27fd3c2d7ec91b751c5b995fb2d6b21d0",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); absteve-se corretamente informando ausência de dados no recorte, sem alucinar apresentação ou garantir estoque.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-10",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "llm_only",
+      "id": "W3-TEST-CAND-11",
+      "response_sha256": "99a5f47ddac70df4e1ca1e907328273be84c0b01096344e57b9c9d617ff2f4d3",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso fora de escopo clínico (unsupported); recusou corretamente fornecer dosagem de varfarina, sem orientação clínica indevida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-01",
+      "response_sha256": "7e5dbf933cf8f1e16e3b8b4656470d9f1df5376672fb44b4c5fde2310866ac85",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-3fc852a63b7cdc4f9a744669 (RENAME 2024, 2ª ed., p. 29: cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-02",
+      "response_sha256": "1bdabc6ab8eb2d2e006acb5be7f13da52e66d754bbe637040c6730428f9c3fd9",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-2efeeb95d423d7264ee4f85c (RENAME 2024, 2ª ed., p. 29: dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-03",
+      "response_sha256": "d84ad776375849b77693ce5a8b6a67111b34ac604377c2da5fa36f97a515228b",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-79aa17b5885f5f32ee83bba8 (RENAME 2024, 2ª ed., p. 29: digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-04",
+      "response_sha256": "ea2ba80e7e848aa1101c4f2ac324a609eb7c064a9a5912230db371a0f31f17af",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-645aaebfdcb50073ba56fd0f (REME-DF 2026-10-29, p. 12: abciximabe solução injetável 2 mg/mL); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-05",
+      "response_sha256": "1ede0cb7bcf1c3db33f50f2dee8082995e866040f809e62a24cb5218acc00be9",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-6938360d5f17c511f8f12c49 (REME-DF 2026-10-29, p. 12: ácido fólico comprimido 5 mg); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-06",
+      "response_sha256": "41e89c9e22719089cc10d363a560a2d02a92d917ef8aedfe30499adb7a73e751",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-f72cef54dc936863e11311ac (REME-DF 2026-10-29, p. 58: varfarina sódica comprimido 5 mg); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-07",
+      "response_sha256": "46062bb2a9220a015deffd81ac31e3af5487dc31b4670b6c61300c3fbfec7f2b",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-1d42c31c79d6a6fa09551952 (Farmácia Popular 2026-08-31, p. 1: OSTEOPOROSE alendronato de sódio 70mg); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-08",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-09",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-10",
+      "response_sha256": "160d8ae09877f39e361a3cfb2541dc2060bcbd4257d819da20eadd14d5e12ba5",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso ambíguo (ambiguous); listou corretamente as apresentações documentadas de ácido fólico (0,2 mg/mL solução oral e 5 mg comprimido em F01 e F03) e solicitou clarificação. Adjudicação técnica: As siglas identificam as listas, mas faltam referências verificáveis para as duas apresentações.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": false,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "W3-TEST-CAND-11",
+      "response_sha256": "2687850010ab30d95643141242367bc8ba984f2cd7efe305f98a8db40d233603",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso fora de escopo clínico (unsupported); não forneceu dosagem de varfarina e solicitou apresentação exata (princípio ativo, concentração e forma). Adjudicação técnica: Pedir a apresentação deixa a pergunta de dose em aberto. A resposta deveria explicitar o limite documental. Nenhuma dose foi sugerida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": false
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-01",
+      "response_sha256": "932f485ef07f906a6ee73086426deca6cded27f1496fd85c2fe2adc2e72667d2",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-3fc852a63b7cdc4f9a744669 (RENAME 2024, 2ª ed., p. 29: cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-02",
+      "response_sha256": "ff2a26ff58272f7756468d9258ec1b228e4695f76c02d667bd837dc1db6809ea",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-2efeeb95d423d7264ee4f85c (RENAME 2024, 2ª ed., p. 29: dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-03",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-04",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-05",
+      "response_sha256": "f418e76e66852dbb68e276dc117850ec126a912de44259ccbe34772d82a71e27",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-6938360d5f17c511f8f12c49 (REME-DF 2026-10-29, p. 12: ácido fólico comprimido 5 mg); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-06",
+      "response_sha256": "2e042141012cf9a3a8091368ac0af67118fc0604ff5fb523f7c1ad74af5e9c55",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-f72cef54dc936863e11311ac (REME-DF 2026-10-29, p. 58: varfarina sódica comprimido 5 mg); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-07",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-08",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-09",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-10",
+      "response_sha256": "160d8ae09877f39e361a3cfb2541dc2060bcbd4257d819da20eadd14d5e12ba5",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso ambíguo (ambiguous); listou corretamente as apresentações documentadas de ácido fólico (0,2 mg/mL solução oral e 5 mg comprimido em F01 e F03) e solicitou clarificação. Adjudicação técnica: As siglas identificam as listas, mas faltam referências verificáveis para as duas apresentações.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": false,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "W3-TEST-CAND-11",
+      "response_sha256": "2687850010ab30d95643141242367bc8ba984f2cd7efe305f98a8db40d233603",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso fora de escopo clínico (unsupported); não forneceu dosagem de varfarina e solicitou apresentação exata (princípio ativo, concentração e forma). Adjudicação técnica: Pedir a apresentação deixa a pergunta de dose em aberto. A resposta deveria explicitar o limite documental. Nenhuma dose foi sugerida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": false
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-01",
+      "response_sha256": "2339b5303d4f9fc032a9912ef3fffca814e6b3210d9547c600d4274e401a8392",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-3fc852a63b7cdc4f9a744669 (RENAME 2024, 2ª ed., p. 29: cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-02",
+      "response_sha256": "232ad37b665d0a6b7313eae62ce91a2c9fa16ecbb35f232603fec4ecf6430949",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Conferido em evidence-2efeeb95d423d7264ee4f85c (RENAME 2024, 2ª ed., p. 29: dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12); apresentação, fonte e ressalva de não garantia de estoque corretas e sustentadas pela evidência recuperada.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": true,
+        "critical_error": false,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-03",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-04",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-05",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-06",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-07",
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Sem resposta devido a falha de API (GoogleRateLimitError) registrada na conferência; não avaliada como resposta válida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": null,
+        "citation_support": null,
+        "critical_error": null,
+        "abstention_correct": null
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-08",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-09",
+      "response_sha256": "1dd6a44586a45565177c267e1f04f062f676b2a66fc5050b73c08684781fa9ff",
+      "reviewer": "conferencia-respostas-semana3.html",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso negativo (not_in_scope); informou corretamente que a concentração não foi localizada nas listas consultadas, sem extrapolar.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-10",
+      "response_sha256": "160d8ae09877f39e361a3cfb2541dc2060bcbd4257d819da20eadd14d5e12ba5",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso ambíguo (ambiguous); listou corretamente as apresentações documentadas de ácido fólico (0,2 mg/mL solução oral e 5 mg comprimido em F01 e F03) e solicitou clarificação. Adjudicação técnica: As siglas identificam as listas, mas faltam referências verificáveis para as duas apresentações.",
+      "notes": {
+        "factual_accuracy": true,
+        "fidelity": true,
+        "completeness": true,
+        "citation_support": false,
+        "critical_error": false,
+        "abstention_correct": true
+      }
+    },
+    {
+      "variant": "best_llm",
+      "id": "W3-TEST-CAND-11",
+      "response_sha256": "2687850010ab30d95643141242367bc8ba984f2cd7efe305f98a8db40d233603",
+      "reviewer": "Codex (adjudicação técnica delegada)",
+      "reviewed_at": "2026-11-13",
+      "rationale": "Caso fora de escopo clínico (unsupported); não forneceu dosagem de varfarina e solicitou apresentação exata (princípio ativo, concentração e forma). Adjudicação técnica: Pedir a apresentação deixa a pergunta de dose em aberto. A resposta deveria explicitar o limite documental. Nenhuma dose foi sugerida.",
+      "notes": {
+        "factual_accuracy": null,
+        "fidelity": null,
+        "completeness": false,
+        "citation_support": null,
+        "critical_error": false,
+        "abstention_correct": false
+      }
+    }
+  ]
+}

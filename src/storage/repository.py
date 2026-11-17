@@ -22,7 +22,7 @@ class StorageRepository(ABC):
 class FileStorageRepository(StorageRepository):
     def __init__(self, root: Path) -> None:
         self.bronze = FileBronzeStorage(root / "bronze")
-        self.silver = FileSilverStorage()
+        self.silver = FileSilverStorage(root / "silver")
 
     def save_bronze(
         self, source_name: str, payload: Any, metadata: dict[str, Any] | None = None

@@ -12,7 +12,7 @@ A documentação do projeto está organizada pelo roadmap oficial do Challenge 2
 |---|---|---|---|---|
 | 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | Concluído | [semana-01](docs/entregaveis/semana-01/README.md) |
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Concluído | [semana-02](docs/entregaveis/semana-02/README.md) |
-| 3 | Comparação LLM × RAG | Respostas baseadas em evidências | Em validação (revisão factual pendente) | [semana-03](docs/entregaveis/semana-03/README.md) |
+| 3 | Comparação LLM × RAG | Respostas baseadas em evidências | Revisão consolidada (44 registros) | [semana-03](docs/entregaveis/semana-03/README.md) |
 | 4 | Sistema multiagentes | Primeiro sistema multiagentes | Planejado | [semana-04](docs/entregaveis/semana-04/README.md) |
 | 5 | Multimodalidade | Agentes multimodais | Planejado | [semana-05](docs/entregaveis/semana-05/README.md) |
 | 6 | Integração completa | Aplicação funcional | Planejado | [semana-06](docs/entregaveis/semana-06/README.md) |
@@ -21,7 +21,7 @@ A documentação do projeto está organizada pelo roadmap oficial do Challenge 2
 ## Estado atual (12/11/2026 — Semana 3)
 
 - **Corpus consolidado:** `data/releases/corpus-consolidado-v9-aprovado-2026-11-12` (2.114 evidências, via DVC), cobrindo F01 RENAME, F03 REME-DF e F04 Farmácia Popular.
-- **Comparação LLM × RAG (Semana 3):** oito cenários (`exact`, `lexical`, `vector`, `hybrid` na busca; `llm_only`, `lexical_documental`, `lexical_llm`, `best_llm` na resposta) executados em desenvolvimento e no conjunto de teste congelado (11 casos), além das métricas RAGAS e métricas complementares de recuperação. **Os resultados da Semana 3 ainda não sustentam alegação de superioridade de LLM ou vetor** porque a revisão factual humana das 44 respostas do conjunto de teste permanece pendente (0/44), ocorreram falhas `429` da API Gemini (`best_llm`: 5/11; `lexical_llm`: 3/11) e a amostra de teste é pequena. Detalhes em [Semana 3 — LLM × RAG na v9](docs/reports/v9/semana3-llm-rag-v9.md).
+- **Comparação LLM × RAG (Semana 3):** oito cenários (`exact`, `lexical`, `vector`, `hybrid` na busca; `llm_only`, `lexical_documental`, `lexical_llm`, `best_llm` na resposta) executados em desenvolvimento e no conjunto de teste congelado (11 casos), além das métricas RAGAS e métricas complementares de recuperação. **Os resultados da Semana 3 ainda não sustentam alegação de superioridade de LLM ou vetor** porque a revisão consolidada cobre 35 respostas válidas em 44 tentativas, ocorreram falhas `429` da API Gemini (`best_llm`: 5/11; `lexical_llm`: 3/11) e a amostra de teste é pequena. Detalhes em [Semana 3 — LLM × RAG na v9](docs/reports/v9/semana3-llm-rag-v9.md).
 
 ## Preparação e execução
 
@@ -121,3 +121,23 @@ uv run pytest
 ```
 
 Consulte o [Guia de desenvolvimento e testes](docs/guias/guia-desenvolvimento-e-testes.md) para detalhes de setup, DVC, guardrails e reprodução de avaliações. Passar nos testes automatizados verifica contratos de código e regressões técnicas; não concede aprovação humana aos dados nem valida afirmações clínicas.
+
+### Reprodução acadêmica da auditoria
+
+No clone limpo do commit `8d76f92`, com os seis objetos de release/chunks restaurados pelo DVC, exact e lexical acertaram 11/11 status e recuperaram evidência relevante em 7/7 positivos da Semana 3 (top_k=5). Os intervalos de Wilson de 95% são respectivamente 74–100% e 65–100%. A comparação pareada tem zero diferenças de acerto. Os IDs, resultados por fonte, hashes e latências estão no [registro desta execução](evals/results/week3_v9_retrieval_replay_8d76f92.json).
+
+A [triagem dos cinco casos v9](docs/reports/v9/validacao-recuperacao-v9-test.md) documenta as duas ambiguidades e três ausências antes do ranking. A [análise da v8](docs/reports/v8/validacao-recuperacao-v8-test.md) registra a confusão de apresentação C-F03-005. Na Semana 3, W3-TEST-CAND-11 recebeu `not_in_scope` historicamente e `unsupported` nas duas estratégias da reprodução. Esses testes já conhecidos servem para regressão.
+
+Na demonstração, use o comando de chat v9 com `--documental --strategy lexical` acima. A síntese só é exibida quando coincide com a mensagem produzida a partir da apresentação e das fontes recuperadas. Para revisar as 44 saídas históricas, confira cada afirmação contra a evidência e a página, registre a decisão e a justificativa por afirmação na coluna `rationale`, incluindo divergências adjudicadas. Registre falha de provedor e ausência de resposta explicitamente. O comando de consolidação da Semana 3 vincula cada julgamento ao hash da resposta.
+
+O [caderno de conferência das 44 respostas](docs/reports/v9/conferencia-respostas-semana3.html) reúne pergunta, saída, erro de provedor, evidências recuperadas e referências esperadas por caso e variante.
+
+[Consolidação da revisão factual da Semana 3](evals/results/week3_v9_response_test_human_review.json). Nas três variantes com recuperação, CAND-10 recebeu crédito de citação com IDs de evidência vazios e CAND-11 recebeu crédito de completude ao pedir a apresentação para uma pergunta de dose. A [adjudicação técnica](evals/results/week3_v9_response_test_adjudicado.json) retirou o crédito de citação em CAND-10 e de completude e abstenção em CAND-11 nas três variantes com recuperação. No modo documental, o resultado histórico é 7/8 em sustentação da citação, 10/11 em completude e 3/4 em abstenção.
+
+### Verificação da entrega documental
+
+Execute `PYTHONPATH=src uv run python -m scripts.verify_documental_delivery` após restaurar os releases v8 e v9. O [ensaio da CLI](evals/results/week3_documental_citacoes_rollback.json) registrou texto e latência de cada consulta em modo lexical local. Nos oito casos v9 com referências esperadas, as oito saídas exibiram ID, versão e página. A consulta clínica exibiu a recusa. Na troca v9 → v8 → v9, as 11 respostas finais foram idênticas às primeiras. Essa conferência automática de referências usa as perguntas conhecidas da Semana 3. A revisão independente do conteúdo atualizado continua pendente.
+
+O repositório de armazenamento grava os snapshots validados em `silver/estoque.sqlite3`, sob a raiz informada ao construtor. A chave combina medicamento, farmácia e instante da posição em UTC. Uma nova gravação da mesma chave substitui a posição, e uma coleta anterior à posição corrente continua disponível no histórico.
+
+Na [segunda execução após revisão das citações](evals/results/week3_documental_citacoes_rollback_v2.json), CAND-03 retornou somente a solução bucal a 0,12% e CAND-10 exibiu as duas apresentações da REME-DF com referências de F03. O verificador extrai os IDs efetivamente impressos e exige igualdade com os esperados, inclusive nos casos sem citações. A conferência fornecida pela pessoa revisora sustentou as afirmações dos oito casos contra os registros aprovados do v9, com ressalvas de escopo e registro corrigidas nesta execução. A conferência humana utilizou o JSONL do release, sem inspeção direta das páginas dos PDFs.

@@ -78,7 +78,7 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
                 ("f04", "F04"),
                 ("f01", "F01"),
             )
-            if term in query
+            if re.search(r"\b" + re.escape(term) + r"\b", query)
         ),
         None,
     )
@@ -105,7 +105,7 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
     }
     if exact:
         names = [m for m in names if ingredient_key(m["active_ingredient"]) in exact]
-    if re.search(r"\d+(?:[.,]\d+)?\s*(mg|mcg|g|ui|ml|%)\b", query):
+    if re.search(r"\d+(?:[.,]\d+)?\s*(mg|mcg|g|ui|ml|%)(?!\w)", query):
         names = [
             m for m in names if m["strength"] != "-" and strength_matches(query, m["strength"])
         ]
@@ -134,7 +134,9 @@ def candidates(question: str, release: ConsolidatedRelease) -> list[dict[str, An
             grouped[key] = {**medicine, "medicine_ids": [], "source_ids": []}
         item = grouped[key]
         item["medicine_ids"].append(medicine["medicine_id"])
-        item["source_ids"] = sorted(set(item["source_ids"]) | set(medicine["source_ids"]))
+        item["source_ids"] = sorted(
+            set(item["source_ids"]) | ({source} if source else set(medicine["source_ids"]))
+        )
     return sorted(
         grouped.values(),
         key=lambda m: (
@@ -156,8 +158,19 @@ def options_reply(
         characteristic = (
             f"; {item['release_characteristic']}" if item.get("release_characteristic") else ""
         )
-        evidence = [e for e in release.evidence if e["medicine_id"] in item["medicine_ids"]]
-        refs = sorted({f"{e['source']['version']}, página {e['source']['page']}" for e in evidence})
+        evidence = [
+            e
+            for e in release.evidence
+            if e["medicine_id"] in item["medicine_ids"]
+            and e["source"]["source_id"] in item["source_ids"]
+        ]
+        refs = sorted(
+            {
+                f"{e['source']['source_id']} ({e['source']['version']}), "
+                f"página {e['source']['page']} [{e['evidence_id']}]"
+                for e in evidence
+            }
+        )
         lines.append(
             f"{index}. {item['active_ingredient']} — {item['strength']}; {form}{characteristic} "
             f"({'; '.join(refs)})."

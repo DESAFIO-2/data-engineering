@@ -321,7 +321,7 @@ def ask(
         )
         print(reply)
         return reply
-    if matches_clinical_guardrail(question):
+    if matches_clinical_guardrail(question, release):
         reply = (
             "Não posso orientar dose, indicação individual, elegibilidade ou troca de "
             "medicamento, nem afirmar equivalência terapêutica. Consulte um profissional de saúde."
@@ -412,7 +412,7 @@ def ask(
             return reply
     result = search(lookup, release, chunks, strategy="lexical", top_k=settings.rag_top_k)
     if options and (
-        result["status"] != "matched" or not re.search(r"\d+\s*(mg|mcg|g|ui|ml)\b", query)
+        result["status"] != "matched" or not re.search(r"\d+\s*(mg|mcg|g|ui|ml|%)(?!\w)", query)
     ):
         reply = options_reply(options, release, stock=stock)
         print(reply)
@@ -495,10 +495,10 @@ def ask(
                     for user, reply in (history or [])
                 ]
                 generated = synthesize(question, result, cache["llm"], model_history)
-                if generated and not generated.startswith("Não foi possível gerar"):
+                if generated.strip() == str(result["message"]).strip():
                     reply = generated
                 else:
-                    print("Aviso: modelo sem resposta textual; resposta documental utilizada.")
+                    print("Aviso: síntese não verificada. Usando resposta documental.")
             except Exception as exc:
                 print(
                     f"Aviso: geração indisponível ({type(exc).__name__}); "
@@ -559,7 +559,7 @@ def chat(
             )
             print(greeting)
             reply = greeting
-        elif matches_clinical_guardrail(question):
+        elif matches_clinical_guardrail(question, release):
             reply = ask(
                 question, release, chunks, manifest, settings, cache, documental=args.documental
             )

@@ -68,7 +68,10 @@ def test_name_only_lists_presentations_without_selecting(corpus: CorpusBundle) -
     release, chunks, _ = corpus
     result = search("metformina na RENAME", release, chunks, strategy="lexical")
     assert result["status"] == "ambiguous"
-    assert result["evidence"] == []
+    assert result["evidence"]
+    for item in result["evidence"]:
+        assert item["source"]["source_id"] == "F01"
+        assert item["evidence_id"] in result["message"]
     assert len(result["candidate_presentations"]) >= 2
     assert "comprimido" in result["message"]
 

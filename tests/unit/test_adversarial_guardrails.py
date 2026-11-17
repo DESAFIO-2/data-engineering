@@ -213,10 +213,15 @@ def test_week3_review_gate_enforces_human_fields_and_hash_integrity(tmp_path: Pa
         key = (row["variant"], row["id"])
         expected_sha = hashlib.sha256((answers[key]["answer"] or "").encode()).hexdigest()
         assert row["response_sha256"] == expected_sha
-        assert row["reviewer"] == ""
 
     assert len(report["records"]) >= 44
-    # Pending CSV must fail explicitly before promoting review metrics.
+    reviews_path = tmp_path / "pending.csv"
+    rows[0]["reviewer"] = ""
+    with reviews_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
     with pytest.raises(ValueError, match="Revisão incompleta"):
         mod.run(
             Namespace(
