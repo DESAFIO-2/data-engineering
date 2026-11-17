@@ -1,0 +1,256 @@
+stratum,chunk_id,source_id,page,item_type,channel_codes,char_len,chunk_text,decision,notes
+f03_duplicate_desc_distinct_channel,chunk-5ddae96dc6f046073c3ace41,F03,19,medicine,HOSPITALAR,308,"Tipo: medicamento
+Princípio ativo ou item: cabergolina
+Concentração ou apresentação: 0,5 mg
+Forma: comprimido
+Descrição na REME-DF: cabergolina comprimido 0,5mg
+Onde é disponibilizado (REME-DF): Uso hospitalar
+Código REME-DF: 607
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 19, item 181).",,
+f03_duplicate_desc_distinct_channel,chunk-c42c31ad4073a025f4cee0ce,F03,19,medicine,CEAF,332,"Tipo: medicamento
+Princípio ativo ou item: cabergolina
+Concentração ou apresentação: 0,5 mg
+Forma: comprimido
+Descrição na REME-DF: cabergolina comprimido 0,5mg
+Onde é disponibilizado (REME-DF): Farmácia do Componente Especializado
+Código REME-DF: MS607
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 19, item 182).",,
+f03_duplicate_desc_distinct_channel,chunk-4c46b8e75774a598600a043c,F03,23,medicine,HOSPITALAR,305,"Tipo: medicamento
+Princípio ativo ou item: clozapina
+Concentração ou apresentação: 100 mg
+Forma: comprimido
+Descrição na REME-DF: clozapina comprimido 100mg
+Onde é disponibilizado (REME-DF): Uso hospitalar
+Código REME-DF: 4630
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 23, item 282).",,
+f03_duplicate_desc_distinct_channel,chunk-886c9b8b28c63fdb80ddb107,F03,23,medicine,CEAF,329,"Tipo: medicamento
+Princípio ativo ou item: clozapina
+Concentração ou apresentação: 100 mg
+Forma: comprimido
+Descrição na REME-DF: clozapina comprimido 100mg
+Onde é disponibilizado (REME-DF): Farmácia do Componente Especializado
+Código REME-DF: MS4630
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 23, item 283).",,
+f03_duplicate_desc_distinct_channel,chunk-ab3ca864b51b0f226a4d0b44,F03,49,medicine,"HOSPITALAR, SAMU",343,"Tipo: medicamento
+Princípio ativo ou item: quetiapina
+Concentração ou apresentação: 100 mg
+Forma: comprimido
+Descrição na REME-DF: quetiapina comprimido 100mg
+Onde é disponibilizado (REME-DF): Uso hospitalar e atendimento pré-hospitalar (SAMU)
+Código REME-DF: 1038
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 49, item 858).",,
+f03_duplicate_desc_distinct_channel,chunk-d8d853e4f0bfd52ef812c051,F03,49,medicine,CEAF,331,"Tipo: medicamento
+Princípio ativo ou item: quetiapina
+Concentração ou apresentação: 100 mg
+Forma: comprimido
+Descrição na REME-DF: quetiapina comprimido 100mg
+Onde é disponibilizado (REME-DF): Farmácia do Componente Especializado
+Código REME-DF: MS1038
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 49, item 859).",,
+f03_channel_with_notes,chunk-f565a5c13b36409953958400,F03,12,medicine,"UBS_FARMACIA_AMBULATORIAL, UBS_UNIDADE_REFERENCIA, POLICLINICA, HUB_FARMACIA_ESCOLA",582,"Tipo: medicamento
+Princípio ativo ou item: ácido folínico
+Concentração ou apresentação: 15 mg
+Forma: comprimido
+Descrição na REME-DF: ácido folínico comprimido 15 mg - toxoplasmose
+Onde é disponibilizado (REME-DF): UBS - Unidades de Referência (farmácia ambulatorial), Policlínica de Planaltina e Farmácia Escola (HUB)
+Observação da fonte: Medicamento disponibilizado nas Unidades de Referência, conforme lista disponível em: https://www.saude.df.gov.br/medicamentos-toxoplasmose
+Código REME-DF: MSE90519
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 12, item 15).",,
+f03_channel_with_notes,chunk-bb26062fbe91f7ef77a4a9c5,F03,12,medicine,CEDIN,495,"Tipo: medicamento
+Princípio ativo ou item: ácido paraminossalicílico
+Concentração ou apresentação: 4 g
+Forma: granulado revestido
+Descrição na REME-DF: ácido paraminossalicilico 4 g granulado revestido - tuberculose (exclusivo SITE- TB)
+Onde é disponibilizado (REME-DF): Centro Especializado em Doenças Infecciosas - CEDIN (antigo Hospital Dia)
+Observação da fonte: Exclusivo Programa SITE-TB
+Código REME-DF: MSE33446
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 12, item 16).",,
+f03_channel_with_notes,chunk-08cb590a1fcaa0f864ac7bde,F03,14,medicine,"UBS_FARMACIA_AMBULATORIAL, UBS_UNIDADE_REFERENCIA",520,"Tipo: medicamento
+Princípio ativo ou item: aloe vera (babosa)
+Concentração ou apresentação: 10% (pote 200 g)
+Forma: gel
+Descrição na REME-DF: aloe vera gel 10% pote 200g (babosa)
+Onde é disponibilizado (REME-DF): UBS - Unidades de Referência (farmácia ambulatorial)
+Observação da fonte: UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas-fitoterapicos
+Código REME-DF: 33417
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 14, item 61).",,
+f03_channel_with_notes,chunk-360208b17f7cf9ae94f3016c,F03,14,medicine,"UBS_FARMACIA_AMBULATORIAL, UBS_UNIDADE_REFERENCIA",518,"Tipo: medicamento
+Princípio ativo ou item: aloe vera (babosa)
+Concentração ou apresentação: 10% (pote 30 g)
+Forma: gel
+Descrição na REME-DF: aloe vera gel 10% pote 30g (babosa)
+Onde é disponibilizado (REME-DF): UBS - Unidades de Referência (farmácia ambulatorial)
+Observação da fonte: UBS Dispensadoras de Fitoterápicos Oficinais, conforme lista disponível em: https://www.saude.df.gov.br/farmacias-vivas-fitoterapicos
+Código REME-DF: 33418
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 14, item 62).",,
+f03_package_only,chunk-32f9c026384ce1b61a6b03a2,F03,13,medicine,"UBS_FARMACIA_INTERNA, HOSPITALAR, SAMU",378,"Tipo: medicamento
+Princípio ativo ou item: água para injetáveis
+Concentração ou apresentação: 10 mL
+Forma: ampola
+Descrição na REME-DF: água para injetáveis ampola 10 mL
+Onde é disponibilizado (REME-DF): UBS (farmácia interna), uso hospitalar e atendimento pré-hospitalar (SAMU)
+Código REME-DF: 90580
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 13, item 28).",,
+f03_package_only,chunk-405fcd5d37f8cf3fbb357a41,F03,13,medicine,"UBS_FARMACIA_INTERNA, HOSPITALAR",365,"Tipo: medicamento
+Princípio ativo ou item: água para injetáveis
+Concentração ou apresentação: 1000 mL
+Forma: frasco ou bolsa
+Descrição na REME-DF: água para injetáveis frasco ou bolsa 1000 mL
+Onde é disponibilizado (REME-DF): UBS (farmácia interna) e uso hospitalar
+Código REME-DF: 90581
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 13, item 29).",,
+f03_package_only,chunk-adec0f7209079b9611b5cfc9,F03,13,medicine,"UBS_FARMACIA_INTERNA, HOSPITALAR",363,"Tipo: medicamento
+Princípio ativo ou item: água para injetáveis
+Concentração ou apresentação: 500 mL
+Forma: frasco ou bolsa
+Descrição na REME-DF: água para injetáveis frasco ou bolsa 500 mL
+Onde é disponibilizado (REME-DF): UBS (farmácia interna) e uso hospitalar
+Código REME-DF: 90954
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 13, item 30).",,
+f03_salt_alias_merged,chunk-c06eaab1b8b294bc1af66fba,F03,14,medicine,CEAF,371,"Tipo: medicamento
+Princípio ativo ou item: alfainterferona 2b
+Concentração ou apresentação: 3.000.000 UI
+Forma: injetável
+Descrição na REME-DF: alfainterferona 2B injetável 3.000.000 UI frasco ampola
+Onde é disponibilizado (REME-DF): Farmácia do Componente Especializado
+Código REME-DF: MS1496
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 14, item 49).",,
+f03_salt_alias_merged,chunk-ad87beab21cd35266f10c341,F03,14,medicine,CEAF,375,"Tipo: medicamento
+Princípio ativo ou item: alfainterferona 2b
+Concentração ou apresentação: 10.000.000 UI
+Forma: injetável
+Descrição na REME-DF: alfainterferona 2B injetável 10.000.000 UI frasco- ampola
+Onde é disponibilizado (REME-DF): Farmácia do Componente Especializado
+Código REME-DF: MS21547
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 14, item 50).",,
+f03_salt_alias_merged,chunk-44698413338e0779fa2bebcc,F03,14,medicine,HBDF_AMBULATORIAL,362,"Tipo: medicamento
+Princípio ativo ou item: alfainterferona 2b
+Concentração ou apresentação: 5.000.000 UI
+Forma: injetável
+Descrição na REME-DF: alfainterferona 2B injetável 5.000.000 UI frasco ampola
+Onde é disponibilizado (REME-DF): Farmácia Ambulatorial do HBDF
+Código REME-DF: 6417
+Consta na lista F03 (REME-DF 2026-10-29).
+Proveniência: F03 (p. 14, item 51).",,
+f01_component_fixed,chunk-dff6a1f0ff8404b01f71e212,F01,56,medicine,,297,"Tipo: medicamento
+Princípio ativo ou item: acetato de betametasona + fosfato dissódico de betametasona
+Concentração ou apresentação: 3 mg/mL + 3 mg/mL
+Forma: suspensão injetável
+Componente RENAME: Básico
+ATC: H02AB01
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 56, item 1).",,
+f01_component_fixed,chunk-d253023aa108fbb1f5a0040e,F01,56,medicine,,261,"Tipo: medicamento
+Princípio ativo ou item: acetato de desmopressina
+Concentração ou apresentação: 0,1 mg/mL
+Forma: solução spray nasal
+Componente RENAME: Especializado
+ATC: H01BA02
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 56, item 2).",,
+f01_component_fixed,chunk-d2ef0fdde759f3e7b8dbf3fc,F01,56,medicine,,256,"Tipo: medicamento
+Princípio ativo ou item: acetato de desmopressina
+Concentração ou apresentação: 4 mcg/mL
+Forma: solução injetável
+Componente RENAME: Estratégico
+ATC: H01BA02
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 56, item 3).",,
+f01_component_fixed,chunk-fa313298cb9c80e89028cd42,F01,56,medicine,,257,"Tipo: medicamento
+Princípio ativo ou item: acetato de desmopressina
+Concentração ou apresentação: 15 mcg/mL
+Forma: solução injetável
+Componente RENAME: Estratégico
+ATC: H01BA02
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 56, item 4).",,
+f01_atc_special,chunk-1bfa417c24b840c353c7f20b,F01,33,medicine,,269,"Tipo: medicamento
+Princípio ativo ou item: sulfato de magnésio
+Concentração ou apresentação: 10% (0,81 mEq/mL Mg++)
+Forma: solução injetável
+Componente RENAME: Básico
+ATC: A12CC02, B05XA05
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 33, item 5).",,
+f01_atc_special,chunk-2cd8f6b8810644770184aa09,F01,33,medicine,,269,"Tipo: medicamento
+Princípio ativo ou item: sulfato de magnésio
+Concentração ou apresentação: 50% (4,05 mEq/mL Mg++)
+Forma: solução injetável
+Componente RENAME: Básico
+ATC: A12CC02, B05XA05
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 33, item 6).",,
+f01_atc_special,chunk-7996b403a76c8b2fcc9d36f8,F01,45,medicine,,264,"Tipo: medicamento
+Princípio ativo ou item: cloridrato de lidocaína
+Concentração ou apresentação: 10 mg/mL (1%)
+Forma: solução injetável
+Componente RENAME: Básico
+ATC: C01BB01, N01BB02
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 45, item 4).",,
+f01_supply,chunk-4c533aa81746bad45685404b,F01,50,supply,,236,"Tipo: insumo
+Princípio ativo ou item: álcool etílico (FN)
+Concentração ou apresentação: 70%
+Forma: solução
+Componente RENAME: Insumos (Básico)
+ATC: D08AX08
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 50, item 7).",,
+f01_supply,chunk-ad098bcb7ca69b207d5d4b03,F01,50,supply,,232,"Tipo: insumo
+Princípio ativo ou item: álcool etílico (FN)
+Concentração ou apresentação: 70%
+Forma: gel
+Componente RENAME: Insumos (Básico)
+ATC: D08AX08
+Consta na lista F01 (RENAME 2024, 2ª edição).
+Proveniência: F01 (p. 50, item 8).",,
+f04_medicine_and_prolonged,chunk-3ce4fe73119367200f984907,F04,1,medicine,,234,"Tipo: medicamento
+Princípio ativo ou item: brometo de ipratrópio
+Concentração ou apresentação: 0,02 mg
+Forma: não informada
+Indicação no elenco: ASMA
+Consta na lista F04 (Farmácia Popular 2026-08-31).
+Proveniência: F04 (p. 1, item 2).",,
+f04_medicine_and_prolonged,chunk-44ea3122ec626ffeefc2a019,F04,1,medicine,,234,"Tipo: medicamento
+Princípio ativo ou item: brometo de ipratrópio
+Concentração ou apresentação: 0,25 mg
+Forma: não informada
+Indicação no elenco: ASMA
+Consta na lista F04 (Farmácia Popular 2026-08-31).
+Proveniência: F04 (p. 1, item 3).",,
+f04_medicine_and_prolonged,chunk-66c51d341c410cacdbd244a4,F04,1,medicine,,242,"Tipo: medicamento
+Princípio ativo ou item: dipropionato de beclometasona
+Concentração ou apresentação: 200 mcg
+Forma: não informada
+Indicação no elenco: ASMA
+Consta na lista F04 (Farmácia Popular 2026-08-31).
+Proveniência: F04 (p. 1, item 4).",,
+f04_supply,chunk-8b27e582e2c9bd191869b342,F04,1,supply,,250,"Tipo: insumo
+Princípio ativo ou item: absorvente higiênico
+Concentração ou apresentação: não informada
+Forma: não informada
+Indicação no elenco: DIGNIDADE MENSTRUAL
+Consta na lista F04 (Farmácia Popular 2026-08-31).
+Proveniência: F04 (p. 1, item 41).",,
+f04_supply,chunk-5ea8a977695dbad521b67f97,F04,1,supply,,250,"Tipo: insumo
+Princípio ativo ou item: fralda geriátrica
+Concentração ou apresentação: não informada
+Forma: não informada
+Indicação no elenco: INCONTINÊNCIA URINÁRIA
+Consta na lista F04 (Farmácia Popular 2026-08-31).
+Proveniência: F04 (p. 1, item 42).",,
