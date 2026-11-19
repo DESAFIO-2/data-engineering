@@ -93,6 +93,30 @@ def test_missing_fields_vs_nonexistent(corpus: CorpusData, query: str, status: s
     assert search(query, release, chunks)["status"] == status
 
 
+def test_documental_hybrid_uses_no_google_api_with_key_configured(
+    corpus: CorpusData, settings: Settings, monkeypatch: Any
+) -> None:
+    release, chunks, manifest = corpus
+
+    def forbidden(*args: Any) -> Any:
+        pytest.fail("documental mode called Google")
+
+    monkeypatch.setattr(chat, "google_embeddings", forbidden)
+    monkeypatch.setattr(chat, "google_chat", forbidden)
+    reply = chat.ask(
+        "metformina 500 mg ação prolongada Farmácia Popular",
+        release,
+        chunks,
+        manifest,
+        replace(settings, google_api_key="configured-key"),
+        {},
+        documental=True,
+        strategy="hybrid",
+        generate=True,
+    )
+    assert "metformina" in reply.lower()
+
+
 def test_no_configuration_never_calls_providers(
     corpus: CorpusData, settings: Settings, monkeypatch: Any, capsys: Any
 ) -> None:

@@ -437,7 +437,7 @@ def ask(
             reply += "Informe o nome como aparece na embalagem; posso listar as opções disponíveis."
         print(reply)
         return reply
-    if result["status"] == "matched" and strategy in {"hybrid", "vector"}:
+    if not documental and result["status"] == "matched" and strategy in {"hybrid", "vector"}:
         if not settings.has_google_api_key:
             if not cache.get("no_key_warned"):
                 print(
@@ -477,13 +477,19 @@ def ask(
     reply = _documental(result)
     if (
         generate
+        and not documental
         and result["status"] == "matched"
         and not settings.has_google_api_key
         and not cache.get("no_key_warned")
     ):
         print("Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.")
         cache["no_key_warned"] = True
-    if generate and result["status"] == "matched" and settings.has_google_api_key:
+    if (
+        generate
+        and not documental
+        and result["status"] == "matched"
+        and settings.has_google_api_key
+    ):
         if not cache.get("generation_disabled"):
             try:
                 if "llm" not in cache:
