@@ -2,7 +2,7 @@
 
 **Objetivo:** comparar objetivamente LLM sem contexto (`llm_only`), resposta documental sem LLM (`lexical_documental`) e síntese com LLM sobre evidências recuperadas (`lexical_llm` e `best_llm`), medindo recuperação, métricas complementares (RAGAS, Precision@3, precisão micro/recall macro) e revisão humana.
 
-**Foco no roadmap:** Comparação LLM × RAG · **Estado:** Em validação (oito cenários executados em desenvolvimento e no teste congelado + métricas RAGAS medidas; revisão factual humana das respostas pendente).
+**Foco no roadmap:** Comparação LLM × RAG · **Estado:** Concluído (oito cenários executados em desenvolvimento e no teste congelado + métricas RAGAS medidas; revisão factual humana das 44 respostas v3 validada por Jhiovana e reconsolidada em 18/11/2026).
 
 ## 1. Protocolo e cenários comparados
 

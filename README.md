@@ -122,6 +122,13 @@ uv run pytest
 
 Consulte o [Guia de desenvolvimento e testes](docs/guias/guia-desenvolvimento-e-testes.md) para detalhes de setup, DVC, guardrails e reprodução de avaliações. Passar nos testes automatizados verifica contratos de código e regressões técnicas; não concede aprovação humana aos dados nem valida afirmações clínicas.
 
+### Rollback rápido (`v10` → `v9`)
+
+Caso precise retornar imediatamente ao release anterior `corpus-consolidado-v9-aprovado-2026-11-12`:
+1. Passe `--release data/releases/corpus-consolidado-v9-aprovado-2026-11-12` na CLI, ou defina `APP_RAG_RELEASE_DIR=data/releases/corpus-consolidado-v9-aprovado-2026-11-12` no `.env`.
+2. Se o diretório não estiver em disco, execute `uv run dvc pull data/releases/corpus-consolidado-v9-aprovado-2026-11-12.dvc data/derived/chunks/corpus-consolidado-v9-aprovado-2026-11-12.dvc`.
+3. O índice vetorial no Chroma é endereçado por *fingerprint* e hash de chunks, e os vínculos UBS em `data/mappings/ubs/<fingerprint>.json` são isolados por *fingerprint* (sem conflito entre versões).
+
 ### Reprodução acadêmica da auditoria
 
 No clone limpo do commit `8d76f92`, com os seis objetos de release/chunks restaurados pelo DVC, exact e lexical acertaram 11/11 status e recuperaram evidência relevante em 7/7 positivos da Semana 3 (top_k=5). Os intervalos de Wilson de 95% são respectivamente 74–100% e 65–100%. A comparação pareada tem zero diferenças de acerto. Os IDs, resultados por fonte, hashes e latências estão no [registro desta execução](evals/results/week3_v9_retrieval_replay_8d76f92.json).

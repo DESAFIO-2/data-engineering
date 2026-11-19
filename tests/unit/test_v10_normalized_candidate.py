@@ -435,7 +435,7 @@ def _make_fixture_v9(base: Path) -> Path:
 
     from publish_consolidated_release import evidence_for
 
-    evidence = [evidence_for(occ, descriptions) for occ in occurrences]
+    evidence: list[dict[str, Any]] = [evidence_for(occ, descriptions) for occ in occurrences]
     for ev in evidence:
         ev["review_status"] = "approved"
 
@@ -697,3 +697,193 @@ def test_v10_normalized_candidate_invariants_and_determinism() -> None:
     assert m1["corpus_fingerprint"] == cand["corpus_fingerprint"]
     for name, data in p1.items():
         assert data == (V10_CANDIDATE / name).read_bytes()
+
+
+def test_v10_search_alternatives_units_release_rate_supplies_and_aliases() -> None:
+    from rag.consolidated import ConsolidatedRelease, search
+    from rag.consolidated_evaluation import _trace_candidates
+
+    source_f01 = {
+        "source_id": "F01",
+        "version": "2024",
+        "page": 10,
+        "url": "https://example.org/f01",
+    }
+    source_f03 = {
+        "source_id": "F03",
+        "version": "2026",
+        "page": 20,
+        "url": "https://example.org/f03",
+    }
+    catalog = [
+        {
+            "medicine_id": "med-amox",
+            "active_ingredient": "amoxicilina",
+            "aliases": ["amoxicilina"],
+            "strength": "500 mg",
+            "form": "cápsula ou comprimido",
+            "form_alternatives": ["cápsula", "comprimido"],
+            "package": None,
+            "specification": None,
+            "release_characteristic": None,
+            "source_ids": ["F03"],
+        },
+        {
+            "medicine_id": "med-poli",
+            "active_ingredient": "polidocanol",
+            "aliases": ["polidocanol"],
+            "strength": "1%",
+            "form": "-",
+            "package": "ampola",
+            "specification": None,
+            "release_characteristic": None,
+            "source_ids": ["F03"],
+        },
+        {
+            "medicine_id": "med-alfa",
+            "active_ingredient": "alfavelaglicerase",
+            "aliases": ["alfavelaglicerase"],
+            "strength": "400 U",
+            "form": "pó liofilizado ou solução injetável",
+            "form_alternatives": ["pó liofilizado", "solução injetável"],
+            "package": None,
+            "specification": None,
+            "release_characteristic": None,
+            "source_ids": ["F03"],
+        },
+        {
+            "medicine_id": "med-riva",
+            "active_ingredient": "rivastigmina",
+            "aliases": ["rivastigmina"],
+            "strength": "9 mg (liberação de 4,6 mg/24h)",
+            "form": "adesivo transdérmico",
+            "package": None,
+            "specification": None,
+            "release_characteristic": "liberação de 4,6 mg/24h",
+            "source_ids": ["F03"],
+        },
+        {
+            "medicine_id": "med-met",
+            "active_ingredient": "cloridrato de metformina",
+            "aliases": ["cloridrato de metformina", "metformina (cloridrato)"],
+            "strength": "850 mg",
+            "form": "comprimido",
+            "package": None,
+            "specification": None,
+            "release_characteristic": None,
+            "source_ids": ["F01", "F03"],
+        },
+    ]
+    occurrences = [
+        {
+            "occurrence_id": "occ-sup-5",
+            "item_type": "supply",
+            "active_ingredient": "água para injetáveis",
+            "strength": "-",
+            "form": "solução injetável 5 mL",
+            "package": "5 mL",
+            "source": source_f01,
+        },
+        {
+            "occurrence_id": "occ-sup-10",
+            "item_type": "supply",
+            "active_ingredient": "água para injetáveis",
+            "strength": "-",
+            "form": "solução injetável 10 mL",
+            "package": "10 mL",
+            "source": source_f01,
+        },
+    ]
+    evidence: list[dict[str, Any]] = [
+        {
+            "evidence_id": "ev-amox",
+            "occurrence_id": "occ-amox",
+            "medicine_id": "med-amox",
+            "active_ingredient": "amoxicilina",
+            "strength": "500 mg",
+            "form": "cápsula ou comprimido",
+            "release_characteristic": None,
+            "source": source_f03,
+        },
+        {
+            "evidence_id": "ev-poli",
+            "occurrence_id": "occ-poli",
+            "medicine_id": "med-poli",
+            "active_ingredient": "polidocanol",
+            "strength": "1%",
+            "form": "-",
+            "release_characteristic": None,
+            "source": source_f03,
+        },
+        {
+            "evidence_id": "ev-alfa",
+            "occurrence_id": "occ-alfa",
+            "medicine_id": "med-alfa",
+            "active_ingredient": "alfavelaglicerase",
+            "strength": "400 U",
+            "form": "pó liofilizado ou solução injetável",
+            "release_characteristic": None,
+            "source": source_f03,
+        },
+        {
+            "evidence_id": "ev-riva",
+            "occurrence_id": "occ-riva",
+            "medicine_id": "med-riva",
+            "active_ingredient": "rivastigmina",
+            "strength": "9 mg (liberação de 4,6 mg/24h)",
+            "form": "adesivo transdérmico",
+            "release_characteristic": "liberação de 4,6 mg/24h",
+            "source": source_f03,
+        },
+        {
+            "evidence_id": "ev-sup-5",
+            "occurrence_id": "occ-sup-5",
+            "active_ingredient": "água para injetáveis",
+            "strength": "-",
+            "form": "solução injetável 5 mL",
+            "release_characteristic": None,
+            "source": source_f01,
+        },
+        {
+            "evidence_id": "ev-sup-10",
+            "occurrence_id": "occ-sup-10",
+            "active_ingredient": "água para injetáveis",
+            "strength": "-",
+            "form": "solução injetável 10 mL",
+            "release_characteristic": None,
+            "source": source_f01,
+        },
+    ]
+    release = ConsolidatedRelease(
+        folder=Path("."),
+        manifest={"release_version": "corpus-consolidado-v10-aprovado-2026-11-17"},
+        catalog=catalog,
+        occurrences=occurrences,
+        evidence=evidence,
+        fingerprint="test-fp",
+    )
+
+    chunks = [
+        {
+            "chunk_id": f"chunk-{i}",
+            "medicine_id": ev["medicine_id"],
+            "evidence_id": ev["evidence_id"],
+            "text": f"{ev['active_ingredient']} {ev['strength']} {ev['form']}",
+            "source": ev["source"],
+        }
+        for i, ev in enumerate(evidence)
+        if "medicine_id" in ev
+    ]
+
+    assert search("amoxicilina 500 mg comprimido REME-DF", release, chunks)["status"] == "matched"
+    assert search("amoxicilina 500 mg cápsula REME-DF", release, chunks)["status"] == "matched"
+    assert search("polidocanol 2% REME-DF", release, chunks)["status"] == "not_in_scope"
+    assert search("alfavelaglicerase 200 U REME-DF", release, chunks)["status"] == "not_in_scope"
+    assert (
+        search("rivastigmina 9 mg adesivo transdérmico REME-DF", release, chunks)["status"]
+        == "matched"
+    )
+    sup_res = search("água para injetáveis solução injetável 10 mL RENAME", release, chunks)
+    assert sup_res["status"] == "matched"
+    assert sup_res["evidence"][0]["evidence_id"] == "ev-sup-10"
+    assert _trace_candidates("metformina (cloridrato) 850 mg comprimido", release) == ["med-met"]

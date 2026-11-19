@@ -1,0 +1,2426 @@
+{
+  "schema_version": "multichunk-checkpoint-v1",
+  "created_at_utc": "2026-11-18T18:00:08.508447+00:00",
+  "updated_at_utc": "2026-11-18T18:00:15.005099+00:00",
+  "config": {
+    "release_version": "corpus-consolidado-v10-aprovado-2026-11-17",
+    "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+    "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+    "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+    "split_cases_sha256": "f3062e7090301ac61caba3da4d7e09f3306e032a991d33bf34f4993198339620",
+    "split": "test",
+    "strategies": [
+      "exact",
+      "lexical"
+    ],
+    "embedding_model": null,
+    "index_marker_sha256": null,
+    "parameters": {
+      "top_k": 5,
+      "vector_k_min": 10,
+      "vector_k_multiplier": 3,
+      "rrf_k": 60,
+      "cache_query_embeddings": false,
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 42
+    },
+    "code_sha256": {
+      "src\\rag\\consolidated.py": "fe5808bac0541247116309b0286d180892bb4fa014cf48412373692284185fc6",
+      "scripts\\eval_multichunk_benchmark.py": "72e0dae2ecd1b8247436a9de57a65c4b8b29bab22b1b254d6044bdefe8c20e7a"
+    }
+  },
+  "records": {
+    "exact": {
+      "MC-TEST-001": {
+        "id": "MC-TEST-001",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-85a95233abee7a92299a8238",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "expected_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 93.777,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "04afb0afe6bd7af2d0d26aa2bc42a31c2eeb56b373056e54279921070394a495",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:08.603743+00:00"
+      },
+      "MC-TEST-002": {
+        "id": "MC-TEST-002",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-85a95233abee7a92299a8238",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "expected_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.611,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "3a575e8d9a93bbe2613cc7668c39c6f78c7b87197da9f3108b81487fc0d0f3aa",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:08.704576+00:00"
+      },
+      "MC-TEST-003": {
+        "id": "MC-TEST-003",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-85a95233abee7a92299a8238",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "expected_evidence_ids": [
+          "evidence-440a7b86140f721129cdd834"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 92.625,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "523b050988796f129b68850363d8c96f980652b5aee3d84fce057ba1e8ac0933",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:08.799755+00:00"
+      },
+      "MC-TEST-004": {
+        "id": "MC-TEST-004",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 4,
+        "returned_evidence_ids": [
+          "evidence-85a95233abee7a92299a8238",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "expected_evidence_ids": [
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.946,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4d170881fd6d09250787ddbaff1d8ff0e4f5c31e5dfc9f97c0a4df54fa09c155",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:08.898284+00:00"
+      },
+      "MC-TEST-005": {
+        "id": "MC-TEST-005",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-4fdcd9961e1ddbf791e3c33b",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b1ddcad9115b41f721c89673"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 91.495,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "79a1bc03c813cc18057a67a1d935594e8672617b816c85826d91efd2d1a5797f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:08.991768+00:00"
+      },
+      "MC-TEST-006": {
+        "id": "MC-TEST-006",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-4fdcd9961e1ddbf791e3c33b",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ba2eb0e9aef7345b3d741099"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.649,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4eff3943bec2fac0ef9f0f2fb0ea0f254a469e36f43d04514607ff3faa10c709",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.092077+00:00"
+      },
+      "MC-TEST-007": {
+        "id": "MC-TEST-007",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 4,
+        "returned_evidence_ids": [
+          "evidence-4fdcd9961e1ddbf791e3c33b",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.637,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "b4662e1db25c7512031b177552fa1b2bac1cb005deb3c51a9e2f8349861dd1dc",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.191646+00:00"
+      },
+      "MC-TEST-008": {
+        "id": "MC-TEST-008",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-4fdcd9961e1ddbf791e3c33b",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b1ddcad9115b41f721c89673"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.362,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "9fa60c2ceb0fbffe13a39731804a99f0af00f03ae56c86f322e453a67d4ff14a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.294611+00:00"
+      },
+      "MC-TEST-009": {
+        "id": "MC-TEST-009",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-c72ce676056ad698ac888dfb",
+          "evidence-280bf43242a7ff435a167d8e",
+          "evidence-b7b50a1946ab2c60d6233953"
+        ],
+        "expected_evidence_ids": [
+          "evidence-280bf43242a7ff435a167d8e"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 111.038,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ddf95d17410aae35a0cfaacb41bba7f1c953fd297192327b0491805193c53de9",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.409709+00:00"
+      },
+      "MC-TEST-010": {
+        "id": "MC-TEST-010",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-c72ce676056ad698ac888dfb",
+          "evidence-280bf43242a7ff435a167d8e",
+          "evidence-b7b50a1946ab2c60d6233953"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b7b50a1946ab2c60d6233953"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 104.18,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ecd9ed54efc9842a38dc9ce10aa39a23bf0444cd2b2abd47a0e8a57b0af0368f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.518739+00:00"
+      },
+      "MC-TEST-011": {
+        "id": "MC-TEST-011",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-be6a33458d31dd6492f683f5",
+          "evidence-5f797b2b5a1212625b4ebd74",
+          "evidence-e5f9e3b1abb5ee648cb6c03f"
+        ],
+        "expected_evidence_ids": [
+          "evidence-e5f9e3b1abb5ee648cb6c03f"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 100.159,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "162c8adfabd5d14e72bca74b3a8352eb456bec3439b8682eaf59c6b57cefa3e5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.621362+00:00"
+      },
+      "MC-TEST-012": {
+        "id": "MC-TEST-012",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-be6a33458d31dd6492f683f5",
+          "evidence-5f797b2b5a1212625b4ebd74",
+          "evidence-e5f9e3b1abb5ee648cb6c03f"
+        ],
+        "expected_evidence_ids": [
+          "evidence-5f797b2b5a1212625b4ebd74"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.634,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "232f43fcf0a04a39db214450da77875ccc6b3b4ca962e2d438eae157f76a275a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.718951+00:00"
+      },
+      "MC-TEST-013": {
+        "id": "MC-TEST-013",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da",
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "expected_evidence_ids": [
+          "evidence-65905b97ae9369654337b8d4"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.057,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "5caab0d29e4c065c892ea69b96c5e2fed6268dcbfc0a850e9deef83b34e5526e",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.818265+00:00"
+      },
+      "MC-TEST-014": {
+        "id": "MC-TEST-014",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da",
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.838,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "455add615d54ebc34438f6602fa54b50dd1c3c5669711968980979578399be39",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:09.916051+00:00"
+      },
+      "MC-TEST-015": {
+        "id": "MC-TEST-015",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da",
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "expected_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 93.476,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "16f772972be24988fb544e6cdd9f89cef743ee69c107ff959b2052b204a258dd",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.012399+00:00"
+      },
+      "MC-TEST-016": {
+        "id": "MC-TEST-016",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-45076318627d2053d4d2a833",
+          "evidence-3b4067c394d8f9b17fa2679e",
+          "evidence-5a933f8902f3c57f3b890055"
+        ],
+        "expected_evidence_ids": [
+          "evidence-5a933f8902f3c57f3b890055"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.009,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "a5f427c61fa33516ae9d457caf03cc9b32c58b20d569534fed743ca23ce11358",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.110856+00:00"
+      },
+      "MC-TEST-017": {
+        "id": "MC-TEST-017",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-a75d3d6c7a44dd8886c9bdf1",
+          "evidence-9d0da6d7577952d663757478",
+          "evidence-c9ca7e93dc9f2bf5ea0d467a"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c9ca7e93dc9f2bf5ea0d467a"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 100.465,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "143469c157d9c1918065042e6020aa4cbcfe0ded7e660d66eacc38dd4bf2c784",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.215385+00:00"
+      },
+      "MC-TEST-018": {
+        "id": "MC-TEST-018",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-a75d3d6c7a44dd8886c9bdf1",
+          "evidence-9d0da6d7577952d663757478",
+          "evidence-c9ca7e93dc9f2bf5ea0d467a"
+        ],
+        "expected_evidence_ids": [
+          "evidence-a75d3d6c7a44dd8886c9bdf1"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 125.856,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "0e2ed8fdd8b4db7decc58677082695d306f2bdb7076e5e76d2cde24253b8f31d",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.344458+00:00"
+      },
+      "MC-TEST-019": {
+        "id": "MC-TEST-019",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-3966977180f9fe5724899400",
+          "evidence-2e2b977387e3e1e99d231c11",
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.672,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4041550ea3bd8876202184066d073290e4188022f54ea083b95aed9279b8b547",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.443566+00:00"
+      },
+      "MC-TEST-020": {
+        "id": "MC-TEST-020",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-3966977180f9fe5724899400",
+          "evidence-2e2b977387e3e1e99d231c11",
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.686,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "7baaec45c594938267400f991b3de3c37dfae6718e90ca1f6ab34fea7cf63565",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.543095+00:00"
+      },
+      "MC-TEST-021": {
+        "id": "MC-TEST-021",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-0a1b8248a26fa859a6d69145",
+          "evidence-955a7a7cf1fe17e1d32f9997",
+          "evidence-bfa24cafdb1d7f49f07c9705"
+        ],
+        "expected_evidence_ids": [
+          "evidence-955a7a7cf1fe17e1d32f9997"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 92.503,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "5d50bb1ec54a7f7eb7edc3323fd38c239f1f4c0131913ba3adf000ff089de9c5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.639403+00:00"
+      },
+      "MC-TEST-022": {
+        "id": "MC-TEST-022",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-0a1b8248a26fa859a6d69145",
+          "evidence-955a7a7cf1fe17e1d32f9997",
+          "evidence-bfa24cafdb1d7f49f07c9705"
+        ],
+        "expected_evidence_ids": [
+          "evidence-955a7a7cf1fe17e1d32f9997"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.45,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "0261d30daf00a47d7a2cb9d704afc13d561520a8b3994f4b20d442faf0f3128f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.738026+00:00"
+      },
+      "MC-TEST-023": {
+        "id": "MC-TEST-023",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-36d55c3729c52e2ffed769b9",
+          "evidence-14fc6d29b7ef206907a2c5fe",
+          "evidence-e893d0e250961336c65ac1c1"
+        ],
+        "expected_evidence_ids": [
+          "evidence-e893d0e250961336c65ac1c1"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.766,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "f2ebfb05eddb3a19fa752d83706f4462af65298b8ae3f3cd9e5ecd6adde2fa32",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.837273+00:00"
+      },
+      "MC-TEST-024": {
+        "id": "MC-TEST-024",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-ed12d50fd62b10ea5ab408a2",
+          "evidence-4dede598709d060030a92094",
+          "evidence-b2cdc3c9f27addd88b28b70e"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b2cdc3c9f27addd88b28b70e"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.014,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "335b6468a4aa64cc7bf2211420b3390074b5340f56c9afe431bef107bb6fb7c5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:10.935031+00:00"
+      },
+      "MC-TEST-025": {
+        "id": "MC-TEST-025",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ed12d50fd62b10ea5ab408a2",
+          "evidence-4dede598709d060030a92094",
+          "evidence-b2cdc3c9f27addd88b28b70e"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ed12d50fd62b10ea5ab408a2"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.684,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "74efa6960a03e1454e60f50c8b5cb7273281d769fd2826e5ea3dd987cdf7b0ef",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.033963+00:00"
+      },
+      "MC-TEST-026": {
+        "id": "MC-TEST-026",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-436c282a9ae114f2d52fa934",
+          "evidence-b7a57d5ca02dd10934f9acd1",
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.306,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "e219c17ce0657b3e13385c32d72fbd188b7312a3f60e7e993d86b32cc9405b63",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.136016+00:00"
+      },
+      "MC-TEST-027": {
+        "id": "MC-TEST-027",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-436c282a9ae114f2d52fa934",
+          "evidence-b7a57d5ca02dd10934f9acd1",
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 106.154,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "8b4f9a5056237c1e8e4d2a8ab91d25288d556d6eb383d01744560c3e30dea36a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.245751+00:00"
+      },
+      "MC-TEST-028": {
+        "id": "MC-TEST-028",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-ca5c60a9adc06e6b6668746c",
+          "evidence-95feb1e7151d48eeb52c3cb6",
+          "evidence-a393d2e95469c9a1ae2300e0"
+        ],
+        "expected_evidence_ids": [
+          "evidence-95feb1e7151d48eeb52c3cb6"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.945,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "fe20f684986732fa8e838c13c7263ae338d3cefc56eb73ab607b16c75856f2b7",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.345772+00:00"
+      },
+      "MC-TEST-029": {
+        "id": "MC-TEST-029",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ca5c60a9adc06e6b6668746c",
+          "evidence-95feb1e7151d48eeb52c3cb6",
+          "evidence-a393d2e95469c9a1ae2300e0"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ca5c60a9adc06e6b6668746c"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 102.68,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ffeb1b4e6d3cb47d6b278669a3ee41bc1432604ec6214462e792e5fc4e7f3472",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.452784+00:00"
+      },
+      "MC-TEST-030": {
+        "id": "MC-TEST-030",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-0741375b2310786d862d43f0",
+          "evidence-17490c8d51d5aaa3d5fc1862",
+          "evidence-9428ff389ab37c0973e946f8"
+        ],
+        "expected_evidence_ids": [
+          "evidence-17490c8d51d5aaa3d5fc1862"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.53,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "fc0a93fa9fde3d8ef8ac40d6d3c4c57f414add7a19b06a4e02516c5b4646c52e",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.555538+00:00"
+      },
+      "MC-TEST-031": {
+        "id": "MC-TEST-031",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 4,
+        "returned_evidence_ids": [
+          "evidence-1091d828c220ecd8220a3827",
+          "evidence-8f3831e5daa294c501110d14",
+          "evidence-35ddeb30c7422b8c5c7e6179",
+          "evidence-f1b4eb8fe12540acfe347187"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f1b4eb8fe12540acfe347187"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.504,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "f324aa154e3e1e6955e76bc74fa73fbdf34c07e38f0cec0256a74cd6abacd757",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.653008+00:00"
+      },
+      "MC-TEST-032": {
+        "id": "MC-TEST-032",
+        "split": "test",
+        "strategy": "exact",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-1091d828c220ecd8220a3827",
+          "evidence-8f3831e5daa294c501110d14",
+          "evidence-35ddeb30c7422b8c5c7e6179",
+          "evidence-f1b4eb8fe12540acfe347187"
+        ],
+        "expected_evidence_ids": [
+          "evidence-8f3831e5daa294c501110d14"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.138,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "b707a2ba542c898bcd7c99d1cfc7e585ea6ce0b884007507212acc96e15d7dcd",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.754436+00:00"
+      }
+    },
+    "lexical": {
+      "MC-TEST-001": {
+        "id": "MC-TEST-001",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d",
+          "evidence-85a95233abee7a92299a8238"
+        ],
+        "expected_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 91.426,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "04afb0afe6bd7af2d0d26aa2bc42a31c2eeb56b373056e54279921070394a495",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.848796+00:00"
+      },
+      "MC-TEST-002": {
+        "id": "MC-TEST-002",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-85a95233abee7a92299a8238"
+        ],
+        "expected_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.274,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "3a575e8d9a93bbe2613cc7668c39c6f78c7b87197da9f3108b81487fc0d0f3aa",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:11.949287+00:00"
+      },
+      "MC-TEST-003": {
+        "id": "MC-TEST-003",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-83202f34ce2ffbeed05ea49d",
+          "evidence-85a95233abee7a92299a8238"
+        ],
+        "expected_evidence_ids": [
+          "evidence-440a7b86140f721129cdd834"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 104.326,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "523b050988796f129b68850363d8c96f980652b5aee3d84fce057ba1e8ac0933",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.056316+00:00"
+      },
+      "MC-TEST-004": {
+        "id": "MC-TEST-004",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-83202f34ce2ffbeed05ea49d",
+          "evidence-25d6511151adc3be1b20ddf5",
+          "evidence-440a7b86140f721129cdd834",
+          "evidence-85a95233abee7a92299a8238"
+        ],
+        "expected_evidence_ids": [
+          "evidence-83202f34ce2ffbeed05ea49d"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.063,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4d170881fd6d09250787ddbaff1d8ff0e4f5c31e5dfc9f97c0a4df54fa09c155",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.154205+00:00"
+      },
+      "MC-TEST-005": {
+        "id": "MC-TEST-005",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-ed2150fce4489ab622bc2c22",
+          "evidence-4fdcd9961e1ddbf791e3c33b"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b1ddcad9115b41f721c89673"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.414,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "79a1bc03c813cc18057a67a1d935594e8672617b816c85826d91efd2d1a5797f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.254992+00:00"
+      },
+      "MC-TEST-006": {
+        "id": "MC-TEST-006",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ed2150fce4489ab622bc2c22",
+          "evidence-4fdcd9961e1ddbf791e3c33b"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ba2eb0e9aef7345b3d741099"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 100.123,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4eff3943bec2fac0ef9f0f2fb0ea0f254a469e36f43d04514607ff3faa10c709",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.358151+00:00"
+      },
+      "MC-TEST-007": {
+        "id": "MC-TEST-007",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ed2150fce4489ab622bc2c22",
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-4fdcd9961e1ddbf791e3c33b"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ed2150fce4489ab622bc2c22"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.631,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "b4662e1db25c7512031b177552fa1b2bac1cb005deb3c51a9e2f8349861dd1dc",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.457542+00:00"
+      },
+      "MC-TEST-008": {
+        "id": "MC-TEST-008",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-ba2eb0e9aef7345b3d741099",
+          "evidence-b1ddcad9115b41f721c89673",
+          "evidence-ed2150fce4489ab622bc2c22",
+          "evidence-4fdcd9961e1ddbf791e3c33b"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b1ddcad9115b41f721c89673"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.623,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "9fa60c2ceb0fbffe13a39731804a99f0af00f03ae56c86f322e453a67d4ff14a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.558000+00:00"
+      },
+      "MC-TEST-009": {
+        "id": "MC-TEST-009",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-280bf43242a7ff435a167d8e",
+          "evidence-b7b50a1946ab2c60d6233953",
+          "evidence-c72ce676056ad698ac888dfb"
+        ],
+        "expected_evidence_ids": [
+          "evidence-280bf43242a7ff435a167d8e"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.767,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ddf95d17410aae35a0cfaacb41bba7f1c953fd297192327b0491805193c53de9",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.656682+00:00"
+      },
+      "MC-TEST-010": {
+        "id": "MC-TEST-010",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-b7b50a1946ab2c60d6233953",
+          "evidence-280bf43242a7ff435a167d8e",
+          "evidence-c72ce676056ad698ac888dfb"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b7b50a1946ab2c60d6233953"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.953,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ecd9ed54efc9842a38dc9ce10aa39a23bf0444cd2b2abd47a0e8a57b0af0368f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.756455+00:00"
+      },
+      "MC-TEST-011": {
+        "id": "MC-TEST-011",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-e5f9e3b1abb5ee648cb6c03f",
+          "evidence-5f797b2b5a1212625b4ebd74",
+          "evidence-be6a33458d31dd6492f683f5"
+        ],
+        "expected_evidence_ids": [
+          "evidence-e5f9e3b1abb5ee648cb6c03f"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 93.653,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "162c8adfabd5d14e72bca74b3a8352eb456bec3439b8682eaf59c6b57cefa3e5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.854006+00:00"
+      },
+      "MC-TEST-012": {
+        "id": "MC-TEST-012",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-5f797b2b5a1212625b4ebd74",
+          "evidence-e5f9e3b1abb5ee648cb6c03f",
+          "evidence-be6a33458d31dd6492f683f5"
+        ],
+        "expected_evidence_ids": [
+          "evidence-5f797b2b5a1212625b4ebd74"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 94.935,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "232f43fcf0a04a39db214450da77875ccc6b3b4ca962e2d438eae157f76a275a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:12.951986+00:00"
+      },
+      "MC-TEST-013": {
+        "id": "MC-TEST-013",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-b73ed9c7b585a36f158c04fd",
+          "evidence-156a268279dc2ce94c2162da"
+        ],
+        "expected_evidence_ids": [
+          "evidence-65905b97ae9369654337b8d4"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.132,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "5caab0d29e4c065c892ea69b96c5e2fed6268dcbfc0a850e9deef83b34e5526e",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.050042+00:00"
+      },
+      "MC-TEST-014": {
+        "id": "MC-TEST-014",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-b73ed9c7b585a36f158c04fd",
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-156a268279dc2ce94c2162da"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 91.412,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "455add615d54ebc34438f6602fa54b50dd1c3c5669711968980979578399be39",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.145676+00:00"
+      },
+      "MC-TEST-015": {
+        "id": "MC-TEST-015",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da",
+          "evidence-65905b97ae9369654337b8d4",
+          "evidence-b73ed9c7b585a36f158c04fd"
+        ],
+        "expected_evidence_ids": [
+          "evidence-156a268279dc2ce94c2162da"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.993,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "16f772972be24988fb544e6cdd9f89cef743ee69c107ff959b2052b204a258dd",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.250837+00:00"
+      },
+      "MC-TEST-016": {
+        "id": "MC-TEST-016",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-5a933f8902f3c57f3b890055",
+          "evidence-3b4067c394d8f9b17fa2679e",
+          "evidence-45076318627d2053d4d2a833"
+        ],
+        "expected_evidence_ids": [
+          "evidence-5a933f8902f3c57f3b890055"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.378,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "a5f427c61fa33516ae9d457caf03cc9b32c58b20d569534fed743ca23ce11358",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.352660+00:00"
+      },
+      "MC-TEST-017": {
+        "id": "MC-TEST-017",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-c9ca7e93dc9f2bf5ea0d467a",
+          "evidence-9d0da6d7577952d663757478",
+          "evidence-a75d3d6c7a44dd8886c9bdf1"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c9ca7e93dc9f2bf5ea0d467a"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.416,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "143469c157d9c1918065042e6020aa4cbcfe0ded7e660d66eacc38dd4bf2c784",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.455058+00:00"
+      },
+      "MC-TEST-018": {
+        "id": "MC-TEST-018",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-a75d3d6c7a44dd8886c9bdf1",
+          "evidence-9d0da6d7577952d663757478",
+          "evidence-c9ca7e93dc9f2bf5ea0d467a"
+        ],
+        "expected_evidence_ids": [
+          "evidence-a75d3d6c7a44dd8886c9bdf1"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.249,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "0e2ed8fdd8b4db7decc58677082695d306f2bdb7076e5e76d2cde24253b8f31d",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.556209+00:00"
+      },
+      "MC-TEST-019": {
+        "id": "MC-TEST-019",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20",
+          "evidence-2e2b977387e3e1e99d231c11",
+          "evidence-3966977180f9fe5724899400"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 112.273,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "4041550ea3bd8876202184066d073290e4188022f54ea083b95aed9279b8b547",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.672520+00:00"
+      },
+      "MC-TEST-020": {
+        "id": "MC-TEST-020",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20",
+          "evidence-2e2b977387e3e1e99d231c11",
+          "evidence-3966977180f9fe5724899400"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f3d808e2a1efa2be4fd1fa20"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 113.357,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "7baaec45c594938267400f991b3de3c37dfae6718e90ca1f6ab34fea7cf63565",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.790066+00:00"
+      },
+      "MC-TEST-021": {
+        "id": "MC-TEST-021",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-955a7a7cf1fe17e1d32f9997",
+          "evidence-bfa24cafdb1d7f49f07c9705",
+          "evidence-0a1b8248a26fa859a6d69145"
+        ],
+        "expected_evidence_ids": [
+          "evidence-955a7a7cf1fe17e1d32f9997"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 98.287,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "5d50bb1ec54a7f7eb7edc3323fd38c239f1f4c0131913ba3adf000ff089de9c5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.893028+00:00"
+      },
+      "MC-TEST-022": {
+        "id": "MC-TEST-022",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 3,
+        "returned_evidence_ids": [
+          "evidence-bfa24cafdb1d7f49f07c9705",
+          "evidence-0a1b8248a26fa859a6d69145",
+          "evidence-955a7a7cf1fe17e1d32f9997"
+        ],
+        "expected_evidence_ids": [
+          "evidence-955a7a7cf1fe17e1d32f9997"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.998,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "0261d30daf00a47d7a2cb9d704afc13d561520a8b3994f4b20d442faf0f3128f",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:13.993702+00:00"
+      },
+      "MC-TEST-023": {
+        "id": "MC-TEST-023",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-e893d0e250961336c65ac1c1",
+          "evidence-14fc6d29b7ef206907a2c5fe",
+          "evidence-36d55c3729c52e2ffed769b9"
+        ],
+        "expected_evidence_ids": [
+          "evidence-e893d0e250961336c65ac1c1"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 89.514,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "f2ebfb05eddb3a19fa752d83706f4462af65298b8ae3f3cd9e5ecd6adde2fa32",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.088233+00:00"
+      },
+      "MC-TEST-024": {
+        "id": "MC-TEST-024",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-4dede598709d060030a92094",
+          "evidence-b2cdc3c9f27addd88b28b70e",
+          "evidence-ed12d50fd62b10ea5ab408a2"
+        ],
+        "expected_evidence_ids": [
+          "evidence-b2cdc3c9f27addd88b28b70e"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 95.826,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "335b6468a4aa64cc7bf2211420b3390074b5340f56c9afe431bef107bb6fb7c5",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.188354+00:00"
+      },
+      "MC-TEST-025": {
+        "id": "MC-TEST-025",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ed12d50fd62b10ea5ab408a2",
+          "evidence-b2cdc3c9f27addd88b28b70e",
+          "evidence-4dede598709d060030a92094"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ed12d50fd62b10ea5ab408a2"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.208,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "74efa6960a03e1454e60f50c8b5cb7273281d769fd2826e5ea3dd987cdf7b0ef",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.292292+00:00"
+      },
+      "MC-TEST-026": {
+        "id": "MC-TEST-026",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060",
+          "evidence-b7a57d5ca02dd10934f9acd1",
+          "evidence-436c282a9ae114f2d52fa934"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.993,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "e219c17ce0657b3e13385c32d72fbd188b7312a3f60e7e993d86b32cc9405b63",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.393703+00:00"
+      },
+      "MC-TEST-027": {
+        "id": "MC-TEST-027",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060",
+          "evidence-b7a57d5ca02dd10934f9acd1",
+          "evidence-436c282a9ae114f2d52fa934"
+        ],
+        "expected_evidence_ids": [
+          "evidence-c98c48ebbfca299896b73060"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.238,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "8b4f9a5056237c1e8e4d2a8ab91d25288d556d6eb383d01744560c3e30dea36a",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.498228+00:00"
+      },
+      "MC-TEST-028": {
+        "id": "MC-TEST-028",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-a393d2e95469c9a1ae2300e0",
+          "evidence-95feb1e7151d48eeb52c3cb6",
+          "evidence-ca5c60a9adc06e6b6668746c"
+        ],
+        "expected_evidence_ids": [
+          "evidence-95feb1e7151d48eeb52c3cb6"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.785,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "fe20f684986732fa8e838c13c7263ae338d3cefc56eb73ab607b16c75856f2b7",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.598331+00:00"
+      },
+      "MC-TEST-029": {
+        "id": "MC-TEST-029",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-ca5c60a9adc06e6b6668746c",
+          "evidence-a393d2e95469c9a1ae2300e0",
+          "evidence-95feb1e7151d48eeb52c3cb6"
+        ],
+        "expected_evidence_ids": [
+          "evidence-ca5c60a9adc06e6b6668746c"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 99.178,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "ffeb1b4e6d3cb47d6b278669a3ee41bc1432604ec6214462e792e5fc4e7f3472",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.703231+00:00"
+      },
+      "MC-TEST-030": {
+        "id": "MC-TEST-030",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "semantic_paraphrase",
+        "candidate_chunk_count": 3,
+        "status": "matched",
+        "first_relevant_rank": 2,
+        "returned_evidence_ids": [
+          "evidence-0741375b2310786d862d43f0",
+          "evidence-17490c8d51d5aaa3d5fc1862",
+          "evidence-9428ff389ab37c0973e946f8"
+        ],
+        "expected_evidence_ids": [
+          "evidence-17490c8d51d5aaa3d5fc1862"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.188,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "fc0a93fa9fde3d8ef8ac40d6d3c4c57f414add7a19b06a4e02516c5b4646c52e",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.803065+00:00"
+      },
+      "MC-TEST-031": {
+        "id": "MC-TEST-031",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-f1b4eb8fe12540acfe347187",
+          "evidence-1091d828c220ecd8220a3827",
+          "evidence-35ddeb30c7422b8c5c7e6179",
+          "evidence-8f3831e5daa294c501110d14"
+        ],
+        "expected_evidence_ids": [
+          "evidence-f1b4eb8fe12540acfe347187"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 96.332,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "f324aa154e3e1e6955e76bc74fa73fbdf34c07e38f0cec0256a74cd6abacd757",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:14.903652+00:00"
+      },
+      "MC-TEST-032": {
+        "id": "MC-TEST-032",
+        "split": "test",
+        "strategy": "lexical",
+        "clue_kind": "literal_clue",
+        "candidate_chunk_count": 4,
+        "status": "matched",
+        "first_relevant_rank": 1,
+        "returned_evidence_ids": [
+          "evidence-8f3831e5daa294c501110d14",
+          "evidence-1091d828c220ecd8220a3827",
+          "evidence-35ddeb30c7422b8c5c7e6179",
+          "evidence-f1b4eb8fe12540acfe347187"
+        ],
+        "expected_evidence_ids": [
+          "evidence-8f3831e5daa294c501110d14"
+        ],
+        "critical_confusion": false,
+        "latency_ms": 97.459,
+        "error": null,
+        "embedding_calls": 0,
+        "query_embedding_cached": false,
+        "embedding_model": null,
+        "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+        "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+        "dataset_sha256": "2614f544fb6ea40c69f9229528d366407c87df9b4a210de86bc6d21db85f7829",
+        "case_sha256": "b707a2ba542c898bcd7c99d1cfc7e585ea6ce0b884007507212acc96e15d7dcd",
+        "parameters": {
+          "top_k": 5,
+          "vector_k_min": 10,
+          "vector_k_multiplier": 3,
+          "rrf_k": 60,
+          "cache_query_embeddings": false,
+          "bootstrap_resamples": 2000,
+          "bootstrap_seed": 42
+        },
+        "recorded_at_utc": "2026-11-18T18:00:15.005099+00:00"
+      }
+    }
+  }
+}

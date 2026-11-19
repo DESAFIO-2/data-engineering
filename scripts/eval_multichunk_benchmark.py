@@ -160,6 +160,14 @@ def _is_quota_or_auth_error(exc: Exception) -> bool:
 
 
 def _pres_key(ev: dict[str, Any]) -> tuple[str, str, str, str]:
+    norm = ev.get("normalized") or {}
+    if norm:
+        return (
+            ingredient_key(str(norm.get("active_ingredient") or ev["active_ingredient"])),
+            normalize(str(norm.get("strength") or ev["strength"])),
+            normalize(str(norm.get("form") or norm.get("package") or ev["form"])),
+            normalize(str(norm.get("release") or ev.get("release_characteristic") or "")),
+        )
     return (
         ingredient_key(ev["active_ingredient"]),
         normalize(ev["strength"]),

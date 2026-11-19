@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 from datetime import UTC, datetime
@@ -10,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from rag.config import ROOT
-from rag.consolidated import ConsolidatedRelease, load_chunks, search
+from rag.consolidated import ConsolidatedRelease, load_chunks, normalize, search
 from rag.normalization import fold
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -53,6 +54,17 @@ def _assert_channel_dev_has_no_test_leakage(channel_path: Path) -> None:
             raise ValueError(f"Vazamento de família de teste em {row['id']}: {row['family_id']}")
 
 
+def _explicit_source_filter(question: str) -> str | None:
+    query = normalize(question)
+    if re.search(r"\b(?:reme|reme-df|f03)\b", query):
+        return "F03"
+    if "farmacia popular" in query or re.search(r"\bf04\b", query):
+        return "F04"
+    if re.search(r"\b(?:rename|f01)\b", query):
+        return "F01"
+    return None
+
+
 def _run_dev_subset(
     cases: list[dict[str, Any]],
     release: ConsolidatedRelease,
@@ -72,12 +84,13 @@ def _run_dev_subset(
         expected_mids = {ref["medicine_id"] for ref in case.get("expected_references", [])}
         returned_mids = {e.get("medicine_id") for e in found}
         presentation_correct = (not expected_mids) or returned_mids == expected_mids
+        requested_source = _explicit_source_filter(case["question"])
         critical = result["status"] == "matched" and (
             case["expected_status"] != "matched"
             or (bool(expected_mids) and not presentation_correct)
             or (
-                case.get("source_id") is not None
-                and any(item["source"]["source_id"] != case["source_id"] for item in found)
+                requested_source is not None
+                and any(item["source"]["source_id"] != requested_source for item in found)
             )
         )
         citations_ok = [

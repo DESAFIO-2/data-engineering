@@ -243,12 +243,18 @@ def validated_products(release: ConsolidatedRelease) -> dict[str, tuple[str, str
     """Load audited external links, tied to this exact approved release fingerprint."""
     import json
 
-    path = ROOT / "data/mappings/ubs_consolidated.json"
-    if not path.exists():
+    by_fingerprint = ROOT / "data/mappings/ubs" / f"{release.fingerprint}.json"
+    legacy = ROOT / "data/mappings/ubs_consolidated.json"
+    if by_fingerprint.is_file():
+        payload = json.loads(by_fingerprint.read_text(encoding="utf-8"))
+        if payload.get("release_fingerprint") != release.fingerprint:
+            raise ValueError("Vínculos UBS pertencem a outro release; valide novamente")
+    elif legacy.is_file():
+        payload = json.loads(legacy.read_text(encoding="utf-8"))
+        if payload.get("release_fingerprint") != release.fingerprint:
+            return {}
+    else:
         return {}
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    if payload.get("release_fingerprint") != release.fingerprint:
-        raise ValueError("Vínculos UBS pertencem a outro release; valide novamente")
     catalog = {m["medicine_id"]: m for m in release.catalog}
     result = {}
     for link in payload["links"]:

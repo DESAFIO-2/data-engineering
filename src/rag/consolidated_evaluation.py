@@ -12,7 +12,7 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
-from .consolidated import ConsolidatedRelease, name_matches, normalize, search
+from .consolidated import ConsolidatedRelease, item_name_matches, normalize, search
 
 V7 = "corpus-consolidado-v7-aprovado-2026-11-11"
 
@@ -63,8 +63,7 @@ def _trace_candidates(question: str, release: ConsolidatedRelease) -> list[str]:
     return sorted(
         item["medicine_id"]
         for item in release.catalog
-        if name_matches(query, item["active_ingredient"])
-        and (source is None or source in item["source_ids"])
+        if item_name_matches(query, item) and (source is None or source in item["source_ids"])
     )
 
 
@@ -75,12 +74,13 @@ def _preflight(
     review_path: Path | None,
     prior_review_path: Path | None = None,
 ) -> None:
-    v9_test = release.manifest["release_version"].startswith("corpus-consolidado-v9-") and (
-        split == "test"
-    )
-    expected_count = 120 if v9_test else 119
+    version = release.manifest["release_version"]
+    v9_or_later_test = version.startswith(
+        ("corpus-consolidado-v9-", "corpus-consolidado-v10-")
+    ) and (split == "test")
+    expected_count = 120 if v9_or_later_test else 119
     if len(cases) != expected_count or len({case["id"] for case in cases}) != len(cases):
-        prefix = "Teste fechado: " if v9_test else ""
+        prefix = "Teste fechado: " if v9_or_later_test else ""
         raise ValueError(f"{prefix}o conjunto consolidado exige {expected_count} IDs únicos")
     families = {
         part: {case["family_id"] for case in cases if case["split"] == part}
@@ -129,7 +129,7 @@ def _preflight(
         review_hash = sha256(review_path.read_bytes()).hexdigest()
         reviewed_cases = (
             [case for case in cases if case["split"] == "test"]
-            if release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            if version.startswith(("corpus-consolidado-v9-", "corpus-consolidado-v10-"))
             else cases
         )
         if any(

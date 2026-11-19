@@ -508,9 +508,10 @@ def normalize(value: str) -> str:
 
 
 def strength_core(value: str) -> str:
-    """Separate a documented device/package suffix, never chemical equivalence."""
+    """Separate a documented device/package/delivery-rate suffix, never chemical equivalence."""
     return re.sub(
-        r"\s*\((?:sistema de aplicacao|apresentacoes? de|frasco|ampola|caneta)\b[^)]*\)$",
+        r"\s*\((?:sistema de aplicacao|apresentacoes? de|frasco|"
+        r"ampola|caneta|liberacao de)\b[^)]*\)$",
         "",
         normalize(value),
     )
@@ -582,8 +583,10 @@ def _presentation_form_matches(query: str, item: dict[str, Any]) -> bool:
     package = item.get("package")
     specification = item.get("specification")
     if form not in (None, "", "-"):
-        matched = _form_matches(query, str(form)) or any(
-            _form_matches(query, lit) for lit in item.get("literal_forms") or ()
+        matched = (
+            _form_matches(query, str(form))
+            or any(_form_matches(query, lit) for lit in item.get("literal_forms") or ())
+            or any(_form_matches(query, alt) for alt in item.get("form_alternatives") or ())
         )
         if not matched:
             return False
@@ -945,6 +948,27 @@ def _vector_ranks(
     return ranks
 
 
+def _matching_supplies(
+    query: str,
+    release: ConsolidatedRelease,
+    source_filter: str | None,
+) -> list[dict[str, Any]]:
+    supplies = [
+        o
+        for o in release.occurrences
+        if o["item_type"] == "supply"
+        and normalize(o["active_ingredient"]) in query
+        and (o["strength"] == "-" or normalize(o["strength"]) in query)
+    ]
+    if source_filter:
+        supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+    if len(supplies) > 1:
+        narrowed = [o for o in supplies if _presentation_form_matches(query, o)]
+        if narrowed:
+            supplies = narrowed
+    return supplies
+
+
 def search(
     question: str,
     release: ConsolidatedRelease,
@@ -978,15 +1002,7 @@ def search(
     elif re.search(r"\brename\b", query) or re.search(r"\bf01\b", query):
         source_filter = "F01"
     if "insumo" in query:
-        supplies = [
-            o
-            for o in release.occurrences
-            if o["item_type"] == "supply"
-            and normalize(o["active_ingredient"]) in query
-            and (o["strength"] == "-" or normalize(o["strength"]) in query)
-        ]
-        if source_filter:
-            supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+        supplies = _matching_supplies(query, release, source_filter)
         if len(supplies) != 1:
             return {
                 "status": "ambiguous" if supplies else "not_in_scope",
@@ -1030,7 +1046,7 @@ def search(
             )
         ]
         if not strengths:
-            if not re.search(r"\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ui|ml)\b", query):
+            if not re.search(r"\d+(?:[.,]\d+)?\s*(?:(?:mg|mcg|g|ui|meq|ml|u|l)\b|%)", query):
                 options = sorted(
                     names,
                     key=lambda m: (
@@ -1087,7 +1103,11 @@ def search(
             normalize(lbl) in query
             for m in release.catalog
             if not is_form_absent(m)
-            for lbl in (item_form_label(m), *(m.get("literal_forms") or ()))
+            for lbl in (
+                item_form_label(m),
+                *(m.get("literal_forms") or ()),
+                *(m.get("form_alternatives") or ()),
+            )
         )
         if not matches and (missing_volume or not known_form_mentioned):
             return {
@@ -1159,15 +1179,7 @@ def search(
     else:
         matches = []
     if not matches:
-        supplies = [
-            o
-            for o in release.occurrences
-            if o["item_type"] == "supply"
-            and normalize(o["active_ingredient"]) in query
-            and (o["strength"] == "-" or normalize(o["strength"]) in query)
-        ]
-        if source_filter:
-            supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+        supplies = _matching_supplies(query, release, source_filter)
         if len(supplies) == 1:
             item = supplies[0]
             ev = next(e for e in release.evidence if e["occurrence_id"] == item["occurrence_id"])

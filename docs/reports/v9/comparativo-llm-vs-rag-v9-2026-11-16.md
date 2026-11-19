@@ -8,7 +8,7 @@
 - Planilha para revisão factual humana (`44` linhas com `response_sha256`): [`week3_v9_response_test_v3_review.csv`](../../../evals/reviews/week3_v9_response_test_v3_review.csv)
 - Consolidação automática (`BLEU`, `ROUGE`, guardrails, histórico e multi-chunk): [`comparativo_llm_vs_rag_v3.json`](../../../evals/results/comparativo_llm_vs_rag_v3.json)
 
-> **Atualização em 17/11/2026.** A revisão técnica das 44 respostas v3 foi concluída. As métricas automáticas de `citation_precision` abaixo verificam a recuperação de evidências e não a sustentação de cada afirmação exibida. Na revisão humana, `citation_support` foi 7/8 em `lexical_documental`, 7/8 em `lexical_llm` e 6/8 em `best_llm`. O `llm_only` apresentou 1 erro crítico em 11 consultas, no caso CAND-10. Consulte [a revisão consolidada](../../../evals/results/week3_v9_response_test_v3_human_review.json).
+> **Atualização em 18/11/2026.** A revisão factual das 44 respostas v3 foi validada por **Jhiovana** (`reviewer = "Jhiovana"` em `week3_v9_response_test_v3_review.csv`) e reconsolidada em [`week3_v9_response_test_v3_human_review.json`](../../../evals/results/week3_v9_response_test_v3_human_review.json). As métricas automáticas de `citation_precision` abaixo verificam a recuperação de evidências e não a sustentação de cada afirmação exibida. Na revisão, `citation_support` foi 7/8 em `lexical_documental`, 7/8 em `lexical_llm` e 6/8 em `best_llm`, e o `llm_only` apresentou 1 erro crítico em 11 consultas (`CAND-10`).
 
 > **Verificação da implementação atual.** A CLI documental lexical foi executada novamente no v9 em 17/11/2026 sobre os mesmos 11 IDs. O verificador conferiu presença exata dos IDs impressos e versão/página de cada referência em 8/8 casos com citações, a recusa clínica em CAND-11 e a estabilidade do retorno v9 → v8 → v9 em 11/11 saídas. É uma verificação automática da saída atual, não uma reavaliação humana das 44 respostas v3. Consulte [a execução atual](../../../evals/results/week3_documental_cli_atual_2026-11-17.json).
 
@@ -45,7 +45,7 @@ Computadas via `rag.metrics.text_metrics()` em [`summarize_llm_vs_rag.py`](../..
 | `lexical_llm` | `212,4` | `3,85` / `0,2530` / `0,1377` / `0,2176` | `8,44` / `0,3787` / `0,1733` / `0,3107` |
 | `best_llm` (`exact`) | `228,5` | `3,90` / `0,2674` / `0,1576` / `0,2372` | `8,97` / `0,3895` / `0,1894` / `0,3185` |
 
-> **Observação metodológica:** `BLEU` e `ROUGE` caem em `lexical_llm` e `best_llm` porque a síntese com LLM reescreve o registro tabular em frase natural e inclui avisos explícitos (*"constar em lista não garante estoque"*). Essas métricas não substituem a revisão factual humana no CSV exportado. Além disso, a revisão humana das 44 respostas foi consolidada em 17/11/2026. O campo `human_review: "pending"` permanece no artefato bruto histórico. A reavaliação RAGAS não foi executada.
+> **Observação metodológica:** `BLEU` e `ROUGE` caem em `lexical_llm` e `best_llm` porque a síntese com LLM reescreve o registro tabular em frase natural e inclui avisos explícitos (*"constar em lista não garante estoque"*). Essas métricas não substituem a revisão factual humana no CSV exportado. A revisão humana das 44 respostas foi validada por Jhiovana e reconsolidada em 18/11/2026 (`human_review: "pending"` permanece apenas no artefato bruto histórico). A reavaliação RAGAS não foi executada.
 
 ---
 

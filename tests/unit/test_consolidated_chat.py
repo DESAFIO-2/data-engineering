@@ -223,6 +223,13 @@ def test_invalid_link_fingerprint_is_rejected(
     directory.mkdir(parents=True)
     (directory / "ubs_consolidated.json").write_text(json.dumps({"release_fingerprint": "wrong"}))
     monkeypatch.setattr(chat, "ROOT", tmp_path)
+    assert chat.validated_products(corpus[0]) == {}
+
+    ubs_dir = directory / "ubs"
+    ubs_dir.mkdir(parents=True)
+    (ubs_dir / f"{corpus[0].fingerprint}.json").write_text(
+        json.dumps({"release_fingerprint": "wrong"})
+    )
     with pytest.raises(ValueError, match="outro release"):
         chat.validated_products(corpus[0])
 

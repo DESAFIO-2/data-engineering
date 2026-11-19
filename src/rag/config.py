@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 DEFAULT_CHAT_MODEL = "gemini-3.5-flash"
 DEFAULT_EMBEDDING_MODEL = "models/gemini-embedding-2"
-DEFAULT_RELEASE_DIR = "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
+DEFAULT_RELEASE_DIR = "data/releases/corpus-consolidado-v10-aprovado-2026-11-17"
 DEFAULT_VECTOR_DIR = "data/vectorstore/chroma"
 DEFAULT_TOP_K = 5
 

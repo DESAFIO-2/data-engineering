@@ -648,7 +648,7 @@ def test_config_defaults_env_example_and_week3_evals_stay_coherent(
     assert (
         defaults.rag_release_dir.as_posix()
         == env_map["APP_RAG_RELEASE_DIR"]
-        == "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
+        == "data/releases/corpus-consolidado-v10-aprovado-2026-11-17"
     )
     manifest = json.loads(
         (ROOT / defaults.rag_release_dir / "release.json").read_text(encoding="utf-8")
