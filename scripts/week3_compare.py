@@ -137,7 +137,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     store = None
     if needs_vector:
-        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
+        from rag.providers import CachedQueryEmbeddings
+
+        embeddings = CachedQueryEmbeddings(
+            google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
+        )
         store = open_index(
             release,
             chunks,

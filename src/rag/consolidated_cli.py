@@ -107,18 +107,19 @@ def run(args: Any, settings: Settings) -> int:
             )
             store = None
             if args.strategy in {"vector", "hybrid"}:
-                from .providers import google_embeddings
+                from .providers import CachedQueryEmbeddings, google_embeddings
 
                 embeddings = google_embeddings(
                     settings.rag_embedding_model, settings.google_api_keys
                 )
+
                 store = open_index(
                     release,
                     chunks,
                     manifest,
                     ROOT / settings.rag_vector_dir,
                     settings.rag_embedding_model,
-                    embeddings,
+                    CachedQueryEmbeddings(embeddings),
                 )
             result = evaluate(
                 dataset=Path(args.dataset),

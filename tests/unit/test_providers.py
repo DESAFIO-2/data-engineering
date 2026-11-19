@@ -8,6 +8,7 @@ import pytest
 
 from rag import config as config_mod
 from rag.providers import (
+    CachedQueryEmbeddings,
     error_detail,
     google_chat,
     google_embeddings,
@@ -15,6 +16,25 @@ from rag.providers import (
     is_key_failover_error,
     normalize_api_keys,
 )
+
+
+def test_cached_query_embeddings_reuses_vector_for_same_question() -> None:
+    calls: list[str] = []
+
+    class Inner:
+        def embed_query(self, text: str) -> list[float]:
+            calls.append(text)
+            return [float(len(text))]
+
+        def embed_documents(self, texts: list[str]) -> list[list[float]]:
+            return [[float(len(text))] for text in texts]
+
+    cached = CachedQueryEmbeddings(Inner())
+    assert cached.embed_query("teste") == [5.0]
+    assert cached.embed_query("teste") == [5.0]
+    assert cached.embed_query("outro") == [5.0]
+    assert calls == ["teste", "outro"]
+    assert cached.embed_documents(["abc"]) == [[3.0]]
 
 
 def test_google_chat_omits_temperature_for_fixed_sampling_models(

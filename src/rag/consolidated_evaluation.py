@@ -67,6 +67,17 @@ def _trace_candidates(question: str, release: ConsolidatedRelease) -> list[str]:
     )
 
 
+def _review_hash(path: Path, expected: set[str]) -> str:
+    """Preserve review hashes when Git checks out text with LF instead of CRLF."""
+    raw = path.read_bytes()
+    digest = sha256(raw).hexdigest()
+    if digest in expected or path.suffix.lower() not in {".md", ".csv", ".txt"}:
+        return digest
+    crlf = raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    alternate = sha256(crlf).hexdigest()
+    return alternate if alternate in expected else digest
+
+
 def _preflight(
     cases: list[dict[str, Any]],
     release: ConsolidatedRelease,
@@ -126,11 +137,13 @@ def _preflight(
     if split == "test":
         if review_path is None or not review_path.exists():
             raise ValueError("Teste fechado: revisão humana da planilha não encontrada")
-        review_hash = sha256(review_path.read_bytes()).hexdigest()
         reviewed_cases = (
             [case for case in cases if case["split"] == "test"]
             if version.startswith(("corpus-consolidado-v9-", "corpus-consolidado-v10-"))
             else cases
+        )
+        review_hash = _review_hash(
+            review_path, {case.get("review_reference_sha256", "") for case in reviewed_cases}
         )
         if any(
             case.get("review_status") != "reviewed"
@@ -289,7 +302,10 @@ def evaluate(
         "content_fingerprint": release.manifest.get("corpus_fingerprint"),
         "chunks_sha256": chunk_manifest["files"]["chunks.jsonl"]["sha256"],
         "dataset_sha256": sha256(dataset.read_bytes()).hexdigest(),
-        "review_sha256": sha256(review_path.read_bytes()).hexdigest()
+        "review_sha256": _review_hash(
+            review_path,
+            {case.get("review_reference_sha256", "") for case in cases if case["split"] == "test"},
+        )
         if split == "test" and review_path
         else None,
         "git": _git_revision(release.folder.parents[2]),

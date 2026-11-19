@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 import time
 from collections.abc import Callable, Sequence
-from typing import Any
+from typing import Any, cast
 
 from pydantic import SecretStr
 
@@ -189,6 +189,22 @@ class _FallbackEmbeddings:
 
     def embed_query(self, text: str) -> list[float]:
         return self._pool.execute(lambda client: client.embed_query(text))
+
+
+class CachedQueryEmbeddings:
+    """Reuse query vectors during a single evaluation run."""
+
+    def __init__(self, inner: Any) -> None:
+        self.inner = inner
+        self.queries: dict[str, list[float]] = {}
+
+    def embed_query(self, text: str) -> list[float]:
+        if text not in self.queries:
+            self.queries[text] = self.inner.embed_query(text)
+        return self.queries[text]
+
+    def embed_documents(self, texts: list[str]) -> list[list[float]]:
+        return cast("list[list[float]]", self.inner.embed_documents(texts))
 
 
 class _FallbackChatModel:
