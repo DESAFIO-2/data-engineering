@@ -6,10 +6,11 @@ from datetime import UTC
 from pathlib import Path
 from typing import Any
 
+from .base import SilverStore
 from .silver_models import EstoqueSnapshotSchema, validate_with_drift
 
 
-class FileSilverStorage:
+class FileSilverStorage(SilverStore):
     def __init__(self, root: Path | None = None) -> None:
         self.database = root / "estoque.sqlite3" if root else None
         if root and self.database:
@@ -58,6 +59,11 @@ class FileSilverStorage:
         else:
             self.snapshots.append(snapshot)
         return snapshot
+
+    def write_records(self, records: list[dict[str, Any]]) -> int:
+        for record in records:
+            self.save(record)
+        return len(records)
 
     def latest(self, medicamento: str, farmacia: str) -> EstoqueSnapshotSchema | None:
         if self.database:

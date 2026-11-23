@@ -255,7 +255,7 @@ def test_env_example_allows_empty_fallback_keys_and_rejects_filled_fallback() ->
     from pathlib import Path
 
     from rag.config import ROOT
-    from scripts.package_delivery import inspect_content
+    from scripts.eval.package_delivery import inspect_content
 
     env_example = ROOT / ".env.example"
     inspect_content(Path(".env.example"), env_example.read_bytes())

@@ -5,7 +5,6 @@ from __future__ import annotations
 import hashlib
 import io
 import json
-import sys
 import time
 from pathlib import Path
 from types import SimpleNamespace
@@ -22,9 +21,7 @@ from rag.consolidated import (
     index_location,
     load_chunks,
 )
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from eval_multichunk_benchmark import (  # noqa: E402
+from scripts.eval.eval_multichunk_benchmark import (
     bootstrap_ci,
     build_final_report,
     default_checkpoint_path,
@@ -900,7 +897,7 @@ def test_colliding_ids_dedup_and_optional_query_cache(tmp_path: Path) -> None:
 def test_cli_verify_index_and_batched_execution(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    import eval_multichunk_benchmark as mod
+    from scripts.eval import eval_multichunk_benchmark as mod
 
     env = _build_synthetic_benchmark_env(tmp_path / "cli")
     capsys.readouterr()

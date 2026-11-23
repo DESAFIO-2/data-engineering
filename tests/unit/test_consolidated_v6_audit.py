@@ -10,6 +10,8 @@ import pytest
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 
+pytestmark = pytest.mark.dvc
+
 V6_DIR = ROOT / "data/releases/corpus-consolidado-v6-auditado-2026-11-11"
 V6_CHUNK_DIR = ROOT / "data/derived/chunks/corpus-consolidado-v6-auditado-2026-11-11"
 

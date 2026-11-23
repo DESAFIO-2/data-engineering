@@ -1,0 +1,6 @@
+outs:
+- md5: 31ed6549496b10ade874ed2d1fd81bbf.dir
+  size: 7158930
+  nfiles: 8
+  hash: md5
+  path: corpus-consolidado-v8-calcio-corrigido-2026-11-11

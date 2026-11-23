@@ -1,0 +1,6 @@
+outs:
+- md5: 5205dc0ee805fb3e1123243be7a05c83.dir
+  size: 7146647
+  nfiles: 9
+  hash: md5
+  path: corpus-consolidado-v6-auditado-2026-11-11

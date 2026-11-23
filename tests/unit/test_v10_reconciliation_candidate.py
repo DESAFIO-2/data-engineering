@@ -3,23 +3,18 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 from typing import Any
 
 import pytest
 
-from rag.config import ROOT
 from rag.consolidated import (
     CHUNK_RECIPE_V2,
     chunk_for,
     ingredient_key,
     normalize,
 )
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from publish_consolidated_release import read_lines, verify  # noqa: E402
-from publish_v10_candidate import (  # noqa: E402
+from scripts.archive.releases.v10.publish_v10_candidate import (
     DESTINATION,
     SOURCE,
     SOURCE_MANIFEST_SHA256,
@@ -27,6 +22,7 @@ from publish_v10_candidate import (  # noqa: E402
     canonical_key,
     reconcile_catalog,
 )
+from scripts.ingest.publish_consolidated_release import read_lines, verify
 
 
 def test_normalize_handles_grams_percent_without_breaking_words() -> None:

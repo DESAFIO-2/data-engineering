@@ -1,0 +1,5 @@
+outs:
+- md5: b0537f4e17140bef218a9116b0a07ac9
+  size: 6617755
+  hash: md5
+  path: revisao-corpus-v2-fixes.json

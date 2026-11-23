@@ -40,32 +40,11 @@ include = ["ingestion*", "storage*", "rag*"]
 line-length = 100
 target-version = "py312"
 extend-exclude = [
-    "scripts/apply_all_table_updates.py",
-    "scripts/approve_consolidated_release.py",
-    "scripts/audit_and_publish_v6.py",
-    "scripts/build_curated_f03_final.py",
-    "scripts/build_curated_t3_all.py",
-    "scripts/build_f03_data.py",
-    "scripts/build_refined_154.py",
-    "scripts/clean_final_st.py",
-    "scripts/compare_occurrences.py",
-    "scripts/consolidate_corpus.py",
-    "scripts/curate_f03_154.py",
-    "scripts/dump_154_blocks.py",
-    "scripts/extract_all_groups.py",
-    "scripts/extract_and_validate_f03_f04.py",
-    "scripts/extract_f03_clean_desc.py",
-    "scripts/extract_final_clean.py",
-    "scripts/generate_editable_md.py",
-    "scripts/inspect_t3.py",
-    "scripts/prepare_v9_next_test_candidate.py",
-    "scripts/prepare_v9_test_candidate.py",
-    "scripts/promote_v9_next_test.py",
-    "scripts/promote_v9_test.py",
-    "scripts/publish_consolidated_release.py",
-    "scripts/refine_descs.py",
-    "scripts/update_markdown_table2.py",
-    "scripts/validate_consolidated_corpus.py",
+    "scripts/archive/**",
+    "scripts/ingest/approve_consolidated_release.py",
+    "scripts/ingest/consolidate_corpus.py",
+    "scripts/ingest/publish_consolidated_release.py",
+    "scripts/ingest/validate_consolidated_corpus.py",
 ]
 
 [tool.ruff.lint]
@@ -73,24 +52,12 @@ select = ["E", "F", "I", "B", "UP"]
 
 [tool.mypy]
 python_version = "3.12"
-mypy_path = ["src", "scripts"]
+mypy_path = ["src", "."]
 strict = true
 
 [[tool.mypy.overrides]]
 module = [
     "scripts.*",
-    "approve_v9_release",
-    "prepare_v8_retrieval_eval",
-    "prepare_v9_next_test_candidate",
-    "prepare_v9_retrieval_dev",
-    "prepare_v9_test_candidate",
-    "promote_v9_next_test",
-    "promote_v9_test",
-    "publish_consolidated_release",
-    "publish_v8_calcium_correction",
-    "publish_v9_clarithromycin",
-    "validate_v7_retrieval_review",
-    "validate_v8_calcium_review",
 ]
 ignore_errors = true
 

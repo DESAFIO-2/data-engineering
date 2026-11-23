@@ -3,19 +3,16 @@
 from __future__ import annotations
 
 import json
-import sys
 from collections import Counter
 
 import pytest
 
 from rag.config import ROOT
 from rag.consolidated import normalize
+from scripts.archive.releases.v9.prepare_v9_next_test_candidate import prepare
+from scripts.archive.releases.v9.promote_v9_next_test import promote
 
 pytestmark = pytest.mark.dvc
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from prepare_v9_next_test_candidate import prepare  # noqa: E402
-from promote_v9_next_test import promote  # noqa: E402
 
 
 def test_candidate_has_traceable_evidence_and_declared_f04_reuse() -> None:

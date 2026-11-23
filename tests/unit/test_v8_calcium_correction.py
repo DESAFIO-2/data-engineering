@@ -3,20 +3,14 @@
 from __future__ import annotations
 
 import json
-import sys
 
 import pytest
 
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.consolidated_evaluation import _preflight
-
-pytestmark = pytest.mark.dvc
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from prepare_v8_retrieval_eval import prepare  # noqa: E402
-from publish_consolidated_release import verify  # noqa: E402
-from publish_v8_calcium_correction import (  # noqa: E402
+from scripts.archive.releases.v8.prepare_v8_retrieval_eval import prepare
+from scripts.archive.releases.v8.publish_v8_calcium_correction import (
     DESTINATION,
     MEDICINE_ID,
     NEW,
@@ -25,7 +19,10 @@ from publish_v8_calcium_correction import (  # noqa: E402
     SOURCE_MANIFEST_SHA256,
     build,
 )
-from validate_v8_calcium_review import validate  # noqa: E402
+from scripts.archive.releases.v8.validate_v8_calcium_review import validate
+from scripts.ingest.publish_consolidated_release import verify
+
+pytestmark = pytest.mark.dvc
 
 
 def test_v8_release_corrects_one_source_record_and_remains_pending() -> None:

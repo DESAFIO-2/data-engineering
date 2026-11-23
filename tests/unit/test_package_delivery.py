@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scripts.package_delivery import safe_files
+from scripts.eval.package_delivery import safe_files
 
 
 def test_delivery_includes_guide_but_excludes_paused_corpus_archive(tmp_path: Path) -> None:

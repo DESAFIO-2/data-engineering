@@ -1,38 +1,15 @@
-"""Avalia busca exata e Hit@k vetorial com gabarito fora do índice."""
+"""Shim de compatibilidade retroativa para ``rag.legacy.evaluate``."""
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-from typing import Any
+import sys
+from typing import TYPE_CHECKING
 
-from .release import Release
-from .retrieval import retrieve
+if TYPE_CHECKING:
+    from rag.legacy.evaluate import (
+        evaluate_retrieval as evaluate_retrieval,
+    )
+else:
+    from rag.legacy import evaluate as _target
 
-
-def evaluate_retrieval(
-    dataset: Path, release: Release, store: Any, top_k: int = 5
-) -> dict[str, Any]:
-    cases = [json.loads(line) for line in dataset.read_text(encoding="utf-8").splitlines() if line]
-    exact_hits = vector_hits = 0
-    errors = []
-    for case in cases:
-        result = retrieve(case["question"], release, store, top_k)
-        matched = (
-            result["status"] == "matched"
-            and result["medicine"]["medicine_id"] == case["medicine_id"]
-        )
-        exact_hits += int(matched)
-        vector_hit = matched and case["evidence_id"] in result["semantic_ids"][:top_k]
-        vector_hits += int(vector_hit)
-        if not matched or not vector_hit:
-            errors.append(
-                f"{case['id']}: match={result['status']}, "
-                f"evidências vetoriais={result.get('semantic_ids', [])[:top_k]}"
-            )
-    return {
-        "total": len(cases),
-        "exact_hits": exact_hits,
-        "vector_hits": vector_hits,
-        "errors": errors,
-    }
+    sys.modules[__name__] = _target

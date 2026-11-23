@@ -3,13 +3,9 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
-from rag.config import ROOT
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from summarize_llm_vs_rag import summarize_comparison  # noqa: E402
+from scripts.eval.summarize_llm_vs_rag import summarize_comparison
 
 
 def test_summarize_comparison_computes_text_guardrails_and_history(tmp_path: Path) -> None:

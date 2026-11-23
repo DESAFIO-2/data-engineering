@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import sys
 
 import pytest
 
@@ -24,9 +23,7 @@ from rag.normalization import (
     parse_channel,
     vocabulary_bundle,
 )
-
-sys.path.insert(0, str(ROOT / "scripts"))
-import build_v10_vocab  # noqa: E402
+from scripts.archive.releases.v10 import build_v10_vocab
 
 VOCAB_DIR = ROOT / "data/vocab"
 

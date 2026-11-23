@@ -18,6 +18,8 @@ from rag.live import stock_reply_for_product
 
 CorpusData = tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]]
 
+pytestmark = pytest.mark.dvc
+
 RELEASE = ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
 
 

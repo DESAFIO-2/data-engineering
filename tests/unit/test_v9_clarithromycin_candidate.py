@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import sys
 from hashlib import sha256
 from pathlib import Path
 
@@ -11,13 +10,8 @@ import pytest
 
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks
-
-pytestmark = pytest.mark.dvc
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from approve_v9_release import DESTINATION as APPROVED_DESTINATION  # noqa: E402
-from publish_consolidated_release import read_lines, verify  # noqa: E402
-from publish_v9_clarithromycin import (  # noqa: E402
+from scripts.archive.releases.v9.approve_v9_release import DESTINATION as APPROVED_DESTINATION
+from scripts.archive.releases.v9.publish_v9_clarithromycin import (
     CANONICAL_MEDICINE_ID,
     DESTINATION,
     OCCURRENCE_ID,
@@ -26,6 +20,9 @@ from publish_v9_clarithromycin import (  # noqa: E402
     SOURCE_MANIFEST_SHA256,
     build,
 )
+from scripts.ingest.publish_consolidated_release import read_lines, verify
+
+pytestmark = pytest.mark.dvc
 
 
 def test_candidate_has_one_normalized_occurrence_and_one_merged_catalog_entry() -> None:

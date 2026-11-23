@@ -6,10 +6,17 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+from .base import BronzeStore
 
-class FileBronzeStorage:
+
+class FileBronzeStorage(BronzeStore):
     def __init__(self, root: Path) -> None:
         self.root = Path(root)
+
+    def write(self, payload: Any, metadata: dict[str, Any]) -> str:
+        source_name = str(metadata.get("source") or metadata.get("source_name") or "default")
+        digest, _ = self.save(source_name, payload, metadata)
+        return digest
 
     def save(
         self, source_name: str, payload: Any, metadata: dict[str, Any] | None = None

@@ -12,6 +12,8 @@ import rag.consolidated_chat as chat
 from rag.config import ROOT, Settings
 from rag.consolidated import ConsolidatedRelease, load_chunks, normalize, search, strength_matches
 
+pytestmark = pytest.mark.dvc
+
 
 @pytest.fixture(scope="module")
 def corpus() -> tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]]:
