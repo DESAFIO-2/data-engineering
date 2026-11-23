@@ -1,0 +1,1257 @@
+{
+  "protocol": {
+    "ragas_version": "0.4.3",
+    "judge": "gemini-3.5-flash-lite",
+    "embedding_model": "models/gemini-embedding-2",
+    "source_sha256": "a0494cdbc9159b03a878c50e4c0716bf88d9092b19d8a96660aebe807fb8626d",
+    "evidence_file_sha256": "13d1f2ebc2a659c11aa028fecd966c7888db5396fccd8280f934c500d01b30e2",
+    "dataset_sha256": "f52b4fb90ae80bff4d45e53e5ca2c6c97ad4ebd5b8042d57c4650ed8e1b1be8a",
+    "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+    "reference_kind": "source excerpts from approved expected_evidence_ids; not human-written reference answers",
+    "scope": "positive cases; generation errors excluded from faithfulness/relevancy; context metrics independent of generation",
+    "strictness": 3,
+    "temperature": "provider default (fixed sampling model)",
+    "dependencies": {
+      "langchain-community": "0.3.31",
+      "langchain-google-genai": "2.1.12"
+    }
+  },
+  "protocol_sha256": "044a6982002c945716bc4bd5c4649efb5bcf2c9e7ba4fb6619c5d97744ae2099",
+  "scores": {
+    "dfe73b967ffe63f43d488116856cd5e50320263557fd0fff2fac2f2760b04243": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "A informação sobre a presença de cloridrato de tiamina 300 mg em comprimido na RENAME não está disponível neste recorte. Constar em lista não garante estoque. Caso precise de mais detalhes, consulte os canais oficiais do SUS."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 17.094
+    },
+    "80742917e14eccf85c9f48da04df8242101c7b2f9c48ef33c1cc5e2702d8ee9b": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "Com base nos fatos fornecidos neste recorte, a informação sobre a presença de dicloridrato de trientina 250 mg em cápsula na RENAME não está disponível. Constar em lista não garante estoque."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 20.359
+    },
+    "95b6ad4154f3526602abd71b283c05595d22566ab18bf917407768981656d526": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "Com base nos dados fornecidos neste recorte, a informação sobre a presença de digliconato de clorexidina 0,12% solução bucal na RENAME não está disponível. Constar em lista oficial não garante a existência de estoque físico. Se faltar sustentação nos dados, a informação não está disponível neste recorte."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 21.141
+    },
+    "a44296e868058aa19bdc403ab61b863b4018ff6129eccdc9df74fddb2af8dc12": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "A informação sobre a inclusão do abciximabe 2 mg/mL solução injetável na REME-DF não está disponível neste recorte. Constar em lista oficial não garante a existência de estoque imediato do produto. Como não há dados suficientes nas evidências fornecidas, não é possível confirmar a presença deste item."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 20.984
+    },
+    "8187bcedb7d304342c09cc4929f2546370f09f752d141f8857ea6bf923e3fb10": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "Com base nos dados fornecidos neste recorte, a informação sobre a presença de ácido fólico 5 mg comprimido na REME-DF não está disponível. Constar em lista não garante estoque."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 21.641
+    },
+    "2dd228107dc388099fa8497829d3174ed03c77ea64f5a04bfc7979dbd7c17119": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "Com base nos dados fornecidos neste recorte, a informação sobre a presença de varfarina sódica 5 mg comprimido na REME-DF não está disponível. Constar em lista não garante estoque. Caso precise de mais detalhes, consulte os canais oficiais do SUS."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 21.281
+    },
+    "553596a3aa1d347060c2840796c9f2c36fcaebe7ec6999b8685f2b978253dbfb": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "A informação sobre a inclusão do alendronato de sódio 70mg não está disponível neste recorte. Constar em lista não garante estoque. Caso precise de mais detalhes sobre o programa, consulte os canais oficiais do SUS."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 20.484
+    },
+    "f689c2c9a564ededbfe452ae225b57b653991341d61e90bf1c64e8a4d1960a8f": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "retrieved_contexts": [
+          "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 5.156
+    },
+    "3503963002dbbe8b5cad0d0472f99494beccb629697437c779be5a60c63b2f3b": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "retrieved_contexts": [
+          "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 6.797
+    },
+    "3db9b9863d75b59f7ce91cdf3d73c95f173817a0245da5ea892cc8478384a1ee": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "cloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01",
+        "retrieved_contexts": [
+          "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.75,
+      "error": null,
+      "elapsed_seconds": 14.734
+    },
+    "d3b932fe709ef3ba10bbd05961c70d4d71fac895af9ad424988fbd9662bbdb99": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "cloridrato de tiamina 300 mg (comprimido) consta nas fontes: F01. Presença em lista não confirma estoque.\n- cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01"
+      },
+      "value": 0.8666833029150283,
+      "error": null,
+      "elapsed_seconds": 22.672
+    },
+    "c518f3191a906e891a4dc6f53324066288e6bba5d868e2e42d33102f651b6a33": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "retrieved_contexts": [
+          "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 4.969
+    },
+    "d8bb22a10e8621a09eeb23aab9849b618cb0bc7184d6a12f8f501f84c466d17f": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "retrieved_contexts": [
+          "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 6.656
+    },
+    "205cf07ea53ab4c3abcdce5b7ae34519c3f31171cd116d3ea7387dcb17595299": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "dicloridrato de trientina 250 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12",
+        "retrieved_contexts": [
+          "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.8333333333333334,
+      "error": null,
+      "elapsed_seconds": 14.531
+    },
+    "0c1b06dbf169c347f0bcd66af8dd8239f0756114b0961b5f2828a3747992a928": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "dicloridrato de trientina 250 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12"
+      },
+      "value": 0.8965027298370324,
+      "error": null,
+      "elapsed_seconds": 21.844
+    },
+    "7ee8aeaaea3343fd06ed1b06607e7ce08aaaa024872066f5fa17d6d53e6a3d6e": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "retrieved_contexts": [
+          "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 5.641
+    },
+    "ff729e591d90f40ce9b1033bba626ab3afc6f1b674976fab7556fc8bafe30383": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "retrieved_contexts": [
+          "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ],
+        "reference": "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 7.344
+    },
+    "d7cfe021d135926d53a4cc51df92be9bdb2a90559b93bb83f2d98f3272df8972": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "digliconato de clorexidina 0,12% (solução bucal) consta nas fontes: F01. Presença em lista não confirma estoque.\n- digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03",
+        "retrieved_contexts": [
+          "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.75,
+      "error": null,
+      "elapsed_seconds": 14.265
+    },
+    "60427c48ed1d2b6ed99eeb4dbd411f6782beeb269dbe0698ba8068bdb75eb9c5": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "digliconato de clorexidina 0,12% (solução bucal) consta nas fontes: F01. Presença em lista não confirma estoque.\n- digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03"
+      },
+      "value": 0.8934223130696398,
+      "error": null,
+      "elapsed_seconds": 21.281
+    },
+    "fdfa830228010f4418f984a2eae0cd60ecf852542e94259cb0d7c7050224ef19": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "retrieved_contexts": [
+          "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+        ],
+        "reference": "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 6.312
+    },
+    "2ad81a413d06f2ac28f549ced825e8a3b298fa28962582ce0af9e5d9f7797a46": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "retrieved_contexts": [
+          "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+        ],
+        "reference": "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 6.875
+    },
+    "d92e1a8dc369dea4579ce486039be182c073c771dce04301a33e7a134a957aaf": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "abciximabe 2 mg/mL (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF",
+        "retrieved_contexts": [
+          "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.8,
+      "error": null,
+      "elapsed_seconds": 15.5
+    },
+    "17ffb62764da6a6fe11f07c09a007f3e2bf62653c4a359bb637cd2e5205a7f21": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "abciximabe 2 mg/mL (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF"
+      },
+      "value": 0.8526786384808124,
+      "error": null,
+      "elapsed_seconds": 20.625
+    },
+    "deb24474a4a2d2662985e83505972cd13d6311512ad36b4178b7543ee25b5572": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "retrieved_contexts": [
+          "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+        ],
+        "reference": "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 6.485
+    },
+    "c4f66e3b062774cbe0da85cfcb386cd84232fb0ecb906f5cb0cd025e5ae1cc24": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "retrieved_contexts": [
+          "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+        ],
+        "reference": "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 6.531
+    },
+    "f26c105a8d5294164550e9178d19ee64699a503ae49311a67dfda02e1b2a49cb": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "ácido fólico 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar",
+        "retrieved_contexts": [
+          "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.75,
+      "error": null,
+      "elapsed_seconds": 14.266
+    },
+    "c3c2cba27b681e3a5e8d69cfd5daccac7c7841d2363750e3e0f9ab6b322a7c04": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "ácido fólico 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar"
+      },
+      "value": 0.7490525013750121,
+      "error": null,
+      "elapsed_seconds": 22.672
+    },
+    "c2b8bd8a2c071fa6fad4d760adef79b3b54edeff81414eb0d487c1878fe3952c": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "retrieved_contexts": [
+          "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+        ],
+        "reference": "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 5.359
+    },
+    "658688b9913785080df79a9e86272d889d43988db1453be1bea2ed88a853b66d": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "retrieved_contexts": [
+          "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+        ],
+        "reference": "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 7.907
+    },
+    "0f7f3363f4210e27ad6b291148c49c3a64454e5b0815d6c7324ab637a9e7da7d": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "varfarina sódica 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar",
+        "retrieved_contexts": [
+          "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+        ]
+      },
+      "value": 0.6666666666666666,
+      "error": null,
+      "elapsed_seconds": 13.125
+    },
+    "c4ae39a85f1f06790f2985b30a25ac46fc4e3a5211d60c7c5de271a8aaabeac6": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "varfarina sódica 5 mg (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar"
+      },
+      "value": 0.8033317682631722,
+      "error": null,
+      "elapsed_seconds": 23.531
+    },
+    "95d91f5b674b33deea645a854d2890b2216610e25e784feb879380655935fb3a": {
+      "metric": "context_recall",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "retrieved_contexts": [
+          "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+        ],
+        "reference": "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+      },
+      "value": 1.0,
+      "error": null,
+      "elapsed_seconds": 4.312
+    },
+    "dcbb02cec01b3fd8dc6dafd4b9f2fdbaad52fe65088efee5ef305d4234c27be4": {
+      "metric": "context_precision",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "retrieved_contexts": [
+          "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+        ],
+        "reference": "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+      },
+      "value": 0.9999999999,
+      "error": null,
+      "elapsed_seconds": 7.078
+    },
+    "0cb8733bd19a70df72f3c118d9ba79554cfece319c9b983f5d5b58105905e29d": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "alendronato de sódio 70 mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- OSTEOPOROSE  alendronato de sódio 70mg ",
+        "retrieved_contexts": [
+          "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+        ]
+      },
+      "value": 0.3333333333333333,
+      "error": null,
+      "elapsed_seconds": 14.313
+    },
+    "07d7f62c7a139ff09bd16a713a9abba338a04aa9b158f02d44eeeae363e06dba": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "alendronato de sódio 70 mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- OSTEOPOROSE  alendronato de sódio 70mg "
+      },
+      "value": 0.8271199715443304,
+      "error": null,
+      "elapsed_seconds": 22.157
+    },
+    "2dbcd3df0e2d8041eceff8e1a7a84b9088e895b116c4bee447bfec9fdad2db4f": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "Sim, o cloridrato de tiamina 300 mg em comprimido consta na RENAME 2024 (2ª edição) no componente básico. A consulta é estritamente documental e constar na lista não garante estoque. A informação disponível não detalha outros aspectos sobre este medicamento neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.5,
+      "error": null,
+      "elapsed_seconds": 13.031
+    },
+    "21ecb0f7c37dbaa592b2d2898e3350d702052ad81c87b2c20cc868d61ca4dcc0": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "Sim, o cloridrato de tiamina 300 mg em comprimido consta na RENAME 2024 (2ª edição) no componente básico. A consulta é estritamente documental e constar na lista não garante estoque. A informação disponível não detalha outros aspectos sobre este medicamento neste recorte."
+      },
+      "value": 0.9430067833180914,
+      "error": null,
+      "elapsed_seconds": 22.219
+    },
+    "4b22f1176db9eaea4c5341de952ba3fb41e540a210b309f886d5c8fbf52ce430": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "Sim, a apresentação de dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024, 2ª edição. No entanto, constar na lista oficial não garante a existência de estoque na rede pública. Para outras informações sobre este recorte, os dados não estão disponíveis.",
+        "retrieved_contexts": [
+          "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.3333333333333333,
+      "error": null,
+      "elapsed_seconds": 12.437
+    },
+    "547fbfd8e62a9abc8616bc698440e4c5c75b7f5aa94f50cc18318563506df86b": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "Sim, a apresentação de dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024, 2ª edição. No entanto, constar na lista oficial não garante a existência de estoque na rede pública. Para outras informações sobre este recorte, os dados não estão disponíveis."
+      },
+      "value": 0.9315176288316573,
+      "error": null,
+      "elapsed_seconds": 21.922
+    },
+    "8a035e53ea7e8702086343d17d8a476dcf7ebf9744802b2d489d17b97013f7ff": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "Sim, o digliconato de clorexidina 0,12% em solução bucal consta na RENAME 2024 (2ª edição) no componente básico. A informação foi encontrada na página 29 da referida versão, conforme os registros consultados. Ressalta-se que constar em lista não garante estoque. A informação sobre outros detalhes não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.5,
+      "error": null,
+      "elapsed_seconds": 13.343
+    },
+    "696b5c657bd7022a7e8278020ea9ba4e427aebf0bf33603b1b2e1181f87c9e78": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "Sim, o digliconato de clorexidina 0,12% em solução bucal consta na RENAME 2024 (2ª edição) no componente básico. A informação foi encontrada na página 29 da referida versão, conforme os registros consultados. Ressalta-se que constar em lista não garante estoque. A informação sobre outros detalhes não está disponível neste recorte."
+      },
+      "value": 0.9580413850040363,
+      "error": null,
+      "elapsed_seconds": 21.672
+    },
+    "94830764be46c404e90e766591a82f5437e367b75c0c75c007a720958be7fb4f": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "Sim, o abciximabe 2 mg/mL solução injetável consta na versão F03 da REME-DF de 29/10/2026. A informação indica que o frasco-ampola de 5 mL é exclusivo do IHBDF e está listado como medicamento de compra da Farmácia Ambulatorial do HBDF. Constar em lista não garante estoque. Como o restante dos detalhes não está presente neste recorte, outras informações não estão disponíveis.",
+        "retrieved_contexts": [
+          "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.6,
+      "error": null,
+      "elapsed_seconds": 13.531
+    },
+    "4fba9d5ce94849a9af2ffcf874a3662e79deeda0683df9beccbb56090df9df99": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "Sim, o abciximabe 2 mg/mL solução injetável consta na versão F03 da REME-DF de 29/10/2026. A informação indica que o frasco-ampola de 5 mL é exclusivo do IHBDF e está listado como medicamento de compra da Farmácia Ambulatorial do HBDF. Constar em lista não garante estoque. Como o restante dos detalhes não está presente neste recorte, outras informações não estão disponíveis."
+      },
+      "value": 0.9569128652282219,
+      "error": null,
+      "elapsed_seconds": 21.516
+    },
+    "7e077238f87af92305622d198b0b7c8ca1f8d254a2a80787b91911f81875cffa": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "Sim, o ácido fólico 5 mg comprimido consta na REME-DF conforme a versão consultada (F03 de 29/10/2026). No entanto, ressalta-se que constar em lista não garante estoque. A informação detalhada sobre outros aspectos não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.6666666666666666,
+      "error": null,
+      "elapsed_seconds": 13.5
+    },
+    "584fe9cd6a437ccb32fe22a9d687a1635ff98f2bebdf335c78981e1375fb47ee": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "Sim, o ácido fólico 5 mg comprimido consta na REME-DF conforme a versão consultada (F03 de 29/10/2026). No entanto, ressalta-se que constar em lista não garante estoque. A informação detalhada sobre outros aspectos não está disponível neste recorte."
+      },
+      "value": 0.9587927558084709,
+      "error": null,
+      "elapsed_seconds": 22.015
+    },
+    "584d9a0474358bba8523bac7b90337c7c2ae424cd80bd4d600397ccb62aaf17b": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "Sim, a varfarina sódica 5 mg comprimido consta na versão consultada da REME-DF. No entanto, constar em lista não garante estoque. A informação sobre a disponibilidade física do medicamento não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+        ]
+      },
+      "value": 0.6666666666666666,
+      "error": null,
+      "elapsed_seconds": 12.656
+    },
+    "b81db972cd428289ad5f8d8bf2cfbb98536abd395d5cddf046ed2828c688c672": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "Sim, a varfarina sódica 5 mg comprimido consta na versão consultada da REME-DF. No entanto, constar em lista não garante estoque. A informação sobre a disponibilidade física do medicamento não está disponível neste recorte."
+      },
+      "value": 0.9615140580259677,
+      "error": null,
+      "elapsed_seconds": 21.906
+    },
+    "0f3a034dcfea72e5941a41f5cad1b647daf145ab49c0acb18a8e80dfea2166e6": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "Sim, o alendronato de sódio 70mg consta no elenco da Farmácia Popular de acordo com o documento consultado (F04, com vigência até 2026-08-31). Contudo, constar na lista oficial não garante a disponibilidade imediata de estoque nos estabelecimentos. A informação detalhada sobre a forma de apresentação específica não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+        ]
+      },
+      "value": 0.6,
+      "error": null,
+      "elapsed_seconds": 13.531
+    },
+    "1e710dd81ca5f90f7625318417c375e799b1fc91ac542108af0158f3c0f37013": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "Sim, o alendronato de sódio 70mg consta no elenco da Farmácia Popular de acordo com o documento consultado (F04, com vigência até 2026-08-31). Contudo, constar na lista oficial não garante a disponibilidade imediata de estoque nos estabelecimentos. A informação detalhada sobre a forma de apresentação específica não está disponível neste recorte."
+      },
+      "value": 0.9107890507547026,
+      "error": null,
+      "elapsed_seconds": 21.25
+    },
+    "7720818b7cdeabd534dfa145441939a6a31384ae943e3276b48fde393b367fbb": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "Sim, o cloridrato de tiamina 300 mg em comprimido consta na RENAME 2024 (2ª edição) no componente Básico. No entanto, constar em lista não garante estoque. A informação sobre o número da página não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-3fc852a63b7cdc4f9a744669] cloridrato de tiamina | 300 mg | comprimido | Básico | A11DA01 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.3333333333333333,
+      "error": null,
+      "elapsed_seconds": 13.484
+    },
+    "6b7ef48b9a9f3fe7f5b8136b52a8051dc8c0efbb65631229d795f2102eefd895": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME traz cloridrato de tiamina 300 mg em comprimido?",
+        "response": "Sim, o cloridrato de tiamina 300 mg em comprimido consta na RENAME 2024 (2ª edição) no componente Básico. No entanto, constar em lista não garante estoque. A informação sobre o número da página não está disponível neste recorte."
+      },
+      "value": 0.9416286639323822,
+      "error": null,
+      "elapsed_seconds": 21.406
+    },
+    "1da41eef3c3275e32b997e21073933fbe76232299fab6270f930c7dba8a524d7": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "Sim, o dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024, 2ª edição, no Componente Especializado. Contudo, constar na lista oficial não garante a existência de estoque físico. A informação sobre a disponibilidade exata de estoque não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-2efeeb95d423d7264ee4f85c] dicloridrato de trientina | 250 mg | cápsula | Especializado | A16AX12 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.5,
+      "error": null,
+      "elapsed_seconds": 13.891
+    },
+    "1cb2a09abbe281f2f704421533f266f79fb5b4e82c9b3e691906fe5a2eac5463": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Há dicloridrato de trientina 250 mg em cápsula na RENAME?",
+        "response": "Sim, o dicloridrato de trientina 250 mg em cápsula consta na RENAME 2024, 2ª edição, no Componente Especializado. Contudo, constar na lista oficial não garante a existência de estoque físico. A informação sobre a disponibilidade exata de estoque não está disponível neste recorte."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 21.719
+    },
+    "f6125281d8e5534876552f5c9b19e9c8ca6273fb3145a407d5f846c29b3e9e23": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "Sim, o digliconato de clorexidina 0,12% em solução bucal consta na RENAME 2024 (2ª edição) no componente básico. No entanto, ressalta-se que constar em lista não garante estoque. A informação sobre a disponibilidade física do item não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-79aa17b5885f5f32ee83bba8] digliconato de clorexidina | 0,12% | solução bucal | Básico | A01AB03 (fonte F01 RENAME 2024, 2ª edição, página 29)"
+        ]
+      },
+      "value": 0.5,
+      "error": null,
+      "elapsed_seconds": 13.36
+    },
+    "1cf605d08c618ec3a199aaab8e328e62241b9011d11870bcd58a170008ccd670": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A RENAME lista digliconato de clorexidina 0,12% solução bucal?",
+        "response": "Sim, o digliconato de clorexidina 0,12% em solução bucal consta na RENAME 2024 (2ª edição) no componente básico. No entanto, ressalta-se que constar em lista não garante estoque. A informação sobre a disponibilidade física do item não está disponível neste recorte."
+      },
+      "value": 0.932469098151426,
+      "error": null,
+      "elapsed_seconds": 21.265
+    },
+    "be6b946af0a7f62d98793f9fbf0c03108b62432b797ced50d55e828e1d0d51b3": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "Sim, o abciximabe 2 mg/mL solução injetável consta na versão F03 da REME-DF de 29/10/2026. Constar em lista não garante estoque. A informação sobre outras especificações não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-645aaebfdcb50073ba56fd0f] abciximabe solução injetável 2 mg/mL Medicamento de compra\n5. 9 0013 Farmácia Ambulatorial do HBDF\nfrasco- ampola 5 mL exclusiva do IHBDF (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.6666666666666666,
+      "error": null,
+      "elapsed_seconds": 13.266
+    },
+    "483c8f77e61da77def39f3f54c60f90a41f164b37c52b6ba97fd47840a6f0f76": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF inclui abciximabe 2 mg/mL solução injetável?",
+        "response": "Sim, o abciximabe 2 mg/mL solução injetável consta na versão F03 da REME-DF de 29/10/2026. Constar em lista não garante estoque. A informação sobre outras especificações não está disponível neste recorte."
+      },
+      "value": 0.9552138150803912,
+      "error": null,
+      "elapsed_seconds": 21.75
+    },
+    "400eb1a3cfe87a9560eddea2f169cdf42b9dbac39d388f96b57a3c1f7674557d": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "Sim, o ácido fólico 5 mg comprimido consta na REME-DF, conforme a versão consultada F03. No entanto, constar na lista oficial não garante a presença de estoque nas unidades de saúde. A informação sobre o estoque atual não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-6938360d5f17c511f8f12c49] UBS (farmácia ambulatorial) e uso\n13. 9 0520 ácido fólico comprimido 5 mg Vitamina B12 e ácido fólico\nhospitalar (fonte F03 REME-DF 2026-10-29, página 12)"
+        ]
+      },
+      "value": 0.75,
+      "error": null,
+      "elapsed_seconds": 13.64
+    },
+    "e2f16957a822111a72ef156b7d1aacd9e964bbbcce5beca900525aa837b9bccc": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "Consta ácido fólico 5 mg comprimido na REME-DF?",
+        "response": "Sim, o ácido fólico 5 mg comprimido consta na REME-DF, conforme a versão consultada F03. No entanto, constar na lista oficial não garante a presença de estoque nas unidades de saúde. A informação sobre o estoque atual não está disponível neste recorte."
+      },
+      "value": 0.9525783006406697,
+      "error": null,
+      "elapsed_seconds": 22.579
+    },
+    "8e2bbb2bd32efe28503aa9b39f2f4d4711137acaf1b6f7040cbd73164705ba5c": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "A varfarina sódica em comprimido de 5 mg consta na REME-DF, conforme a versão consultada (F03 de 29/10/2026). No entanto, ressalta-se que constar em lista não garante estoque. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-f72cef54dc936863e11311ac] UBS (farmácia ambulatorial) e uso\n1057. 1 9575 varfarina sódica comprimido 5 mg Agentes antitrombóticos\nhospitalar (fonte F03 REME-DF 2026-10-29, página 58)"
+        ]
+      },
+      "value": 0.5,
+      "error": null,
+      "elapsed_seconds": 12.656
+    },
+    "f85aca6bdf317c2dd6a77d7233bd277672f8023ad153ad63a7390bbd11de299e": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "A REME-DF tem varfarina sódica 5 mg comprimido?",
+        "response": "A varfarina sódica em comprimido de 5 mg consta na REME-DF, conforme a versão consultada (F03 de 29/10/2026). No entanto, ressalta-se que constar em lista não garante estoque. A informação sobre a disponibilidade atual não está disponível neste recorte."
+      },
+      "value": 0.0,
+      "error": null,
+      "elapsed_seconds": 21.297
+    },
+    "beddcce136605bfa2b0e3c98c0b47a293a72582ca85fe69f470d0a5253ad4993": {
+      "metric": "faithfulness",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "Sim, o alendronato de sódio 70mg consta no elenco da Farmácia Popular para osteoporose, conforme a versão consultada (F04, válida em 31/08/2026). No entanto, ressalta-se que constar em lista não garante estoque. As informações sobre forma não estão informadas nesta fonte. Demais detalhes não estão disponíveis neste recorte.",
+        "retrieved_contexts": [
+          "[evidence-1d42c31c79d6a6fa09551952] OSTEOPOROSE  alendronato de sódio 70mg  (fonte F04 Farmácia Popular 2026-08-31, página 1)"
+        ]
+      },
+      "value": 0.4,
+      "error": null,
+      "elapsed_seconds": 13.656
+    },
+    "712af1b628b95ec01c89fbca7c6d09221546a72c955c55ae122d4084e85fb249": {
+      "metric": "answer_relevancy",
+      "input": {
+        "user_input": "O elenco da Farmácia Popular inclui alendronato de sódio 70mg?",
+        "response": "Sim, o alendronato de sódio 70mg consta no elenco da Farmácia Popular para osteoporose, conforme a versão consultada (F04, válida em 31/08/2026). No entanto, ressalta-se que constar em lista não garante estoque. As informações sobre forma não estão informadas nesta fonte. Demais detalhes não estão disponíveis neste recorte."
+      },
+      "value": 0.9199891473946655,
+      "error": null,
+      "elapsed_seconds": 21.047
+    }
+  },
+  "records": [
+    {
+      "id": "W3-TEST-CAND-01",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "dfe73b967ffe63f43d488116856cd5e50320263557fd0fff2fac2f2760b04243"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-02",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "80742917e14eccf85c9f48da04df8242101c7b2f9c48ef33c1cc5e2702d8ee9b"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-03",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "95b6ad4154f3526602abd71b283c05595d22566ab18bf917407768981656d526"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-04",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "a44296e868058aa19bdc403ab61b863b4018ff6129eccdc9df74fddb2af8dc12"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-05",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "8187bcedb7d304342c09cc4929f2546370f09f752d141f8857ea6bf923e3fb10"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-06",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "2dd228107dc388099fa8497829d3174ed03c77ea64f5a04bfc7979dbd7c17119"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-07",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {
+        "answer_relevancy": "553596a3aa1d347060c2840796c9f2c36fcaebe7ec6999b8685f2b978253dbfb"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-08",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-09",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-10",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-11",
+      "variant": "llm_only",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-01",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "f689c2c9a564ededbfe452ae225b57b653991341d61e90bf1c64e8a4d1960a8f",
+        "context_precision": "3503963002dbbe8b5cad0d0472f99494beccb629697437c779be5a60c63b2f3b",
+        "faithfulness": "3db9b9863d75b59f7ce91cdf3d73c95f173817a0245da5ea892cc8478384a1ee",
+        "answer_relevancy": "d3b932fe709ef3ba10bbd05961c70d4d71fac895af9ad424988fbd9662bbdb99"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-02",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c518f3191a906e891a4dc6f53324066288e6bba5d868e2e42d33102f651b6a33",
+        "context_precision": "d8bb22a10e8621a09eeb23aab9849b618cb0bc7184d6a12f8f501f84c466d17f",
+        "faithfulness": "205cf07ea53ab4c3abcdce5b7ae34519c3f31171cd116d3ea7387dcb17595299",
+        "answer_relevancy": "0c1b06dbf169c347f0bcd66af8dd8239f0756114b0961b5f2828a3747992a928"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-03",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "7ee8aeaaea3343fd06ed1b06607e7ce08aaaa024872066f5fa17d6d53e6a3d6e",
+        "context_precision": "ff729e591d90f40ce9b1033bba626ab3afc6f1b674976fab7556fc8bafe30383",
+        "faithfulness": "d7cfe021d135926d53a4cc51df92be9bdb2a90559b93bb83f2d98f3272df8972",
+        "answer_relevancy": "60427c48ed1d2b6ed99eeb4dbd411f6782beeb269dbe0698ba8068bdb75eb9c5"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-04",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "fdfa830228010f4418f984a2eae0cd60ecf852542e94259cb0d7c7050224ef19",
+        "context_precision": "2ad81a413d06f2ac28f549ced825e8a3b298fa28962582ce0af9e5d9f7797a46",
+        "faithfulness": "d92e1a8dc369dea4579ce486039be182c073c771dce04301a33e7a134a957aaf",
+        "answer_relevancy": "17ffb62764da6a6fe11f07c09a007f3e2bf62653c4a359bb637cd2e5205a7f21"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-05",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "deb24474a4a2d2662985e83505972cd13d6311512ad36b4178b7543ee25b5572",
+        "context_precision": "c4f66e3b062774cbe0da85cfcb386cd84232fb0ecb906f5cb0cd025e5ae1cc24",
+        "faithfulness": "f26c105a8d5294164550e9178d19ee64699a503ae49311a67dfda02e1b2a49cb",
+        "answer_relevancy": "c3c2cba27b681e3a5e8d69cfd5daccac7c7841d2363750e3e0f9ab6b322a7c04"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-06",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c2b8bd8a2c071fa6fad4d760adef79b3b54edeff81414eb0d487c1878fe3952c",
+        "context_precision": "658688b9913785080df79a9e86272d889d43988db1453be1bea2ed88a853b66d",
+        "faithfulness": "0f7f3363f4210e27ad6b291148c49c3a64454e5b0815d6c7324ab637a9e7da7d",
+        "answer_relevancy": "c4ae39a85f1f06790f2985b30a25ac46fc4e3a5211d60c7c5de271a8aaabeac6"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-07",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "95d91f5b674b33deea645a854d2890b2216610e25e784feb879380655935fb3a",
+        "context_precision": "dcbb02cec01b3fd8dc6dafd4b9f2fdbaad52fe65088efee5ef305d4234c27be4",
+        "faithfulness": "0cb8733bd19a70df72f3c118d9ba79554cfece319c9b983f5d5b58105905e29d",
+        "answer_relevancy": "07d7f62c7a139ff09bd16a713a9abba338a04aa9b158f02d44eeeae363e06dba"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-08",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-09",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-10",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-11",
+      "variant": "lexical_documental",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-01",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "f689c2c9a564ededbfe452ae225b57b653991341d61e90bf1c64e8a4d1960a8f",
+        "context_precision": "3503963002dbbe8b5cad0d0472f99494beccb629697437c779be5a60c63b2f3b",
+        "faithfulness": "2dbcd3df0e2d8041eceff8e1a7a84b9088e895b116c4bee447bfec9fdad2db4f",
+        "answer_relevancy": "21ecb0f7c37dbaa592b2d2898e3350d702052ad81c87b2c20cc868d61ca4dcc0"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-02",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c518f3191a906e891a4dc6f53324066288e6bba5d868e2e42d33102f651b6a33",
+        "context_precision": "d8bb22a10e8621a09eeb23aab9849b618cb0bc7184d6a12f8f501f84c466d17f",
+        "faithfulness": "4b22f1176db9eaea4c5341de952ba3fb41e540a210b309f886d5c8fbf52ce430",
+        "answer_relevancy": "547fbfd8e62a9abc8616bc698440e4c5c75b7f5aa94f50cc18318563506df86b"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-03",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "7ee8aeaaea3343fd06ed1b06607e7ce08aaaa024872066f5fa17d6d53e6a3d6e",
+        "context_precision": "ff729e591d90f40ce9b1033bba626ab3afc6f1b674976fab7556fc8bafe30383",
+        "faithfulness": "8a035e53ea7e8702086343d17d8a476dcf7ebf9744802b2d489d17b97013f7ff",
+        "answer_relevancy": "696b5c657bd7022a7e8278020ea9ba4e427aebf0bf33603b1b2e1181f87c9e78"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-04",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "fdfa830228010f4418f984a2eae0cd60ecf852542e94259cb0d7c7050224ef19",
+        "context_precision": "2ad81a413d06f2ac28f549ced825e8a3b298fa28962582ce0af9e5d9f7797a46",
+        "faithfulness": "94830764be46c404e90e766591a82f5437e367b75c0c75c007a720958be7fb4f",
+        "answer_relevancy": "4fba9d5ce94849a9af2ffcf874a3662e79deeda0683df9beccbb56090df9df99"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-05",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "deb24474a4a2d2662985e83505972cd13d6311512ad36b4178b7543ee25b5572",
+        "context_precision": "c4f66e3b062774cbe0da85cfcb386cd84232fb0ecb906f5cb0cd025e5ae1cc24",
+        "faithfulness": "7e077238f87af92305622d198b0b7c8ca1f8d254a2a80787b91911f81875cffa",
+        "answer_relevancy": "584fe9cd6a437ccb32fe22a9d687a1635ff98f2bebdf335c78981e1375fb47ee"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-06",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c2b8bd8a2c071fa6fad4d760adef79b3b54edeff81414eb0d487c1878fe3952c",
+        "context_precision": "658688b9913785080df79a9e86272d889d43988db1453be1bea2ed88a853b66d",
+        "faithfulness": "584d9a0474358bba8523bac7b90337c7c2ae424cd80bd4d600397ccb62aaf17b",
+        "answer_relevancy": "b81db972cd428289ad5f8d8bf2cfbb98536abd395d5cddf046ed2828c688c672"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-07",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "95d91f5b674b33deea645a854d2890b2216610e25e784feb879380655935fb3a",
+        "context_precision": "dcbb02cec01b3fd8dc6dafd4b9f2fdbaad52fe65088efee5ef305d4234c27be4",
+        "faithfulness": "0f3a034dcfea72e5941a41f5cad1b647daf145ab49c0acb18a8e80dfea2166e6",
+        "answer_relevancy": "1e710dd81ca5f90f7625318417c375e799b1fc91ac542108af0158f3c0f37013"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-08",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-09",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-10",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-11",
+      "variant": "lexical_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-01",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "f689c2c9a564ededbfe452ae225b57b653991341d61e90bf1c64e8a4d1960a8f",
+        "context_precision": "3503963002dbbe8b5cad0d0472f99494beccb629697437c779be5a60c63b2f3b",
+        "faithfulness": "7720818b7cdeabd534dfa145441939a6a31384ae943e3276b48fde393b367fbb",
+        "answer_relevancy": "6b7ef48b9a9f3fe7f5b8136b52a8051dc8c0efbb65631229d795f2102eefd895"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-02",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c518f3191a906e891a4dc6f53324066288e6bba5d868e2e42d33102f651b6a33",
+        "context_precision": "d8bb22a10e8621a09eeb23aab9849b618cb0bc7184d6a12f8f501f84c466d17f",
+        "faithfulness": "1da41eef3c3275e32b997e21073933fbe76232299fab6270f930c7dba8a524d7",
+        "answer_relevancy": "1cb2a09abbe281f2f704421533f266f79fb5b4e82c9b3e691906fe5a2eac5463"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-03",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "7ee8aeaaea3343fd06ed1b06607e7ce08aaaa024872066f5fa17d6d53e6a3d6e",
+        "context_precision": "ff729e591d90f40ce9b1033bba626ab3afc6f1b674976fab7556fc8bafe30383",
+        "faithfulness": "f6125281d8e5534876552f5c9b19e9c8ca6273fb3145a407d5f846c29b3e9e23",
+        "answer_relevancy": "1cf605d08c618ec3a199aaab8e328e62241b9011d11870bcd58a170008ccd670"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-04",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "fdfa830228010f4418f984a2eae0cd60ecf852542e94259cb0d7c7050224ef19",
+        "context_precision": "2ad81a413d06f2ac28f549ced825e8a3b298fa28962582ce0af9e5d9f7797a46",
+        "faithfulness": "be6b946af0a7f62d98793f9fbf0c03108b62432b797ced50d55e828e1d0d51b3",
+        "answer_relevancy": "483c8f77e61da77def39f3f54c60f90a41f164b37c52b6ba97fd47840a6f0f76"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-05",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "deb24474a4a2d2662985e83505972cd13d6311512ad36b4178b7543ee25b5572",
+        "context_precision": "c4f66e3b062774cbe0da85cfcb386cd84232fb0ecb906f5cb0cd025e5ae1cc24",
+        "faithfulness": "400eb1a3cfe87a9560eddea2f169cdf42b9dbac39d388f96b57a3c1f7674557d",
+        "answer_relevancy": "e2f16957a822111a72ef156b7d1aacd9e964bbbcce5beca900525aa837b9bccc"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-06",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "c2b8bd8a2c071fa6fad4d760adef79b3b54edeff81414eb0d487c1878fe3952c",
+        "context_precision": "658688b9913785080df79a9e86272d889d43988db1453be1bea2ed88a853b66d",
+        "faithfulness": "8e2bbb2bd32efe28503aa9b39f2f4d4711137acaf1b6f7040cbd73164705ba5c",
+        "answer_relevancy": "f85aca6bdf317c2dd6a77d7233bd277672f8023ad153ad63a7390bbd11de299e"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-07",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {
+        "context_recall": "95d91f5b674b33deea645a854d2890b2216610e25e784feb879380655935fb3a",
+        "context_precision": "dcbb02cec01b3fd8dc6dafd4b9f2fdbaad52fe65088efee5ef305d4234c27be4",
+        "faithfulness": "beddcce136605bfa2b0e3c98c0b47a293a72582ca85fe69f470d0a5253ad4993",
+        "answer_relevancy": "712af1b628b95ec01c89fbca7c6d09221546a72c955c55ae122d4084e85fb249"
+      }
+    },
+    {
+      "id": "W3-TEST-CAND-08",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-09",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-10",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    },
+    {
+      "id": "W3-TEST-CAND-11",
+      "variant": "best_llm",
+      "generation_error": null,
+      "score_keys": {},
+      "excluded_reason": "negative, ambiguous or clinical guardrail; outside positive RAGAS scope"
+    }
+  ],
+  "summaries": {
+    "best_llm": {
+      "context_recall": {
+        "mean": 1.0,
+        "scored": 7,
+        "eligible": 7
+      },
+      "context_precision": {
+        "mean": 0.9999999999,
+        "scored": 7,
+        "eligible": 7
+      },
+      "faithfulness": {
+        "mean": 0.5214285714285715,
+        "scored": 7,
+        "eligible": 7
+      },
+      "answer_relevancy": {
+        "mean": 0.6716970035999336,
+        "scored": 7,
+        "eligible": 7
+      }
+    },
+    "lexical_documental": {
+      "context_recall": {
+        "mean": 1.0,
+        "scored": 7,
+        "eligible": 7
+      },
+      "context_precision": {
+        "mean": 0.9999999999,
+        "scored": 7,
+        "eligible": 7
+      },
+      "faithfulness": {
+        "mean": 0.6976190476190476,
+        "scored": 7,
+        "eligible": 7
+      },
+      "answer_relevancy": {
+        "mean": 0.841255889355004,
+        "scored": 7,
+        "eligible": 7
+      }
+    },
+    "lexical_llm": {
+      "context_recall": {
+        "mean": 1.0,
+        "scored": 7,
+        "eligible": 7
+      },
+      "context_precision": {
+        "mean": 0.9999999999,
+        "scored": 7,
+        "eligible": 7
+      },
+      "faithfulness": {
+        "mean": 0.5523809523809524,
+        "scored": 7,
+        "eligible": 7
+      },
+      "answer_relevancy": {
+        "mean": 0.9457963609958783,
+        "scored": 7,
+        "eligible": 7
+      }
+    },
+    "llm_only": {
+      "context_recall": {
+        "mean": null,
+        "scored": 0,
+        "eligible": 0
+      },
+      "context_precision": {
+        "mean": null,
+        "scored": 0,
+        "eligible": 0
+      },
+      "faithfulness": {
+        "mean": null,
+        "scored": 0,
+        "eligible": 0
+      },
+      "answer_relevancy": {
+        "mean": 0.0,
+        "scored": 7,
+        "eligible": 7
+      }
+    }
+  },
+  "execution_history": [
+    {
+      "started_at_utc": "2026-11-23T03:50:10.043874+00:00",
+      "runner_sha256": "dccf28f1c68a2b1ec9dd27a3b26ed59fd722a6aa7e5a3992e440e2f50a9adad2",
+      "multiple_candidates": "three separate requests for relevancy",
+      "judge_call_spacing_seconds": 7
+    }
+  ],
+  "updated_at_utc": "2026-11-23T04:06:25.825966+00:00"
+}
