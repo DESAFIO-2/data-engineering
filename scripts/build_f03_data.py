@@ -181,6 +181,6 @@ for r in t2_rows:
         'raw_desc': desc
     }
 
-with open('scripts/f03_processed.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/f03_processed.json', 'w', encoding='utf-8') as f:
     json.dump(f03_processed, f, indent=2, ensure_ascii=False)
-print("Saved scripts/f03_processed.json successfully!")
+print("Saved data/curation/archive/f03_processed.json successfully!")

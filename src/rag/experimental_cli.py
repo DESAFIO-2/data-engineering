@@ -184,7 +184,7 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
     def embeddings() -> Any:
         if "embeddings" not in cache:
             cache["embeddings"] = google_embeddings(
-                settings.rag_embedding_model, settings.google_api_key
+                settings.rag_embedding_model, settings.google_api_keys
             )
         return cache["embeddings"]
 
@@ -244,7 +244,7 @@ def run(args: argparse.Namespace, settings: Settings) -> int:
         history: list[tuple[str, str]] | None = None,
     ) -> dict[str, Any]:
         if result["status"] == "matched" and "llm" not in cache:
-            cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
+            cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_keys)
         return {**result, **generate(question, result, cache.get("llm"), history)}
 
     if args.command == "eval":

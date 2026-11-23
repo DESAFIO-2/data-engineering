@@ -1,0 +1,551 @@
+{
+  "audit_coverage_pct": 100.0,
+  "catalog_presentations": 1727,
+  "corrections_applied": [
+    {
+      "fix": "Correção de quebra de linha com hífen: 'fenoximetilpenicili- na potássica' -> 'fenoximetilpenicilina potássica'",
+      "occurrence_id": "occ-ef6f34aca6aebf7145e278f7",
+      "source_id": "F01"
+    },
+    {
+      "fix": "Remoção de acréscimo farmacológico '(guaco)' ausente no texto literal da linha 695 da REME-DF",
+      "occurrence_id": "occ-be1655419eff7210901c7689",
+      "source_id": "F03"
+    },
+    {
+      "fix": "Normalização de espaçamento químico: 'dl- metionina' -> 'dl-metionina'",
+      "occurrence_id": "occ-c731c1d37d51b270a7f9b041",
+      "source_id": "F03"
+    },
+    {
+      "after": "MS19578, MS38515, MS38516, MS010",
+      "before": "MS19578MS38515MS38516MS010",
+      "field": "source_code",
+      "occurrence_id": "occ-a4dfc9d697002029f013cfe2",
+      "source_id": "F03"
+    },
+    {
+      "after": "MS21833, MS38518",
+      "before": "MS21833MS38518",
+      "field": "source_code",
+      "occurrence_id": "occ-1b4b1af040274b1a3aa0ea9f",
+      "source_id": "F03"
+    },
+    {
+      "after": "MS648, MS38519",
+      "before": "MS648MS38519",
+      "field": "source_code",
+      "occurrence_id": "occ-9273767426e34db70790ce77",
+      "source_id": "F03"
+    },
+    {
+      "after": "MS38524, MS38520, MS38521",
+      "before": "MS38524MS38520MS38521",
+      "field": "source_code",
+      "occurrence_id": "occ-476afabb60223471ac3a02d8",
+      "source_id": "F03"
+    },
+    {
+      "after": "equivalente a 500 ou 600 mg de cálcio + colecalciferol 400 UI",
+      "before": "500 mg a 600 mg cálcio elementar + 400 UI vit. D",
+      "field": "strength",
+      "occurrence_id": "occ-bc5acf38f4260802e843100c",
+      "source_id": "F03"
+    },
+    {
+      "after": "500 mg; med-3801ddc7d957468e0916fed0",
+      "before": "500mg; med-018ed18f2ec7fd073407f4e4",
+      "field": "strength, medicine_id",
+      "occurrence_id": "occ-83202f34ce2ffbeed05ea49d",
+      "source_id": "F03"
+    },
+    {
+      "after": "lactato de sódio 3 mg/mL + cloreto de sódio 6 mg/mL + cloreto de potássio 0,3 mg/mL + cloreto de cálcio 0,2 mg/mL",
+      "before": "lactato de sódio 3 mg/mL + cloreto de sódio 6 mg/mL + cloreto de potássio 0/ ,3 mg/mL + cloreto de cálcio 0,2 mg/mL",
+      "field": "strength",
+      "occurrence_id": "occ-3c800a169e894016ada0a5c0",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-dff6a1f0ff8404b01f71e212",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d253023aa108fbb1f5a0040e",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Estratégico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d2ef0fdde759f3e7b8dbf3fc",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Estratégico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-fa313298cb9c80e89028cd42",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-7f3d35111f33c86a6339a31a",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-086afcda4768ccc1179c39c2",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-cc44dd74adf61aec6dfaee11",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-cae4c93f8886b384242f438c",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d2dbae48a4041709898a2c82",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-61cf1f47cf7a3796a3a46037",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-19387d07c0eba23d279353bd",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-85c0a69023e56a5a129cb67d",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-ab1e38dcf7b54dea32c327d5",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-e571bcfed43625db68872975",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-903293e3d13678dd101f169b",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-b02bf27055cfbc382c6a8b99",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-24ca6c25e8361b3eab4a45ad",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-ba4ee3187e3643ced714402b",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-f070c265e1278ce7c17790df",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-2fd3c98d90230837a5fe5d92",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-2fc49ce2d3e65c1736ffaad5",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-550cf5904f63eda745897514",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Insumos (Básico)",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-abc8e620de02b4e0a56f918d",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-3d0f0e7129d521989b0d02ff",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-5a98c4eec0ea468feef4af23",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d72eb2c788fe5a934ce29220",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-2f3833e5e588e99bc87c485c",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-276be55f10fed43397596970",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-637b0fa7ac748e0d1820a70f",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-e43905aafb3c7c957380531e",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-533b9a2aa6794a54d299bca4",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico e Estratégico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-36d55c3729c52e2ffed769b9",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico e Estratégico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-ed12d50fd62b10ea5ab408a2",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-af88079633f232024bb2b944",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-4910f45a83d97103d19e7004",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-fda3a72b2ed84d14ee358db3",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-896da992b809bec291ef1b47",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-dc9cbadd8e4efa1db3052ed5",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-9a29c749e1e2ae6ffc67b3ce",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-0911e140c9f45f03725edca4",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-825e779ccde56e4d7b990faf",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d94dbe064dc30ddf33af160d",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-06406f43c2533aff6bed1ce0",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-ed0c886b956aeab497f5177a",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-78904830252e6fda0e0afe90",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-0d3654f3450fb37de1da71c6",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-b9357215175d7d2dbc29530a",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-a1983d21e33f5f42ec3cc9ab",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Especializado e Procedimento Hospitalar(1)",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-08ca1620d8066ee16dd7eef2",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-8dc3778c5d01876621557eb9",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-fb1fb808dd76bc8c822b26aa",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-5a5046d0e434fdb69e175011",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "after": "Básico",
+      "before": null,
+      "field": "component",
+      "occurrence_id": "occ-d5800e741c41ecfa8da870fb",
+      "scope": "corrected_v10_parser",
+      "source_id": "F01"
+    },
+    {
+      "catalog_after": 1727,
+      "catalog_before": 1859,
+      "chunk_recipe_verified": "one-evidence-v3:normalized-fields;literal-spelling;F03-description-cell;F03-channel-code;F01-component-atc;F04-indication;source-provenance;no-old-chunks",
+      "merged_entries": 132,
+      "scope": "v10_normalized_catalog"
+    }
+  ],
+  "evidence": 2114,
+  "exact_presentations_supported": 1648,
+  "excluded_source_rows": 1,
+  "f03_description_cells_corrected": 5,
+  "legacy_chunk_references_remaining": 0,
+  "limitations": [
+    "Aprovação de domínio deste novo release pendente.",
+    "Não comprova estoque, elegibilidade, dispensação por unidade, indicação clínica individual ou equivalência terapêutica.",
+    "As 79 apresentações de medicamentos com forma '-' ou concentração '-' refletem a ausência de declaração na fonte (ex: Farmácia Popular não declara formas). Elas não devem ser usadas para confirmar apresentações exatas.",
+    "A linha 987 da F03 está documentada exclusivamente no registro de exclusões por estar vazia no documento original.",
+    "Chunks antigos e complementares não incluídos no release consolidado."
+  ],
+  "normalization_summary": {
+    "catalog_after": 1727,
+    "catalog_before": 1859,
+    "chunk_max_chars": 814,
+    "chunk_p50_chars": 328,
+    "chunk_p95_chars": 540,
+    "chunk_recipe": "one-evidence-v3:normalized-fields;literal-spelling;F03-description-cell;F03-channel-code;F01-component-atc;F04-indication;source-provenance;no-old-chunks",
+    "chunk_unique_texts": 2114,
+    "distinct_canonical_forms": 152,
+    "distinct_canonical_ingredients": 914,
+    "f03_channels_with_codes": 1077,
+    "f03_occurrences": 1077,
+    "merged_entries": 132,
+    "parser_corrections": 54,
+    "schema_version": "consolidated-normalization-v1",
+    "vocab_sha256": {
+      "channels.json": "eed5ade88e2a0d605dd776b92b6342fdbc742dfd43390e046e650b992e03c339",
+      "forms.json": "10c7464b58435f5e9dc010ec76cfc28af633c7b9db5de86f6a36a06affdb443b",
+      "ingredients.json": "45d9405507c54780833e8324cedb582a0a33dd2b714eef50d1001415a4e865f2",
+      "units.json": "388fdf7820782c6537a47bb1411bcda2ec0684df664113922876d796f21395d2"
+    }
+  },
+  "occurrences": 2114,
+  "occurrences_by_source": {
+    "F01": 996,
+    "F03": 1077,
+    "F04": 41
+  },
+  "occurrences_by_type": {
+    "medicine": 2085,
+    "supply": 29
+  },
+  "partial_presentations_supported": 79,
+  "release_version": "corpus-consolidado-v10-normalizada-2026-11-17",
+  "supplies": 29,
+  "total_audited_records": 2115,
+  "validation": "Normalização aditiva v10 concluída: 1859 -> 1727 apresentações (132 absorções), 54 correções de parser F01 e 2114 chunks únicos em one-evidence-v3. Aprovação de domínio pendente."
+}

@@ -6,9 +6,10 @@ import argparse
 import json
 import platform
 import subprocess
+import sys
 import time
-from datetime import UTC, datetime
 from collections.abc import Callable
+from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
 from typing import Any
@@ -59,12 +60,28 @@ def text_content(response: Any) -> str:
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True
+    ).stdout.strip()
+    dirty = bool(
+        subprocess.run(
+            ["git", "status", "--porcelain", "--untracked-files=normal"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout.strip()
+    )
+    if args.split == "test" and dirty:
+        raise ValueError("Teste fechado exige árvore Git limpa")
     settings = get_settings()
     release = ConsolidatedRelease.load(args.release)
     chunks, manifest = load_chunks(
         release, ROOT / "data/derived/chunks" / release.manifest["release_version"]
     )
     raw = args.dataset.read_bytes()
+    dataset_sha256 = sha256(raw).hexdigest()
+    dataset_lf_sha256 = sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
     cases = [json.loads(line) for line in raw.splitlines() if line.strip()]
     if not cases or len({case["id"] for case in cases}) != len(cases):
         raise ValueError("Dataset vazio ou com IDs duplicados")
@@ -72,19 +89,30 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("O dataset desta execução deve conter somente o split solicitado")
     review_sha256 = None
     if args.split == "test":
-        if not args.frozen_dataset_sha256 or sha256(raw).hexdigest() != args.frozen_dataset_sha256:
+        if not args.frozen_dataset_sha256 or args.frozen_dataset_sha256 not in {
+            dataset_sha256,
+            dataset_lf_sha256,
+        }:
             raise ValueError("Teste fechado: hash congelado do dataset ausente ou divergente")
+        dataset_sha256 = args.frozen_dataset_sha256
         if args.review_record is None or not args.review_record.is_file():
             raise ValueError("Teste fechado: registro de revisão humana ausente")
-        review_sha256 = sha256(args.review_record.read_bytes()).hexdigest()
+        review_bytes = args.review_record.read_bytes()
+        raw_review_sha = sha256(review_bytes).hexdigest()
+        lf_review_sha = sha256(review_bytes.replace(b"\r\n", b"\n")).hexdigest()
         if any(
             case.get("review_status") != "reviewed"
             or not case.get("reviewer")
             or not case.get("reviewed_at")
-            or case.get("review_record_sha256") != review_sha256
+            or case.get("review_record_sha256") not in {raw_review_sha, lf_review_sha}
             for case in cases
         ):
             raise ValueError("Teste fechado: casos sem revisão humana vinculada")
+        review_sha256 = (
+            lf_review_sha
+            if all(case.get("review_record_sha256") == lf_review_sha for case in cases)
+            else raw_review_sha
+        )
     evidence_by_id = {item["evidence_id"]: item for item in release.evidence}
     for case in cases:
         if (
@@ -109,7 +137,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     store = None
     if needs_vector:
-        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+        from rag.providers import CachedQueryEmbeddings
+
+        embeddings = CachedQueryEmbeddings(
+            google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
+        )
         store = open_index(
             release,
             chunks,
@@ -118,9 +150,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             settings.rag_embedding_model,
             embeddings,
         )
+    chat_model = getattr(args, "chat_model", None) or settings.rag_chat_model
     llm = None
     if args.matrix == "response":
-        llm = MeasuredModel(google_chat(settings.rag_chat_model, settings.google_api_key))
+        llm = MeasuredModel(google_chat(chat_model, settings.google_api_keys))
     records: list[dict[str, Any]] = []
     for variant in variants:
         for case in cases:
@@ -174,8 +207,20 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                         answer = synthesize(case["question"], result, llm)
                         usage = llm.last_usage
                         generation_ms = round((time.perf_counter() - began) * 1000, 3)
+                if (
+                    args.matrix == "response"
+                    and args.request_delay > 0
+                    and generation_ms is not None
+                ):
+                    time.sleep(args.request_delay)
             except Exception as exc:
                 error = type(exc).__name__
+            if args.matrix == "response":
+                print(
+                    f"[{variant}] {case['id']} err={error or 'ok'}",
+                    file=sys.stderr,
+                    flush=True,
+                )
             found = result.get("evidence", []) if result else []
             ids = [item["evidence_id"] for item in found]
             relevant = set(case["relevant_ids"])
@@ -299,18 +344,6 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         if summaries[variant]["usage_coverage"] == 0:
             summaries[variant]["input_tokens_known"] = None
             summaries[variant]["output_tokens_known"] = None
-    commit = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=False
-    ).stdout.strip()
-    dirty = bool(
-        subprocess.run(
-            ["git", "status", "--porcelain", "--untracked-files=no"],
-            cwd=ROOT,
-            text=True,
-            capture_output=True,
-            check=False,
-        ).stdout.strip()
-    )
     code_hashes = {
         str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()
         for path in (
@@ -324,18 +357,27 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "schema_version": "week3-comparison-v1",
         "executed_at_utc": datetime.now(UTC).isoformat(),
         "matrix": args.matrix,
-        "dataset_sha256": sha256(raw).hexdigest(),
+        "dataset_sha256": dataset_sha256,
         "split": args.split,
         "review_sha256": review_sha256,
         "release_fingerprint": release.fingerprint,
         "chunks_sha256": manifest["files"]["chunks.jsonl"]["sha256"],
-        "chat_model": settings.rag_chat_model if llm else None,
+        "chat_model": chat_model if llm else None,
         "embedding_model": settings.rag_embedding_model if store else None,
         "best_strategy": args.best_strategy if args.matrix == "response" else None,
         "top_k": 5,
         "python_version": platform.python_version(),
         "git_commit": commit,
         "git_dirty": dirty,
+        "lockfile_sha256": sha256((ROOT / "uv.lock").read_bytes()).hexdigest(),
+        "platform": platform.platform(),
+        "system_prompt_sha256": sha256(SYSTEM.encode()).hexdigest(),
+        "model_parameters": (
+            llm.model.model_dump(include={"temperature", "max_retries", "timeout"}, mode="json")
+            if llm
+            else None
+        ),
+        "variants": variants,
         "code_sha256": code_hashes,
         "summaries": summaries,
         "records": records,
@@ -358,6 +400,8 @@ def main() -> None:
     parser.add_argument("--split", choices=("dev", "test"), default="dev")
     parser.add_argument("--frozen-dataset-sha256")
     parser.add_argument("--review-record", type=Path)
+    parser.add_argument("--request-delay", type=float, default=0.0)
+    parser.add_argument("--chat-model", help="Sobrescreve APP_RAG_CHAT_MODEL nesta execução")
     report = run(parser.parse_args())
     print(json.dumps(report["summaries"], ensure_ascii=False, indent=2))
 

@@ -11,7 +11,7 @@ from ingestion.infosaude_live import UBS_URL, sync_snapshot
 from .answer import synthesize
 from .catalog_chat import (
     candidates,
-    catalog_name_matches,
+    catalog_item_name_matches,
     options_reply,
     presentation_query,
     stock_candidates,
@@ -140,9 +140,7 @@ class ConversationState:
         else:
             chosen = False
             self.selected_option = None
-        new_medicine = any(
-            catalog_name_matches(query, m["active_ingredient"]) for m in release.catalog
-        )
+        new_medicine = any(catalog_item_name_matches(query, m) for m in release.catalog)
         followup = is_clarification_input(question) or query.startswith(("e ", "na ", "no "))
         stock_followup = bool(
             re.fullmatch(
@@ -245,12 +243,18 @@ def validated_products(release: ConsolidatedRelease) -> dict[str, tuple[str, str
     """Load audited external links, tied to this exact approved release fingerprint."""
     import json
 
-    path = ROOT / "data/mappings/ubs_consolidated.json"
-    if not path.exists():
+    by_fingerprint = ROOT / "data/mappings/ubs" / f"{release.fingerprint}.json"
+    legacy = ROOT / "data/mappings/ubs_consolidated.json"
+    if by_fingerprint.is_file():
+        payload = json.loads(by_fingerprint.read_text(encoding="utf-8"))
+        if payload.get("release_fingerprint") != release.fingerprint:
+            raise ValueError("Vínculos UBS pertencem a outro release; valide novamente")
+    elif legacy.is_file():
+        payload = json.loads(legacy.read_text(encoding="utf-8"))
+        if payload.get("release_fingerprint") != release.fingerprint:
+            return {}
+    else:
         return {}
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    if payload.get("release_fingerprint") != release.fingerprint:
-        raise ValueError("Vínculos UBS pertencem a outro release; valide novamente")
     catalog = {m["medicine_id"]: m for m in release.catalog}
     result = {}
     for link in payload["links"]:
@@ -321,7 +325,7 @@ def ask(
         )
         print(reply)
         return reply
-    if matches_clinical_guardrail(question):
+    if matches_clinical_guardrail(question, release):
         reply = (
             "Não posso orientar dose, indicação individual, elegibilidade ou troca de "
             "medicamento, nem afirmar equivalência terapêutica. Consulte um profissional de saúde."
@@ -410,9 +414,11 @@ def ask(
                 )
             print(reply)
             return reply
+    # Run the cheap deterministic/lexical pass first (~36-105 ms) to catch out-of-scope,
+    # ambiguous, or guardrail-blocked queries without triggering embeddings or LLM calls.
     result = search(lookup, release, chunks, strategy="lexical", top_k=settings.rag_top_k)
     if options and (
-        result["status"] != "matched" or not re.search(r"\d+\s*(mg|mcg|g|ui|ml)\b", query)
+        result["status"] != "matched" or not re.search(r"\d+\s*(mg|mcg|g|ui|ml|%)(?!\w)", query)
     ):
         reply = options_reply(options, release, stock=stock)
         print(reply)
@@ -431,8 +437,8 @@ def ask(
             reply += "Informe o nome como aparece na embalagem; posso listar as opções disponíveis."
         print(reply)
         return reply
-    if result["status"] == "matched" and strategy in {"hybrid", "vector"}:
-        if not settings.google_api_key.strip():
+    if not documental and result["status"] == "matched" and strategy in {"hybrid", "vector"}:
+        if not settings.has_google_api_key:
             if not cache.get("no_key_warned"):
                 print(
                     "Aviso: APP_GOOGLE_API_KEY ausente; "
@@ -443,7 +449,7 @@ def ask(
             try:
                 if "store" not in cache:
                     embeddings = google_embeddings(
-                        settings.rag_embedding_model, settings.google_api_key
+                        settings.rag_embedding_model, settings.google_api_keys
                     )
                     cache["store"] = open_index(
                         release,
@@ -471,17 +477,23 @@ def ask(
     reply = _documental(result)
     if (
         generate
+        and not documental
         and result["status"] == "matched"
-        and not settings.google_api_key.strip()
+        and not settings.has_google_api_key
         and not cache.get("no_key_warned")
     ):
         print("Aviso: APP_GOOGLE_API_KEY ausente; resposta documental utilizada.")
         cache["no_key_warned"] = True
-    if generate and result["status"] == "matched" and settings.google_api_key.strip():
+    if (
+        generate
+        and not documental
+        and result["status"] == "matched"
+        and settings.has_google_api_key
+    ):
         if not cache.get("generation_disabled"):
             try:
                 if "llm" not in cache:
-                    cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_key)
+                    cache["llm"] = google_chat(settings.rag_chat_model, settings.google_api_keys)
                 model_history = [
                     (
                         user,
@@ -495,10 +507,10 @@ def ask(
                     for user, reply in (history or [])
                 ]
                 generated = synthesize(question, result, cache["llm"], model_history)
-                if generated and not generated.startswith("Não foi possível gerar"):
+                if generated.strip() == str(result["message"]).strip():
                     reply = generated
                 else:
-                    print("Aviso: modelo sem resposta textual; resposta documental utilizada.")
+                    print("Aviso: síntese não verificada. Usando resposta documental.")
             except Exception as exc:
                 print(
                     f"Aviso: geração indisponível ({type(exc).__name__}); "
@@ -559,7 +571,7 @@ def chat(
             )
             print(greeting)
             reply = greeting
-        elif matches_clinical_guardrail(question):
+        elif matches_clinical_guardrail(question, release):
             reply = ask(
                 question, release, chunks, manifest, settings, cache, documental=args.documental
             )

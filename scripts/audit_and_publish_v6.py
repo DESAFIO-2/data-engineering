@@ -103,8 +103,8 @@ def audit_and_prepare() -> tuple[dict[str, bytes], dict, list[dict]]:
         }
 
     # 2. Extract primary source rows using coordinates (with cache for speed)
-    f01_cache = ROOT / "scripts/f01_extracted_cache.json"
-    f03_cache = ROOT / "scripts/f03_extracted_cache.json"
+    f01_cache = ROOT / "data/curation/archive/f01_extracted_cache.json"
+    f03_cache = ROOT / "data/curation/archive/f03_extracted_cache.json"
     if f01_cache.exists():
         f01_extracted = json.loads(f01_cache.read_text(encoding="utf-8"))
     else:

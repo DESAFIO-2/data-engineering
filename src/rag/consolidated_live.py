@@ -11,7 +11,15 @@ from typing import Any
 from ingestion.infosaude_live import CEAF, UBS, InfoSaudeLiveClient
 
 from .config import ROOT
-from .consolidated import ConsolidatedRelease, ingredient_key, normalize, strength_core
+from .consolidated import (
+    ConsolidatedRelease,
+    ingredient_key,
+    is_form_absent,
+    item_form_display,
+    item_form_label,
+    normalize,
+    strength_core,
+)
 from .live import _stamp, _timestamp, load_snapshot, stock_reply_for_product
 
 
@@ -30,7 +38,7 @@ def compatible_product(
     medicine: dict[str, Any], code: str, description: str, release: ConsolidatedRelease
 ) -> bool:
     query = normalize(description)
-    if medicine["form"] == "-":
+    if is_form_absent(medicine):
         return False
     codes = source_codes(medicine, release)
     if codes and code not in codes:
@@ -43,12 +51,17 @@ def compatible_product(
     def tokens(value: str) -> set[str]:
         return set(re.findall(r"[a-z]+", value)) - {"de", "do", "da"}
 
-    if tokens(prefix) != tokens(ingredient_key(medicine["active_ingredient"])):
+    if not any(
+        tokens(prefix) == tokens(ingredient_key(cand))
+        for cand in (medicine["active_ingredient"], *(medicine.get("aliases") or ()))
+    ):
         return False
     core = strength_core(medicine["strength"])
     if not re.search(r"(?<![\w.,/])" + re.escape(core) + r"(?![\w.,/])", query):
         return False
-    if normalize(medicine["form"]) not in query:
+    form_label = re.sub(r"\s*-\s*", " ", normalize(item_form_label(medicine)))
+    query_no_hyphen = re.sub(r"\s*-\s*", " ", query)
+    if form_label not in query_no_hyphen:
         return False
     modified = any(term in query for term in ("prolongada", "modificada", "retard"))
     if modified != bool(medicine.get("release_characteristic")):
@@ -258,7 +271,7 @@ def lookup_stock(
         temporary.replace(path)
     lines = [
         f"Consultando {medicine['active_ingredient']} {medicine['strength']} "
-        f"({medicine['form']}) para {region}.",
+        f"({item_form_display(medicine)}) para {region}.",
         *warnings,
     ]
     rows = result["ubs_stock"]

@@ -46,7 +46,7 @@ def run(args: Any, settings: Settings) -> int:
     if args.command == "index":
         from .providers import google_embeddings
 
-        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+        embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
         path = build_index(
             release,
             chunks,
@@ -81,34 +81,45 @@ def run(args: Any, settings: Settings) -> int:
             raise ValueError("Informe --dataset e --output para avaliação consolidada")
         path = Path(args.output)
         if (
-            release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            release.manifest["release_version"].startswith(
+                ("corpus-consolidado-v9-", "corpus-consolidado-v10-")
+            )
             and args.split == "test"
             and path.exists()
         ):
-            raise ValueError(f"Resultado v9 test já existe; não sobrescrever: {path}")
-        if release.manifest["release_version"] in {
-            "corpus-consolidado-v7-aprovado-2026-11-11",
-            "corpus-consolidado-v8-aprovado-2026-11-11",
-            "corpus-consolidado-v9-aprovado-2026-11-12",
-        }:
+            raise ValueError(
+                f"Resultado {release.manifest['release_version']} test já existe; "
+                f"não sobrescrever: {path}"
+            )
+        if release.manifest["release_version"].startswith(
+            (
+                "corpus-consolidado-v7-",
+                "corpus-consolidado-v8-",
+                "corpus-consolidado-v9-",
+                "corpus-consolidado-v10-",
+            )
+        ):
             from .consolidated_evaluation import evaluate
 
             v8 = release.manifest["release_version"].startswith("corpus-consolidado-v8-")
-            v9 = release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            v9_or_v10 = release.manifest["release_version"].startswith(
+                ("corpus-consolidado-v9-", "corpus-consolidado-v10-")
+            )
             store = None
             if args.strategy in {"vector", "hybrid"}:
-                from .providers import google_embeddings
+                from .providers import CachedQueryEmbeddings, google_embeddings
 
                 embeddings = google_embeddings(
-                    settings.rag_embedding_model, settings.google_api_key
+                    settings.rag_embedding_model, settings.google_api_keys
                 )
+
                 store = open_index(
                     release,
                     chunks,
                     manifest,
                     ROOT / settings.rag_vector_dir,
                     settings.rag_embedding_model,
-                    embeddings,
+                    CachedQueryEmbeddings(embeddings),
                 )
             result = evaluate(
                 dataset=Path(args.dataset),
@@ -126,7 +137,7 @@ def run(args: Any, settings: Settings) -> int:
                     if Path(args.dataset).name == "consolidated_v9_next_reviewed.jsonl"
                     else "docs/reports/v9/v9-independent-test-review-v2.md"
                 )
-                if v9
+                if v9_or_v10
                 else ROOT
                 / (
                     "docs/reports/v8/v8-calcium-correction-review.xlsx"
@@ -156,7 +167,7 @@ def run(args: Any, settings: Settings) -> int:
         if args.strategy in {"vector", "hybrid"}:
             from .providers import google_embeddings
 
-            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_key)
+            embeddings = google_embeddings(settings.rag_embedding_model, settings.google_api_keys)
             store = open_index(
                 release,
                 chunks,

@@ -29,10 +29,13 @@ class InfoSaudeDFConnector(BaseConnector):
         return cast(dict[str, Any] | list[Any], response.json())
 
     def validate_schema(self, raw_data: Any) -> bool:
-        return isinstance(raw_data, list) or (
-            isinstance(raw_data, dict)
-            and any(key in raw_data for key in ("data", "items", "value", "records"))
-        )
+        rows = raw_data
+        if isinstance(raw_data, dict):
+            rows = next(
+                (raw_data[key] for key in ("data", "items", "value", "records") if key in raw_data),
+                None,
+            )
+        return isinstance(rows, list) and all(isinstance(row, dict) for row in rows)
 
     def fetch_with_session_token(self, token: str) -> dict[str, Any] | list[Any]:
         response = self.session.get(

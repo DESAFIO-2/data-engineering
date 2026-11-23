@@ -1,0 +1,1719 @@
+{
+  "schema_version": "week3-comparison-v1",
+  "executed_at_utc": "2026-11-19T14:04:23.049234+00:00",
+  "matrix": "response",
+  "dataset_sha256": "5c685773b837a367e434d3caad271b6a0284b62843a7c633034f76c075befd4b",
+  "split": "dev",
+  "review_sha256": null,
+  "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+  "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+  "chat_model": "gemini-3.1-flash-lite",
+  "embedding_model": "models/gemini-embedding-2",
+  "best_strategy": "hybrid",
+  "top_k": 5,
+  "python_version": "3.12.16",
+  "git_commit": "74abb1ea6e2472391bcfdac0b393d831fd19a849",
+  "git_dirty": true,
+  "lockfile_sha256": "dd76b87e7ff447ca8197fdf99a580f21acc08b0f003f6c19dc6b02ee171b0df5",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "system_prompt_sha256": "073b69fe884cb45f01ddca5a36b7e1ced8e97bdd1e89f47597e28b4cc8c11100",
+  "model_parameters": {
+    "temperature": 0.0,
+    "max_retries": 0,
+    "timeout": 60.0
+  },
+  "variants": [
+    "llm_only",
+    "lexical_documental",
+    "lexical_llm",
+    "best_llm"
+  ],
+  "code_sha256": {
+    "src/rag/consolidated.py": "fe5808bac0541247116309b0286d180892bb4fa014cf48412373692284185fc6",
+    "src/rag/answer.py": "0f2346488c75d04b0db11d011dedbe8c411055a1c50b710560707f895a3666fe",
+    "src/rag/providers.py": "6df981ddc38109f813bdace74be0200bebfc3aee5af4f4cf149be898f547d2b9",
+    "scripts/week3_compare.py": "0800933f8926b8f22786599b4cc06bd9a494612275f7d9d0c0c2da2d9c22bf25"
+  },
+  "summaries": {
+    "llm_only": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": null,
+      "hit_at_3": null,
+      "hit_at_5": null,
+      "mrr_at_5": null,
+      "status_accuracy": null,
+      "critical_confusions": 0,
+      "citation_precision": null,
+      "errors": 0,
+      "usage_coverage": 12,
+      "input_tokens_known": 2413,
+      "output_tokens_known": 747,
+      "latency_p50_ms": 4549.452499999999,
+      "latency_p95_ms": 13046.854299999999,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": null,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_documental": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 0,
+      "input_tokens_known": null,
+      "output_tokens_known": null,
+      "latency_p50_ms": 44.908500000000004,
+      "latency_p95_ms": 67.26464999999997,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "lexical_llm": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 9,
+      "input_tokens_known": 3775,
+      "output_tokens_known": 673,
+      "latency_p50_ms": 8064.871999999999,
+      "latency_p95_ms": 12933.611799999997,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    },
+    "best_llm": {
+      "cases": 12,
+      "positive_cases": 9,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "critical_confusions": 0,
+      "citation_precision": 1.0,
+      "errors": 0,
+      "usage_coverage": 9,
+      "input_tokens_known": 3775,
+      "output_tokens_known": 657,
+      "latency_p50_ms": 6407.094,
+      "latency_p95_ms": 45722.707899999994,
+      "human_review": "pending",
+      "by_source": {
+        "F01": {
+          "cases": 4,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F03": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        },
+        "F04": {
+          "cases": 3,
+          "positive_cases": 3,
+          "hit_at_5": 1.0,
+          "critical_confusions": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "variant": "llm_only",
+      "id": "C-F01-001",
+      "question": "clofazimina 100 mg cápsula consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "Sim, a clofazimina 100 mg cápsula consta na RENAME (Relação Nacional de Medicamentos Essenciais). Ressalto que o fato de um medicamento constar nesta lista não garante a existência de estoque nas unidades de saúde. A informação disponível limita-se à presença do item na relação oficial.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 12006.602,
+      "total_ms": 13011.523,
+      "usage": {
+        "input_tokens": 185,
+        "output_tokens": 66,
+        "total_tokens": 251,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F01-002",
+      "question": "metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "O metilsulfato de pralidoxima 200 mg solução injetável não consta na RENAME. Ressalto que o fato de um medicamento constar ou não na lista não garante a existência de estoque nas unidades de saúde. A informação sobre a disponibilidade deste item específico não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 5844.315,
+      "total_ms": 6845.962,
+      "usage": {
+        "input_tokens": 192,
+        "output_tokens": 64,
+        "total_tokens": 256,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F01-003",
+      "question": "soro antiaracnídico (Loxosceles, Phoneutria e Tityus) cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "O soro antiaracnídico (Loxosceles, Phoneutria e Tityus) consta na RENAME. Ressalto que constar em lista não garante estoque nas unidades de saúde. A informação sobre a potência específica de neutralização por mililitro não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 4087.688,
+      "total_ms": 5092.909,
+      "usage": {
+        "input_tokens": 304,
+        "output_tokens": 62,
+        "total_tokens": 366,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F03-001",
+      "question": "enoxaparina sódica 60 mg solução injetável consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A enoxaparina sódica 60 mg solução injetável consta na Relação de Medicamentos de Uso Ambulatorial (REME) do Distrito Federal. Ressalto que o fato de um medicamento constar na lista não garante a existência de estoque nas unidades de saúde. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-0741375b2310786d862d43f0",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-17490c8d51d5aaa3d5fc1862"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 810.829,
+      "total_ms": 1813.145,
+      "usage": {
+        "input_tokens": 190,
+        "output_tokens": 70,
+        "total_tokens": 260,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F03-002",
+      "question": "iodopovidona (iodopolividona) 10% (teor de iodo 1% - frasco 1000 mL) solução degermante consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A iodopovidona 10% (solução degermante) consta na Relação de Medicamentos de Uso Hospitalar do Distrito Federal (REME-DF). Ressalto que o fato de um item constar na lista não garante a existência de estoque nas unidades de saúde. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 11069.155,
+      "total_ms": 12074.35,
+      "usage": {
+        "input_tokens": 212,
+        "output_tokens": 71,
+        "total_tokens": 283,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F03-003",
+      "question": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "O medicamento carbonato de cálcio (500 mg ou 600 mg) associado ao colecalciferol (400 UI) consta na Relação de Medicamentos de Uso Ambulatorial (REME-DF). Ressalto que o fato de um item constar na lista não garante a existência de estoque nas unidades de saúde. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 1904.21,
+      "total_ms": 2909.396,
+      "usage": {
+        "input_tokens": 211,
+        "output_tokens": 84,
+        "total_tokens": 295,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F04-001",
+      "question": "carbidopa + levodopa 25mg + 250mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "A combinação de carbidopa + levodopa 25mg + 250mg consta na lista de medicamentos do programa Farmácia Popular. No entanto, o fato de um medicamento constar na lista não garante a existência de estoque nas unidades. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 3000.858,
+      "total_ms": 4005.996,
+      "usage": {
+        "input_tokens": 192,
+        "output_tokens": 64,
+        "total_tokens": 256,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F04-002",
+      "question": "sulfato de salbutamol 5mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "O sulfato de salbutamol 5mg não consta na lista de medicamentos do programa Farmácia Popular. A informação sobre a disponibilidade deste item específico não está disponível neste recorte. Ressalto que constar em lista não garante estoque nas unidades.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 2483.735,
+      "total_ms": 3487.191,
+      "usage": {
+        "input_tokens": 184,
+        "output_tokens": 49,
+        "total_tokens": 233,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-F04-003",
+      "question": "sulfato de salbutamol 100mcg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": null,
+      "answer": "O sulfato de salbutamol 100mcg consta na lista de medicamentos do programa Farmácia Popular. Ressalto que constar em lista não garante a existência de estoque nas unidades. A informação sobre a disponibilidade atual não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 1937.898,
+      "total_ms": 2939.098,
+      "usage": {
+        "input_tokens": 187,
+        "output_tokens": 52,
+        "total_tokens": 239,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-SUP-009",
+      "question": "álcool etílico (FN) 70% consta como insumo na RENAME?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": null,
+      "answer": "O álcool etílico 70% consta na RENAME como um insumo disponível no âmbito do SUS. Ressalto que o fato de um item constar na lista não garante a existência de estoque nas unidades de saúde. A informação sobre a disponibilidade imediata não está disponível neste recorte.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 1238.538,
+      "total_ms": 2243.71,
+      "usage": {
+        "input_tokens": 189,
+        "output_tokens": 60,
+        "total_tokens": 249,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-WRONG-STRENGTH-001",
+      "question": "ácido ursodesoxicólico 99999 mg comprimido consta na RENAME?",
+      "source_id": null,
+      "expected_status": "not_in_scope",
+      "status": null,
+      "answer": "A RENAME não inclui o medicamento ácido ursodesoxicólico na dosagem de 99999 mg. A informação sobre a disponibilidade deste item específico não está disponível neste recorte. Ressalto que constar em lista não garante estoque.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 12084.879,
+      "total_ms": 13090.037,
+      "usage": {
+        "input_tokens": 188,
+        "output_tokens": 49,
+        "total_tokens": 237,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "llm_only",
+      "id": "C-NEG-002",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": null,
+      "answer": "A informação sobre a indicação de uso e a dosagem da sinvastatina não está disponível neste recorte. O fato de um medicamento constar em listas do SUS não garante a existência de estoque nas unidades de saúde. Para orientações sobre o seu tratamento, consulte um médico.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": null,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": null,
+      "generation_ms": 9168.915,
+      "total_ms": 10174.039,
+      "usage": {
+        "input_tokens": 179,
+        "output_tokens": 56,
+        "total_tokens": 235,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F01-001",
+      "question": "clofazimina 100 mg cápsula consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "clofazimina 100 mg (cápsula) consta nas fontes: F01. Presença em lista não confirma estoque.\n- clofazimina | 100 mg* | cápsula | Estratégico | J04BA01 e J04BA51 | -",
+      "evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-156a268279dc2ce94c2162da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 82.501,
+      "generation_ms": null,
+      "total_ms": 82.553,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F01-002",
+      "question": "metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "metilsulfato de pralidoxima 200 mg (solução injetável) consta nas fontes: F01. Presença em lista não confirma estoque.\n- metilsulfato de pralidoxima | 200 mg | solução injetável | Básico | V03AB04",
+      "evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9d17f5aa3256da8a98c534da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 45.532,
+      "generation_ms": null,
+      "total_ms": 45.578,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F01-003",
+      "question": "soro antiaracnídico (Loxosceles, Phoneutria e Tityus) cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "soro antiaracnídico (Loxosceles, Phoneutria e Tityus) cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) (solução injetável) consta nas fontes: F01. Presença em lista não confirma estoque.\n- soro antiaracnídico (Loxosceles, Phoneutria e Tityus) | cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) | solução injetável | Estratégico | J06AA | -",
+      "evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-864941078442181eff1c8b5e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 54.709,
+      "generation_ms": null,
+      "total_ms": 54.756,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F03-001",
+      "question": "enoxaparina sódica 60 mg solução injetável consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "enoxaparina sódica 60 mg (solução injetável) consta nas fontes: F03. Presença em lista não confirma estoque.\n- enoxaparina sódica solução injetável 60\n406. 3 5692 mg seringa preenchida 0,6 mL (exclusivo Agentes antitrombóticos Uso hospitalar\ncardiologia)\n- enoxaparina sódica solução injetável 60\n405. M S90426 Agentes antitrombóticos Farmácia do Componente Especializado\nmg seringa preenchida 0,6 mL\n- Policlínica de Planaltina, Policlínica de\nenoxaparina sódica solução injetável 60 Taguatinga, Farmácia Ambulatorial do\n404. 9 0426 Agentes antitrombóticos\nmg seringa preenchida 0,6 mL HBDF, Centro Especializado em Saúde da\nMulher - CESMU e uso hospitalar",
+      "evidence_ids": [
+        "evidence-17490c8d51d5aaa3d5fc1862",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-0741375b2310786d862d43f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-17490c8d51d5aaa3d5fc1862",
+        "chunk-9428ff389ab37c0973e946f8",
+        "chunk-0741375b2310786d862d43f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-0741375b2310786d862d43f0",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-17490c8d51d5aaa3d5fc1862"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true
+      ],
+      "retrieval_ms": 43.03,
+      "generation_ms": null,
+      "total_ms": 43.085,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F03-002",
+      "question": "iodopovidona (iodopolividona) 10% (teor de iodo 1% - frasco 1000 mL) solução degermante consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "iodopovidona (iodopolividona) 10% (teor de iodo 1% - frasco 1000 mL) (solução degermante) consta nas fontes: F03. Presença em lista não confirma estoque.\n- iodopovidona (iodopolividona) solução\nAntissépticos e\n571. 9 0829 degermante 10% (teor de iodo 1%) Uso hospitalar\ndesinfetantes\nfrasco 1000 mL",
+      "evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2eae1621c3e43ecefe3e241c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 46.218,
+      "generation_ms": null,
+      "total_ms": 46.253,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F03-003",
+      "question": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "carbonato de cálcio + colecalciferol equivalente a 500 ou 600 mg de cálcio + colecalciferol 400 UI (comprimido) consta nas fontes: F03. Presença em lista não confirma estoque.\n- carbonato de cálcio (equivalente a 500\nUBS (farmácia ambulatorial) e uso\n194. 2 1019 ou 600 mg de cálcio) + colecalciferol 400 Cálcio\nhospitalar\nUI comprimido (frasco ou blister)",
+      "evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-bc5acf38f4260802e843100c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 45.403,
+      "generation_ms": null,
+      "total_ms": 45.441,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F04-001",
+      "question": "carbidopa + levodopa 25mg + 250mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "carbidopa + levodopa 25 mg + 250 mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- carbidopa 25mg + levodopa 250mg ",
+      "evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-31f830e7fbb52c0353da2946"
+      ],
+      "expected_evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 44.539,
+      "generation_ms": null,
+      "total_ms": 44.579,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F04-002",
+      "question": "sulfato de salbutamol 5mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "sulfato de salbutamol 5 mg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- sulfato de salbutamol 5mg ",
+      "evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 45.216,
+      "generation_ms": null,
+      "total_ms": 45.238,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-F04-003",
+      "question": "sulfato de salbutamol 100mcg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "sulfato de salbutamol 100 mcg (forma não informada) consta nas fontes: F04. Presença em lista não confirma estoque.\n- sulfato de salbutamol 100mcg ",
+      "evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-e139cbd09a39d7da5be06493"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 43.15,
+      "generation_ms": null,
+      "total_ms": 43.163,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-SUP-009",
+      "question": "álcool etílico (FN) 70% consta como insumo na RENAME?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Informe o insumo e sua apresentação exata.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 2.573,
+      "generation_ms": null,
+      "total_ms": 2.582,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-WRONG-STRENGTH-001",
+      "question": "ácido ursodesoxicólico 99999 mg comprimido consta na RENAME?",
+      "source_id": null,
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 42.237,
+      "generation_ms": null,
+      "total_ms": 42.245,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_documental",
+      "id": "C-NEG-002",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": "unsupported",
+      "answer": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.03,
+      "generation_ms": null,
+      "total_ms": 0.035,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F01-001",
+      "question": "clofazimina 100 mg cápsula consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a clofazimina 100 mg cápsula consta na RENAME 2024 (2ª edição) como um medicamento do componente estratégico. Ressalto que o fato de o item constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-156a268279dc2ce94c2162da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 43.298,
+      "generation_ms": 6368.033,
+      "total_ms": 7416.07,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 58,
+        "total_tokens": 390,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F01-002",
+      "question": "metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME 2024 (2ª edição) no componente Básico. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9d17f5aa3256da8a98c534da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 74.819,
+      "generation_ms": 6369.326,
+      "total_ms": 7449.359,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 63,
+        "total_tokens": 405,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F01-003",
+      "question": "soro antiaracnídico (Loxosceles, Phoneutria e Tityus) cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o soro antiaracnídico (Loxosceles, Phoneutria e Tityus) consta na RENAME 2024, 2ª edição, classificado como um item estratégico. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-864941078442181eff1c8b5e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 88.336,
+      "generation_ms": 8048.795,
+      "total_ms": 9141.55,
+      "usage": {
+        "input_tokens": 680,
+        "output_tokens": 70,
+        "total_tokens": 750,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F03-001",
+      "question": "enoxaparina sódica 60 mg solução injetável consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "A enoxaparina sódica 60 mg solução injetável consta na Relação de Medicamentos do Distrito Federal (REME-DF), conforme a versão F03 de 29/10/2026. O medicamento está listado para uso hospitalar, na Farmácia do Componente Especializado e em unidades específicas como a Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Ambulatorial do HBDF e CESMU. Ressalto que constar em lista não garante a existência de estoque no momento da procura.",
+      "evidence_ids": [
+        "evidence-17490c8d51d5aaa3d5fc1862",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-0741375b2310786d862d43f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-17490c8d51d5aaa3d5fc1862",
+        "chunk-9428ff389ab37c0973e946f8",
+        "chunk-0741375b2310786d862d43f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-0741375b2310786d862d43f0",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-17490c8d51d5aaa3d5fc1862"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true
+      ],
+      "retrieval_ms": 77.279,
+      "generation_ms": 7010.7,
+      "total_ms": 8093.173,
+      "usage": {
+        "input_tokens": 608,
+        "output_tokens": 122,
+        "total_tokens": 730,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F03-002",
+      "question": "iodopovidona (iodopolividona) 10% (teor de iodo 1% - frasco 1000 mL) solução degermante consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a iodopovidona 10% (teor de iodo 1%) solução degermante em frasco de 1000 mL consta na Relação de Medicamentos do Distrito Federal (REME-DF), conforme a versão F03. Ressalto que o fato de o item constar na lista não garante a existência de estoque nas unidades de saúde. A informação disponível limita-se à presença do medicamento na relação oficial.",
+      "evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2eae1621c3e43ecefe3e241c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 79.982,
+      "generation_ms": 6951.452,
+      "total_ms": 8036.571,
+      "usage": {
+        "input_tokens": 415,
+        "output_tokens": 94,
+        "total_tokens": 509,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F03-003",
+      "question": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na Relação de Medicamentos do Distrito Federal (REME-DF), conforme a versão F03. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-bc5acf38f4260802e843100c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 79.415,
+      "generation_ms": 14197.772,
+      "total_ms": 15280.013,
+      "usage": {
+        "input_tokens": 424,
+        "output_tokens": 84,
+        "total_tokens": 508,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F04-001",
+      "question": "carbidopa + levodopa 25mg + 250mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a associação de carbidopa 25 mg + levodopa 250 mg consta na lista do programa Farmácia Popular. Ressalto que constar nesta lista não garante a disponibilidade de estoque nas unidades. A informação disponível refere-se à vigência até 31 de agosto de 2026.",
+      "evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-31f830e7fbb52c0353da2946"
+      ],
+      "expected_evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 78.024,
+      "generation_ms": 9930.604,
+      "total_ms": 11013.829,
+      "usage": {
+        "input_tokens": 338,
+        "output_tokens": 68,
+        "total_tokens": 406,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F04-002",
+      "question": "sulfato de salbutamol 5mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "O sulfato de salbutamol 5mg consta na lista do programa Farmácia Popular, conforme a fonte consultada. Ressalto que constar na lista não garante a disponibilidade de estoque nas unidades. A informação disponível refere-se apenas à presença do item na relação oficial.",
+      "evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 70.8,
+      "generation_ms": 8116.515,
+      "total_ms": 9192.558,
+      "usage": {
+        "input_tokens": 315,
+        "output_tokens": 56,
+        "total_tokens": 371,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-F04-003",
+      "question": "sulfato de salbutamol 100mcg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "O sulfato de salbutamol 100mcg consta na lista do programa Farmácia Popular, conforme a fonte consultada. Ressalto que constar nesta lista não garante a disponibilidade de estoque nas unidades. A informação sobre a forma farmacêutica não está disponível neste recorte.",
+      "evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-e139cbd09a39d7da5be06493"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 78.331,
+      "generation_ms": 8258.742,
+      "total_ms": 9341.354,
+      "usage": {
+        "input_tokens": 321,
+        "output_tokens": 58,
+        "total_tokens": 379,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-SUP-009",
+      "question": "álcool etílico (FN) 70% consta como insumo na RENAME?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Informe o insumo e sua apresentação exata.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 7.416,
+      "generation_ms": null,
+      "total_ms": 7.497,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-WRONG-STRENGTH-001",
+      "question": "ácido ursodesoxicólico 99999 mg comprimido consta na RENAME?",
+      "source_id": null,
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 69.242,
+      "generation_ms": null,
+      "total_ms": 69.272,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "lexical_llm",
+      "id": "C-NEG-002",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": "unsupported",
+      "answer": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.032,
+      "generation_ms": null,
+      "total_ms": 0.037,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F01-001",
+      "question": "clofazimina 100 mg cápsula consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a clofazimina 100 mg cápsula consta na RENAME 2024 (2ª edição) como um medicamento do componente estratégico. Ressalto que o fato de o item constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-156a268279dc2ce94c2162da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-156a268279dc2ce94c2162da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 1781.377,
+      "generation_ms": 8658.705,
+      "total_ms": 11442.624,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 58,
+        "total_tokens": 390,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F01-002",
+      "question": "metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o metilsulfato de pralidoxima 200 mg solução injetável consta na RENAME 2024 (2ª edição) no componente Básico. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9d17f5aa3256da8a98c534da"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9d17f5aa3256da8a98c534da"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 966.369,
+      "generation_ms": 9314.416,
+      "total_ms": 11286.012,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 63,
+        "total_tokens": 405,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F01-003",
+      "question": "soro antiaracnídico (Loxosceles, Phoneutria e Tityus) cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL) solução injetável consta na RENAME?",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o soro antiaracnídico (Loxosceles, Phoneutria e Tityus) consta na RENAME 2024, 2ª edição, classificado como um item estratégico. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-864941078442181eff1c8b5e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-864941078442181eff1c8b5e"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 884.754,
+      "generation_ms": 41223.7,
+      "total_ms": 43113.724,
+      "usage": {
+        "input_tokens": 680,
+        "output_tokens": 70,
+        "total_tokens": 750,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F03-001",
+      "question": "enoxaparina sódica 60 mg solução injetável consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a enoxaparina sódica 60 mg solução injetável consta na REME-DF (versão F03, de 29/10/2026). O medicamento está listado para uso hospitalar e em unidades específicas, como a Policlínica de Planaltina, Policlínica de Taguatinga, Farmácia Ambulatorial do HBDF e o CESMU. Ressalto que constar na lista não garante a existência de estoque no momento.",
+      "evidence_ids": [
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-17490c8d51d5aaa3d5fc1862",
+        "evidence-0741375b2310786d862d43f0"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-9428ff389ab37c0973e946f8",
+        "chunk-17490c8d51d5aaa3d5fc1862",
+        "chunk-0741375b2310786d862d43f0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-0741375b2310786d862d43f0",
+        "evidence-9428ff389ab37c0973e946f8",
+        "evidence-17490c8d51d5aaa3d5fc1862"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true
+      ],
+      "retrieval_ms": 1792.694,
+      "generation_ms": 33426.107,
+      "total_ms": 36230.87,
+      "usage": {
+        "input_tokens": 608,
+        "output_tokens": 106,
+        "total_tokens": 714,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F03-002",
+      "question": "iodopovidona (iodopolividona) 10% (teor de iodo 1% - frasco 1000 mL) solução degermante consta na REME DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a iodopovidona 10% (teor de iodo 1%) solução degermante em frasco de 1000 mL consta na Relação de Medicamentos do Distrito Federal (REME-DF), conforme a versão F03. Ressalto que o fato de o item constar na lista não garante a existência de estoque nas unidades de saúde. A informação disponível limita-se à presença do medicamento na relação oficial.",
+      "evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-2eae1621c3e43ecefe3e241c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2eae1621c3e43ecefe3e241c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 747.809,
+      "generation_ms": 998.221,
+      "total_ms": 2746.787,
+      "usage": {
+        "input_tokens": 415,
+        "output_tokens": 94,
+        "total_tokens": 509,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F03-003",
+      "question": "carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na REME-DF?",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, o carbonato de cálcio (equivalente a 500 ou 600 mg de cálcio) + colecalciferol 400 UI comprimido consta na Relação de Medicamentos do Distrito Federal (REME-DF), conforme a versão F03. Ressalto que o fato de o medicamento constar na lista não garante a existência de estoque nas unidades de saúde.",
+      "evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-bc5acf38f4260802e843100c"
+      ],
+      "expected_evidence_ids": [
+        "evidence-bc5acf38f4260802e843100c"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 625.159,
+      "generation_ms": 2703.664,
+      "total_ms": 4333.248,
+      "usage": {
+        "input_tokens": 424,
+        "output_tokens": 84,
+        "total_tokens": 508,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F04-001",
+      "question": "carbidopa + levodopa 25mg + 250mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "Sim, a associação de carbidopa 25 mg + levodopa 250 mg consta na lista do programa Farmácia Popular. Ressalto que constar nesta lista não garante a disponibilidade de estoque nas unidades. A informação disponível refere-se à vigência até 31 de agosto de 2026.",
+      "evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-31f830e7fbb52c0353da2946"
+      ],
+      "expected_evidence_ids": [
+        "evidence-31f830e7fbb52c0353da2946"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 1244.679,
+      "generation_ms": 46661.589,
+      "total_ms": 48911.466,
+      "usage": {
+        "input_tokens": 338,
+        "output_tokens": 68,
+        "total_tokens": 406,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F04-002",
+      "question": "sulfato de salbutamol 5mg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "O sulfato de salbutamol 5mg consta na lista do programa Farmácia Popular, conforme a fonte consultada. Ressalto que constar na lista não garante a disponibilidade de estoque nas unidades. A informação disponível refere-se apenas à presença do item na relação oficial.",
+      "evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-09b3c17ea49c6c8ae67c2e4d"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 724.028,
+      "generation_ms": 5587.005,
+      "total_ms": 7316.253,
+      "usage": {
+        "input_tokens": 315,
+        "output_tokens": 56,
+        "total_tokens": 371,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-F04-003",
+      "question": "sulfato de salbutamol 100mcg consta na Farmácia Popular?",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "answer": "O sulfato de salbutamol 100mcg consta na lista do programa Farmácia Popular, conforme a fonte consultada. Ressalto que constar nesta lista não garante a disponibilidade de estoque nas unidades. A informação sobre a forma farmacêutica não está disponível neste recorte.",
+      "evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "ranked_chunk_ids": [
+        "chunk-e139cbd09a39d7da5be06493"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e139cbd09a39d7da5be06493"
+      ],
+      "first_relevant_rank": 1,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "retrieval_ms": 743.577,
+      "generation_ms": 3749.139,
+      "total_ms": 5497.935,
+      "usage": {
+        "input_tokens": 321,
+        "output_tokens": 58,
+        "total_tokens": 379,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-SUP-009",
+      "question": "álcool etílico (FN) 70% consta como insumo na RENAME?",
+      "source_id": "F01",
+      "expected_status": "ambiguous",
+      "status": "ambiguous",
+      "answer": "Informe o insumo e sua apresentação exata.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 8.385,
+      "generation_ms": null,
+      "total_ms": 8.464,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-WRONG-STRENGTH-001",
+      "question": "ácido ursodesoxicólico 99999 mg comprimido consta na RENAME?",
+      "source_id": null,
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "answer": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 70.006,
+      "generation_ms": null,
+      "total_ms": 70.029,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    },
+    {
+      "variant": "best_llm",
+      "id": "C-NEG-002",
+      "question": "Posso tomar sinvastatina e qual dose?",
+      "source_id": null,
+      "expected_status": "unsupported",
+      "status": "unsupported",
+      "answer": "Este release informa somente presença nas listas, sem estoque, elegibilidade ou orientação clínica.",
+      "evidence_ids": [],
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "first_relevant_rank": null,
+      "status_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "retrieval_ms": 0.03,
+      "generation_ms": null,
+      "total_ms": 0.037,
+      "usage": null,
+      "error": null,
+      "human_review": "pending"
+    }
+  ]
+}

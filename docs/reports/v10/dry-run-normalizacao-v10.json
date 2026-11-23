@@ -1,0 +1,337 @@
+{
+  "source_release": "corpus-consolidado-v9-aprovado-2026-11-12",
+  "occurrences": 2114,
+  "literal_fields_unchanged": true,
+  "rule_counts": {
+    "strength_unit_canonical": 316,
+    "ingredient_vocab": 115,
+    "channel_hyphen_join": 87,
+    "channel_marker_strip": 83,
+    "channel_note_split": 79,
+    "form_release_extracted": 62,
+    "form_alternatives": 54,
+    "form_package_only": 36,
+    "strength_percent_spacing": 25,
+    "channel_punctuation": 23,
+    "form_spelling": 22,
+    "atc_footnote_split": 16,
+    "atc_multiple_split": 11,
+    "form_release_preposition": 10,
+    "channel_capitalize": 7,
+    "form_volume_to_package": 5,
+    "form_specification": 4,
+    "form_package_suffix": 3,
+    "form_synonym": 3,
+    "release_rate_to_strength_note": 2,
+    "atc_strip_continua": 1,
+    "strength_pdf_artifact_fix": 1,
+    "form_descriptor": 1,
+    "atc_join_space": 1,
+    "ingredient_spacing": 1
+  },
+  "rule_counts_by_source": {
+    "atc_footnote_split": {
+      "F01": 16
+    },
+    "atc_join_space": {
+      "F01": 1
+    },
+    "atc_multiple_split": {
+      "F01": 11
+    },
+    "atc_strip_continua": {
+      "F01": 1
+    },
+    "channel_capitalize": {
+      "F03": 7
+    },
+    "channel_hyphen_join": {
+      "F03": 87
+    },
+    "channel_marker_strip": {
+      "F03": 83
+    },
+    "channel_note_split": {
+      "F03": 79
+    },
+    "channel_punctuation": {
+      "F03": 23
+    },
+    "form_alternatives": {
+      "F01": 2,
+      "F03": 52
+    },
+    "form_descriptor": {
+      "F01": 1
+    },
+    "form_package_only": {
+      "F01": 3,
+      "F03": 33
+    },
+    "form_package_suffix": {
+      "F03": 3
+    },
+    "form_release_extracted": {
+      "F01": 33,
+      "F03": 29
+    },
+    "form_release_preposition": {
+      "F03": 10
+    },
+    "form_specification": {
+      "F01": 4
+    },
+    "form_spelling": {
+      "F01": 6,
+      "F03": 16
+    },
+    "form_synonym": {
+      "F03": 3
+    },
+    "form_volume_to_package": {
+      "F01": 4,
+      "F03": 1
+    },
+    "ingredient_spacing": {
+      "F03": 1
+    },
+    "ingredient_vocab": {
+      "F03": 115
+    },
+    "release_rate_to_strength_note": {
+      "F03": 2
+    },
+    "strength_pdf_artifact_fix": {
+      "F01": 1
+    },
+    "strength_percent_spacing": {
+      "F03": 25
+    },
+    "strength_unit_canonical": {
+      "F01": 9,
+      "F03": 273,
+      "F04": 34
+    }
+  },
+  "review_flags": {
+    "release_rate_in_strength": 2,
+    "atc_parser_artifact": 1,
+    "needs_pdf_check": 1
+  },
+  "review_flag_examples": {
+    "atc_parser_artifact": [
+      {
+        "occurrence_id": "occ-fd7a2060a37a9f71fe47aa82",
+        "source": "F01",
+        "page": 38,
+        "strength": "1.200 UI",
+        "form": "pó para solução injetável",
+        "atc": "B02BD04 continua",
+        "channel": ""
+      }
+    ],
+    "needs_pdf_check": [
+      {
+        "occurrence_id": "occ-3c800a169e894016ada0a5c0",
+        "source": "F01",
+        "page": 41,
+        "strength": "lactato de sódio 3 mg/mL + cloreto de sódio 6 mg/mL + cloreto de potássio 0/ ,3 mg/mL + cloreto de cálcio 0,2 mg/mL",
+        "form": "solução injetável",
+        "atc": "B05BB01",
+        "channel": ""
+      }
+    ],
+    "release_rate_in_strength": [
+      {
+        "occurrence_id": "occ-f208f9b0fbdfa9984f6ae66e",
+        "source": "F03",
+        "page": 52,
+        "strength": "18 mg (liberação de 9,5 mg/24h)",
+        "form": "adesivo transdérmico",
+        "atc": null,
+        "channel": "Farmácia do Componente Especializado"
+      },
+      {
+        "occurrence_id": "occ-924b68401c03c4123a26164e",
+        "source": "F03",
+        "page": 52,
+        "strength": "9 mg (liberação de 4,6 mg/24h)",
+        "form": "adesivo transdérmico",
+        "atc": null,
+        "channel": "Farmácia do Componente Especializado"
+      }
+    ]
+  },
+  "unused_vocabulary": {
+    "forms.spelling_fixes": [],
+    "forms.package_only": [],
+    "channels.codes": [],
+    "channels.restriction_flags": [],
+    "ingredients.mappings": []
+  },
+  "distinct_values": {
+    "active_ingredient": {
+      "literal": 986,
+      "canonical": 914
+    },
+    "strength": {
+      "literal": 646,
+      "canonical": 556
+    },
+    "form": {
+      "literal": 204,
+      "canonical": 152
+    },
+    "channel_text(F03)": {
+      "literal": 109,
+      "canonical": 86
+    },
+    "channel_codesets(F03)": 68,
+    "ingredient_variants_remaining_after_fold": 0
+  },
+  "remaining_ingredient_variants": {},
+  "kinds": {
+    "strength_kind": {
+      "numeric": 1832,
+      "textual": 111,
+      "absent": 57,
+      "combination": 114
+    },
+    "form_kind": {
+      "form": 1962,
+      "specification": 4,
+      "alternatives": 54,
+      "absent": 57,
+      "package_only": 36,
+      "descriptor": 1
+    },
+    "atc_kind": {
+      "who": 904,
+      "partial": 30,
+      "multiple": 11,
+      "not_classified": 35,
+      "herbal": 16
+    }
+  },
+  "channel_codes_frequency": {
+    "HOSPITALAR": 560,
+    "CEAF": 271,
+    "UBS_FARMACIA_AMBULATORIAL": 262,
+    "HUB_FARMACIA_ESCOLA": 121,
+    "CEDIN": 96,
+    "POLICLINICA": 90,
+    "UBS_FARMACIA_INTERNA": 76,
+    "SAMU": 72,
+    "HBDF_AMBULATORIAL": 65,
+    "UBS_UNIDADE_REFERENCIA": 62,
+    "UBS": 48,
+    "HEMOCENTRO": 26,
+    "HRT_ONCOLOGICA": 20,
+    "CESMU": 19,
+    "HRAN": 15,
+    "MALARIA_EQUIPE_VOLANTE": 13,
+    "TABAGISMO": 6,
+    "HCB": 3,
+    "USO_INTERNO_UNIDADES": 2,
+    "UBS_PRISIONAL": 1,
+    "SAUDE_MENTAL_CAPS_ISM": 1
+  },
+  "projected_catalog": {
+    "catalog_v9": 1859,
+    "catalog_projected": 1727,
+    "merge_groups": 132,
+    "entries_absorbed": 132,
+    "entries_split_inconsistent": [],
+    "v10_reconciliada_absorbed": 80,
+    "v10_reconciliada_absorbed_not_merged_now": [],
+    "sources_after": {
+      "F01": 697,
+      "F01,F03": 272,
+      "F03": 719,
+      "F04": 39
+    },
+    "merge_reasons": {
+      "strength_unit_canonical": 70,
+      "ingredient_vocab": 44,
+      "form_release_extracted+strength_unit_canonical": 1,
+      "ingredient_vocab+strength_unit_canonical": 13,
+      "form_spelling": 3,
+      "form_synonym": 1
+    },
+    "merge_examples": [
+      [
+        "calcitriol | 0,25 mcg | cápsula | None | ['F01']",
+        "calcitriol | 0,25mcg | cápsula | None | ['F03']"
+      ],
+      [
+        "cloridrato de metformina | 850 mg | comprimido | None | ['F01']",
+        "metformina (cloridrato) | 850 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "mesalazina | 500 mg | comprimido de liberação prolongada | liberação prolongada | ['F01']",
+        "mesalazina | 500mg | comprimido de liberação prolongada | liberação prolongada | ['F03']"
+      ],
+      [
+        "omeprazol | 20 mg | cápsula | None | ['F01']",
+        "omeprazol | 20mg | cápsula | None | ['F03']"
+      ],
+      [
+        "sulfato de atropina | 0,25 mg/mL | solução injetável | None | ['F01']",
+        "atropina (sulfato) | 0,25 mg/mL | solução injetável | None | ['F03']"
+      ],
+      [
+        "atenolol | 100 mg | comprimido | None | ['F01']",
+        "atenolol | 100mg | comprimido | None | ['F03']"
+      ],
+      [
+        "besilato de anlodipino | 5 mg | comprimido | None | ['F01']",
+        "anlodipino (besilato) | 5 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "besilato de anlodipino | 10 mg | comprimido | None | ['F01']",
+        "anlodipino (besilato) | 10 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "ciprofibrato | 100 mg | comprimido | None | ['F01']",
+        "ciprofibrato | 100mg | comprimido | None | ['F03']"
+      ],
+      [
+        "cloridrato de amiodarona | 200 mg | comprimido | None | ['F01']",
+        "amiodarona (cloridrato) | 200 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "cloridrato de dobutamina | 12,5 mg/mL | solução injetável | None | ['F01']",
+        "dobutamina (cloridrato) | 12,5 mg/mL | solução injetável | None | ['F03']"
+      ],
+      [
+        "cloridrato de dopamina | 5 mg/mL | solução injetável | None | ['F01']",
+        "dopamina (cloridrato) | 5 mg/mL | solução injetável | None | ['F03']"
+      ],
+      [
+        "cloridrato de propranolol | 40 mg | comprimido | None | ['F01']",
+        "propranolol (cloridrato) | 40 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "cloridrato de verapamil | 80 mg | comprimido | None | ['F01']",
+        "verapamil (cloridrato) | 80 mg | comprimido | None | ['F03']"
+      ],
+      [
+        "dinitrato de isossorbida | 5 mg | comprimido sublingual | None | ['F01']",
+        "isossorbida (dinitrato) | 5 mg | comprimido sublingual | None | ['F03']"
+      ]
+    ]
+  },
+  "gate": {
+    "blocking_flags": {
+      "channel_unmapped": 0,
+      "atc_invalid": 0
+    },
+    "rules_never_fired": [
+      "strength_whitespace",
+      "release_whitespace_case"
+    ],
+    "catalog_entries_split": 0,
+    "ingredient_variants_remaining": 0,
+    "passed": true
+  }
+}

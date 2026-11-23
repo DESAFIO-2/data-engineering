@@ -12,7 +12,7 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
-from .consolidated import ConsolidatedRelease, name_matches, normalize, search
+from .consolidated import ConsolidatedRelease, item_name_matches, normalize, search
 
 V7 = "corpus-consolidado-v7-aprovado-2026-11-11"
 
@@ -63,9 +63,19 @@ def _trace_candidates(question: str, release: ConsolidatedRelease) -> list[str]:
     return sorted(
         item["medicine_id"]
         for item in release.catalog
-        if name_matches(query, item["active_ingredient"])
-        and (source is None or source in item["source_ids"])
+        if item_name_matches(query, item) and (source is None or source in item["source_ids"])
     )
+
+
+def _review_hash(path: Path, expected: set[str]) -> str:
+    """Preserve review hashes when Git checks out text with LF instead of CRLF."""
+    raw = path.read_bytes()
+    digest = sha256(raw).hexdigest()
+    if digest in expected or path.suffix.lower() not in {".md", ".csv", ".txt"}:
+        return digest
+    crlf = raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    alternate = sha256(crlf).hexdigest()
+    return alternate if alternate in expected else digest
 
 
 def _preflight(
@@ -75,12 +85,13 @@ def _preflight(
     review_path: Path | None,
     prior_review_path: Path | None = None,
 ) -> None:
-    v9_test = release.manifest["release_version"].startswith("corpus-consolidado-v9-") and (
-        split == "test"
-    )
-    expected_count = 120 if v9_test else 119
+    version = release.manifest["release_version"]
+    v9_or_later_test = version.startswith(
+        ("corpus-consolidado-v9-", "corpus-consolidado-v10-")
+    ) and (split == "test")
+    expected_count = 120 if v9_or_later_test else 119
     if len(cases) != expected_count or len({case["id"] for case in cases}) != len(cases):
-        prefix = "Teste fechado: " if v9_test else ""
+        prefix = "Teste fechado: " if v9_or_later_test else ""
         raise ValueError(f"{prefix}o conjunto consolidado exige {expected_count} IDs únicos")
     families = {
         part: {case["family_id"] for case in cases if case["split"] == part}
@@ -126,11 +137,13 @@ def _preflight(
     if split == "test":
         if review_path is None or not review_path.exists():
             raise ValueError("Teste fechado: revisão humana da planilha não encontrada")
-        review_hash = sha256(review_path.read_bytes()).hexdigest()
         reviewed_cases = (
             [case for case in cases if case["split"] == "test"]
-            if release.manifest["release_version"].startswith("corpus-consolidado-v9-")
+            if version.startswith(("corpus-consolidado-v9-", "corpus-consolidado-v10-"))
             else cases
+        )
+        review_hash = _review_hash(
+            review_path, {case.get("review_reference_sha256", "") for case in reviewed_cases}
         )
         if any(
             case.get("review_status") != "reviewed"
@@ -289,7 +302,10 @@ def evaluate(
         "content_fingerprint": release.manifest.get("corpus_fingerprint"),
         "chunks_sha256": chunk_manifest["files"]["chunks.jsonl"]["sha256"],
         "dataset_sha256": sha256(dataset.read_bytes()).hexdigest(),
-        "review_sha256": sha256(review_path.read_bytes()).hexdigest()
+        "review_sha256": _review_hash(
+            review_path,
+            {case.get("review_reference_sha256", "") for case in cases if case["split"] == "test"},
+        )
         if split == "test" and review_path
         else None,
         "git": _git_revision(release.folder.parents[2]),

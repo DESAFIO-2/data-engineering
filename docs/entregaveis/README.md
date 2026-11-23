@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1 | Problema, stakeholders, riscos e métricas | Definições do projeto | Concluído (base normativa) | [semana-01](semana-01/README.md) |
 | 2 | Base de conhecimento e recuperação | Primeiro mecanismo RAG | Concluído (evoluído até v9) | [semana-02](semana-02/README.md) |
-| 3 | Comparação LLM × RAG | Respostas baseadas em evidências | Em validação (revisão factual pendente) | [semana-03](semana-03/README.md) |
+| 3 | Comparação LLM × RAG | Respostas baseadas em evidências | Concluído (revisão factual validada por Jhiovana em 18/11/2026) | [semana-03](semana-03/README.md) |
 | 4 | Sistema multiagentes | Primeiro sistema multiagentes | Planejado | [semana-04](semana-04/README.md) |
 | 5 | Multimodalidade | Agentes multimodais | Planejado | [semana-05](semana-05/README.md) |
 | 6 | Integração completa | Aplicação funcional | Planejado | [semana-06](semana-06/README.md) |

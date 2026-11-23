@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import Any
 from uuid import uuid4
 
@@ -83,6 +84,10 @@ class BaseConnector(ABC):
 
     def save_checkpoint(self, directory: Path, **state: Any) -> None:
         directory.mkdir(parents=True, exist_ok=True)
-        self.checkpoint_path(directory).write_text(json.dumps(state, sort_keys=True))
+        payload = json.dumps(state, sort_keys=True)
+        with NamedTemporaryFile(mode="w", dir=directory, delete_on_close=False) as stream:
+            stream.write(payload)
+            stream.close()
+            Path(stream.name).replace(self.checkpoint_path(directory))
 
     source_url = ""

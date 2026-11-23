@@ -4,14 +4,14 @@ from pathlib import Path
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-with open('scripts/cleaned_descs.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/cleaned_descs.json', 'r', encoding='utf-8') as f:
     descs = json.load(f)
 
 with open('data/corpus/experimental/occurrences.jsonl', 'r', encoding='utf-8') as f:
     occs = {json.loads(l)['occurrence_id']: json.loads(l) for l in f if l.strip()}
 
 # Load candidate groups
-with open('scripts/all_groups.json', 'r', encoding='utf-8') as f:
+with open('data/curation/archive/all_groups.json', 'r', encoding='utf-8') as f:
     raw_groups = json.load(f)
 
 # Specific known groups to strip from end of description
@@ -194,7 +194,7 @@ for oid, (row_num, full_text) in descs.items():
         't': t
     })
 
-with open('scripts/review_154_items.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/review_154_items.json', 'w', encoding='utf-8') as f:
     json.dump(items_for_review, f, indent=2, ensure_ascii=False)
 
 print(f"Generated review for {len(items_for_review)} items.")

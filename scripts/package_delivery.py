@@ -92,11 +92,18 @@ def inspect_content(relative: Path, content: bytes) -> None:
     if relative.as_posix() == ".env.example":
         allowed = {
             "APP_GOOGLE_API_KEY",
+            "APP_GOOGLE_API_KEY_FALLBACK_1",
+            "APP_GOOGLE_API_KEY_FALLBACK_2",
             "APP_RAG_CHAT_MODEL",
             "APP_RAG_EMBEDDING_MODEL",
             "APP_RAG_RELEASE_DIR",
             "APP_RAG_VECTOR_DIR",
             "APP_RAG_TOP_K",
+        }
+        secret_keys = {
+            "APP_GOOGLE_API_KEY",
+            "APP_GOOGLE_API_KEY_FALLBACK_1",
+            "APP_GOOGLE_API_KEY_FALLBACK_2",
         }
         for line in content.decode("utf-8-sig").splitlines():
             if not line.strip() or line.lstrip().startswith("#"):
@@ -104,7 +111,7 @@ def inspect_content(relative: Path, content: bytes) -> None:
             key, separator, value = line.partition("=")
             if not separator or key.strip() not in allowed:
                 raise ValueError("Unrecognized setting in .env.example")
-            if key.strip() == "APP_GOOGLE_API_KEY" and value.strip().strip("\"'"):
+            if key.strip() in secret_keys and value.strip().strip("\"'"):
                 raise ValueError(".env.example must contain an empty API key")
     if SECRET.search(content):
         raise ValueError(f"Credential signature detected: {relative.as_posix()}")

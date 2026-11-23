@@ -93,6 +93,30 @@ def test_missing_fields_vs_nonexistent(corpus: CorpusData, query: str, status: s
     assert search(query, release, chunks)["status"] == status
 
 
+def test_documental_hybrid_uses_no_google_api_with_key_configured(
+    corpus: CorpusData, settings: Settings, monkeypatch: Any
+) -> None:
+    release, chunks, manifest = corpus
+
+    def forbidden(*args: Any) -> Any:
+        pytest.fail("documental mode called Google")
+
+    monkeypatch.setattr(chat, "google_embeddings", forbidden)
+    monkeypatch.setattr(chat, "google_chat", forbidden)
+    reply = chat.ask(
+        "metformina 500 mg ação prolongada Farmácia Popular",
+        release,
+        chunks,
+        manifest,
+        replace(settings, google_api_key="configured-key"),
+        {},
+        documental=True,
+        strategy="hybrid",
+        generate=True,
+    )
+    assert "metformina" in reply.lower()
+
+
 def test_no_configuration_never_calls_providers(
     corpus: CorpusData, settings: Settings, monkeypatch: Any, capsys: Any
 ) -> None:
@@ -136,12 +160,12 @@ def test_vector_failure_still_generates_from_lexical(
     class Model:
         def invoke(self, messages: Any) -> Any:
             prompts.append(messages)
-            return SimpleNamespace(content="Consta na RENAME consultada.")
+            return SimpleNamespace(content="Há estoque garantido hoje.")
 
     monkeypatch.setattr(chat, "google_chat", lambda *args: Model())
     history = [(str(i), "answer") for i in range(8)]
     reply = chat.ask("metformina 850 mg comprimido RENAME", *corpus, settings, {}, history=history)
-    assert reply == "Consta na RENAME consultada."
+    assert "estoque garantido" not in reply and "850 mg" in reply
     assert "Usuário: 0" not in str(prompts) and "Usuário: 7" in str(prompts)
     assert "evidence-f16957cc6029096a75e2c5af" in str(prompts)
     output = capsys.readouterr().out
@@ -223,6 +247,13 @@ def test_invalid_link_fingerprint_is_rejected(
     directory.mkdir(parents=True)
     (directory / "ubs_consolidated.json").write_text(json.dumps({"release_fingerprint": "wrong"}))
     monkeypatch.setattr(chat, "ROOT", tmp_path)
+    assert chat.validated_products(corpus[0]) == {}
+
+    ubs_dir = directory / "ubs"
+    ubs_dir.mkdir(parents=True)
+    (ubs_dir / f"{corpus[0].fingerprint}.json").write_text(
+        json.dumps({"release_fingerprint": "wrong"})
+    )
     with pytest.raises(ValueError, match="outro release"):
         chat.validated_products(corpus[0])
 

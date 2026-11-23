@@ -23,7 +23,7 @@ for t2_idx, oid, srn, page, ing, form in f03_rows:
     })
 
 print(f"Total items: {len(results)}")
-with open('scripts/all_154_blocks.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/all_154_blocks.json', 'w', encoding='utf-8') as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
-print("Saved scripts/all_154_blocks.json")
+print("Saved data/curation/archive/all_154_blocks.json")

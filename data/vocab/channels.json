@@ -1,0 +1,37 @@
+{
+  "schema_version": "vocab-channels-v1",
+  "description": "Códigos de canal de disponibilização da REME-DF (F03). Os padrões são expressões regulares aplicadas ao texto principal do canal (sem notas de rodapé), em minúsculas e sem acentos. Um canal pode receber vários códigos. Os códigos não afirmam dispensação ao cidadão: só classificam o texto da fonte. Revisão humana na F8 (vocab_channels.csv).",
+  "codes": {
+    "UBS_FARMACIA_AMBULATORIAL": {"label": "UBS — farmácia ambulatorial", "patterns": ["\\bubs\\b[^,;]*farmacia ambulatorial", "unidades de referencia[^,;]*farmacia ambulatorial"]},
+    "UBS_FARMACIA_INTERNA": {"label": "UBS — farmácia interna", "patterns": ["\\bubs\\b[^,;]*farmacia interna"]},
+    "UBS": {"label": "UBS (sem qualificação de farmácia)", "patterns": ["\\bubs\\b(?![^,;]*farmacia)"]},
+    "UBS_UNIDADE_REFERENCIA": {"label": "UBS — unidades de referência", "patterns": ["unidades de referencia"]},
+    "UBS_PRISIONAL": {"label": "UBS — exclusivo unidades prisionais", "patterns": ["unidades prisionais"]},
+    "USO_INTERNO_UNIDADES": {"label": "Uso interno nas unidades", "patterns": ["uso interno nas unidades"]},
+    "CEAF": {"label": "Farmácia do Componente Especializado", "patterns": ["componente especializado"]},
+    "POLICLINICA": {"label": "Policlínica", "patterns": ["policlinica"]},
+    "HUB_FARMACIA_ESCOLA": {"label": "Farmácia Escola (HUB)", "patterns": ["farmacia escola", "\\(hub\\)"]},
+    "CEDIN": {"label": "Centro Especializado em Doenças Infecciosas (CEDIN)", "patterns": ["\\bcedin\\b", "doencas infecciosas"]},
+    "CESMU": {"label": "Centro Especializado em Saúde da Mulher (CESMU)", "patterns": ["\\bcesmu\\b", "saude da mulher"]},
+    "HBDF_AMBULATORIAL": {"label": "Farmácia Ambulatorial do HBDF", "patterns": ["\\bhbdf\\b"]},
+    "HRT_ONCOLOGICA": {"label": "Farmácia Ambulatorial Oncológica do HRT", "patterns": ["oncologica do hrt"]},
+    "HCB": {"label": "Hospital da Criança (HCB)", "patterns": ["\\bhcb\\b", "hospital da crianca"]},
+    "HRAN": {"label": "HRAN", "patterns": ["\\bhran\\b"]},
+    "HOSPITALAR": {"label": "Uso hospitalar", "patterns": ["uso hospitalar"]},
+    "SAMU": {"label": "Atendimento pré-hospitalar (SAMU)", "patterns": ["\\bsamu\\b", "pre-hospitalar"]},
+    "HEMOCENTRO": {"label": "Hemocentro", "patterns": ["hemocentro"]},
+    "SAUDE_MENTAL_CAPS_ISM": {"label": "CAPS AD / Instituto de Saúde Mental", "patterns": ["\\bcaps\\b", "saude mental \\(ism\\)", "instituto de saude mental"]},
+    "MALARIA_EQUIPE_VOLANTE": {"label": "Programa de Malária — equipe volante", "patterns": ["malaria"]},
+    "TABAGISMO": {"label": "Centros de Atendimento de Tabagismo", "patterns": ["tabagismo"]}
+  },
+  "restriction_flags": {
+    "EXCLUSIVO_ODONTOLOGIA": "exclusivo da odontologia",
+    "EXCLUSIVO_HMIB": "exclusivo hmib",
+    "EXCLUSIVO_HRAN": "exclusivo hran",
+    "EXCLUSIVO_HRT": "exclusivo hrt",
+    "MATERNIDADES": "maternidades",
+    "CARATER_EXCEPCIONAL": "carater excepcional",
+    "EM_DESPADRONIZACAO": "despadronizacao",
+    "CONDICIONADO_DIABETES_TIPO": "diabetes mellitus tipo"
+  }
+}

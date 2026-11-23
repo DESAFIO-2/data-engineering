@@ -12,7 +12,13 @@ output/
 .test-tmp-*/
 .env
 .docs
-data/vectorstore/
+data/vectorstore/*
+!data/vectorstore/chroma/
+data/vectorstore/chroma/*
+!data/vectorstore/chroma/consolidated/
+data/vectorstore/chroma/consolidated/*
+!data/vectorstore/chroma/consolidated/.gitignore
+!data/vectorstore/chroma/consolidated/*.dvc
 
 # Dados locais reconstruiveis por camada
 data/bronze/*

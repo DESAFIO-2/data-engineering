@@ -1,0 +1,64 @@
+{
+  "schema_version": "vocab-forms-v1",
+  "description": "Regras para a forma farmacêutica canônica (referência: vocabulário controlado de formas farmacêuticas da Anvisa). O literal da fonte nunca é alterado; o resultado vai para normalized.form, normalized.package, normalized.release e normalized.form_alternatives. Revisão humana na F8 (vocab_forms.csv).",
+  "spelling_fixes": {
+    "pó liófilizado": "pó liofilizado",
+    "pó liofilizo": "pó liofilizado",
+    "pó liófilo": "pó liofilizado",
+    "frasco ampola": "frasco-ampola",
+    "comprimidos dispersíveis": "comprimido dispersível",
+    " p/ ": " para ",
+    "intrabronquica": "intrabrônquica",
+    "pó liofilizado solução injetável": "pó liofilizado para solução injetável",
+    "pó liofilizado para injetável": "pó liofilizado injetável"
+  },
+  "canonical_synonyms": {
+    "comprimido simples": "comprimido",
+    "pó para preparo de 1 litro de solução": "pó para preparo de solução"
+  },
+  "volume_phrase_packages": {
+    "pó para preparo de 1 litro de solução": "1 L"
+  },
+  "release_insertions": {
+    "comprimido liberação": "comprimido de liberação",
+    "comprimido revestido liberação": "comprimido revestido de liberação",
+    "cápsula liberação": "cápsula de liberação",
+    "drágea liberação": "drágea de liberação"
+  },
+  "package_only": [
+    "ampola",
+    "frasco",
+    "frasco-ampola",
+    "frasco ou bolsa",
+    "bisnaga ou tubo",
+    "carpule",
+    "unidade"
+  ],
+  "package_phrase_suffixes": [
+    "frasco ou envelope"
+  ],
+  "package_suffixes": [
+    "seringa preenchida"
+  ],
+  "specification_patterns": [
+    "^\\d+\\s*mm\\s*x\\s*\\d+\\s*mm$",
+    "^até \\d+\\s*cm$",
+    "^modelo .+$"
+  ],
+  "descriptor_forms": [
+    "conforme farmacopeia homeopática brasileira vigente"
+  ],
+  "alternative_separators": [
+    " ou ",
+    ", "
+  ],
+  "release_patterns": {
+    "de liberação prolongada": "liberação prolongada",
+    "de liberação retardada": "liberação retardada",
+    "de liberação controlada": "liberação controlada",
+    "de liberação lenta": "liberação lenta",
+    "de liberação modificada": "liberação modificada",
+    "de liberação entérica": "liberação entérica",
+    "de desintegração lenta": "desintegração lenta"
+  }
+}

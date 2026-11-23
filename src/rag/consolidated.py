@@ -61,7 +61,10 @@ class ConsolidatedRelease:
             "domain_review.json",
         }
         files = set(manifest["files"])
-        if not (files == expected or files == (expected | {"audit_log.jsonl"})):
+        base_sets = (expected, expected | {"audit_log.jsonl"})
+        if not any(
+            files == base or files == (base | NORMALIZED_RELEASE_FILES) for base in base_sets
+        ):
             raise ValueError("Arquivos do release incompletos")
         for name, info in manifest["files"].items():
             if Path(name).name != name:
@@ -112,6 +115,26 @@ class ConsolidatedRelease:
             ):
                 raise ValueError("Insumo inválido")
         exclusions = rows(folder / "exclusions.jsonl")
+        if NORMALIZED_RELEASE_FILES <= files:
+            norm_bundle = json.loads((folder / "normalization.json").read_bytes())
+            if not norm_bundle.get("schema_version") or "files" not in norm_bundle:
+                raise ValueError("normalization.json inválido")
+            for ev in evidence:
+                occ = by_occ[ev["occurrence_id"]]
+                if (
+                    not isinstance(occ.get("normalized"), dict)
+                    or ev.get("normalized") != occ["normalized"]
+                ):
+                    raise ValueError("Campos normalizados ausentes ou divergentes")
+                if (
+                    ev.get("component") != occ.get("component")
+                    or ev.get("source_code") != occ.get("source_code")
+                    or ev.get("atc") != occ.get("atc")
+                    or ev.get("channel") != occ.get("channel")
+                    or ev.get("channel_text") != occ["normalized"].get("channel_text")
+                    or ev.get("channel_codes") != occ["normalized"].get("channel_codes")
+                ):
+                    raise ValueError("Campos de proveniência da evidência divergentes")
         excluded_ids = {item["occurrence_id"] for item in exclusions if item.get("occurrence_id")}
         for ev in evidence:
             text_stripped = str(ev.get("text") or "").strip()
@@ -130,15 +153,85 @@ CHUNK_RECIPE_V2 = (
     "one-evidence-v2:structured-fields;F03-description-cell;F04-indication;"
     "source-provenance;no-old-chunks"
 )
+CHUNK_RECIPE_V3 = (
+    "one-evidence-v3:normalized-fields;literal-spelling;F03-description-cell;F03-channel-code;"
+    "F01-component-atc;F04-indication;source-provenance;no-old-chunks"
+)
 _SUPPORTED_CHUNK_RECIPES = {
     CHUNK_RECIPE_V1: digest(CHUNK_RECIPE_V1.encode()),
     CHUNK_RECIPE_V2: digest(CHUNK_RECIPE_V2.encode()),
+    CHUNK_RECIPE_V3: digest(CHUNK_RECIPE_V3.encode()),
 }
+CHUNK_NOTE_MAX_CHARS = 200
+NORMALIZED_RELEASE_FILES = frozenset({"normalization.json", "id_map_v9_v10.json"})
+
+
+def default_chunk_recipe(release: ConsolidatedRelease) -> str:
+    """v3 for releases carrying the normalization bundle; v2 otherwise."""
+    return CHUNK_RECIPE_V3 if "normalization.json" in release.manifest["files"] else CHUNK_RECIPE_V2
+
+
+def _provenance_line(ev: dict[str, Any]) -> str:
+    src = ev["source"]
+    loc_parts = [f"p. {src['page']}"]
+    if ev.get("source_row_number") is not None:
+        loc_parts.append(f"item {ev['source_row_number']}")
+    elif ev.get("line_start") is not None:
+        ls = ev["line_start"]
+        le = ev.get("line_end")
+        loc_parts.append(f"linhas {ls}-{le}" if le and le != ls else f"linha {ls}")
+    else:
+        loc_parts.append(ev["occurrence_id"])
+    return f"Proveniência: {src['source_id']} ({', '.join(loc_parts)})."
+
+
+def _chunk_parts_v3(ev: dict[str, Any]) -> list[str]:
+    norm = ev["normalized"]
+    source_id = ev["source"]["source_id"]
+    form = norm.get("form") or norm.get("package") or norm.get("specification") or "não informada"
+    parts = [
+        f"Tipo: {'insumo' if ev['item_type'] == 'supply' else 'medicamento'}",
+        f"Princípio ativo ou item: {norm['active_ingredient']}",
+    ]
+    if normalize(ev["active_ingredient"]) != normalize(norm["active_ingredient"]):
+        parts.append(f"Grafia na fonte: {ev['active_ingredient']}")
+    parts.append(f"Concentração ou apresentação: {norm.get('strength') or 'não informada'}")
+    parts.append(f"Forma: {form}")
+    if norm.get("form") and norm.get("package"):
+        parts.append(f"Embalagem: {norm['package']}")
+    if norm.get("release"):
+        parts.append(f"Liberação: {norm['release']}")
+    if source_id == "F03":
+        parts.append(f"Descrição na REME-DF: {ev['description_cell']}")
+        if norm.get("channel_text"):
+            parts.append(f"Onde é disponibilizado (REME-DF): {norm['channel_text']}")
+        if norm.get("channel_notes"):
+            note = "; ".join(norm["channel_notes"])
+            if len(note) > CHUNK_NOTE_MAX_CHARS:
+                note = note[: CHUNK_NOTE_MAX_CHARS - 1].rstrip() + "…"
+            parts.append(f"Observação da fonte: {note}")
+        if ev.get("source_code"):
+            parts.append(f"Código REME-DF: {ev['source_code']}")
+    if source_id == "F01":
+        if ev.get("component"):
+            parts.append(f"Componente RENAME: {ev['component']}")
+        atc_codes = norm.get("atc", {}).get("codes") or []
+        if atc_codes:
+            parts.append(f"ATC: {', '.join(atc_codes)}")
+    if source_id == "F04":
+        parts.append(f"Indicação no elenco: {ev['indication']}")
+    parts.append(f"Consta na lista {source_id} ({ev['source']['version']}).")
+    parts.append(_provenance_line(ev))
+    return parts
 
 
 def chunk_for(
     ev: dict[str, Any], release_version: str, recipe: str = CHUNK_RECIPE_V1
 ) -> dict[str, Any]:
+    if recipe == CHUNK_RECIPE_V3:
+        chunk = _chunk_dict(ev, release_version, "\n".join(_chunk_parts_v3(ev)))
+        chunk["channel_codes"] = list(ev["normalized"].get("channel_codes") or [])
+        return chunk
     form = ev["form"] if ev["form"] != "-" else "não informada"
     strength = ev["strength"] if ev["strength"] != "-" else "não informada"
     parts = [
@@ -155,20 +248,13 @@ def chunk_for(
         parts.append(f"Indicação no elenco: {ev['indication']}")
     parts.append(f"Consta na lista {ev['source']['source_id']} ({ev['source']['version']}).")
     if recipe == CHUNK_RECIPE_V2:
-        src = ev["source"]
-        loc_parts = [f"p. {src['page']}"]
-        if ev.get("source_row_number") is not None:
-            loc_parts.append(f"item {ev['source_row_number']}")
-        elif ev.get("line_start") is not None:
-            ls = ev["line_start"]
-            le = ev.get("line_end")
-            loc_parts.append(f"linhas {ls}-{le}" if le and le != ls else f"linha {ls}")
-        else:
-            loc_parts.append(ev["occurrence_id"])
-        parts.append(f"Proveniência: {src['source_id']} ({', '.join(loc_parts)}).")
+        parts.append(_provenance_line(ev))
     elif recipe != CHUNK_RECIPE_V1:
         raise ValueError(f"Receita de chunk desconhecida: {recipe}")
-    text = "\n".join(parts)
+    return _chunk_dict(ev, release_version, "\n".join(parts))
+
+
+def _chunk_dict(ev: dict[str, Any], release_version: str, text: str) -> dict[str, Any]:
     return {
         "chunk_id": "chunk-" + ev["evidence_id"].removeprefix("evidence-"),
         "evidence_id": ev["evidence_id"],
@@ -184,14 +270,17 @@ def chunk_for(
 
 
 def build_chunks(
-    release: ConsolidatedRelease, output: Path, recipe: str = CHUNK_RECIPE_V2
+    release: ConsolidatedRelease, output: Path, recipe: str | None = None
 ) -> dict[str, Any]:
+    recipe = recipe or default_chunk_recipe(release)
     if recipe not in _SUPPORTED_CHUNK_RECIPES:
         raise ValueError(f"Receita de chunk desconhecida: {recipe}")
     chunks = [
         chunk_for(e, release.manifest["release_version"], recipe=recipe) for e in release.evidence
     ]
-    has_dup_texts = recipe == CHUNK_RECIPE_V2 and len({c["text"] for c in chunks}) != len(chunks)
+    has_dup_texts = recipe in (CHUNK_RECIPE_V2, CHUNK_RECIPE_V3) and len(
+        {c["text"] for c in chunks}
+    ) != len(chunks)
     if (
         len({c["chunk_id"] for c in chunks}) != len(chunks)
         or has_dup_texts
@@ -324,6 +413,11 @@ def build_index(
                     "source_id": c["source"]["source_id"],
                     "page": c["source"]["page"],
                     "release_version": c["release_version"],
+                    **(
+                        {"channel_codes": "|".join(c["channel_codes"])}
+                        if "channel_codes" in c
+                        else {}
+                    ),
                 },
             )
             for c in batch
@@ -408,15 +502,16 @@ def open_index(
 def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(c for c in value if not unicodedata.combining(c))
-    value = re.sub(r"(?<=\d)\s*(?=(?:mcg|mg|ml|ui)\b)", " ", value)
+    value = re.sub(r"(?<=\d)\s*(?=(?:mcg|mg|g|ml|meq|ui|u|l)\b|%)", " ", value)
     value = re.sub(r"\s*/\s*", "/", value)
     return " ".join(value.split())
 
 
 def strength_core(value: str) -> str:
-    """Separate a documented device/package suffix, never chemical equivalence."""
+    """Separate a documented device/package/delivery-rate suffix, never chemical equivalence."""
     return re.sub(
-        r"\s*\((?:sistema de aplicacao|apresentacoes? de|frasco|ampola|caneta)\b[^)]*\)$",
+        r"\s*\((?:sistema de aplicacao|apresentacoes? de|frasco|"
+        r"ampola|caneta|liberacao de)\b[^)]*\)$",
         "",
         normalize(value),
     )
@@ -436,6 +531,76 @@ def _form_matches(query: str, form: str) -> bool:
         return bool(re.search(r"\binjetavel\b", requested))
     if documented.startswith("comprimido de liberacao "):
         return bool(re.search(r"\bcomprimido\b", requested))
+    return False
+
+
+def is_form_absent(item: dict[str, Any]) -> bool:
+    """True only when the source declares neither form nor package/specification."""
+    return item.get("form") == "-" and not item.get("package") and not item.get("specification")
+
+
+def item_form_label(item: dict[str, Any]) -> str:
+    """Best single label for matching and length comparison across v5-v10 schemas."""
+    form = item.get("form")
+    if form not in (None, "", "-"):
+        return str(form)
+    return str(item.get("package") or item.get("specification") or "-")
+
+
+def item_form_display(item: dict[str, Any]) -> str:
+    """Human-readable form/package label preserving legacy text when no package exists."""
+    form = item.get("form")
+    package = item.get("package")
+    specification = item.get("specification")
+    if form not in (None, "", "-"):
+        return f"{form} ({package})" if package else str(form)
+    if package:
+        return str(package)
+    if specification:
+        return str(specification)
+    return "forma não informada"
+
+
+def item_name_matches(query: str, item: dict[str, Any]) -> bool:
+    if name_matches(query, item["active_ingredient"]):
+        return True
+    return any(name_matches(query, alias) for alias in item.get("aliases") or ())
+
+
+def _package_matches(query: str, package: str) -> bool:
+    q_norm = re.sub(r"\s*-\s*", " ", normalize(query))
+    p_norm = re.sub(r"\s*-\s*", " ", normalize(package))
+    candidates = [p_norm]
+    if " ou " in p_norm:
+        candidates.extend(part.strip() for part in p_norm.split(" ou ") if part.strip())
+    return any(re.search(r"(?<!\w)" + re.escape(cand) + r"(?!\w)", q_norm) for cand in candidates)
+
+
+def _presentation_form_matches(query: str, item: dict[str, Any]) -> bool:
+    if is_form_absent(item):
+        return True
+    form = item.get("form")
+    package = item.get("package")
+    specification = item.get("specification")
+    if form not in (None, "", "-"):
+        matched = (
+            _form_matches(query, str(form))
+            or any(_form_matches(query, lit) for lit in item.get("literal_forms") or ())
+            or any(_form_matches(query, alt) for alt in item.get("form_alternatives") or ())
+        )
+        if not matched:
+            return False
+        if (
+            package
+            and item.get("strength") == "-"
+            and re.fullmatch(r"\d+(?:,\d+)?\s*m?l", str(package), re.I)
+        ):
+            return _package_matches(query, str(package))
+        return True
+    if package:
+        return _package_matches(query, str(package))
+    if specification:
+        return _textual_presentation(str(specification)) in _textual_presentation(query)
     return False
 
 
@@ -495,13 +660,14 @@ def strength_matches(query: str, strength: str, name: str | None = None) -> bool
 def name_suggestion(question: str, catalog: list[dict[str, Any]]) -> tuple[str, str] | None:
     """Suggest a unique one-character typo; never silently select a medicine."""
     query = normalize(question)
-    if any(name_matches(query, m["active_ingredient"]) for m in catalog):
+    if any(item_name_matches(query, m) for m in catalog):
         return None
-    names = {
-        normalize(m["active_ingredient"]): m["active_ingredient"]
-        for m in catalog
-        if re.fullmatch(r"[a-z]{6,}", normalize(m["active_ingredient"]))
-    }
+    names: dict[str, str] = {}
+    for m in catalog:
+        for candidate in (m["active_ingredient"], *(m.get("aliases") or ())):
+            norm = normalize(candidate)
+            if re.fullmatch(r"[a-z]{6,}", norm):
+                names.setdefault(norm, candidate)
     suggestions = set()
     for token in re.findall(r"\b[a-z]{6,}\b", query):
         for name in names:
@@ -562,9 +728,18 @@ CLINICAL_BLOCKED_TERMS: tuple[str, ...] = (
     "dosagem",
     "posologia",
     "superdosagem",
-    "dose diaria",
+    "minha dose diaria",
+    "sua dose diaria",
+    "dose diaria maxima",
+    "dose diaria minima",
+    "dose diaria recomendada",
+    "dose diaria indicada",
+    "dose diaria segura",
+    "dose diaria ideal",
     "dose maxima",
-    "dose minima",
+    "dose minima recomendada",
+    "dose minima eficaz",
+    "dose minima efetiva",
     "dose recomendada",
     "substituir",
     "substituicao terapeutica",
@@ -647,6 +822,12 @@ CLINICAL_BLOCKED_TERMS: tuple[str, ...] = (
 CLINICAL_BLOCKED_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\b(?:trocar|substituir)\b.{1,40}\bpor\b"),
     re.compile(r"\b(?:qual|que|recomende|indique|calcule|ajuste)\b.{0,25}\bdose\b"),
+    re.compile(
+        r"\b(?:tomar|usar|prescrever|indicar|recomendar|aumentar|diminuir|"
+        r"dobrar|reduzir|alterar|exceder)\b.{0,25}\bdose (?:diaria|minima)\b"
+    ),
+    re.compile(r"(?<!\()\bdose diaria\s+(?:de|para)\b"),
+    re.compile(r"\bdose minima\b(?!\s+(?:mortal|necrosante)\b)"),
     re.compile(r"\b(?:devo|posso|preciso)\s+(?:tomar|usar|aplicar|suspender|interromper)\b"),
 )
 
@@ -682,9 +863,30 @@ DOCUMENTAL_ONLY_BLOCKED_TERMS: tuple[str, ...] = (
 )
 
 
-def matches_clinical_guardrail(question: str) -> bool:
+def matches_clinical_guardrail(question: str, release: ConsolidatedRelease | None = None) -> bool:
     """Detect out-of-scope clinical, dosing, pregnancy, or eligibility queries via lexical rules."""
     query = normalize(question)
+    if release and "(dose diaria)" in query:
+        listing = re.fullmatch(r"na (rename|reme-df), ha registro de (.+)\?", query)
+        if listing:
+            source_id = {"rename": "F01", "reme-df": "F03"}[listing[1]]
+            for item in release.catalog:
+                if source_id not in item["source_ids"]:
+                    continue
+                forms = [item["form"], *(item.get("literal_forms") or ())]
+                if item.get("release_characteristic") and item["form"] != "-":
+                    forms.extend(
+                        [
+                            f"{item['form']} de {item['release_characteristic']}",
+                            f"{item['form']} {item['release_characteristic']}",
+                        ]
+                    )
+                if any(
+                    listing[2] == normalize(f"{name} {item['strength']} {form}")
+                    for name in (item["active_ingredient"], *(item.get("aliases") or ()))
+                    for form in forms
+                ):
+                    return False
     return any(
         re.search(r"\b" + re.escape(term) + r"\b", query) for term in CLINICAL_BLOCKED_TERMS
     ) or any(pattern.search(query) for pattern in CLINICAL_BLOCKED_PATTERNS)
@@ -699,14 +901,72 @@ def matches_prompt_injection(question: str) -> bool:
     )
 
 
-def matches_documental_scope_block(question: str) -> bool:
+def matches_documental_scope_block(
+    question: str, release: ConsolidatedRelease | None = None
+) -> bool:
     """Detect queries outside the frozen list-presence scope (clinical, stock, or documents)."""
     query = normalize(question)
-    if matches_clinical_guardrail(query):
+    if matches_clinical_guardrail(query, release):
         return True
     return any(
         re.search(r"\b" + re.escape(term) + r"\b", query) for term in DOCUMENTAL_ONLY_BLOCKED_TERMS
     )
+
+
+def _vector_ranks(
+    question: str,
+    store: Any,
+    match_ids: set[str],
+    allowed: set[str],
+    vec_k: int,
+) -> dict[str, int]:
+    """Rank allowed chunk IDs by vector distance, sorting globally across colliding IDs."""
+    if hasattr(store, "similarity_search_with_score"):
+        scored_docs: list[tuple[Any, float]] = []
+        for mid in sorted(match_ids):
+            scored_docs.extend(
+                store.similarity_search_with_score(question, k=vec_k, filter={"medicine_id": mid})
+            )
+        filtered = [
+            (doc, float(score))
+            for doc, score in scored_docs
+            if doc.metadata.get("chunk_id") in allowed
+        ]
+        # Chroma scores represent distance (lower is closer).
+        filtered.sort(key=lambda item: item[1])
+        docs = [doc for doc, _score in filtered]
+    else:
+        docs = []
+        for mid in sorted(match_ids):
+            docs.extend(store.similarity_search(question, k=vec_k, filter={"medicine_id": mid}))
+        docs = [doc for doc in docs if doc.metadata.get("chunk_id") in allowed]
+    ranks: dict[str, int] = {}
+    for doc in docs:
+        chunk_id = doc.metadata["chunk_id"]
+        if chunk_id not in ranks:
+            ranks[chunk_id] = len(ranks)
+    return ranks
+
+
+def _matching_supplies(
+    query: str,
+    release: ConsolidatedRelease,
+    source_filter: str | None,
+) -> list[dict[str, Any]]:
+    supplies = [
+        o
+        for o in release.occurrences
+        if o["item_type"] == "supply"
+        and normalize(o["active_ingredient"]) in query
+        and (o["strength"] == "-" or normalize(o["strength"]) in query)
+    ]
+    if source_filter:
+        supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+    if len(supplies) > 1:
+        narrowed = [o for o in supplies if _presentation_form_matches(query, o)]
+        if narrowed:
+            supplies = narrowed
+    return supplies
 
 
 def search(
@@ -725,7 +985,7 @@ def search(
             "execute 'index' ou use 'lexical'/'exact'."
         )
     query = normalize(question)
-    if matches_documental_scope_block(query) or matches_prompt_injection(question):
+    if matches_documental_scope_block(query, release) or matches_prompt_injection(question):
         return {
             "status": "unsupported",
             "evidence": [],
@@ -742,15 +1002,7 @@ def search(
     elif re.search(r"\brename\b", query) or re.search(r"\bf01\b", query):
         source_filter = "F01"
     if "insumo" in query:
-        supplies = [
-            o
-            for o in release.occurrences
-            if o["item_type"] == "supply"
-            and normalize(o["active_ingredient"]) in query
-            and (o["strength"] == "-" or normalize(o["strength"]) in query)
-        ]
-        if source_filter:
-            supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+        supplies = _matching_supplies(query, release, source_filter)
         if len(supplies) != 1:
             return {
                 "status": "ambiguous" if supplies else "not_in_scope",
@@ -770,8 +1022,7 @@ def search(
     names = [
         m
         for m in release.catalog
-        if name_matches(query, m["active_ingredient"])
-        and (not source_filter or source_filter in m["source_ids"])
+        if item_name_matches(query, m) and (not source_filter or source_filter in m["source_ids"])
     ]
     if names:
         identities = {ingredient_key(m["active_ingredient"]) for m in names}
@@ -789,32 +1040,46 @@ def search(
             m
             for m in names
             if m["strength"] == "-"
-            or strength_matches(query, m["strength"], m["active_ingredient"])
+            or any(
+                strength_matches(query, m["strength"], candidate)
+                for candidate in (m["active_ingredient"], *(m.get("aliases") or ()))
+            )
         ]
         if not strengths:
-            if not re.search(r"\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ui|ml)\b", query):
+            if not re.search(r"\d+(?:[.,]\d+)?\s*(?:(?:mg|mcg|g|ui|meq|ml|u|l)\b|%)", query):
                 options = sorted(
                     names,
                     key=lambda m: (
                         normalize(m["strength"]),
-                        normalize(m["form"]),
+                        normalize(item_form_label(m)),
                         normalize(m.get("release_characteristic") or ""),
                         m["medicine_id"],
                     ),
                 )
+                refs: dict[str, list[str]] = {m["medicine_id"]: [] for m in options}
+                cited = []
+                for ev in release.evidence:
+                    source = ev["source"]
+                    mid = ev["medicine_id"]
+                    if mid in refs and (not source_filter or source["source_id"] == source_filter):
+                        refs[mid].append(
+                            f"{source['source_id']} ({source['version']}), "
+                            f"página {source['page']} [{ev['evidence_id']}]"
+                        )
+                        cited.append(ev)
                 return {
                     "status": "ambiguous",
-                    "evidence": [],
+                    "evidence": cited,
                     "candidate_presentations": options,
                     "message": "Apresentações documentadas: "
                     + "; ".join(
-                        f"{m['strength']} — {m['form']}"
+                        f"{m['strength']} — {item_form_display(m)}"
                         + (
                             f" — {m['release_characteristic']}"
                             if m.get("release_characteristic")
                             else ""
                         )
-                        + f" ({', '.join(m['source_ids'])})"
+                        + f" ({'; '.join(refs[m['medicine_id']])})"
                         for m in options
                     )
                     + ". Qual concentração ou forma você procura?",
@@ -826,15 +1091,30 @@ def search(
                     "Concentração não localizada para este princípio ativo nas listas consultadas."
                 ),
             }
-        matches = [m for m in strengths if m["form"] == "-" or _form_matches(query, m["form"])]
-        if not matches and not any(
-            normalize(m["form"]) in query for m in release.catalog if m["form"] != "-"
-        ):
+        matches = [m for m in strengths if _presentation_form_matches(query, m)]
+        missing_volume = not matches and any(
+            m["form"] != "-"
+            and m.get("package")
+            and m["strength"] == "-"
+            and _form_matches(query, m["form"])
+            for m in strengths
+        )
+        known_form_mentioned = any(
+            normalize(lbl) in query
+            for m in release.catalog
+            if not is_form_absent(m)
+            for lbl in (
+                item_form_label(m),
+                *(m.get("literal_forms") or ()),
+                *(m.get("form_alternatives") or ()),
+            )
+        )
+        if not matches and (missing_volume or not known_form_mentioned):
             return {
                 "status": "ambiguous",
                 "evidence": [],
                 "message": "Informe a forma farmacêutica. Formas disponíveis: "
-                + ", ".join(sorted({m["form"] for m in strengths}))
+                + ", ".join(sorted({item_form_display(m) for m in strengths}))
                 + ".",
             }
         prolonged = "prolongada" in query
@@ -888,25 +1168,18 @@ def search(
             longest_strength = max(len(normalize(m["strength"])) for m in matches)
             matches = [m for m in matches if len(normalize(m["strength"])) == longest_strength]
             longest_form = max(
-                len(normalize(m["form"])) if m["form"] != "-" else 0 for m in matches
+                len(normalize(item_form_label(m))) if not is_form_absent(m) else 0 for m in matches
             )
             matches = [
                 m
                 for m in matches
-                if (len(normalize(m["form"])) if m["form"] != "-" else 0) == longest_form
+                if (len(normalize(item_form_label(m))) if not is_form_absent(m) else 0)
+                == longest_form
             ]
     else:
         matches = []
     if not matches:
-        supplies = [
-            o
-            for o in release.occurrences
-            if o["item_type"] == "supply"
-            and normalize(o["active_ingredient"]) in query
-            and (o["strength"] == "-" or normalize(o["strength"]) in query)
-        ]
-        if source_filter:
-            supplies = [o for o in supplies if o["source"]["source_id"] == source_filter]
+        supplies = _matching_supplies(query, release, source_filter)
         if len(supplies) == 1:
             item = supplies[0]
             ev = next(e for e in release.evidence if e["occurrence_id"] == item["occurrence_id"])
@@ -934,7 +1207,8 @@ def search(
                 (
                     ingredient_key(m["active_ingredient"]),
                     normalize(m["strength"]),
-                    normalize(m["form"]),
+                    normalize(item_form_label(m)),
+                    normalize(m.get("package") or ""),
                     normalize(m.get("release_characteristic") or ""),
                 )
                 for m in matches
@@ -968,16 +1242,9 @@ def search(
                 f"Estratégia '{strategy}' exige índice vetorial carregado (store); "
                 "execute 'index' ou use 'lexical'/'exact'."
             )
-        docs = []
-        for mid in sorted(match_ids):
-            docs.extend(
-                store.similarity_search(
-                    question, k=min(max(top_k * 3, 10), len(selected)), filter={"medicine_id": mid}
-                )
-            )
         allowed = {c["chunk_id"] for c in selected}
-        docs = [d for d in docs if d.metadata.get("chunk_id") in allowed]
-        ranks = {d.metadata["chunk_id"]: i for i, d in enumerate(docs)}
+        vec_k = min(max(top_k * 3, 10), len(selected))
+        ranks = _vector_ranks(question, store, match_ids, allowed, vec_k)
         if strategy == "vector":
             selected = sorted(selected, key=lambda c: ranks.get(c["chunk_id"], 10**6))
         else:
@@ -1013,7 +1280,7 @@ def search(
         "evidence": [evidence_by_id[c["evidence_id"]] for c in selected[:top_k]],
         "message": (
             f"{med['active_ingredient']} {med['strength']} "
-            f"({med['form'] if med['form'] != '-' else 'forma não informada'}"
+            f"({item_form_display(med)}"
             f"{'; ' + med['release_characteristic'] if med.get('release_characteristic') else ''}) "
             "consta nas fontes: "
             f"{', '.join(sources)}. Presença em lista não confirma estoque."

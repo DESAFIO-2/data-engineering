@@ -1,0 +1,961 @@
+{
+  "schema_version": "consolidated-retrieval-eval-v1",
+  "evaluated_at_utc": "2026-11-19T13:45:16.112043+00:00",
+  "release_version": "corpus-consolidado-v10-aprovado-2026-11-17",
+  "release_fingerprint": "7e93955247de1ded77121a00bf1b14c320d782cf21c4d9e9464d4e8f3e24d179",
+  "content_fingerprint": "b7c41f04be50102ee4550647f8d9109af42c2cd1d07ef9cbeb78d608c240ac92",
+  "chunks_sha256": "d2f415af483ea6700266f8a255db1880d159e0cc140723dbadc7f87f1cb21570",
+  "dataset_sha256": "f62bea905afbb21e38904551bdced2264f9d39bbe2aeb944f19b73d126553f03",
+  "review_sha256": "835bddb24379d3f67dfe7895b6a29d99e7cb4a885f7e819bbbd67b4d27a5b16e",
+  "git": {
+    "commit": "74abb1ea6e2472391bcfdac0b393d831fd19a849",
+    "dirty": true
+  },
+  "python_version": "3.12.16",
+  "strategy": "vector",
+  "embedding_model": "models/gemini-embedding-2",
+  "split": "test",
+  "top_k": 5,
+  "reviewed_cases": 28,
+  "summary": {
+    "cases": 28,
+    "positive_cases": 24,
+    "hit_at_1": 1.0,
+    "hit_at_3": 1.0,
+    "hit_at_5": 1.0,
+    "mrr_at_5": 1.0,
+    "status_accuracy": 1.0,
+    "presentation_accuracy": 1.0,
+    "critical_confusions": 0,
+    "latency_p50_ms": 545.347,
+    "latency_p95_ms": 1568.1875999999984,
+    "negative_cases": 4,
+    "correct_abstention": 1.0,
+    "citations": 29,
+    "citation_precision": 1.0
+  },
+  "by_source": {
+    "F01": {
+      "cases": 11,
+      "positive_cases": 10,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "presentation_accuracy": 1.0,
+      "critical_confusions": 0,
+      "latency_p50_ms": 592.127,
+      "latency_p95_ms": 3613.996
+    },
+    "F03": {
+      "cases": 12,
+      "positive_cases": 10,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "presentation_accuracy": 1.0,
+      "critical_confusions": 0,
+      "latency_p50_ms": 529.634,
+      "latency_p95_ms": 1263.830449999999
+    },
+    "F04": {
+      "cases": 5,
+      "positive_cases": 4,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr_at_5": 1.0,
+      "status_accuracy": 1.0,
+      "presentation_accuracy": 1.0,
+      "critical_confusions": 0,
+      "latency_p50_ms": 547.192,
+      "latency_p95_ms": 626.9512
+    }
+  },
+  "results": [
+    {
+      "id": "V9-NEW-001",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-756bb00eae16ffce3a63edc9",
+        "med-b8336f7ce8a541bdb82e7df6",
+        "med-facdec455ab37477ce764d97"
+      ],
+      "selected_presentation_ids": [
+        "med-facdec455ab37477ce764d97"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-a40c44a565dc410bc148f15e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-a40c44a565dc410bc148f15e"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-a40c44a565dc410bc148f15e"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 6457.279
+    },
+    {
+      "id": "V9-NEW-002",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-60feae4ae324af309adb0401",
+        "med-79cb3753f71c55507bb245b7",
+        "med-d16a75c287e9cda593c2d5a9",
+        "med-e11352b0a860d7c8798c9018",
+        "med-f3493c02c3487ccdc9e78173"
+      ],
+      "selected_presentation_ids": [
+        "med-79cb3753f71c55507bb245b7"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-4973a649564fce692f90ccc9"
+      ],
+      "expected_evidence_ids": [
+        "evidence-4973a649564fce692f90ccc9"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-4973a649564fce692f90ccc9"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 770.713
+    },
+    {
+      "id": "V9-NEW-003",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-3e70b37239b3e88b995b9499",
+        "med-902a946d344165cea429aa1f"
+      ],
+      "selected_presentation_ids": [
+        "med-3e70b37239b3e88b995b9499"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-6c1efca59937a7da64a636dd"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6c1efca59937a7da64a636dd"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-6c1efca59937a7da64a636dd"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 626.117
+    },
+    {
+      "id": "V9-NEW-004",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-47dad791d08ab9a74df4d0ce",
+        "med-5131f15c98363218e3d777cc",
+        "med-7e6c7e495b76d68914d9eb4a",
+        "med-ca2460c417313dc6f08236bf",
+        "med-dbbb6a335f4ea0f95c246886"
+      ],
+      "selected_presentation_ids": [
+        "med-5131f15c98363218e3d777cc"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-b7179b540ccbdcbf8065a2e4"
+      ],
+      "expected_evidence_ids": [
+        "evidence-b7179b540ccbdcbf8065a2e4"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-b7179b540ccbdcbf8065a2e4"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 543.502
+    },
+    {
+      "id": "V9-NEW-005",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-2f0968a59e7f3ce8063f61cc",
+        "med-37227b577f4de17ced46f30c",
+        "med-723bcfcf4fa9bef2b059fce9",
+        "med-8526cf3e1c82fd6dcba71b3e",
+        "med-9a90ff1f869b86f956e625e5",
+        "med-b685adc7a8e006fe98e6a3b2",
+        "med-eb49649543696c5cb918cd5f",
+        "med-eeb45b13bacb38c2c4297323"
+      ],
+      "selected_presentation_ids": [
+        "med-eb49649543696c5cb918cd5f"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-9acf2f60332e25bd35f29936"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9acf2f60332e25bd35f29936"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-9acf2f60332e25bd35f29936"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 630.564
+    },
+    {
+      "id": "V9-NEW-006",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-7e7b531c2b3bebe82543e910"
+      ],
+      "selected_presentation_ids": [
+        "med-7e7b531c2b3bebe82543e910"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-ff062b2921217222150026f6"
+      ],
+      "expected_evidence_ids": [
+        "evidence-ff062b2921217222150026f6"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-ff062b2921217222150026f6"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 557.843
+    },
+    {
+      "id": "V9-NEW-007",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-71cdcc70b546c72c904bff28",
+        "med-d41fac21ab9282a4ae1f012f",
+        "med-f8ed41feaabea3a03221cad5"
+      ],
+      "selected_presentation_ids": [
+        "med-d41fac21ab9282a4ae1f012f"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-22c76d33e6fd90f1e16b2308"
+      ],
+      "expected_evidence_ids": [
+        "evidence-22c76d33e6fd90f1e16b2308"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-22c76d33e6fd90f1e16b2308"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 603.275
+    },
+    {
+      "id": "V9-NEW-008",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-965faddf9aba99fbecc92976",
+        "med-dd27358ecb95133fa4a61a74"
+      ],
+      "selected_presentation_ids": [
+        "med-965faddf9aba99fbecc92976"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-743d7ff39f30b54ec411c49a"
+      ],
+      "expected_evidence_ids": [
+        "evidence-743d7ff39f30b54ec411c49a"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-743d7ff39f30b54ec411c49a"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 557.698
+    },
+    {
+      "id": "V9-NEW-009",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-10680388989ff6d65c0b19a0",
+        "med-708e802d68b21bb165b33b63",
+        "med-a157555273cc6541bdf9a8fd"
+      ],
+      "selected_presentation_ids": [
+        "med-a157555273cc6541bdf9a8fd"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-494c71bde998ee8187cb6399"
+      ],
+      "expected_evidence_ids": [
+        "evidence-494c71bde998ee8187cb6399"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-494c71bde998ee8187cb6399"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 592.127
+    },
+    {
+      "id": "V9-NEW-010",
+      "source_id": "F01",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-38ac4d0bdb42ee5b73008a4d"
+      ],
+      "selected_presentation_ids": [
+        "med-38ac4d0bdb42ee5b73008a4d"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-e51c764aae4b8ff4d7215db9"
+      ],
+      "expected_evidence_ids": [
+        "evidence-e51c764aae4b8ff4d7215db9"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-e51c764aae4b8ff4d7215db9"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 529.617
+    },
+    {
+      "id": "V9-NEW-011",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-21f6c9f32e84feb8744c0637",
+        "med-47af7df1a052debb648840ed",
+        "med-ce31fa6bc9e92ec5ff05a4c1"
+      ],
+      "selected_presentation_ids": [
+        "med-47af7df1a052debb648840ed"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-2acbac5138b97b6025ef27eb"
+      ],
+      "expected_evidence_ids": [
+        "evidence-2acbac5138b97b6025ef27eb"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-2acbac5138b97b6025ef27eb"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 582.323
+    },
+    {
+      "id": "V9-NEW-012",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-59d9a0b4dd18ce324bb446f3"
+      ],
+      "selected_presentation_ids": [
+        "med-59d9a0b4dd18ce324bb446f3"
+      ],
+      "candidate_chunk_count": 2,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-5774f1ce6c686f49e4c5e5c2",
+        "chunk-7d3cc0991d7b8c0f9f8e5ac2"
+      ],
+      "expected_evidence_ids": [
+        "evidence-5774f1ce6c686f49e4c5e5c2",
+        "evidence-7d3cc0991d7b8c0f9f8e5ac2"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-5774f1ce6c686f49e4c5e5c2",
+        "evidence-7d3cc0991d7b8c0f9f8e5ac2"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true
+      ],
+      "latency_ms": 530.403
+    },
+    {
+      "id": "V9-NEW-013",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-2c8f40f841d624db8d19d974",
+        "med-718f68a378e2de170f72461d",
+        "med-b7b7458c3dc0deb3e2015480"
+      ],
+      "selected_presentation_ids": [
+        "med-b7b7458c3dc0deb3e2015480"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-4fbf72377dc062ecd69bdeb2"
+      ],
+      "expected_evidence_ids": [
+        "evidence-4fbf72377dc062ecd69bdeb2"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-4fbf72377dc062ecd69bdeb2"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 530.046
+    },
+    {
+      "id": "V9-NEW-014",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-93dd15fc67ba1cc56e2e5152"
+      ],
+      "selected_presentation_ids": [
+        "med-93dd15fc67ba1cc56e2e5152"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-6b4f41f3e487dc67bc74644d"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6b4f41f3e487dc67bc74644d"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-6b4f41f3e487dc67bc74644d"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 512.579
+    },
+    {
+      "id": "V9-NEW-015",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-3810fc70b6f3d3ecf028425d",
+        "med-4af2f615bc3f5876da3a418d"
+      ],
+      "selected_presentation_ids": [
+        "med-4af2f615bc3f5876da3a418d"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-6761f0ef36e8d48f6a49f156"
+      ],
+      "expected_evidence_ids": [
+        "evidence-6761f0ef36e8d48f6a49f156"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-6761f0ef36e8d48f6a49f156"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 663.476
+    },
+    {
+      "id": "V9-NEW-016",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-32df100ccd3c9703622d2591"
+      ],
+      "selected_presentation_ids": [
+        "med-32df100ccd3c9703622d2591"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-91cb8d2ab3b733873fb9638e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-91cb8d2ab3b733873fb9638e"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-91cb8d2ab3b733873fb9638e"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 529.222
+    },
+    {
+      "id": "V9-NEW-017",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-f805d3a5a45f2898ade7e82e"
+      ],
+      "selected_presentation_ids": [
+        "med-f805d3a5a45f2898ade7e82e"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-b7ff0aa673f64b75c16c3ddf"
+      ],
+      "expected_evidence_ids": [
+        "evidence-b7ff0aa673f64b75c16c3ddf"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-b7ff0aa673f64b75c16c3ddf"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 505.778
+    },
+    {
+      "id": "V9-NEW-018",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-d5cb309214e9673ea2f64122"
+      ],
+      "selected_presentation_ids": [
+        "med-d5cb309214e9673ea2f64122"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-ba0acebc4bf4e0ac7bb5ad8b"
+      ],
+      "expected_evidence_ids": [
+        "evidence-ba0acebc4bf4e0ac7bb5ad8b"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-ba0acebc4bf4e0ac7bb5ad8b"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 1997.597
+    },
+    {
+      "id": "V9-NEW-019",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-3000bf8f237cc9bec01bcf7d",
+        "med-ae1f32224bd5a1d98f7e0edb"
+      ],
+      "selected_presentation_ids": [
+        "med-3000bf8f237cc9bec01bcf7d"
+      ],
+      "candidate_chunk_count": 5,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-c7154e4af18fb8d6c27fdcf6",
+        "chunk-f99082f162f9f965ff1bfd36",
+        "chunk-28dc7d29b48e7780af06e21a",
+        "chunk-eee75379958237d90fe20727",
+        "chunk-0d92ea0f129481f22bb0a685"
+      ],
+      "expected_evidence_ids": [
+        "evidence-0d92ea0f129481f22bb0a685",
+        "evidence-28dc7d29b48e7780af06e21a",
+        "evidence-c7154e4af18fb8d6c27fdcf6",
+        "evidence-eee75379958237d90fe20727",
+        "evidence-f99082f162f9f965ff1bfd36"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-c7154e4af18fb8d6c27fdcf6",
+        "evidence-f99082f162f9f965ff1bfd36",
+        "evidence-28dc7d29b48e7780af06e21a",
+        "evidence-eee75379958237d90fe20727",
+        "evidence-0d92ea0f129481f22bb0a685"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "latency_ms": 506.861
+    },
+    {
+      "id": "V9-NEW-020",
+      "source_id": "F03",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-23eb05950eabc4821f4d66bc",
+        "med-3a19fb97cb8401787fe9f671"
+      ],
+      "selected_presentation_ids": [
+        "med-3a19fb97cb8401787fe9f671"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-9817e04d218c1ad180810be0"
+      ],
+      "expected_evidence_ids": [
+        "evidence-9817e04d218c1ad180810be0"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-9817e04d218c1ad180810be0"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 540.597
+    },
+    {
+      "id": "V9-NEW-021",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-b6cbcbcdffd2b6aa9fcad958"
+      ],
+      "selected_presentation_ids": [
+        "med-b6cbcbcdffd2b6aa9fcad958"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-81076ce93e4163086259ef8e"
+      ],
+      "expected_evidence_ids": [
+        "evidence-81076ce93e4163086259ef8e"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-81076ce93e4163086259ef8e"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 642.908
+    },
+    {
+      "id": "V9-NEW-022",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-cf8bc884fd345b04c77bed73"
+      ],
+      "selected_presentation_ids": [
+        "med-cf8bc884fd345b04c77bed73"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-72612f92a939518de17baaa1"
+      ],
+      "expected_evidence_ids": [
+        "evidence-72612f92a939518de17baaa1"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-72612f92a939518de17baaa1"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 486.507
+    },
+    {
+      "id": "V9-NEW-023",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-fa898e43353fd3162f49b60a"
+      ],
+      "selected_presentation_ids": [
+        "med-fa898e43353fd3162f49b60a"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-bd645fca4e10b51f38485f06"
+      ],
+      "expected_evidence_ids": [
+        "evidence-bd645fca4e10b51f38485f06"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-bd645fca4e10b51f38485f06"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 563.124
+    },
+    {
+      "id": "V9-NEW-024",
+      "source_id": "F04",
+      "expected_status": "matched",
+      "status": "matched",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-e4e22e2993f6b5f51e0f0fd2"
+      ],
+      "selected_presentation_ids": [
+        "med-e4e22e2993f6b5f51e0f0fd2"
+      ],
+      "candidate_chunk_count": 1,
+      "filter_reason": null,
+      "ranked_chunk_ids": [
+        "chunk-55ae1ce56b51b27f32022210"
+      ],
+      "expected_evidence_ids": [
+        "evidence-55ae1ce56b51b27f32022210"
+      ],
+      "retrieved_evidence_ids": [
+        "evidence-55ae1ce56b51b27f32022210"
+      ],
+      "first_relevant_rank": 1,
+      "presentation_correct": true,
+      "critical_confusion": false,
+      "citation_checks": [
+        true
+      ],
+      "latency_ms": 547.192
+    },
+    {
+      "id": "V9-NEW-025",
+      "source_id": "F01",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-3e70b37239b3e88b995b9499",
+        "med-902a946d344165cea429aa1f"
+      ],
+      "selected_presentation_ids": [],
+      "candidate_chunk_count": 0,
+      "filter_reason": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "retrieved_evidence_ids": [],
+      "first_relevant_rank": null,
+      "presentation_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "latency_ms": 43.932
+    },
+    {
+      "id": "V9-NEW-026",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-3810fc70b6f3d3ecf028425d",
+        "med-4af2f615bc3f5876da3a418d"
+      ],
+      "selected_presentation_ids": [],
+      "candidate_chunk_count": 0,
+      "filter_reason": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "retrieved_evidence_ids": [],
+      "first_relevant_rank": null,
+      "presentation_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "latency_ms": 44.781
+    },
+    {
+      "id": "V9-NEW-027",
+      "source_id": "F03",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-23eb05950eabc4821f4d66bc",
+        "med-3a19fb97cb8401787fe9f671"
+      ],
+      "selected_presentation_ids": [],
+      "candidate_chunk_count": 0,
+      "filter_reason": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "retrieved_evidence_ids": [],
+      "first_relevant_rank": null,
+      "presentation_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "latency_ms": 45.113
+    },
+    {
+      "id": "V9-NEW-028",
+      "source_id": "F04",
+      "expected_status": "not_in_scope",
+      "status": "not_in_scope",
+      "status_correct": true,
+      "candidate_presentation_ids": [
+        "med-b6cbcbcdffd2b6aa9fcad958"
+      ],
+      "selected_presentation_ids": [],
+      "candidate_chunk_count": 0,
+      "filter_reason": "Concentração não localizada para este princípio ativo nas listas consultadas.",
+      "ranked_chunk_ids": [],
+      "expected_evidence_ids": [],
+      "retrieved_evidence_ids": [],
+      "first_relevant_rank": null,
+      "presentation_correct": false,
+      "critical_confusion": false,
+      "citation_checks": [],
+      "latency_ms": 44.137
+    }
+  ]
+}

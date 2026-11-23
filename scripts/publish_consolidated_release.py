@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "corpus-consolidado-v4-revisao-2026-11-10"
 FILES = ("catalog.jsonl", "occurrences.jsonl", "evidencias.jsonl", "exclusions.jsonl", "f03_descriptions.json", "quality_report.json")
+NORMALIZED_FILES = frozenset({"normalization.json", "id_map_v9_v10.json"})
 BLANK_OID = "occ-dd3666cce6867d6246aae72f"
 
 
@@ -80,6 +81,17 @@ def evidence_for(occ: dict, descriptions: dict | None = None) -> dict:
             if not isinstance(indication, str) or not indication.strip():
                 raise ValueError(f"Indicação F04 ausente: {oid}")
             evidence["indication"] = indication
+    if isinstance(occ.get("normalized"), dict):
+        norm = occ["normalized"]
+        evidence["normalized"] = norm
+        evidence["component"] = occ.get("component")
+        evidence["source_code"] = occ.get("source_code")
+        evidence["atc"] = occ.get("atc")
+        evidence["channel"] = occ.get("channel")
+        evidence["channel_text"] = norm.get("channel_text")
+        evidence["channel_codes"] = list(norm.get("channel_codes") or [])
+        evidence["channel_notes"] = list(norm.get("channel_notes") or [])
+        evidence["channel_note"] = "; ".join(evidence["channel_notes"]) or None
     return evidence
 
 
@@ -223,6 +235,8 @@ def verify(folder: Path) -> dict:
         expected.add("domain_review.json")
     if "audit_log.jsonl" in manifest.get("files", {}):
         expected.add("audit_log.jsonl")
+    if NORMALIZED_FILES <= set(manifest.get("files", {})):
+        expected |= NORMALIZED_FILES
     if schema not in {"consolidated-release-v1", "consolidated-release-v2"} or set(manifest["files"]) != expected:
         raise ValueError("Manifesto inválido")
     if manifest.get("status") not in {"pending_review", "approved"}:
@@ -241,8 +255,19 @@ def verify(folder: Path) -> dict:
             raise ValueError("Recorte F03 alterado após publicação")
         descriptions = json.loads(descriptions_bytes)
         exclusions = read_lines((folder / "exclusions.jsonl").read_bytes())
-        if len(exclusions) != 1 or exclusions[0]["occurrence_id"] != BLANK_OID or any(o["occurrence_id"] == BLANK_OID for o in occurrences):
+        excluded_ids = {row["occurrence_id"] for row in exclusions if row.get("occurrence_id")}
+        occ_ids = {o["occurrence_id"] for o in occurrences}
+        if excluded_ids & occ_ids:
+            raise ValueError("Ocorrência excluída presente em occurrences.jsonl")
+        if len(occurrences) > 100 and (len(exclusions) != 1 or exclusions[0]["occurrence_id"] != BLANK_OID):
             raise ValueError("Exclusão da linha vazia F03 divergente")
+        if NORMALIZED_FILES <= expected:
+            norm_bundle = json.loads((folder / "normalization.json").read_bytes())
+            id_map = json.loads((folder / "id_map_v9_v10.json").read_bytes())
+            if not norm_bundle.get("schema_version") or "files" not in norm_bundle:
+                raise ValueError("normalization.json inválido")
+            if not id_map.get("schema_version") or "mappings" not in id_map:
+                raise ValueError("id_map_v9_v10.json inválido")
         expected_evidence = [evidence_for(occ, descriptions) for occ in occurrences]
     else:
         expected_evidence = [evidence_for(occ) for occ in occurrences]

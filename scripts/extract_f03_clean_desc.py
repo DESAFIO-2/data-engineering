@@ -111,6 +111,6 @@ for r in t2_rows:
     })
 
 print(f"Total F03 extracted: {len(f03_results)}")
-with open('scripts/f03_extracted_check.json', 'w', encoding='utf-8') as f:
+with open('data/curation/archive/f03_extracted_check.json', 'w', encoding='utf-8') as f:
     json.dump(f03_results, f, indent=2, ensure_ascii=False)
-print("Saved scripts/f03_extracted_check.json")
+print("Saved data/curation/archive/f03_extracted_check.json")

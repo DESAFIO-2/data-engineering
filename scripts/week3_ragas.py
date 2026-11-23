@@ -47,12 +47,14 @@ async def run(args):
     from rag.providers import error_detail
 
     settings = get_settings()
-    source = ROOT / "evals/results/week3_v9_response_test.json"
-    release = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
-    data = json.loads(source.read_text())
+    source = ROOT / args.source
+    release = ROOT / args.release
+    data = json.loads(source.read_text(encoding="utf-8"))
     evidence = {
         e["evidence_id"]: e
-        for e in map(json.loads, (release / "evidencias.jsonl").read_text().splitlines())
+        for e in map(
+            json.loads, (release / "evidencias.jsonl").read_text(encoding="utf-8").splitlines()
+        )
     }
 
     def context(eid):
@@ -93,7 +95,7 @@ async def run(args):
         "summaries": {},
     }
     if output.exists():
-        state = json.loads(output.read_text())
+        state = json.loads(output.read_text(encoding="utf-8"))
         if state["protocol_sha256"] != digest(protocol):
             raise ValueError("Existing output belongs to a different protocol")
 
@@ -111,10 +113,13 @@ async def run(args):
                 await asyncio.sleep(max(0.0, self.next_call - time.monotonic()))
                 self.next_call = time.monotonic() + 7.0
 
+    ragas_api_key = (
+        settings.google_api_keys[0] if settings.google_api_keys else settings.google_api_key
+    )
     llm = LangchainLLMWrapper(
         ChatGoogleGenerativeAI(
             model=args.judge,
-            google_api_key=settings.google_api_key,
+            google_api_key=ragas_api_key,
             max_retries=0,
             timeout=60,
             callbacks=[PaceJudge()],
@@ -125,7 +130,7 @@ async def run(args):
     )
     embeddings = LangchainEmbeddingsWrapper(
         GoogleGenerativeAIEmbeddings(
-            model=settings.rag_embedding_model, google_api_key=settings.google_api_key
+            model=settings.rag_embedding_model, google_api_key=ragas_api_key
         ),
         run_config=config,
     )
@@ -172,7 +177,10 @@ async def run(args):
         state["summaries"] = summaries
         output.parent.mkdir(parents=True, exist_ok=True)
         temp = output.with_suffix(".tmp")
-        temp.write_text(json.dumps(state, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+        temp.write_text(
+            json.dumps(state, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+            encoding="utf-8",
+        )
         temp.replace(output)
 
     state["records"] = []
@@ -265,5 +273,9 @@ async def run(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--judge", default="gemini-3.5-flash-lite")
+    parser.add_argument("--source", default="evals/results/week3_v9_response_test.json")
+    parser.add_argument(
+        "--release", default="data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
+    )
     parser.add_argument("--output", default="evals/results/week3_v9_ragas_test.json")
     asyncio.run(run(parser.parse_args()))
