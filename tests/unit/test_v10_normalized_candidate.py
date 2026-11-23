@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -23,11 +22,9 @@ from rag.consolidated import (
 )
 from rag.consolidated_live import compatible_product
 from rag.normalization import fold, identity_key
-
-sys.path.insert(0, str(ROOT / "scripts"))
-import approve_v10_release  # noqa: E402
-import publish_v10_normalized_candidate as pub_v10  # noqa: E402
-from publish_consolidated_release import digest, encoded, lines, read_lines, verify  # noqa: E402
+from scripts.archive.releases.v10 import approve_v10_release
+from scripts.archive.releases.v10 import publish_v10_normalized_candidate as pub_v10
+from scripts.ingest.publish_consolidated_release import digest, encoded, lines, read_lines, verify
 
 VOCAB_DIR = ROOT / "data/vocab"
 V9_DIR = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
@@ -433,7 +430,7 @@ def _make_fixture_v9(base: Path) -> Path:
         for mid, group in by_med.items()
     ]
 
-    from publish_consolidated_release import evidence_for
+    from scripts.ingest.publish_consolidated_release import evidence_for
 
     evidence: list[dict[str, Any]] = [evidence_for(occ, descriptions) for occ in occurrences]
     for ev in evidence:

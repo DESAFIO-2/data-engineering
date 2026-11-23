@@ -369,7 +369,7 @@ def test_invoke_with_retry_does_not_sleep_on_permanent_errors(exc: Exception) ->
 
 def test_synthesize_and_measured_model_retry_without_multiplying_attempts() -> None:
     spec = importlib.util.spec_from_file_location(
-        "week3_compare_test", ROOT / "scripts/week3_compare.py"
+        "week3_compare_test", ROOT / "scripts/eval/week3_compare.py"
     )
     assert spec is not None and spec.loader is not None
     mod = importlib.util.module_from_spec(spec)
@@ -707,7 +707,7 @@ def test_week3_compare_accepts_crlf_files_against_lf_hashes(
     tmp_path: Path, monkeypatch: Any
 ) -> None:
     spec = importlib.util.spec_from_file_location(
-        "week3_compare_crlf", ROOT / "scripts/week3_compare.py"
+        "week3_compare_crlf", ROOT / "scripts/eval/week3_compare.py"
     )
     assert spec is not None and spec.loader is not None
     mod = importlib.util.module_from_spec(spec)

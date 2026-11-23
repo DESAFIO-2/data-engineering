@@ -33,17 +33,20 @@ Organizar a transformação desde o payload original até visões consumíveis.
 Fontes oficiais (PDFs F01/F03/F04 + API InfoSaúde)
       ↓
 data/raw + manifestos (SHA-256, timestamp, versão)
-      ├── Trilha alvo de pipeline: Bronze (payload) → Silver (tipado/snapshots) → Gold (catálogos)
+      ├── Fluxo vivo Medallion (src/storage/ + src/rag/consolidated/live.py):
+      │     Bronze (data/bronze/infosaude_live/..., SHA-256) →
+      │     Silver (data/silver/estoque.sqlite3, schema drift) →
+      │     Gold (data/gold/infosaude_live_snapshot.json e stock_queries/)
       └── Fluxo ativo de consolidação documental:
-          scripts/consolidate_corpus.py → data/releases/corpus-consolidado-v*
+          scripts/ingest/consolidate_corpus.py → data/releases/corpus-consolidado-v* (DVC)
           (catalog.jsonl, occurrences.jsonl, evidencias.jsonl, exclusions.jsonl, release.json)
                 ↓
-          data/derived/chunks/<release> (one-evidence-v1 congelado em v5–v9; one-evidence-v2 em diante)
+          data/derived/chunks/<release> (DVC; one-evidence-v1 v5–v9; v2/v3 v10+)
                 ↓
-          Consumidores do produto (src/rag/consolidated.py, consolidated_chat.py + estoque vivo InfoSaúde)
+          Consumidores do produto (src/rag/consolidated/* + estoque vivo InfoSaúde)
 ```
 
-- **Nota de estado atual (atualizada em 2026-11-13):** o repositório opera hoje com fontes brutas versionadas em `data/raw` e releases documentais imutáveis em `data/releases/corpus-consolidado-v*`, além da integração de estoque vivo em `src/ingestion/infosaude_live.py`. A separação física em `data/bronze`, `data/silver` e `data/gold` permanece como arquitetura-alvo para o backlog de evolução estrutural.
+- **Nota de estado atual (atualizada em 2026-11-23):** o repositório opera com fontes brutas versionadas em `data/raw`, releases documentais e chunks imutáveis versionados via DVC (`data/releases/`, `data/derived/chunks/` — ver `data/README.md`), pacote modularizado em `src/rag/` (`core/`, `consolidated/`, `legacy/`, `cli/`), scripts segregados por ciclo de vida em `scripts/` (`ingest/`, `eval/`, `archive/`) e persistência Medallion ativa em `src/storage/` conectada às consultas ao vivo do InfoSaúde-DF (Bronze JSON + Silver SQLite + cache Gold).
 - Bronze preserva payload e metadados; Silver contém registros tipados e snapshots; Gold contém dados derivados (incluindo releases consolidados imutáveis) para consumo.
 - Desacoplar conectores do motor de persistência.
 - Não inferir disponibilidade, elegibilidade ou orientação clínica.

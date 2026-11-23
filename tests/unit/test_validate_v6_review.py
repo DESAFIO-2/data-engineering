@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from scripts.validate_v6_review import validate
+from scripts.archive.releases.v6.validate_v6_review import validate
 
 
 def fixture_files(tmp_path: Path, *, decision: str, published: str = "50 mg") -> tuple[Path, Path]:

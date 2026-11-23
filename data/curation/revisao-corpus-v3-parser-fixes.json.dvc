@@ -1,0 +1,5 @@
+outs:
+- md5: d300a88743cf4357d660d13f88303c1d
+  size: 6816077
+  hash: md5
+  path: revisao-corpus-v3-parser-fixes.json

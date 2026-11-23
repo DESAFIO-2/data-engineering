@@ -2,20 +2,18 @@
 
 from __future__ import annotations
 
-import sys
-
 import pytest
 
 from rag.config import ROOT
 from rag.consolidated import ConsolidatedRelease, load_chunks, search
 from rag.consolidated_evaluation import _preflight
+from scripts.archive.releases.v9.prepare_v9_retrieval_dev import CLARITHROMYCIN_EVIDENCE, prepare
+from scripts.archive.releases.v9.prepare_v9_test_candidate import (
+    prepare as prepare_independent_test,
+)
+from scripts.archive.releases.v9.promote_v9_test import promote
 
 pytestmark = pytest.mark.dvc
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from prepare_v9_retrieval_dev import CLARITHROMYCIN_EVIDENCE, prepare  # noqa: E402
-from prepare_v9_test_candidate import prepare as prepare_independent_test  # noqa: E402
-from promote_v9_test import promote  # noqa: E402
 
 RELEASE = ROOT / "data/releases/corpus-consolidado-v9-aprovado-2026-11-12"
 CHUNKS = ROOT / "data/derived/chunks/corpus-consolidado-v9-aprovado-2026-11-12"

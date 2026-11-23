@@ -7,7 +7,7 @@ from typing import Any
 import pytest
 from pypdf import PdfReader
 
-from scripts.rag_release import ROOT, VERSION, build_release
+from scripts.ingest.rag_release import ROOT, VERSION, build_release
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:

@@ -1,0 +1,6 @@
+outs:
+- md5: 879e5ff6ab7f975da833f57aea50473f.dir
+  size: 7159216
+  nfiles: 8
+  hash: md5
+  path: corpus-consolidado-v9-claritromicina-normalizada-2026-11-12

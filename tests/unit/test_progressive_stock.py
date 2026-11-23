@@ -15,6 +15,9 @@ from rag.config import ROOT, Settings
 from rag.consolidated import ConsolidatedRelease, load_chunks
 
 Corpus = tuple[ConsolidatedRelease, list[dict[str, Any]], dict[str, Any]]
+
+pytestmark = pytest.mark.dvc
+
 DESC = "LIRAGLUTIDA SOLUÇÃO INJETÁVEL 6MG/ML SISTEMA DE APLICAÇÃO 3ML MULTIDOSES DE ATÉ 3,0 MG"
 CEAF_DESC = "LIRAGLUTIDA 6 MG/ML SOLUÇÃO INJETÁVEL 3 ML ELENCO ESTADUAL"
 

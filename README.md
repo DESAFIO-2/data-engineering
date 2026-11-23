@@ -71,15 +71,15 @@ Sem `--documental`, o chat sincroniza uma referência inicial do InfoSaúde-DF n
 Para reproduzir os comparativos da Semana 3 a partir da raiz:
 
 ```bash
-PYTHONPATH=src uv run python -m scripts.week3_compare --matrix retrieval --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/week3_v9_dev_draft.jsonl --output evals/results/week3_v9_retrieval_dev.json
-PYTHONPATH=src uv run python -m scripts.week3_compare --matrix response --best-strategy exact --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/week3_v9_dev_draft.jsonl --output evals/results/week3_v9_response_dev.json
-uv run --script scripts/week3_ragas.py
+PYTHONPATH=src uv run python -m scripts.eval.week3_compare --matrix retrieval --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/week3_v9_dev_draft.jsonl --output evals/results/week3_v9_retrieval_dev.json
+PYTHONPATH=src uv run python -m scripts.eval.week3_compare --matrix response --best-strategy exact --release data/releases/corpus-consolidado-v9-aprovado-2026-11-12 --dataset evals/datasets/week3_v9_dev_draft.jsonl --output evals/results/week3_v9_response_dev.json
+uv run --script scripts/eval/week3_ragas.py
 ```
 
 Para consolidar a revisão factual humana das respostas de teste após o preenchimento da planilha de revisão:
 
 ```bash
-PYTHONPATH=src uv run python -m scripts.week3_review --runs evals/results/week3_v9_response_test.json --reviews evals/reviews/week3_v9_response_test_review.csv --output evals/results/week3_v9_response_test_human_review.json
+PYTHONPATH=src uv run python -m scripts.eval.week3_review --runs evals/results/week3_v9_response_test.json --reviews evals/reviews/week3_v9_response_test_review.csv --output evals/results/week3_v9_response_test_human_review.json
 ```
 
 ## Estrutura do repositório

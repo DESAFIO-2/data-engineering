@@ -3,7 +3,7 @@ from pathlib import Path
 
 from rag.benchmark import read_jsonl, validate_cases
 from rag.experimental import Corpus
-from scripts.build_golden_set import build
+from scripts.eval.build_golden_set import build
 
 ROOT = Path(__file__).resolve().parents[2]
 

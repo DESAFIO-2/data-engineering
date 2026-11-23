@@ -1,0 +1,5 @@
+outs:
+- md5: 80403f534dd150d5c74f6e714966b58c
+  size: 6611922
+  hash: md5
+  path: revisao-corpus-v1.json

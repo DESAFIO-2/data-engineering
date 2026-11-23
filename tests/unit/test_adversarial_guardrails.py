@@ -251,7 +251,7 @@ def test_synthesize_wraps_untrusted_evidence_and_neutralizes_role_prefixes() -> 
 
 def _load_week3_review_module() -> Any:
     spec = importlib.util.spec_from_file_location(
-        "week3_review_test", ROOT / "scripts/week3_review.py"
+        "week3_review_test", ROOT / "scripts/eval/week3_review.py"
     )
     assert spec is not None and spec.loader is not None
     mod = importlib.util.module_from_spec(spec)

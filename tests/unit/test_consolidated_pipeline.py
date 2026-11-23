@@ -11,6 +11,8 @@ import pytest
 
 from rag.consolidated import ConsolidatedRelease, chunk_for, load_chunks, search, strength_matches
 
+pytestmark = pytest.mark.dvc
+
 ROOT = Path(__file__).resolve().parents[2]
 RELEASE = ROOT / "data/releases/corpus-consolidado-v5-aprovado-2026-11-10"
 CHUNKS = ROOT / "data/derived/chunks/corpus-consolidado-v5-aprovado-2026-11-10"
